@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
+// declare var $: any;
 
 @Component({
   selector: 'app-main',
@@ -14,10 +14,11 @@ export class MainComponent implements OnInit {
 
     /* refresh page */
 
-    // if(!window.location.hash) {
-    //     window.location = window.location + '#loaded';
-    //     window.location.reload();
-    //  }
+    if(!window.location.hash) {
+        //@ts-ignore
+        window.location = window.location + '#loaded';
+        window.location.reload();
+     }
 
     /**
     * demo.js
