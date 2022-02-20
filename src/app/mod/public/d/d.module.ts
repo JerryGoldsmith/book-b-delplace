@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DRoutingModule } from './d-routing.module';
-import { DComponent } from './d/d.component';
+import { Part04Component } from 'src/app/part04/part04.component';
 
 
 @NgModule({
   declarations: [
-    DComponent
+    Part04Component
   ],
   imports: [
     CommonModule,
     DRoutingModule
   ],
   exports: [
-    DComponent
+    Part04Component
   ]
 })
 export class DModule { }

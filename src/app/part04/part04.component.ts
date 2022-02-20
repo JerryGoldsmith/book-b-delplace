@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-d',
-  templateUrl: './d.component.html',
-  styleUrls: ['./d.component.scss']
+  selector: 'app-part04',
+  templateUrl: './part04.component.html',
+  styleUrls: ['./part04.component.scss']
 })
-export class DComponent implements OnInit {
+export class Part04Component implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+
+    /* refresh page */
+
+    if(!window.location.hash) {
+        //@ts-ignore
+        window.location = window.location + '#loaded';
+        window.location.reload();
+     }
+
     /**
     * demo.js
     * http://www.codrops.com
@@ -21,12 +33,14 @@ export class DComponent implements OnInit {
     * http://www.codrops.com
     */
 
-    {
+     {
         // helper functions
         const MathUtils = {
             // map number x from range [a, b] to [c, d]
+            //@ts-ignore
             map: (x, a, b, c, d) => (x - a) * (d - c) / (b - a) + c,
             // linear interpolation
+            //@ts-ignore
             lerp: (a, b, n) => (1 - n) * a + n * b
         };
 
@@ -34,6 +48,7 @@ export class DComponent implements OnInit {
         const body = document.body;
 
         // calculate the viewport size
+        //@ts-ignore
         let winsize;
         const calcWinsize = () => winsize = {width: window.innerWidth, height: window.innerHeight};
         calcWinsize();
@@ -41,16 +56,44 @@ export class DComponent implements OnInit {
         window.addEventListener('resize', calcWinsize);
 
         // scroll position and update function
+        //@ts-ignore
         let docScroll;
         const getPageYScroll = () => docScroll = window.pageYOffset || document.documentElement.scrollTop;
         window.addEventListener('scroll', getPageYScroll);
 
         // Item
         class Item {
+            DOM: { el: any; };
+            renderedStyles: {
+                // here we define which property will change as we scroll the page and the items is inside the viewport
+                // in this case we will be translating the image on the y-axis
+                // we interpolate between the previous and current value to achieve a smooth effect
+                innerTranslationY: {
+                    // interpolated value
+                    previous: number;
+                    // current value
+                    current: number;
+                    // amount to interpolate
+                    ease: number;
+                    // the maximum value to translate the image is set in a CSS variable (--overflow)
+                    maxValue: number;
+                    // current value setter
+                    // the value of the translation will be:
+                    // when the item's top value (relative to the viewport) equals the window's height (items just came into the viewport) the translation = minimum value (- maximum value)
+                    // when the item's top value (relative to the viewport) equals "-item's height" (item just exited the viewport) the translation = maximum value
+                    setValue: () => number;
+                };
+            };
+            props: any;
+            observer: IntersectionObserver;
+            //@ts-ignore
+            isVisible: boolean;
+            //@ts-ignore
             constructor(el) {
                 // the .item element
                 this.DOM = {el: el};
                 // the inner image
+                //@ts-ignore
                 this.DOM.image = this.DOM.el.querySelector('.item__img');
                 this.renderedStyles = {
                     // here we define which property will change as we scroll the page and the items is inside the viewport
@@ -64,6 +107,7 @@ export class DComponent implements OnInit {
                         // amount to interpolate
                         ease: 0.1,
                         // the maximum value to translate the image is set in a CSS variable (--overflow)
+                        //@ts-ignore
                         maxValue: parseInt(getComputedStyle(this.DOM.image).getPropertyValue('--overflow'), 10),
                         // current value setter
                         // the value of the translation will be:
@@ -72,6 +116,7 @@ export class DComponent implements OnInit {
                         setValue: () => {
                             const maxValue = this.renderedStyles.innerTranslationY.maxValue;
                             const minValue = -1 * maxValue;
+                            //@ts-ignore
                             return Math.max(Math.min(MathUtils.map(this.props.top - docScroll, winsize.height, -1 * this.props.height, minValue, maxValue), maxValue), minValue)
                         }
                     }
@@ -92,6 +137,7 @@ export class DComponent implements OnInit {
                 this.getSize();
                 // sets the initial value (no interpolation)
                 for (const key in this.renderedStyles ) {
+                    //@ts-ignore
                     this.renderedStyles[key].current = this.renderedStyles[key].previous = this.renderedStyles[key].setValue();
                 }
                 // translate the image
@@ -103,6 +149,7 @@ export class DComponent implements OnInit {
                     // item's height
                     height: rect.height,
                     // offset top relative to the document
+                    //@ts-ignore
                     top: docScroll + rect.top
                 }
             }
@@ -116,7 +163,9 @@ export class DComponent implements OnInit {
             render() {
                 // update the current and interpolated values
                 for (const key in this.renderedStyles ) {
+                    //@ts-ignore
                     this.renderedStyles[key].current = this.renderedStyles[key].setValue();
+                    //@ts-ignore
                     this.renderedStyles[key].previous = MathUtils.lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].ease);
                 }
                 // and translates the image
@@ -124,20 +173,39 @@ export class DComponent implements OnInit {
             }
             layout() {
                 // translates the image
+                //@ts-ignore
                 this.DOM.image.style.transform = `translate3d(0,${this.renderedStyles.innerTranslationY.previous}px,0)`;
             }
         }
 
         // SmoothScroll
         class SmoothScroll {
+            DOM: { main: HTMLElement; };
+            items: any[];
+            renderedStyles: {
+                translationY: {
+                    // interpolated value
+                    previous: number;
+                    // current value
+                    current: number;
+                    // amount to interpolate
+                    ease: number;
+                    // current value setter
+                    // in this case the value of the translation will be the same like the document scroll
+                    setValue: () => any;
+                };
+            };
             constructor() {
                 // the <main> element
+                //@ts-ignore
                 this.DOM = {main: document.querySelector('main')};
                 // the scrollable element
                 // we translate this element when scrolling (y-axis)
+                //@ts-ignore
                 this.DOM.scrollable = this.DOM.main.querySelector('div[data-scroll]');
                 // the items on the page
                 this.items = [];
+                //@ts-ignore
                 [...this.DOM.main.querySelectorAll('.content > .item')].forEach(item => this.items.push(new Item(item)));
                 // here we define which property will change as we scroll the page
                 // in this case we will be translating on the y-axis
@@ -152,6 +220,7 @@ export class DComponent implements OnInit {
                         ease: 0.1,
                         // current value setter
                         // in this case the value of the translation will be the same like the document scroll
+                        //@ts-ignore
                         setValue: () => docScroll
                     }
                 };
@@ -169,6 +238,7 @@ export class DComponent implements OnInit {
             update() {
                 // sets the initial value (no interpolation) - translate the scroll value
                 for (const key in this.renderedStyles ) {
+                    //@ts-ignore
                     this.renderedStyles[key].current = this.renderedStyles[key].previous = this.renderedStyles[key].setValue();
                 }
                 // translate the scrollable element
@@ -176,10 +246,12 @@ export class DComponent implements OnInit {
             }
             layout() {
                 // translates the scrollable element
+                //@ts-ignore
                 this.DOM.scrollable.style.transform = `translate3d(0,${-1*this.renderedStyles.translationY.previous}px,0)`;
             }
             setSize() {
                 // set the heigh of the body in order to keep the scrollbar on the page
+                //@ts-ignore
                 body.style.height = `${this.DOM.scrollable.scrollHeight}px`;
             }
             style() {
@@ -187,6 +259,7 @@ export class DComponent implements OnInit {
                 // for that we set it to position fixed and overflow hidden
                 this.DOM.main.style.position = 'fixed';
                 this.DOM.main.style.width = this.DOM.main.style.height = '100%';
+                //@ts-ignore
                 this.DOM.main.style.top = this.DOM.main.style.left = 0;
                 this.DOM.main.style.overflow = 'hidden';
             }
@@ -197,7 +270,9 @@ export class DComponent implements OnInit {
             render() {
                 // update the current and interpolated values
                 for (const key in this.renderedStyles ) {
+                    //@ts-ignore
                     this.renderedStyles[key].current = this.renderedStyles[key].setValue();
+                    //@ts-ignore
                     this.renderedStyles[key].previous = MathUtils.lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].ease);
                 }
                 // and translate the scrollable element
@@ -223,6 +298,7 @@ export class DComponent implements OnInit {
         // Preload images
         const preloadImages = () => {
             return new Promise((resolve, reject) => {
+                //@ts-ignore
                 imagesLoaded(document.querySelectorAll('.item__img'), {background: true}, resolve);
             });
         };
@@ -236,13 +312,6 @@ export class DComponent implements OnInit {
             // Initialize the Smooth Scrolling
             new SmoothScroll();
         });
-    }
-
-    /* refresh page */
-
-    if(!window.location.hash) {
-       window.location = window.location + '#loaded';
-       window.location.reload();
     }
   }
 

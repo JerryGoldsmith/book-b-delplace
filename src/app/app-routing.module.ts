@@ -26,6 +26,11 @@ const routes: Routes = [
     path: 'partC',
     loadChildren: () => import('src/app/mod/public/c/c.module')
     .then(mod => mod.CModule)
+  },
+  {
+    path: 'partD',
+    loadChildren: () => import('src/app/mod/public/d/d.module')
+    .then(mod => mod.DModule)
   }
 ];
 

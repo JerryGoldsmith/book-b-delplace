@@ -1,35 +1,21 @@
 body {
-  height: 3260px;
-  // overflow: scroll;
-  overflow-y: auto;
+  height: 1346px;
+  // height: 96em;
+  // height: 3346px;
+  overflow: scroll;
 }
 
-/* -------------------------------------------------- */
-/* --------------------- Entete --------------------- */
-/* -------------------------------------------------- */
-
-/* ---------- Images ----------- */
-
-.item:first-child .item__img-wrap {
-	width: calc(100vw - 2rem);
-	--aspect-ratio: 1500/844;
-	--image: url(../../../../../assets/water.jpg);
-  // margin: .67em 0;
-  //   top: 2%;
-  //   left: 2%;
-  //   -webkit-transform: translateX(-40%) translateY(6%);
-  //   transform: translateX(-40%) translateY(6%);
-  //   max-width: 1800px;
-  //   text-align: center;
+mdb-navbar{
+  font-size: 20px;
 }
 
-/* ---------- Textes ----------- */
+// layout top ----------
 
 .big-title {
 	position: absolute;
 	color: #fff;
 	z-index: 100000;
-	font-size: 46px;
+	font-size: 86px;
   /* font-family: Didot,serif; */
 	font-family: NanumMyeongjo-Regular, serif;
   font-weight: 400;
@@ -37,8 +23,8 @@ body {
 	letter-spacing: 8px;
 	line-height: 1.2;
 	margin: .67em 0;
-    top: 50%;
-    left: 60%;
+    top: 46%;
+    left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     width: 90%;
@@ -51,14 +37,14 @@ body {
 	position: absolute;
 	color: #FFF;
 	z-index: 100000;
-	font-size: 20px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-size: 46px;
+	font-family: NanumMyeongjo-Regular, serif;
   font-weight: 400;
 	letter-spacing: 4px;
 	line-height: 2;
 	margin: .67em 0;
-    top: 65%;
-    left: 60%;
+    top: 64%;
+    left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     width: 90%;
@@ -67,43 +53,56 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-/* ---------------- Separation line ------------------ */
-
-.line {
-	height: 0.5px;
-	opacity: 0.3;
-	background-color: #FFF;
-	position: absolute;
-	color: #FFF;
-	z-index: 100000;
-	margin: .67em 0;
-    top: 59.5%;
-    left: 60%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    width: 40%;
-    max-width: 678px;
-    text-align: center;
-	-webkit-font-smoothing: antialiased;
-}
-
-/* .title-sequence {
-	opacity: 1;
-} */
-
-/* ---------- Logo ----------- */
-
 .logo {
 	position: absolute;
 	color: #FFF;
 	z-index: 100000;
 	margin: .67em 0;
-    top: 60%;
-    left: 20%;
+    top: 38%;
+    left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     width: 40%;
-    max-width: 200px;
+    max-width: 130px;
+    text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* -------------------------------------------------- */
+/* --------------------- Entete --------------------- */
+/* -------------------------------------------------- */
+
+/* ---------- Images ----------- */
+
+.item:first-child .item__img-wrap {
+	width: calc(100vw - 2rem);
+	--aspect-ratio: 1500/844;
+	--image: url(../../assets/img/belle-ile/belle-04.jpg);
+  // margin: .67em 0;
+  //   top: 2%;
+  //   left: 2%;
+  //   -webkit-transform: translateX(-40%) translateY(6%);
+  //   transform: translateX(-40%) translateY(6%);
+  //   max-width: 1800px;
+  //   text-align: center;
+}
+
+/* ---------------- Separation line ------------------ */
+
+.line {
+	height: 1px;
+	opacity: 1;
+	background-color: var(--color-gold);
+	position: absolute;
+	color: #FFF;
+	z-index: 100000;
+	margin: .67em 0;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 46%;
+    // max-width: 978px;
     text-align: center;
 	-webkit-font-smoothing: antialiased;
 }
@@ -187,7 +186,7 @@ body {
 .item:nth-child(2) .item__img-wrap {
 	width: 600px;
 	--aspect-ratio: 240/76;
-	--image: url(../../../../../assets/cambodia.jpg);
+	--image: url(../../assets/cambodia.jpg);
 	margin: .67em 0;
     top: 20%;
     left: 20%;
@@ -278,14 +277,14 @@ body {
 	width: calc(100vw - 2rem);
 	/* padding-left: 140px; */
 	--aspect-ratio: 400/135;
-	--image: url(../../../../../assets/angkor.jpg);
+	--image: url(../../assets/angkor.jpg);
 	width: 360px;
 }
 
 .item:nth-child(4) .item__img-wrap {
 	width: 600px;
 	--aspect-ratio: 1600/505;
-	--image: url(../../../../../assets/sea.jpg);
+	--image: url(../../assets/sea.jpg);
 	margin: .67em 0;
     top: 140%;
     left: 80%;
@@ -425,7 +424,7 @@ body {
 .item:nth-child(5) .item__img-wrap {
 	width: 600px;
 	--aspect-ratio: 240/76;
-	--image: url(../../../../../assets/sahara.jpg);
+	--image: url(../../assets/sahara.jpg);
 	margin: .67em 0;
     top: 20%;
     left: 40%;
@@ -526,7 +525,7 @@ body {
 .item:nth-child(6) .item__img-wrap {
 	width: calc(100vw - 2rem);
 	--aspect-ratio: 1600/100;
-	--image: url(../../../../../assets/sky-tree.png);
+	--image: url(../../assets/sky-tree.png);
 }
 
 /* ---------- Textes ----------- */
@@ -691,7 +690,7 @@ body {
 
 .item:nth-child(7) .item__img-wrap {
 	--aspect-ratio: 6000/1680;
-	--image: url(../../../../../assets/sky-tree-03.png);
+	--image: url(../../assets/sky-tree-03.png);
 	border: 10px solid var(--color-gold);
 	margin: .67em 0;
   	top: 140%;
@@ -848,7 +847,7 @@ body {
 .item:nth-child(8) .item__img-wrap {
 	width: 400px;
 	--aspect-ratio: 36/9;
-	--image: url(../../../../../assets/sky-tree-02.png);
+	--image: url(../../assets/sky-tree-02.png);
 	margin: .67em 0;
     top: 140%;
     left: 80%;
@@ -1032,7 +1031,7 @@ body {
 .item:nth-child(9) .item__img-wrap {
 	width: 300px;
 	--aspect-ratio: 36/9;
-	--image: url(../../../../../assets/sky-tree-04.png);
+	--image: url(../../assets/sky-tree-04.png);
 	margin: .67em 0;
     top: 140%;
     left: 80%;
@@ -1837,7 +1836,7 @@ body {
 
 	/* ---------- Images ----------- */
 
-	.item:first-child .item__img-wrap {
+  .item:first-child .item__img-wrap {
 		width: calc(100vw - 2rem);
 		--aspect-ratio: 1500/1544;
 	}
