@@ -23,16 +23,11 @@ import * as fr from "@angular/common/locales/fr";
 import { Routes, RouterModule } from '@angular/router';
 
 /* -------------------------------------------------------- */
-/* --------------------- ARCHITECTURE --------------------- */
+/* --------------------- ECRAN D'ENTRÉE ------------------- */
 /* -------------------------------------------------------- */
-
-/* ---- Main ----- */
 
 import { MainComponent } from './main/main.component';
 
-/* ---- Main Navigation ----- */
-
-import { Part01Component } from './part01/part01.component';
 
 const appRoutes: Routes = [
 
@@ -45,8 +40,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    Part01Component
+    MainComponent
   ],
   imports: [
     BrowserModule,

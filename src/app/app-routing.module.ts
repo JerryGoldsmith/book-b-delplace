@@ -5,8 +5,6 @@ import { MainComponent } from './main/main.component';
 
 /* ---- Main Navigation ----- */
 
-import { Part01Component } from './part01/part01.component';
-
 const routes: Routes = [
   { 
     path: '', component: MainComponent
@@ -16,7 +14,16 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
-  { path: 'part01', component: Part01Component }
+  {
+    path: 'partA',
+    loadChildren: () => import('src/app/mod/public/a/a.module')
+    .then(mod => mod.AModule)
+  },
+  {
+    path: 'partB',
+    loadChildren: () => import('src/app/mod/public/b/b.module')
+    .then(mod => mod.BModule)
+  }
 ];
 
 @NgModule({

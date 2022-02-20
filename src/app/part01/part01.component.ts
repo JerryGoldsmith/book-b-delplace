@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { Book } from '../models/book.model';
-// import { BooksService } from '../services/books.service';
 import { Router } from '@angular/router';
-// import * as firebase from 'firebase';
-// import firebase from "firebase/app";
-// import "firebase/database";
-// import { AuthService } from '../services/auth.service';
-// import { OrdersService } from "../services/orders.service";
 
 @Component({
   selector: 'app-part01',
@@ -18,26 +11,11 @@ import { Router } from '@angular/router';
 })
 export class Part01Component implements OnInit {
 
-//   isAuth: boolean;
-
   constructor(
-    // private booksService: BooksService,
-    // public ordersService: OrdersService,
-    // private authService: AuthService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-
-    // firebase.auth().onAuthStateChanged(
-    //   (user) => {
-    //     if(user) {
-    //       this.isAuth = true;
-    //     } else {
-    //       this.isAuth = false;
-    //     }
-    //   }
-    // );
 
     /* refresh page */
 
@@ -339,25 +317,5 @@ export class Part01Component implements OnInit {
         });
     }
   }
-
-//   onNewBook() {
-//     this.router.navigate(['/books', 'new']);
-//   }
-
-//   onDeleteBook(book: Book) {
-//     this.booksService.removeBook(book);
-//   }
-
-//   onViewBook(id: number) {
-//     this.router.navigate(['/books', 'view', id]);
-//   }
-
-//   onDestroy() {
-//     this.booksSubscription.unsubscribe();
-//   }
-
-//   onSignOut() {
-//     this.authService.signOutUser();
-//   }
 
 }
