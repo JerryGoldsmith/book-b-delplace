@@ -1,0 +1,115 @@
+body {
+  padding-top: 60px;
+}
+
+h2 {
+  text-align: left;
+  color: var(--color-fluo);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}
+
+#return-fluo {
+  color: var(--color-fluo);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-right: 60px;
+}
+
+#vertical-lign {
+  color: gray;
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-right: 60px;
+}
+
+#return-fluo:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#return-gold {
+  color: var(--color-gold);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}
+
+#return-gold:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#email,
+#password,
+#confirmPassword,
+#name,
+#firstname,
+#birthDate,
+#phoneNumber,
+#smartphoneNumber,
+#address,
+#zipCode,
+#city,
+#firm {
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+}
+
+#acceptTerms {
+  font-size: 14px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  color: gray;
+}
+
+.champs-obligatoires {
+  padding-top: 20px;
+}
+
+#country, #genre {
+  font-size: 18px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  color: gray;
+}
+
+button {
+  font-size: 16px;
+	font-family: paralucent, sans-serif;
+  background-color: var(--color-fluo);
+  border: solid 1px gray;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+button:hover {
+  background-color: var(--color-gold);
+}
+
+#all-form {
+  border: solid 1px var(--color-gold);
+  padding: 20px;
+}
+
+.mention {
+  font-size: 0.8em;
+  color: gray;
+}
+
+:after, :before {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:after, :before {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

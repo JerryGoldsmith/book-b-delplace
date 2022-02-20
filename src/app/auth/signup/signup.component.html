@@ -1,0 +1,380 @@
+<html>
+<body>
+
+  <!-- <app-signuplight></app-signuplight> -->
+
+  <div class="row" id="all-form">
+
+      <h2>Je suis un nouveau client</h2>
+
+    <!-- form -->
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+      <!-- <router-outlet  (activate)="onActivate($event)"></router-outlet> -->
+
+      <!-- part left -->
+      <div class="col-xs-6">
+        <!-- email -->
+        <div class="form-group">
+          <!-- <label for="email">Email</label> -->
+          <input type="text" id="email" formControlName="email"
+          placeholder="Email *" class="form-control">
+        </div>
+
+        <!-- mot de passe -->
+        <div class="form-group">
+          <!-- <label for="password">Mot de passe (8 caractères minimum)</label> -->
+
+          <input type="password" id="password" formControlName="password"
+          placeholder="Mot de passe (10 caractères minimum) *" class="form-control">
+        </div>
+
+        <!-- confirmation du mot de passe -->
+        <div class="form-group">
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirmer le mot de passe *"
+          class="form-control">
+        </div>
+
+        <!-- select genre -->
+        <div class="form-group">
+          <select class="form-control" formControlName="genre" id="genre">
+            <option value disabled class="ng-binding">Civilités *</option>
+            <option label="M" value="string:M" selected="selected">M</option>
+            <option label="Mme" value="string:Mme">Mme</option>
+            <option label="Melle" value="string:Melle">Melle</option>
+          </select>
+        </div>
+
+        <!-- nom -->
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Nom *" formControlName="lastname"
+            class="form-control">
+        </div>
+
+        <!-- prénom -->
+        <div class="form-group">
+          <input type="text" id="firstname" placeholder="Prénom *" formControlName="firstname"
+            class="form-control">
+        </div>
+
+        <!-- birthDate -->
+        <div class="form-group">
+          <input type="text" id="birthDate" placeholder="Date de naissance (JJ/MM/AAAA)" formControlName="birthDate"
+            class="form-control">
+        </div>
+
+        <!-- phoneNumber -->
+        <div class="form-group">
+          <input type="text" id="phoneNumber" placeholder="Numéro de téléphone fixe" formControlName="phoneNumber"
+            class="form-control">
+        </div>
+
+        <!-- smartphoneNumber -->
+        <div class="form-group">
+          <input type="text" id="smartphoneNumber" placeholder="Numéro de téléphone portable"
+            formControlName="smartphoneNumber" class="form-control">
+        </div>
+      </div>
+
+      <!-- part right -->
+      <div class="col-xs-6">
+        <!-- adresse -->
+        <div class="form-group">
+          <input type="text" id="address" placeholder="Adresse *" formControlName="address"
+            class="form-control">
+        </div>
+
+        <!-- code postal -->
+        <div class="form-group">
+          <input type="text" id="zipCode" placeholder="Code postal *" formControlName="zipCode"
+            class="form-control">
+        </div>
+
+        <!-- ville -->
+        <div class="form-group">
+          <input type="text" id="city" placeholder="Ville *" formControlName="city"
+            class="form-control">
+        </div>
+
+        <!-- société -->
+        <div class="form-group">
+          <input type="text" id="firm" placeholder="Société" formControlName="firm"
+            class="form-control">
+        </div>
+
+        <!-- select country -->
+        <div class="form-group">
+          <select class="form-control" formControlName="country" id="country">
+            <option value="" disabled="" class="ng-binding">Pays *</option>
+            <option label="AFRIQUE DU SUD" value="object:2944">AFRIQUE DU SUD</option>
+            <option label="ALBANIE" value="object:2945">ALBANIE</option>
+            <option label="ALGERIE" value="object:2946">ALGERIE</option>
+            <option label="ALLEMAGNE" value="object:2947">ALLEMAGNE</option>
+            <option label="ANDORRE" value="object:2948">ANDORRE</option>
+            <option label="ANGOLA" value="object:2949">ANGOLA</option>
+            <option label="ANTIGUA-ET-BARBUDA" value="object:2950">ANTIGUA-ET-BARBUDA</option>
+            <option label="ANTILLES NEERLANDAISES" value="object:2951">ANTILLES NEERLANDAISES</option>
+            <option label="ARABIE SAOUDITE" value="object:2952">ARABIE SAOUDITE</option>
+            <option label="ARGENTINE" value="object:2953">ARGENTINE</option>
+            <option label="ARMENIE" value="object:2954">ARMENIE</option>
+            <option label="AUSTRALIE" value="object:2955">AUSTRALIE</option>
+            <option label="AUTRICHE" value="object:2956">AUTRICHE</option>
+            <option label="AZERBAIDJAN" value="object:2957">AZERBAIDJAN</option>
+            <option label="BAHAMAS" value="object:2958">BAHAMAS</option>
+            <option label="BAHREIN" value="object:2959">BAHREIN</option>
+            <option label="BANGLADESH" value="object:2960">BANGLADESH</option>
+            <option label="BARBADE" value="object:2961">BARBADE</option>
+            <option label="BELGIQUE" value="object:2962">BELGIQUE</option>
+            <option label="BELIZE" value="object:2963">BELIZE</option>
+            <option label="BENIN" value="object:2964">BENIN</option>
+            <option label="BHOUTAN" value="object:2965">BHOUTAN</option>
+            <option label="BIELORUSSIE" value="object:2966">BIELORUSSIE</option>
+            <option label="BIRMANIE" value="object:2967">BIRMANIE</option>
+            <option label="BOLIVIE" value="object:2968">BOLIVIE</option>
+            <option label="BOSNIE-HERZEGOVINE" value="object:2969">BOSNIE-HERZEGOVINE</option>
+            <option label="BOTSWANA" value="object:2970">BOTSWANA</option>
+            <option label="BRESIL" value="object:2971">BRESIL</option>
+            <option label="BRUNEI" value="object:2972">BRUNEI</option>
+            <option label="BULGARIE" value="object:2973">BULGARIE</option>
+            <option label="BURKINA" value="object:2974">BURKINA</option>
+            <option label="BURUNDI" value="object:2975">BURUNDI</option>
+            <option label="CAMBODGE" value="object:2976">CAMBODGE</option>
+            <option label="CAMEROUN" value="object:2977">CAMEROUN</option>
+            <option label="CANADA" value="object:2978">CANADA</option>
+            <option label="CAP-VERT" value="object:2979">CAP-VERT</option>
+            <option label="CENTRAFRICAINE (REPUBLIQUE)" value="object:2980">CENTRAFRICAINE (REPUBLIQUE)</option>
+            <option label="CHILI" value="object:2981">CHILI</option>
+            <option label="CHINE" value="object:2982">CHINE</option>
+            <option label="CHYPRE" value="object:2983">CHYPRE</option>
+            <option label="COLOMBIE" value="object:2984">COLOMBIE</option>
+            <option label="COMORES" value="object:2985">COMORES</option>
+            <option label="CONGO" value="object:2986">CONGO</option>
+            <option label="CONGO (REPUBLIQUE DEMOCRATIQUE)" value="object:2987">CONGO (REPUBLIQUE DEMOCRATIQUE)</option>
+            <option label="COREE (REPUBLIQUE DE)" value="object:2988">COREE (REPUBLIQUE DE)</option>
+            <option label="COREE DU NORD" value="object:2989">COREE DU NORD</option>
+            <option label="COSTA RICA" value="object:2990">COSTA RICA</option>
+            <option label="COTE D'IVOIRE" value="object:2991">COTE D'IVOIRE</option>
+            <option label="CROATIE" value="object:2992">CROATIE</option>
+            <option label="CUBA" value="object:2993">CUBA</option>
+            <option label="DANEMARK" value="object:2994">DANEMARK</option>
+            <option label="DJIBOUTI" value="object:2995">DJIBOUTI</option>
+            <option label="DOMINICAINE (REPUBLIQUE)" value="object:2996">DOMINICAINE (REPUBLIQUE)</option>
+            <option label="DOMINIQUE" value="object:2997">DOMINIQUE</option>
+            <option label="EGYPTE" value="object:2998">EGYPTE</option>
+            <option label="EL SALVADOR" value="object:2999">EL SALVADOR</option>
+            <option label="EMIRATS ARABES UNIS" value="object:3000">EMIRATS ARABES UNIS</option>
+            <option label="EQUATEUR" value="object:3001">EQUATEUR</option>
+            <option label="ERYTHREE" value="object:3002">ERYTHREE</option>
+            <option label="ESPAGNE" value="object:3003">ESPAGNE</option>
+            <option label="ESTONIE" value="object:3004">ESTONIE</option>
+            <option label="ETATS-UNIS" value="object:3005">ETATS-UNIS</option>
+            <option label="ETHIOPIE" value="object:3006">ETHIOPIE</option>
+            <option label="FIDJI" value="object:3007">FIDJI</option>
+            <option label="FINLANDE" value="object:3008">FINLANDE</option>
+            <option label="FRANCE" value="object:3009" selected="selected">FRANCE</option>
+            <option label="GABON" value="object:3010">GABON</option>
+            <option label="GAMBIE" value="object:3011">GAMBIE</option>
+            <option label="GEORGIE" value="object:3012">GEORGIE</option>
+            <option label="GHANA" value="object:3013">GHANA</option>
+            <option label="GIBRALTAR" value="object:3014">GIBRALTAR</option>
+            <option label="GRECE" value="object:3015">GRECE</option>
+            <option label="GRENADE" value="object:3016">GRENADE</option>
+            <option label="GROENLAND" value="object:3017">GROENLAND</option>
+            <option label="GUATEMALA" value="object:3018">GUATEMALA</option>
+            <option label="GUINEE" value="object:3019">GUINEE</option>
+            <option label="GUINEE EQUATORIALE" value="object:3020">GUINEE EQUATORIALE</option>
+            <option label="GUINEE-BISSAU" value="object:3021">GUINEE-BISSAU</option>
+            <option label="GUYANA" value="object:3022">GUYANA</option>
+            <option label="HAITI" value="object:3023">HAITI</option>
+            <option label="HONDURAS" value="object:3024">HONDURAS</option>
+            <option label="HONG-KONG" value="object:3025">HONG-KONG</option>
+            <option label="HONGRIE" value="object:3026">HONGRIE</option>
+            <option label="INDE" value="object:3027">INDE</option>
+            <option label="INDONESIE" value="object:3028">INDONESIE</option>
+            <option label="IRAN" value="object:3029">IRAN</option>
+            <option label="IRAQ" value="object:3030">IRAQ</option>
+            <option label="IRLANDE, ou EIRE" value="object:3031">IRLANDE, ou EIRE</option>
+            <option label="ISLANDE" value="object:3032">ISLANDE</option>
+            <option label="ISRAEL" value="object:3033">ISRAEL</option>
+            <option label="ITALIE" value="object:3034">ITALIE</option>
+            <option label="JAMAIQUE" value="object:3035">JAMAIQUE</option>
+            <option label="JAPON" value="object:3036">JAPON</option>
+            <option label="JORDANIE" value="object:3037">JORDANIE</option>
+            <option label="KAZAKHSTAN" value="object:3038">KAZAKHSTAN</option>
+            <option label="KENYA" value="object:3039">KENYA</option>
+            <option label="KIRGHIZISTAN" value="object:3040">KIRGHIZISTAN</option>
+            <option label="KIRIBATI" value="object:3041">KIRIBATI</option>
+            <option label="KOWEIT" value="object:3042">KOWEIT</option>
+            <option label="LAOS" value="object:3043">LAOS</option>
+            <option label="LESOTHO" value="object:3044">LESOTHO</option>
+            <option label="LETTONIE" value="object:3045">LETTONIE</option>
+            <option label="LIBAN" value="object:3046">LIBAN</option>
+            <option label="LIBERIA" value="object:3047">LIBERIA</option>
+            <option label="LIBYE" value="object:3048">LIBYE</option>
+            <option label="LIECHTENSTEIN" value="object:3049">LIECHTENSTEIN</option>
+            <option label="LITUANIE" value="object:3050">LITUANIE</option>
+            <option label="LUXEMBOURG" value="object:3051">LUXEMBOURG</option>
+            <option label="MACAO" value="object:3052">MACAO</option>
+            <option label="MACEDOINE" value="object:3053">MACEDOINE</option>
+            <option label="MADAGASCAR" value="object:3054">MADAGASCAR</option>
+            <option label="MALAISIE" value="object:3055">MALAISIE</option>
+            <option label="MALAWI" value="object:3056">MALAWI</option>
+            <option label="MALDIVES" value="object:3057">MALDIVES</option>
+            <option label="MALI" value="object:3058">MALI</option>
+            <option label="MALOUINES, OU FALKLAND (ILES)" value="object:3059">MALOUINES, OU FALKLAND (ILES)</option>
+            <option label="MALTE" value="object:3060">MALTE</option>
+            <option label="MAROC" value="object:3061">MAROC</option>
+            <option label="MARSHALL (ILES)" value="object:3062">MARSHALL (ILES)</option>
+            <option label="MAURICE" value="object:3063">MAURICE</option>
+            <option label="MAURITANIE" value="object:3064">MAURITANIE</option>
+            <option label="MEXIQUE" value="object:3065">MEXIQUE</option>
+            <option label="MOLDAVIE" value="object:3066">MOLDAVIE</option>
+            <option label="MONGOLIE" value="object:3067">MONGOLIE</option>
+            <option label="MOZAMBIQUE" value="object:3068">MOZAMBIQUE</option>
+            <option label="NAMIBIE" value="object:3069">NAMIBIE</option>
+            <option label="NAURU" value="object:3070">NAURU</option>
+            <option label="NEPAL" value="object:3071">NEPAL</option>
+            <option label="NICARAGUA" value="object:3072">NICARAGUA</option>
+            <option label="NIGER" value="object:3073">NIGER</option>
+            <option label="NIGERIA" value="object:3074">NIGERIA</option>
+            <option label="NORVEGE" value="object:3075">NORVEGE</option>
+            <option label="NOUVELLE-ZELANDE" value="object:3076">NOUVELLE-ZELANDE</option>
+            <option label="OCEAN INDIEN" value="object:3077">OCEAN INDIEN</option>
+            <option label="OMAN" value="object:3078">OMAN</option>
+            <option label="OUGANDA" value="object:3079">OUGANDA</option>
+            <option label="OUZBEKISTAN" value="object:3080">OUZBEKISTAN</option>
+            <option label="PAKISTAN" value="object:3081">PAKISTAN</option>
+            <option label="PALAOS (ILES)" value="object:3082">PALAOS (ILES)</option>
+            <option label="PALESTINE (Etat de)" value="object:3083">PALESTINE (Etat de)</option>
+            <option label="PANAMA" value="object:3084">PANAMA</option>
+            <option label="PAPOUASIE-NOUVELLE-GUINEE" value="object:3085">PAPOUASIE-NOUVELLE-GUINEE</option>
+            <option label="PARAGUAY" value="object:3086">PARAGUAY</option>
+            <option label="PAYS-BAS" value="object:3087">PAYS-BAS</option>
+            <option label="PEROU" value="object:3088">PEROU</option>
+            <option label="PHILIPPINES" value="object:3089">PHILIPPINES</option>
+            <option label="PITCAIRN (ILE)" value="object:3090">PITCAIRN (ILE)</option>
+            <option label="POLOGNE" value="object:3091">POLOGNE</option>
+            <option label="PORTO RICO" value="object:3092">PORTO RICO</option>
+            <option label="PORTUGAL" value="object:3093">PORTUGAL</option>
+            <option label="QATAR" value="object:3094">QATAR</option>
+            <option label="ROUMANIE" value="object:3095">ROUMANIE</option>
+            <option label="ROYAUME-UNI" value="object:3096">ROYAUME-UNI</option>
+            <option label="RUSSIE" value="object:3097">RUSSIE</option>
+            <option label="RWANDA" value="object:3098">RWANDA</option>
+            <option label="SAINT-CHRISTOPHE-ET-NIEVES" value="object:3099">SAINT-CHRISTOPHE-ET-NIEVES</option>
+            <option label="SAINT-MARIN" value="object:3100">SAINT-MARIN</option>
+            <option label="SAINT-VINCENT-ET-LES GRENADINES" value="object:3101">SAINT-VINCENT-ET-LES GRENADINES</option>
+            <option label="SAINTE HELENE" value="object:3102">SAINTE HELENE</option>
+            <option label="SAINTE-LUCIE" value="object:3103">SAINTE-LUCIE</option>
+            <option label="SALOMON (ILES)" value="object:3104">SALOMON (ILES)</option>
+            <option label="SAMOA AMERICAINES" value="object:3105">SAMOA AMERICAINES</option>
+            <option label="SAMOA OCCIDENTALES" value="object:3106">SAMOA OCCIDENTALES</option>
+            <option label="SAO TOME-ET-PRINCIPE" value="object:3107">SAO TOME-ET-PRINCIPE</option>
+            <option label="SENEGAL" value="object:3108">SENEGAL</option>
+            <option label="SERBIE" value="object:3109">SERBIE</option>
+            <option label="SEYCHELLES" value="object:3110">SEYCHELLES</option>
+            <option label="SIERRA LEONE" value="object:3111">SIERRA LEONE</option>
+            <option label="SINGAPOUR" value="object:3112">SINGAPOUR</option>
+            <option label="SLOVAQUIE" value="object:3113">SLOVAQUIE</option>
+            <option label="SLOVENIE" value="object:3114">SLOVENIE</option>
+            <option label="SOMALIE" value="object:3115">SOMALIE</option>
+            <option label="SOUDAN" value="object:3116">SOUDAN</option>
+            <option label="SRI LANKA" value="object:3117">SRI LANKA</option>
+            <option label="SUEDE" value="object:3118">SUEDE</option>
+            <option label="SUISSE" value="object:3119">SUISSE</option>
+            <option label="SURINAME" value="object:3120">SURINAME</option>
+            <option label="SWAZILAND" value="object:3121">SWAZILAND</option>
+            <option label="SYRIE" value="object:3122">SYRIE</option>
+            <option label="TADJIKISTAN" value="object:3123">TADJIKISTAN</option>
+            <option label="TAIWAN" value="object:3124">TAIWAN</option>
+            <option label="TANZANIE" value="object:3125">TANZANIE</option>
+            <option label="TCHAD" value="object:3126">TCHAD</option>
+            <option label="TCHEQUE (REPUBLIQUE)" value="object:3127">TCHEQUE (REPUBLIQUE)</option>
+            <option label="THAILANDE" value="object:3128">THAILANDE</option>
+            <option label="TOGO" value="object:3129">TOGO</option>
+            <option label="TONGA" value="object:3130">TONGA</option>
+            <option label="TRINITE-ET-TOBAGO" value="object:3131">TRINITE-ET-TOBAGO</option>
+            <option label="TUNISIE" value="object:3132">TUNISIE</option>
+            <option label="TURKMENISTAN" value="object:3133">TURKMENISTAN</option>
+            <option label="TURQUIE" value="object:3134">TURQUIE</option>
+            <option label="TUVALU" value="object:3135">TUVALU</option>
+            <option label="UKRAINE" value="object:3136">UKRAINE</option>
+            <option label="URUGUAY" value="object:3137">URUGUAY</option>
+            <option label="VANUATU" value="object:3138">VANUATU</option>
+            <option label="VATICAN, ou SAINT-SIEGE" value="object:3139">VATICAN, ou SAINT-SIEGE</option>
+            <option label="VENEZUELA" value="object:3140">VENEZUELA</option>
+            <option label="VIERGES BRITANNIQUES (ILES)" value="object:3141">VIERGES BRITANNIQUES (ILES)</option>
+            <option label="VIET NAM" value="object:3142">VIET NAM</option>
+            <option label="YEMEN" value="object:3143">YEMEN</option>
+            <option label="ZAMBIE" value="object:3144">ZAMBIE</option>
+            <option label="ZIMBABWE" value="object:3145">ZIMBABWE</option>
+          </select>
+        </div>
+
+
+        <!-- Accept Terms & Conditions -->
+        <!-- <div class="form-group form-check">
+          <input type="checkbox" id="check"> -->
+          <!-- <input type="checkbox" id="check" formControlName="acceptTerms" class="form-check-input"> -->
+          <!--dans input pour que le bouton soit actif : [checked]="item.check == 'true'" -->
+          <!-- <label for="acceptTerms" id="check" class="form-check-label" id="acceptTerms">J'ai lu et j'accepte les conditions générales du site</label> -->
+          <!-- <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">J'ai lu et j'accepte les conditions générales du site</div> -->
+        <!-- </div> -->
+
+        <!-- captcha -->
+
+        <!-- <div>
+          <div>
+            <iframe src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LeGLxoUAAAAABHBmFB7qmcepQi-mqu674NOEmLb&amp;co=aHR0cHM6Ly9ib3V0aXF1ZS5yb2xsaW5nc3RvbmUuZnI6NDQz&amp;hl=fr&amp;v=-wV2EAWEOTlEtZh4vNQtn3H1&amp;size=normal&amp;cb=nyns0diwd3ob"
+              width="304" height="78" role="presentation" name="a-amecao5s2oed" frameborder="0"
+              scrolling="no" formControlName="captcha"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox">
+              #captcha
+            </iframe>
+          </div>
+          <div>
+            <textarea id="g-recaptcha-response-3" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+          </div>
+        </div> -->
+
+        <!-- submit & reset buttons -->
+        <button class="btn btn-primary" type="submit" [disabled]="signUpForm.invalid">Inscription</button>
+        <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
+        <p class="champs-obligatoires">* Champs obligatoires</p>
+      </div>
+    </form>
+
+    <!-- error -->
+    <p class="mention">{{ errorMessage }}</p>
+    <!-- <app-popover-image></app-popover-image> -->
+
+  </div>
+
+  <div class="between">
+    <p>ou alors, si cela est trop long à remplir :</p>
+  </div>
+
+  <div routerLinkActive="active" *ngIf="!isAuth" class="row" id="all-form">
+    <a routerLink="/auth/signuplight">Afficher cette démo en version light</a>
+  </div>
+
+  <!-- <div class="between">
+    <p>ou encore, si cela est toujours trop long :</p>
+  </div>
+
+  <app-header-auth-fb></app-header-auth-fb> -->
+
+  <div class="between">
+    <div routerLinkActive="active" *ngIf="!isAuth">
+      <p>ou sinon :
+        <a routerLink="/part01" class="space-bottom" id="return-gold">Retour à l'accueil de la rubrique</a>
+        <span>ou encore :</span>
+        <a routerLink="/main" class="space-bottom" id="return-gold">Retour à l'accueil général</a>
+      </p>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

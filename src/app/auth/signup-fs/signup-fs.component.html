@@ -1,0 +1,54 @@
+<html>
+<body>
+  <div class="row" id="all-form">
+
+    <h2>Je suis un nouveau client (version light)</h2>
+
+    <!-- form -->
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+      <!-- <router-outlet  (activate)="onActivate($event)"></router-outlet> -->
+
+      <!-- part left -->
+      <div class="col-xs-6">
+        <!-- email -->
+        <div class="form-group">
+          <!-- <label for="email">Email</label> -->
+          <input type="text" id="email" formControlName="email"
+          placeholder="Email *" class="form-control">
+        </div>
+
+        <!-- mot de passe -->
+        <div class="form-group">
+          <!-- <label for="password">Mot de passe (8 caractères minimum)</label> -->
+
+          <input type="password" id="password" formControlName="password"
+          placeholder="Mot de passe (10 caractères minimum) *" class="form-control">
+        </div>
+
+        <!-- confirmation du mot de passe -->
+        <div class="form-group">
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirmer le mot de passe *"
+          class="form-control">
+        </div>
+
+        <!-- submit & reset buttons -->
+        <button class="btn btn-primary" type="submit" [disabled]="signUpForm.invalid">Inscription</button>
+        <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
+        <p class="champs-obligatoires">* Champs obligatoires</p>
+      </div>
+    </form>
+
+    <!-- error -->
+    <p class="mention">{{ errorMessage }}</p>
+
+  </div>
+
+  <div routerLinkActive="active" *ngIf="!isAuth" class="row">
+    <a routerLink="/auth/signup" id="return-fluo">Retour aux formulaires</a>
+    <span id="vertical-lign">|</span>
+    <a routerLink="/main" id="return-gold">Retour à l'accueil</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+body {
+  padding-top: 60px;
+  max-height: 300px;
+}
+
+h2 {
+  text-align: left;
+  color: var(--color-fluo);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}
+
+#email, #password {
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+}
+
+button {
+  font-size: 16px;
+	font-family: paralucent, sans-serif;
+  background-color: var(--color-fluo);
+  border: solid 1px gray;
+}
+
+button:hover {
+  background-color: var(--color-gold);
+}
+
+#all-form {
+  border: solid 1px gray;
+  padding: 20px;
+}
+
+#return-fluo {
+  color: var(--color-fluo);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-right: 60px;
+}
+
+#vertical-lign {
+  color: gray;
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-right: 60px;
+}
+
+#return-fluo:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#return-gold {
+  color: var(--color-gold);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}
+
+#return-gold:hover {
+  color: white;
+  text-decoration: none;
+}

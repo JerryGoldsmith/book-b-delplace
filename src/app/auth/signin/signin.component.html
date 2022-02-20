@@ -1,0 +1,51 @@
+<html>
+<body>
+  <div class="row" id="all-form">
+      <h2>Authentification</h2>
+
+    <!-- form -->
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <!-- <router-outlet  (activate)="onActivate($event)"></router-outlet> -->
+
+      <!-- part left -->
+      <div class="col-xs-6">
+        <!-- email -->
+        <div class="form-group">
+          <!-- <label for="email">Email</label> -->
+          <input type="text" id="email" formControlName="email"
+          placeholder="Email *" class="form-control">
+        </div>
+
+        <!-- mot de passe -->
+        <div class="form-group">
+          <!-- <label for="password">Mot de passe (8 caractères minimum)</label> -->
+          <input type="password" id="password" formControlName="password"
+          placeholder="Mot de passe (8 caractères minimum) *" class="form-control">
+        </div>
+
+        <p>* Champs obligatoires</p>
+
+        <div *ngIf="loggedIn===true">
+          <a routerLink="/orders">Afficher les livres</a>
+        </div>
+
+        <!-- submit & reset buttons -->
+        <button class="btn btn-primary" type="submit" [disabled]="signInForm.invalid">Connection</button>
+      </div>
+
+
+    </form>
+
+    <!-- error -->
+    <p class="mention">{{ errorMessage }}</p>
+
+  </div>
+
+  <div routerLinkActive="active" *ngIf="!isAuth" class="row" id="all-form">
+    <a routerLink="/auth/signup" id="return-fluo">Pas encore authentifié ?</a>
+    <span id="vertical-lign">|</span>
+    <a routerLink="/main" id="return-gold">Retour à l'accueil</a>
+  </div>
+
+</body>
+</html>

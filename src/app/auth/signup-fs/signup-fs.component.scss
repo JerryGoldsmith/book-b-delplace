@@ -1,0 +1,125 @@
+body {
+  padding-top: 60px;
+}
+
+h2 {
+  color: var(--color-fluo);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: left;
+  padding-left: 18px;
+}
+
+#email,
+#password,
+#confirmPassword,
+#name,
+#firstname,
+#birthDate,
+#phoneNumber,
+#smartphoneNumber,
+#address,
+#zipCode,
+#city,
+#firm {
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+}
+
+#acceptTerms {
+  font-size: 14px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  color: gray;
+}
+
+.champs-obligatoires {
+  padding-top: 20px;
+}
+
+#country, #genre {
+  font-size: 18px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  color: gray;
+}
+
+button {
+  font-size: 16px;
+	font-family: paralucent, sans-serif;
+  background-color: var(--color-gold);
+  border: solid 1px gray;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--color-fluo);
+}
+
+#all-form {
+  border: solid 1px var(--color-gold);
+  padding: 20px;
+  text-align: left;
+}
+
+.space-bottom {
+  padding-bottom: 40px;
+}
+
+a {
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-fluo);
+  padding-left: 18px;
+}
+
+a:hover {
+  color: white;
+}
+
+p, span {
+  padding-left: 18px;
+}
+
+#return-gold {
+  color: var(--color-gold);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}
+
+#return-gold:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.between {
+  font-size: 22px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  color: gray;
+  text-align: left;
+}
+
+.mention {
+  font-size: 0.8em;
+  color: gray;
+}
+
+:after, :before {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:after, :before {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
