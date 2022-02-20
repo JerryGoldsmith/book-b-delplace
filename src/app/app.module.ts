@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from "./shared/shared.module";
 // SharedModule needs CommonModule
 import { CommonModule, registerLocaleData } from "@angular/common";
+// pipe for date
 import * as fr from "@angular/common/locales/fr";
 
 /* -------------------------------------------------- */

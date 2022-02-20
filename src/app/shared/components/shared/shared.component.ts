@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SharedComponent implements OnInit {
 
-  // @Input() name: string;
-
   constructor() { }
 
   ngOnInit(): void {
