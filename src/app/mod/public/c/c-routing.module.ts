@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CComponent } from './c/c.component';
+import { Part03Component } from 'src/app/part03/part03.component';
 
 const routes: Routes = [
-  { path: '', component: CComponent }
+  { path: '', component: Part03Component }
 ];
 
 @NgModule({

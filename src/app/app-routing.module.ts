@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent } from './main/main.component';
 
-/* ---- Main Navigation ----- */
-
 const routes: Routes = [
   { 
     path: '', component: MainComponent
@@ -23,6 +21,11 @@ const routes: Routes = [
     path: 'partB',
     loadChildren: () => import('src/app/mod/public/b/b.module')
     .then(mod => mod.BModule)
+  },
+  {
+    path: 'partC',
+    loadChildren: () => import('src/app/mod/public/c/c.module')
+    .then(mod => mod.CModule)
   }
 ];
 

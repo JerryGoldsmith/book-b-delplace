@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CRoutingModule } from './c-routing.module';
-import { CComponent } from './c/c.component';
+import { Part03Component } from 'src/app/part03/part03.component';
 
 
 @NgModule({
   declarations: [
-    CComponent
+    Part03Component
   ],
   imports: [
     CommonModule,
     CRoutingModule
   ],
   exports: [
-    CComponent
+    Part03Component
   ]
 })
 export class CModule { }
