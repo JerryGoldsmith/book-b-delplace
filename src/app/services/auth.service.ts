@@ -34,23 +34,9 @@ export class AuthService {
 
   createNewUserPushInFirebase(newUser: User) {
     this.users.push(newUser);
-    // this.saveUsersToServer();
     this.saveUsers();
     this.emitUsers();
   }
-
-  // saveUsersToServer() {
-  //   this.httpClient
-  //     .post('https://portfolio-bd.firebaseio.com/users.json', this.users)
-  //     .subscribe(
-  //       () => {
-  //         console.log('Enregistrement terminé !');
-  //       },
-  //       (error) => {
-  //         console.log('Erreur ! : ' + error);
-  //       }
-  //     );
-  // }
 
   saveUsers() {
     firebase.database().ref('/users').push(this.users);
@@ -71,18 +57,6 @@ export class AuthService {
         );
       }
     );
-    // return new Promise(
-    //   (resolve, reject) => {
-    //     firebase.database().ref('/users').set(this.users).then(
-    //       () => {
-    //         resolve();
-    //       },
-    //       (error) => {
-    //         reject(error);
-    //       }
-    //     );
-    //   }
-    // );
   }
 
   signInUser(email: string, password: string) { // asynchrone

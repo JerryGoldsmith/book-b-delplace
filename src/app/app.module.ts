@@ -32,8 +32,26 @@ import { MainComponent } from './main/main.component';
 /* --------------------- SERVICES ------------------- */
 /* -------------------------------------------------- */
 
+/* Auth */
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { AuthentificationService } from "./services/authentification.service";
+
+    /* Acces Firebase */
+    import { environment } from '../environments/environment';
+    import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
+
+    // import { initializeApp } from "firebase/app";
+    // import { getAnalytics } from "firebase/analytics";
+
+    /* AngularFire */
+
+    import { AngularFireModule } from "@angular/fire";
+    import { AngularFireAuthModule } from "@angular/fire/auth";
+    import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
+    import { AngularFirestoreModule } from "@angular/fire/firestore";
+    import { AngularFireStorageModule } from '@angular/fire/storage';
+    import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 const appRoutes: Routes = [
@@ -55,6 +73,15 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     CommonModule,
+    HttpClientModule,
+    // initializeApp,
+    // getAnalytics,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireAuthGuardModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     SharedModule
   ],
   exports: [
@@ -63,6 +90,7 @@ const appRoutes: Routes = [
   providers: [
     AuthService,
     AuthGuardService,
+    AuthentificationService,
     { provide: LOCALE_ID, useValue: 'fr-FR'}
   ],
   bootstrap: [AppComponent]
