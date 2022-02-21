@@ -53,6 +53,10 @@ import { AuthentificationService } from "./services/authentification.service";
     import { AngularFireStorageModule } from '@angular/fire/storage';
     import { AngularFireDatabaseModule } from '@angular/fire/database';
 
+    /* FormsModule */
+
+    import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 const appRoutes: Routes = [
 
@@ -82,6 +86,8 @@ const appRoutes: Routes = [
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   exports: [
