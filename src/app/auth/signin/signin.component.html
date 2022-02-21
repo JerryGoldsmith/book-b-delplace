@@ -4,7 +4,7 @@
       <h2>Authentification</h2>
 
     <!-- form -->
-    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <form *ngIf="signInForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
       <!-- <router-outlet  (activate)="onActivate($event)"></router-outlet> -->
 
       <!-- part left -->

@@ -57,6 +57,10 @@ import { AuthentificationService } from "./services/authentification.service";
 
     import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+    /* AngularResizedEvent */
+
+    import { AngularResizeEventModule } from 'angular-resize-event';
+
 
 const appRoutes: Routes = [
 
@@ -88,6 +92,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularResizeEventModule,
     SharedModule
   ],
   exports: [

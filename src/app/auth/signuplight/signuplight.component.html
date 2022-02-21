@@ -5,7 +5,7 @@
     <h2>Je suis un nouveau client (version light)</h2>
 
     <!-- form -->
-    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <form *ngIf="signUpForm" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
 
       <!-- <router-outlet  (activate)="onActivate($event)"></router-outlet> -->
 

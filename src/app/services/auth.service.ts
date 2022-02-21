@@ -45,7 +45,7 @@ export class AuthService {
   // centraliser les 3 méthodes qui seront nécessaires à l'authentification :
 
   createNewUser(email: string, password: string) { // asynchrone
-    return new Promise(
+    return new Promise<void>(
       (resolve, reject) => {
         firebase.auth().createUserWithEmailAndPassword(email, password).then(
           () => {
@@ -60,7 +60,7 @@ export class AuthService {
   }
 
   signInUser(email: string, password: string) { // asynchrone
-    return new Promise(
+    return new Promise<void>(
       (resolve, reject) => {
         firebase.auth().signInWithEmailAndPassword(email, password).then(
           () => {
