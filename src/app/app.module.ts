@@ -22,11 +22,18 @@ import * as fr from "@angular/common/locales/fr";
 
 import { Routes, RouterModule } from '@angular/router';
 
-/* -------------------------------------------------------- */
-/* --------------------- ECRAN D'ENTRÉE ------------------- */
-/* -------------------------------------------------------- */
+/* -------------------------------------------------- */
+/* ------------------ ECRAN D'ENTRÉE ---------------- */
+/* -------------------------------------------------- */
 
 import { MainComponent } from './main/main.component';
+
+/* -------------------------------------------------- */
+/* --------------------- SERVICES ------------------- */
+/* -------------------------------------------------- */
+
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const appRoutes: Routes = [
@@ -54,6 +61,8 @@ const appRoutes: Routes = [
     RouterModule
   ],
   providers: [
+    AuthService,
+    AuthGuardService,
     { provide: LOCALE_ID, useValue: 'fr-FR'}
   ],
   bootstrap: [AppComponent]
