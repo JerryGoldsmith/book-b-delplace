@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import firebase from "firebase/app";
+import "firebase/database";
+import { AuthService } from '../services/auth.service';
+
 @Component({
   selector: 'app-part01',
   templateUrl: './part01.component.html',
@@ -11,11 +15,24 @@ import { Router } from '@angular/router';
 })
 export class Part01Component implements OnInit {
 
+    isAuth: boolean;
+
   constructor(
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
+
+    firebase.auth().onAuthStateChanged(
+        (user) => {
+          if(user) {
+            this.isAuth = true;
+          } else {
+            this.isAuth = false;
+          }
+        }
+      );
 
     /* refresh page */
 
@@ -316,6 +333,10 @@ export class Part01Component implements OnInit {
             new SmoothScroll();
         });
     }
+  }
+
+  onSignOut() {
+    this.authService.signOutUser();
   }
 
 }
