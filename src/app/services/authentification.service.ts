@@ -8,12 +8,13 @@ import { Observable } from 'rxjs';
 
 export class AuthentificationService {
 
-  // userData: Observable<firebase.User>;
+  //@ts-ignore
+  userData: Observable<firebase.User>;
 
   constructor(
     private angularFireAuth: AngularFireAuth
   ) {
-    // this.userData = angularFireAuth.authState;
+    this.userData = angularFireAuth.authState;
   }
 
   /* Sign up */
