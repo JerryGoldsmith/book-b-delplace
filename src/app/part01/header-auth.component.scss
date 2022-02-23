@@ -63,14 +63,15 @@
 
 .link {
   color: var(--color-fluo);
-  font-size: 42px;
+  font-size: 38px;
   text-align: center;
+  text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
 
 .link:hover {
   color: var(--main-color);
-  font-size: 42px;
+  font-size: 38px;
   text-align: center;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   text-decoration: none;
