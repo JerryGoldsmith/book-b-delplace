@@ -3,6 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent } from './main/main.component';
 
+/* AngularFire */
+
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+/* Acces Firebase */
+import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
+
 /* -------------------------------------------- */
 /* ------------------ AUTH -------------------- */
 /* -------------------------------------------- */
@@ -50,7 +63,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), 
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireAuthGuardModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
+import { AngularFireAuth } from "@angular/fire/auth";
 // import { Subject } from 'rxjs/Subject';
 import { Subject } from 'rxjs';
 // import * as firebase from 'firebase';
@@ -17,7 +18,8 @@ export class AuthService {
   userSubject = new Subject<User[]>();
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private angularFireAuth: AngularFireAuth
   ) { }
 
   emitUsers() {

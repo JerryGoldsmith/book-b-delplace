@@ -79,11 +79,11 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: 'main' },
 
   // auth
-  { path: 'auth/signin', component: SigninComponent },
-  { path: 'auth/signinlist', component: SigninlistComponent },
+  // { path: 'auth/signin', component: SigninComponent },
+  // { path: 'auth/signinlist', component: SigninlistComponent },
 
-  { path: 'auth/signup', component: SignupComponent },
-  { path: 'auth/signuplight', component: SignupLightComponent }
+  // { path: 'auth/signup', component: SignupComponent },
+  // { path: 'auth/signuplight', component: SignupLightComponent }
   
 ];
 
