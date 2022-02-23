@@ -1,0 +1,478 @@
+<section class="layout-rules">
+  <div class="row" id="all-form">
+
+    <section class="col-xs-12 submit-button-backoffice-margin">
+      <button class="waves-effect waves-light buttons" id="submit-button-backoffice" (click)="onBack()">Accéder à l'espace back office</button>
+    </section>
+
+    <div class="box">
+      <section class="col-xs-12 bottomBlocs">
+
+        <!-- article A -->
+
+        <article *ngFor="let i of rowIndexArray">
+          <div *ngIf="i==0">
+
+            <div class="layout-article-A">
+              <span *ngFor="let book of books; let i = index">
+
+                <h3 class="title-A"
+                *ngIf="imageList[0+i].caption === 'demo'; else noTitle">
+                  <strong>{{ book.title }}</strong>
+                </h3>
+
+                <ng-template #noTitle>
+                  <p class="title-A-light">Titre principal</p>
+                </ng-template>
+
+                <p class="textDate-main"
+                *ngIf="imageList[0+i].caption === 'demo'">{{ book.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ book.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ book.author }}</i></p>
+
+                <ng-template #noTitle>
+                  <p class="textDate-main-light">Titre principal</p>
+                </ng-template>
+
+                <div *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+                    <span (click)="onViewBook(i)">
+                      <img [src]="imageList[0+i].imageUrl"
+                      *ngIf="imageList[0+i].caption === 'demo'"
+                      width="940px" alt="images" class="linkPhoto">
+                    </span>
+                  </div>
+                </div>
+
+                <p class="three-lines-only currentText-A"
+                *ngIf="imageList[0+i].caption === 'demo'">{{ book.texte }}</p>
+
+              </span>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ligne horizontale -->
+
+        <div class="horizontalLine"></div>
+
+        <!-- article E -->
+
+        <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+          <div *ngIf="i==0">
+
+            <div class="layout-article-E">
+              <span *ngFor="let bookE of bookEs; let i = index">
+
+                <h3 class="title-E">
+                  <strong>{{ bookE.title }}</strong>
+                </h3>
+
+                <p class="textDate-main">{{ bookE.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookE.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookE.author }}</i></p>
+
+                <div *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+                    <span (click)="onViewBookE(i)">
+                      <img [src]="imageListE[0+i].imageUrl"
+                      width="510px" alt="images" class="linkPhoto">
+                    </span>
+                  </div>
+                </div>
+
+                <p class="three-lines-only currentText-E">{{ bookE.texte }}</p>
+
+              </span>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ligne verticale -->
+
+        <!-- <div class="verticalLine-bottom bottomBlocs"></div> -->
+
+        <!-- article F -->
+
+        <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+          <div *ngIf="i==0">
+
+            <div class="layout-article-F">
+              <span *ngFor="let bookF of bookFs; let i = index">
+
+                <h3 class="title-F">
+                  <strong>{{ bookF.title }}</strong>
+                </h3>
+
+                <p class="textDate-main">{{ bookF.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookF.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookF.author }}</i></p>
+
+                <div *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+                    <span (click)="onViewBookF(i)">
+                      <img [src]="imageListF[0+i].imageUrl"
+                      width="360px" alt="images" class="linkPhoto">
+                    </span>
+                  </div>
+                </div>
+
+                <p class="three-lines-only currentText-F">{{ bookF.texte }}</p>
+
+              </span>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ligne horizontale -->
+        <div class="horizontalLine"></div>
+
+        <!-- article G -->
+
+        <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+          <div *ngIf="i==0">
+
+            <div class="layout-article-G">
+              <span *ngFor="let bookG of bookGs; let i = index">
+
+                <div *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+                    <span (click)="onViewBookG(i)">
+                      <img [src]="imageListG[0+i].imageUrl"
+                      width="940px" alt="images" class="linkPhoto-image">
+                    </span>
+                  </div>
+                </div>
+
+                <div class="horizontalLine-image"></div>
+                <h3 class="titleImages">En images</h3>
+
+                <p class="textDateG">{{ bookG.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookG.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthorG">{{ bookG.author }}</i></p>
+
+              </span>
+            </div>
+
+          </div>
+        </article>
+
+      </section>
+
+      <!------------ ligne verticale MAIN ------------->
+
+      <div class="verticalLine-main"></div>
+
+      <!-- aside -->
+
+      <aside class="col-xs-6">
+
+        <!-- article B -->
+
+        <article *ngFor="let i of rowIndexArray">
+          <div *ngIf="i==0">
+
+            <div class="layout-article-aside">
+              <span *ngFor="let bookB of bookBs; let i = index">
+
+                <h3 class="titleTheme">Portrait</h3>
+
+                <h3 class="titleAside">
+                  <strong>{{ bookB.title }}</strong>
+                </h3>
+
+                <p class="textDate-main">{{ bookB.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookB.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookB.author }}</i></p>
+
+                <div *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+                    <span (click)="onViewBookB(i)">
+                      <img [src]="imageListB[0+i].imageUrl"
+                      width="420px" alt="images" class="linkPhoto">
+                    </span>
+                  </div>
+                </div>
+
+                <p class="three-lines-only currentTextAside">{{ bookB.texte }}</p>
+
+              </span>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- article C -->
+
+        <article *ngFor="let i of rowIndexArray">
+          <div *ngIf="i==0">
+
+            <div class="layout-article-aside">
+              <span *ngFor="let bookC of bookCs; let i = index">
+
+                <h3 class="titleTheme">Coulisses</h3>
+
+                <h3 class="titleAside">
+                  <strong>{{ bookC.title }}</strong>
+                </h3>
+
+                <p class="textDate-main">{{ bookC.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookC.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookC.author }}</i></p>
+
+                <div *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+                    <span (click)="onViewBookC(i)">
+                      <img [src]="imageListC[0+i].imageUrl"
+                      width="420px" alt="images" class="linkPhoto">
+                    </span>
+                  </div>
+                </div>
+
+                <p class="three-lines-only currentTextAside">{{ bookC.texte }}</p>
+
+              </span>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- article D -->
+
+        <article *ngFor="let i of rowIndexArray">
+          <div *ngIf="i==0">
+
+            <div class="layout-article-aside">
+              <span *ngFor="let bookD of bookDs; let i = index">
+
+                <h3 class="titleTheme">Interview</h3>
+
+                <h3 class="titleAside">
+                  <strong>{{ bookD.title }}</strong>
+                </h3>
+
+                <p class="textDate-main">{{ bookD.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookD.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookD.author }}</i></p>
+
+                <div *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+                    <span (click)="onViewBookD(i)">
+                      <img [src]="imageListD[0+i].imageUrl"
+                      width="420px" alt="images" class="linkPhoto">
+                    </span>
+                  </div>
+                </div>
+
+                <p class="three-lines-only currentTextAside">{{ bookD.texte }}</p>
+
+              </span>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- article pub -->
+
+        <article class="pub">
+          <p class="text-pub">
+            <strong>Ceci n'est pas une publicité, mais si c'était le cas, elle pourrait se placer ici.</strong>
+          </p>
+        </article>
+
+      </aside>
+    </div>
+
+    <!--  -->
+
+    <div class="horizontalLineComplete-top"></div>
+
+    <!--  -->
+
+    <div>
+      <section class="box background-HI">
+
+        <!-- article H -->
+
+        <article *ngFor="let i of rowIndexArray">
+          <div *ngIf="i==0">
+
+            <div class="layout-article-news">
+
+              <h3 class="titleTheme-H">News</h3>
+
+              <div class="image-top-single">
+
+                <span *ngFor="let bookH of bookHs; let i = index">
+                  <img [src]="imageListH[i+0].imageUrl" alt="images" class="img-fluid imageDisplay-H">
+
+                  <p class="textDate-H">{{ bookH.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookH.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthorH">{{ bookH.author }}</i></p>
+                  <a class="two-lines-only currentText-news"
+                  (click)="onViewBookH(i)">{{ bookH.texte }}</a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- article I -->
+
+        <article class="col-xs-8">
+          <div *ngFor="let i of rowIndexArray">
+            <div *ngIf="i==0">
+              <div class="layout-article-I">
+                <span>
+
+                  <h3 class="titleTheme-I">Archives</h3>
+
+                    <div *ngFor="let i of rowIndexArray; let x = index">
+                      <div *ngIf="x==0">
+                        <div *ngFor="let bookAll of bookAlls | slice: 0:6; let i = index">
+
+                          <a class="currentText-I">
+                            <div *ngIf="i<6" class="currentText-I-margin">
+
+                              <div *ngIf="i==0" (click)="onViewBookAllOne(i)"
+                              class="archive-width">
+                                {{ bookAll.title }}
+                              </div>
+                              <div *ngIf="i==1" (click)="onViewBookAllTwo(i)"
+                              class="archive-width">
+                                {{ bookAll.title }}
+                              </div>
+                              <div *ngIf="i==2" (click)="onViewBookAllThree(i)"
+                              class="archive-width">
+                                {{ bookAll.title }}
+                              </div>
+                              <div *ngIf="i==3" (click)="onViewBookAllFour(i)"
+                              class="archive-width">
+                                {{ bookAll.title }}
+                              </div>
+                              <div *ngIf="i==4" (click)="onViewBookAllFive(i)"
+                              class="archive-width">
+                                {{ bookAll.title }}
+                              </div>
+                              <div *ngIf="i==5" (click)="onViewBookAllSix(i)"
+                              class="archive-width">
+                                {{ bookAll.title }}
+                              </div>
+
+                            </div>
+                          </a>
+
+                        </div>
+                      </div>
+                    </div>
+
+                </span>
+
+                <div class="link-archives-all-margin-main">
+                  <a routerLink="/archives" class="link-archives-all">
+                    Toutes les archives
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </article>
+      </section>
+
+      <!--  -->
+
+      <div class="horizontalLineComplete-bottom"></div>
+
+      <!-- article J -->
+
+      <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+        <div *ngIf="i==0">
+
+          <div class="layout-article-JKL">
+            <span *ngFor="let bookJ of bookJs; let i = index">
+
+              <h3 class="title-JKL">
+                <strong>{{ bookJ.title }}</strong>
+              </h3>
+
+              <p class="textDate-main">{{ bookJ.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookJ.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookJ.author }}</i></p>
+
+              <div *ngFor="let i of rowIndexArray">
+                <div *ngIf="i==0">
+                  <span (click)="onViewBookJ(i)">
+                    <img [src]="imageListJ[0+i].imageUrl"
+                    width="420px" alt="images" class="linkPhoto">
+                  </span>
+                </div>
+              </div>
+
+              <p class="three-lines-only currentTextAside">{{ bookJ.texte }}</p>
+
+            </span>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- article K -->
+
+      <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+        <div *ngIf="i==0">
+
+          <div class="layout-article-JKL">
+            <span *ngFor="let bookK of bookKs; let i = index">
+
+              <h3 class="title-JKL">
+                <strong>{{ bookK.title }}</strong>
+              </h3>
+
+              <p class="textDate-main">{{ bookK.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookK.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookK.author }}</i></p>
+
+              <div *ngFor="let i of rowIndexArray">
+                <div *ngIf="i==0">
+                  <span (click)="onViewBookK(i)">
+                    <img [src]="imageListK[0+i].imageUrl"
+                    width="420px" alt="images" class="linkPhoto">
+                  </span>
+                </div>
+              </div>
+
+              <p class="three-lines-only currentTextAside">{{ bookK.texte }}</p>
+
+            </span>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- article L -->
+
+      <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+        <div *ngIf="i==0">
+
+          <div class="layout-article-JKL">
+            <span *ngFor="let bookL of bookLs; let i = index">
+
+              <h3 class="title-JKL">
+                <strong>{{ bookL.title }}</strong>
+              </h3>
+
+              <p class="textDate-main">{{ bookL.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookL.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookL.author }}</i></p>
+
+              <div *ngFor="let i of rowIndexArray">
+                <div *ngIf="i==0">
+                  <span (click)="onViewBookL(i)">
+                    <img [src]="imageListL[0+i].imageUrl"
+                    width="420px" alt="images" class="linkPhoto">
+                  </span>
+                </div>
+              </div>
+
+              <p class="three-lines-only currentTextAside">{{ bookL.texte }}</p>
+
+            </span>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="col-xs-12 submit-button-backoffice-bottom-margin">
+  <button class="waves-effect waves-light buttons" id="submit-button-backoffice-bottom" (click)="onBack()">Accéder à l'espace back office</button>
+</section>

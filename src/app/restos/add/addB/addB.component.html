@@ -1,0 +1,55 @@
+<div routerLinkActive="active" class="layoutFrame background-B">
+  <div class="items">
+    <div><img class="visual-Radius50Height25" src="../assets/matrixPictures/B.jpeg"></div>
+    <div *ngFor="let matrix of matrixs">
+      <h2 class="title-01">{{ matrix.items.b.name }}</h2>
+      <h3 class="comment-01">{{ matrix.items.b.description }}</h3>
+      <p class="price-add"><strong>{{ matrix.items.b.price }}0</strong>€</p>
+    </div>
+
+    <h2 class="bigTitle">Suppléments</h2>
+    <div class="whiteLineHorizontalAdd"></div>
+
+    <label *ngFor="let item of priceBs">
+      <input type="checkbox" [(ngModel)]="item.isChecked">
+      <span class="spaceVerticalBetweenItems">
+        <div class="spaceBetweenItemAndPrice">
+          <div class="left">{{item.label}}</div>
+          <div class="right">{{item.value | number : '1.2-2'}}€</div>
+        </div>
+      </span>
+      <div class="whiteLineHorizontalAdd"></div>
+    </label>
+
+    <!-- <div>
+      <span class="supplementsPrices" *ngFor="let price of itemPriceBs">Total:
+        <strong>{{ price.value + sumTotalPrices }}€</strong>
+      </span>
+    </div> -->
+
+    <form (ngSubmit)="submit()">
+      <div class="left-284">
+        <button type="submit"
+        class="waves-effect waves-light submit-button"
+        (click) = "onSaveTotalBOnFirebase()"
+        (click) = "onSaveTotalCompleteBOnFirebase()"
+        (click) = "onSaveTotalTvaBOnFirebase()"
+        routerLink="/abcdefghijkl">Ajouter à la commande</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <div routerLinkActive="active" class="menuFrameShushi-01 backgroundShushi">
+  <div *ngFor="let price of itemPriceBs">
+    <span class="supplementsPrices">Menu :
+      <strong>{{ price.value }}</strong>
+    </span>
+    <span class="supplementsPrices">- Suppléments :
+      <strong> {{ sumTotalPrices }}€</strong>
+    </span>
+    <span class="supplementsPrices">- Total :
+      <strong> {{ price.value + sumTotalPrices }}€</strong>
+    </span>
+  </div>
+</div> -->

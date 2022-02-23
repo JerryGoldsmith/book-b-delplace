@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="col-xs-12">
+
+    <button class="waves-effect waves-light submit-button-single-top buttons" (click)="onBack()">Retour</button>
+
+    <h1 class="title-big-single"><strong>{{ bookG.title }}</strong></h1>
+    <p class="textDate">{{ bookG.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookG.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookG.author }}</i></p>
+
+    <div *ngFor="let bookG of bookGs; let g = index">
+      <div *ngFor="let item of rowIndexArray; let i = index">
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+1].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteA }}</h3>
+          </div>
+        </div>
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+2].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteB }}</h3>
+          </div>
+        </div>
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+3].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteC }}</h3>
+          </div>
+        </div>
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+4].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteD }}</h3>
+          </div>
+        </div>
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+5].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteE }}</h3>
+          </div>
+        </div>
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+6].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteF }}</h3>
+          </div>
+        </div>
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+7].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteG }}</h3>
+          </div>
+        </div>
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+8].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteH }}</h3>
+          </div>
+        </div>
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+9].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteI }}</h3>
+          </div>
+        </div>
+
+        <div *ngIf="g==0">
+          <div *ngIf="i==0">
+            <img class="singleImage" [src]="imageListG[i+10].imageUrl" alt="images">
+            <h3 class="textLegend">{{ bookG.texteJ }}</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="waves-effect waves-light submit-button-single-top buttons" (click)="onBack()">Retour</button>
+
+  </div>
+</div>

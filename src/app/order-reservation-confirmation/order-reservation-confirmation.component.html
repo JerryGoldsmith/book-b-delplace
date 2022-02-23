@@ -1,0 +1,13 @@
+<div *ngFor="let order of seatOneOrders">
+  <p>Merci</p>
+  <span>{{ order.payload.doc.data().customerFirstName }} </span>
+  <span>{{ order.payload.doc.data().customerName }}</span>
+  <p> !</p>
+  <p>Nous vous confirmons que le siège </p>
+  <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">
+    <!-- <span *ngIf="seatName === 'Siège 1'"> -->
+      {{ seatOne }}
+    <!-- </span> -->
+  </span>
+  <p>vous est à présent réservé.</p>
+</div>

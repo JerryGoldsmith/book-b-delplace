@@ -1,0 +1,75 @@
+section {
+  width: 1200px;
+  margin-left: -140px;
+  // margin-right: 120px;
+}
+
+// -------
+
+@keyframes move {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes move {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+// -------
+
+.background-resa-result {
+  background:
+  linear-gradient(127deg, rgba(253,72,60), rgba(14,31,62,0) 100%),
+  linear-gradient(336deg, rgba(22,93,125), rgba(14,31,62,1) 70%),
+  linear-gradient(336deg, rgba(14,31,62), rgba(22,93,125,1) 100%);
+}
+
+.layout-resa-result-home {
+  color: var(--color-white);
+  font-size: 60px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  line-height: 1.2;
+  text-align: center;
+  padding: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-right: 40px;
+  margin-top: 40px;
+  animation: move 2s;
+  -webkit-animation: move 2s;
+}
+
+.layout-resa-video {
+  padding: 60px;
+}
+
+.media {
+  margin: auto;
+  width: 49%;
+}
+
+.video {
+  margin-left: 1%;;
+	padding-top: 12px;
+}
+
+.video video {
+	width: 100%;
+	margin: 0 auto;
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+}

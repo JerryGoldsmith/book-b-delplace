@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offsett-2">
+
+    <h2 class="title-form">Enregistrer un nouvel article</h2>
+
+    <button type="submit"
+    class="waves-effect waves-light submit-button-step-one"
+    routerLink="/uploadH">Etape 1 : choisissez votre image</button>
+
+    <form [formGroup]="bookForm" (ngSubmit)="onSaveBookH()">
+
+      <div class="form-group">
+        <textarea type="text" class="form-control" id="title" formControlName="title" cols="50" rows="1" placeholder="Etape 2 : choisir le titre de la news"></textarea>
+      </div>
+
+      <div class="form-group">
+        <textarea type="text" class="form-control" id="texte" formControlName="texte" cols="50" rows="15" placeholder="Etape 3 : choisir le texte de la news"></textarea>
+      </div>
+
+      <div class="form-group">
+        <textarea type="text" class="form-control" id="author" formControlName="author" cols="50" rows="1" placeholder="Etape 4 : quel est l'auteur ?"></textarea>
+      </div>
+
+      <button
+        class="waves-effect waves-light submit-button-step-one"
+        [disabled]="bookForm.invalid || fileIsUploading"
+        type="submit">Enregistrer</button>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,325 @@
+// ADD --------------
+
+// Big Title add --------
+
+.bigTitle {
+  color: var(--color-gold);
+  font-size: 36px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  margin-top: 120px;
+}
+
+// visuals add -------
+
+.visual-Radius50Height25 {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: solid 12px var(--color-gold);
+  // filter: drop-shadow(0px 10px 3px white);
+  width: 24.9rem;
+}
+
+.visual-Radius50Height18 {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: solid 12px var(--color-gold);
+  // filter: drop-shadow(0px 10px 3px white);
+  width: 24.9rem;
+  height: 18rem;
+}
+
+.visual-Radius50Height20 {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: solid 12px var(--color-gold);
+  // filter: drop-shadow(0px 10px 3px white);
+  width: 24.9rem;
+  height: 20rem;
+}
+
+.visual-Radius50Height22 {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: solid 12px var(--color-gold);
+  // filter: drop-shadow(0px 10px 3px white);
+  width: 24.9rem;
+  height: 22rem;
+}
+
+// Backgroung gradient ---------
+
+.background-A {
+  background:
+  linear-gradient(217deg, rgba(253,124,65), rgba(253,207,155,0) 100%),
+  linear-gradient(127deg, rgba(253,207,155), rgba(238,178,122,0) 70%),
+  linear-gradient(336deg, rgba(253,207,155), rgba(253,124,65,0) 100%);
+}
+
+.background-B {
+  background:
+  linear-gradient(217deg, rgba(144,114,87), rgba(252,220,117,0) 70%),
+  linear-gradient(127deg, rgba(249,179,116), rgba(249,179,116,0) 100%),
+  linear-gradient(336deg, rgba(252,220,117), rgba(144,114,87,0) 100%);
+}
+
+.background-C {
+  background:
+  linear-gradient(217deg, rgba(248,215,140), rgba(249,179,144,0) 100%),
+  linear-gradient(127deg, rgba(116,152,48), rgba(248,161,81,0) 100%),
+  linear-gradient(336deg, rgba(204,215,91), rgba(254,186,144,0) 100%);
+}
+
+.background-D {
+  background:
+  linear-gradient(217deg, rgba(160,78,52), rgba(160,78,52,0) 100%),
+  linear-gradient(336deg, rgba(238,178,122), rgba(238,178,122,0) 100%);
+}
+
+.background-E {
+  background:
+  linear-gradient(217deg, rgba(117,55,36), rgba(160,78,52,0) 50%),
+  linear-gradient(336deg, rgba(238,178,122), rgba(117,55,36,0) 100%);
+}
+
+.background-F {
+  background:
+  linear-gradient(217deg, rgba(83,48,31), rgba(211,177,124,0) 100%),
+  linear-gradient(127deg, rgba(226,146,76), rgba(211,177,124,0) 70%),
+  linear-gradient(336deg, rgba(211,177,124), rgba(83,48,31,0) 100%);
+}
+
+.background-G {
+  background:
+  linear-gradient(217deg, rgba(238,209,101), rgba(203,213,61,0) 100%),
+  linear-gradient(127deg, rgba(233,206,87), rgba(213,133,33,0) 90%),
+  linear-gradient(336deg, rgba(203,213,61), rgba(238,209,101,0) 70%);
+}
+
+.background-H {
+  background:
+  linear-gradient(217deg, rgba(253,200,109), rgba(245,210,138,0) 70%),
+  linear-gradient(127deg, rgba(254,198,93), rgba(75,60,47,0) 70%),
+  linear-gradient(336deg, rgba(254,224,163), rgba(254,198,93,0) 100%);
+}
+
+.background-I {
+  background:
+  linear-gradient(217deg, rgba(253,200,109), rgba(245,210,138,0) 70%),
+  linear-gradient(127deg, rgba(254,198,93), rgba(75,60,47,0) 70%),
+  linear-gradient(336deg, rgba(254,224,163), rgba(254,198,93,0) 100%);
+}
+
+.background-J {
+  background:
+  linear-gradient(217deg, rgba(244,219,91), rgba(231,218,170,0) 60%),
+  linear-gradient(127deg, rgba(223,189,53), rgba(218,200,142,0) 100%),
+  linear-gradient(336deg, rgba(231,218,170), rgba(244,219,91,0) 100%);
+}
+
+.background-K {
+  background:
+  linear-gradient(217deg, rgba(177,149,96), rgba(219,206,155,0) 100%),
+  linear-gradient(127deg, rgba(177,149,96), rgba(177,149,96,0) 70%),
+  linear-gradient(336deg, rgba(219,206,155), rgba(177,149,96,0) 100%);
+}
+
+.background-L {
+  background:
+  linear-gradient(217deg, rgba(98,36,28), rgba(246,194,116,0) 60%),
+  linear-gradient(127deg, rgba(246,194,116), rgba(98,36,28,0) 100%),
+  linear-gradient(336deg, rgba(246,194,116), rgba(98,36,28,0) 100%);
+}
+
+// layout add --------
+
+.layoutFrame {
+  border: 0.6px solid white;
+  vertical-align: bottom;
+  padding: 20px;
+  margin: 10px;
+  width: 52.7rem;
+}
+
+// checkboxes
+
+.items {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.left {
+  display:flex;
+  flex-direction: column;
+  text-align: middle;
+  color: var(--color-white);
+  font-size: 18px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}
+
+.right {
+  display:flex;
+  flex-direction: column;
+  text-align: right;
+  color: var(--color-white);
+  font-size: 36px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}
+
+.spaceVerticalBetweenItems {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.spaceBetweenItemAndPrice {
+  padding-right: 6px;
+  width: 44.7rem;
+}
+
+.whiteLineHorizontalAdd {
+  border: solid 0.05px var(--color-gold);
+  width: 740px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+// submitButton add ------
+
+.left-284 {
+  margin-left: 284px;
+}
+
+.submit-button {
+  background-color: var(--color-gold);
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-gold);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.submit-button:hover {
+  background-color: var(--color-fluo);
+  animation: ani9 0.8s ease-in-out infinite alternate;
+  transform: translatey(6px);
+  box-shadow: none;
+}
+
+// titles add ------
+
+.title-01 {
+  color: var(--color-white);
+  font-size: 48px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.title-02 {
+  color: var(--color-fluo);
+  font-size: 48px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.title-03 {
+  color: var(--color-white);
+  font-size: 48px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  padding-top: 40px;
+}
+
+// comments add ------
+
+.comment-01 {
+  color: black;
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.comment-02 {
+  color: var(--color-gold);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.comment-03 {
+  color: black;
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+// prices add -------
+
+.price-add {
+  color: var(--color-white);
+  font-size: 100px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+// images add -------
+
+.visual {
+  width: 21.9rem;
+}
+
+.visualMenus {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: solid 12px var(--color-gold);
+  filter: drop-shadow(0px 10px 3px black);
+  width: 24.9rem;
+}
+
+.visualMenusWhite {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: solid 12px var(--color-gold);
+  filter: drop-shadow(0px 10px 3px white);
+  width: 24.9rem;
+}
+
+// submit button add ------
+
+.submit-button {
+  background-color: var(--color-gold);
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-gold);
+  border-radius: 10px;
+  padding: 24px;
+  margin: 12px;
+  text-align: center;
+}
+
+.submit-button:hover {
+  background-color: var(--color-fluo);
+  animation: ani9 0.8s ease-in-out infinite alternate;
+  transform: translatey(6px);
+  box-shadow: none;
+}

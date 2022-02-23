@@ -1,0 +1,72 @@
+<section class="frame-notice">
+  <p class="notice"><span class="title-notice"><strong>Etape 1</strong></span> : sélectionnez successivement <strong class="color-notice">les trois images</strong> qui vont illustrer cet article</p>
+  <p class="notice"><span class="title-notice"><strong>Etape 2</strong></span> : utilisez à chaque fois l'identifiant <strong class="color-notice">demo</strong> pour être autorisé à éditer</p>
+  <p class="notice"><span class="title-notice"><strong>Etape 3</strong></span> : enregistrez successivement les 3 images <strong class="color-notice">avant</strong> de passer au choix de l'image d'archive</p>
+</section>
+
+<section class="frame-image-choice">
+  <div class="card-body">
+    <form [formGroup]="formTemplate"
+    (submit)="onSubmit(formTemplate.value)">
+
+      <div class="imageDisplay">
+        <!-- <p class="text-pub image-radius"
+        width="650px" height="550px"
+        (click)="fileUploader.click()">
+          <strong>Choisissez votre image</strong>
+        </p> -->
+        <img [src]="imgSrc" width="650px" height="100%"
+        class="image-radius">
+        <!-- <span>Choisissez votre image</span> -->
+      </div>
+
+      <article class="imageDisplay-select">
+        <button class="button-image"
+        (click)="fileUploader.click()">
+          <p class="image-text">
+            <strong>Choisissez votre image</strong>
+          </p>
+        </button>
+      </article>
+
+      <div class="form-group up">
+        <!-- <label>Selectionner le fichier à télécharger</label> -->
+        <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl"
+        (change)="showPreview($event)">
+        <div class="text-danger down"
+        *ngIf="isSubmitted && formControls.imageUrl.errors?.required">Le choix de l'image est requis</div>
+      </div>
+
+      <div class="form-group">
+        <textarea type="text" class="form-control textarea-image" formControlName="caption"
+        placeholder="Saisissez votre identifiant" cols="50" rows="1"></textarea>
+        <!-- <input class="form-control" formControlName="caption"
+        placeholder="Votre identifiant"> -->
+        <div class="text-danger down"
+        *ngIf="isSubmitted && formControls.caption.errors?.required">Votre identifiant est requis</div>
+      </div>
+
+      <div class="form-group">
+        <select formControlName="category" class="form-control">
+          <option value="articleA" selected>Vous éditez l'article principal</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <!-- <div class="form-group col md-6">
+          <a routerLink="/list" class="btn btn-primary btn-block float-right">Voir les images</a>
+        </div> -->
+        <div class="form-group col md-6">
+          <button type="submit"
+          class="waves-effect waves-light button-submit-image">
+            Enregistrer cette image
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<button type="submit"
+class="waves-effect waves-light submit-button-next"
+routerLink="/uploadArchive">Passer au choix de l'image d'archive</button>

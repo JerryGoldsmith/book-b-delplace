@@ -1,0 +1,54 @@
+<table>
+  <tr *ngFor="let i of rowIndexArray">
+    <td *ngIf="i==0">
+      <img [src]="imageList[0+i].imageUrl" alt="images" class="imageDisplay">
+      <!-- <span class="imagebox-desc">{{ imageList[0+i].caption }}</span> -->
+    </td>
+  </tr>
+</table>
+
+<!-- <table *ngIf="imageList">
+  <tr *ngFor="let i of rowIndexArray">
+    <td>
+      <div class="imageBox">
+        <img [src]="imageList[2*i].imageUrl" alt="images" class="img-fluid">
+        <span class="imagebox-desc">{{ imageList[2*i].caption }}</span>
+      </div>
+    </td>
+    <td *ngIf="imageList[2*i+1]">
+      <div class="imageBox">
+        <img [src]="imageList[2*i+1].imageUrl" alt="images" class="img-fluid">
+        <span class="imagebox-desc">{{ imageList[2*i+1].caption }}</span>
+      </div>
+    </td>
+  </tr>
+</table> -->
+
+<!-- <table *ngIf="imageList">
+  <tr *ngFor="let i of rowIndexArray">
+    <td>
+      <div class="imageBox" *ngIf="i==0">
+        <a routerLink="/upload">
+          <img src="../../assets/cape-verde.jpg" alt="images" class="img-fluid">
+          <span class="imagebox-desc">Nouvelle image</span>
+        </a>
+      </div>
+      <div class="imageBox" *ngIf="i!=0">
+        <img [src]="imageList[3*i-1].imageUrl" alt="images" class="img-fluid">
+        <span class="imagebox-desc">{{ imageList[3*i-1].caption }}</span>
+      </div>
+    </td>
+    <td *ngIf="imageList[3*i]">
+      <div class="imageBox">
+        <img [src]="imageList[3*i].imageUrl" alt="images" class="img-fluid">
+        <span class="imagebox-desc">{{ imageList[3*i].caption }}</span>
+      </div>
+    </td>
+    <td *ngIf="imageList[3*i+1]">
+      <div class="imageBox">
+        <img [src]="imageList[3*i+1].imageUrl" alt="images" class="img-fluid">
+        <span class="imagebox-desc">{{ imageList[3*i+1].caption }}</span>
+      </div>
+    </td>
+  </tr>
+</table> -->

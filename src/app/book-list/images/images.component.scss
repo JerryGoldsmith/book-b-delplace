@@ -1,0 +1,280 @@
+.title-notice {
+  font-size: 24px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-fluo);
+}
+
+.notice {
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.frame-notice {
+  padding: 20px 20px 20px 70px;
+	background-color: transparent;
+	border-radius: 50px;
+	border: 1px solid var(--color-gold);
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 44rem;
+}
+
+.color-notice {
+  color: var(--color-gold);
+}
+
+.frame-image-choice {
+  padding: 20px 20px 20px 70px;
+	background-color: transparent;
+	border-radius: 50px;
+	border: 1px solid var(--color-gold);
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 44rem;
+}
+
+.submit-button {
+  background-color: var(--color-gold);
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-gold);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.submit-button:hover {
+  background-color: var(--color-fluo);
+  animation: ani9 0.8s ease-in-out infinite alternate;
+  transform: translatey(6px);
+  box-shadow: none;
+}
+
+.submit-button-disabled {
+  background-color: var(--color-gold);
+  opacity: 0.5;
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-gold);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+// ------
+
+.submit-button-next {
+  font-size: 26px;
+	font-family: NanumMyeongjo-Regular, serif;
+	// font-size: 1.6rem;
+  color: white;
+  border: solid 2px var(--color-gold);
+  padding: 20px 20px 20px 70px;
+	// margin: 1%;
+	background-color: var(--color-fluo);
+	border-radius: 50px;
+	border: 1px solid var(--color-gold);
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  width: 44rem;
+  // margin-bottom: 12px;
+}
+
+.submit-button-next:hover {
+  background-color: transparent;
+  color: var(--color-gold);
+  animation: ani9 0.8s ease-in-out infinite alternate;
+  transform: translatey(6px);
+  box-shadow: none;
+}
+
+// ------
+
+.imageDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  // background-image: url("../../../assets/cape-verde.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6%;
+  width: 650px;
+  height: 100%;
+  margin-top: -20px;
+  margin-left: -60px;
+}
+
+// .imageDisplay:hover {
+//   opacity: 0.5;
+// }
+
+.up {
+  margin-top: -36px;
+}
+
+.down {
+  font-size: 18px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-fluo);
+  margin-top: 16px;
+  margin-left: 180px;
+}
+
+.imageDisplay-select {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  background-image: url("../../../assets/img/belle-ile/belle-09.jpg");
+  // filter: drop-shadow(12px 12px 8px black);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // border-radius: 50px;
+  width: 650px;
+  height: 86px;
+  margin-top: -76px;
+  margin-left: -60px;
+  // width: 280px;
+  // height: 160px;
+  // margin-top: -266px;
+  // margin-bottom: 70px;
+  // margin-left: 536px;
+}
+
+.imageDisplay-select:hover {
+  filter: drop-shadow(12px 12px 8px black) invert(15%);
+
+  /* Fonctions de filtre */
+  // filter: blur(5px);
+  // filter: brightness(0.4);
+  // filter: contrast(200%);
+  // filter: drop-shadow(16px 16px 20px blue);
+  // filter: grayscale(50%);
+  // filter: hue-rotate(90deg);
+  // filter: invert(75%);
+  // filter: opacity(25%);
+  // filter: saturate(30%);
+  // filter: sepia(60%);
+
+  /* On applique plusieurs filtres */
+  // filter: contrast(175%) brightness(3%);
+
+  /* On utilise aucun filtre */
+  // filter: none;
+
+  /* Valeurs globales */
+  // filter: inherit;
+  // filter: initial;
+  // filter: unset;
+}
+
+input {
+  margin-left: -30px;
+}
+
+.textarea-image {
+  font-size: 26px;
+	font-family: NanumMyeongjo-Regular, serif;
+	// font-size: 1.6rem;
+  color: white;
+  border: solid 2px var(--color-gold);
+  padding: 20px 20px 20px 70px;
+	// margin: 1%;
+	background-color: transparent;
+	border-radius: 50px;
+	border: 1px solid var(--color-gold);
+  text-align: left;
+  margin-left: -40px;
+  margin-top: 20px;
+  width: 620px;
+}
+
+.button-image {
+  background: none;
+  border: solid 0px var(--color-gold);
+  // border-radius: 50px;
+  width: 650px;
+  height: 86px;
+  // width: 280px;
+  // height: 160px;
+}
+
+.button-submit-image {
+  font-size: 26px;
+	font-family: NanumMyeongjo-Regular, serif;
+	// font-size: 1.6rem;
+  color: var(--main-color);
+  border: solid 2px var(--color-gold);
+  padding: 20px 20px 20px 70px;
+	// margin: 1%;
+	background-color: var(--color-palesun);
+	border-radius: 50px;
+	border: 1px solid var(--color-gold);
+  text-align: left;
+  margin-left: -40px;
+  margin-top: 20px;
+  width: 620px;
+}
+
+.button-submit-image:hover {
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+select {
+	background-color: var(--main-color);
+	border-radius: 50px;
+	border: 1px solid var(--color-gold);
+  font-size: 22px;
+	font-family: NanumMyeongjo-Regular, serif;
+  color: var(--color-palesun);
+  padding-left: 72px;
+  margin-top: 34px;
+  margin-left: -40px;
+	width: 620px;
+  height: 60px;
+}
+
+// ----
+
+.image-text {
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  font-weight: 400;
+  color: var(--main-color);
+	font-size: 42px;
+	// letter-spacing: 0px;
+	line-height: 1.2;
+  text-align: center;
+  padding-left: 38px;
+  padding-right: 38px;
+}
+
+.image-radius {
+  border-radius: 6%;
+  // opacity: 0.3;
+}
+
+// -------
+
+.imagebox-desc {
+  background-color: var(--color-gold);
+  padding: 20px;
+  color: var(--color-white);
+  font-size: 24px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}

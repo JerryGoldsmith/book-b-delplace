@@ -1,0 +1,516 @@
+<div class="frameBack">
+  <a href class="linkSmall" routerLink="/abcdefghijkl">Retour à ma commande</a>
+</div>
+
+<div class="whiteLineVerticalMarginLeft-320"></div>
+
+<div class="frameTotal background-total">
+
+  <h2 class="h2-whiteBigPaddingTop-20">Détails de ma commande</h2>
+  <div class="whiteLineHorizontalRightContainer-total"></div>
+
+  <div *ngFor="let itemA of totalCompleteAs">
+    <div *ngFor="let itemB of totalCompleteBs">
+      <div *ngFor="let itemC of totalCompleteCs">
+        <div *ngFor="let itemD of totalCompleteDs">
+          <div *ngFor="let itemE of totalCompleteEs">
+            <div *ngFor="let itemF of totalCompleteFs">
+              <div *ngFor="let itemG of totalCompleteGs">
+                <div *ngFor="let itemH of totalCompleteHs">
+                  <div *ngFor="let itemI of totalCompleteIs">
+                    <div *ngFor="let itemJ of totalCompleteJs">
+                      <div *ngFor="let itemK of totalCompleteKs">
+                        <div *ngFor="let itemL of totalCompleteLs">
+
+                          <div *ngFor="let tvaA of totalTvaAs">
+                            <div *ngFor="let tvaB of totalTvaBs">
+                              <div *ngFor="let tvaC of totalTvaCs">
+                                <div *ngFor="let tvaD of totalTvaDs">
+                                  <div *ngFor="let tvaE of totalTvaEs">
+                                    <div *ngFor="let tvaF of totalTvaFs">
+                                      <div *ngFor="let tvaG of totalTvaGs">
+                                        <div *ngFor="let tvaH of totalTvaHs">
+                                          <div *ngFor="let tvaI of totalTvaIs">
+                                            <div *ngFor="let tvaJ of totalTvaJs">
+                                              <div *ngFor="let tvaK of totalTvaKs">
+                                                <div *ngFor="let tvaL of totalTvaLs">
+
+                                                  <div *ngFor="let matrix of matrixs">
+
+                                                    <!-- A -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemA.name > 0">{{ matrix.items.a.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemA.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceAs">
+                                                      <p *ngIf="itemA.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemA.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceA of priceAs">
+                                                        <div [(ngModel)]="priceA.isChecked" *ngIf="priceA.isChecked">
+                                                          <div [hidden]="priceA.isShow">
+                                                            <p *ngIf="itemA.name > 0" class="itemSelectedWhiteAlignCenter">{{priceA.label}} > {{priceA.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemA.name > 0">Total menu</p>
+                                                    <p *ngIf="itemA.name > 0" class="subTotalWhite-payment"><strong>{{ itemA.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemA.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- B -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemB.name > 0">{{ matrix.items.b.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemB.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceBs">
+                                                      <p *ngIf="itemB.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemB.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceB of priceBs">
+                                                        <div [(ngModel)]="priceB.isChecked" *ngIf="priceB.isChecked">
+                                                          <div [hidden]="priceB.isShow">
+                                                            <p *ngIf="itemB.name > 0" class="itemSelectedWhiteAlignCenter">{{priceB.label}} > {{priceB.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemB.name > 0">Total menu</p>
+                                                    <p *ngIf="itemB.name > 0" class="subTotalWhite-payment"><strong>{{ itemB.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemB.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- C -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemC.name > 0">{{ matrix.items.c.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemC.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceCs">
+                                                      <p *ngIf="itemC.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemC.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceC of priceCs">
+                                                        <div [(ngModel)]="priceC.isChecked" *ngIf="priceC.isChecked">
+                                                          <div [hidden]="priceC.isShow">
+                                                            <p *ngIf="itemC.name > 0" class="itemSelectedWhiteAlignCenter">{{priceC.label}} > {{priceC.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemC.name > 0">Total menu</p>
+                                                    <p *ngIf="itemC.name > 0" class="subTotalWhite-payment"><strong>{{ itemC.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemC.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- D -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemD.name > 0">{{ matrix.items.d.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemD.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceDs">
+                                                      <p *ngIf="itemD.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemD.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceD of priceDs">
+                                                        <div [(ngModel)]="priceD.isChecked" *ngIf="priceD.isChecked">
+                                                          <div [hidden]="priceD.isShow">
+                                                            <p *ngIf="itemD.name > 0" class="itemSelectedWhiteAlignCenter">{{priceD.label}} > {{priceD.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemD.name > 0">Total menu</p>
+                                                    <p *ngIf="itemD.name > 0" class="subTotalWhite-payment"><strong>{{ itemD.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemD.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- E -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemE.name > 0">{{ matrix.items.e.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemE.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceEs">
+                                                      <p *ngIf="itemE.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemE.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceE of priceEs">
+                                                        <div [(ngModel)]="priceE.isChecked" *ngIf="priceE.isChecked">
+                                                          <div [hidden]="priceE.isShow">
+                                                            <p *ngIf="itemE.name > 0" class="itemSelectedWhiteAlignCenter">{{priceE.label}} > {{priceE.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemE.name > 0">Total menu</p>
+                                                    <p *ngIf="itemE.name > 0" class="subTotalWhite-payment"><strong>{{ itemE.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemE.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- F -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemF.name > 0">{{ matrix.items.f.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemF.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceFs">
+                                                      <p *ngIf="itemF.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemF.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceF of priceFs">
+                                                        <div [(ngModel)]="priceF.isChecked" *ngIf="priceF.isChecked">
+                                                          <div [hidden]="priceF.isShow">
+                                                            <p *ngIf="itemF.name > 0" class="itemSelectedWhiteAlignCenter">{{priceF.label}} > {{priceF.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemF.name > 0">Total menu</p>
+                                                    <p *ngIf="itemF.name > 0" class="subTotalWhite-payment"><strong>{{ itemF.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemF.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- G -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemG.name > 0">{{ matrix.items.g.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemG.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceGs">
+                                                      <p *ngIf="itemG.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemG.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceG of priceGs">
+                                                        <div [(ngModel)]="priceG.isChecked" *ngIf="priceG.isChecked">
+                                                          <div [hidden]="priceG.isShow">
+                                                            <p *ngIf="itemG.name > 0" class="itemSelectedWhiteAlignCenter">{{priceG.label}} > {{priceG.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemG.name > 0">Total menu</p>
+                                                    <p *ngIf="itemG.name > 0" class="subTotalWhite-payment"><strong>{{ itemG.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemG.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- H -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemH.name > 0">{{ matrix.items.h.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemH.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceHs">
+                                                      <p *ngIf="itemH.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemH.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceH of priceHs">
+                                                        <div [(ngModel)]="priceH.isChecked" *ngIf="priceH.isChecked">
+                                                          <div [hidden]="priceH.isShow">
+                                                            <p *ngIf="itemH.name > 0" class="itemSelectedWhiteAlignCenter">{{priceH.label}} > {{priceH.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemH.name > 0">Total menu</p>
+                                                    <p *ngIf="itemH.name > 0" class="subTotalWhite-payment"><strong>{{ itemH.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemH.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- I -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemI.name > 0">{{ matrix.items.i.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemI.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceIs">
+                                                      <p *ngIf="itemI.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemI.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceI of priceIs">
+                                                        <div [(ngModel)]="priceI.isChecked" *ngIf="priceI.isChecked">
+                                                          <div [hidden]="priceI.isShow">
+                                                            <p *ngIf="itemI.name > 0" class="itemSelectedWhiteAlignCenter">{{priceI.label}} > {{priceI.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemI.name > 0">Total menu</p>
+                                                    <p *ngIf="itemI.name > 0" class="subTotalWhite-payment"><strong>{{ itemI.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemI.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- J -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemJ.name > 0">{{ matrix.items.j.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemJ.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceJs">
+                                                      <p *ngIf="itemJ.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemJ.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceJ of priceJs">
+                                                        <div [(ngModel)]="priceJ.isChecked" *ngIf="priceJ.isChecked">
+                                                          <div [hidden]="priceJ.isShow">
+                                                            <p *ngIf="itemJ.name > 0" class="itemSelectedWhiteAlignCenter">{{priceJ.label}} > {{priceJ.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemJ.name > 0">Total menu</p>
+                                                    <p *ngIf="itemJ.name > 0" class="subTotalWhite-payment"><strong>{{ itemJ.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemJ.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- K -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemK.name > 0">{{ matrix.items.k.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemK.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceKs">
+                                                      <p *ngIf="itemK.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemK.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceK of priceKs">
+                                                        <div [(ngModel)]="priceK.isChecked" *ngIf="priceK.isChecked">
+                                                          <div [hidden]="priceK.isShow">
+                                                            <p *ngIf="itemK.name > 0" class="itemSelectedWhiteAlignCenter">{{priceK.label}} > {{priceK.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemK.name > 0">Total menu</p>
+                                                    <p *ngIf="itemK.name > 0" class="subTotalWhite-payment"><strong>{{ itemK.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemK.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- L -->
+
+                                                    <div>
+                                                      <h2 class="itemSelectedFluoLeft"
+                                                      *ngIf="itemL.name > 0">{{ matrix.items.l.name }}</h2>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemL.name > 0">Prix de base</p>
+                                                    <div *ngFor="let item of itemPriceLs">
+                                                      <p *ngIf="itemL.name > 0" class="basePriceWhite-payment">{{ item.value | number : '1.2-2' }}€</p>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemL.name > 0">Suppléments</p>
+                                                    <div>
+                                                      <div *ngFor="let priceL of priceLs">
+                                                        <div [(ngModel)]="priceL.isChecked" *ngIf="priceL.isChecked">
+                                                          <div [hidden]="priceL.isShow">
+                                                            <p *ngIf="itemL.name > 0" class="itemSelectedWhiteAlignCenter">{{priceL.label}} > {{priceL.value | number : '1.2-2'}}€</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <p class="subtitleWhiteAlignLeft"
+                                                    *ngIf="itemL.name > 0">Total menu</p>
+                                                    <p *ngIf="itemL.name > 0" class="subTotalWhite-payment"><strong>{{ itemL.name | number : '1.2-2' }}</strong>€</p>
+
+                                                    <div *ngIf="itemL.name > 0"
+                                                      class="whiteLineVerticalCenter"></div>
+
+                                                    <!-- total -->
+
+                                                    <p class="subtitleWhiteAlignLeftTotal"><strong>Total de la commande</strong></p>
+
+                                                    <p class="totalBigPayment">
+                                                      <strong>{{
+                                                        itemA.name
+                                                        + itemB.name
+                                                        + itemC.name
+                                                        + itemD.name
+                                                        + itemE.name
+                                                        + itemF.name
+                                                        + itemG.name
+                                                        + itemH.name
+                                                        + itemI.name
+                                                        + itemJ.name
+                                                        + itemK.name
+                                                        + itemL.name | number : '1.2-2' }}</strong>€
+                                                    </p>
+
+                                                    <!-- tva -->
+
+                                                    <p class="subtitleWhiteAlignLeft">Montant TVA</p>
+
+                                                    <p class="totalTvaPayment">
+                                                      <strong>
+                                                        {{ tvaA.name
+                                                          + tvaB.name
+                                                          + tvaC.name
+                                                          + tvaD.name
+                                                          + tvaE.name
+                                                          + tvaF.name
+                                                          + tvaG.name
+                                                          + tvaH.name
+                                                          + tvaI.name
+                                                          + tvaJ.name
+                                                          + tvaK.name
+                                                          + tvaL.name | number : '1.2-2' }}</strong>€
+                                                    </p>
+
+                                                    <!-- ht -->
+
+                                                    <p class="subtitleWhiteAlignLeft">Montant HT</p>
+
+                                                    <p class="totalTvaPayment">
+                                                      <strong>{{
+                                                          itemA.name - tvaA.name
+                                                          + itemB.name - tvaB.name
+                                                          + itemC.name - tvaC.name
+                                                          + itemD.name - tvaD.name
+                                                          + itemE.name - tvaE.name
+                                                          + itemF.name - tvaF.name
+                                                          + itemG.name - tvaG.name
+                                                          + itemH.name - tvaH.name
+                                                          + itemI.name - tvaI.name
+                                                          + itemJ.name - tvaJ.name
+                                                          + itemK.name - tvaK.name
+                                                          + itemL.name - tvaL.name | number : '1.2-2' }}</strong>€
+                                                    </p>
+
+                                                    <div class="whiteLineHorizontalRightContainer-total"></div>
+
+                                                  </div>
+
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<p class="spaceOfPayment">Il reste bien entendu à rêgler cette commande. Dans cet exemple, nous n'irons pas jusque là.</p>
+
+<div class="whiteLineHorizontalRightContainer-total"></div>

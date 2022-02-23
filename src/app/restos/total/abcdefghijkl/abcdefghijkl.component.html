@@ -1,0 +1,700 @@
+<!-- <div id="container">
+  <div id="dimensions">
+    <div *ngIf="isMobile">I am a Mobile Device</div>
+    <div><strong>Width:</strong>&nbsp;{{width}}</div>
+    <div><strong>Height:</strong>&nbsp;{{height}}</div>
+  </div>
+</div> -->
+
+<div class="resize" (resized)="onResized($event)">
+  <div class="background-total">
+    <div class="frameTotal">
+
+      <h1 class="h2-gold">Modifier votre commande</h1>
+      <div class="whiteLineHorizontal-total"></div>
+
+      <!-- A -->
+
+      <div *ngFor="let itemA of totalAs">
+        <div *ngFor="let priceA of itemPriceAs">
+          <div *ngIf="priceA.value === 8">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/A.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addA">{{ matrix.items.a.name }}</a>
+              </div>
+
+              <div *ngFor="let completeA of totalCompleteAs">
+                <div *ngFor="let item of priceAs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeA.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemA.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteAs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteAOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteAOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteAOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- B -->
+
+      <div *ngFor="let itemB of totalBs">
+        <div *ngFor="let priceB of itemPriceBs">
+          <div *ngIf="priceB.value === 11.5">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/A.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addB">{{ matrix.items.b.name }}</a>
+              </div>
+
+              <div *ngFor="let completeB of totalCompleteBs">
+                <div *ngFor="let item of priceBs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeB.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemB.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteBs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteBOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteBOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteBOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- C -->
+
+      <div *ngFor="let itemC of totalCs">
+        <div *ngFor="let priceC of itemPriceCs">
+          <div *ngIf="priceC.value === 7.5">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/C.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addC">{{ matrix.items.c.name }}</a>
+              </div>
+
+              <div *ngFor="let completeC of totalCompleteCs">
+                <div *ngFor="let item of priceCs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeC.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemC.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteCs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteCOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteCOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteCOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- D -->
+
+      <div *ngFor="let itemD of totalDs">
+        <div *ngFor="let priceD of itemPriceDs">
+          <div *ngIf="priceD.value === 6">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/D.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addD">{{ matrix.items.d.name }}</a>
+              </div>
+
+              <div *ngFor="let completeD of totalCompleteDs">
+                <div *ngFor="let item of priceDs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeD.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemD.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteDs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteDOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteDOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteDOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- E -->
+
+      <div *ngFor="let itemE of totalEs">
+        <div *ngFor="let priceE of itemPriceEs">
+          <div *ngIf="priceE.value === 12">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/E.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addE">{{ matrix.items.e.name }}</a>
+              </div>
+
+              <div *ngFor="let completeE of totalCompleteEs">
+                <div *ngFor="let item of priceEs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeE.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemE.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteEs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteEOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteEOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteEOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- F -->
+
+      <div *ngFor="let itemF of totalFs">
+        <div *ngFor="let priceF of itemPriceFs">
+          <div *ngIf="priceF.value === 9.5">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/F.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addF">{{ matrix.items.f.name }}</a>
+              </div>
+
+              <div *ngFor="let completeF of totalCompleteFs">
+                <div *ngFor="let item of priceFs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeF.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemF.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteFs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteFOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteFOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteFOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- G -->
+
+      <div *ngFor="let itemG of totalGs">
+        <div *ngFor="let priceG of itemPriceGs">
+          <div *ngIf="priceG.value === 15.95">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/G.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addG">{{ matrix.items.g.name }}</a>
+              </div>
+
+              <div *ngFor="let completeG of totalCompleteGs">
+                <div *ngFor="let item of priceGs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeG.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemG.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteGs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteGOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteGOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteGOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- H -->
+
+      <div *ngFor="let itemH of totalHs">
+        <div *ngFor="let priceH of itemPriceHs">
+          <div *ngIf="priceH.value === 3.5">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/H.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addH">{{ matrix.items.h.name }}</a>
+              </div>
+
+              <div *ngFor="let completeH of totalCompleteHs">
+                <div *ngFor="let item of priceHs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeH.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemH.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteHs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteHOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteHOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteHOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- I -->
+
+      <div *ngFor="let itemI of totalIs">
+        <div *ngFor="let priceI of itemPriceIs">
+          <div *ngIf="priceI.value === 4.5">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/I.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addI">{{ matrix.items.i.name }}</a>
+              </div>
+
+              <div *ngFor="let completeI of totalCompleteIs">
+                <div *ngFor="let item of priceIs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeI.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemI.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteIs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteIOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteIOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteIOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- J -->
+
+      <div *ngFor="let itemJ of totalJs">
+        <div *ngFor="let priceJ of itemPriceJs">
+          <div *ngIf="priceJ.value === 11.3">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/J.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addJ">{{ matrix.items.j.name }}</a>
+              </div>
+
+              <div *ngFor="let completeJ of totalCompleteJs">
+                <div *ngFor="let item of priceJs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeJ.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemJ.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteJs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteJOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteJOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteJOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- K -->
+
+      <div *ngFor="let itemK of totalKs">
+        <div *ngFor="let priceK of itemPriceKs">
+          <div *ngIf="priceK.value === 14">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/K.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addK">{{ matrix.items.k.name }}</a>
+              </div>
+
+              <div *ngFor="let completeK of totalCompleteKs">
+                <div *ngFor="let item of priceKs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeK.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemK.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteKs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteKOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteKOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteKOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- L -->
+
+      <div *ngFor="let itemL of totalLs">
+        <div *ngFor="let priceL of itemPriceLs">
+          <div *ngIf="priceL.value === 10.7">
+
+            <div *ngFor="let matrix of matrixs">
+
+              <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/L.jpeg"> -->
+
+              <div class="itemSelectedFluo">
+                <a href routerLink="/addL">{{ matrix.items.l.name }}</a>
+              </div>
+
+              <div *ngFor="let completeL of totalCompleteLs">
+                <div *ngFor="let item of priceLs">
+                  <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
+                    <div [hidden]="item.isShow">
+                      <p *ngIf="completeL.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="h2-white">
+                <strong>+ {{ itemL.name }}€</strong>
+              </h2>
+
+              <div *ngFor="let item of totalCompleteLs">
+                <p class="subTotal">Total menu :
+                  <strong>{{ item.name }}€</strong>
+                </p>
+                <a href *ngIf="item.name"
+                [visible]="item.name"
+                class="removeItem"
+                (click) = "onSaveTotalDeleteLOnFirebase()"
+                (click) = "onSaveTotalCompleteDeleteLOnFirebase()"
+                (click) = "onSaveTotalTvaDeleteLOnFirebase()"
+                routerLink="/abcdefghijkl">Supprimer ce menu</a>
+              </div>
+              <div class="whiteLineHorizontal-total"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+
+    </div>
+
+    <!-- --------------------- RIGHT --------------------- -->
+
+    <div class="whiteLineVerticalMarginLeft-20"></div>
+    <div class="frameTotal">
+      <h2 class="h2-whiteBigPaddingTop-140-left-30">Total de votre commande</h2>
+
+      <div *ngFor="let itemA of totalCompleteAs">
+        <div *ngFor="let itemB of totalCompleteBs">
+          <div *ngFor="let itemC of totalCompleteCs">
+            <div *ngFor="let itemD of totalCompleteDs">
+              <div *ngFor="let itemE of totalCompleteEs">
+                <div *ngFor="let itemF of totalCompleteFs">
+                  <div *ngFor="let itemG of totalCompleteGs">
+                    <div *ngFor="let itemH of totalCompleteHs">
+                      <div *ngFor="let itemI of totalCompleteIs">
+                        <div *ngFor="let itemJ of totalCompleteJs">
+                          <div *ngFor="let itemK of totalCompleteKs">
+                            <div *ngFor="let itemL of totalCompleteLs">
+
+                              <p class="totalBig">
+                                <strong>{{
+                                  itemA.name
+                                  + itemB.name
+                                  + itemC.name
+                                  + itemD.name
+                                  + itemE.name
+                                  + itemF.name
+                                  + itemG.name
+                                  + itemH.name
+                                  + itemI.name
+                                  + itemJ.name
+                                  + itemK.name
+                                  + itemL.name | number : '1.2-2' }}</strong>€
+                              </p>
+
+                              <div class="whiteLineHorizontalRight"></div>
+
+                              <div *ngFor="let tvaA of totalTvaAs">
+                                <div *ngFor="let tvaB of totalTvaBs">
+                                  <div *ngFor="let tvaC of totalTvaCs">
+                                    <div *ngFor="let tvaD of totalTvaDs">
+                                      <div *ngFor="let tvaE of totalTvaEs">
+                                        <div *ngFor="let tvaF of totalTvaFs">
+                                          <div *ngFor="let tvaG of totalTvaGs">
+                                            <div *ngFor="let tvaH of totalTvaHs">
+                                              <div *ngFor="let tvaI of totalTvaIs">
+                                                <div *ngFor="let tvaJ of totalTvaJs">
+                                                  <div *ngFor="let tvaK of totalTvaKs">
+                                                    <div *ngFor="let tvaL of totalTvaLs">
+
+                                                      <p class="totalTva">TVA :
+                                                        <strong>
+                                                          {{ tvaA.name
+                                                            + tvaB.name
+                                                            + tvaC.name
+                                                            + tvaD.name
+                                                            + tvaE.name
+                                                            + tvaF.name
+                                                            + tvaG.name
+                                                            + tvaH.name
+                                                            + tvaI.name
+                                                            + tvaJ.name
+                                                            + tvaK.name
+                                                            + tvaL.name | number : '1.2-2' }}</strong>€
+                                                      </p>
+
+                                                      <p class="totalTva">HT :
+                                                        <strong>{{
+                                                            itemA.name - tvaA.name
+                                                            + itemB.name - tvaB.name
+                                                            + itemC.name - tvaC.name
+                                                            + itemD.name - tvaD.name
+                                                            + itemE.name - tvaE.name
+                                                            + itemF.name - tvaF.name
+                                                            + itemG.name - tvaG.name
+                                                            + itemH.name - tvaH.name
+                                                            + itemI.name - tvaI.name
+                                                            + itemJ.name - tvaJ.name
+                                                            + itemK.name - tvaK.name
+                                                            + itemL.name - tvaL.name | number : '1.2-2' }}</strong>€
+                                                      </p>
+
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="whiteLineHorizontalRight"></div>
+      </div>
+      <a href class="link" routerLink="/payment">Détails de ma commande</a>
+
+  </div>
+</div>

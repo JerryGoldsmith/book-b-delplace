@@ -1,0 +1,35 @@
+<article class="background-single">
+  <div class="row">
+    <div class="col-xs-18 frame-top">
+
+      <button class="waves-effect waves-light submit-button-single-top buttons" (click)="onBack()">Retour</button>
+
+      <div *ngFor="let bookAll of bookAlls; let all = index">
+        <div *ngFor="let i of rowIndexArray; let x = index" class="image-top-single">
+          <div *ngIf="all==0">
+            <div *ngIf="x==0">
+              <img [src]="imageListAll[3+i].imageUrl" alt="images" width="720px" class="img-fluid imageDisplay">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="title-big-single"><strong>{{ bookAll.title }}</strong></h1>
+      <p class="textDate-single">{{ bookAll.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookAll.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor-single">{{ bookAll.author }}</i></p>
+
+      <div id="conteneur">
+        <div id="spacer"></div>
+
+        <!-- <div *ngFor="let i of rowIndexArray" id="encart">
+          <div *ngIf="i==0">
+            <img [src]="imageList[2+i].imageUrl" alt="images" width="660px" class="img-fluid imageDisplay-text">
+          </div>
+        </div> -->
+
+        <h3 class="text-single">{{ bookAll.texte }}</h3>
+      </div>
+
+      <button class="waves-effect waves-light submit-button-single-bottom buttons" (click)="onBack()">Retour</button>
+    </div>
+  </div>
+</article>

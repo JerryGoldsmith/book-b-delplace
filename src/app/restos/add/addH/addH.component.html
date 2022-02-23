@@ -1,0 +1,55 @@
+<div routerLinkActive="active" class="layoutFrame background-H">
+  <div class="items">
+    <div><img class="visual-Radius50Height22" src="../assets/matrixPictures/H.jpeg"></div>
+    <div *ngFor="let matrix of matrixs">
+      <h2 class="title-02">{{ matrix.items.h.name }}</h2>
+      <h3 class="comment-02">{{ matrix.items.h.description }}</h3>
+      <p class="price-add"><strong>{{ matrix.items.h.price }}0</strong>€</p>
+    </div>
+
+    <h2 class="bigTitle">Suppléments</h2>
+    <div class="whiteLineHorizontalAdd"></div>
+
+    <label *ngFor="let item of priceHs">
+      <input type="checkbox" [(ngModel)]="item.isChecked">
+      <span class="spaceVerticalBetweenItems">
+        <div class="spaceBetweenItemAndPrice">
+          <div class="left">{{item.label}}</div>
+          <div class="right">{{item.value | number : '1.2-2'}}€</div>
+        </div>
+      </span>
+      <div class="whiteLineHorizontalAdd"></div>
+    </label>
+
+    <!-- <div>
+      <span class="supplementsPricesTacos" *ngFor="let price of itemPriceHs">Total:
+        <strong>{{ price.value + sumTotalPrices }}€</strong>
+      </span>
+    </div> -->
+
+    <form (ngSubmit)="submit()">
+      <div class="left-284">
+        <button type="submit"
+        class="waves-effect waves-light submit-button"
+        (click) = "onSaveTotalHOnFirebase()"
+        (click) = "onSaveTotalCompleteHOnFirebase()"
+        (click) = "onSaveTotalTvaHOnFirebase()"
+        routerLink="/abcdefghijkl">Ajouter à la commande</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <div routerLinkActive="active" class="menuFrameShushi-01 backgroundTacos">
+  <div *ngFor="let price of itemPriceHs">
+    <span class="supplementsPricesTacos">Menu :
+      <strong>{{ price.value }}</strong>
+    </span>
+    <span class="supplementsPricesTacos">- Suppléments :
+      <strong> {{ sumTotalPrices }}€</strong>
+    </span>
+    <span class="supplementsPricesTacos">- Total :
+      <strong> {{ price.value + sumTotalPrices }}€</strong>
+    </span>
+  </div>
+</div> -->
