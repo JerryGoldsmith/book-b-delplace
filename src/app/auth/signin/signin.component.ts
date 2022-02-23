@@ -15,12 +15,7 @@ export class SigninComponent implements OnInit {
   errorMessage: string;
   submitted = false;
 
-
-  // onActivate(event) {
-  //   // window.scroll(0,0);
-  //   document.body.scrollTop = 0;
-  //   // document.querySelector('body').scrollTo(0,0)
-  // }
+  isAuth: boolean;
 
   constructor(
     private formBuilder: FormBuilder,

@@ -28,6 +28,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './main/main.component';
 
+/* -------------------------------------------- */
+/* ------------------ AUTH -------------------- */
+/* -------------------------------------------- */
+
+import { SigninComponent } from './auth/signin/signin.component';
+import { SigninlistComponent } from './auth/signinlist/signinlist.component';
+
+import { SignupComponent } from './auth/signup/signup.component';
+import { SignupLightComponent } from './auth/signuplight/signuplight.component';
+
 /* -------------------------------------------------- */
 /* --------------------- SERVICES ------------------- */
 /* -------------------------------------------------- */
@@ -66,14 +76,25 @@ const appRoutes: Routes = [
 
   { path: 'main', component: MainComponent },
   { path: '', redirectTo: 'main', pathMatch: 'full' },
-  { path: '**', redirectTo: 'main' }
+  { path: '**', redirectTo: 'main' },
+
+  // auth
+  { path: 'auth/signin', component: SigninComponent },
+  { path: 'auth/signinlist', component: SigninlistComponent },
+
+  { path: 'auth/signup', component: SignupComponent },
+  { path: 'auth/signuplight', component: SignupLightComponent }
   
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    SignupComponent,
+    SignupLightComponent,
+    SigninComponent,
+    SigninlistComponent
   ],
   imports: [
     BrowserModule,

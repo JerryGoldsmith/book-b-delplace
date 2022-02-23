@@ -24,15 +24,15 @@ export class Part01Component implements OnInit {
 
   ngOnInit(): void {
 
-    firebase.auth().onAuthStateChanged(
-        (user) => {
-          if(user) {
-            this.isAuth = true;
-          } else {
-            this.isAuth = false;
-          }
-        }
-      );
+    // firebase.auth().onAuthStateChanged(
+    //     (user) => {
+    //       if(user) {
+    //         this.isAuth = true;
+    //       } else {
+    //         this.isAuth = false;
+    //       }
+    //     }
+    //   );
 
     /* refresh page */
 

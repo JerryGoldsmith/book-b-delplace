@@ -18,6 +18,8 @@ export class SignupLightComponent implements OnInit {
   errorMessage: string;
   submitted = false;
 
+  isAuth: boolean;
+
   // onActivate(event) {
   //   // window.scroll(0,0);
   //   document.body.scrollTop = 0;

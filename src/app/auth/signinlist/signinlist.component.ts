@@ -18,6 +18,8 @@ export class SigninlistComponent implements OnInit {
   width: 0;
   height: 0;
 
+  isAuth: boolean;
+
   onResized(event: ResizedEvent) {
     // this.width = event.newWidth;
     // this.height = event.newHeight;
