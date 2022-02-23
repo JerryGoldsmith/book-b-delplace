@@ -1,0 +1,109 @@
+mdb-navbar{
+  font-size: 20px;
+}
+
+body {
+  height: 3578px;
+  overflow: scroll;
+}
+
+.scroll-vertical {
+  overflow: scroll;
+}
+
+/* -------------------------------------------------- */
+/* --------------------- Entete --------------------- */
+/* -------------------------------------------------- */
+
+/* ---------- Images ----------- */
+
+.item:first-child .item__img-wrap {
+	width: calc(100vw - 2rem);
+	--aspect-ratio: 1500/304;
+	--image: url(../../assets/img/belle-ile/belle-04.jpg);
+}
+
+/* ---------- Textes ----------- */
+
+.big-title {
+	position: absolute;
+	color: var(--main-color);
+	z-index: 100000;
+	font-size: 56px;
+  /* font-family: Didot,serif; */
+	font-family: NanumMyeongjo-Regular, serif;
+  font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+	line-height: 1.2;
+	margin: .67em 0;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    max-width: 1300px;
+    text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+
+.sub-title {
+	position: absolute;
+	color: var(--main-color);
+	z-index: 100000;
+	font-size: 36px;
+	font-family: NanumMyeongjo-Regular, serif;
+  font-weight: 400;
+	letter-spacing: 4px;
+	line-height: 2;
+	margin: .67em 0;
+    top: 54%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- Separation line ------------------ */
+
+.line {
+	height: 1px;
+	opacity: 1;
+	background-color: var(--color-gold);
+	position: absolute;
+	color: #FFF;
+	z-index: 100000;
+	margin: .67em 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 46%;
+    // max-width: 978px;
+    text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* .title-sequence {
+	opacity: 1;
+} */
+
+/* ---------- Logo ----------- */
+
+.logo {
+	position: absolute;
+	color: #FFF;
+	z-index: 100000;
+	margin: .67em 0;
+    top: 60%;
+    left: 20%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 40%;
+    max-width: 200px;
+    text-align: center;
+	-webkit-font-smoothing: antialiased;
+}

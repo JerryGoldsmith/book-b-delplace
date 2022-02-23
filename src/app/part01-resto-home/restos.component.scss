@@ -1,0 +1,202 @@
+body {
+  padding-top: 60px;
+}
+
+.layout-rules {
+  // width: 1480px;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  max-width: 94rem;
+  // max-width: 1480px;
+}
+
+margin-topics {
+  padding-top: 720px;
+}
+
+h1 {
+  color: var(--color-fluo);
+  font-size: 40px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: left;
+}
+
+h2 {
+  color: var(--color-fluo);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: left;
+}
+
+.h2-gold {
+  color: var(--color-gold);
+  font-size: 42px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: right;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 30px;
+  margin-top: 10px;
+  margin-top: 10px;
+}
+
+.h2-white {
+  color: var(--color-white);
+  text-align: right;
+  font-size: 36px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+.h2-whiteBigPaddingTop-140-left-30 { // total
+  color: var(--color-gold);
+  text-align: left;
+  font-size: 66px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 30px;
+  padding-right: 10px;
+  padding-top: 140px;
+  margin-top: 10px;
+}
+
+.h2-whiteBigPaddingTop-140 { // total & payment
+  color: var(--color-gold);
+  text-align: left;
+  font-size: 66px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 140px;
+  margin-top: 10px;
+}
+
+.h2-whiteBigPaddingTop-20 { // total
+  color: var(--color-gold);
+  text-align: left;
+  font-size: 66px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+.h2-fluo {
+  color: var(--color-fluo);
+  text-align: right;
+  font-size: 36px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a {
+  color: var(--color-fluo);
+  text-align: right;
+  font-size: 28px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+a:hover {
+  color: var(--color-gold);
+}
+
+.submit-button {
+  background-color: var(--color-gold);
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-gold);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.submit-button:hover {
+  background-color: var(--color-fluo);
+  animation: ani9 0.8s ease-in-out infinite alternate;
+  transform: translatey(6px);
+  box-shadow: none;
+}
+
+// ------
+
+.item:first-child .item__img-wrap {
+	width: calc(100vw - 2rem);
+	--aspect-ratio: 1500/304;
+	--image: url(../../assets/img/belle-ile/belle-04.jpg);
+}
+
+.big-title {
+	position: absolute;
+	color: var(--main-color);
+	z-index: 100000;
+	font-size: 56px;
+  /* font-family: Didot,serif; */
+	font-family: NanumMyeongjo-Regular, serif;
+  font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+	line-height: 1.2;
+	margin: .67em 0;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    max-width: 1300px;
+    text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+
+.sub-title {
+	position: absolute;
+	color: var(--main-color);
+	z-index: 100000;
+	font-size: 36px;
+	font-family: NanumMyeongjo-Regular, serif;
+  font-weight: 400;
+	letter-spacing: 4px;
+	line-height: 2;
+	margin: .67em 0;
+    top: 54%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+
+.line {
+	height: 1px;
+	opacity: 1;
+	background-color: var(--color-gold);
+	position: absolute;
+	color: #FFF;
+	z-index: 100000;
+	margin: .67em 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 46%;
+    // max-width: 978px;
+    text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+
+.scroll-vertical {
+  overflow: scroll;
+}

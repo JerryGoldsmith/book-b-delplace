@@ -1,0 +1,873 @@
+<body>
+  <main class="scroll-vertical">
+    <!-- <div id="bg"></div> -->
+    <div data-scroll>
+      <div class="content">
+
+        <!-- entete -->
+
+        <section class="item">
+          <!-- <img src="../../assets/logo.png" class="logo"> -->
+          <h1 class="big-title">
+            <span class="title-sequence">Editer du contenu éditorial</span>
+          </h1>
+          <div class="line"></div>
+          <p class="sub-title">back office démo</p>
+          <div class="item__img-wrap">
+            <div class="item__img item__img--t1"></div>
+          </div>
+        </section>
+
+        <!-- home edition -->
+
+        <section class="col-xs-12 submit-button-backoffice-margin">
+          <button class="waves-effect waves-light buttons" id="submit-button-rendu" (click)="onBack()">Retour à l'espace rendu</button>
+        </section>
+
+        <!-- <section> -->
+          <div class="row" id="all-form">
+
+            <div class="box">
+              <section class="col-xs-12 bottomBlocs">
+
+                <!-- article A -->
+
+                <!-- <article *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+
+                    <div class="layout-article-A">
+                      <span *ngFor="let bookA of bookAs; let i = index">
+
+                        <h3 class="title-A"
+                        [hidden]="imageListA[0+i].caption !== 'demo'">
+                          <strong>{{ bookA.title }}</strong>
+                        </h3>
+
+                        <div *ngFor="let i of rowIndexArray">
+                          <div *ngIf="i==0">
+                            <span (click)="onViewBookA(i)">
+                              <img [src]="imageListA[0+i].imageUrl"
+                              width="940px" alt="images" class="linkPhoto"
+                              [hidden]="imageListA[0+i].caption !== 'demo'">
+                            </span>
+                          </div>
+                        </div>
+
+                        <p class="three-lines-only currentText-A"
+                        [hidden]="imageListA[0+i].caption !== 'demo'">{{ bookA.texte }}</p>
+
+                        <button class="waves-effect waves-light submit-button buttons"
+                        (click)="onRefreshButton()"
+                        (click)="onClearArticleAStorage()"
+                        (click)="onClearImageDetailAs()"
+                        (click)="onClearBookAs()">
+                        Supprimer cet article</button>
+
+                        <p *ngIf="imageListA[0+i].caption !== 'demo'" class="note">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                        <p *ngIf="imageListA[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                      </span>
+                    </div>
+
+                    <button class="waves-effect waves-light submit-button buttons"
+                    (click)="onNewBookA()"
+                    *ngIf="imageList"
+                    [hidden]="imageListA[0+i].category === 'articleA'"
+                    >Editer cet article</button>
+
+                  </div>
+                </article> -->
+
+                <article *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+
+                    <div class="layout-article-A">
+                      <span *ngFor="let book of books; let i = index">
+
+                        <h3 class="title-A"
+                        [hidden]="imageList[0+i].caption !== 'demo'">
+                          <strong>{{ book.title }}</strong>
+                        </h3>
+
+                        <p class="textDate-main">{{ book.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ book.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ book.author }}</i></p>
+
+                        <div *ngFor="let i of rowIndexArray">
+                          <div *ngIf="i==0">
+                            <span (click)="onViewBook(i)">
+                              <img [src]="imageList[0+i].imageUrl"
+                              width="940px" alt="images" class="linkPhoto"
+                              [hidden]="imageList[0+i].caption !== 'demo'">
+                            </span>
+                          </div>
+                        </div>
+
+                        <p class="three-lines-only currentText-A"
+                        [hidden]="imageList[0+i].caption !== 'demo'">{{ book.texte }}</p>
+
+                        <button class="waves-effect waves-light submit-button buttons"
+                        (click)="onRefreshButton()"
+                        (click)="onClearArticleAStorage()"
+                        (click)="onClearImageDetails()"
+                        (click)="onClearBooks()">
+                        Supprimer cet article</button>
+
+                        <p *ngIf="imageList[0+i].caption !== 'demo'" class="note">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                        <p *ngIf="imageList[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                      </span>
+                    </div>
+
+                    <button class="waves-effect waves-light submit-button buttons"
+                    (click)="onNewBook()"
+                    *ngIf="imageList"
+                    [hidden]="imageList[0+i].category === 'articleA'"
+                    >Editer cet article</button>
+
+                  </div>
+                </article>
+
+                <!-- ligne horizontale -->
+
+                <div class="horizontalLine"></div>
+
+                <!-- article E -->
+
+                <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+                  <div *ngIf="i==0">
+
+                    <div class="layout-article-E">
+                      <span *ngFor="let bookE of bookEs; let i = index">
+
+                        <h3 class="title-E"
+                          [hidden]="imageListE[0+i].caption !== 'demo'">
+                          <strong>{{ bookE.title }}</strong>
+                        </h3>
+
+                        <p class="textDate-main">{{ bookE.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookE.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookE.author }}</i></p>
+
+                        <div *ngFor="let i of rowIndexArray">
+                          <div *ngIf="i==0">
+                            <span (click)="onViewBookE(i)">
+                              <img [src]="imageListE[0+i].imageUrl"
+                              width="510px" alt="images" class="linkPhoto"
+                              [hidden]="imageListE[0+i].caption !== 'demo'">
+                            </span>
+                          </div>
+                        </div>
+
+                        <p class="three-lines-only currentText-E"
+                        [hidden]="imageListE[0+i].caption !== 'demo'">{{ bookE.texte }}</p>
+
+                        <button class="waves-effect waves-light submit-button buttons"
+                        (click)="onRefreshButton()"
+                        (click)="onClearArticleEStorage()"
+                        (click)="onClearImageDetailEs()"
+                        (click)="onClearBookEs()">
+                        Supprimer cet article</button>
+
+                        <p *ngIf="imageListE[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                        <p *ngIf="imageListE[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                      </span>
+                    </div>
+
+                    <button class="waves-effect waves-light submit-button buttons"
+                    (click)="onNewBookE()"
+                    *ngIf="imageListE"
+                    [hidden]="imageListE[0+i].category === 'articleE'"
+                    >Editer cet article</button>
+
+                    <!-- <button class="submit-button-disabled"
+                    *ngIf="imageListE[0+i].caption === 'demo'"
+                    [disabled]="imageListE[0+i].caption === 'demo'"
+                    >Article déjà édité</button> -->
+
+                  </div>
+                </article>
+
+                <!-- ligne verticale -->
+
+                <!-- <div class="verticalLine-bottom bottomBlocs"></div> -->
+
+                <!-- article F -->
+
+                <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+                  <div *ngIf="i==0">
+
+                    <div class="layout-article-F">
+                      <span *ngFor="let bookF of bookFs; let i = index">
+
+                        <h3 class="title-F"
+                          [hidden]="imageListF[0+i].caption !== 'demo'">
+                          <strong>{{ bookF.title }}</strong>
+                        </h3>
+
+                        <p class="textDate-main">{{ bookF.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookF.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookF.author }}</i></p>
+
+                        <div *ngFor="let i of rowIndexArray">
+                          <div *ngIf="i==0">
+                            <span (click)="onViewBookF(i)">
+                              <img [src]="imageListF[0+i].imageUrl"
+                              width="360px" alt="images" class="linkPhoto"
+                              [hidden]="imageListF[0+i].caption !== 'demo'">
+                            </span>
+                          </div>
+                        </div>
+
+                        <p class="three-lines-only currentText-F"
+                        [hidden]="imageListF[0+i].caption !== 'demo'">{{ bookF.texte }}</p>
+
+                        <button class="waves-effect waves-light submit-button buttons"
+                        (click)="onRefreshButton()"
+                        (click)="onClearArticleFStorage()"
+                        (click)="onClearImageDetailFs()"
+                        (click)="onClearBookFs()">
+                        Supprimer cet article</button>
+
+                        <p *ngIf="imageListF[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                        <p *ngIf="imageListF[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                      </span>
+                    </div>
+
+                    <button class="waves-effect waves-light submit-button buttons"
+                    (click)="onNewBookF()"
+                    *ngIf="imageListF"
+                    [hidden]="imageListF[0+i].category === 'articleF'"
+                    >Editer cet article</button>
+
+                    <!-- <button class="submit-button-disabled"
+                    *ngIf="imageListE[0+i].caption === 'demo'"
+                    [disabled]="imageListE[0+i].caption === 'demo'"
+                    >Article déjà édité</button> -->
+
+                  </div>
+                </article>
+
+                <!-- ligne horizontale -->
+                <div class="horizontalLine"></div>
+
+                <!-- article G -->
+
+                <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+                  <div *ngIf="i==0">
+
+                    <div class="layout-article-G">
+                      <span *ngFor="let bookG of bookGs; let i = index">
+
+                        <!-- <h3 class="titleAside"
+                          [hidden]="imageListG[0+i].caption !== 'demo'">
+                          <strong>{{ bookG.title }}</strong>
+                        </h3> -->
+
+                        <div *ngFor="let i of rowIndexArray">
+                          <div *ngIf="i==0">
+                            <span (click)="onViewBookG(i)">
+                              <img [src]="imageListG[0+i].imageUrl"
+                              width="940px" alt="images" class="linkPhoto-image"
+                              [hidden]="imageListG[0+i].caption !== 'demo'">
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="horizontalLine-image"></div>
+                        <h3 class="titleImages">En images</h3>
+
+                        <p class="textDateG">{{ bookG.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookG.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthorG">{{ bookG.author }}</i></p>
+
+                        <!-- <p class="three-lines-only currentTextAside"
+                        [hidden]="imageListG[0+i].caption !== 'demo'">{{ bookG.texte }}</p> -->
+
+                        <button class="waves-effect waves-light submit-button buttons"
+                        (click)="onRefreshButton()"
+                        (click)="onClearArticleGStorage()"
+                        (click)="onClearImageDetailGs()"
+                        (click)="onClearBookGs()">
+                        Supprimer cet article</button>
+
+                        <p *ngIf="imageListG[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                        <p *ngIf="imageListG[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                      </span>
+                    </div>
+
+                    <button class="waves-effect waves-light submit-button buttons"
+                    (click)="onNewBookG()"
+                    *ngIf="imageListG"
+                    [hidden]="imageListG[0+i].category === 'articleG'"
+                    >Editer cet article</button>
+
+                    <!-- <button class="submit-button-disabled"
+                    *ngIf="imageListE[0+i].caption === 'demo'"
+                    [disabled]="imageListE[0+i].caption === 'demo'"
+                    >Article déjà édité</button> -->
+
+                  </div>
+                </article>
+
+              </section>
+
+              <!------------ ligne verticale MAIN ------------->
+
+              <div class="verticalLine-main"></div>
+
+              <!-- aside -->
+
+              <aside class="col-xs-6">
+
+                <!-- article B -->
+
+                <article *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+
+                    <div class="layout-article-aside">
+                      <span *ngFor="let bookB of bookBs; let i = index">
+
+                        <h3 class="titleTheme">Portrait</h3>
+
+                        <h3 class="titleAside"
+                        [hidden]="imageListB[0+i].caption !== 'demo'">
+                          <strong>{{ bookB.title }}</strong>
+                        </h3>
+
+                        <p class="textDate-main">{{ bookB.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookB.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookB.author }}</i></p>
+
+                        <div *ngFor="let i of rowIndexArray">
+                          <div *ngIf="i==0">
+                            <span (click)="onViewBookB(i)">
+                              <img [src]="imageListB[0+i].imageUrl"
+                              width="420px" alt="images" class="linkPhoto"
+                              [hidden]="imageListB[0+i].caption !== 'demo'">
+                            </span>
+                          </div>
+                        </div>
+
+                        <p class="three-lines-only currentTextAside"
+                        [hidden]="imageListB[0+i].caption !== 'demo'">{{ bookB.texte }}</p>
+
+                        <!-- <button (click)="onViewBook(i)" class="list-group-item-text submit-button buttons">Lire la suite</button> -->
+
+                        <button class="waves-effect waves-light submit-button buttons"
+                        (click)="onRefreshButton()"
+                        (click)="onClearArticleBStorage()"
+                        (click)="onClearImageDetailBs()"
+                        (click)="onClearBookBs()">
+                        Supprimer cet article</button>
+
+                        <p *ngIf="imageListB[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                        <p *ngIf="imageList[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                      </span>
+                    </div>
+
+                    <button class="waves-effect waves-light submit-button buttons"
+                    (click)="onNewBookB()"
+                    *ngIf="imageListB"
+                    [hidden]="imageListB[0+i].category === 'articleB'"
+                    >Editer cet article</button>
+
+                    <!-- <button class="submit-button-disabled"
+                    *ngIf="imageListB[0+i].caption === 'demo'"
+                    [disabled]="imageListB[0+i].caption === 'demo'"
+                    >Article déjà édité</button> -->
+
+                  </div>
+                </article>
+
+                <!-- article C -->
+
+                <article *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+
+                    <div class="layout-article-aside">
+                      <span *ngFor="let bookC of bookCs; let i = index">
+
+                        <h3 class="titleTheme">Coulisses</h3>
+
+                        <h3 class="titleAside"
+                        [hidden]="imageListC[0+i].caption !== 'demo'">
+                          <strong>{{ bookC.title }}</strong>
+                        </h3>
+
+                        <p class="textDate-main">{{ bookC.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookC.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookC.author }}</i></p>
+
+                        <div *ngFor="let i of rowIndexArray">
+                          <div *ngIf="i==0">
+                            <span (click)="onViewBookC(i)">
+                              <img [src]="imageListC[0+i].imageUrl"
+                              width="420px" alt="images" class="linkPhoto"
+                              [hidden]="imageListC[0+i].caption !== 'demo'">
+                            </span>
+                          </div>
+                        </div>
+
+                        <p class="three-lines-only currentTextAside"
+                        [hidden]="imageListC[0+i].caption !== 'demo'">{{ bookC.texte }}</p>
+
+                        <!-- <button (click)="onViewBook(i)" class="list-group-item-text submit-button buttons">Lire la suite</button> -->
+
+                        <button class="waves-effect waves-light submit-button buttons"
+                        (click)="onRefreshButton()"
+                        (click)="onClearArticleCStorage()"
+                        (click)="onClearImageDetailCs()"
+                        (click)="onClearBookCs()">
+                        Supprimer cet article</button>
+
+                        <p *ngIf="imageListC[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                        <p *ngIf="imageListC[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                      </span>
+                    </div>
+
+                    <button class="waves-effect waves-light submit-button buttons"
+                    (click)="onNewBookC()"
+                    *ngIf="imageListC"
+                    [hidden]="imageListC[0+i].category === 'articleC'"
+                    >Editer cet article</button>
+
+                    <!-- <button class="submit-button-disabled"
+                    *ngIf="imageListC[0+i].caption === 'demo'"
+                    [disabled]="imageListC[0+i].caption === 'demo'"
+                    >Article déjà édité</button> -->
+
+                  </div>
+                </article>
+
+                <!-- article D -->
+
+                <article *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+
+                    <div class="layout-article-aside">
+                      <span *ngFor="let bookD of bookDs; let i = index">
+
+                        <h3 class="titleTheme">Interview</h3>
+
+                        <h3 class="titleAside"
+                        [hidden]="imageListD[0+i].caption !== 'demo'">
+                          <strong>{{ bookD.title }}</strong>
+                        </h3>
+
+                        <p class="textDate-main">{{ bookD.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookD.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookD.author }}</i></p>
+
+                        <div *ngFor="let i of rowIndexArray">
+                          <div *ngIf="i==0">
+                            <span (click)="onViewBookD(i)">
+                              <img [src]="imageListD[0+i].imageUrl"
+                              width="420px" alt="images" class="linkPhoto"
+                              [hidden]="imageListD[0+i].caption !== 'demo'">
+                            </span>
+                          </div>
+                        </div>
+
+                        <p class="three-lines-only currentTextAside"
+                        [hidden]="imageListD[0+i].caption !== 'demo'">{{ bookD.texte }}</p>
+
+                        <!-- <button (click)="onViewBook(i)" class="list-group-item-text submit-button buttons">Lire la suite</button> -->
+
+                        <button class="waves-effect waves-light submit-button buttons"
+                        (click)="onRefreshButton()"
+                        (click)="onClearArticleDStorage()"
+                        (click)="onClearImageDetailDs()"
+                        (click)="onClearBookDs()">
+                        Supprimer cet article</button>
+
+                        <p *ngIf="imageListD[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                        <p *ngIf="imageListD[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                      </span>
+                    </div>
+
+                    <button class="waves-effect waves-light submit-button buttons"
+                    (click)="onNewBookD()"
+                    *ngIf="imageListD"
+                    [hidden]="imageListD[0+i].category === 'articleD'"
+                    >Editer cet article</button>
+
+                    <!-- <button class="submit-button-disabled"
+                    *ngIf="imageListD[0+i].caption === 'demo'"
+                    [disabled]="imageListD[0+i].caption === 'demo'"
+                    >Article déjà édité</button> -->
+
+                  </div>
+                </article>
+
+                <article class="pub">
+                  <p class="text-pub">
+                    <strong>Ceci n'est pas une publicité, mais si c'était le cas, elle pourrait se placer ici.</strong>
+                  </p>
+                </article>
+
+              </aside>
+            </div>
+
+            <!--  -->
+
+            <div class="horizontalLineComplete-top"></div>
+
+            <!--  -->
+
+            <div>
+              <section class="box background-HI">
+
+                <!-- article H -->
+
+                <article *ngFor="let i of rowIndexArray">
+                  <div *ngIf="i==0">
+
+                    <div class="layout-article-news">
+
+                      <h3 class="titleTheme-H">News</h3>
+
+                      <span *ngFor="let bookH of bookHs; let i = index">
+
+                        <img [src]="imageListH[i+0].imageUrl" alt="images" class="img-fluid imageDisplay-H">
+
+                        <p class="textDate-H">{{ bookH.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookH.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthorH">{{ bookH.author }}</i></p>
+
+                        <a class="two-lines-only currentText-news"
+                        (click)="onViewBookH(i)"
+                        [hidden]="imageListH[0+i].caption !== 'demo'">{{ bookH.texte }}</a>
+
+                      </span>
+                    </div>
+
+                      <button class="waves-effect waves-light submit-button buttons"
+                      *ngIf="imageListH"
+                      [visible]="imageListH[0+i].category === 'articleH'"
+                      (click)="onRefreshButton()"
+                      (click)="onClearArticleHStorage()"
+                      (click)="onClearImageDetailHs()"
+                      (click)="onClearBookHs()">
+                      Supprimer les news</button>
+
+                    <p *ngIf="imageListH[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                    <button class="waves-effect waves-light submit-button buttons"
+                    (click)="onNewBookH()"
+                    >Ajouter une news</button>
+
+                    <p *ngIf="imageListH[0+i].caption === 'demo'" class="note">Article éditable : 4 news conseillées. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                  </div>
+                </article>
+
+                <!-- article I -->
+
+                <article class="col-xs-8">
+                  <div *ngFor="let i of rowIndexArray">
+                    <div *ngIf="i==0">
+                      <div class="layout-article-I">
+                        <span>
+
+                          <!-- <h3 class="titleAside">
+                            <strong>{{ book.title }}</strong>
+                          </h3> -->
+
+                          <!-- <div *ngFor="let i of rowIndexArray">
+                            <div *ngIf="i==0">
+                              <span (click)="onViewBook(i)">
+                                <img [src]="imageList[0+i].imageUrl"
+                                width="940px" alt="images" class="linkPhoto"
+                                [hidden]="imageList[0+i].caption !== 'demo'">
+                              </span>
+                            </div>
+                          </div> -->
+
+                          <h3 class="titleTheme-I">Archives</h3>
+
+                          <!-- <div *ngFor="let book of books; let i = index"> -->
+                            <div *ngFor="let i of rowIndexArray; let x = index">
+                              <div *ngIf="x==0">
+                                <div *ngFor="let bookAll of bookAlls | slice: 0:6; let i = index">
+
+                                  <a class="currentText-I">
+                                    <div *ngIf="i<6" class="currentText-I-margin">
+
+                                      <!-- <div (click)="onViewBookAll(i)">
+                                        {{ bookAll.title }}
+                                      </div> -->
+
+                                      <div *ngIf="i==0" (click)="onViewBookAllOne(i)"
+                                      class="archive-width">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==1" (click)="onViewBookAllTwo(i)"
+                                      class="archive-width">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==2" (click)="onViewBookAllThree(i)"
+                                      class="archive-width">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==3" (click)="onViewBookAllFour(i)"
+                                      class="archive-width">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==4" (click)="onViewBookAllFive(i)"
+                                      class="archive-width">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==5" (click)="onViewBookAllSix(i)"
+                                      class="archive-width">
+                                        {{ bookAll.title }}
+                                      </div>
+
+                                      <!-- <div *ngIf="i==6" (click)="onViewBookAll(i)">
+                                        {{ bookAll.title }}
+                                      </div> -->
+
+                                      <!-- <div *ngIf="i==0" (click)="onViewBook(i)">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==1" (click)="onViewBookB(i-1)">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==2" (click)="onViewBookC(i-2)">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==3" (click)="onViewBookD(i-3)">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==4" (click)="onViewBookE(i-4)">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==5" (click)="onViewBookF(i-5)">
+                                        {{ bookAll.title }}
+                                      </div>
+                                      <div *ngIf="i==6" (click)="onViewBookG(i-6)">
+                                        {{ bookAll.title }}
+                                      </div> -->
+                                    </div>
+                                  </a>
+
+                                </div>
+                              </div>
+                            </div>
+
+                        </span>
+
+                        <div class="link-archives-all-margin-main">
+                          <a routerLink="/archives" class="link-archives-all">
+                            Toutes les archives
+                          </a>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+
+                </article>
+              </section>
+
+              <!--  -->
+
+              <div class="horizontalLineComplete-bottom"></div>
+
+              <!--  -->
+
+              <!-- article J -->
+
+              <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+                <div *ngIf="i==0">
+
+                  <div class="layout-article-JKL">
+                    <span *ngFor="let bookJ of bookJs; let i = index">
+
+                      <h3 class="title-JKL"
+                        [hidden]="imageListJ[0+i].caption !== 'demo'">
+                        <strong>{{ bookJ.title }}</strong>
+                      </h3>
+
+                      <p class="textDate-main">{{ bookJ.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookJ.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookJ.author }}</i></p>
+
+                      <div *ngFor="let i of rowIndexArray">
+                        <div *ngIf="i==0">
+                          <span (click)="onViewBookJ(i)">
+                            <img [src]="imageListJ[0+i].imageUrl"
+                            width="420px" alt="images" class="linkPhoto"
+                            [hidden]="imageListJ[0+i].caption !== 'demo'">
+                          </span>
+                        </div>
+                      </div>
+
+                      <p class="three-lines-only currentTextAside"
+                      [hidden]="imageListJ[0+i].caption !== 'demo'">{{ bookJ.texte }}</p>
+
+                      <button class="waves-effect waves-light submit-button buttons"
+                      (click)="onRefreshButton()"
+                      (click)="onClearArticleJStorage()"
+                      (click)="onClearImageDetailJs()"
+                      (click)="onClearBookJs()">
+                      Supprimer cet article</button>
+
+                      <p *ngIf="imageListJ[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                      <p *ngIf="imageListJ[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                    </span>
+                  </div>
+
+                  <button class="waves-effect waves-light submit-button buttons"
+                  (click)="onNewBookJ()"
+                  *ngIf="imageListJ"
+                  [hidden]="imageListJ[0+i].category === 'articleJ'"
+                  >Editer cet article</button>
+
+                  <!-- <button class="submit-button-disabled"
+                  *ngIf="imageListE[0+i].caption === 'demo'"
+                  [disabled]="imageListE[0+i].caption === 'demo'"
+                  >Article déjà édité</button> -->
+
+                </div>
+              </article>
+
+              <!-- article K -->
+
+              <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+                <div *ngIf="i==0">
+
+                  <div class="layout-article-JKL">
+                    <span *ngFor="let bookK of bookKs; let i = index">
+
+                      <h3 class="title-JKL"
+                        [hidden]="imageListK[0+i].caption !== 'demo'">
+                        <strong>{{ bookK.title }}</strong>
+                      </h3>
+
+                      <p class="textDate-main">{{ bookK.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookK.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookK.author }}</i></p>
+
+                      <div *ngFor="let i of rowIndexArray">
+                        <div *ngIf="i==0">
+                          <span (click)="onViewBookK(i)">
+                            <img [src]="imageListK[0+i].imageUrl"
+                            width="420px" alt="images" class="linkPhoto"
+                            [hidden]="imageListK[0+i].caption !== 'demo'">
+                          </span>
+                        </div>
+                      </div>
+
+                      <p class="three-lines-only currentTextAside"
+                      [hidden]="imageListK[0+i].caption !== 'demo'">{{ bookK.texte }}</p>
+
+                      <button class="waves-effect waves-light submit-button buttons"
+                      (click)="onRefreshButton()"
+                      (click)="onClearArticleKStorage()"
+                      (click)="onClearImageDetailKs()"
+                      (click)="onClearBookKs()">
+                      Supprimer cet article</button>
+
+                      <p *ngIf="imageListK[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                      <p *ngIf="imageListK[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                    </span>
+                  </div>
+
+                  <button class="waves-effect waves-light submit-button buttons"
+                  (click)="onNewBookK()"
+                  *ngIf="imageListK"
+                  [hidden]="imageListK[0+i].category === 'articleK'"
+                  >Editer cet article</button>
+
+                  <!-- <button class="submit-button-disabled"
+                  *ngIf="imageListE[0+i].caption === 'demo'"
+                  [disabled]="imageListE[0+i].caption === 'demo'"
+                  >Article déjà édité</button> -->
+
+                </div>
+              </article>
+
+              <!-- article L -->
+
+              <article *ngFor="let i of rowIndexArray" class="bottomBlocs">
+                <div *ngIf="i==0">
+
+                  <div class="layout-article-JKL">
+                    <span *ngFor="let bookL of bookLs; let i = index">
+
+                      <h3 class="title-JKL"
+                        [hidden]="imageListL[0+i].caption !== 'demo'">
+                        <strong>{{ bookL.title }}</strong>
+                      </h3>
+
+                      <p class="textDate-main">{{ bookL.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookL.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor">{{ bookL.author }}</i></p>
+
+                      <div *ngFor="let i of rowIndexArray">
+                        <div *ngIf="i==0">
+                          <span (click)="onViewBookL(i)">
+                            <img [src]="imageListL[0+i].imageUrl"
+                            width="420px" alt="images" class="linkPhoto"
+                            [hidden]="imageListL[0+i].caption !== 'demo'">
+                          </span>
+                        </div>
+                      </div>
+
+                      <p class="three-lines-only currentTextAside"
+                      [hidden]="imageListL[0+i].caption !== 'demo'">{{ bookL.texte }}</p>
+
+                      <button class="waves-effect waves-light submit-button buttons"
+                      (click)="onRefreshButton()"
+                      (click)="onClearArticleLStorage()"
+                      (click)="onClearImageDetailLs()"
+                      (click)="onClearBookLs()">
+                      Supprimer cet article</button>
+
+                      <p *ngIf="imageListL[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
+
+                      <p *ngIf="imageListL[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
+
+                    </span>
+                  </div>
+
+                  <button class="waves-effect waves-light submit-button buttons"
+                  (click)="onNewBookL()"
+                  *ngIf="imageListL"
+                  [hidden]="imageListL[0+i].category === 'articleL'"
+                  >Editer cet article</button>
+
+                  <!-- <button class="submit-button-disabled"
+                  *ngIf="imageListE[0+i].caption === 'demo'"
+                  [disabled]="imageListE[0+i].caption === 'demo'"
+                  >Article déjà édité</button> -->
+
+                </div>
+              </article>
+
+            </div>
+
+          </div>
+
+        <!-- </section> -->
+
+        <section class="col-xs-12 submit-button-backoffice-bottom-margin">
+          <button class="waves-effect waves-light buttons" id="submit-button-backoffice-bottom" (click)="onBack()">Retour à l'espace rendu</button>
+        </section>
+
+        <section>
+          <div class="between">
+            <div routerLinkActive="active" *ngIf="!isAuth">
+              <p>ou sinon :
+                <a routerLink="/auth/signinlist" class="space-bottom" id="return-gold">Retour à l'accueil de la rubrique</a>
+                <span>ou encore :</span>
+                <a routerLink="/main" class="space-bottom" id="return-gold">Retour à l'accueil général</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+</body>

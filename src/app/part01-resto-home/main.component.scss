@@ -1,0 +1,294 @@
+// -------- MAIN ---------
+
+// animation buttons ------
+
+button {
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+}
+
+button:hover {
+  animation: ani9 0.8s ease-in-out infinite alternate;
+  transform: translatey(6px);
+  box-shadow: none;
+}
+
+// Backgroung gradient ---------
+
+.background-main-A {
+  background:
+  linear-gradient(217deg, rgba(67,67,67), rgba(249,179,144,0) 70%),
+  linear-gradient(336deg, rgba(246,106,52), rgba(246,106,52,0) 100%);
+}
+
+.background-main-B {
+  background:
+  linear-gradient(217deg, rgba(251,220,120), rgba(249,179,144,0) 100%),
+  linear-gradient(336deg, rgba(67,67,67), rgba(246,106,52,0) 70%);
+}
+
+.background-main-C {
+  background:
+  linear-gradient(217deg, rgba(67,67,67), rgba(249,179,144,0) 70%),
+  linear-gradient(336deg, rgba(204,215,91), rgba(246,106,52,0) 100%);
+}
+
+.background-main-D {
+  background:
+  linear-gradient(217deg, rgba(67,67,67), rgba(249,179,144,0) 70%),
+  linear-gradient(336deg, rgba(160,78,52), rgba(246,106,52,0) 100%);
+}
+
+.background-main-E {
+  background:
+  linear-gradient(217deg, rgba(67,67,67), rgba(249,179,144,0) 70%),
+  linear-gradient(336deg, rgba(160,78,52), rgba(246,106,52,0) 100%);
+}
+
+.background-main-F {
+  background:
+  linear-gradient(217deg, rgba(201,143,82), rgba(249,179,144,0) 100%),
+  linear-gradient(336deg, rgba(67,67,67), rgba(246,106,52,0) 70%);
+}
+
+.background-main-G {
+  background:
+  linear-gradient(217deg, rgba(203,213,61), rgba(249,179,144,0) 100%),
+  linear-gradient(336deg, rgba(67,67,67), rgba(246,106,52,0) 70%);
+}
+
+.background-main-H {
+  background:
+  linear-gradient(217deg, rgba(67,67,67), rgba(249,179,144,0) 70%),
+  linear-gradient(336deg, rgba(252,200,95), rgba(246,106,52,0) 100%);
+}
+
+.background-main-I {
+  background:
+  linear-gradient(217deg, rgba(67,67,67), rgba(249,179,144,0) 70%),
+  linear-gradient(336deg, rgba(252,200,95), rgba(246,106,52,0) 100%);
+}
+
+.background-main-J {
+  background:
+  linear-gradient(217deg, rgba(67,67,67), rgba(249,179,144,0) 70%),
+  linear-gradient(336deg, rgba(244,219,91), rgba(246,106,52,0) 100%);
+}
+
+.background-main-K {
+  background:
+  linear-gradient(217deg, rgba(229,213,161), rgba(249,179,144,0) 100%),
+  linear-gradient(336deg, rgba(67,67,67), rgba(246,106,52,0) 70%);
+}
+
+.background-main-L {
+  background:
+  linear-gradient(217deg, rgba(67,67,67), rgba(249,179,144,0) 70%),
+  linear-gradient(336deg, rgba(246,194,116), rgba(246,106,52,0) 100%);
+}
+
+// line
+
+.horizontalLine {
+  background-color: var(--color-gold);
+  height: 0.5px;
+}
+
+// layout buttons -----
+
+.items {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+// -----
+
+.frameHeight-554 {
+  border: 0.6px solid white;
+  vertical-align: bottom;
+  margin: 10px;
+  width: 22.7rem;
+  height: 554px;
+}
+
+.frameHeight-556 {
+  border: 0.6px solid white;
+  vertical-align: bottom;
+  margin: 10px;
+  width: 22.7rem;
+  height: 556px;
+}
+
+.frameHeight-610 {
+  border: 0.6px solid white;
+  vertical-align: bottom;
+  margin: 10px;
+  width: 22.7rem;
+  height: 610px;
+}
+
+.frameHeight-594 {
+  border: 0.6px solid white;
+  vertical-align: top;
+  margin: 10px;
+  width: 22.7rem;
+  height: 594px;
+}
+
+.frameHeight-574 {
+  border: 0.6px solid white;
+  vertical-align: top;
+  margin: 10px;
+  width: 22.7rem;
+  height: 574px;
+}
+
+.frameHeight-654 {
+  border: 0.6px solid white;
+  vertical-align: top;
+  margin: 10px;
+  width: 22.7rem;
+  height: 654px;
+}
+
+.frameHeight-600 {
+  border: 0.6px solid white;
+  vertical-align: bottom;
+  margin: 10px;
+  width: 22.7rem;
+  height: 600px;
+}
+
+.frameHeight-634 {
+  border: 0.6px solid white;
+  vertical-align: bottom;
+  margin: 10px;
+  width: 22.7rem;
+  height: 634px;
+}
+
+.frameHeight-664 {
+  border: 0.6px solid white;
+  vertical-align: bottom;
+  margin: 10px;
+  width: 22.7rem;
+  height: 664px;
+}
+
+.frameHeight-756 {
+  border: 0.6px solid white;
+  vertical-align: top;
+  margin: 10px;
+  width: 22.7rem;
+  height: 756px;
+}
+
+.frameHeight-752 {
+  border: 0.6px solid white;
+  vertical-align: top;
+  margin: 10px;
+  width: 22.7rem;
+  height: 752px;
+}
+
+.frameHeight-726 {
+  border: 0.6px solid white;
+  vertical-align: top;
+  margin: 10px;
+  width: 22.7rem;
+  height: 726px;
+}
+
+// image buttons ------
+
+.visual {
+  width: 21.9rem;
+}
+
+// title button -----
+
+.title-white {
+  color: var(--color-white);
+  font-size: 40px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  letter-spacing: 0.03em;
+}
+
+.title-white-lineHeight {
+  color: var(--color-white);
+  font-size: 40px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  letter-spacing: 0.03em;
+  line-height: 0.9em;
+}
+
+.title-fluo {
+  color: var(--color-fluo);
+  font-size: 40px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  letter-spacing: 0.03em;
+}
+
+// comment buttons -------
+
+.comment-gold {
+  color: var(--color-gold);
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+}
+
+.comment-black {
+  color: black;
+  font-size: 30px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+}
+
+// price buttons ------
+
+.price {
+  color: var(--color-white);
+  font-size: 60px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+}
+
+// baseline buttons -------
+
+.baseline-white {
+  color: var(--color-white);
+  font-size: 22px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+}
+
+.baseline-gold {
+  color: var(--color-gold);
+  font-size: 22px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+}
+
+.baseline-black {
+  color: black;
+  font-size: 22px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+}
+
+// ----
+
+.year {
+  color: var(--color-white);
+  font-size: 16px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  text-align: center;
+}

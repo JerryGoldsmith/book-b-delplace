@@ -1,0 +1,262 @@
+<body>
+  <main class="scroll-vertical">
+    <!-- <div id="bg"></div> -->
+    <div data-scroll>
+      <div class="content">
+
+        <!-- entete -->
+
+        <section class="item">
+          <!-- <img src="../../assets/bd.png" class="logo"> -->
+          <h1 class="big-title">
+            <span class="title-sequence">Commander en ligne</span>
+          </h1>
+          <div class="line"></div>
+          <p class="sub-title">démo pour un restaurant</p>
+          <div class="item__img-wrap">
+            <div class="item__img item__img--t1"></div>
+          </div>
+        </section>
+
+        <!-- home reservation -->
+
+        <section class="layout-rules">
+          <div class="row">
+            <!-- <h1>Restaurants click & collect</h1> -->
+
+            <!-- <button type="submit"
+            class="waves-effect waves-light"
+            class="submit-button"
+            (click) = "onSaveOnFirebase()">Envoyer sur firebase</button> -->
+
+            <form [formGroup]="restoForm">
+              <div routerLinkActive="active" *ngFor="let matrix of matrixs">
+
+                <!-- A -->
+
+                <button class="frameHeight-556 background-main-A"
+                routerLink="/addA">
+
+                  <img class="visual" src="../assets/matrixPictures/A.jpeg">
+                  <div class="items">
+                    <h2 class="title-white">{{ matrix.items.a.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.a.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.a.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.two.name }}</strong>
+                       : {{ matrix.adress.two.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.two.startdate }}</p>
+                  </div>
+                </button>
+
+                <!-- B -->
+
+                <button class="frameHeight-610 background-main-B"
+                routerLink="/addB">
+
+                  <div class="items">
+                    <h2 class="title-white">{{ matrix.items.b.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.b.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.b.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.one.name }}</strong>
+                       : {{ matrix.adress.one.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.one.startdate }}</p>
+                  </div>
+                  <img class="visual" src="../assets/matrixPictures/B.jpeg">
+                </button>
+
+                <!-- C -->
+
+                <button type="submit"
+                class="frameHeight-554 background-main-C"
+                routerLink="/addC">
+
+                  <img class="visual" src="../assets/matrixPictures/C.jpeg">
+                  <div class="items">
+                    <h2 class="title-white">{{ matrix.items.c.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.c.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.c.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.one.name }}</strong>
+                       : {{ matrix.adress.one.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.one.startdate }}</p>
+                  </div>
+                </button>
+
+                <!-- D -->
+
+                <button class="frameHeight-594 background-main-D"
+                routerLink="/addD">
+
+                  <img class="visual" src="../assets/matrixPictures/D.jpeg">
+                  <div class="items">
+                    <h2 class="title-fluo">{{ matrix.items.d.name }}</h2>
+                    <h3 class="comment-gold">{{ matrix.items.d.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.d.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-gold"><strong>{{ matrix.adress.three.name }}</strong>
+                       : {{ matrix.adress.three.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.three.startdate }}</p>
+                  </div>
+                </button>
+
+                <!-- E -->
+
+                <button class="frameHeight-574 background-main-E"
+                routerLink="/addE">
+
+                  <img class="visual" src="../assets/matrixPictures/E.jpeg">
+                  <div class="items">
+                    <h2 class="title-fluo">{{ matrix.items.e.name }}</h2>
+                    <h3 class="comment-gold">{{ matrix.items.e.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.e.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-gold"><strong>{{ matrix.adress.three.name }}</strong>
+                       : {{ matrix.adress.three.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.three.startdate }}</p>
+                  </div>
+                </button>
+
+                <!-- F -->
+
+                <button class="frameHeight-654 background-main-F"
+                routerLink="/addF">
+
+                  <div class="items">
+                    <h2 class="title-white">{{ matrix.items.f.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.f.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.f.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.three.name }}</strong>
+                       : {{ matrix.adress.three.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.three.startdate }}</p>
+                  </div>
+                  <img class="visual" src="../assets/matrixPictures/F.jpeg">
+                </button>
+
+                <!-- G -->
+
+                <button class="frameHeight-664 background-main-G"
+                routerLink="/addG">
+
+                  <div class="items">
+                    <h2 class="title-white">{{ matrix.items.g.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.g.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.g.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.three.name }}</strong>
+                       : {{ matrix.adress.three.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.three.startdate }}</p>
+                  </div>
+                  <img class="visual" src="../assets/matrixPictures/G.jpeg">
+                </button>
+
+                <!-- H -->
+
+                <button class="frameHeight-600 background-main-H"
+                routerLink="/addH">
+
+                  <img class="visual" src="../assets/matrixPictures/H.jpeg">
+                  <div class="items">
+                    <h2 class="title-white">{{ matrix.items.h.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.h.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.h.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.three.name }}</strong>
+                       : {{ matrix.adress.three.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.three.startdate }}</p>
+                  </div>
+                </button>
+
+                <!-- I -->
+
+                <button class="frameHeight-634 background-main-I"
+                routerLink="/addI">
+
+                  <img class="visual" src="../assets/matrixPictures/I.jpeg">
+                  <div class="items">
+                    <h2 class="title-white-lineHeight">{{ matrix.items.i.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.i.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.i.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.three.name }}</strong>
+                       : {{ matrix.adress.three.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.three.startdate }}</p>
+                  </div>
+                </button>
+
+                <!-- J -->
+
+                <button class="frameHeight-756 background-main-J"
+                routerLink="/addJ">
+
+                  <img class="visual" src="../assets/matrixPictures/J.jpeg">
+                  <div class="items">
+                    <h2 class="title-white-lineHeight">{{ matrix.items.j.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.j.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.j.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.four.name }}</strong>
+                       : {{ matrix.adress.four.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.four.startdate }}</p>
+                  </div>
+                </button>
+
+                <!-- K -->
+
+                <button class="frameHeight-752 background-main-K"
+                routerLink="/addK">
+
+                  <div class="items">
+                    <h2 class="title-white">{{ matrix.items.k.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.k.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.k.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.four.name }}</strong>
+                       : {{ matrix.adress.four.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.four.startdate }}</p>
+                  </div>
+                  <img class="visual" src="../assets/matrixPictures/K.jpeg">
+                </button>
+
+                <!-- L -->
+
+                <button class="frameHeight-726 background-main-L"
+                routerLink="/addL">
+
+                  <img class="visual" src="../assets/matrixPictures/L.jpeg">
+                  <div class="items">
+                    <h2 class="title-white">{{ matrix.items.l.name }}</h2>
+                    <h3 class="comment-black">{{ matrix.items.l.description }}</h3>
+                    <p class="price"><strong>{{ matrix.items.l.price | number : '1.2-2' }}</strong>€</p>
+
+                    <p class="horizontalLine"></p>
+                    <p class="baseline-black"><strong>{{ matrix.adress.four.name }}</strong>
+                       : {{ matrix.adress.four.zip }}</p>
+                    <p class="year">Année d'ouverture : {{ matrix.adress.four.startdate }}</p>
+                  </div>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <app-footer></app-footer>
+
+      </div>
+    </div>
+  </main>
+
+</body>

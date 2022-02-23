@@ -1,0 +1,36 @@
+<form [formGroup]="this.reservationService.form">
+  <div *ngFor="let order of seatOneOrders">
+    <p>Merci</p>
+
+    <span><strong>{{ order.payload.doc.data().customerFirstName }} </strong></span>
+    <span><strong>{{ order.payload.doc.data().customerName }}</strong></span>
+    <p> !</p>
+
+    <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">
+      <span *ngIf="seatOne">
+          <p>Vous avez réservé : le
+        <strong>
+        {{ seatOne }}
+        </strong>
+        </p>
+      </span>
+    </span>
+
+  </div>
+
+  <button class="waves-effect waves-light"
+  id="submit-button"
+  (click)="onSubmit()"
+  (click) = "onSaveOnFirebase()"
+  routerLink = "/show">Voulez-vous valider votre réservation ?</button>
+
+  <div>
+    <a routerLink = "/part01" class="link">Retour</a>
+  </div>
+  <div>
+    <a routerLink = "/show" class="link" (click)="onSubmit()">Voulez-vous valider votre réservation ?</a>
+  </div>
+  <div>
+    <a routerLink = "/part01" class="link">Sinon, annulez ici !</a>
+  </div>
+</form>

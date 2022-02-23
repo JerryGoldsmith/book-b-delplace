@@ -25,6 +25,14 @@ import { SignupLightComponent } from './auth/signuplight/signuplight.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SigninlistComponent } from './auth/signinlist/signinlist.component';
 
+/* ----------------------------------------------- */
+/* ------------------ Part 01 -------------------- */
+/* ----------------------------------------------- */
+
+// import { Part01ReservationHomeComponent } from './part01-reservation-home/part01-reservation-home.component';
+// import { Part01RestoHomeComponent } from './part01-resto-home/part01-resto-home.component';
+// import { Part01EditionHomeComponent } from './part01-edition-home/part01-edition-home.component';
+
 const routes: Routes = [
   { 
     path: '', component: MainComponent
@@ -59,7 +67,11 @@ const routes: Routes = [
   { path: 'auth/signinlist', component: SigninlistComponent },
 
   { path: 'auth/signup', component: SignupComponent },
-  { path: 'auth/signuplight', component: SignupLightComponent }
+  { path: 'auth/signuplight', component: SignupLightComponent },
+
+  // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
+  // { path: 'resto', canActivate: [AuthGuardService], component: Part01RestoHomeComponent },
+  // { path: 'edition', canActivate: [AuthGuardService], component: Part01EditionHomeComponent }
 ];
 
 @NgModule({

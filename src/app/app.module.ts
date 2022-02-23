@@ -28,6 +28,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './main/main.component';
 
+/* -------------------------------------------------- */
+/* ----------------------- PartA -------------------- */
+/* -------------------------------------------------- */
+
+// import { Part01SingleComponent } from './part01-single/part01-single.component';
+
 /* -------------------------------------------- */
 /* ------------------ AUTH -------------------- */
 /* -------------------------------------------- */
@@ -71,6 +77,29 @@ import { AuthentificationService } from "./services/authentification.service";
 
     import { AngularResizeEventModule } from 'angular-resize-event';
 
+// reservation
+
+import { OrderReservationService } from "./services/order-reservation.service";
+
+// resto
+
+import { MatrixService } from "./services/resto/matrix.service";
+import { AService } from "./services/resto/a.service";
+import { BService } from "./services/resto/b.service";
+import { CService } from "./services/resto/c.service";
+import { DService } from "./services/resto/d.service";
+import { EService } from "./services/resto/e.service";
+import { FService } from "./services/resto/f.service";
+import { GService } from "./services/resto/g.service";
+import { HService } from "./services/resto/h.service";
+import { IService } from "./services/resto/i.service";
+import { JService } from "./services/resto/j.service";
+import { KService } from "./services/resto/k.service";
+import { LService } from "./services/resto/l.service";
+
+// images
+
+import { ImageService } from "./services/image.service";
 
 const appRoutes: Routes = [
 
@@ -79,11 +108,13 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: 'main' },
 
   // auth
-  // { path: 'auth/signin', component: SigninComponent },
-  // { path: 'auth/signinlist', component: SigninlistComponent },
+  { path: 'auth/signin', component: SigninComponent },
+  { path: 'auth/signinlist', component: SigninlistComponent },
 
-  // { path: 'auth/signup', component: SignupComponent },
-  // { path: 'auth/signuplight', component: SignupLightComponent }
+  { path: 'auth/signup', component: SignupComponent },
+  { path: 'auth/signuplight', component: SignupLightComponent },
+
+  // { path: 'part01/:id', component: Part01SingleComponent }
   
 ];
 
@@ -95,6 +126,7 @@ const appRoutes: Routes = [
     SignupLightComponent,
     SigninComponent,
     SigninlistComponent
+    // Part01SingleComponent
   ],
   imports: [
     BrowserModule,
@@ -102,18 +134,22 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     CommonModule,
+
     HttpClientModule,
     // initializeApp,
     // getAnalytics,
+
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireAuthGuardModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+
     FormsModule,
     ReactiveFormsModule,
     AngularResizeEventModule,
+
     SharedModule
   ],
   exports: [
@@ -123,7 +159,25 @@ const appRoutes: Routes = [
     AuthService,
     AuthGuardService,
     AuthentificationService,
-    { provide: LOCALE_ID, useValue: 'fr-FR'}
+    { provide: LOCALE_ID, useValue: 'fr-FR'},
+    // reservation
+    OrderReservationService,
+    // backoffice
+    MatrixService,
+    AService,
+    BService,
+    CService,
+    DService,
+    EService,
+    FService,
+    GService,
+    HService,
+    IService,
+    JService,
+    KService,
+    LService,
+
+    ImageService
   ],
   bootstrap: [AppComponent]
 })
