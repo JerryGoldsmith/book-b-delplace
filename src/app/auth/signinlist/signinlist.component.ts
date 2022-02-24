@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { AuthGuardService } from '../../services/auth-guard.service';
-import { Router } from '@angular/router';
 // import custom validator to validate that password and confirm password fields match
 import { ResizedEvent } from 'angular-resize-event';
 
@@ -25,10 +22,7 @@ export class SigninlistComponent implements OnInit {
   }
 
   constructor(
-    private authService: AuthService,
-    private authGuardService: AuthGuardService,
-    private router: Router
-  ) { }
+      ) { }
 
   ngOnInit(): void {
 

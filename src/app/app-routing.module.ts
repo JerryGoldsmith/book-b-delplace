@@ -7,10 +7,10 @@ import { MainComponent } from './main/main.component';
 /* ------------------ AUTH -------------------- */
 /* -------------------------------------------- */
 
-import { SignupComponent } from './auth/signup/signup.component';
-import { SignupLightComponent } from './auth/signuplight/signuplight.component';
-import { SigninComponent } from './auth/signin/signin.component';
-import { SigninlistComponent } from './auth/signinlist/signinlist.component';
+// import { SignupComponent } from './auth/signup/signup.component';
+// import { SignupLightComponent } from './auth/signuplight/signuplight.component';
+// import { SigninComponent } from './auth/signin/signin.component';
+// import { SigninlistComponent } from './auth/signinlist/signinlist.component';
 
 // --------------------------------------------------------
 // ---------------------- partA home ---------------------- :
@@ -185,39 +185,6 @@ import { SigninlistComponent } from './auth/signinlist/signinlist.component';
   
 // import { AsideComponent } from './aside/aside.component';
 
-/* -------------------------------------------------- */
-/* --------------------- SERVICES ------------------- */
-/* -------------------------------------------------- */
-
-/* Auth */
-import { AuthService } from './services/auth.service';
-import { AuthGuardService } from './services/auth-guard.service';
-import { AuthentificationService } from "./services/authentification.service";
-
-    /* Acces Firebase */
-    import { environment } from '../environments/environment';
-    import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
-
-    // import { initializeApp } from "firebase/app";
-    // import { getAnalytics } from "firebase/analytics";
-
-    /* AngularFire */
-
-    import { AngularFireModule } from "@angular/fire";
-    import { AngularFireAuthModule } from "@angular/fire/auth";
-    import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
-    import { AngularFirestoreModule } from "@angular/fire/firestore";
-    import { AngularFireStorageModule } from '@angular/fire/storage';
-    import { AngularFireDatabaseModule } from '@angular/fire/database';
-
-    /* FormsModule */
-
-    import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-    /* AngularResizedEvent */
-
-    import { AngularResizeEventModule } from 'angular-resize-event';
-
 // reservation
 
 // import { OrderReservationService } from "./services/order-reservation.service";
@@ -277,11 +244,11 @@ const routes: Routes = [
   // auth :
   // -----
 
-  { path: 'auth/signin', component: SigninComponent },
-  { path: 'auth/signinlist', component: SigninlistComponent },
+  // { path: 'auth/signin', component: SigninComponent },
+  // { path: 'auth/signinlist', component: SigninlistComponent },
 
-  { path: 'auth/signup', component: SignupComponent },
-  { path: 'auth/signuplight', component: SignupLightComponent },
+  // { path: 'auth/signup', component: SignupComponent },
+  // { path: 'auth/signuplight', component: SignupLightComponent },
 
   // --------------------------------------------------------
   // ---------------------- partA home ---------------------- :
@@ -331,7 +298,7 @@ const routes: Routes = [
 
   // payment :
   // -------
-  // { path: 'payment', canActivate: [AuthGuardService], component: PaymentComponent },
+  // { path: 'payment', canActivate: [AuthGuardService], component: PaymentComponent }
 
   // -------------------------------------------------------
   // ------------ partA / edition (book-list) -------------- :
@@ -459,41 +426,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), 
-    HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFireAuthGuardModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AngularResizeEventModule,
-  ],
-  providers: [
-    AuthGuardService,
-    AuthService,
-    AuthGuardService,
-    AuthentificationService,
-    // { provide: LOCALE_ID, useValue: 'fr-FR'},
-    // reservation
-    // OrderReservationService,
-    // backoffice
-    // MatrixService,
-    // AService,
-    // BService,
-    // CService,
-    // DService,
-    // EService,
-    // FService,
-    // GService,
-    // HService,
-    // IService,
-    // JService,
-    // KService,
-    // LService,
-    // ImageService
+  imports: [
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })

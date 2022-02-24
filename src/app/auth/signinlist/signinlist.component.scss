@@ -29,6 +29,7 @@
 //   }
 // }
 
+
 @-webkit-keyframes move {
   from {
     margin-left: 100%;
@@ -151,12 +152,13 @@
   // linear-gradient(336deg, rgba(169,169,169), rgba(67,67,67,0) 50%);
 }
 
-// -----
+// liens background -----
 
 .textOnBackground-A {
   color: var(--color-fluo);
   font-size: 214px;
   letter-spacing: -0.06em;
+  margin-bottom: -364px;
   margin-left: -22px;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;

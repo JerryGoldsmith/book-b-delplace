@@ -116,11 +116,15 @@ export class AbcdefghijklComponent implements OnInit {
 
   // ----
 
+  //@ts-ignore
   width: 0;
+  //@ts-ignore
   height: 0;
 
   onResized(event: ResizedEvent) {
+    //@ts-ignore
     this.width = event.newWidth;
+    //@ts-ignore
     this.height = event.newHeight;
   }
 

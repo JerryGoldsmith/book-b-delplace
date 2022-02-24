@@ -29,7 +29,7 @@
             class="submit-button"
             (click) = "onSaveOnFirebase()">Envoyer sur firebase</button> -->
 
-            <form [formGroup]="restoForm">
+            <form *ngIf="restoForm" [formGroup]="restoForm">
               <div routerLinkActive="active" *ngFor="let matrix of matrixs">
 
                 <!-- A -->
@@ -253,7 +253,7 @@
           </div>
         </section>
 
-        <app-footer></app-footer>
+        <!-- <app-footer></app-footer> -->
 
       </div>
     </div>

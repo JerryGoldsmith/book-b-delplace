@@ -113,7 +113,9 @@ export class PaymentComponent implements OnInit {
   height: 0;
 
   onResized(event: ResizedEvent) {
+    //@ts-ignore
     this.width = event.newWidth;
+    //@ts-ignore
     this.height = event.newHeight;
   }
 

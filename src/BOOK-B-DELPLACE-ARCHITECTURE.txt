@@ -16,6 +16,8 @@ src/
  |            |--- main/
  |            |--- nav/
  |            |--- jquery.min.js
+ |      |--- matrixPictures (part03 - commander > visuels menus)
+ |      |--- video (part03 - reserver)
  |
  |--- fonts
  |      |--- Barlow Condensed
@@ -405,6 +407,7 @@ app/
  |
  |--- aside/ (part03 > slider)
  |      | utilise : assets/js/gallery/gallery.js
+ |      | utilise : assets/js/gallery/motionblur.js
  |      | utilise : assets/js/main/smooth-scroll.js
  |      | utilise : assets/js/main/animate.js
  |      | utilise : assets/js/main/parallax.js

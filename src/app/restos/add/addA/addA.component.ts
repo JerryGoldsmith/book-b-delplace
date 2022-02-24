@@ -34,8 +34,11 @@ export class AComponent implements OnInit {
   }
 
   getScreenSize(event?) {
+    //@ts-ignore
     this.scrHeight = window.innerHeight;
+    //@ts-ignore
     this.scrWidth = window.innerWidth;
+    //@ts-ignore
     console.log(this.scrHeight, this.scrWidth);
     }
 

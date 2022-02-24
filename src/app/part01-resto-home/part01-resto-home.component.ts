@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { MatrixService } from "../services/resto/matrix.service";
@@ -34,7 +34,6 @@ export class Part01RestoHomeComponent implements OnInit {
   matrixSubscription: Subscription;
 
   constructor(
-    // public ordersService: OrdersService,
     public matrixService: MatrixService,
     public aService: AService,
     public bService: BService,

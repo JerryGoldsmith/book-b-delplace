@@ -44,6 +44,43 @@ import { SigninlistComponent } from './auth/signinlist/signinlist.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SignupLightComponent } from './auth/signuplight/signuplight.component';
 
+// --------------------------------------------------------
+// ---------------------- partA home ---------------------- :
+// --------------------------------------------------------
+
+// import { Part01ReservationHomeComponent } from './part01-reservation-home/part01-reservation-home.component';
+import { Part01RestoHomeComponent } from './part01-resto-home/part01-resto-home.component';
+// import { Part01EditionHomeComponent } from './part01-edition-home/part01-edition-home.component';
+
+// --------------------------------------------------
+// ------------- partA / resto (restos) ------------- :
+// --------------------------------------------------
+
+// pages produits :
+// --------------
+import { AComponent } from './restos/add/addA/addA.component';
+import { BComponent } from './restos/add/addB/addB.component';
+import { CComponent } from './restos/add/addC/addC.component';
+import { DComponent } from './restos/add/addD/addD.component';
+import { EComponent } from './restos/add/addE/addE.component';
+import { FComponent } from './restos/add/addF/addF.component';
+import { GComponent } from './restos/add/addG/addG.component';
+import { HComponent } from './restos/add/addH/addH.component';
+import { IComponent } from './restos/add/addI/addI.component';
+import { JComponent } from './restos/add/addJ/addJ.component';
+import { KComponent } from './restos/add/addK/addK.component';
+import { LComponent } from './restos/add/addL/addL.component';
+
+// total :
+// ------
+import { AbcdefghijklComponent } from './restos/total/abcdefghijkl/abcdefghijkl.component';
+
+
+// payment :
+// -------
+import { PaymentComponent } from './restos/total/payment/payment.component';
+
+
 /* -------------------------------------------------- */
 /* --------------------- SERVICES ------------------- */
 /* -------------------------------------------------- */
@@ -79,7 +116,7 @@ import { AuthentificationService } from "./services/authentification.service";
 
 // reservation
 
-import { OrderReservationService } from "./services/order-reservation.service";
+// import { OrderReservationService } from "./services/order-reservation.service";
 
 // resto
 
@@ -114,7 +151,40 @@ const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
   { path: 'auth/signuplight', component: SignupLightComponent },
 
-  // { path: 'part01/:id', component: Part01SingleComponent }
+  // --------------------------------------------------------
+  // ---------------------- partA home ---------------------- :
+  // --------------------------------------------------------
+
+  // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
+  { path: 'resto', canActivate: [AuthGuardService], component: Part01RestoHomeComponent },
+  // { path: 'edition', canActivate: [AuthGuardService], component: Part01EditionHomeComponent },
+
+  // --------------------------------------------------
+  // ------------- partA / resto (restos) ------------- :
+  // --------------------------------------------------
+
+  // pages produits :
+  // --------------
+  { path: 'addA', canActivate: [AuthGuardService], component: AComponent },
+  { path: 'addB', canActivate: [AuthGuardService], component: BComponent },
+  { path: 'addC', canActivate: [AuthGuardService], component: CComponent },
+  { path: 'addD', canActivate: [AuthGuardService], component: DComponent },
+  { path: 'addE', canActivate: [AuthGuardService], component: EComponent },
+  { path: 'addF', canActivate: [AuthGuardService], component: FComponent },
+  { path: 'addG', canActivate: [AuthGuardService], component: GComponent },
+  { path: 'addH', component: HComponent },
+  { path: 'addI', canActivate: [AuthGuardService], component: IComponent },
+  { path: 'addJ', canActivate: [AuthGuardService], component: JComponent },
+  { path: 'addK', canActivate: [AuthGuardService], component: KComponent },
+  { path: 'addL', canActivate: [AuthGuardService], component: LComponent },
+
+  // total :
+  // ------
+  { path: 'abcdefghijkl', canActivate: [AuthGuardService], component: AbcdefghijklComponent },
+
+  // payment :
+  // -------
+  { path: 'payment', canActivate: [AuthGuardService], component: PaymentComponent }
   
 ];
 
@@ -125,8 +195,22 @@ const appRoutes: Routes = [
     SignupComponent,
     SignupLightComponent,
     SigninComponent,
-    SigninlistComponent
-    // Part01SingleComponent
+    SigninlistComponent,
+    Part01RestoHomeComponent,
+    CComponent,
+    BComponent,
+    AComponent,
+    DComponent,
+    EComponent,
+    FComponent,
+    JComponent,
+    LComponent,
+    KComponent,
+    GComponent,
+    HComponent,
+    IComponent,
+    PaymentComponent,
+    AbcdefghijklComponent
   ],
   imports: [
     BrowserModule,
@@ -161,7 +245,7 @@ const appRoutes: Routes = [
     AuthentificationService,
     { provide: LOCALE_ID, useValue: 'fr-FR'},
     // reservation
-    OrderReservationService,
+    // OrderReservationService,
     // backoffice
     MatrixService,
     AService,
