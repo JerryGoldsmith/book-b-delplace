@@ -1,0 +1,502 @@
+APP ARCHITECTURE :
+----------------
+
+src/
+ |
+ |-- index.html (Google fonts : roboto)
+ |--- style.css (colors - fonts : 
+            Nanum_Myeongjo-regular, 
+            Barlow_Condensed-regular, 
+            Barlow_Condensed-bold)
+ |--- assets
+ |      |--- css (effects)
+ |      |--- img
+ |            |--- slider/ (part03 - gallery)
+ |      |--- js
+ |            |--- main/
+ |            |--- nav/
+ |            |--- jquery.min.js
+ |
+ |--- fonts
+ |      |--- Barlow Condensed
+ |      |--- Nanum Myeongio
+ |
+ |--- images.jpg / images.png (home + parts)
+ |
+ ----
+
+app/
+ |--- normalize.component.css
+ |
+ |--- main/ (homepage)
+ |      | utilise : assets/js/main/animText.min.js
+ |      | utilise : assets/js/main/imagesloaded.pkgd.min.js
+ |      | utilise : assets/js/main/TweenMax.min.js
+ |      |--- html
+ |      |--- scss
+ |      |--- ts (javascript paralax scroll vertical)
+ |
+ |--- part01/
+ |      |--- header-auth scss (section auth)
+ |      |--- html
+ |      |--- scss (part01 generique)
+ |      |--- ts (javascript paralax scroll vertical)
+ |
+ |--- auth/ (part01)
+ |      |--- signin/
+ |              |--- html
+ |              |--- scss
+ |              |--- ts (back-end : Firebase/Realtime Database)
+ |      |--- signinlist/
+ |              |--- html
+ |              |--- scss
+ |              |--- ts (back-end : Firebase/Realtime Database)
+ |      |--- signup/
+ |              |--- html
+ |              |--- scss
+ |              |--- ts (back-end : Firebase/Realtime Database)
+ |      |--- signuplight/
+ |              |--- html
+ |              |--- scss
+ |              |--- ts (back-end : Firebase/Realtime Database)
+ |             ---
+ |
+ |--- booklist/ (part01 > editer (backoffice editorial))
+ |        | utilise : https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css
+ |        |--- header css (home)
+ |        
+ |        |--- book-list.component.html
+ |        |--- book-list.component.css (partout dans booklist sauf images)
+ |        |--- book-list.component.ts (back-end : Firebase/Realtime Database)
+ |        
+ |        |--- backoffice/ (backoffice pour modifier tous les articles)
+ |                 |--- html
+ |                 |--- ts
+ |        
+ |        |--- archives/ (block archives)
+ |                 |--- html
+ |                 |--- ts
+ |        
+ |        |--- book-form/ (Enregistrer un nouvel article)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-a/ (Enregistrer nouvel article A)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-b/ (Enregistrer nouvel article B)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-c/ (Enregistrer nouvel article C)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-d/ (Enregistrer nouvel article D)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-e/ (Enregistrer nouvel article E)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-f/ (Enregistrer nouvel article F)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-g/ (Enregistrer nouvel article G)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-h/ (Enregistrer nouvel article H)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-i/ (Enregistrer nouvel article I)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-J/ (Enregistrer nouvel article J)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-k/ (Enregistrer nouvel article K)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- book-form-l/ (Enregistrer nouvel article L)
+ |                 |--- html
+ |                 |--- ts
+ |                ---
+ |        
+ |        |--- images/ (visuels)
+ |                |--- images.component.css (partout dans images)
+ |                
+ |                |--- image/ (visuels block article A)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-b/ (visuels block article B)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-c/ (visuels block article C)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-d/ (visuels block article D)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-e/ (visuels block article E)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-f/ (visuels block article F)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-g/ (visuels block article G)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-h/ (visuels block article H)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-i/ (visuels block article I)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-j/ (visuels block article J)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-k/ (visuels block article K)
+ |                       |--- html
+ |                       |--- ts
+ |                |--- image-l/ (visuels block article L)
+ |                       |--- html
+ |                       |--- ts
+ |                      ---
+ |                
+ |                |--- image-archive/ (visuels block archive A)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-b-archive/ (visuels block archive B)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-c-archive/ (visuels block archive C)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-d-archive/ (visuels block archive D)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-e-archive/ (visuels block archive E)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-f-archive/ (visuels block archive F)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-g-archive/ (visuels block archive G)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-h-archive/ (visuels block archive H)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-i-archive/ (visuels block archive I)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-j-archive/ (visuels block archive J)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-k-archive/ (visuels block archive K)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-l-archive/ (visuels block archive L)
+ |                          |--- html
+ |                          |--- ts
+ |                         ---
+ |                
+ |                |--- image-list/ (selection du visuel > article A)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-b/ (selection du visuel > article B)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-c/ (selection du visuel > article C)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-d/ (selection du visuel > article D)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-e/ (selection du visuel > article E)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-f/ (selection du visuel > article F)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-g/ (selection du visuel > article G)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-h/ (selection du visuel > article H)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-i/ (selection du visuel > article i)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-j/ (selection du visuel > article J)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-k/ (selection du visuel > article K)
+ |                          |--- html
+ |                          |--- ts
+ |                |--- image-list-l/ (selection du visuel > article l)
+ |                          |--- html
+ |                          |--- ts
+ |                         ---
+ |        
+ |        |--- single-book/ (block article A)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-b/ (block article B)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-c/ (block article C)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-d/ (block article D)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-e/ (block article E)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-f/ (block article F)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-g/ (block article G)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-h/ (block article H)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-i/ (block article I)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-j/ (block article J)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-k/ (block article K)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-l/ (block article L)
+ |                 |--- html
+ |                 |--- ts
+ |                ---
+ |        
+ |        |--- single-book-all/
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-all-five/ (archives > 5eme en date)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-all-four/ (archives > 4eme en date)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-all-one/ (archives > dernier en date)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-all-six/ (archives)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-all-three/ (archives > 3eme en date)
+ |                 |--- html
+ |                 |--- ts
+ |        |--- single-book-all-two/ (archives > avant dernier en date)
+ |                 |--- html
+ |                 |--- ts
+ |                ---
+ |
+ |--- restos/ (part01 > commander)
+ |        |--- main.component.scss (tout restos)
+ |
+ |        |--- restos.component.html
+ |        |--- restos.component.css
+ |        |--- restos.component.ts (back-end : Firebase/Realtime Database)
+ |        |
+ |        |--- add/ (ajouter un menu à la commande)
+ |                 |--- add.component.scss
+ |                 |--- menus.component.scss
+ |                 |
+ |                 |--- addA/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addB/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addC/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addD/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addE/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addF/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addG/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addH/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addI/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addJ/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addK/
+ |                        |--- html
+ |                        |--- ts
+ |                 |--- addL/
+ |                        |--- html
+ |                        |--- ts
+ |                       ---
+ |        
+ |        |--- total/
+ |               |--- total.component.scss
+ |               |
+ |               |--- abcdefghijkl/
+ |                        |--- html
+ |                        |--- ts
+ |               |--- payment/
+ |                        |--- html
+ |                        |--- ts
+ |                       ---
+ |
+ |--- order-reservation-home/ (part01 > réserver > home)
+ |          |--- html
+ |          |--- scss
+ |          |--- ts (back-end : Firebase/Firestore Database)
+ |
+ |--- order-reservation/ (part01 > réserver)
+ |          |--- html
+ |          |--- scss
+ |          |--- ts (back-end : Firebase/Firestore Database)
+ |
+ |--- order-reservation-list/ (part01 > réserver)
+ |          |--- html
+ |          |--- scss
+ |          |--- ts (back-end : Firebase/Firestore Database)
+ |
+ |--- order-reservation-list-confirm/ (part01 > réserver)
+ |          |--- html
+ |          |--- scss
+ |          |--- ts (back-end : Firebase/Firestore Database)
+ |
+ |--- order-reservation-result/ (part01 > réserver)
+ |          |--- html
+ |          |--- scss
+ |          |--- ts (back-end : Firebase/Firestore Database)
+ |
+ |--- order-reservation-confirmation/ (part01 > réserver)
+ |          |--- html
+ |          |--- scss
+ |          |--- ts (back-end : Firebase/Firestore Database)
+ |
+ |--- order-reservation-show-buttons/ (part01 > réserver)
+ |          |--- html
+ |          |--- scss
+ |          |--- ts
+ |         ---
+ |
+ |--- part02/ (UX/UI Design)
+ |      |--- html
+ |      |--- scss (part01 generique)
+ |      |--- ts (javascript paralax scroll vertical)
+ |
+ |--- part03/ (Photo/cinéma)
+ |      |--- html
+ |      |--- scss
+ |      |--- ts (javascript paralax scroll vertical)
+ |
+ |
+ |--- aside/ (part03 > slider)
+ |      | utilise : assets/js/gallery/gallery.js
+ |      | utilise : assets/js/main/smooth-scroll.js
+ |      | utilise : assets/js/main/animate.js
+ |      | utilise : assets/js/main/parallax.js
+ |      |--- html
+ |      |--- scss
+ |      |--- ts
+ |
+ |--- part04/ (About me/Contact)
+ |      |--- html
+ |      |--- scss
+ |      |--- ts (javascript paralax scroll vertical)
+ |
+ |--- footer/
+ |      |--- html
+ |      |--- scss
+ |      |--- ts
+ |
+ | *************************************************
+ |
+ |--- models
+ |      |--- user (auth)
+ |      |--- book (part01 > editer)
+ |      |--- bookG (part01 > editer > spécial)
+ |      |--- seats (réserver)
+ |
+ |--- shared (s'affiche partout dans l'app)
+ |      | utilise : assets/js/nav/menu.js
+ |      |--- html
+ |      |--- scss
+ |      |--- ts
+ |           |--- components/shared
+ |                        |--- html
+ |                        |--- scss
+ |                        |--- ts
+ |                       ---
+ |--- services
+ |      |--- auth
+ |      |--- auth-guard
+ |      |--- authentification
+ |      |
+ |      |--- books (part01 > editer)
+ |      |--- image (part01 > editer)
+ |      |
+ |      |--- order-reservation (part01 > réserver)
+ |      |
+ |      |--- seat (part01 > réserver)
+ |      |
+ |      |--- resto (part01 > commander)
+ |              |--- matrix (détails menus)
+ |              |--- a (complément menu A)
+ |              |--- b (complément menu B)
+ |              |--- c (complément menu C)
+ |              |--- d (complément menu D)
+ |              |--- e (complément menu E)
+ |              |--- f (complément menu F)
+ |              |--- g (complément menu G)
+ |              |--- h (complément menu H)
+ |              |--- i (complément menu I)
+ |              |--- j (complément menu J)
+ |              |--- k (complément menu K)
+ |              |--- l (complément menu L)
+ |             ---
+ |
+ |--- helpers
+ |      |--- must-match-validator (auth)
+ |
+ |--- mod/ (lazyloading)
+ |      |--- private
+ |              |--- auth
+ |              |
+ |              |--- a-edition
+ |              |--- books
+ |              |--- edition-archives
+ |              |--- edition-backoffice
+ |              |
+ |              |--- a-reservation
+ |              |
+ |              |--- a-resto
+ |              |--- resto
+ |              |--- resto-header
+ |             ---
+ |
+ |      |--- public
+ |              |--- auth
+ |              |
+ |              |--- home
+ |              |
+ |              |--- a (part01)
+ |              |--- b (part02)
+ |              |--- c (part03)
+ |              |--- d (part04)
+ |             ---
+ 
+
+

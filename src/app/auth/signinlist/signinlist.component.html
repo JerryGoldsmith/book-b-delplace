@@ -1,29 +1,22 @@
-<!-- <app-book-list></app-book-list> -->
+<div class="resize" (resized)="onResized($event)">
 
-<!-- <div class="big-background"> -->
-  <div class="resize" (resized)="onResized($event)">
-
-    <div class="blocks">
-      <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundA textAlignCenter verticalMiddle">
-        <div class="textOnBackground-A">Réserver</div>
-        <a routerLink="/reservation" class="link-A">Réserver</a>
-      </div>
-
-      <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundB textAlignCenter verticalMiddle">
-        <div class="textOnBackground-B">Commander</div>
-        <a routerLink="/resto" class="link-B">Commander</a>
-      </div>
+  <div class="blocks">
+    <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundA textAlignCenter verticalMiddle">
+      <div class="textOnBackground-A">Réserver</div>
+      <a routerLink="/reservation" class="link-A">Réserver</a>
     </div>
 
-    <div class="blocks">
-      <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundC textAlignCenter verticalMiddle">
-        <div class="textOnBackground-C">Editer</div>
-        <a routerLink="/edition" class="link-C">Editer</a>
-      </div>
-
-      <!-- <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundB textAlignCenter verticalMiddle">
-        <div class="textOnBackground-B">Distributeur</div>
-        <a routerLink="/orders" class="link-B">Distributeur</a>
-      </div> -->
+    <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundB textAlignCenter verticalMiddle">
+      <div class="textOnBackground-B">Commander</div>
+      <a routerLink="/resto" class="link-B">Commander</a>
     </div>
-<!-- </div> -->
+  </div>
+
+  <div class="blocks">
+    <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundC textAlignCenter verticalMiddle">
+      <div class="textOnBackground-C">Editer</div>
+      <a routerLink="/edition" class="link-C">Editer</a>
+    </div>
+  </div>
+
+</div>
