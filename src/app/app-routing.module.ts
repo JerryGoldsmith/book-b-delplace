@@ -7,10 +7,10 @@ import { MainComponent } from './main/main.component';
 /* ------------------ AUTH -------------------- */
 /* -------------------------------------------- */
 
-// import { SignupComponent } from './auth/signup/signup.component';
-// import { SignupLightComponent } from './auth/signuplight/signuplight.component';
-// import { SigninComponent } from './auth/signin/signin.component';
-// import { SigninlistComponent } from './auth/signinlist/signinlist.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SignupLightComponent } from './auth/signuplight/signuplight.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SigninlistComponent } from './auth/signinlist/signinlist.component';
 
 // --------------------------------------------------------
 // ---------------------- partA home ---------------------- :
@@ -39,18 +39,19 @@ import { MainComponent } from './main/main.component';
 
 // pages produits :
 // --------------
-// import { AComponent } from './restos/add/addA/addA.component';
-// import { BComponent } from './restos/add/addB/addB.component';
-// import { CComponent } from './restos/add/addC/addC.component';
-// import { DComponent } from './restos/add/addD/addD.component';
-// import { EComponent } from './restos/add/addE/addE.component';
-// import { FComponent } from './restos/add/addF/addF.component';
-// import { GComponent } from './restos/add/addG/addG.component';
-// import { HComponent } from './restos/add/addH/addH.component';
-// import { IComponent } from './restos/add/addI/addI.component';
-// import { JComponent } from './restos/add/addJ/addJ.component';
-// import { KComponent } from './restos/add/addK/addK.component';
-// import { LComponent } from './restos/add/addL/addL.component';
+import { AComponent } from './restos/add/addA/addA.component';
+import { BComponent } from './restos/add/addB/addB.component';
+import { CComponent } from './restos/add/addC/addC.component';
+import { DComponent } from './restos/add/addD/addD.component';
+import { EComponent } from './restos/add/addE/addE.component';
+import { FComponent } from './restos/add/addF/addF.component';
+import { GComponent } from './restos/add/addG/addG.component';
+import { HComponent } from './restos/add/addH/addH.component';
+import { IComponent } from './restos/add/addI/addI.component';
+import { JComponent } from './restos/add/addJ/addJ.component';
+import { KComponent } from './restos/add/addK/addK.component';
+import { LComponent } from './restos/add/addL/addL.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 // total :
 // ------
@@ -244,18 +245,18 @@ const routes: Routes = [
   // auth :
   // -----
 
-  // { path: 'auth/signin', component: SigninComponent },
-  // { path: 'auth/signinlist', component: SigninlistComponent },
+  { path: 'auth/signin', component: SigninComponent },
+  { path: 'auth/signinlist', component: SigninlistComponent },
 
-  // { path: 'auth/signup', component: SignupComponent },
-  // { path: 'auth/signuplight', component: SignupLightComponent },
+  { path: 'auth/signup', component: SignupComponent },
+  { path: 'auth/signuplight', component: SignupLightComponent },
 
   // --------------------------------------------------------
   // ---------------------- partA home ---------------------- :
   // --------------------------------------------------------
 
   // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
-  // { path: 'resto', canActivate: [AuthGuardService], component: Part01RestoHomeComponent },
+  // { path: 'resto', component: Part01RestoHomeComponent },
   // { path: 'edition', canActivate: [AuthGuardService], component: Part01EditionHomeComponent },
 
   // --------------------------------------------------------
@@ -279,18 +280,18 @@ const routes: Routes = [
 
   // pages produits :
   // --------------
-  // { path: 'addA', canActivate: [AuthGuardService], component: AComponent },
-  // { path: 'addB', canActivate: [AuthGuardService], component: BComponent },
-  // { path: 'addC', canActivate: [AuthGuardService], component: CComponent },
-  // { path: 'addD', canActivate: [AuthGuardService], component: DComponent },
-  // { path: 'addE', canActivate: [AuthGuardService], component: EComponent },
-  // { path: 'addF', canActivate: [AuthGuardService], component: FComponent },
-  // { path: 'addG', canActivate: [AuthGuardService], component: GComponent },
-  // { path: 'addH', component: HComponent },
-  // { path: 'addI', canActivate: [AuthGuardService], component: IComponent },
-  // { path: 'addJ', canActivate: [AuthGuardService], component: JComponent },
-  // { path: 'addK', canActivate: [AuthGuardService], component: KComponent },
-  // { path: 'addL', canActivate: [AuthGuardService], component: LComponent },
+  { path: 'addA', canActivate: [AuthGuardService], component: AComponent },
+  { path: 'addB', canActivate: [AuthGuardService], component: BComponent },
+  { path: 'addC', canActivate: [AuthGuardService], component: CComponent },
+  { path: 'addD', canActivate: [AuthGuardService], component: DComponent },
+  { path: 'addE', canActivate: [AuthGuardService], component: EComponent },
+  { path: 'addF', canActivate: [AuthGuardService], component: FComponent },
+  { path: 'addG', canActivate: [AuthGuardService], component: GComponent },
+  { path: 'addH', component: HComponent },
+  { path: 'addI', canActivate: [AuthGuardService], component: IComponent },
+  { path: 'addJ', canActivate: [AuthGuardService], component: JComponent },
+  { path: 'addK', canActivate: [AuthGuardService], component: KComponent },
+  { path: 'addL', canActivate: [AuthGuardService], component: LComponent },
 
   // total :
   // ------
