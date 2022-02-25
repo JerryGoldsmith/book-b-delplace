@@ -1,5 +1,5 @@
 <section class="margin-topics">
-  <app-part01-resto-home></app-part01-resto-home>
+  <!-- <app-part01-resto-home></app-part01-resto-home> -->
   <!-- <router-outlet  name="headerResto"></router-outlet> -->
 </section>
 
@@ -12,7 +12,7 @@
     class="submit-button"
     (click) = "onSaveOnFirebase()">Envoyer sur firebase</button> -->
 
-    <form [formGroup]="restoForm">
+    <form *ngIf="restoForm" [formGroup]="restoForm">
       <div routerLinkActive="active" *ngFor="let matrix of matrixs">
 
         <!-- A -->

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
-import * as Subject from 'rxjs/Subject';
+import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
 // import * as firebase from 'firebase/app';
 import firebase from "firebase/app";
@@ -18,7 +18,6 @@ export class LService {
 
   // L ----
 
-  //@ts-ignore
   priceLSubject = new Subject<any[]>();
   priceLs = [
     { isChecked: false, value: 0.50, label: "Sauce piquante" },

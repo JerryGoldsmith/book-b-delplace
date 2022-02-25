@@ -4,33 +4,31 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// everywhere in the app
-import { SharedModule } from "./shared/shared.module";
-// SharedModule needs CommonModule
-import { CommonModule } from "@angular/common";
+// SharedModule needs CommonModule (app.module)
+import { SharedModule } from "./../shared/shared.module";
 
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './../main/main.component';
 
 /* -------------------------------------------- */
 /* ------------------ AUTH -------------------- */
 /* -------------------------------------------- */
 
-import { SignupComponent } from './auth/signup/signup.component';
-import { SignupLightComponent } from './auth/signuplight/signuplight.component';
-import { SigninComponent } from './auth/signin/signin.component';
-import { SigninlistComponent } from './auth/signinlist/signinlist.component';
+import { SignupComponent } from './../auth/signup/signup.component';
+import { SignupLightComponent } from './../auth/signuplight/signuplight.component';
+import { SigninComponent } from './../auth/signin/signin.component';
+import { SigninlistComponent } from './../auth/signinlist/signinlist.component';
 
 /* -------------------------------------------------- */
 /* --------------------- SERVICES ------------------- */
 /* -------------------------------------------------- */
 
 /* Auth */
-import { AuthService } from './services/auth.service';
-import { AuthGuardService } from './services/auth-guard.service';
-import { AuthentificationService } from "./services/authentification.service";
+import { AuthService } from './../services/auth.service';
+import { AuthGuardService } from './../services/auth-guard.service';
+import { AuthentificationService } from "./../services/authentification.service";
 
     /* Acces Firebase */
-    import { environment } from '../environments/environment';
+    import { environment } from '../../environments/environment';
     import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
 
     /* AngularFire */
@@ -55,6 +53,8 @@ import { AuthentificationService } from "./services/authentification.service";
 // import { OrderReservationService } from "./services/order-reservation.service";
 
 // resto
+
+// import { RestosComponent } from './../restos/restos.component';
 
 // import { MatrixService } from "./services/resto/matrix.service";
 // import { AService } from "./services/resto/a.service";
@@ -99,7 +99,7 @@ import { AuthentificationService } from "./services/authentification.service";
 // ------------- partA / resto (restos) ------------- :
 // --------------------------------------------------
 
-import { RestosComponent } from './restos/restos.component';
+// import { RestosComponent } from './restos/restos.component';
 
 // pages produits :
 // --------------
@@ -285,19 +285,6 @@ const routes: Routes = [
   // ---------------------- partA home ---------------------- :
   // --------------------------------------------------------
 
-  {
-    path: 'resto-home',
-    // canActivate: [AuthGuardService],
-    loadChildren: () => import('src/app/mod/private/a-resto/a-resto.module')
-      .then(mod => mod.ARestoModule)
-  },
-  {
-    path: 'resto',
-    // canActivate: [AuthGuardService],
-    loadChildren: () => import('src/app/mod/private/resto/resto.module')
-      .then(mod => mod.RestoModule)
-  }
-
   // { path: 'resto', component: RestosComponent },
 
   // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
@@ -479,7 +466,6 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
-    CommonModule,
 
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -499,7 +485,6 @@ const routes: Routes = [
     BrowserAnimationsModule, 
 
     SharedModule,
-    CommonModule,
 
     HttpClientModule,
     AngularFireModule,
@@ -519,4 +504,4 @@ const routes: Routes = [
     AuthentificationService
   ]
 })
-export class AppRoutingModule { }
+export class RoutingModule { }

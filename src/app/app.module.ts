@@ -7,10 +7,13 @@ import { AppComponent } from './app.component';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
+
+// import { AppRoutingModule } from './app-routing.module';
+import { Part01RestoModule } from './routing/part01-resto'
+import { RoutingModule } from './routing/routing-module'
 
 // everywhere in the app
-import { SharedModule } from "./shared/shared.module";
+// import { SharedModule } from "./shared/shared.module";
 // SharedModule needs CommonModule
 import { CommonModule, registerLocaleData } from "@angular/common";
 // pipe for date
@@ -49,7 +52,7 @@ import { SignupLightComponent } from './auth/signuplight/signuplight.component';
 // --------------------------------------------------------
 
 // import { Part01ReservationHomeComponent } from './part01-reservation-home/part01-reservation-home.component';
-import { Part01RestoHomeComponent } from './part01-resto-home/part01-resto-home.component';
+// import { Part01RestoHomeComponent } from './part01-resto-home/part01-resto-home.component';
 // import { Part01EditionHomeComponent } from './part01-edition-home/part01-edition-home.component';
 
 // --------------------------------------------------
@@ -86,33 +89,33 @@ import { PaymentComponent } from './restos/total/payment/payment.component';
 /* -------------------------------------------------- */
 
 /* Auth */
-import { AuthService } from './services/auth.service';
-import { AuthGuardService } from './services/auth-guard.service';
-import { AuthentificationService } from "./services/authentification.service";
+// import { AuthService } from './services/auth.service';
+// import { AuthGuardService } from './services/auth-guard.service';
+// import { AuthentificationService } from "./services/authentification.service";
 
     /* Acces Firebase */
-    import { environment } from '../environments/environment';
-    import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
+    // import { environment } from '../environments/environment';
+    // import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
 
     // import { initializeApp } from "firebase/app";
     // import { getAnalytics } from "firebase/analytics";
 
     /* AngularFire */
 
-    import { AngularFireModule } from "@angular/fire";
-    import { AngularFireAuthModule } from "@angular/fire/auth";
-    import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
-    import { AngularFirestoreModule } from "@angular/fire/firestore";
-    import { AngularFireStorageModule } from '@angular/fire/storage';
-    import { AngularFireDatabaseModule } from '@angular/fire/database';
+    // import { AngularFireModule } from "@angular/fire";
+    // import { AngularFireAuthModule } from "@angular/fire/auth";
+    // import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
+    // import { AngularFirestoreModule } from "@angular/fire/firestore";
+    // import { AngularFireStorageModule } from '@angular/fire/storage';
+    // import { AngularFireDatabaseModule } from '@angular/fire/database';
 
     /* FormsModule */
 
-    import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+    // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     /* AngularResizedEvent */
 
-    import { AngularResizeEventModule } from 'angular-resize-event';
+    // import { AngularResizeEventModule } from 'angular-resize-event';
 
 // reservation
 
@@ -120,19 +123,19 @@ import { AuthentificationService } from "./services/authentification.service";
 
 // resto
 
-import { MatrixService } from "./services/resto/matrix.service";
-import { AService } from "./services/resto/a.service";
-import { BService } from "./services/resto/b.service";
-import { CService } from "./services/resto/c.service";
-import { DService } from "./services/resto/d.service";
-import { EService } from "./services/resto/e.service";
-import { FService } from "./services/resto/f.service";
-import { GService } from "./services/resto/g.service";
-import { HService } from "./services/resto/h.service";
-import { IService } from "./services/resto/i.service";
-import { JService } from "./services/resto/j.service";
-import { KService } from "./services/resto/k.service";
-import { LService } from "./services/resto/l.service";
+// import { MatrixService } from "./services/resto/matrix.service";
+// import { AService } from "./services/resto/a.service";
+// import { BService } from "./services/resto/b.service";
+// import { CService } from "./services/resto/c.service";
+// import { DService } from "./services/resto/d.service";
+// import { EService } from "./services/resto/e.service";
+// import { FService } from "./services/resto/f.service";
+// import { GService } from "./services/resto/g.service";
+// import { HService } from "./services/resto/h.service";
+// import { IService } from "./services/resto/i.service";
+// import { JService } from "./services/resto/j.service";
+// import { KService } from "./services/resto/k.service";
+// import { LService } from "./services/resto/l.service";
 
 // images
 
@@ -156,7 +159,7 @@ const appRoutes: Routes = [
   // --------------------------------------------------------
 
   // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
-  { path: 'resto', canActivate: [AuthGuardService], component: Part01RestoHomeComponent },
+  // { path: 'resto-home', canActivate: [AuthGuardService], component: Part01RestoHomeComponent },
   // { path: 'edition', canActivate: [AuthGuardService], component: Part01EditionHomeComponent },
 
   // --------------------------------------------------
@@ -165,26 +168,26 @@ const appRoutes: Routes = [
 
   // pages produits :
   // --------------
-  { path: 'addA', canActivate: [AuthGuardService], component: AComponent },
-  { path: 'addB', canActivate: [AuthGuardService], component: BComponent },
-  { path: 'addC', canActivate: [AuthGuardService], component: CComponent },
-  { path: 'addD', canActivate: [AuthGuardService], component: DComponent },
-  { path: 'addE', canActivate: [AuthGuardService], component: EComponent },
-  { path: 'addF', canActivate: [AuthGuardService], component: FComponent },
-  { path: 'addG', canActivate: [AuthGuardService], component: GComponent },
-  { path: 'addH', component: HComponent },
-  { path: 'addI', canActivate: [AuthGuardService], component: IComponent },
-  { path: 'addJ', canActivate: [AuthGuardService], component: JComponent },
-  { path: 'addK', canActivate: [AuthGuardService], component: KComponent },
-  { path: 'addL', canActivate: [AuthGuardService], component: LComponent },
+  // { path: 'addA', canActivate: [AuthGuardService], component: AComponent },
+  // { path: 'addB', canActivate: [AuthGuardService], component: BComponent },
+  // { path: 'addC', canActivate: [AuthGuardService], component: CComponent },
+  // { path: 'addD', canActivate: [AuthGuardService], component: DComponent },
+  // { path: 'addE', canActivate: [AuthGuardService], component: EComponent },
+  // { path: 'addF', canActivate: [AuthGuardService], component: FComponent },
+  // { path: 'addG', canActivate: [AuthGuardService], component: GComponent },
+  // { path: 'addH', component: HComponent },
+  // { path: 'addI', canActivate: [AuthGuardService], component: IComponent },
+  // { path: 'addJ', canActivate: [AuthGuardService], component: JComponent },
+  // { path: 'addK', canActivate: [AuthGuardService], component: KComponent },
+  // { path: 'addL', canActivate: [AuthGuardService], component: LComponent },
 
   // total :
   // ------
-  { path: 'abcdefghijkl', canActivate: [AuthGuardService], component: AbcdefghijklComponent },
+  // { path: 'abcdefghijkl', canActivate: [AuthGuardService], component: AbcdefghijklComponent },
 
   // payment :
   // -------
-  { path: 'payment', canActivate: [AuthGuardService], component: PaymentComponent }
+  // { path: 'payment', canActivate: [AuthGuardService], component: PaymentComponent }
   
 ];
 
@@ -196,7 +199,7 @@ const appRoutes: Routes = [
     SignupLightComponent,
     SigninComponent,
     SigninlistComponent,
-    Part01RestoHomeComponent,
+    // Part01RestoHomeComponent,
     CComponent,
     BComponent,
     AComponent,
@@ -213,53 +216,55 @@ const appRoutes: Routes = [
     AbcdefghijklComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
+    // BrowserModule,
+    // BrowserAnimationsModule,
+    // AppRoutingModule,
+    RoutingModule,
+    Part01RestoModule,
     RouterModule.forRoot(appRoutes),
-    CommonModule,
+    CommonModule
 
-    HttpClientModule,
+    // HttpClientModule,
     // initializeApp,
     // getAnalytics,
 
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFireAuthGuardModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireAuthModule,
+    // AngularFireAuthGuardModule,
+    // AngularFirestoreModule,
+    // AngularFireStorageModule,
+    // AngularFireDatabaseModule,
 
-    FormsModule,
-    ReactiveFormsModule,
-    AngularResizeEventModule,
+    // FormsModule,
+    // ReactiveFormsModule,
+    // AngularResizeEventModule,
 
-    SharedModule
+    // SharedModule
   ],
   exports: [
     RouterModule
   ],
   providers: [
-    AuthService,
-    AuthGuardService,
-    AuthentificationService,
+    // AuthService,
+    // AuthGuardService,
+    // AuthentificationService,
     { provide: LOCALE_ID, useValue: 'fr-FR'},
     // reservation
     // OrderReservationService,
     // backoffice
-    MatrixService,
-    AService,
-    BService,
-    CService,
-    DService,
-    EService,
-    FService,
-    GService,
-    HService,
-    IService,
-    JService,
-    KService,
-    LService,
+    // MatrixService,
+    // AService,
+    // BService,
+    // CService,
+    // DService,
+    // EService,
+    // FService,
+    // GService,
+    // HService,
+    // IService,
+    // JService,
+    // KService,
+    // LService,
 
     ImageService
   ],
