@@ -17,7 +17,8 @@ import { SigninComponent } from 'src/app/auth/signin/signin.component';
     SigninRoutingModule
   ],
   exports: [
-    SigninComponent
+    SigninComponent,
+    SigninRoutingModule
   ]
 })
 export class SigninModule { }

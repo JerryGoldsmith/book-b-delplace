@@ -14,7 +14,8 @@ import { SigninlistComponent } from 'src/app/auth/signinlist/signinlist.componen
     SigninlistRoutingModule
   ],
   exports: [
-    SigninlistComponent
+    SigninlistComponent,
+    SigninlistRoutingModule
   ]
 })
 export class SigninlistModule { }
