@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { Subscription } from 'rxjs/Subscription';
+import { CommonModule } from "@angular/common";
+
+// import { RestosComponent } from 'src/app/restos/restos.component';
+
 import { MatrixService } from "../services/resto/matrix.service";
 import { AService } from "../services/resto/a.service";
 import { BService } from "../services/resto/b.service";
@@ -23,6 +26,7 @@ const routes: Routes = [
     loadChildren: () => import('src/app/mod/private/a-resto/a-resto.module')
       .then(mod => mod.ARestoModule)
   },
+  // { path: 'resto', component: RestosComponent }
   {
     path: 'resto',
     // canActivate: [AuthGuardService],
@@ -32,10 +36,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
+    declarations: [
+      // RestosComponent
+    ],
     imports: [
       RouterModule.forRoot(routes),
+      CommonModule
     ],
-    exports: [],
+    exports: [
+      CommonModule
+    ],
     providers: [
       MatrixService,
       AService,

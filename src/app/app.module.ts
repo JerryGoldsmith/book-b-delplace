@@ -8,16 +8,19 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
+
 // import { AppRoutingModule } from './app-routing.module';
+import { CommonFormReactiveModule } from './routing/common-form-reactive'
 import { Part01RestoModule } from './routing/part01-resto'
 import { RoutingModule } from './routing/routing-module'
 
 // everywhere in the app
 // import { SharedModule } from "./shared/shared.module";
 // SharedModule needs CommonModule
-import { CommonModule, registerLocaleData } from "@angular/common";
-// pipe for date
-import * as fr from "@angular/common/locales/fr";
+// import { CommonModule, registerLocaleData } from "@angular/common";
+// // pipe for date
+// import * as fr from "@angular/common/locales/fr";
 
 /* -------------------------------------------------- */
 /* --------------------- ROUTES --------------------- */
@@ -58,6 +61,7 @@ import { SignupLightComponent } from './auth/signuplight/signuplight.component';
 // --------------------------------------------------
 // ------------- partA / resto (restos) ------------- :
 // --------------------------------------------------
+
 
 // pages produits :
 // --------------
@@ -123,19 +127,19 @@ import { PaymentComponent } from './restos/total/payment/payment.component';
 
 // resto
 
-// import { MatrixService } from "./services/resto/matrix.service";
-// import { AService } from "./services/resto/a.service";
-// import { BService } from "./services/resto/b.service";
-// import { CService } from "./services/resto/c.service";
-// import { DService } from "./services/resto/d.service";
-// import { EService } from "./services/resto/e.service";
-// import { FService } from "./services/resto/f.service";
-// import { GService } from "./services/resto/g.service";
-// import { HService } from "./services/resto/h.service";
-// import { IService } from "./services/resto/i.service";
-// import { JService } from "./services/resto/j.service";
-// import { KService } from "./services/resto/k.service";
-// import { LService } from "./services/resto/l.service";
+import { MatrixService } from "./services/resto/matrix.service";
+import { AService } from "./services/resto/a.service";
+import { BService } from "./services/resto/b.service";
+import { CService } from "./services/resto/c.service";
+import { DService } from "./services/resto/d.service";
+import { EService } from "./services/resto/e.service";
+import { FService } from "./services/resto/f.service";
+import { GService } from "./services/resto/g.service";
+import { HService } from "./services/resto/h.service";
+import { IService } from "./services/resto/i.service";
+import { JService } from "./services/resto/j.service";
+import { KService } from "./services/resto/k.service";
+import { LService } from "./services/resto/l.service";
 
 // images
 
@@ -200,29 +204,31 @@ const appRoutes: Routes = [
     SigninComponent,
     SigninlistComponent,
     // Part01RestoHomeComponent,
-    CComponent,
-    BComponent,
-    AComponent,
-    DComponent,
-    EComponent,
-    FComponent,
-    JComponent,
-    LComponent,
-    KComponent,
-    GComponent,
-    HComponent,
-    IComponent,
-    PaymentComponent,
-    AbcdefghijklComponent
+    // CComponent,
+    // BComponent,
+    // AComponent,
+    // DComponent,
+    // EComponent,
+    // FComponent,
+    // JComponent,
+    // LComponent,
+    // KComponent,
+    // GComponent,
+    // HComponent,
+    // IComponent,
+    // PaymentComponent,
+    // AbcdefghijklComponent
   ],
   imports: [
-    // BrowserModule,
-    // BrowserAnimationsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     // AppRoutingModule,
     RoutingModule,
     Part01RestoModule,
-    RouterModule.forRoot(appRoutes),
-    CommonModule
+    CommonFormReactiveModule,
+    RouterModule.forRoot(appRoutes)
+    // CommonModule,
 
     // HttpClientModule,
     // initializeApp,
@@ -242,7 +248,10 @@ const appRoutes: Routes = [
     // SharedModule
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
     // AuthService,
@@ -252,26 +261,26 @@ const appRoutes: Routes = [
     // reservation
     // OrderReservationService,
     // backoffice
-    // MatrixService,
-    // AService,
-    // BService,
-    // CService,
-    // DService,
-    // EService,
-    // FService,
-    // GService,
-    // HService,
-    // IService,
-    // JService,
-    // KService,
-    // LService,
+    MatrixService,
+    AService,
+    BService,
+    CService,
+    DService,
+    EService,
+    FService,
+    GService,
+    HService,
+    IService,
+    JService,
+    KService,
+    LService,
 
     ImageService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  constructor() {
-    registerLocaleData(fr.default);
-  }
+  // constructor() {
+  //   registerLocaleData(fr.default);
+  // }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+
 import { MatrixService } from "../services/resto/matrix.service";
 import { AService } from "../services/resto/a.service";
 import { BService } from "../services/resto/b.service";
@@ -44,15 +45,6 @@ export class RestosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    /* refresh page */
-
-    // if(!window.location.hash) {
-    //    window.location = window.location + '#loaded';
-    //    window.location.reload();
-    // }
-
-    // ------
 
     this.matrixSubscription = this.matrixService.matrixSubject.subscribe(
       (matrixs: any[]) => {
