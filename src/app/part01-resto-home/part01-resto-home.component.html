@@ -30,6 +30,9 @@
             (click) = "onSaveOnFirebase()">Envoyer sur firebase</button>
 
             <form [formGroup]="restoForm">
+
+              <input formControlName="restoName">
+
               <div routerLinkActive="active" *ngFor="let matrix of matrixs">
 
                 <!-- A -->

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { MatrixService } from "../services/resto/matrix.service";
 import { AService } from "../services/resto/a.service";
@@ -50,6 +50,10 @@ export class Part01RestoHomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.restoForm = new FormGroup({
+        restoName: new FormControl()
+     });
 
     this.matrixSubscription = this.matrixService.matrixSubject.subscribe(
       (matrixs: any[]) => {
