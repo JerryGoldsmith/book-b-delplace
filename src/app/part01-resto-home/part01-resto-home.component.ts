@@ -359,4 +359,14 @@ export class Part01RestoHomeComponent implements OnInit {
         });
     }
   }
+
+  onSaveOnFirebase() {
+    this.matrixService.saveMatrixToFirebaseinServer();
+  }
+
+  // ----
+
+  onDestroy() {
+    this.matrixSubscription.unsubscribe();
+  }
 }

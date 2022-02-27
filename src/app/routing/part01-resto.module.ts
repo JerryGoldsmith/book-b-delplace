@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RestosComponent } from 'src/app/restos/restos.component';
+import { Part01RestoHomeComponent } from 'src/app/part01-resto-home/part01-resto-home.component';
 
 import { MatrixService } from "../services/resto/matrix.service";
 import { AService } from "../services/resto/a.service";
@@ -20,13 +22,14 @@ import { KService } from "../services/resto/k.service";
 import { LService } from "../services/resto/l.service";
 
 const routes: Routes = [
-  {
-    path: 'resto-home',
-    // canActivate: [AuthGuardService],
-    loadChildren: () => import('src/app/mod/private/a-resto/a-resto.module')
-      .then(mod => mod.ARestoModule)
-  },
-  { path: 'resto', component: RestosComponent }
+  // {
+  //   path: 'resto-home',
+  //   // canActivate: [AuthGuardService],
+  //   loadChildren: () => import('src/app/mod/private/a-resto/a-resto.module')
+  //     .then(mod => mod.ARestoModule)
+  // },
+  // { path: 'resto', component: RestosComponent },
+  { path: 'resto-home', component: Part01RestoHomeComponent }
   // {
   //   path: 'resto',
   //   // canActivate: [AuthGuardService],
@@ -36,30 +39,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [
-      RestosComponent
-    ],
     imports: [
       RouterModule.forRoot(routes),
-      CommonModule
+      CommonModule,
+      FormsModule,
+      ReactiveFormsModule
     ],
     exports: [
       CommonModule
-    ],
-    providers: [
-      MatrixService,
-      AService,
-      BService,
-      CService,
-      DService,
-      EService,
-      FService,
-      GService,
-      HService,
-      IService,
-      JService,
-      KService,
-      LService
     ]
   })
   export class Part01RestoModule { }

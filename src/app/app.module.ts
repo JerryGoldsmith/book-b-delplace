@@ -11,8 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
 
 // import { AppRoutingModule } from './app-routing.module';
-import { CommonFormReactiveModule } from './routing/common-form-reactive'
-import { Part01RestoModule } from './routing/part01-resto'
+import { CommonFormReactiveModule } from './routing/common-form-reactive.module'
+import { Part01RestoModule } from './routing/part01-resto.module'
 import { RoutingModule } from './routing/routing-module'
 
 // everywhere in the app
@@ -62,6 +62,7 @@ import { SignupLightComponent } from './auth/signuplight/signuplight.component';
 // ------------- partA / resto (restos) ------------- :
 // --------------------------------------------------
 
+import { Part01RestoHomeComponent } from 'src/app/part01-resto-home/part01-resto-home.component';
 
 // pages produits :
 // --------------
@@ -115,7 +116,7 @@ import { PaymentComponent } from './restos/total/payment/payment.component';
 
     /* FormsModule */
 
-    // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+    import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     /* AngularResizedEvent */
 
@@ -203,7 +204,7 @@ const appRoutes: Routes = [
     SignupLightComponent,
     SigninComponent,
     SigninlistComponent,
-    // Part01RestoHomeComponent,
+    Part01RestoHomeComponent
     // CComponent,
     // BComponent,
     // AComponent,
@@ -227,7 +228,7 @@ const appRoutes: Routes = [
     RoutingModule,
     Part01RestoModule,
     CommonFormReactiveModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
     // CommonModule,
 
     // HttpClientModule,
@@ -252,6 +253,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule
+
   ],
   providers: [
     // AuthService,
