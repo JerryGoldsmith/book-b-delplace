@@ -391,7 +391,7 @@ export class OrderReservationService {
 
   saveSeatsToFirebaseinServer() { // Acces vers Firebase
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/seats.json', this.seatOnes)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/seats.json', this.seatOnes)
     // put plutôt que post : s'il existe déjà sur firebase, put va l'écraser
     .subscribe( // réagit à la réponse du serveur
       () => {
@@ -405,7 +405,7 @@ export class OrderReservationService {
 
   saveSeatsFromFirebaseinServer() { // Acces depuis Firebase
     this.httpClient
-    .get<any[]>('https://portfolio-bd.firebaseio.com/seats.json')
+    .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/seats.json')
     // get pour récupérer les données depuis firebase
     .subscribe( // réagit à la réponse du serveur
       (response) => {

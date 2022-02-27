@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
 // import * as firebase from 'firebase/app';
@@ -33,7 +32,7 @@ export class AService {
 
   savePriceAToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/priceA.json', this.priceAs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceA.json', this.priceAs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -46,7 +45,7 @@ export class AService {
 
   savePriceAFromFirebaseinServer() {
     this.httpClient
-    .get<any[]>('https://portfolio-bd.firebaseio.com/priceA.json')
+    .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceA.json')
     .subscribe(
       (response) => {
         console.log('Chargement terminé');
@@ -75,7 +74,7 @@ export class AService {
 
   saveItemPriceAToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/itemPriceA.json', this.itemPriceAs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceA.json', this.itemPriceAs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -88,7 +87,7 @@ export class AService {
 
   saveItemPriceAFromFirebaseinServer() {
     this.httpClient
-    .get<any[]>('https://portfolio-bd.firebaseio.com/itemPriceA.json')
+    .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceA.json')
     .subscribe(
       (response) => {
         console.log('Chargement terminé');
@@ -114,7 +113,7 @@ export class AService {
 
   saveTotalAToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/totalA.json', this.totalAs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalA.json', this.totalAs)
     // put plutôt que post : s'il existe déjà sur firebase, put va l'écraser
     .subscribe( // réagit à la réponse du serveur
       () => {
@@ -202,7 +201,7 @@ export class AService {
 
   saveTotalCompleteAToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/totalCompleteA.json', this.totalCompleteAs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalCompleteA.json', this.totalCompleteAs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -272,7 +271,7 @@ export class AService {
 
   saveTotalTvaAToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/totalTvaA.json', this.totalTvaAs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalTvaA.json', this.totalTvaAs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');

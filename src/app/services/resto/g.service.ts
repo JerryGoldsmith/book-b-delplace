@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
 // import * as firebase from 'firebase/app';
@@ -36,7 +35,7 @@ export class GService {
 
   savePriceGToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/priceG.json', this.priceGs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceG.json', this.priceGs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -49,7 +48,7 @@ export class GService {
 
   savePriceGFromFirebaseinServer() {
     this.httpClient
-    .get<any[]>('https://portfolio-bd.firebaseio.com/priceG.json')
+    .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceG.json')
     .subscribe(
       (response) => {
         console.log('Chargement terminé');
@@ -77,7 +76,7 @@ export class GService {
 
   saveItemPriceGToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/itemPriceG.json', this.itemPriceGs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceG.json', this.itemPriceGs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -90,7 +89,7 @@ export class GService {
 
   saveItemPriceGFromFirebaseinServer() {
     this.httpClient
-    .get<any[]>('https://portfolio-bd.firebaseio.com/itemPriceG.json')
+    .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceG.json')
     .subscribe(
       (response) => {
         console.log('Chargement terminé');
@@ -116,7 +115,7 @@ export class GService {
 
   saveTotalGToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/totalG.json', this.totalGs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalG.json', this.totalGs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -184,7 +183,7 @@ export class GService {
 
   saveTotalCompleteGToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/totalCompleteG.json', this.totalCompleteGs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalCompleteG.json', this.totalCompleteGs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -254,7 +253,7 @@ export class GService {
 
   saveTotalTvaGToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/totalTvaG.json', this.totalTvaGs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalTvaG.json', this.totalTvaGs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');

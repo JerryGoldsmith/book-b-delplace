@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CommonModule } from "@angular/common";
 
-// import { RestosComponent } from 'src/app/restos/restos.component';
+import { RestosComponent } from 'src/app/restos/restos.component';
 
 import { MatrixService } from "../services/resto/matrix.service";
 import { AService } from "../services/resto/a.service";
@@ -26,18 +26,18 @@ const routes: Routes = [
     loadChildren: () => import('src/app/mod/private/a-resto/a-resto.module')
       .then(mod => mod.ARestoModule)
   },
-  // { path: 'resto', component: RestosComponent }
-  {
-    path: 'resto',
-    // canActivate: [AuthGuardService],
-    loadChildren: () => import('src/app/mod/private/resto/resto.module')
-      .then(mod => mod.RestoModule)
-  }
+  { path: 'resto', component: RestosComponent }
+  // {
+  //   path: 'resto',
+  //   // canActivate: [AuthGuardService],
+  //   loadChildren: () => import('src/app/mod/private/resto/resto.module')
+  //     .then(mod => mod.RestoModule)
+  // }
 ];
 
 @NgModule({
     declarations: [
-      // RestosComponent
+      RestosComponent
     ],
     imports: [
       RouterModule.forRoot(routes),

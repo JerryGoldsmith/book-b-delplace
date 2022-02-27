@@ -1,16 +1,17 @@
 <section class="margin-topics">
+  <!-- <h1>Resto works!</h1> -->
   <!-- <app-part01-resto-home></app-part01-resto-home> -->
   <!-- <router-outlet  name="headerResto"></router-outlet> -->
 </section>
 
 <section>
   <div class="row">
-    <!-- <h1>Restaurants click & collect</h1> -->
+    <h1>Restaurants click & collect</h1>
 
-    <!-- <button type="submit"
+    <button type="submit"
     class="waves-effect waves-light"
     class="submit-button"
-    (click) = "onSaveOnFirebase()">Envoyer sur firebase</button> -->
+    (click) = "onSaveOnFirebase()">Envoyer sur firebase</button>
 
     <form *ngIf="restoForm" [formGroup]="restoForm">
       <div routerLinkActive="active" *ngFor="let matrix of matrixs">

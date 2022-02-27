@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
 // import * as firebase from 'firebase/app';
@@ -31,7 +30,7 @@ export class KService {
 
   savePriceKToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/priceK.json', this.priceKs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceK.json', this.priceKs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -44,7 +43,7 @@ export class KService {
 
   savePriceKFromFirebaseinServer() {
     this.httpClient
-    .get<any[]>('https://portfolio-bd.firebaseio.com/priceK.json')
+    .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceK.json')
     .subscribe(
       (response) => {
         console.log('Chargement terminé');
@@ -72,7 +71,7 @@ export class KService {
 
   saveItemPriceKToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/itemPriceK.json', this.itemPriceKs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceK.json', this.itemPriceKs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -85,7 +84,7 @@ export class KService {
 
   saveItemPriceKFromFirebaseinServer() {
     this.httpClient
-    .get<any[]>('https://portfolio-bd.firebaseio.com/itemPriceK.json')
+    .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceK.json')
     .subscribe(
       (response) => {
         console.log('Chargement terminé');
@@ -111,7 +110,7 @@ export class KService {
 
   saveTotalKToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/totalK.json', this.totalKs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalK.json', this.totalKs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -179,7 +178,7 @@ export class KService {
 
   saveTotalCompleteKToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/totalCompleteK.json', this.totalCompleteKs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalCompleteK.json', this.totalCompleteKs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
@@ -249,7 +248,7 @@ export class KService {
 
   saveTotalTvaKToFirebaseinServer() {
     this.httpClient
-    .put('https://portfolio-bd.firebaseio.com/totalTvaK.json', this.totalTvaKs)
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalTvaK.json', this.totalTvaKs)
     .subscribe(
       () => {
         console.log('Enregistrement terminé');
