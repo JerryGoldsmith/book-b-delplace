@@ -55,7 +55,6 @@ import { SignupLightComponent } from './auth/signuplight/signuplight.component';
 // --------------------------------------------------------
 
 // import { Part01ReservationHomeComponent } from './part01-reservation-home/part01-reservation-home.component';
-// import { Part01RestoHomeComponent } from './part01-resto-home/part01-resto-home.component';
 // import { Part01EditionHomeComponent } from './part01-edition-home/part01-edition-home.component';
 
 // --------------------------------------------------
@@ -231,10 +230,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     // CommonModule,
 
-    // HttpClientModule,
-    // initializeApp,
-    // getAnalytics,
-
     // AngularFireModule.initializeApp(environment.firebaseConfig),
     // AngularFireAuthModule,
     // AngularFireAuthGuardModule,
@@ -263,7 +258,7 @@ const appRoutes: Routes = [
     // reservation
     // OrderReservationService,
     // backoffice
-    MatrixService,
+    // MatrixService,
     AService,
     BService,
     CService,

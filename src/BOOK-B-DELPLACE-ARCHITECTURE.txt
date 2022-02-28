@@ -30,6 +30,13 @@ src/
 app/
  |--- normalize.component.css
  |
+ |--- app.module.ts (main)
+ |--- routing
+ |       |
+ |     routing.module.ts (part01 - part02 - Part03 - Part04)
+ |     common-form-reactive.module.ts (common, form/reactive form)
+ |     part01-resto.module.ts
+ |
  |--- main/ (homepage)
  |      | utilise : assets/js/main/animText.min.js
  |      | utilise : assets/js/main/imagesloaded.pkgd.min.js

@@ -3,7 +3,6 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 // import * as firebase from 'firebase/app';
 import "firebase/database";
-import { AngularFirestore } from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: "root"
@@ -152,8 +151,7 @@ export class MatrixService {
   // ---------------------------------------------
 
   constructor(
-    private httpClient: HttpClient,
-    private firestore: AngularFirestore  
+    private httpClient: HttpClient 
     ) {}
 
 }

@@ -22,16 +22,17 @@
 
         <section class="layout-rules">
           <div class="row">
-            <!-- <h1>Restaurants click & collect</h1> -->
 
-            <button type="submit"
+            <!--!!! bouton d'initialisation FIREBASE !!!-->
+            <!-- <button type="submit"
             class="waves-effect waves-light"
             class="submit-button"
-            (click) = "onSaveOnFirebase()">Envoyer sur firebase</button>
+            (click) = "onSaveOnFirebase()">Envoyer sur firebase</button> -->
+            <!--!!! bouton d'initialisation FIREBASE !!!-->
 
             <form [formGroup]="restoForm">
 
-              <input formControlName="restoName">
+              <input formControlName="restoName" disabled hidden>
 
               <div routerLinkActive="active" *ngFor="let matrix of matrixs">
 
