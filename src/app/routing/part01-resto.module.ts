@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { AuthGuardService } from './../services/auth-guard.service';
 
 import { Part01RestoHomeComponent } from 'src/app/part01-resto-home/part01-resto-home.component';
+import { LoadGuardGuard } from '../guard/load-guard.guard';
 
 const routes: Routes = [
   {
     path: 'resto-home',
     // canActivate: [AuthGuardService],
+    // canLoad: [LoadGuardGuard],
     loadChildren: () => import('src/app/mod/private/a-resto/a-resto.module')
       .then(mod => mod.ARestoModule)
   }
@@ -17,8 +19,9 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-      RouterModule.forRoot(routes)
-    ],
+      RouterModule.forRoot(routes,
+      { preloadingStrategy: PreloadAllModules}
+      )],
     exports: []
   })
   export class Part01RestoModule { }
