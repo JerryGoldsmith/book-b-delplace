@@ -1,20 +1,23 @@
 import { PreloadingStrategy, Route } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, pipe } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { AuthGuardService } from '../services/auth-guard.service';
-import { switchMap } from 'rxjs/operators';
 
 
 export class AuthPreloadStrategy implements PreloadingStrategy {
 
     constructor(
-        private auth: AuthService,
-        private authGuard : AuthGuardService
+        private auth: AuthService
+        // private authGuard : AuthGuardService
     ) {}
 
     preload(route: Route, fn: () => Observable<any>): Observable<any> {
-        // return this.auth;
-        throw new Error('Method not implemented.');
+        return new Observable (observer => {
+            this.auth.signInUser('email', 'password')
+                .catch(err => {
+                    ('An Error Has Occured While Creating Fund Details');
+                 })
+        });
     }
     
 }

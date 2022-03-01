@@ -13,7 +13,7 @@ import { AuthService } from '../services/auth.service';
 export class LoadGuardGuard implements CanLoad {
 
     constructor(
-        private auth: AuthService,
+        // private auth: AuthService,
         // private auth: AuthGuardService,
         private router: Router
     ) {}

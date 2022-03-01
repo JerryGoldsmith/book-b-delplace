@@ -6,6 +6,8 @@ import { AuthGuardService } from './../services/auth-guard.service';
 import { Part01RestoHomeComponent } from 'src/app/part01-resto-home/part01-resto-home.component';
 import { LoadGuardGuard } from '../guard/load-guard.guard';
 
+import { AuthPreloadStrategy } from './../guard/auth-preload-strategy';
+
 const routes: Routes = [
   {
     path: 'resto-home',
@@ -20,7 +22,7 @@ const routes: Routes = [
 @NgModule({
     imports: [
       RouterModule.forRoot(routes,
-      { preloadingStrategy: PreloadAllModules}
+      { preloadingStrategy: AuthPreloadStrategy }
       )],
     exports: []
   })
