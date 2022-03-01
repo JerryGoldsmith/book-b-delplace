@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 // import * as firebase from 'firebase';
 
 import firebase from "firebase/app";
+// import 'firebase/auth';
 import "firebase/database";
 import { AuthService } from '../services/auth.service';
 

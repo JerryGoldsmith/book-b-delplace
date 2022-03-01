@@ -120,12 +120,12 @@ const routes: Routes = [
     SharedModule,
 
     // HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFireAuthGuardModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireAuthModule,
+    // AngularFireAuthGuardModule,
+    // AngularFirestoreModule,
+    // AngularFireStorageModule,
+    // AngularFireDatabaseModule,
 
     // FormsModule,
     // ReactiveFormsModule,
@@ -139,21 +139,21 @@ const routes: Routes = [
     SharedModule,
 
     // HttpClientModule,
-    AngularFireModule,
-    AngularFireAuthModule,
-    AngularFireAuthGuardModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
+    // AngularFireModule,
+    // AngularFireAuthModule,
+    // AngularFireAuthGuardModule,
+    // AngularFirestoreModule,
+    // AngularFireStorageModule,
+    // AngularFireDatabaseModule,
 
     // FormsModule,
     // ReactiveFormsModule,
     AngularResizeEventModule
   ],
   providers: [
-    AuthService,
-    AuthGuardService,
-    AuthentificationService
+    // AuthService,
+    // AuthGuardService,
+    // AuthentificationService
   ]
 })
 export class RoutingModule { }

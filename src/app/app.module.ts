@@ -87,31 +87,32 @@ import { AbcdefghijklComponent } from './restos/total/abcdefghijkl/abcdefghijkl.
 // -------
 import { PaymentComponent } from './restos/total/payment/payment.component';
 
+import { Firebase } from './firebase'
+
 
 /* -------------------------------------------------- */
 /* --------------------- SERVICES ------------------- */
 /* -------------------------------------------------- */
 
 /* Auth */
-// import { AuthService } from './services/auth.service';
-// import { AuthGuardService } from './services/auth-guard.service';
-// import { AuthentificationService } from "./services/authentification.service";
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthentificationService } from "./services/authentification.service";
 
     /* Acces Firebase */
-    // import { environment } from '../environments/environment';
-    // import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
+    import { environment } from '../environments/environment';
 
     // import { initializeApp } from "firebase/app";
     // import { getAnalytics } from "firebase/analytics";
 
     /* AngularFire */
 
-    // import { AngularFireModule } from "@angular/fire";
-    // import { AngularFireAuthModule } from "@angular/fire/auth";
-    // import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
-    // import { AngularFirestoreModule } from "@angular/fire/firestore";
-    // import { AngularFireStorageModule } from '@angular/fire/storage';
-    // import { AngularFireDatabaseModule } from '@angular/fire/database';
+    import { AngularFireModule } from "@angular/fire";
+    import { AngularFireAuthModule } from "@angular/fire/auth";
+    import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
+    import { AngularFirestoreModule } from "@angular/fire/firestore";
+    import { AngularFireStorageModule } from '@angular/fire/storage';
+    import { AngularFireDatabaseModule } from '@angular/fire/database';
 
     /* FormsModule */
 
@@ -214,13 +215,12 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     // CommonModule,
 
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFireAuthModule,
-    // AngularFireAuthGuardModule,
-    // AngularFirestoreModule,
-    // AngularFireStorageModule,
-    // AngularFireDatabaseModule,
-
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'application'),
+    AngularFireAuthModule,
+    AngularFireAuthGuardModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
     // FormsModule,
     // ReactiveFormsModule,
     // AngularResizeEventModule,
@@ -235,9 +235,9 @@ const appRoutes: Routes = [
 
   ],
   providers: [
-    // AuthService,
-    // AuthGuardService,
-    // AuthentificationService,
+    AuthService,
+    AuthGuardService,
+    AuthentificationService,
     { provide: LOCALE_ID, useValue: 'fr-FR'},
     // reservation
     // backoffice

@@ -2,6 +2,8 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// import firebase from "firebase/app";
+
 export const environment = {
   production: false,
   firebaseConfig : {
@@ -15,6 +17,10 @@ export const environment = {
     measurementId: "G-XNB1L1KG5H"
   }
 };
+
+// Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// export const auth = firebase.auth;
 
 /*
  * For easier debugging in development mode, you can import the following file
