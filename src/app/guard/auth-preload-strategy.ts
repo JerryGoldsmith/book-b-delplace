@@ -14,7 +14,7 @@ export class AuthPreloadStrategy implements PreloadingStrategy {
     preload(route: Route, fn: () => Observable<any>): Observable<any> {
         return new Observable (observer => {
             this.auth.signInUser('email', 'password')
-                .catch(err => {
+                .catch(_err => {
                     ('An Error Has Occured While Creating Fund Details');
                  })
         });
