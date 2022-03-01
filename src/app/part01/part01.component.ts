@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-// import firebase from "firebase/app";
-	
 // import * as firebase from 'firebase';
+
+import firebase from "firebase/app";
 import "firebase/database";
 import { AuthService } from '../services/auth.service';
 
@@ -26,15 +25,7 @@ export class Part01Component implements OnInit {
 
   ngOnInit(): void {
 
-    // firebase.auth().onAuthStateChanged(
-    //     (user) => {
-    //       if(user) {
-    //         this.isAuth = true;
-    //       } else {
-    //         this.isAuth = false;
-    //       }
-    //     }
-    //   );
+    this.authStateChanged();
 
     /* refresh page */
 
@@ -340,5 +331,19 @@ export class Part01Component implements OnInit {
   onSignOut() {
     this.authService.signOutUser();
   }
+
+  authStateChanged() {
+    firebase.auth().onAuthStateChanged(
+        (user) => {
+          if(user) {
+            this.isAuth = true;
+          } else {
+            this.isAuth = false;
+          }
+        }
+      );
+  }
+
+  
 
 }
