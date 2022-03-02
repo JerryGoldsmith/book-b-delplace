@@ -1,6 +1,18 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+// import { CommonModule, registerLocaleData } from "@angular/common";
+import * as fr from "@angular/common/locales/fr";
+
+/* AngularFire */
+
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 // import { BrowserModule } from '@angular/platform-browser';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -30,15 +42,6 @@ import { AuthentificationService } from "./../services/authentification.service"
     /* Acces Firebase */
     import { environment } from '../../environments/environment';
     // import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
-
-    /* AngularFire */
-
-    import { AngularFireModule } from "@angular/fire";
-    import { AngularFireAuthModule } from "@angular/fire/auth";
-    import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
-    import { AngularFirestoreModule } from "@angular/fire/firestore";
-    import { AngularFireStorageModule } from '@angular/fire/storage';
-    import { AngularFireDatabaseModule } from '@angular/fire/database';
 
     /* FormsModule */
 
@@ -113,19 +116,19 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes,
-      { preloadingStrategy: PreloadAllModules}
-      ),
+      { preloadingStrategy: PreloadAllModules }),
     // BrowserModule,
     // BrowserAnimationsModule,
     SharedModule,
+    // CommonModule,
 
     // HttpClientModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFireAuthModule,
-    // AngularFireAuthGuardModule,
-    // AngularFirestoreModule,
-    // AngularFireStorageModule,
-    // AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireAuthGuardModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
 
     // FormsModule,
     // ReactiveFormsModule,
@@ -133,21 +136,7 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
-    // BrowserModule,
-    // BrowserAnimationsModule, 
-
     SharedModule,
-
-    // HttpClientModule,
-    // AngularFireModule,
-    // AngularFireAuthModule,
-    // AngularFireAuthGuardModule,
-    // AngularFirestoreModule,
-    // AngularFireStorageModule,
-    // AngularFireDatabaseModule,
-
-    // FormsModule,
-    // ReactiveFormsModule,
     AngularResizeEventModule
   ],
   providers: [
@@ -156,4 +145,8 @@ const routes: Routes = [
     // AuthentificationService
   ]
 })
-export class RoutingModule { }
+export class RoutingModule {
+  // constructor() {
+  //   registerLocaleData(fr.default);
+  // }
+ }

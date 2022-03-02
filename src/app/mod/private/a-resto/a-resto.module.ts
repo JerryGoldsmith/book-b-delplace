@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+// import { CommonModule } from '@angular/common';
 import { ARestoRoutingModule } from './a-resto-routing.module';
 
 
@@ -8,6 +9,7 @@ import { ARestoRoutingModule } from './a-resto-routing.module';
     à cause de formGroup */
   ],
   imports: [
+    // CommonModule,
     ARestoRoutingModule
   ],
   exports: []

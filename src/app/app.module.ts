@@ -4,6 +4,10 @@ import { AppComponent } from './app.component';
 /* --------------------- MODULES --------------------- */
 /* -------------------------------------------------- */
 
+// import { CommonModule, registerLocaleData } from "@angular/common";
+// // pipe for date
+// import * as fr from "@angular/common/locales/fr";
+
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -87,7 +91,7 @@ import { AbcdefghijklComponent } from './restos/total/abcdefghijkl/abcdefghijkl.
 // -------
 import { PaymentComponent } from './restos/total/payment/payment.component';
 
-import { Firebase } from './firebase'
+// import { Firebase } from './firebase'
 
 
 /* -------------------------------------------------- */
@@ -215,12 +219,12 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     // CommonModule,
 
-    AngularFireModule.initializeApp(environment.firebaseConfig, 'application'),
-    AngularFireAuthModule,
-    AngularFireAuthGuardModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireAuthModule,
+    // AngularFireAuthGuardModule,
+    // AngularFirestoreModule,
+    // AngularFireStorageModule,
+    // AngularFireDatabaseModule
     // FormsModule,
     // ReactiveFormsModule,
     // AngularResizeEventModule,

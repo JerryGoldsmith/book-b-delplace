@@ -14,7 +14,6 @@ import { SharedComponent } from './components/shared/shared.component';
     SharedRoutingModule
   ],
   exports: [
-    CommonModule,
     SharedComponent
   ]
 })

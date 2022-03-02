@@ -16,7 +16,6 @@ const routes: Routes = [];
         ReactiveFormsModule
     ],
     exports: [
-        CommonModule,
         FormsModule,
         ReactiveFormsModule
     ]

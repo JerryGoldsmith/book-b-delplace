@@ -10,7 +10,7 @@ import { SigninlistComponent } from 'src/app/auth/signinlist/signinlist.componen
     SigninlistComponent
   ],
   imports: [
-    CommonModule,
+    // CommonModule,
     SigninlistRoutingModule
   ],
   exports: [

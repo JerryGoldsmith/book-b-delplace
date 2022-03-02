@@ -1,11 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NgForm } from "@angular/forms";
+import { Book } from '../models/book.model';
+import { BooksService } from '../services/books.service';
+import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 // import * as firebase from 'firebase';
-
-import firebase from "firebase/app";
-// import 'firebase/auth';
+// import firebase from "firebase/app";
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 import "firebase/database";
+
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 import { AuthService } from '../services/auth.service';
+// import { OrdersService } from "../services/orders.service";
 
 @Component({
   selector: 'app-part01',
@@ -21,7 +31,8 @@ export class Part01Component implements OnInit {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private AFAuth: AngularFireAuth
   ) {}
 
   ngOnInit(): void {
@@ -334,6 +345,16 @@ export class Part01Component implements OnInit {
   }
 
   authStateChanged() {
+
+    // firebase.auth().onIdTokenChanged(
+    //         (user) => {
+    //           if(user) {
+    //             this.isAuth = true;
+    //           } else {
+    //             this.isAuth = false;
+    //           }
+    //         });
+
     firebase.auth().onAuthStateChanged(
         (user) => {
           if(user) {

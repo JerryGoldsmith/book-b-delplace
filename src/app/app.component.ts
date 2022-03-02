@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 /* nav auth */
-import "@firebase/auth";
-import "@firebase/firestore";
+// import "firebase/auth";
+// import "firebase/firestore";
 
 @Component({
   selector: 'app-root',
