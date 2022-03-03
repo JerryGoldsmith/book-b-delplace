@@ -37,6 +37,8 @@ export class Part01Component implements OnInit {
 
   ngOnInit(): void {
 
+    // this.authService.authStatusListener();
+
     // firebase.auth().onAuthStateChanged(
     //     (user) => {
     //       if(user) {

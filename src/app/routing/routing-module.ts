@@ -106,8 +106,8 @@ const routes: Routes = [
   //     .then(mod => mod.SignuplightModule)
   // },
 
-  { path: 'auth/signin', canActivate: [AuthGuardService], component: SigninComponent },
-  { path: 'auth/signinlist', canActivate: [AuthGuardService], component: SigninlistComponent },
+  { path: 'auth/signin', component: SigninComponent },
+  { path: 'auth/signinlist', component: SigninlistComponent },
 
   { path: 'auth/signup', canActivate: [AuthGuardService], component: SignupComponent },
   { path: 'auth/signuplight', canActivate: [AuthGuardService], component: SignupLightComponent },

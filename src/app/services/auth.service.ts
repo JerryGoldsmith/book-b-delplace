@@ -7,7 +7,10 @@ import { Subject } from 'rxjs';
 // import * as firebase from 'firebase';
 // import firebase from "firebase/app";
 import * as firebase from 'firebase/app';
-import "firebase/database";
+import 'firebase/auth';
+import 'firebase/database';
+
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 // import {firebase} from '@firebase/app';
@@ -26,6 +29,26 @@ export class AuthService {
     private httpClient: HttpClient,
     private angularFireAuth: AngularFireAuth
   ) { }
+
+  private authStatusSub = new BehaviorSubject(this.users);
+  currentAuthStatus = this.authStatusSub.asObservable();
+
+  authStatusListener(){
+    firebase.auth().onAuthStateChanged((credential)=>{
+      (user: User[]) => {
+        if(user){
+          console.log(credential);
+          this.authStatusSub.next(user);
+          console.log('User is logged in');
+        }
+        else{
+          this.authStatusSub.next(null);
+          console.log('User is logged out');
+        }
+      }
+      
+    })
+  }
 
   // Sign in with Google
   // GoogleAuth() {
