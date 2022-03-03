@@ -37,7 +37,15 @@ export class Part01Component implements OnInit {
 
   ngOnInit(): void {
 
-    this.authStateChanged();
+    // firebase.auth().onAuthStateChanged(
+    //     (user) => {
+    //       if(user) {
+    //         this.isAuth = true;
+    //       } else {
+    //         this.isAuth = false;
+    //       }
+    //     }
+    //   );
 
     /* refresh page */
 
@@ -342,28 +350,6 @@ export class Part01Component implements OnInit {
 
   onSignOut() {
     this.authService.signOutUser();
-  }
-
-  authStateChanged() {
-
-    // firebase.auth().onIdTokenChanged(
-    //         (user) => {
-    //           if(user) {
-    //             this.isAuth = true;
-    //           } else {
-    //             this.isAuth = false;
-    //           }
-    //         });
-
-    firebase.auth().onAuthStateChanged(
-        (user) => {
-          if(user) {
-            this.isAuth = true;
-          } else {
-            this.isAuth = false;
-          }
-        }
-      );
   }
 
   

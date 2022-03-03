@@ -29,7 +29,16 @@
               "lodash/get",
               "lodash/isEmpty",
               "lodash/isEqual",
-              "rxjs-compat"
+              "rxjs-compat",
+              "firebase",
+              "@angular/common/locales/fr",
+              "@firebase/app",
+              "firebase/app",
+              "@firebase/database",
+              "@firebase/firestore",
+              "@firebase/functions",
+              "@firebase/performance",
+              "@firebase/remote-config"
             ],
             "outputPath": "dist/book-b-delplace",
             "index": "src/index.html",
