@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { CommonModule } from "@angular/common";
+// import { CommonModule, registerLocaleData } from "@angular/common";
 import * as fr from "@angular/common/locales/fr";
 
 /* AngularFire */
@@ -12,6 +12,8 @@ import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+import { CommonModule } from "@angular/common";
 
 // import { BrowserModule } from '@angular/platform-browser';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -127,7 +129,7 @@ const routes: Routes = [
     // BrowserModule,
     // BrowserAnimationsModule,
     SharedModule,
-    CommonModule,
+    // CommonModule,
 
     // HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -139,7 +141,8 @@ const routes: Routes = [
 
     // FormsModule,
     // ReactiveFormsModule,
-    AngularResizeEventModule
+    AngularResizeEventModule,
+    CommonModule
   ],
   exports: [
     RouterModule,

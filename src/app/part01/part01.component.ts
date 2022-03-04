@@ -37,25 +37,11 @@ export class Part01Component implements OnInit {
 
   ngOnInit(): void {
 
-    // this.authService.authStatusListener();
-
-    // firebase.auth().onAuthStateChanged(
-    //     (user) => {
-    //       if(user) {
-    //         this.isAuth = true;
-    //       } else {
-    //         this.isAuth = false;
-    //       }
-    //     }
-    //   );
-
     firebase.auth().onAuthStateChanged(
         (user) => {
           if(user) {
             this.isAuth = true;
           } else { // deconnection
-            // this.router.navigate(['auth', 'signin']); // sinon redirection signin
-            window.alert('You don\'t have permission to view this page');
             this.isAuth = false;
           }
         }

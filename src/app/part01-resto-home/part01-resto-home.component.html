@@ -30,7 +30,7 @@
             (click) = "onSaveOnFirebase()">Envoyer sur firebase</button> -->
             <!--!!! bouton d'initialisation FIREBASE !!!-->
 
-            <form [formGroup]="restoForm">
+            <form *ngIf="restoForm" [formGroup]="restoForm">
 
               <input formControlName="restoName" hidden>
 

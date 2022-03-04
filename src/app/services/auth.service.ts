@@ -21,7 +21,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 
 export class AuthService {
-  
+
   users: User[] = [];
   userSubject = new Subject<User[]>();
 
@@ -30,25 +30,25 @@ export class AuthService {
     private angularFireAuth: AngularFireAuth
   ) { }
 
-  private authStatusSub = new BehaviorSubject(this.users);
-  currentAuthStatus = this.authStatusSub.asObservable();
+  // private authStatusSub = new BehaviorSubject(this.users);
+  // currentAuthStatus = this.authStatusSub.asObservable();
 
-  authStatusListener(){
-    firebase.auth().onAuthStateChanged((credential)=>{
-      (user: User[]) => {
-        if(user){
-          console.log(credential);
-          this.authStatusSub.next(user);
-          console.log('User is logged in');
-        }
-        else{
-          this.authStatusSub.next(null);
-          console.log('User is logged out');
-        }
-      }
+  // authStatusListener(){
+  //   firebase.auth().onAuthStateChanged((credential)=>{
+  //     (user: User[]) => {
+  //       if(user){
+  //         console.log(credential);
+  //         this.authStatusSub.next(user);
+  //         console.log('User is logged in');
+  //       }
+  //       else{
+  //         this.authStatusSub.next(null);
+  //         console.log('User is logged out');
+  //       }
+  //     }
       
-    })
-  }
+  //   })
+  // }
 
   // Sign in with Google
   // GoogleAuth() {
