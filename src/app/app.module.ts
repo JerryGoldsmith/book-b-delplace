@@ -104,7 +104,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AuthentificationService } from "./services/authentification.service";
 
     /* Acces Firebase */
-    import { environment } from '../environments/environment';
+    // import { environment } from '../environments/environment';
 
     // import { initializeApp } from "firebase/app";
     // import { getAnalytics } from "firebase/analytics";

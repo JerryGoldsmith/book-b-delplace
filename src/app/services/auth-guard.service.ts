@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-// import * as firebase from 'firebase';
-// import firebase from "firebase/app";
 import * as firebase from 'firebase/app';
 import "firebase/database";
 import { AngularFirestore } from "@angular/fire/firestore";
+import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +14,8 @@ export class AuthGuardService {
   constructor(
     // private httpClient: HttpClient,
     private firestore: AngularFirestore,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {

@@ -49,6 +49,18 @@ export class Part01Component implements OnInit {
     //     }
     //   );
 
+    firebase.auth().onAuthStateChanged(
+        (user) => {
+          if(user) {
+            this.isAuth = true;
+          } else { // deconnection
+            // this.router.navigate(['auth', 'signin']); // sinon redirection signin
+            window.alert('You don\'t have permission to view this page');
+            this.isAuth = false;
+          }
+        }
+      );
+
     /* refresh page */
 
     if(!window.location.hash) {

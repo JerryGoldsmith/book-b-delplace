@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-// import { CommonModule, registerLocaleData } from "@angular/common";
+import { CommonModule } from "@angular/common";
 import * as fr from "@angular/common/locales/fr";
 
 /* AngularFire */
@@ -20,6 +20,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { SharedModule } from "./../shared/shared.module";
 
 import { MainComponent } from './../main/main.component';
+
+import { Part01Component } from './../part01/part01.component';
 
 /* -------------------------------------------- */
 /* ------------------ AUTH -------------------- */
@@ -60,11 +62,11 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
-  {
-    path: 'partA',
-    loadChildren: () => import('src/app/mod/public/a/a.module')
-    .then(mod => mod.AModule)
-  },
+  // {
+  //   path: 'partA',
+  //   loadChildren: () => import('src/app/mod/public/a/a.module')
+  //   .then(mod => mod.AModule)
+  // },
   {
     path: 'partB',
     loadChildren: () => import('src/app/mod/public/b/b.module')
@@ -109,18 +111,23 @@ const routes: Routes = [
   { path: 'auth/signin', component: SigninComponent },
   { path: 'auth/signinlist', component: SigninlistComponent },
 
-  { path: 'auth/signup', canActivate: [AuthGuardService], component: SignupComponent },
-  { path: 'auth/signuplight', canActivate: [AuthGuardService], component: SignupLightComponent },
+  { path: 'auth/signup', component: SignupComponent },
+  { path: 'auth/signuplight', component: SignupLightComponent },
+
+  { path: 'partA', canActivate: [AuthGuardService], component: Part01Component },
 ];
 
 @NgModule({
+  declarations: [
+    Part01Component
+  ],
   imports: [
     RouterModule.forRoot(routes,
       { preloadingStrategy: PreloadAllModules }),
     // BrowserModule,
     // BrowserAnimationsModule,
     SharedModule,
-    // CommonModule,
+    CommonModule,
 
     // HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
