@@ -15,6 +15,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { AuthService } from '../services/auth.service';
+import { AuthGuardService } from '../services/auth-guard.service';
 // import { OrdersService } from "../services/orders.service";
 
 @Component({
@@ -32,6 +33,7 @@ export class Part01Component implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
+    private authGuardService: AuthGuardService,
     private AFAuth: AngularFireAuth
   ) {}
 
@@ -42,6 +44,7 @@ export class Part01Component implements OnInit {
           if(user) {
             this.isAuth = true;
           } else { // deconnection
+            // this.router.navigate(['partA']);
             this.isAuth = false;
           }
         }
@@ -351,7 +354,5 @@ export class Part01Component implements OnInit {
   onSignOut() {
     this.authService.signOutUser();
   }
-
-  
 
 }

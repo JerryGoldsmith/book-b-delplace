@@ -58,6 +58,8 @@ import { SignupLightComponent } from './auth/signuplight/signuplight.component';
 // ---------------------- partA home ---------------------- :
 // --------------------------------------------------------
 
+import { Part01Component } from './part01/part01.component';
+
 // import { Part01ReservationHomeComponent } from './part01-reservation-home/part01-reservation-home.component';
 // import { Part01EditionHomeComponent } from './part01-edition-home/part01-edition-home.component';
 
@@ -151,6 +153,8 @@ const appRoutes: Routes = [
   // ---------------------- partA home ---------------------- :
   // --------------------------------------------------------
 
+  { path: 'partA', canActivate: [AuthGuardService], component: Part01Component }
+
   // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
   // { path: 'resto-home', canActivate: [AuthGuardService], component: Part01RestoHomeComponent },
   // { path: 'edition', canActivate: [AuthGuardService], component: Part01EditionHomeComponent },
@@ -192,6 +196,7 @@ const appRoutes: Routes = [
     SignupLightComponent,
     SigninComponent,
     SigninlistComponent,
+    // Part01Component,
     Part01RestoHomeComponent
     // CComponent,
     // BComponent,
