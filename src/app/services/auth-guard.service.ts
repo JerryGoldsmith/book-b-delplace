@@ -49,7 +49,10 @@ export class AuthGuardService implements CanActivate {
             if(user) {
               resolve(true);
             } else {
-              this.router.navigate(['auth', 'signin']);
+              // this.router.navigate(['auth', 'signin']);
+              this.ngZone.run(() => {
+                this.router.navigate (['auth', 'signin']);
+              });
               // this.userLogin();
               resolve(false);
 

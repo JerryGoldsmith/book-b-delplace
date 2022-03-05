@@ -116,7 +116,9 @@ const routes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
   { path: 'auth/signuplight', component: SignupLightComponent },
 
-  { path: 'partA', canActivate: [AuthGuardService], component: Part01Component },
+  { path: 'partA', 
+  // canActivate: [AuthGuardService], 
+  component: Part01Component },
 ];
 
 @NgModule({

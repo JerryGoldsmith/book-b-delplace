@@ -11,16 +11,20 @@ import { AuthPreloadStrategy } from './../guard/auth-preload-strategy';
 const routes: Routes = [
   {
     path: 'resto-home',
-    // canActivate: [AuthGuardService],
     // canLoad: [LoadGuardGuard],
     loadChildren: () => import('src/app/mod/private/a-resto/a-resto.module')
-      .then(mod => mod.ARestoModule)
+      .then(mod => mod.ARestoModule),
+      canActivate: [ AuthGuardService ],
+      data: { preload: false }
   }
-  // { path: 'resto-home', component: Part01RestoHomeComponent }
+  // { path: 'resto-home', canActivate: [AuthGuardService], component: Part01RestoHomeComponent }
 ];
 
 @NgModule({
-    imports: [
+  declarations: [
+    // Part01RestoHomeComponent
+  ], 
+  imports: [
       RouterModule.forRoot(routes,
       { preloadingStrategy: AuthPreloadStrategy }
       )],
