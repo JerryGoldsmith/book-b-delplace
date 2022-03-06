@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs/Subject'; // import observables avec rxjs
 import { FormControl, FormGroup } from "@angular/forms";
-// import * as firebase from 'firebase/app';
-import firebase from "firebase/app";
+import * as firebase from 'firebase/app';
+// import firebase from "firebase/app";
 import "firebase/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 

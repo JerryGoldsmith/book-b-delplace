@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthPreloadStrategy } from '../preloadind/auth-preload-strategy';
 
 // import { CommonModule, registerLocaleData } from "@angular/common";
 import * as fr from "@angular/common/locales/fr";
@@ -23,7 +24,7 @@ import { SharedModule } from "./../shared/shared.module";
 
 import { MainComponent } from './../main/main.component';
 
-import { Part01Component } from './../part01/part01.component';
+// import { Part01Component } from './../part01/part01.component';
 
 /* -------------------------------------------- */
 /* ------------------ AUTH -------------------- */
@@ -64,11 +65,13 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
-  // {
-  //   path: 'partA',
-  //   loadChildren: () => import('src/app/mod/public/a/a.module')
-  //   .then(mod => mod.AModule)
-  // },
+  // { path: 'partA', component: Part01Component },
+  {
+    path: 'partA',
+    loadChildren: () => import('src/app/mod/public/a/a.module')
+    .then(mod => mod.AModule),
+    data: { preload: true, delay:1000 }
+  },
   {
     path: 'partB',
     loadChildren: () => import('src/app/mod/public/b/b.module')
@@ -114,20 +117,16 @@ const routes: Routes = [
   { path: 'auth/signinlist', component: SigninlistComponent },
 
   { path: 'auth/signup', component: SignupComponent },
-  { path: 'auth/signuplight', component: SignupLightComponent },
-
-  { path: 'partA', 
-  // canActivate: [AuthGuardService], 
-  component: Part01Component },
+  { path: 'auth/signuplight', component: SignupLightComponent }
 ];
 
 @NgModule({
   declarations: [
-    Part01Component
+    // Part01Component
   ],
   imports: [
     RouterModule.forRoot(routes,
-      { preloadingStrategy: PreloadAllModules }),
+      { preloadingStrategy: AuthPreloadStrategy }),
     // BrowserModule,
     // BrowserAnimationsModule,
     SharedModule,
@@ -144,7 +143,7 @@ const routes: Routes = [
     // FormsModule,
     // ReactiveFormsModule,
     AngularResizeEventModule,
-    CommonModule
+    CommonModule // display auth in partA
   ],
   exports: [
     RouterModule,

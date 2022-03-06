@@ -31,6 +31,7 @@ import { RoutingModule } from './routing/routing-module'
 /* -------------------------------------------------- */
 
 import { Routes, RouterModule } from '@angular/router';
+import { AuthPreloadStrategy } from './preloadind/auth-preload-strategy';
 
 /* -------------------------------------------------- */
 /* ------------------ ECRAN D'ENTRÉE ---------------- */
@@ -153,7 +154,7 @@ const appRoutes: Routes = [
   // ---------------------- partA home ---------------------- :
   // --------------------------------------------------------
 
-  { path: 'partA', canActivate: [AuthGuardService], component: Part01Component }
+  // { path: 'partA', canActivate: [AuthGuardService], component: Part01Component }
 
   // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
   // { path: 'resto-home', canActivate: [AuthGuardService], component: Part01RestoHomeComponent },
@@ -221,7 +222,8 @@ const appRoutes: Routes = [
     RoutingModule,
     Part01RestoModule,
     CommonFormReactiveModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes,
+      { preloadingStrategy: AuthPreloadStrategy }),
     // CommonModule,
 
     // AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -248,6 +250,7 @@ const appRoutes: Routes = [
     AuthGuardService,
     AuthentificationService,
     { provide: LOCALE_ID, useValue: 'fr-FR'},
+    AuthPreloadStrategy
     // reservation
     // backoffice
   ],

@@ -5,8 +5,8 @@ import * as Subject from 'rxjs/Subject';
 import { Seat } from "../models/seats.model";
 import { FormControl, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http'; // Acces Firebase
-// import * as firebase from 'firebase/app';
-import firebase from "firebase/app";
+import * as firebase from 'firebase/app';
+// import firebase from "firebase/app";
 import "firebase/database";
 import {
   AngularFirestore,

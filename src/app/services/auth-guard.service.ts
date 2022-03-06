@@ -16,30 +16,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AuthGuardService implements CanActivate {
 
   constructor(
-    // private httpClient: HttpClient,
     private firestore: AngularFirestore,
     private router: Router,
     private AFAuth: AngularFireAuth,
     private ngZone:NgZone
-    // private authService: AuthService
   ) { }
-
-  userLogin() {
-    this.AFAuth.grantOfflineAccess().then(
-        (response) => {
-            // this will throe the warning "did you forget to call 'ngZone.run()"
-            this.navigateTo('/');
-            // but this will work fine
-            this.ngZone.run(()=>this.navigateTo('/'));
-        },
-        (error) => {
-             console.log(error);
-        });
-    }
-
-    navigateTo(url: string) {
-       this.router.navigate(['auth', 'signin']);
-   }
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     return new Promise(
@@ -49,11 +30,13 @@ export class AuthGuardService implements CanActivate {
             if(user) {
               resolve(true);
             } else {
+              
               // this.router.navigate(['auth', 'signin']);
+
+              // ---- supprime erreur : Navigation triggered outside Angular zone, did you forget to call ‘ngZone.run()’?
               this.ngZone.run(() => {
                 this.router.navigate (['auth', 'signin']);
-              });
-              // this.userLogin();
+              }); // -------
               resolve(false);
 
             }
