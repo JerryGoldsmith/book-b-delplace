@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthPreloadStrategy } from '../preloadind/auth-preload-strategy';
+import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
 import { AuthGuardService } from './../services/auth-guard.service';
 
 
-import { LoadGuardGuard } from '../preloadind/load-guard.guard';
+import { LoadGuardGuard } from '../pre-loading/load-guard.guard';
 
 const routes: Routes = [
 

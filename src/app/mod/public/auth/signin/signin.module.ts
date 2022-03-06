@@ -7,14 +7,14 @@ import { SigninComponent } from 'src/app/auth/signin/signin.component';
 
 @NgModule({
   declarations: [
-    SigninComponent
+    // SigninComponent
   ],
   imports: [
     // CommonModule,
     SigninRoutingModule
   ],
   exports: [
-    SigninComponent,
+    // SigninComponent,
     SigninRoutingModule
   ]
 })

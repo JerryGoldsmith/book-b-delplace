@@ -31,7 +31,7 @@ import { RoutingModule } from './routing/routing-module'
 /* -------------------------------------------------- */
 
 import { Routes, RouterModule } from '@angular/router';
-import { AuthPreloadStrategy } from './preloadind/auth-preload-strategy';
+import { AuthPreloadStrategy } from './pre-loading/auth-preload-strategy';
 
 /* -------------------------------------------------- */
 /* ------------------ ECRAN D'ENTRÉE ---------------- */
@@ -144,7 +144,7 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: 'main' },
 
   // auth
-  { path: 'auth/signin', component: SigninComponent },
+  // { path: 'auth/signin', component: SigninComponent },
   { path: 'auth/signinlist', component: SigninlistComponent },
 
   { path: 'auth/signup', component: SignupComponent },

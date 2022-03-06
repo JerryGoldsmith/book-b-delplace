@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthPreloadStrategy } from '../preloadind/auth-preload-strategy';
+import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
 // import { CommonModule, registerLocaleData } from "@angular/common";
 import * as fr from "@angular/common/locales/fr";
@@ -32,7 +32,7 @@ import { MainComponent } from './../main/main.component';
 
 import { SignupComponent } from './../auth/signup/signup.component';
 import { SignupLightComponent } from './../auth/signuplight/signuplight.component';
-import { SigninComponent } from './../auth/signin/signin.component';
+// import { SigninComponent } from './../auth/signin/signin.component';
 import { SigninlistComponent } from './../auth/signinlist/signinlist.component';
 
 /* -------------------------------------------------- */
@@ -92,11 +92,12 @@ const routes: Routes = [
   // auth :
   // -----
 
-  // {
-  //   path: 'auth/signin',
-  //   loadChildren: () => import('src/app/mod/public/auth/signin/signin.module')
-  //     .then(mod => mod.SigninModule)
-  // },
+  {
+    path: 'auth/signin',
+    loadChildren: () => import('src/app/mod/public/auth/signin/signin.module')
+      .then(mod => mod.SigninModule),
+      data: { preload: true, delay:1000 } // component déclaré dans appModule / pas dans mod/public/auth/signin.module
+  },
   // {
   //   path: 'auth/signinlist',
   //   loadChildren: () => import('src/app/mod/public/auth/signinlist/signinlist.module')
@@ -113,7 +114,7 @@ const routes: Routes = [
   //     .then(mod => mod.SignuplightModule)
   // },
 
-  { path: 'auth/signin', component: SigninComponent },
+  // { path: 'auth/signin', component: SigninComponent },
   { path: 'auth/signinlist', component: SigninlistComponent },
 
   { path: 'auth/signup', component: SignupComponent },
