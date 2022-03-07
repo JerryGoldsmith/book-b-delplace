@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+    defaultImage = '../../assets/bd.png';
+    image = '../../assets/logo-black.png';
+
   constructor() {}
 
   ngOnInit(): void {

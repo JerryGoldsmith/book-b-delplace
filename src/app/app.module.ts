@@ -32,6 +32,7 @@ import { RoutingModule } from './routing/routing-module'
 
 import { Routes, RouterModule } from '@angular/router';
 import { AuthPreloadStrategy } from './pre-loading/auth-preload-strategy';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 /* -------------------------------------------------- */
 /* ------------------ ECRAN D'ENTRÉE ---------------- */
@@ -224,6 +225,7 @@ const appRoutes: Routes = [
     CommonFormReactiveModule,
     RouterModule.forRoot(appRoutes,
       { preloadingStrategy: AuthPreloadStrategy }),
+      LazyLoadImageModule
     // CommonModule,
 
     // AngularFireModule.initializeApp(environment.firebaseConfig),
