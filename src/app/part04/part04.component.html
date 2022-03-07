@@ -7,14 +7,21 @@
         <!-- entete -->
 
         <section class="item">
-          <img src="../../assets/bd.png" class="logo">
+          <!-- <img src="../../assets/bd.png" class="logo"> -->
+
+          <!-- lazyLoad image home > logo -->
+          <img class="logo" [defaultImage]="defaultImage" [lazyLoad]="imageLogo" />
+
           <h1 class="big-title">
             <span class="title-sequence">About Me</span>
           </h1>
           <div class="line"></div>
           <p class="sub-title">Contact</p>
           <div class="item__img-wrap">
-            <div class="item__img item__img--t1"></div>
+
+            <!-- lazyLoad image home > main (fullscrean) -->
+            <div [defaultImage]="defaultImage" [lazyLoad]="imageHome" class="item__img item__img--t1"></div>
+            
           </div>
         </section>
 

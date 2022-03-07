@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ERoutingModule } from './e-routing.module';
 import { EComponent } from './e/e.component';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +13,8 @@ import { EComponent } from './e/e.component';
   ],
   imports: [
     CommonModule,
-    ERoutingModule
+    ERoutingModule,
+    LazyLoadImageModule
   ],
   exports: [
     EComponent

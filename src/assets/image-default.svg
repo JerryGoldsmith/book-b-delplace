@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 2592 1936" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-    <rect x="-4.656" y="-5.227" width="2604.72" height="1941.3" style="stroke:rgb(238,207,141);stroke-width:1px;"/>
-    <g transform="matrix(1.17825,1.09819e-19,2.20163e-19,0.651029,-236.728,333.881)">
-        <rect x="461.902" y="382.382" width="1677.44" height="1178.81" style="fill:rgb(16,7,18);stroke:rgb(22,18,67);stroke-width:1.05px;"/>
+    <rect x="-4.656" y="-5.227" width="2604.72" height="1941.3" style="fill:rgb(67,67,67);stroke:rgb(204,204,204);stroke-width:1px;"/>
+    <g transform="matrix(0.941078,2.58357e-20,1.75846e-19,0.153158,68.4574,785.15)">
+        <rect x="461.902" y="382.382" width="1677.44" height="1178.81" style="fill:rgb(34,34,34);stroke:rgb(22,18,67);stroke-width:1.48px;"/>
     </g>
-    <g transform="matrix(1,0,0,1,155.536,1.10616)">
-        <circle cx="1140.74" cy="971.442" r="588.731" style="stroke:black;stroke-width:1px;"/>
+    <g transform="matrix(0.811396,0,0,0.83362,254.474,56.8723)">
+        <g transform="matrix(0.446567,2.58357e-20,8.34435e-20,0.153158,669.811,603.634)">
+            <rect x="461.902" y="382.382" width="1677.44" height="1178.81" style="fill:rgb(126,126,126);stroke:rgb(126,126,126);stroke-width:3.68px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,441.684,400.015)">
+            <text x="496.574px" y="392.437px" style="font-family:'Drugs';font-weight:250;font-size:120px;fill:rgb(34,34,34);stroke:rgb(34,34,34);stroke-width:1.22px;stroke-linecap:butt;stroke-miterlimit:2;">Une image</text>
+        </g>
     </g>
-    <g transform="matrix(1,0,0,1,29.5668,29.2346)">
-        <circle cx="1266.53" cy="943.412" r="210.255" style="fill:rgb(16,7,18);stroke:rgb(16,40,18);stroke-width:1px;"/>
+    <g transform="matrix(1,0,0,1,39.0003,769.058)">
+        <text x="496.574px" y="392.437px" style="font-family:'Drugs';font-weight:250;font-size:130px;fill:rgb(34,34,34);stroke:rgb(34,34,34);stroke-width:1px;stroke-linecap:butt;stroke-miterlimit:2;">Dé<tspan x="664.924px 731.224px " y="392.437px 392.437px ">ve</tspan>loppeur</text>
     </g>
-    <g transform="matrix(1,0,0,1,-14.4452,-22.4675)">
-        <circle cx="1310.33" cy="990.556" r="47.522" style="stroke:black;stroke-width:1px;"/>
+    <g transform="matrix(1,0,0,1,858.71,772.087)">
+        <text x="496.574px" y="392.437px" style="font-family:'Drugs';font-weight:250;font-size:130px;fill:rgb(34,34,34);stroke:rgb(34,34,34);stroke-width:1px;stroke-linecap:butt;stroke-miterlimit:2;">d&apos;émotions</text>
+    </g>
+    <g transform="matrix(0.713093,0,0,1,394,914.814)">
+        <rect x="152.023" y="95.422" width="2214.48" height="16.109" style="fill:rgb(126,126,126);stroke:rgb(126,126,126);stroke-width:1.15px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,607.447,693.141)">
+        <g transform="matrix(1,0,0,1,-348.231,-104.089)">
+            <text x="496.574px" y="392.437px" style="font-family:'Aldrich';font-size:130px;fill:rgb(67,67,67);stroke:rgb(67,67,67);stroke-width:1px;stroke-linecap:butt;stroke-miterlimit:2;">Benoît</text>
+        </g>
+        <g transform="matrix(1,0,0,1,105.026,-104.401)">
+            <text x="496.574px" y="392.437px" style="font-family:'Aldrich';font-size:140px;fill:rgb(67,67,67);stroke:rgb(67,67,67);stroke-width:1px;stroke-linecap:butt;stroke-miterlimit:2;">Delplace</text>
+        </g>
     </g>
 </svg>

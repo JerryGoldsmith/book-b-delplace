@@ -12,11 +12,13 @@
             <text x="496.574px" y="392.437px" style="font-family:'Aldrich';font-size:140px;fill:rgb(150,128,94);stroke:rgb(149,128,96);stroke-width:1px;stroke-linecap:butt;stroke-miterlimit:2;">Delplace</text>
         </g>
     </g>
-    <g transform="matrix(1,0,0,1,-504.361,-92.0836)">
-        <text x="496.574px" y="392.437px" style="font-family:'Drugs';font-weight:250;font-size:140px;fill:rgb(67,149,159);stroke:rgb(63,149,160);stroke-width:1px;stroke-linecap:butt;stroke-miterlimit:2;">Dé<tspan x="677.874px 749.274px " y="392.437px 392.437px ">ve</tspan>loppeur</text>
-    </g>
-    <g transform="matrix(1,0,0,1,360.478,-89.0544)">
-        <text x="496.574px" y="392.437px" style="font-family:'Drugs';font-weight:250;font-size:140px;fill:rgb(67,149,159);stroke:rgb(63,149,160);stroke-width:1px;stroke-linecap:butt;stroke-miterlimit:2;">d&apos;émotions</text>
+    <g transform="matrix(1,0,0,1,50.1595,0)">
+        <g transform="matrix(1,0,0,1,-504.361,-92.0836)">
+            <text x="496.574px" y="392.437px" style="font-family:'Drugs';font-weight:250;font-size:130px;fill:rgb(67,149,159);stroke:rgb(63,149,160);stroke-width:1px;stroke-linecap:butt;stroke-miterlimit:2;">Dé<tspan x="664.924px 731.224px " y="392.437px 392.437px ">ve</tspan>loppeur</text>
+        </g>
+        <g transform="matrix(1,0,0,1,315.348,-89.0544)">
+            <text x="496.574px" y="392.437px" style="font-family:'Drugs';font-weight:250;font-size:130px;fill:rgb(67,149,159);stroke:rgb(63,149,160);stroke-width:1px;stroke-linecap:butt;stroke-miterlimit:2;">d&apos;émotions</text>
+        </g>
     </g>
     <g transform="matrix(0.711947,0,0,1,-96.4913,53.6733)">
         <rect x="152.023" y="95.422" width="2214.48" height="16.109" style="fill:rgb(150,128,94);stroke:rgb(149,128,96);stroke-width:1.15px;"/>

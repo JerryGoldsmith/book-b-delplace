@@ -63,7 +63,7 @@ mdb-navbar{
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     width: 40%;
-    max-width: 130px;
+    max-width: 380px;
     text-align: center;
 	-webkit-font-smoothing: antialiased;
 }
@@ -77,7 +77,7 @@ mdb-navbar{
 .item:first-child .item__img-wrap {
 	width: calc(100vw - 2rem);
 	--aspect-ratio: 1500/844;
-	--image: url(../../assets/img/belle-ile/belle-04.jpg);
+	--image: url(../../assets/sahara.jpg);
   // margin: .67em 0;
   //   top: 2%;
   //   left: 2%;

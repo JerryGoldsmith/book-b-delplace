@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { BRoutingModule } from './b-routing.module';
 import { Part02Component } from 'src/app/part02/part02.component';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +13,8 @@ import { Part02Component } from 'src/app/part02/part02.component';
   ],
   imports: [
     CommonModule,
-    BRoutingModule
+    BRoutingModule,
+    LazyLoadImageModule
   ],
   exports: [
     Part02Component

@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
 })
 export class Part02Component implements OnInit {
 
+    defaultImage = '../../assets/image-default.svg';
+    imageLogo = '../../assets/logo-bd.svg';
+    imageHome = '../../assets/sahara.jpg';
+
   constructor(
     private router: Router
   ) { }

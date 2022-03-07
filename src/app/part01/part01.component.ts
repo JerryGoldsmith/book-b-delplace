@@ -30,6 +30,10 @@ export class Part01Component implements OnInit {
 
     isAuth: boolean;
 
+    defaultImage = '../../assets/image-default.svg';
+    imageLogo = '../../assets/logo-bd.svg';
+    imageHome = '../../assets/img/belle-ile/belle-04.jpg';
+
   constructor(
     private router: Router,
     private authService: AuthService,
