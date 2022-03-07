@@ -35,6 +35,10 @@ import { SignupLightComponent } from './../auth/signuplight/signuplight.componen
 // import { SigninComponent } from './../auth/signin/signin.component';
 import { SigninlistComponent } from './../auth/signinlist/signinlist.component';
 
+/* ---- Footer ----- */
+
+import { FooterComponent } from './../footer/footer.component';
+
 /* -------------------------------------------------- */
 /* --------------------- SERVICES ------------------- */
 /* -------------------------------------------------- */
@@ -123,6 +127,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    // FooterComponent
     // Part01Component
   ],
   imports: [

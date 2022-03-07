@@ -8,7 +8,8 @@
         <section class="item">
 
           <!-- <img src="../../assets/bd.png" class="logo"> -->
-          <img class="logo" [defaultImage]="defaultImage" [lazyLoad]="image" />
+          <!-- lazyLoad image home > logo -->
+          <img class="logo" [defaultImage]="defaultImage" [lazyLoad]="imageLogo" />
 
           <h1 class="big-title">
             <span class="title-sequence">Il y a tant d'univers<br />à développer</span>
@@ -17,7 +18,8 @@
           <p class="sub-title">Ou développeur d'expériences, le web à grand spectacle, développeur d'émotions, j'aime les projets qui... , ne sont que des outils.</p>
 
           <div class="item__img-wrap animated-element">
-            <div class="item__img"></div>
+            <!-- lazyLoad image home > main (fullscrean) -->
+            <div [defaultImage]="defaultImage" [lazyLoad]="imageHome" class="item__img"></div>
           </div>
 
         </section>
@@ -29,7 +31,8 @@
           <!-- image -->
 
           <div class="item__img-wrap">
-            <div class="item__img"></div>
+            <!-- lazyLoad image home > theme 01 -->
+            <div [defaultImage]="defaultImage" [lazyLoad]="image01" class="item__img"></div>
 
             <!-- animation -->
 
@@ -65,7 +68,9 @@
           <!-- image -->
 
           <div class="item__img-wrap left-content-angkor animated-element slide-left-angkor">
-            <div class="item__img"></div>
+
+            <!-- lazyLoad image home > theme 02 -->
+            <div [defaultImage]="defaultImage" [lazyLoad]="image02" class="item__img"></div>
 
             <!-- animation -->
 
@@ -104,7 +109,9 @@
         <section class="item">
 
           <div class="item__img-wrap animated-element">
-            <div class="item__img item__img--t3"></div>
+
+            <!-- lazyLoad image home > theme 03 -->
+            <div [defaultImage]="defaultImage" [lazyLoad]="image03" class="item__img item__img--t3"></div>
 
             <div class="left-wrapper-npm">
               <div class="left-content-npm animated-element slide-left-npm">
@@ -125,7 +132,9 @@
         <aside class="item background-gold">
 
           <div class="item__img-wrap animated-element">
-            <div class="item__img"></div>
+
+            <!-- lazyLoad image home > portrait -->
+            <div [defaultImage]="defaultImage" [lazyLoad]="imagePortrait" class="item__img"></div>
           </div>
 
           <div class="item__caption">
@@ -144,7 +153,9 @@
 
         <section class="item">
           <div class="item__img-wrap animated-element">
-            <div class="item__img item__img--t2"></div>
+            
+            <!-- lazyLoad image home > footer -->
+            <div [defaultImage]="defaultImage" [lazyLoad]="imageFooter" class="item__img item__img--t2"></div>
 
             <!-- Animation Elements -->
 
@@ -168,15 +179,16 @@
         <!-- main-article03 -->
         <!-- Animation Elements -->
 
-        <section class="item">
+        <!-- <section class="item">
 
           <div class="item__img-wrap animated-element">
             <div class="item__img item__img--t3"></div>
           </div>
 
-        </section>
-
-        <!-- <app-footer></app-footer> -->
+        </section> -->
+        <div>
+          <app-footer></app-footer>
+        </div>
 
       </div>
     </div>

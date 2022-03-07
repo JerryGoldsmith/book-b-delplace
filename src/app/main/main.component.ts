@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-    defaultImage = '../../assets/bd.png';
-    image = '../../assets/logo-black.png';
+    /* lazyLoad images */
+    defaultImage = '../../assets/image-default.svg';
+    imageLogo = '../../assets/logo-bd.svg';
+    imageHome = '../../assets/cape-verde.jpg';
+    image01 = '../../assets/cambodia.jpg';
+    image02 = '../../assets/img/belle-ile/belle-15.jpg';
+    image03 = '../../assets/sea.jpg';
+    imagePortrait = '../../assets/portrait.jpg';
+    imageFooter = '../../assets/sky-tree.png';
 
   constructor() {}
 

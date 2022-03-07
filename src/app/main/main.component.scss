@@ -63,13 +63,13 @@ body {
 	position: absolute;
 	color: #FFF;
 	z-index: 100000;
-	margin: .67em 0;
-    top: 72%;
+	margin: 2.67em 0;
+    top: 68%;
     left: 48%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     width: 40%;
-    max-width: 130px;
+    max-width: 380px;
     text-align: center;
 	-webkit-font-smoothing: antialiased;
 }
@@ -2007,8 +2007,8 @@ body {
 	.logo {
 		top: 70%;
 		left: 50%;
-		width: 90%;
-	  max-width: 200px;
+		width: 600px;
+	  max-width: 600px;
 	}
 
   /* -------------------------------------------------- */

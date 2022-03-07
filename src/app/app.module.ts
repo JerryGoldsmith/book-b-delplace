@@ -40,6 +40,10 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 import { MainComponent } from './main/main.component';
 
+/* ---- Footer ----- */
+
+import { FooterComponent } from './footer/footer.component';
+
 /* -------------------------------------------------- */
 /* ----------------------- PartA -------------------- */
 /* -------------------------------------------------- */
@@ -199,7 +203,8 @@ const appRoutes: Routes = [
     SigninComponent,
     SigninlistComponent,
     // Part01Component,
-    Part01RestoHomeComponent
+    Part01RestoHomeComponent,
+    FooterComponent
     // CComponent,
     // BComponent,
     // AComponent,
