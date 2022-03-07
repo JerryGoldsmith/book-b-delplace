@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-order-reservation-list-confirm',
   templateUrl: './order-reservation-list-confirm.component.html',
-  styleUrls: ['./order-reservation-list-confirm.component.scss']
+  styleUrls: ['./order-reservation-list-confirm.component.scss',
+  './../normalize.component.scss']
 })
 export class OrderReservationListConfirmComponent implements OnInit {
 

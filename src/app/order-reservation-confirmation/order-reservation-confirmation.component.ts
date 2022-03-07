@@ -9,7 +9,8 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 @Component({
   selector: 'app-order-reservation-confirmation',
   templateUrl: './order-reservation-confirmation.component.html',
-  styleUrls: ['./order-reservation-confirmation.component.scss']
+  styleUrls: ['./order-reservation-confirmation.component.scss',
+  './../normalize.component.scss']
 })
 export class OrderReservationConfirmationComponent implements OnInit {
 

@@ -5,15 +5,16 @@ import { ImageService } from '../../services/image.service';
 import { Book } from '../../models/book.model';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-// import * as firebase from 'firebase';
-import firebase from "firebase/app";
+import * as firebase from 'firebase';
+// import firebase from "firebase/app";
 import "firebase/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 
 @Component({
   selector: 'app-book-form-k',
   templateUrl: './book-form-k.component.html',
-  styleUrls: ['./../book-list.component.scss']
+  styleUrls: ['./../book-list.component.scss',
+  './../normalize.component.scss']
 })
 export class BookFormKComponent implements OnInit {
 

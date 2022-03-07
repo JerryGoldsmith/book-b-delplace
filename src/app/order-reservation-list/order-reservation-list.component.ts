@@ -6,7 +6,8 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-order-reservation-list',
   templateUrl: './order-reservation-list.component.html',
-  styleUrls: ['./order-reservation-list.component.scss']
+  styleUrls: ['./order-reservation-list.component.scss',
+  './../normalize.component.scss']
 })
 export class OrderReservationListComponent implements OnInit {
 

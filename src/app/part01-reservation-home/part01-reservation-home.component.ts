@@ -4,8 +4,8 @@ import { Book } from '../models/book.model';
 import { BooksService } from '../services/books.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
-// import * as firebase from 'firebase';
-import firebase from "firebase/app";
+import * as firebase from 'firebase';
+// import firebase from "firebase/app";
 import "firebase/database";
 // import { OrdersService } from "../services/orders.service";
 import { OrderReservationService } from "../services/order-reservation.service";
@@ -13,7 +13,8 @@ import { OrderReservationService } from "../services/order-reservation.service";
 @Component({
   selector: 'app-part01-reservation-home',
   templateUrl: './part01-reservation-home.component.html',
-  styleUrls: ['./part01-reservation-home.component.scss']
+  styleUrls: ['./part01-reservation-home.component.scss',
+  './../normalize.component.scss']
 })
 export class Part01ReservationHomeComponent implements OnInit {
 

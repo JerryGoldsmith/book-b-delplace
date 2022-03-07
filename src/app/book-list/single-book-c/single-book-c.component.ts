@@ -14,7 +14,8 @@ import localeFrExtra from '@angular/common/locales/extra/fr';
 @Component({
   selector: 'app-single-book-c',
   templateUrl: './single-book-c.component.html',
-  styleUrls: ['./../book-list.component.scss']
+  styleUrls: ['./../book-list.component.scss',
+  './../normalize.component.scss']
 })
 export class SingleBookCComponent implements OnInit {
 

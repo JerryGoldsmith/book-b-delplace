@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-order-reservation-result',
   templateUrl: './order-reservation-result.component.html',
-  styleUrls: ['./order-reservation-result.component.scss']
+  styleUrls: ['./order-reservation-result.component.scss',
+  './../normalize.component.scss']
 })
 export class OrderReservationResultComponent implements OnInit {
 

@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-archives',
   templateUrl: './archives.component.html',
-  styleUrls: ['./../book-list.component.scss']
+  styleUrls: ['./../book-list.component.scss',
+  './../normalize.component.scss']
 })
 export class ArchivesComponent implements OnInit {
 

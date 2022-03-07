@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-order-reservation-show-buttons',
   templateUrl: './order-reservation-show-buttons.component.html',
-  styleUrls: ['./order-reservation-show-buttons.component.scss']
+  styleUrls: ['./order-reservation-show-buttons.component.scss',
+  './../normalize.component.scss']
 })
 export class OrderReservationShowButtonsComponent implements OnInit {
 

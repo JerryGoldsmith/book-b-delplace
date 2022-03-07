@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
   selector: 'app-order-reservation',
   // selector: 'app-order-reservation-orchestre',
   templateUrl: './order-reservation.component.html',
-  styleUrls: ['./order-reservation.component.scss']
+  styleUrls: ['./order-reservation.component.scss',
+  './../normalize.component.scss']
 })
 export class OrderReservationComponent implements OnInit {
 

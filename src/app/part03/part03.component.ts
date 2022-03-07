@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-part03',
   templateUrl: './part03.component.html',
-  styleUrls: ['./part03.component.scss']
+  styleUrls: ['./part03.component.scss',
+  './../normalize.component.scss']
 })
 export class Part03Component implements OnInit {
 

@@ -5,7 +5,7 @@ import { BooksService } from '../services/books.service';
 import { ImageService } from '../services/image.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
-// import * as firebase from 'firebase';
+import * as firebase from 'firebase';
 import "firebase/database";
 
 @Component({
@@ -14,7 +14,8 @@ import "firebase/database";
   // template: `<app-book-list></app-book-list>`,
   styleUrls: ['./part01-edition-home.component.scss',
   './book-list.component.scss',
-  './header.component.scss']
+  './header.component.scss',
+  './../normalize.component.scss']
 })
 export class Part01EditionHomeComponent implements OnInit {
 

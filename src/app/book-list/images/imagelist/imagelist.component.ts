@@ -4,7 +4,8 @@ import { ImageService } from '../../../services/image.service';
 @Component({
   selector: 'app-imagelist',
   templateUrl: './imagelist.component.html',
-  styleUrls: ['./../images.component.scss']
+  styleUrls: ['./../images.component.scss',
+  './../normalize.component.scss']
 })
 export class ImageListComponent implements OnInit {
 

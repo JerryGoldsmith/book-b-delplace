@@ -5,12 +5,13 @@ import { BooksService } from '../services/books.service';
 // import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 // import * as firebase from 'firebase';
-import { OrdersService } from "../services/orders.service";
+// import { OrdersService } from "../services/orders.service";
 
 @Component({
   selector: 'app-order-reservation-home',
   templateUrl: './order-reservation-home.component.html',
-  styleUrls: ['./order-reservation-home.component.scss']
+  styleUrls: ['./order-reservation-home.component.scss',
+  './../normalize.component.scss']
 })
 export class OrderReservationHomeComponent implements OnInit {
 

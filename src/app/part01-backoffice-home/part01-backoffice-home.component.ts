@@ -7,8 +7,8 @@ import { ImageService } from '../services/image.service';
 import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-// import * as firebase from 'firebase';
-import firebase from "firebase/app";
+import * as firebase from 'firebase';
+// import firebase from "firebase/app";
 import "firebase/database";
 
 @Component({
@@ -16,7 +16,8 @@ import "firebase/database";
   templateUrl: './part01-backoffice-home.component.html',
   styleUrls: ['./part01-edition-home.component.scss',
   './book-list.component.scss',
-  './header.component.scss']
+  './header.component.scss',
+  './../normalize.component.scss']
 })
 export class Part01BackofficeHomeComponent implements OnInit {
 

@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.scss', './header.component.scss']
+  styleUrls: ['./book-list.component.scss', 
+  './header.component.scss',
+  './../normalize.component.scss']
 })
 export class BookListComponent implements OnInit {
 

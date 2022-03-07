@@ -23,7 +23,8 @@ import { AuthGuardService } from '../services/auth-guard.service';
   templateUrl: './part01.component.html',
   styleUrls: [
     './part01.component.scss',
-    './header-auth.component.scss'
+    './header-auth.component.scss',
+    './../normalize.component.scss'
   ]
 })
 export class Part01Component implements OnInit {

@@ -21,7 +21,8 @@ import { LService } from "../services/resto/l.service";
   styleUrls: [
     './part01-resto-home.component.scss',
     './restos.component.scss',
-    './main.component.scss'
+    './main.component.scss',
+    './../normalize.component.scss'
   ]
 })
 export class Part01RestoHomeComponent implements OnInit {

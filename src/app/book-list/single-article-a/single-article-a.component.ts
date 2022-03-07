@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-single-article-a',
   templateUrl: './single-article-a.component.html',
-  styleUrls: ['./single-article-a.component.scss']
+  styleUrls: ['./single-article-a.component.scss',
+  './../normalize.component.scss']
 })
 export class SingleArticleAComponent implements OnInit {
 
