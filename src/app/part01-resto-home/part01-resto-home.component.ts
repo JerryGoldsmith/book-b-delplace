@@ -33,6 +33,23 @@ export class Part01RestoHomeComponent implements OnInit {
   matrixs: any[];
   matrixSubscription: Subscription;
 
+  /* lazyLoad images */
+  defaultImage = '../../assets/image-default.svg';
+//   imageLogo = '../../assets/logo-bd.svg';
+  imageHome = '../../assets/img/belle-ile/belle-04.jpg';
+  image01 = '../../assets/matrixPictures/A.jpeg';
+  image02 = '../../assets/matrixPictures/B.jpeg';
+  image03 = '../../assets/matrixPictures/C.jpeg';
+  image04 = '../../assets/matrixPictures/D.jpeg';
+  image05 = '../../assets/matrixPictures/E.jpeg';
+  image06 = '../../assets/matrixPictures/F.jpeg';
+  image07 = '../../assets/matrixPictures/G.jpeg';
+  image08 = '../../assets/matrixPictures/H.jpeg';
+  image09 = '../../assets/matrixPictures/I.jpeg';
+  image10 = '../../assets/matrixPictures/J.jpeg';
+  image11 = '../../assets/matrixPictures/K.jpeg';
+  image12 = '../../assets/matrixPictures/L.jpeg';
+
   constructor(
     public matrixService: MatrixService,
     public aService: AService,

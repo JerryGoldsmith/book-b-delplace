@@ -37,7 +37,7 @@ import { SigninlistComponent } from './../auth/signinlist/signinlist.component';
 
 /* ---- Footer ----- */
 
-import { FooterComponent } from './../footer/footer.component';
+// import { FooterComponent } from './../footer/footer.component';
 
 /* -------------------------------------------------- */
 /* --------------------- SERVICES ------------------- */

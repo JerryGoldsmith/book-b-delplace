@@ -30,6 +30,7 @@ export class Part01Component implements OnInit {
 
     isAuth: boolean;
 
+    /* LazyLoadImageModule appelé dans mod/public/a/a.module */
     defaultImage = '../../assets/image-default.svg';
     imageLogo = '../../assets/logo-bd.svg';
     imageHome = '../../assets/img/belle-ile/belle-04.jpg';

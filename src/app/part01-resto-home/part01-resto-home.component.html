@@ -8,13 +8,20 @@
 
         <section class="item">
           <!-- <img src="../../assets/bd.png" class="logo"> -->
+
+          <!-- lazyLoad image home > logo -->
+          <!-- <img class="logo" [defaultImage]="defaultImage" [lazyLoad]="imageLogo" /> -->
+
           <h1 class="big-title">
             <span class="title-sequence">Commander en ligne</span>
           </h1>
           <div class="line"></div>
           <p class="sub-title">démo pour un restaurant</p>
           <div class="item__img-wrap">
-            <div class="item__img item__img--t1"></div>
+
+            <!-- lazyLoad image home > main (fullscrean) -->
+            <div [defaultImage]="defaultImage" [lazyLoad]="imageHome" class="item__img item__img--t1"></div>
+
           </div>
         </section>
 
@@ -41,7 +48,10 @@
                 <button class="frameHeight-556 background-main-A"
                 routerLink="/addA">
 
-                  <img class="visual" src="../assets/matrixPictures/A.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/A.jpeg"> -->
+                  <!-- lazyLoad image home > visuel 01 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image01" />
+
                   <div class="items">
                     <h2 class="title-white">{{ matrix.items.a.name }}</h2>
                     <h3 class="comment-black">{{ matrix.items.a.description }}</h3>
@@ -69,7 +79,11 @@
                        : {{ matrix.adress.one.zip }}</p>
                     <p class="year">Année d'ouverture : {{ matrix.adress.one.startdate }}</p>
                   </div>
-                  <img class="visual" src="../assets/matrixPictures/B.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/B.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 02 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image02" />
+
                 </button>
 
                 <!-- C -->
@@ -78,7 +92,11 @@
                 class="frameHeight-554 background-main-C"
                 routerLink="/addC">
 
-                  <img class="visual" src="../assets/matrixPictures/C.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/C.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 03 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image03" />
+
                   <div class="items">
                     <h2 class="title-white">{{ matrix.items.c.name }}</h2>
                     <h3 class="comment-black">{{ matrix.items.c.description }}</h3>
@@ -96,7 +114,11 @@
                 <button class="frameHeight-594 background-main-D"
                 routerLink="/addD">
 
-                  <img class="visual" src="../assets/matrixPictures/D.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/D.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 04 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image04" />
+
                   <div class="items">
                     <h2 class="title-fluo">{{ matrix.items.d.name }}</h2>
                     <h3 class="comment-gold">{{ matrix.items.d.description }}</h3>
@@ -114,7 +136,11 @@
                 <button class="frameHeight-574 background-main-E"
                 routerLink="/addE">
 
-                  <img class="visual" src="../assets/matrixPictures/E.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/E.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 05 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image05" />
+
                   <div class="items">
                     <h2 class="title-fluo">{{ matrix.items.e.name }}</h2>
                     <h3 class="comment-gold">{{ matrix.items.e.description }}</h3>
@@ -142,7 +168,11 @@
                        : {{ matrix.adress.three.zip }}</p>
                     <p class="year">Année d'ouverture : {{ matrix.adress.three.startdate }}</p>
                   </div>
-                  <img class="visual" src="../assets/matrixPictures/F.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/F.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 06 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image06" />
+
                 </button>
 
                 <!-- G -->
@@ -160,7 +190,11 @@
                        : {{ matrix.adress.three.zip }}</p>
                     <p class="year">Année d'ouverture : {{ matrix.adress.three.startdate }}</p>
                   </div>
-                  <img class="visual" src="../assets/matrixPictures/G.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/G.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 07 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image07" />
+
                 </button>
 
                 <!-- H -->
@@ -168,7 +202,11 @@
                 <button class="frameHeight-600 background-main-H"
                 routerLink="/addH">
 
-                  <img class="visual" src="../assets/matrixPictures/H.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/H.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 08 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image08" />
+
                   <div class="items">
                     <h2 class="title-white">{{ matrix.items.h.name }}</h2>
                     <h3 class="comment-black">{{ matrix.items.h.description }}</h3>
@@ -186,7 +224,11 @@
                 <button class="frameHeight-634 background-main-I"
                 routerLink="/addI">
 
-                  <img class="visual" src="../assets/matrixPictures/I.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/I.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 09 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image09" />
+
                   <div class="items">
                     <h2 class="title-white-lineHeight">{{ matrix.items.i.name }}</h2>
                     <h3 class="comment-black">{{ matrix.items.i.description }}</h3>
@@ -204,7 +246,11 @@
                 <button class="frameHeight-756 background-main-J"
                 routerLink="/addJ">
 
-                  <img class="visual" src="../assets/matrixPictures/J.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/J.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 10 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image10" />
+
                   <div class="items">
                     <h2 class="title-white-lineHeight">{{ matrix.items.j.name }}</h2>
                     <h3 class="comment-black">{{ matrix.items.j.description }}</h3>
@@ -232,7 +278,11 @@
                        : {{ matrix.adress.four.zip }}</p>
                     <p class="year">Année d'ouverture : {{ matrix.adress.four.startdate }}</p>
                   </div>
-                  <img class="visual" src="../assets/matrixPictures/K.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/K.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 11 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image11" />
+
                 </button>
 
                 <!-- L -->
@@ -240,7 +290,11 @@
                 <button class="frameHeight-726 background-main-L"
                 routerLink="/addL">
 
-                  <img class="visual" src="../assets/matrixPictures/L.jpeg">
+                  <!-- <img class="visual" src="../assets/matrixPictures/L.jpeg"> -->
+
+                  <!-- lazyLoad image home > visuel 12 -->
+                  <img class="visual" [defaultImage]="defaultImage" [lazyLoad]="image12" />
+
                   <div class="items">
                     <h2 class="title-white">{{ matrix.items.l.name }}</h2>
                     <h3 class="comment-black">{{ matrix.items.l.description }}</h3>
