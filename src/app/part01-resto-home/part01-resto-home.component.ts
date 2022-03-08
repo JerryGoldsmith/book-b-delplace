@@ -386,11 +386,11 @@ export class Part01RestoHomeComponent implements OnInit {
 
   onSaveOnFirebase() {
     this.matrixService.saveMatrixToFirebaseinServer();
-    this.aService.savePriceAToFirebaseinServer();
-    this.aService.saveItemPriceAToFirebaseinServer();
-    this.aService.saveTotalAToFirebaseinServer();
-    this.aService. saveTotalCompleteAToFirebaseinServer();
-    this.aService.saveTotalTvaAToFirebaseinServer();
+    // this.aService.savePriceAToFirebaseinServer();
+    // this.aService.saveItemPriceAToFirebaseinServer();
+    // this.aService.saveTotalAToFirebaseinServer();
+    // this.aService. saveTotalCompleteAToFirebaseinServer();
+    // this.aService.saveTotalTvaAToFirebaseinServer();
   }
 
   // ----

@@ -30,11 +30,10 @@
       </span>
     </div> -->
 
-    <form *ngIf="aForm" [formGroup]="aForm">
+    <form (ngSubmit) = "submit()">
       <div class="left-284">
-        <button type="button"
+        <button type="submit"
         class="waves-effect waves-light submit-button"
-        (click) = "submit()"
         (click) = "onSaveTotalAOnFirebase()"
         (click) = "onSaveTotalCompleteAOnFirebase()"
         (click) = "onSaveTotalTvaAOnFirebase()"

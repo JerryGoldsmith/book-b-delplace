@@ -13,8 +13,6 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class AComponent implements OnInit {
 
-  aForm: FormGroup;
-
   matrixs: any[];
   matrixSubscription: Subscription;
 
@@ -60,10 +58,6 @@ export class AComponent implements OnInit {
     //    window.location = window.location + '#loaded';
     //    window.location.reload();
     // }
-
-    this.aForm = new FormGroup({
-      aName: new FormControl()
-   });
 
     // -----
 
