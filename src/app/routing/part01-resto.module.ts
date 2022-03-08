@@ -19,23 +19,12 @@ const routes: Routes = [
       data: { preload: true, delay:1000 }
   },
 
-  // {
-  //   path: 'resto-home',
-  //   // loadChildren: 'src/app/mod/private/a-resto/a-resto.module#ARestoModule',
-  //   canLoad: [LoadGuardGuard],
-  //     loadChildren: () => import('src/app/mod/private/a-resto/a-resto.module')
-  //       .then(mod => mod.ARestoModule)
-  //     // data: { preload: true, delay: false },
-  //     // data: { preload: true, delay:1000 }
-  // },
-
   // { path: 'resto-home', component: Part01RestoHomeComponent },
 
   /* add (selection menus) */
   {
     path: 'addA',
     canActivate: [AuthGuardService],
-    // loadChildren: 'src/app/mod/private/resto/add/a/a.module#AModule',
     loadChildren: () => import('src/app/mod/private/resto/add/a/a.module')
       .then(mod => mod.AModule),
       data: { preload: true, delay:2000 }
@@ -84,7 +73,7 @@ const routes: Routes = [
   },
   {
     path: 'addH',
-    // canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/resto/add/h/h.module')
       .then(mod => mod.HModule),
       data: { preload: true, delay:2000 }
@@ -115,6 +104,20 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/resto/add/l/l.module')
       .then(mod => mod.LModule),
+      data: { preload: true, delay:2000 }
+  },
+  {
+    path: 'abcdefghijkl',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/resto/total/abcdefghijkl/abcdefghijkl.module')
+      .then(mod => mod.AbcdefghijklModule),
+      data: { preload: true, delay:2000 }
+  },
+  {
+    path: 'payment',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/resto/total/payment/payment.module')
+      .then(mod => mod.PaymentModule),
       data: { preload: true, delay:2000 }
   }
 ];
