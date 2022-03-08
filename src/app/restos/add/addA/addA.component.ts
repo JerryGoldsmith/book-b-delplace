@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatrixService } from "../../../services/resto/matrix.service";
 import { AService } from "../../../services/resto/a.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -12,10 +13,12 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class AComponent implements OnInit {
 
+  aForm: FormGroup;
+
   matrixs: any[];
   matrixSubscription: Subscription;
 
-  priceAs: any[];
+  priceAs: any[]
   priceASubscription: Subscription;
 
   itemPriceAs: any[];
@@ -57,6 +60,10 @@ export class AComponent implements OnInit {
     //    window.location = window.location + '#loaded';
     //    window.location.reload();
     // }
+
+    this.aForm = new FormGroup({
+      aName: new FormControl()
+   });
 
     // -----
 

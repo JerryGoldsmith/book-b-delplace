@@ -1,12 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
-// import * as firebase from 'firebase/app';
-// import firebase from "firebase/app";
 import * as firebase from 'firebase/app';
 import "firebase/database";
 import { O2A } from 'object-to-array-convert';
-import { AngularFirestore } from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: "root"
@@ -18,7 +15,7 @@ export class AService {
 
   // A ------------
 
-  priceASubject = new Subject<any[]>();
+  priceASubject = new Subject<any[]>() as any;
   private priceAs = [
     { isChecked: false, value: 0.50, label: "Sauce Soja" },
     { isChecked: false, value: 4.50, label: "Bière Chinoise" },
@@ -67,10 +64,10 @@ export class AService {
   // itemPriceA --------
 
   itemPriceASubject = new Subject<any[]>();
-  private itemPriceAs = [ { value: 8.00 } ];
+  private itemPriceAs = [ { value: 8.00 } ].slice();
 
   emitItemPriceASubject() {
-    this.itemPriceASubject.next(this.itemPriceAs.slice());
+    this.itemPriceASubject.next(this.itemPriceAs);
   }
 
   saveItemPriceAToFirebaseinServer() {
@@ -339,7 +336,7 @@ export class AService {
   // ---------------------------------------------
 
   constructor(
-    private httpClient: HttpClient,
-    private firestore: AngularFirestore
+    private httpClient: HttpClient
+    // private firestore: AngularFirestore
   ) {}
 }

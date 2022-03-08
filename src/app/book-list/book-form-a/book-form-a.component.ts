@@ -53,7 +53,7 @@ export class BookFormAComponent implements OnInit {
     // }
 
     this.booksService.createNewBookA(newBookA);
-    this.booksService.createNewBookAllA(newBookAllA);
+    this.booksService.createNewBookAll(newBookAllA);
     this.router.navigate(['/books']);
   }
 

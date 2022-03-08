@@ -34,9 +34,11 @@ export class Part01RestoHomeComponent implements OnInit {
   matrixs: any[];
   matrixSubscription: Subscription;
 
+  priceAs: any[];
+  priceASubscription: Subscription;
+
   /* lazyLoad images */
   defaultImage = '../../assets/image-default.svg';
-//   imageLogo = '../../assets/logo-bd.svg';
   imageHome = '../../assets/img/belle-ile/belle-04.jpg';
   image01 = '../../assets/matrixPictures/A.jpeg';
   image02 = '../../assets/matrixPictures/B.jpeg';
@@ -384,6 +386,11 @@ export class Part01RestoHomeComponent implements OnInit {
 
   onSaveOnFirebase() {
     this.matrixService.saveMatrixToFirebaseinServer();
+    this.aService.savePriceAToFirebaseinServer();
+    this.aService.saveItemPriceAToFirebaseinServer();
+    this.aService.saveTotalAToFirebaseinServer();
+    this.aService. saveTotalCompleteAToFirebaseinServer();
+    this.aService.saveTotalTvaAToFirebaseinServer();
   }
 
   // ----
