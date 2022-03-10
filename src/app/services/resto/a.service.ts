@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 import "firebase/database";
 import { O2A } from 'object-to-array-convert';
 
+
 @Injectable({
   providedIn: "root"
 })
@@ -160,8 +161,27 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalAs = newPost;
-      const value = O2A(snapshot); // Object-To-Array-Convert
-        return value + postId; // Object-To-Array-Convert
+
+
+      // const value = O2A(snapshot); // Object-To-Array-Convert
+      // console.log('total values :' + value + postId)
+      //   return value + postId; // Object-To-Array-Convert
+
+      let value = [];  
+        Object.keys(this.totalAs).map(function(key){  
+          value.push({[key]:snapshot[key]})  
+          return value;  
+      });  
+      console.log('Object=',this.totalAs)  
+      console.log('Array=',value)
+      console.log('postId=',postId)
+
+      // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
+      //   let totalA = this.totalAs[index];
+        
+      //   return totalA + postId;
+      // });
+      // console.log('total values :' + value + postId)
     });
   }
 
@@ -183,6 +203,12 @@ export class AService {
       this.totalAs = newPost;
       const value = O2A(snapshot); // Object-To-Array-Convert
         return value + postId; // Object-To-Array-Convert
+
+      // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
+      //   let totalA = this.totalAs[index];
+      //   console.log('totalDelete values :' + totalA + postId)
+      //   return totalA + postId;
+      // });
     });
   }
 
@@ -202,7 +228,7 @@ export class AService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalCompleteA.json', this.totalCompleteAs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        console.log('Enregistrement totalCompleteA terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);
@@ -229,7 +255,14 @@ export class AService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteAs = newPost;
       const value = O2A(snapshot);
+      console.log('saveTotalComplete :' + value + postId)
         return value + postId;
+
+      // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
+      //   let totalA = this.totalAs[index];
+      //   console.log('saveTotalComplete values :' + totalA + postId)
+      //   return totalA + postId;
+      // });
     });
   }
 
@@ -253,6 +286,12 @@ export class AService {
       this.totalCompleteAs = newPost;
       const value = O2A(snapshot);
         return value + postId;
+
+      // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
+      //   let totalA = this.totalAs[index];
+      //   console.log('saveTotalCompleteDelete values :' + totalA + postId)
+      //   return totalA + postId;
+      // });
     });
   }
 
@@ -307,6 +346,12 @@ export class AService {
       this.totalTvaAs = newPost;
       const value = O2A(snapshot);
         return value + postId;
+
+      // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
+      //   let totalA = this.totalAs[index];
+      //   console.log('saveTotalTva values :' + totalA + postId)
+      //   return totalA + postId;
+      // });
     });
   }
 
@@ -330,6 +375,12 @@ export class AService {
       this.totalTvaAs = newPost;
       const value = O2A(snapshot);
         return value + postId;
+
+      // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
+      //   let totalA = this.totalAs[index];
+      //   console.log('saveTotalTvaDelete values :' + totalA + postId)
+      //   return totalA + postId;
+      // });
     });
   }
 
