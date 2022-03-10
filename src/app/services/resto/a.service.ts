@@ -163,9 +163,9 @@ export class AService {
       this.totalAs = newPost;
 
 
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      // console.log('total values :' + value + postId)
-      //   return value + postId; // Object-To-Array-Convert
+      const value = O2A(snapshot); // Object-To-Array-Convert
+      console.log('total values :' + value + postId)
+        return value + postId; // Object-To-Array-Convert
 
       // let value = [];  
       //   Object.keys(this.totalAs).map(function(key){  
@@ -176,11 +176,11 @@ export class AService {
       // console.log('Array=',value)
       // console.log('postId=',postId)
 
-      const resultArray = Object.keys(snapshot).map(index => {
-        let arr = snapshot[index];
-        console.log(arr)
-        return arr;
-    });
+    //   const resultArray = Object.keys(snapshot).map(index => {
+    //     let arr = snapshot[index];
+    //     console.log(arr)
+    //     return arr;
+    // });
 
       // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
       //   let totalA = this.totalAs[index];
