@@ -54,7 +54,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js"
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/object-to-array-convert/index.js"
             ]
           },
           "configurations": {

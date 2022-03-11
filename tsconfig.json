@@ -6,7 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": false,
     "strict": false,
-    "noImplicitAny": false,
+    "noImplicitAny": false, // 
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": false,
     "sourceMap": true,
@@ -15,8 +15,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2017",
-    "module": "es2020",
+    "resolveJsonModule": true, //
+    "esModuleInterop": true, //
+    "strictPropertyInitialization": false, //
+    "allowSyntheticDefaultImports": true, // true > empêche l'affichage de l'erreur
+    "target": "es5", // anciennement 'es2017'
+    "module": "commonjs", // anciennement 'es2020' et ensuite 'esnext'
     "skipLibCheck": true,
     "lib": [
       "es2018",

@@ -6,7 +6,8 @@ import "firebase/database";
 
 // nécessite src/typings/typings.d.ts 
 // ou tsconfig.json > compilerOptions > "noImplicitAny": false,
-import { O2A } from 'object-to-array-convert';
+import * as O2A  from 'object-to-array-convert';
+// import { __importDefault } from "tslib";
 
 
 @Injectable({
@@ -165,10 +166,13 @@ export class AService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalAs = newPost;
 
+      // const O2AObj = __importDefault(require('value'));
+      // O2AObj.default();
 
-      const value = O2A(snapshot); // Object-To-Array-Convert
-      console.log('total values :' + value + postId)
-        return value + postId; // Object-To-Array-Convert
+      const O2AObj = O2A(snapshot);
+      // const value = O2A(snapshot); // Object-To-Array-Convert
+      console.log('total values :' + O2AObj + postId)
+        return O2AObj + postId; // Object-To-Array-Convert
 
       // let value = [];  
       //   Object.keys(this.totalAs).map(function(key){  

@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatrixService } from "../../../services/resto/matrix.service";
 import { AService } from "../../../services/resto/a.service";
 import { BService } from "../../../services/resto/b.service";
@@ -12,7 +12,6 @@ import { IService } from "../../../services/resto/i.service";
 import { JService } from "../../../services/resto/j.service";
 import { KService } from "../../../services/resto/k.service";
 import { LService } from "../../../services/resto/l.service";
-import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { ResizedEvent } from 'angular-resize-event';
 
