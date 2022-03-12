@@ -189,6 +189,43 @@ export class AService {
       newPostRef.update(updates);
       return updates;
 
+      // let arr = [];  
+      //   Object.keys(snapshot).map(function(key){  
+      //   arr.push({[key]:snapshot[key]})  
+      //   return arr;  
+      // });  
+      // console.log('Object=',snapshot)  
+      // console.log('Array=',arr) 
+
+      // const O2AObj = __importDefault(require('value'));
+      // O2AObj.default();
+
+      // const O2AObj = O2A(snapshot);
+      // // const value = O2A(snapshot); // Object-To-Array-Convert
+      // console.log('total values :' + O2AObj + postId)
+      //   return O2AObj + postId; // Object-To-Array-Convert
+
+      // let value = [];  
+      //   Object.keys(this.totalAs).map(function(key){  
+      //     value.push({[key]:snapshot[key]})  
+      //     return value;  
+      // });  
+      // console.log('Object=',this.totalAs)  
+      // console.log('Array=',value)
+      // console.log('postId=',postId)
+
+    //   const resultArray = Object.keys(snapshot).map(index => {
+    //     let arr = snapshot[index];
+    //     console.log(arr)
+    //     return arr;
+    // });
+
+      // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
+      //   let totalA = this.totalAs[index];
+        
+      //   return totalA + postId;
+      // });
+      // console.log('total values :' + value + postId)
     });
   }
 
