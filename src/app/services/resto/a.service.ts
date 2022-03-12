@@ -1,13 +1,19 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import "firebase/database";
+import { Total } from '../../models/total.model';
 
 // nécessite src/typings/typings.d.ts 
 // ou tsconfig.json > compilerOptions > "noImplicitAny": false,
-import * as O2A  from 'object-to-array-convert';
+// import O2A from 'object-to-array-convert';
+// import { O2A } from 'object-to-array-convert';
+// import O2A = require("object-to-array-convert")
 // import { __importDefault } from "tslib";
+// import O2A from 'object-to-array-convert';
+
+// import { ClassicEditorBuild } from "src/typings/typings";
 
 
 @Injectable({
@@ -128,7 +134,13 @@ export class AService {
     );
   }
 
-  public saveTotalA() {
+  // createNewBookA(newTotalA: Total) {
+  //   this.totalAs.push(newTotalA);
+  //   this.saveTotalA();
+  //   this.emitTotalASubject();
+  // }
+
+  public saveTotalA(): void {
     var dateTime = firebase.database.ServerValue.TIMESTAMP
     // let now: Date = new Date();
     // autre possibilité :
@@ -166,35 +178,17 @@ export class AService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalAs = newPost;
 
-      // const O2AObj = __importDefault(require('value'));
-      // O2AObj.default();
+      // convert object > array
+      var updates = {};
+        updates = Object.keys(this.priceAs).map(index => {
+            let totalA = this.priceAs[index];
+            console.log(totalA);
+            return totalA;
+          });
+      console.log(updates);
+      newPostRef.update(updates);
+      return updates;
 
-      const O2AObj = O2A(snapshot);
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      console.log('total values :' + O2AObj + postId)
-        return O2AObj + postId; // Object-To-Array-Convert
-
-      // let value = [];  
-      //   Object.keys(this.totalAs).map(function(key){  
-      //     value.push({[key]:snapshot[key]})  
-      //     return value;  
-      // });  
-      // console.log('Object=',this.totalAs)  
-      // console.log('Array=',value)
-      // console.log('postId=',postId)
-
-    //   const resultArray = Object.keys(snapshot).map(index => {
-    //     let arr = snapshot[index];
-    //     console.log(arr)
-    //     return arr;
-    // });
-
-      // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
-      //   let totalA = this.totalAs[index];
-        
-      //   return totalA + postId;
-      // });
-      // console.log('total values :' + value + postId)
     });
   }
 
@@ -214,8 +208,8 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalAs = newPost;
-      const value = O2A(snapshot); // Object-To-Array-Convert
-        return value + postId; // Object-To-Array-Convert
+      // const value = O2A(snapshot); // Object-To-Array-Convert
+      //   return value + postId; // Object-To-Array-Convert
 
       // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
       //   let totalA = this.totalAs[index];
@@ -267,9 +261,9 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteAs = newPost;
-      const value = O2A(snapshot);
-      console.log('saveTotalComplete :' + value + postId)
-        return value + postId;
+      // const value = O2A(snapshot);
+      // console.log('saveTotalComplete :' + value + postId)
+      //   return value + postId;
 
       // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
       //   let totalA = this.totalAs[index];
@@ -297,8 +291,8 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteAs = newPost;
-      const value = O2A(snapshot);
-        return value + postId;
+      // const value = O2A(snapshot);
+      //   return value + postId;
 
       // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
       //   let totalA = this.totalAs[index];
@@ -357,8 +351,8 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaAs = newPost;
-      const value = O2A(snapshot);
-        return value + postId;
+      // const value = O2A(snapshot);
+      //   return value + postId;
 
       // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
       //   let totalA = this.totalAs[index];
@@ -386,8 +380,8 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaAs = newPost;
-      const value = O2A(snapshot);
-        return value + postId;
+      // const value = O2A(snapshot);
+      //   return value + postId;
 
       // const value = Object.keys(this.totalAs).map(index => { // sans Object-To-Array-Convert
       //   let totalA = this.totalAs[index];

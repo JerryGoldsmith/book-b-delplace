@@ -5,8 +5,8 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": false,
-    "strict": false,
-    "noImplicitAny": false, // 
+    "strict": false, // strict off
+    "noImplicitAny": false,
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": false,
     "sourceMap": true,
