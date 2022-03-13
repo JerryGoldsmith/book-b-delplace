@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatrixService } from "../../../services/resto/matrix.service";
 import { AService } from "../../../services/resto/a.service";
 import { Subscription } from 'rxjs/Subscription';
-import { Total } from '../../../models/total.model';
 // import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -108,6 +107,8 @@ export class AComponent implements OnInit {
   // ----
 
   onSaveTotalAOnFirebase() {
+    // const newTotalA = new Total(name);
+    // this.aService.saveTotalA(newTotalA);
     this.aService.saveTotalA();
   }
 

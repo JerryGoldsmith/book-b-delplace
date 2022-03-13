@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import * as firebase from 'firebase/app';
 import "firebase/database";
 // import O2A from 'object-to-array-convert';
-import * as O2A from 'object-to-array-convert';
-import { AngularFirestore } from "@angular/fire/firestore";
+// import * as O2A from 'object-to-array-convert';
+// import { AngularFirestore } from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: "root"
@@ -144,8 +144,10 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalBs = newPost;
-      const value = O2A(snapshot);
-        return value + postId;
+      console.log(newPost);
+      return newPost + postId;
+      // const value = O2A(snapshot);
+      //   return value + postId;
     });
   }
 
@@ -167,8 +169,10 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalBs = newPost;
-      const value = O2A(snapshot);
-        return value + postId;
+      console.log(newPost);
+      return newPost + postId;
+      // const value = O2A(snapshot);
+      //   return value + postId;
     });
   }
 
@@ -214,8 +218,10 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteBs = newPost;
-      const value = O2A(snapshot);
-        return value + postId;
+      console.log(newPost);
+      return newPost + postId;
+      // const value = O2A(snapshot);
+      //   return value + postId;
     });
   }
 
@@ -237,8 +243,10 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteBs = newPost;
-      const value = O2A(snapshot);
-        return value + postId;
+      console.log(newPost);
+      return newPost + postId;
+      // const value = O2A(snapshot);
+      //   return value + postId;
     });
   }
 
@@ -287,8 +295,10 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaBs = newPost;
-      const value = O2A(snapshot);
-        return value + postId;
+      console.log(newPost);
+      return newPost + postId;
+      // const value = O2A(snapshot);
+      //   return value + postId;
     });
   }
 
@@ -310,16 +320,18 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaBs = newPost;
-      const value = O2A(snapshot);
-        return value + postId;
+      console.log(newPost);
+      return newPost + postId;
+      // const value = O2A(snapshot);
+      //   return value + postId;
     });
   }
 
   // ---------------------------------------------
 
   constructor(
-    private httpClient: HttpClient,
-    private firestore: AngularFirestore
+    private httpClient: HttpClient
+    // private firestore: AngularFirestore
   ) {}
 
 }
