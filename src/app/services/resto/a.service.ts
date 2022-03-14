@@ -3,6 +3,7 @@ import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
 import firebase from 'firebase/app';
 import "firebase/database";
+import { post } from "jquery";
 
 // nécessite src/typings/typings.d.ts 
 // ou tsconfig.json > compilerOptions > "noImplicitAny": false,
@@ -177,15 +178,16 @@ export class AService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalAs = newPost;
 
-      let elm = document.getElementById("data");
+      // let elm = document.getElementById("data");
 
       // postsRef.orderByChild("isChecked").on('value', (snapshot) => {
         let dataArray = {};
-          snapshot.forEach((postsRef): void => {
-          dataArray[postsRef.key] = postsRef.val();
-          console.log(postsRef.key);
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
         });
-        console.log(dataArray);
+        console.log(value + postId);
+        return value + postId;
       // });
 
       // let data = [];
@@ -272,8 +274,17 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalAs = newPost;
-      console.log("saveTotalDeleteA" +newPost + postId);
-      return newPost + postId;
+      // console.log("saveTotalDeleteA" +newPost + postId);
+      // return newPost + postId;
+
+      let dataArray = {};
+          snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log("childSnapshot.key" + childSnapshot.key);
+        });
+        console.log(dataArray);
+        return dataArray + postId;
+
       // const value = O2A(snapshot); // Object-To-Array-Convert
       //   return value + postId; // Object-To-Array-Convert
 
@@ -327,8 +338,18 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteAs = newPost;
-      console.log("saveTotalCompleteA" +newPost + postId);
-      return newPost + postId;
+
+      // console.log("saveTotalCompleteA" +newPost + postId);
+      // return newPost + postId;
+
+      let dataArray = {};
+          snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(dataArray);
+        return dataArray + postId;
+
       // const value = O2A(snapshot);
       // console.log('saveTotalComplete :' + value + postId)
       //   return value + postId;
@@ -359,8 +380,18 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteAs = newPost;
-      console.log("saveTotalCompleteDeleteA" + newPost + postId);
-      return newPost + postId;
+
+      // console.log("saveTotalCompleteDeleteA" + newPost + postId);
+      // return newPost + postId;
+
+      let dataArray = {};
+          snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(dataArray);
+        return dataArray + postId;
+
       // const value = O2A(snapshot);
       //   return value + postId;
 
@@ -421,8 +452,18 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaAs = newPost;
-      console.log(newPost + postId);
-      return newPost + postId;
+
+      // console.log(newPost + postId);
+      // return newPost + postId;
+
+      let dataArray = {};
+          snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(dataArray);
+        return dataArray + postId;
+
       // const value = O2A(snapshot);
       //   return value + postId;
 
@@ -452,8 +493,18 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaAs = newPost;
-      console.log(newPost + postId);
-      return newPost + postId;
+
+      // console.log(newPost + postId);
+      // return newPost + postId;
+
+      let dataArray = {};
+          snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(dataArray);
+        return dataArray + postId;
+
       // const value = O2A(snapshot);
       //   return value + postId;
 
