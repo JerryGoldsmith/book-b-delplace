@@ -30,7 +30,7 @@
       </span>
     </div> -->
 
-    <form (ngSubmit) = "submit()">
+    <form [formGroup]="restoForm" (ngSubmit) = "submit()">
       <div class="left-284">
         <button type="submit"
         class="waves-effect waves-light submit-button"

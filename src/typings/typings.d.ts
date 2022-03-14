@@ -2,8 +2,8 @@
 //     shout();
 // }
 
-declare module 'object-to-array-convert' {
-    const O2A: any;
+// declare module 'object-to-array-convert' {
+//     const O2A: any;
 
-    export = O2A;
-}
+//     export = O2A;
+// }

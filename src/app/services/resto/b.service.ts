@@ -145,7 +145,16 @@ export class BService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalBs = newPost;
       console.log(newPost);
-      return newPost + postId;
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(value + postId);
+        return value + postId;
+
+      // return newPost + postId;
       // const value = O2A(snapshot);
       //   return value + postId;
     });
@@ -170,7 +179,16 @@ export class BService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalBs = newPost;
       console.log(newPost);
-      return newPost + postId;
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(value + postId);
+        return value + postId;
+
+      // return newPost + postId;
       // const value = O2A(snapshot);
       //   return value + postId;
     });
@@ -219,7 +237,16 @@ export class BService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteBs = newPost;
       console.log(newPost);
-      return newPost + postId;
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(value + postId);
+        return value + postId;
+
+      // return newPost + postId;
       // const value = O2A(snapshot);
       //   return value + postId;
     });
@@ -244,7 +271,16 @@ export class BService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteBs = newPost;
       console.log(newPost);
-      return newPost + postId;
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(value + postId);
+        return value + postId;
+
+      // return newPost + postId;
       // const value = O2A(snapshot);
       //   return value + postId;
     });
@@ -296,7 +332,16 @@ export class BService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaBs = newPost;
       console.log(newPost);
-      return newPost + postId;
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(value + postId);
+        return value + postId;
+
+      // return newPost + postId;
       // const value = O2A(snapshot);
       //   return value + postId;
     });
@@ -321,7 +366,16 @@ export class BService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaBs = newPost;
       console.log(newPost);
-      return newPost + postId;
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log(childSnapshot.key);
+        });
+        console.log(value + postId);
+        return value + postId;
+
+      // return newPost + postId;
       // const value = O2A(snapshot);
       //   return value + postId;
     });

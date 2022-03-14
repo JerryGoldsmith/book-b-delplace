@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import * as firebase from 'firebase/app';
 import "firebase/database";
 // import { O2A } from 'object-to-array-convert';
-import * as O2A from 'object-to-array-convert';
+// import * as O2A from 'object-to-array-convert';
 import { AngularFirestore } from "@angular/fire/firestore";
 
 @Injectable({
@@ -139,8 +139,8 @@ export class JService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalJs = newPost;
-      const value = O2A(snapshot); // Object-To-Array-Convert
-        return value + postId; // Object-To-Array-Convert
+      // const value = O2A(snapshot); // Object-To-Array-Convert
+      //   return value + postId; // Object-To-Array-Convert
     });
   }
 
@@ -162,8 +162,8 @@ export class JService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalJs = newPost;
-      const value = O2A(snapshot); // Object-To-Array-Convert
-        return value + postId; // Object-To-Array-Convert
+      // const value = O2A(snapshot); // Object-To-Array-Convert
+      //   return value + postId; // Object-To-Array-Convert
     });
   }
 
@@ -209,8 +209,8 @@ export class JService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteJs = newPost;
-      const value = O2A(snapshot); // Object-To-Array-Convert
-        return value + postId; // Object-To-Array-Convert
+      // const value = O2A(snapshot); // Object-To-Array-Convert
+      //   return value + postId; // Object-To-Array-Convert
     });
   }
 
@@ -232,8 +232,8 @@ export class JService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteJs = newPost;
-      const value = O2A(snapshot); // Object-To-Array-Convert
-        return value + postId; // Object-To-Array-Convert
+      // const value = O2A(snapshot); // Object-To-Array-Convert
+      //   return value + postId; // Object-To-Array-Convert
     });
   }
 
@@ -282,8 +282,8 @@ export class JService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaJs = newPost;
-      const value = O2A(snapshot); // Object-To-Array-Convert
-        return value + postId; // Object-To-Array-Convert
+      // const value = O2A(snapshot); // Object-To-Array-Convert
+      //   return value + postId; // Object-To-Array-Convert
     });
   }
 
@@ -305,8 +305,8 @@ export class JService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaJs = newPost;
-      const value = O2A(snapshot); // Object-To-Array-Convert
-        return value + postId; // Object-To-Array-Convert
+      // const value = O2A(snapshot); // Object-To-Array-Convert
+      //   return value + postId; // Object-To-Array-Convert
     });
   }
 

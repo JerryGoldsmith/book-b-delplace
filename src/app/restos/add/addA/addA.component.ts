@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatrixService } from "../../../services/resto/matrix.service";
 import { AService } from "../../../services/resto/a.service";
 import { Subscription } from 'rxjs/Subscription';
-// import { FormControl, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addA',
@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class AComponent implements OnInit {
 
-  // restoForm: FormGroup;
+  restoForm: FormGroup;
 
   matrixs: any[];
   matrixSubscription: Subscription;

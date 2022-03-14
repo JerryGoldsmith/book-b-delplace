@@ -230,7 +230,7 @@ const appRoutes: Routes = [
     CommonFormReactiveModule,
     RouterModule.forRoot(appRoutes,
       { preloadingStrategy: AuthPreloadStrategy }),
-      LazyLoadImageModule
+      LazyLoadImageModule,
     // CommonModule,
 
     // AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -239,8 +239,8 @@ const appRoutes: Routes = [
     // AngularFirestoreModule,
     // AngularFireStorageModule,
     // AngularFireDatabaseModule
-    // FormsModule,
-    // ReactiveFormsModule,
+    FormsModule,
+    ReactiveFormsModule
     // AngularResizeEventModule,
 
     // SharedModule

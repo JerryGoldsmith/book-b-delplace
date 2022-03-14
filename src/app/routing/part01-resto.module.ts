@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
 import { AuthGuardService } from './../services/auth-guard.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { LoadGuardGuard } from '../pre-loading/load-guard.guard';
@@ -125,7 +126,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
       RouterModule.forRoot(routes,
-        { preloadingStrategy: AuthPreloadStrategy })
+        { preloadingStrategy: AuthPreloadStrategy }),
+        FormsModule,
+        ReactiveFormsModule
     ],
   exports: [
     RouterModule
