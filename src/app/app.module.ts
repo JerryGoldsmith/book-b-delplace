@@ -124,11 +124,7 @@ import { AuthentificationService } from "./services/authentification.service";
     import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
     import { AngularFirestoreModule } from "@angular/fire/firestore";
     import { AngularFireStorageModule } from '@angular/fire/storage';
-    import { AngularFireDatabaseModule } from '@angular/fire/database';
-
-    /* FormsModule */
-
-    import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+    import { AngularFireDatabaseModule } from '@angular/fire/database'
 
     /* AngularResizedEvent */
 
@@ -230,7 +226,7 @@ const appRoutes: Routes = [
     CommonFormReactiveModule,
     RouterModule.forRoot(appRoutes,
       { preloadingStrategy: AuthPreloadStrategy }),
-      LazyLoadImageModule,
+      LazyLoadImageModule
     // CommonModule,
 
     // AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -239,8 +235,6 @@ const appRoutes: Routes = [
     // AngularFirestoreModule,
     // AngularFireStorageModule,
     // AngularFireDatabaseModule
-    FormsModule,
-    ReactiveFormsModule
     // AngularResizeEventModule,
 
     // SharedModule

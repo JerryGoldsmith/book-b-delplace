@@ -23,25 +23,28 @@
 
               <!-- <img class="visualMenusWhite" src="../assets/matrixPictures/A.jpeg"> -->
 
+              <!-- menu -->
               <div class="itemSelectedFluo">
                 <a href routerLink="/addA">{{ matrix.items.a.name }}</a>
               </div>
 
+              <!-- suppléments liste -->
               <div *ngFor="let completeA of totalCompleteAs">
                 <div *ngFor="let item of priceAs">
                   <div [(ngModel)]="item.isChecked" *ngIf="item.isChecked">
                     <div [hidden]="item.isShow">
-                      <p *ngIf="completeA.name > 0" class="itemSelectedWhite">{{item.label}} > {{item.value}}€</p>
+                      <p *ngIf="completeA.name > 0" class="itemSelectedWhite">{{item.label}} : {{item.value}}€</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- suppléments -->
+              <!-- suppléments montant -->
               <h2 class="h2-white">
                 <strong>+ {{ itemA.name }}€</strong>
               </h2>
 
+              <!-- total -->
               <div *ngFor="let item of totalCompleteAs">
                 <p class="subTotal">Total menu :
                   <strong>{{ item.name }}€</strong>

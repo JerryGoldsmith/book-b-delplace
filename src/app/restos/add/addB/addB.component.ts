@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatrixService } from "../../../services/resto/matrix.service";
 import { BService } from "../../../services/resto/b.service";
 import { Subscription } from 'rxjs/Subscription';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addB',
@@ -11,6 +12,10 @@ import { Subscription } from 'rxjs/Subscription';
     './../add.component.scss']
 })
 export class BComponent implements OnInit {
+
+  restoForm = new FormGroup({
+    name: new FormControl()
+  });
 
   matrixs: any[];
   matrixSubscription: Subscription;

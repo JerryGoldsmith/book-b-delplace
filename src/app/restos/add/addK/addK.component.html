@@ -21,13 +21,7 @@
       <div class="whiteLineHorizontalAdd"></div>
     </label>
 
-    <!-- <div>
-      <span class="supplementsPrices" *ngFor="let price of itemPriceKs">Total:
-        <strong>{{ price.value + sumTotalPrices }}€</strong>
-      </span>
-    </div> -->
-
-    <form (ngSubmit)="submit()">
+    <form [formGroup]="restoForm" (ngSubmit)="submit()">
       <div class="left-284">
         <button type="submit"
         class="waves-effect waves-light submit-button"
@@ -39,17 +33,3 @@
     </form>
   </div>
 </div>
-
-<!-- <div routerLinkActive="active" class="menuFrameShushi-01 backgroundPizza">
-  <div *ngFor="let price of itemPriceKs">
-    <span class="supplementsPricesPizza">Menu :
-      <strong>{{ price.value }}</strong>
-    </span>
-    <span class="supplementsPricesPizza">- Suppléments :
-      <strong> {{ sumTotalPrices }}€</strong>
-    </span>
-    <span class="supplementsPricesPizza">- Total :
-      <strong> {{ price.value + sumTotalPrices }}€</strong>
-    </span>
-  </div>
-</div> -->

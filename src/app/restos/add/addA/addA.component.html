@@ -24,12 +24,8 @@
       <div class="whiteLineHorizontalAdd"></div>
 
     </label>
-    <!-- <div>
-      <span class="supplementsPrices" *ngFor="let price of itemPriceAs">Total:
-        <strong>{{ price.value + sumTotalPrices }}€</strong>
-      </span>
-    </div> -->
 
+    <!-- nécessite dans a.module & a-routing.module > import { FormsModule, ReactiveFormsModule } from '@angular/forms'; -->
     <form [formGroup]="restoForm" (ngSubmit) = "submit()">
       <div class="left-284">
         <button type="submit"
@@ -42,6 +38,8 @@
     </form>
   </div>
 </div>
+
+<!-- affichage des résultats -->
 
 <!-- <div routerLinkActive="active" class="menuFrameShushi-01 backgroundShushi">
   <div *ngFor="let price of itemPriceAs">

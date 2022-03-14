@@ -3,7 +3,6 @@ import { MatrixService } from "../../../services/resto/matrix.service";
 import { AService } from "../../../services/resto/a.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormControl, FormGroup } from '@angular/forms';
-// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addA',
@@ -16,7 +15,7 @@ export class AComponent implements OnInit {
 
   restoForm = new FormGroup({
     name: new FormControl()
- });
+  });
 
   matrixs: any[];
   matrixSubscription: Subscription;
@@ -34,7 +33,6 @@ export class AComponent implements OnInit {
   constructor(
     public matrixService: MatrixService,
     public aService: AService
-    // private router: Router
   ) {
     this.getScreenSize();
   }
@@ -54,8 +52,6 @@ export class AComponent implements OnInit {
     this.aService.saveTotalAToFirebaseinServer();
     this.aService.saveTotalCompleteAToFirebaseinServer();
     this.aService.saveTotalTvaAToFirebaseinServer();
-    // this.sumTotalPrices.close();
-    // this.router.navigate(['/abcdefghijkl']);
   }
 
   ngOnInit(): void {

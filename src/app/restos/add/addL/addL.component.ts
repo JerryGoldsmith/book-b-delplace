@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatrixService } from "../../../services/resto/matrix.service";
 import { LService } from "../../../services/resto/l.service";
-import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addL',
@@ -13,7 +13,9 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class LComponent implements OnInit {
 
-  radioForm: FormGroup;
+  restoForm = new FormGroup({
+    name: new FormControl()
+  });
 
   matrixs: any[];
   matrixSubscription: Subscription;
