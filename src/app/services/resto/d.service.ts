@@ -1,13 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
-// import * as firebase from 'firebase/app';
-// import firebase from "firebase/app";
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import "firebase/database";
-// import { O2A } from 'object-to-array-convert';
-// import * as O2A from 'object-to-array-convert';
-import { AngularFirestore } from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: "root"
@@ -151,8 +146,12 @@ export class DService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalDs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -174,8 +173,12 @@ export class DService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalDs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -221,8 +224,12 @@ export class DService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteDs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -244,8 +251,12 @@ export class DService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteDs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -294,8 +305,12 @@ export class DService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaDs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -317,16 +332,19 @@ export class DService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaDs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
   // ---------------------------------------------
 
   constructor(
-    private httpClient: HttpClient,
-    private firestore: AngularFirestore
+    private httpClient: HttpClient
   ) {}
 
 }

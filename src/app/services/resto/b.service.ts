@@ -1,13 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
-// import * as firebase from 'firebase/app';
-// import firebase from "firebase/app";
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import "firebase/database";
-// import O2A from 'object-to-array-convert';
-// import * as O2A from 'object-to-array-convert';
-// import { AngularFirestore } from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: "root"
@@ -144,19 +139,12 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalBs = newPost;
-      console.log(newPost);
 
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
-
-      // return newPost + postId;
-      // const value = O2A(snapshot);
-      //   return value + postId;
     });
   }
 
@@ -178,19 +166,12 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalBs = newPost;
-      console.log(newPost);
 
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
-
-      // return newPost + postId;
-      // const value = O2A(snapshot);
-      //   return value + postId;
     });
   }
 
@@ -236,19 +217,12 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteBs = newPost;
-      console.log(newPost);
 
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
-
-      // return newPost + postId;
-      // const value = O2A(snapshot);
-      //   return value + postId;
     });
   }
 
@@ -270,19 +244,12 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteBs = newPost;
-      console.log(newPost);
 
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
-
-      // return newPost + postId;
-      // const value = O2A(snapshot);
-      //   return value + postId;
     });
   }
 
@@ -331,19 +298,12 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaBs = newPost;
-      console.log(newPost);
 
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
-
-      // return newPost + postId;
-      // const value = O2A(snapshot);
-      //   return value + postId;
     });
   }
 
@@ -365,19 +325,12 @@ export class BService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaBs = newPost;
-      console.log(newPost);
 
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
-
-      // return newPost + postId;
-      // const value = O2A(snapshot);
-      //   return value + postId;
     });
   }
 
@@ -385,7 +338,6 @@ export class BService {
 
   constructor(
     private httpClient: HttpClient
-    // private firestore: AngularFirestore
   ) {}
 
 }

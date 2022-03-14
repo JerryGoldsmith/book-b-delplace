@@ -1,12 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
-// import * as firebase from 'firebase/app';
-// import firebase from "firebase/app";
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import "firebase/database";
-// import { O2A } from 'object-to-array-convert';
-// import * as O2A from 'object-to-array-convert';
 import { AngularFirestore } from "@angular/fire/firestore";
 
 @Injectable({
@@ -141,8 +137,12 @@ export class CService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCs = newPost;
-      // const value = O2A(snapshot);
-      //   return value + postId;
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -164,8 +164,12 @@ export class CService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCs = newPost;
-      // const value = O2A(snapshot);
-      //   return value + postId;
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -211,8 +215,12 @@ export class CService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteCs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -234,8 +242,12 @@ export class CService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalCompleteCs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -284,8 +296,12 @@ export class CService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaCs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 
@@ -307,8 +323,12 @@ export class CService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalTvaCs = newPost;
-      // const value = O2A(snapshot); // Object-To-Array-Convert
-      //   return value + postId; // Object-To-Array-Convert
+
+      let dataArray = {};
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+        });
+        return value + postId;
     });
   }
 

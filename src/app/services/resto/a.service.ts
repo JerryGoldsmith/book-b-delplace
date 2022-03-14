@@ -10,6 +10,8 @@ import "firebase/database";
 
 export class AService {
 
+  // Menu Saumon
+
   // A ------------
 
   priceASubject = new Subject<any[]>() as any;
@@ -166,6 +168,7 @@ export class AService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalAs = newPost;
 
+      // convert Object to Array
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
