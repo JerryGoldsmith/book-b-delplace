@@ -131,9 +131,7 @@ export class EService {
   }
 
   public saveTotalE() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalE')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -158,9 +156,7 @@ export class EService {
   // ------
 
   public saveTotalDeleteE() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalE')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -207,9 +203,7 @@ export class EService {
   }
 
   public saveTotalCompleteE() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteE')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -236,9 +230,7 @@ export class EService {
   // ----
 
   public saveTotalCompleteDeleteE() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteE')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -285,9 +277,7 @@ export class EService {
   }
 
   public saveTotalTvaE() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     const TVA = 20.0;
     var postsRef = firebase.database().ref('/totalTvaE')
     var newPostRef = postsRef.push({
@@ -317,9 +307,7 @@ export class EService {
   // ------
 
   public saveTotalTvaDeleteE() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalTvaE')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),

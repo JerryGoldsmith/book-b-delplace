@@ -119,9 +119,7 @@ export class JService {
   }
 
   public saveTotalJ() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalJ')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -146,9 +144,7 @@ export class JService {
   // -----
 
   public saveTotalDeleteJ() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalJ')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -195,9 +191,7 @@ export class JService {
   }
 
   public saveTotalCompleteJ() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteJ')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -224,9 +218,7 @@ export class JService {
   // -----
 
   public saveTotalCompleteDeleteJ() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
-    let now: Date = new Date();
-    var getDateTime = now.getTime();
+    let now: Date = new Date()
     var postsRef = firebase.database().ref('/totalCompleteJ')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -273,9 +265,7 @@ export class JService {
   }
 
   public saveTotalTvaJ() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     const TVA = 20.0;
     var postsRef = firebase.database().ref('/totalTvaJ')
     var newPostRef = postsRef.push({
@@ -305,9 +295,7 @@ export class JService {
   // ------
 
   public saveTotalTvaDeleteJ() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalTvaJ')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),

@@ -123,9 +123,7 @@ export class AService {
   }
 
   public saveTotalA(): void {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-
     var postsRef = firebase.database().ref('/totalA')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -152,9 +150,7 @@ export class AService {
   }
 
   public saveTotalDeleteA() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalA')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -204,9 +200,7 @@ export class AService {
   }
 
   public saveTotalCompleteA() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteA')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -225,9 +219,7 @@ export class AService {
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
     });
   }
@@ -235,9 +227,7 @@ export class AService {
   // ----
 
   public saveTotalCompleteDeleteA() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteA')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -254,9 +244,7 @@ export class AService {
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
     });
   }
@@ -286,9 +274,7 @@ export class AService {
   }
 
   public saveTotalTvaA() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     const TVA = 20.0;
     var postsRef = firebase.database().ref('/totalTvaA')
     var newPostRef = postsRef.push({
@@ -310,9 +296,7 @@ export class AService {
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
     });
   }
@@ -320,9 +304,7 @@ export class AService {
   // ----
 
   public saveTotalTvaDeleteA() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalTvaA')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -339,9 +321,7 @@ export class AService {
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
-          console.log(childSnapshot.key);
         });
-        console.log(value + postId);
         return value + postId;
     });
   }

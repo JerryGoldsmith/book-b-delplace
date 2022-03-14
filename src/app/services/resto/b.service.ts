@@ -124,9 +124,7 @@ export class BService {
   }
 
   public saveTotalB() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalB')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -151,9 +149,7 @@ export class BService {
   // ----
 
   public saveTotalDeleteB() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalB')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -200,9 +196,7 @@ export class BService {
   }
 
   public saveTotalCompleteB() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteB')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -229,9 +223,7 @@ export class BService {
   // ----
 
   public saveTotalCompleteDeleteB() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteB')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -278,9 +270,7 @@ export class BService {
   }
 
   public saveTotalTvaB() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     const TVA = 20.0;
     var postsRef = firebase.database().ref('/totalTvaB')
     var newPostRef = postsRef.push({
@@ -310,9 +300,7 @@ export class BService {
   // -----
 
   public saveTotalTvaDeleteB() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalTvaB')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),

@@ -122,9 +122,7 @@ export class CService {
   }
 
   public saveTotalC() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalC')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -149,9 +147,7 @@ export class CService {
   // -----
 
   public saveTotalDeleteC() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalC')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -198,9 +194,7 @@ export class CService {
   }
 
   public saveTotalCompleteC() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteC')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -227,9 +221,7 @@ export class CService {
   // -----
 
   public saveTotalCompleteDeleteC() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteC')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -276,9 +268,7 @@ export class CService {
   }
 
   public saveTotalTvaC() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     const TVA = 20.0;
     var postsRef = firebase.database().ref('/totalTvaC')
     var newPostRef = postsRef.push({
@@ -308,9 +298,7 @@ export class CService {
   // ----
 
   public saveTotalTvaDeleteC() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalTvaC')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),

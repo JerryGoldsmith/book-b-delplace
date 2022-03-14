@@ -119,9 +119,7 @@ export class KService {
   }
 
   public saveTotalK() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalK')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -146,9 +144,7 @@ export class KService {
   // -------
 
   public saveTotalDeleteK() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalK')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -195,9 +191,7 @@ export class KService {
   }
 
   public saveTotalCompleteK() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteK')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -224,9 +218,7 @@ export class KService {
   // ------
 
   public saveTotalCompleteDeleteK() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalCompleteK')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
@@ -273,9 +265,7 @@ export class KService {
   }
 
   public saveTotalTvaK() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     const TVA = 20.0;
     var postsRef = firebase.database().ref('/totalTvaK')
     var newPostRef = postsRef.push({
@@ -305,9 +295,7 @@ export class KService {
   // ------
 
   public saveTotalTvaDeleteK() {
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var getDateTime = now.getTime();
     var postsRef = firebase.database().ref('/totalTvaK')
     var newPostRef = postsRef.push({
       timestamp: now.getTime(),
