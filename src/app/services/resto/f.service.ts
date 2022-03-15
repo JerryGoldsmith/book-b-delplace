@@ -35,7 +35,7 @@ export class FService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceF.json', this.priceFs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);
@@ -48,7 +48,7 @@ export class FService {
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceF.json')
     .subscribe(
       (response) => {
-        console.log('Chargement terminé');
+        // console.log('Chargement terminé');
         this.priceFs = response;
         this.emitPriceFSubject();
       },
@@ -56,10 +56,6 @@ export class FService {
         console.log('Erreur de chargement !' + error);
       }
     );
-  }
-
-  savePriceF() {
-    firebase.database().ref('/priceF').set(this.priceFs);
   }
 
   // itemPriceF -------
@@ -76,7 +72,7 @@ export class FService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceF.json', this.itemPriceFs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);
@@ -89,7 +85,7 @@ export class FService {
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceF.json')
     .subscribe(
       (response) => {
-        console.log('Chargement terminé');
+        // console.log('Chargement terminé');
         this.itemPriceFs = response;
         this.emitItemPriceFSubject();
       },
@@ -115,7 +111,7 @@ export class FService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalF.json', this.totalFs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);
@@ -187,7 +183,7 @@ export class FService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalCompleteF.json', this.totalCompleteFs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);
@@ -261,7 +257,7 @@ export class FService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalTvaF.json', this.totalTvaFs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);

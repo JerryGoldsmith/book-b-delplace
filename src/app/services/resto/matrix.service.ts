@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-// import * as firebase from 'firebase/app';
 import "firebase/database";
 
 @Injectable({
@@ -13,7 +12,7 @@ export class MatrixService {
   // MATRIX -------
 
   matrixSubject = new Subject<any[]>();
-  private matrixs = [ // json disponible pour initialisation
+  private matrixs = [ // initialisation > part01-resto-home.component.ts
     // {
     //   items: {
     //     a: {
@@ -114,15 +113,14 @@ export class MatrixService {
     // }
   ];
 
-  emitMatrixSubject() { // emit comme envoi des données (observables)
-    this.matrixSubject.next(this.matrixs.slice()); // la methode slice() pour faire une copie du tableau appareils
+  emitMatrixSubject() {
+    this.matrixSubject.next(this.matrixs.slice()); // copy array matrixs > firebase
   }
 
-  saveMatrixToFirebaseinServer() { // Acces vers Firebase
+  saveMatrixToFirebaseinServer() {
     this.httpClient
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/matrixs.json', this.matrixs)
-    // put plutôt que post : s'il existe déjà sur firebase, put va l'écraser
-    .subscribe( // réagit à la réponse du serveur
+    .subscribe(
       () => {
         // console.log('Enregistrement terminé : saveMatrixToFirebase');
       },
@@ -132,11 +130,10 @@ export class MatrixService {
     );
   }
 
-  saveMatrixFromFirebaseinServer() { // Acces depuis Firebase
+  saveMatrixFromFirebaseinServer() { 
     this.httpClient
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/matrixs.json')
-    // get pour récupérer les données depuis firebase
-    .subscribe( // réagit à la réponse du serveur
+    .subscribe(
       (response) => {
         // console.log('Chargement terminé : saveMatrixFromFirebase');
         this.matrixs = response;

@@ -56,16 +56,7 @@ export class AComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    /* refresh page */
-
-    // if(!window.location.hash) {
-    //    window.location = window.location + '#loaded';
-    //    window.location.reload();
-    // }
-
-    // -----
-
+    
     this.matrixSubscription = this.matrixService.matrixSubject.subscribe(
       (matrixs: any[]) => {
         this.matrixs = matrixs;

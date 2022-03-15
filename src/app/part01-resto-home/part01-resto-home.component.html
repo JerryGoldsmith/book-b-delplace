@@ -1,16 +1,12 @@
 <body>
   <main class="scroll-vertical">
-    <!-- <div id="bg"></div> -->
+
     <div data-scroll>
       <div class="content">
 
         <!-- entete -->
 
         <section class="item">
-          <!-- <img src="../../assets/bd.png" class="logo"> -->
-
-          <!-- lazyLoad image home > logo -->
-          <!-- <img class="logo" [defaultImage]="defaultImage" [lazyLoad]="imageLogo" /> -->
 
           <h1 class="big-title">
             <span class="title-sequence">Commander en ligne</span>
@@ -31,10 +27,12 @@
           <div class="row">
 
             <!--!!! bouton d'initialisation FIREBASE !!!-->
+
             <!-- <button type="submit"
             class="waves-effect waves-light"
             class="submit-button"
             (click) = "onSaveOnFirebase()">Envoyer sur firebase</button> -->
+            
             <!--!!! bouton d'initialisation FIREBASE !!!-->
 
             <form *ngIf="restoForm" [formGroup]="restoForm">

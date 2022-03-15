@@ -396,84 +396,84 @@ export class Part01RestoHomeComponent implements OnInit {
     this.aService.savePriceAToFirebaseinServer();
     this.aService.saveItemPriceAToFirebaseinServer();
     this.aService.saveTotalAToFirebaseinServer();
-    this.aService. saveTotalCompleteAToFirebaseinServer();
+    this.aService.saveTotalCompleteAToFirebaseinServer();
     this.aService.saveTotalTvaAToFirebaseinServer();
 
     /* B */
     this.bService.savePriceBToFirebaseinServer();
     this.bService.saveItemPriceBToFirebaseinServer();
     this.bService.saveTotalBToFirebaseinServer();
-    this.bService. saveTotalCompleteBToFirebaseinServer();
+    this.bService.saveTotalCompleteBToFirebaseinServer();
     this.bService.saveTotalTvaBToFirebaseinServer();
 
     /* C */
     this.cService.savePriceCToFirebaseinServer();
     this.cService.saveItemPriceCToFirebaseinServer();
     this.cService.saveTotalCToFirebaseinServer();
-    this.cService. saveTotalCompleteCToFirebaseinServer();
+    this.cService.saveTotalCompleteCToFirebaseinServer();
     this.cService.saveTotalTvaCToFirebaseinServer();
 
     /* D */
     this.dService.savePriceDToFirebaseinServer();
     this.dService.saveItemPriceDToFirebaseinServer();
     this.dService.saveTotalDToFirebaseinServer();
-    this.dService. saveTotalCompleteDToFirebaseinServer();
+    this.dService.saveTotalCompleteDToFirebaseinServer();
     this.dService.saveTotalTvaDToFirebaseinServer();
 
     /* E */
     this.eService.savePriceEToFirebaseinServer();
     this.eService.saveItemPriceEToFirebaseinServer();
     this.eService.saveTotalEToFirebaseinServer();
-    this.eService. saveTotalCompleteEToFirebaseinServer();
+    this.eService.saveTotalCompleteEToFirebaseinServer();
     this.eService.saveTotalTvaEToFirebaseinServer();
 
     /* F */
     this.fService.savePriceFToFirebaseinServer();
     this.fService.saveItemPriceFToFirebaseinServer();
     this.fService.saveTotalFToFirebaseinServer();
-    this.fService. saveTotalCompleteFToFirebaseinServer();
+    this.fService.saveTotalCompleteFToFirebaseinServer();
     this.fService.saveTotalTvaFToFirebaseinServer();
 
     /* G */
     this.gService.savePriceGToFirebaseinServer();
     this.gService.saveItemPriceGToFirebaseinServer();
     this.gService.saveTotalGToFirebaseinServer();
-    this.gService. saveTotalCompleteGToFirebaseinServer();
+    this.gService.saveTotalCompleteGToFirebaseinServer();
     this.gService.saveTotalTvaGToFirebaseinServer();
 
     /* H */
     this.hService.savePriceHToFirebaseinServer();
     this.hService.saveItemPriceHToFirebaseinServer();
     this.hService.saveTotalHToFirebaseinServer();
-    this.hService. saveTotalCompleteHToFirebaseinServer();
+    this.hService.saveTotalCompleteHToFirebaseinServer();
     this.hService.saveTotalTvaHToFirebaseinServer();
 
     /* I */
     this.iService.savePriceIToFirebaseinServer();
     this.iService.saveItemPriceIToFirebaseinServer();
     this.iService.saveTotalIToFirebaseinServer();
-    this.iService. saveTotalCompleteIToFirebaseinServer();
+    this.iService.saveTotalCompleteIToFirebaseinServer();
     this.iService.saveTotalTvaIToFirebaseinServer();
 
     /* J */
     this.jService.savePriceJToFirebaseinServer();
     this.jService.saveItemPriceJToFirebaseinServer();
     this.jService.saveTotalJToFirebaseinServer();
-    this.jService. saveTotalCompleteJToFirebaseinServer();
+    this.jService.saveTotalCompleteJToFirebaseinServer();
     this.jService.saveTotalTvaJToFirebaseinServer();
 
     /* K */
     this.kService.savePriceKToFirebaseinServer();
     this.kService.saveItemPriceKToFirebaseinServer();
     this.kService.saveTotalKToFirebaseinServer();
-    this.kService. saveTotalCompleteKToFirebaseinServer();
+    this.kService.saveTotalCompleteKToFirebaseinServer();
     this.kService.saveTotalTvaKToFirebaseinServer();
 
     /* L */
     this.lService.savePriceLToFirebaseinServer();
     this.lService.saveItemPriceLToFirebaseinServer();
     this.lService.saveTotalLToFirebaseinServer();
-    this.lService. saveTotalCompleteLToFirebaseinServer();
+    this.lService.saveTotalCompleteLToFirebaseinServer();
     this.lService.saveTotalTvaLToFirebaseinServer();
 
     /* ------------------- */

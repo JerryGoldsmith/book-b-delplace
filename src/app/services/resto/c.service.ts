@@ -32,7 +32,7 @@ export class CService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceC.json', this.priceCs)
     .subscribe(
       () => {
-        // console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé : savePriceCToFirebase');
       },
       (error) => {
         // console.log('Erreur de sauvegarde !' + error);
@@ -45,18 +45,14 @@ export class CService {
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceC.json')
     .subscribe(
       (response) => {
-        // console.log('Chargement terminé');
+        // console.log('Chargement terminé : savePriceCFromFirebase');
         this.priceCs = response;
         this.emitPriceCSubject();
       },
       (error) => {
-        // console.log('Erreur de chargement !' + error);
+        console.log('Erreur de chargement !' + error);
       }
     );
-  }
-
-  savePriceC() {
-    firebase.database().ref('/priceC').set(this.priceCs);
   }
 
   // itemPriceC ---------
@@ -76,7 +72,7 @@ export class CService {
         // console.log('Enregistrement terminé');
       },
       (error) => {
-        // console.log('Erreur de sauvegarde !' + error);
+        console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
@@ -86,7 +82,7 @@ export class CService {
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceC.json')
     .subscribe(
       (response) => {
-        console.log('Chargement terminé');
+        // console.log('Chargement terminé');
         this.itemPriceCs = response;
         this.emitItemPriceCSubject();
       },
@@ -115,7 +111,7 @@ export class CService {
         // console.log('Enregistrement terminé');
       },
       (error) => {
-        // console.log('Erreur de sauvegarde !' + error);
+        console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
@@ -187,7 +183,7 @@ export class CService {
         // console.log('Enregistrement terminé');
       },
       (error) => {
-        // console.log('Erreur de sauvegarde !' + error);
+        console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
@@ -261,7 +257,7 @@ export class CService {
         // console.log('Enregistrement terminé');
       },
       (error) => {
-        // console.log('Erreur de sauvegarde !' + error);
+        console.log('Erreur de sauvegarde !' + error);
       }
     );
   }

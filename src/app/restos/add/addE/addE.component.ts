@@ -49,6 +49,7 @@ export class EComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     this.matrixSubscription = this.matrixService.matrixSubject.subscribe(
       (matrixs: any[]) => {
         this.matrixs = matrixs;

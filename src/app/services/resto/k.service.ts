@@ -30,7 +30,7 @@ export class KService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceK.json', this.priceKs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);
@@ -43,7 +43,7 @@ export class KService {
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceK.json')
     .subscribe(
       (response) => {
-        console.log('Chargement terminé');
+        // console.log('Chargement terminé');
         this.priceKs = response;
         this.emitPriceKSubject();
       },
@@ -51,10 +51,6 @@ export class KService {
         console.log('Erreur de chargement !' + error);
       }
     );
-  }
-
-  savePriceK() {
-    firebase.database().ref('/priceK').set(this.priceKs);
   }
 
   // itemPriceK --------
@@ -71,7 +67,7 @@ export class KService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceK.json', this.itemPriceKs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);
@@ -84,7 +80,7 @@ export class KService {
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceK.json')
     .subscribe(
       (response) => {
-        console.log('Chargement terminé');
+        // console.log('Chargement terminé');
         this.itemPriceKs = response;
         this.emitItemPriceKSubject();
       },
@@ -110,7 +106,7 @@ export class KService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalK.json', this.totalKs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);
@@ -182,7 +178,7 @@ export class KService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalCompleteK.json', this.totalCompleteKs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);
@@ -256,7 +252,7 @@ export class KService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalTvaK.json', this.totalTvaKs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
         console.log('Erreur de sauvegarde !' + error);

@@ -27,37 +27,34 @@ export class AService {
     this.priceASubject.next(this.priceAs.slice());
   }
 
+  // initialisation firebase > part01-resto-home.component.ts
   savePriceAToFirebaseinServer() {
     this.httpClient
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceA.json', this.priceAs)
     .subscribe(
       () => {
-        // console.log('Enregistrement terminé : savePriceAToFirebase');
+        console.log('Enregistrement terminé : savePriceAToFirebase');
       },
       (error) => {
-        // console.log('Erreur de sauvegarde !' + error);
+        console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
 
+  // subscription firebase > addA.component.ts
   savePriceAFromFirebaseinServer() {
     this.httpClient
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceA.json')
     .subscribe(
       (response) => {
-        // console.log('Chargement terminé : savePriceAFromFirebase');
+        console.log('Chargement terminé : savePriceAFromFirebase');
         this.priceAs = response;
         this.emitPriceASubject();
       },
       (error) => {
-        // console.log('Erreur de chargement !' + error);
+        console.log('Erreur de chargement !' + error);
       }
     );
-  }
-
-  savePriceA() {
-    firebase.database().ref('/priceA')
-    .set(this.priceAs);
   }
 
   // itemPriceA --------
@@ -69,30 +66,32 @@ export class AService {
     this.itemPriceASubject.next(this.itemPriceAs);
   }
 
+  // initialisation firebase > part01-resto-home.component.ts
   saveItemPriceAToFirebaseinServer() {
     this.httpClient
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceA.json', this.itemPriceAs)
     .subscribe(
       () => {
-        // console.log('Enregistrement terminé : saveItemPriceAToFirebase');
+        console.log('Enregistrement terminé : saveItemPriceAToFirebase');
       },
       (error) => {
-        // console.log('Erreur de sauvegarde !' + error);
+        console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
 
+  // subscription firebase > addA.component.ts
   saveItemPriceAFromFirebaseinServer() {
     this.httpClient
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceA.json')
     .subscribe(
       (response) => {
-        // console.log('Chargement terminé : saveItemPriceAFromFirebase');
+        console.log('Chargement terminé : saveItemPriceAFromFirebase');
         this.itemPriceAs = response;
         this.emitItemPriceASubject();
       },
       (error) => {
-        // console.log('Erreur de chargement !' + error);
+        console.log('Erreur de chargement !' + error);
       }
     );
   }
@@ -108,24 +107,25 @@ export class AService {
     this.totalASubject.next(this.totalAs.slice());
   }
 
+  // initialisation firebase > part01-resto-home.component.ts
   saveTotalAToFirebaseinServer() {
     this.httpClient
-    // put plutôt que post : s'il existe déjà sur firebase, post va l'écraser
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalA.json', this.totalAs)
     .subscribe(
       () => {
-        // console.log('Enregistrement terminé : saveTotalAToFirebase');
+        console.log('Enregistrement terminé : saveTotalAToFirebase');
       },
       (error) => {
-        // console.log('Erreur de sauvegarde !' + error);
+        console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
 
+  // firebase query > addA.component.ts > addA.component.html (button)
   public saveTotalA(): void {
-    let now: Date = new Date();
+    let now: Date = new Date(); // timestamp
     var postsRef = firebase.database().ref('/totalA')
-    var newPostRef = postsRef.push({
+    var newPostRef = postsRef.push({ // timestamp - priceAs > isChecked
       timestamp: now.getTime(),
       name: this.priceAs.filter(x => x.isChecked).reduce((a, b) => a + b.value + 0, 0)
     });
@@ -137,7 +137,8 @@ export class AService {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalAs = newPost;
 
-        let dataArray = [];
+      // convert Object to Array
+      let dataArray = [];
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
           // console.log(childSnapshot.key);
@@ -149,6 +150,7 @@ export class AService {
     });
   }
 
+  // firebase query > abcdefghijkl.component.ts > abcdefghijkl.component.html (button)
   public saveTotalDeleteA() {
     let now: Date = new Date();
     var postsRef = firebase.database().ref('/totalA')
@@ -163,8 +165,7 @@ export class AService {
     .on('value', (snapshot) => {
       var newPost =  snapshot.val() ? snapshot.val() : [];
       this.totalAs = newPost;
-
-      // convert Object to Array
+      
       let dataArray = {};
           const value = snapshot.forEach((childSnapshot): void => {
           dataArray[childSnapshot.key] = childSnapshot.val();
@@ -186,19 +187,21 @@ export class AService {
     this.totalCompleteASubject.next(this.totalCompleteAs.slice());
   }
 
+  // initialisation firebase > part01-resto-home.component.ts
   saveTotalCompleteAToFirebaseinServer() {
     this.httpClient
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalCompleteA.json', this.totalCompleteAs)
     .subscribe(
       () => {
-        // console.log('Enregistrement terminé : saveTotalCompleteAToFirebase');
+        console.log('Enregistrement terminé : saveTotalCompleteAToFirebase');
       },
       (error) => {
-        // console.log('Erreur de sauvegarde !' + error);
+        console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
 
+  // firebase query > addA.component.ts > addA.component.html (button)
   public saveTotalCompleteA() {
     let now: Date = new Date();
     var postsRef = firebase.database().ref('/totalCompleteA')
@@ -224,8 +227,7 @@ export class AService {
     });
   }
 
-  // ----
-
+  // firebase query > abcdefghijkl.component.ts > abcdefghijkl.component.html (button)
   public saveTotalCompleteDeleteA() {
     let now: Date = new Date();
     var postsRef = firebase.database().ref('/totalCompleteA')
@@ -260,19 +262,21 @@ export class AService {
     this.totalTvaASubject.next(this.totalTvaAs.slice());
   }
 
+  // initialisation firebase > part01-resto-home.component.ts
   saveTotalTvaAToFirebaseinServer() {
     this.httpClient
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalTvaA.json', this.totalTvaAs)
     .subscribe(
       () => {
-        // console.log('Enregistrement terminé : saveTotalTvaAToFirebase');
+        console.log('Enregistrement terminé : saveTotalTvaAToFirebase');
       },
       (error) => {
-        // console.log('Erreur de sauvegarde !' + error);
+        console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
 
+  // firebase query > addA.component.ts > addA.component.html (button)
   public saveTotalTvaA() {
     let now: Date = new Date();
     const TVA = 20.0;
@@ -301,8 +305,7 @@ export class AService {
     });
   }
 
-  // ----
-
+  // firebase query > abcdefghijkl.component.ts > abcdefghijkl.component.html (button)
   public saveTotalTvaDeleteA() {
     let now: Date = new Date();
     var postsRef = firebase.database().ref('/totalTvaA')
