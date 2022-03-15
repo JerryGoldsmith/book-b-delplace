@@ -1,11 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book } from '../../models/book.model';
 import { BookG } from '../../models/bookG.model';
 import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
-// import $ from "jquery";
 
 @Component({
   selector: 'app-backoffice',
@@ -57,21 +56,37 @@ export class BackofficeComponent implements OnInit {
   bookAlls: Book[];
   bookAllsSubscription: Subscription;
 
-  imageList: ImageList[];
+  imageList: any[];
 
   // imageListA: any[];
-  imageListB: ImageListB[];
-  imageListC: ImageListC[];
-  imageListD: ImageListD[];
-  imageListE: ImageListE[];
-  imageListF: ImageListF[];
-  imageListG: ImageListG[];
-  imageListH: ImageListH[];
-  imageListI: ImageListI[];
-  imageListJ: ImageListJ[];
-  imageListK: ImageListK[];
-  imageListL: ImageListL[];
-  imageListAll: ImageListAll[];
+  imageListB: any[];
+  imageListC: any[];
+  imageListD: any[];
+  imageListE: any[];
+  imageListF: any[];
+  imageListG: any[];
+  imageListH: any[];
+  imageListI: any[];
+  imageListJ: any[];
+  imageListK: any[];
+  imageListL: any[];
+  imageListAll: any[];
+
+  // imageList: ImageList[];
+
+  // // imageListA: any[];
+  // imageListB: ImageListB[];
+  // imageListC: ImageListC[];
+  // imageListD: ImageListD[];
+  // imageListE: ImageListE[];
+  // imageListF: ImageListF[];
+  // imageListG: ImageListG[];
+  // imageListH: ImageListH[];
+  // imageListI: ImageListI[];
+  // imageListJ: ImageListJ[];
+  // imageListK: ImageListK[];
+  // imageListL: ImageListL[];
+  // imageListAll: ImageListAll[];
 
   rowIndexArray: [];
 
@@ -94,6 +109,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailList.snapshotChanges().subscribe(
       list => {
         this.imageList = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
       }
     );
@@ -132,6 +148,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListB.snapshotChanges().subscribe(
       list => {
         this.imageListB = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListB.length +1) / 3)).keys());
       }
     );
@@ -151,6 +168,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListC.snapshotChanges().subscribe(
       list => {
         this.imageListC = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListC.length +1) / 3)).keys());
       }
     );
@@ -170,6 +188,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListD.snapshotChanges().subscribe(
       list => {
         this.imageListD = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListD.length +1) / 3)).keys());
       }
     );
@@ -189,6 +208,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListE.snapshotChanges().subscribe(
       list => {
         this.imageListE = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListE.length +1) / 3)).keys());
       }
     );
@@ -208,6 +228,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListF.snapshotChanges().subscribe(
       list => {
         this.imageListF = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListF.length +1) / 3)).keys());
       }
     );
@@ -227,12 +248,13 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListG.snapshotChanges().subscribe(
       list => {
         this.imageListG = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListG.length +1) / 3)).keys());
       }
     );
 
     this.bookGsSubscription = this.booksService.bookGSubject.subscribe(
-      (bookGs: Book[]) => {
+      (bookGs: BookG[]) => {
         this.bookGs = bookGs;
       }
     );
@@ -246,6 +268,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListH.snapshotChanges().subscribe(
       list => {
         this.imageListH = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListH.length +1) / 3)).keys());
       }
     );
@@ -265,6 +288,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListI.snapshotChanges().subscribe(
       list => {
         this.imageListI = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListI.length +1) / 3)).keys());
       }
     );
@@ -284,6 +308,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListJ.snapshotChanges().subscribe(
       list => {
         this.imageListJ = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListJ.length +1) / 3)).keys());
       }
     );
@@ -303,6 +328,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListK.snapshotChanges().subscribe(
       list => {
         this.imageListK = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListK.length +1) / 3)).keys());
       }
     );
@@ -322,6 +348,7 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListL.snapshotChanges().subscribe(
       list => {
         this.imageListL = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListL.length +1) / 3)).keys());
       }
     );
@@ -338,9 +365,11 @@ export class BackofficeComponent implements OnInit {
 
     this.imageService.getImageDetailListAll();
 
+    
     this.imageService.getImageDetailListAll.snapshotChanges().subscribe(
       list => {
         this.imageListAll = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
       }
     );

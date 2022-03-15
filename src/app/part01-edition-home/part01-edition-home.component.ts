@@ -5,7 +5,6 @@ import { BooksService } from '../services/books.service';
 import { ImageService } from '../services/image.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
-import * as firebase from 'firebase';
 import "firebase/database";
 
 @Component({

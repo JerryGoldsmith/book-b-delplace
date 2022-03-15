@@ -31,6 +31,7 @@ export class SingleBookAComponent implements OnInit {
     this.imageService.imageDetailListA.snapshotChanges().subscribe(
       list => {
         this.imageList = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
       }
     );

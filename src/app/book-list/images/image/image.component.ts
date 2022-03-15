@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ImageService } from '../../../services/image.service';
-import { Image } from '../../../models/image.model';
+// import { Image } from '../../../models/image.model';
 import { finalize } from 'rxjs/operators';
 
 @Component({
@@ -41,6 +41,7 @@ export class ImageComponent implements OnInit {
     this.imageService.imageDetailList.snapshotChanges().subscribe(
       list => {
         this.imageList = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
       }
     );

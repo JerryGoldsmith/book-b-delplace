@@ -847,7 +847,7 @@ export class BookListComponent implements OnInit {
         if(!storage.getItem("reloaded")) {
           setTimeout(function(){
             $('section').show("slow", function(){
-              location.reload(true);
+              location.reload();
               storage.setItem("reloaded", "true");
             });
           }, 1000); // 5 seconds for demo

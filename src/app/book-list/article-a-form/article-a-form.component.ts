@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BooksService } from '../../services/books.service';
-import { ArticleA } from '../../models/articleA.model';
+// import { ArticleA } from '../../models/articleA.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -43,27 +43,27 @@ export class ArticleAFormComponent implements OnInit {
     const title = this.articleAForm.get('title').value;
     const texte = this.articleAForm.get('texte').value;
     const author = this.articleAForm.get('author').value;
-    const newArticleA = new ArticleA(title, texte, author);
+    // const newArticleA = new ArticleA(title, texte, author);
 
-    if(this.fileUrl && this.fileUrl != '') {
-      newArticleA.photo = this.fileUrl;
-    }
+    // if(this.fileUrl && this.fileUrl != '') {
+    //   newArticleA.photo = this.fileUrl;
+    // }
 
-    this.booksService.createNewArticleA(newArticleA);
-    this.router.navigate(['/books']);
+    // this.booksService.createNewArticleA(newArticleA);
+    // this.router.navigate(['/books']);
   }
 
   // ------
 
   onUploadFile(file: File) {
     this.fileIsUploading = true;
-    this.articleAsService.uploadFile(file).then(
-      (url: string) => {
-        this.fileUrl = url;
-        this.fileIsUploading = false; // déjà chargé donc false
-        this.fileUploaded = true;
-      }
-    );
+    // this.articleAsService.uploadFile(file).then(
+    //   (url: string) => {
+    //     this.fileUrl = url;
+    //     this.fileIsUploading = false; // déjà chargé donc false
+    //     this.fileUploaded = true;
+    //   }
+    // );
   }
 
   detectFiles(event) {

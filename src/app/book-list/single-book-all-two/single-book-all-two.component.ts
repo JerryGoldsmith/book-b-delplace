@@ -4,11 +4,9 @@ import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-
-import { registerLocaleData } from '@angular/common';
 import '@angular/common/locales/global/fr';
+import { Subscription } from 'rxjs';
 // import localeFr from '@angular/common/locales/fr';
-import localeFrExtra from '@angular/common/locales/extra/fr';
 // registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 @Component({
@@ -43,6 +41,7 @@ export class SingleBookAllTwoComponent implements OnInit {
     this.imageService.imageDetailListAll.snapshotChanges().subscribe(
       list => {
         this.imageListAll = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
       }
     );

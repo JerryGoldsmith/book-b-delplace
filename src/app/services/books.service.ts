@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../models/book.model';
 import { BookG } from '../models/bookG.model';
-// import { ArticleA } from '../models/articleA.model';
 import * as Subject from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
-// import firebase from 'firebase/app';
-import * as firebase from 'firebase/app';
-// import firebase from "firebase/app";
+import firebase from 'firebase/app';
 import "firebase/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 

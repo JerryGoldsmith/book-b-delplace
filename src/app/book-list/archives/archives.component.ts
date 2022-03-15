@@ -1,10 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book } from '../../models/book.model';
 import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { Subscription } from 'rxjs/Subscription';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Component({
@@ -94,6 +92,7 @@ export class ArchivesComponent implements OnInit {
     this.imageService.imageDetailListAll.snapshotChanges().subscribe(
       list => {
         this.imageListAll = list.map(item => {return item.payload.val();});
+        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
       }
     );
