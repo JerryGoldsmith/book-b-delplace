@@ -35,10 +35,10 @@ export class BService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceB.json', this.priceBs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
-        console.log('Erreur de sauvegarde !' + error);
+        // console.log('Erreur de sauvegarde !' + error);
       }
     );
   }

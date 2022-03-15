@@ -3,7 +3,6 @@ import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
 import firebase from 'firebase/app';
 import "firebase/database";
-import { AngularFirestore } from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: "root"
@@ -33,10 +32,10 @@ export class CService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceC.json', this.priceCs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
-        console.log('Erreur de sauvegarde !' + error);
+        // console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
@@ -46,12 +45,12 @@ export class CService {
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/priceC.json')
     .subscribe(
       (response) => {
-        console.log('Chargement terminé');
+        // console.log('Chargement terminé');
         this.priceCs = response;
         this.emitPriceCSubject();
       },
       (error) => {
-        console.log('Erreur de chargement !' + error);
+        // console.log('Erreur de chargement !' + error);
       }
     );
   }
@@ -74,10 +73,10 @@ export class CService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/itemPriceC.json', this.itemPriceCs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
-        console.log('Erreur de sauvegarde !' + error);
+        // console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
@@ -113,10 +112,10 @@ export class CService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalC.json', this.totalCs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
-        console.log('Erreur de sauvegarde !' + error);
+        // console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
@@ -185,10 +184,10 @@ export class CService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalCompleteC.json', this.totalCompleteCs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
-        console.log('Erreur de sauvegarde !' + error);
+        // console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
@@ -259,10 +258,10 @@ export class CService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/totalTvaC.json', this.totalTvaCs)
     .subscribe(
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé');
       },
       (error) => {
-        console.log('Erreur de sauvegarde !' + error);
+        // console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
@@ -323,8 +322,7 @@ export class CService {
   // ---------------------------------------------
 
   constructor(
-    private httpClient: HttpClient,
-    private firestore: AngularFirestore
+    private httpClient: HttpClient
   ) {}
 
 }

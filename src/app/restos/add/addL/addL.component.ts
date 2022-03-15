@@ -33,7 +33,14 @@ export class LComponent implements OnInit {
   constructor(
     public matrixService: MatrixService,
     public lService: LService
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
+
+  getScreenSize() {
+    //@ts-ignore
+    this.scrHeight = window.innerHeight;
+  }
 
   submit() {
     this.lService.saveTotalLToFirebaseinServer();

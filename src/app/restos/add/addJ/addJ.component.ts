@@ -33,7 +33,14 @@ export class JComponent implements OnInit {
   constructor(
     public matrixService: MatrixService,
     public jService: JService
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
+
+  getScreenSize() {
+    //@ts-ignore
+    this.scrHeight = window.innerHeight;
+  }
 
   submit() {
     this.jService.saveTotalJToFirebaseinServer();

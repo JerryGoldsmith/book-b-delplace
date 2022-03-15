@@ -33,7 +33,14 @@ export class EComponent implements OnInit {
   constructor(
     public matrixService: MatrixService,
     public eService: EService
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
+
+  getScreenSize() {
+    //@ts-ignore
+    this.scrHeight = window.innerHeight;
+  }
 
   submit() {
     this.eService.saveTotalEToFirebaseinServer();

@@ -33,7 +33,14 @@ export class DComponent implements OnInit {
   constructor(
     public matrixService: MatrixService,
     public dService: DService
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
+
+  getScreenSize() {
+    //@ts-ignore
+    this.scrHeight = window.innerHeight;
+  }
 
   submit() {
     this.dService.saveTotalDToFirebaseinServer();

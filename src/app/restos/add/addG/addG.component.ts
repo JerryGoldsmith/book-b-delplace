@@ -33,7 +33,14 @@ export class GComponent implements OnInit {
   constructor(
     public matrixService: MatrixService,
     public gService: GService
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
+
+  getScreenSize() {
+    //@ts-ignore
+    this.scrHeight = window.innerHeight;
+  }
 
   submit() {
     this.gService.saveTotalGToFirebaseinServer();

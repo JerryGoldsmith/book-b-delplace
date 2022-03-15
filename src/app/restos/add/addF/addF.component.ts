@@ -33,7 +33,14 @@ export class FComponent implements OnInit {
   constructor(
     public matrixService: MatrixService,
     public fService: FService
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
+
+  getScreenSize() {
+    //@ts-ignore
+    this.scrHeight = window.innerHeight;
+  }
 
   submit() {
     this.fService.saveTotalFToFirebaseinServer();

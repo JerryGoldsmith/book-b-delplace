@@ -33,7 +33,14 @@ export class HComponent implements OnInit {
   constructor(
     public matrixService: MatrixService,
     public hService: HService
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
+
+  getScreenSize() {
+    //@ts-ignore
+    this.scrHeight = window.innerHeight;
+  }
 
   submit() {
     this.hService.saveTotalHToFirebaseinServer();

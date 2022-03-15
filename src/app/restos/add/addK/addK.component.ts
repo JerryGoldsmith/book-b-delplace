@@ -33,7 +33,14 @@ export class KComponent implements OnInit {
   constructor(
     public matrixService: MatrixService,
     public kService: KService
-  ) {}
+  ) {
+    this.getScreenSize();
+  }
+
+  getScreenSize() {
+    //@ts-ignore
+    this.scrHeight = window.innerHeight;
+  }
 
   submit() {
     this.kService.saveTotalKToFirebaseinServer();

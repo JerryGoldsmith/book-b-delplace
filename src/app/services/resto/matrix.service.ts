@@ -13,7 +13,7 @@ export class MatrixService {
   // MATRIX -------
 
   matrixSubject = new Subject<any[]>();
-  private matrixs = [ // rend seulement accessible l'array avec subscrition (observables)
+  private matrixs = [ // json disponible pour initialisation
     // {
     //   items: {
     //     a: {
@@ -124,10 +124,10 @@ export class MatrixService {
     // put plutôt que post : s'il existe déjà sur firebase, put va l'écraser
     .subscribe( // réagit à la réponse du serveur
       () => {
-        console.log('Enregistrement terminé');
+        // console.log('Enregistrement terminé : saveMatrixToFirebase');
       },
       (error) => {
-        console.log('Erreur de sauvegarde !' + error);
+        // console.log('Erreur de sauvegarde !' + error);
       }
     );
   }
@@ -138,12 +138,12 @@ export class MatrixService {
     // get pour récupérer les données depuis firebase
     .subscribe( // réagit à la réponse du serveur
       (response) => {
-        console.log('Chargement terminé');
+        // console.log('Chargement terminé : saveMatrixFromFirebase');
         this.matrixs = response;
         this.emitMatrixSubject();
       },
       (error) => {
-        console.log('Erreur de chargement !' + error);
+        // console.log('Erreur de chargement !' + error);
       }
     );
   }

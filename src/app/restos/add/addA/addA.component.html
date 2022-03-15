@@ -26,9 +26,10 @@
     </label>
 
     <!-- nécessite dans a.module & a-routing.module > import { FormsModule, ReactiveFormsModule } from '@angular/forms'; -->
+    <!-- typeButton pour éviter l'erreur : Form submission canceled because the form is not connected (typeSubmit uniquement sur le submit final)-->
     <form [formGroup]="restoForm" (ngSubmit) = "submit()">
       <div class="left-284">
-        <button type="submit"
+        <button type="button"
         class="waves-effect waves-light submit-button"
         (click) = "onSaveTotalAOnFirebase()"
         (click) = "onSaveTotalCompleteAOnFirebase()"
