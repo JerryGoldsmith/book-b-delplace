@@ -24,6 +24,7 @@ export class ImageCArchiveComponent implements OnInit {
       imageUrl : new FormControl('', Validators.required)
     }
   );
+  isSubmitted: boolean;
 
   constructor(
     private storage: AngularFireStorage,

@@ -234,7 +234,7 @@ export class BookListComponent implements OnInit {
     );
 
     this.bookGsSubscription = this.booksService.bookGSubject.subscribe(
-      (bookGs: bookG[]) => {
+      (bookGs: BookG[]) => {
         this.bookGs = bookGs;
       }
     );
@@ -602,6 +602,7 @@ export class BookListComponent implements OnInit {
         // Preload images
         const preloadImages = () => {
             return new Promise((resolve, reject) => {
+              //@ts-ignore
                 imagesLoaded(document.querySelectorAll('.item__img'), {background: true}, resolve);
             });
         };
