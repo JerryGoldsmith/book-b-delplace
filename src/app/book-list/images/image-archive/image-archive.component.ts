@@ -82,7 +82,7 @@ export class ImageArchiveComponent implements OnInit {
     }
   }
 
-  onSubmit(formValue) {
+  onSubmit(formValue: { [x: string]: any; category: any; }) {
     this.isSubmitted = true;
     if(this.formTemplateArchive.valid) {
       var filePath = `${formValue.category}/${this.selectedImage.name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;

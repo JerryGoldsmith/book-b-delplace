@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
 // import { AppRoutingModule } from './app-routing.module';
 import { CommonFormReactiveModule } from './routing/common-form-reactive.module'
 import { Part01RestoModule } from './routing/part01-resto.module'
+import { Part01EditionModule } from './routing/part01-edition.module'
 import { RoutingModule } from './routing/routing-module'
 
 // everywhere in the app
@@ -223,6 +224,7 @@ const appRoutes: Routes = [
     // AppRoutingModule,
     RoutingModule,
     Part01RestoModule,
+    Part01EditionModule,
     CommonFormReactiveModule,
     RouterModule.forRoot(appRoutes,
       { preloadingStrategy: AuthPreloadStrategy }),

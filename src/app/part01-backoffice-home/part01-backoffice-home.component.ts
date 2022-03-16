@@ -1,13 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
 import { Book } from '../models/book.model';
 import { BookG } from '../models/bookG.model';
 import { BooksService } from '../services/books.service';
 import { ImageService } from '../services/image.service';
 import { Subscription } from 'rxjs/Subscription';
-import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import * as firebase from 'firebase';
 // import firebase from "firebase/app";
 import "firebase/database";
 
@@ -79,7 +76,7 @@ export class Part01BackofficeHomeComponent implements OnInit {
   imageListL: any[];
   imageListAll: any[];
 
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   buttonDisabled: boolean;
 
@@ -104,7 +101,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailList.snapshotChanges().subscribe(
       list => {
         this.imageList = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
       }
     );
@@ -143,7 +139,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListB.snapshotChanges().subscribe(
       list => {
         this.imageListB = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListB.length +1) / 3)).keys());
       }
     );
@@ -163,7 +158,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListC.snapshotChanges().subscribe(
       list => {
         this.imageListC = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListC.length +1) / 3)).keys());
       }
     );
@@ -183,7 +177,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListD.snapshotChanges().subscribe(
       list => {
         this.imageListD = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListD.length +1) / 3)).keys());
       }
     );
@@ -203,7 +196,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListE.snapshotChanges().subscribe(
       list => {
         this.imageListE = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListE.length +1) / 3)).keys());
       }
     );
@@ -223,7 +215,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListF.snapshotChanges().subscribe(
       list => {
         this.imageListF = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListF.length +1) / 3)).keys());
       }
     );
@@ -243,7 +234,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListG.snapshotChanges().subscribe(
       list => {
         this.imageListG = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListG.length +1) / 3)).keys());
       }
     );
@@ -263,7 +253,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListH.snapshotChanges().subscribe(
       list => {
         this.imageListH = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListH.length +1) / 3)).keys());
       }
     );
@@ -283,7 +272,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListI.snapshotChanges().subscribe(
       list => {
         this.imageListI = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListI.length +1) / 3)).keys());
       }
     );
@@ -303,7 +291,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListJ.snapshotChanges().subscribe(
       list => {
         this.imageListJ = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListJ.length +1) / 3)).keys());
       }
     );
@@ -323,7 +310,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListK.snapshotChanges().subscribe(
       list => {
         this.imageListK = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListK.length +1) / 3)).keys());
       }
     );
@@ -343,7 +329,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     this.imageService.imageDetailListL.snapshotChanges().subscribe(
       list => {
         this.imageListL = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListL.length +1) / 3)).keys());
       }
     );
@@ -905,7 +890,7 @@ export class Part01BackofficeHomeComponent implements OnInit {
         if(!storage.getItem("reloaded")) {
           setTimeout(function(){
             $('section').show("slow", function(){
-              location.reload(true);
+              location.reload();
               storage.setItem("reloaded", "true");
             });
           }, 1000); // 5 seconds for demo

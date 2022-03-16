@@ -127,4 +127,5 @@ const routes: Routes = [
   exports: [
     RouterModule
   ]})
-  export class Part01RestoModule { }
+
+export class Part01RestoModule { }
