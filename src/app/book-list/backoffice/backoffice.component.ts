@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   selector: 'app-backoffice',
   templateUrl: './backoffice.component.html',
   styleUrls: ['./../book-list.component.scss',
-  './../normalize.component.scss']
+  './../../normalize.component.scss']
 })
 export class BackofficeComponent implements OnInit {
 

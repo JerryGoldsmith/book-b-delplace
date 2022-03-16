@@ -7,8 +7,7 @@ import { finalize } from 'rxjs/operators';
 @Component({
   selector: 'app-image-d-archive',
   templateUrl: './image-d-archive.component.html',
-  styleUrls: ['./../images.component.scss',
-  './../normalize.component.scss']
+  styleUrls: ['./../images.component.scss']
 })
 export class ImageDArchiveComponent implements OnInit {
 

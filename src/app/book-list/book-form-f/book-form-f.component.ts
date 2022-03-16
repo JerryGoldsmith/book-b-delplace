@@ -11,7 +11,7 @@ import "firebase/database";
   selector: 'app-book-form-f',
   templateUrl: './book-form-f.component.html',
   styleUrls: ['./../book-list.component.scss',
-  './../normalize.component.scss']
+  './../../normalize.component.scss']
 })
 export class BookFormFComponent implements OnInit {
 

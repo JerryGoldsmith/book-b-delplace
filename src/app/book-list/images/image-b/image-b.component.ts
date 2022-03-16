@@ -7,8 +7,7 @@ import { finalize } from 'rxjs/operators';
 @Component({
   selector: 'app-image-b',
   templateUrl: './image-b.component.html',
-  styleUrls: ['./../images.component.scss',
-  './../normalize.component.scss']
+  styleUrls: ['./../images.component.scss']
 })
 export class ImageBComponent implements OnInit {
 

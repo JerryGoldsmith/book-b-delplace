@@ -2,20 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
-import { Book } from '../../models/book.model';
 import { BookG } from '../../models/bookG.model';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import * as firebase from 'firebase';
+import firebase from 'firebase';
 // import firebase from "firebase/app";
 import "firebase/database";
-import { AngularFirestore } from "@angular/fire/firestore";
 
 @Component({
   selector: 'app-book-form-g',
   templateUrl: './book-form-g.component.html',
   styleUrls: ['./../book-list.component.scss',
-  './../normalize.component.scss']
+  './../../normalize.component.scss']
 })
 export class BookFormGComponent implements OnInit {
 
@@ -25,8 +22,6 @@ export class BookFormGComponent implements OnInit {
   fileUploaded = false;
 
   constructor(
-    private httpClient: HttpClient,
-    private firestore: AngularFirestore,
     private formBuilder: FormBuilder,
     private booksService: BooksService,
     private imageService: ImageService,
@@ -36,7 +31,6 @@ export class BookFormGComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
     this.imageService.getImageDetailListG();
-    // this.imageService.getImageDetailListAll();
   }
 
   initForm() {
@@ -90,8 +84,7 @@ export class BookFormGComponent implements OnInit {
       texteH,
       texteI,
       texteJ,
-      author,
-      timestamp);
+      author);
     this.booksService.createNewBookG(newBookG);
 
     // const newBookAll = new Book(title, texte, author);
@@ -104,6 +97,7 @@ export class BookFormGComponent implements OnInit {
 
   onUploadFile(file: File) {
     this.fileIsUploading = true;
+    //@ts-ignore
     this.booksService.uploadFile(file).then(
       (url: string) => {
         this.fileUrl = url;

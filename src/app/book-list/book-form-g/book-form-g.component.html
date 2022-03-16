@@ -7,7 +7,7 @@
     class="waves-effect waves-light submit-button-step-one"
     routerLink="/uploadG">Etape 1 : choisir les 11 images (1180px minimum à 72dpi)</button>
 
-    <form [formGroup]="bookForm" (ngSubmit)="onSaveBookG()">
+    <form *ngIf="bookForm" [formGroup]="bookForm" (ngSubmit)="onSaveBookG()">
 
       <div class="form-group">
         <!-- <label for="title"> Etape 2 : titre</label> -->

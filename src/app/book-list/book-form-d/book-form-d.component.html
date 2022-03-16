@@ -7,7 +7,7 @@
     class="waves-effect waves-light submit-button-step-one"
     routerLink="/uploadD">Etape 1 : choisir les images</button>
 
-    <form [formGroup]="bookForm" (ngSubmit)="onSaveBookD()">
+    <form *ngIf="bookForm" [formGroup]="bookForm" (ngSubmit)="onSaveBookD()">
       <div class="form-group">
         <!-- <label for="title"> Etape 2 : titre</label> -->
         <textarea type="text" class="form-control" id="title" formControlName="title" cols="50" rows="1" placeholder="Etape 2 : choisir le titre de l'article"></textarea>

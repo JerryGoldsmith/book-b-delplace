@@ -4,15 +4,13 @@ import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { Book } from '../../models/book.model';
 import { Router } from '@angular/router';
-// import firebase from 'firebase';
-// import firebase from "firebase/app";
 import "firebase/database";
 
 @Component({
   selector: 'app-book-form-j',
   templateUrl: './book-form-j.component.html',
   styleUrls: ['./../book-list.component.scss',
-  './../normalize.component.scss']
+  './../../normalize.component.scss']
 })
 export class BookFormJComponent implements OnInit {
 

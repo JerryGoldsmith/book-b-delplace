@@ -4,15 +4,14 @@ import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { Book } from '../../models/book.model';
 import { Router } from '@angular/router';
-// import firebase from 'firebase';
-// import firebase from "firebase/app";
 import "firebase/database";
+// import { timestamp } from 'rxjs-compat/operator/timestamp';
 
 @Component({
   selector: 'app-book-form-l',
   templateUrl: './book-form-l.component.html',
   styleUrls: ['./../book-list.component.scss',
-  './../normalize.component.scss']
+  './../../normalize.component.scss']
 })
 export class BookFormLComponent implements OnInit {
 

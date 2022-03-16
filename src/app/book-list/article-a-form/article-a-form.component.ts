@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   selector: 'app-article-a-form',
   templateUrl: './article-a-form.component.html',
   styleUrls: ['./article-a-form.component.scss',
-  './../normalize.component.scss']
+  './../../normalize.component.scss']
 })
 export class ArticleAFormComponent implements OnInit {
 

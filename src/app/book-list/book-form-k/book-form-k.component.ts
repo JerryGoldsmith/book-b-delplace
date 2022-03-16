@@ -4,8 +4,6 @@ import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { Book } from '../../models/book.model';
 import { Router } from '@angular/router';
-// import firebase from 'firebase';
-// import firebase from "firebase/app";
 import "firebase/database";
 
 @Component({

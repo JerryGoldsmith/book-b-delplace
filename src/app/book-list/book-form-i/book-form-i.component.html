@@ -6,7 +6,8 @@
     routerLink="/uploadI">Etape 1 : choisir les images</button>
 
     <h2>Enregistrer un nouvel article</h2>
-    <form [formGroup]="bookForm" (ngSubmit)="onSaveBookI()">
+
+    <form *ngIf="bookForm" [formGroup]="bookForm" (ngSubmit)="onSaveBookI()">
       <div class="form-group">
         <label for="title"> Etape 2 : titre</label>
         <input type="text" class="form-control" id="title" formControlName="title">

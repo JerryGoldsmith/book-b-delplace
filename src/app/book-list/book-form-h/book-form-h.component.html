@@ -7,7 +7,7 @@
     class="waves-effect waves-light submit-button-step-one"
     routerLink="/uploadH">Etape 1 : choisissez votre image</button>
 
-    <form [formGroup]="bookForm" (ngSubmit)="onSaveBookH()">
+    <form *ngIf="bookForm" [formGroup]="bookForm" (ngSubmit)="onSaveBookH()">
 
       <div class="form-group">
         <textarea type="text" class="form-control" id="title" formControlName="title" cols="50" rows="1" placeholder="Etape 2 : choisir le titre de la news"></textarea>
