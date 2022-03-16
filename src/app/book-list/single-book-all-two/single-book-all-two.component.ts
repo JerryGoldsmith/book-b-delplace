@@ -6,8 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import '@angular/common/locales/global/fr';
 import { Subscription } from 'rxjs';
-// import localeFr from '@angular/common/locales/fr';
-// registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 @Component({
   selector: 'app-single-book-all-two',
@@ -22,7 +20,7 @@ export class SingleBookAllTwoComponent implements OnInit {
 
   bookAll: Book;
   imageListAll: any[];
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   constructor(
     private route: ActivatedRoute,
@@ -41,7 +39,6 @@ export class SingleBookAllTwoComponent implements OnInit {
     this.imageService.imageDetailListAll.snapshotChanges().subscribe(
       list => {
         this.imageListAll = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
       }
     );
@@ -56,7 +53,7 @@ export class SingleBookAllTwoComponent implements OnInit {
   }
 
   initGetSingleBookById() {
-    this.bookAll = new Book('', '', ''); // Book temporaire vide pour empêcher le plantage
+    this.bookAll = new Book('', '', '');
     const id = this.route.snapshot.params['id'];
     this.booksService.getSingleBookAll(+id).then(
       (bookAll: Book) => {

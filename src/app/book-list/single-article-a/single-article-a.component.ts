@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleA } from '../../models/articleA.model';
+// import { ArticleA } from '../../models/articleA.model';
 import { BooksService } from '../../services/books.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SingleArticleAComponent implements OnInit {
 
-  articleA: ArticleA;
+  // articleA: ArticleA;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,18 +21,18 @@ export class SingleArticleAComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.initGetSingleArticleAById();
+    // this.initGetSingleArticleAById();
   }
 
-  initGetSingleArticleAById() {
-    this.articleA = new ArticleA('', ''); // Book temporaire vide pour empêcher le plantage
-    const id = this.route.snapshot.params['id'];
-    this.booksService.getSingleArticleA(+id).then(
-      (articleA: ArticleA) => {
-        this.articleA = articleA;
-      }
-    );
-  }
+  // initGetSingleArticleAById() {
+  //   this.articleA = new ArticleA('', ''); // Book temporaire vide pour empêcher le plantage
+  //   const id = this.route.snapshot.params['id'];
+  //   this.booksService.getSingleArticleA(+id).then(
+  //     (articleA: ArticleA) => {
+  //       this.articleA = articleA;
+  //     }
+  //   );
+  // }
 
   onBack() {
     this.router.navigate(['/books']);

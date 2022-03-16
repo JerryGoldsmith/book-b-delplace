@@ -18,7 +18,7 @@ export class ImageComponent implements OnInit {
   imageList: any[];
   // imageListAll: Image[];
   // imageListEach: Image[];
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   formTemplate = new FormGroup(
     {
@@ -27,7 +27,7 @@ export class ImageComponent implements OnInit {
       imageUrl : new FormControl('', Validators.required)
     }
   );
-  
+
   isSubmitted: boolean;
 
   constructor(
@@ -43,7 +43,6 @@ export class ImageComponent implements OnInit {
     this.imageService.imageDetailList.snapshotChanges().subscribe(
       list => {
         this.imageList = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
       }
     );

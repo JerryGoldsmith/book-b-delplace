@@ -15,7 +15,7 @@ export class ImageCComponent implements OnInit {
   imgSrc: string;
   selectedImage: any;
   imageList: any[];
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   formTemplate = new FormGroup(
     {
@@ -24,6 +24,7 @@ export class ImageCComponent implements OnInit {
       imageUrl : new FormControl('', Validators.required)
     }
   );
+  isSubmitted: boolean;
 
   constructor(
     private storage: AngularFireStorage,
@@ -38,6 +39,7 @@ export class ImageCComponent implements OnInit {
     this.imageService.imageDetailList.snapshotChanges().subscribe(
       list => {
         this.imageList = list.map(item => {return item.payload.val();});
+        
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
       }
     );

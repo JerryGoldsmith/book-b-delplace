@@ -15,7 +15,7 @@ export class ImageLComponent implements OnInit {
   imgSrc: string;
   selectedImage: any;
   imageList: any[];
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   formTemplate = new FormGroup(
     {
@@ -24,6 +24,7 @@ export class ImageLComponent implements OnInit {
       imageUrl : new FormControl('', Validators.required)
     }
   );
+  isSubmitted: boolean;
 
   constructor(
     private storage: AngularFireStorage,

@@ -15,7 +15,7 @@ export class ImageCArchiveComponent implements OnInit {
   imgSrc: string;
   selectedImage: any;
   imageList: any[];
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   formTemplateArchive = new FormGroup(
     {

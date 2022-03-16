@@ -16,7 +16,7 @@ export class ImageBArchiveComponent implements OnInit {
   selectedImage: any;
   imageList: any[];
   imageListAll: any[];
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   formTemplateArchive = new FormGroup(
     {

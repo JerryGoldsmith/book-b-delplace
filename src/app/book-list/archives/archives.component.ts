@@ -72,7 +72,7 @@ export class ArchivesComponent implements OnInit {
   imageListAll: any[];
   // imageListEach: any[];
 
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   buttonDisabled: boolean;
 
@@ -92,7 +92,6 @@ export class ArchivesComponent implements OnInit {
     this.imageService.imageDetailListAll.snapshotChanges().subscribe(
       list => {
         this.imageListAll = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
       }
     );

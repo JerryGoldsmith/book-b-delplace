@@ -10,7 +10,7 @@ import { ImageService } from '../../../services/image.service';
 export class ImageListEComponent implements OnInit {
 
   imageListE: any[];
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   constructor(
     private imageService: ImageService

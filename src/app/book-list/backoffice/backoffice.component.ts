@@ -88,7 +88,7 @@ export class BackofficeComponent implements OnInit {
   // imageListL: ImageListL[];
   // imageListAll: ImageListAll[];
 
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   buttonDisabled: boolean;
 
@@ -109,7 +109,6 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailList.snapshotChanges().subscribe(
       list => {
         this.imageList = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
       }
     );
@@ -148,7 +147,6 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListB.snapshotChanges().subscribe(
       list => {
         this.imageListB = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListB.length +1) / 3)).keys());
       }
     );
@@ -168,7 +166,6 @@ export class BackofficeComponent implements OnInit {
     this.imageService.imageDetailListC.snapshotChanges().subscribe(
       list => {
         this.imageListC = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListC.length +1) / 3)).keys());
       }
     );

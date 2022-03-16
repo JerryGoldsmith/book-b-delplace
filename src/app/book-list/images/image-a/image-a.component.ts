@@ -15,7 +15,7 @@ export class ImageAComponent implements OnInit {
   imgSrc: string;
   selectedImage: any;
   imageListA: any[];
-  rowIndexArray: [];
+  rowIndexArray: any[];
 
   formTemplate = new FormGroup(
     {
