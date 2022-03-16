@@ -4,8 +4,6 @@ import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { Book } from '../../models/book.model';
 import { Router } from '@angular/router';
-// import firebase from 'firebase';
-// import firebase from "firebase/app";
 import "firebase/database";
 
 @Component({
@@ -31,7 +29,6 @@ export class BookFormHComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
     this.imageService.getImageDetailListH();
-    // this.imageService.getImageDetailListAll();
   }
 
   initForm() {
@@ -50,16 +47,17 @@ export class BookFormHComponent implements OnInit {
     const title = this.bookForm.get('title').value;
     const texte = this.bookForm.get('texte').value;
     const author = this.bookForm.get('author').value;
+    const timestamp = this.bookForm.get('timestamp').value;
 
     // var dateTime = firebase.database.ServerValue.TIMESTAMP
     // let now: Date = new Date();
     // var timestamp = now.getTime();
 
-    const newBookH = new Book(title, texte, author);
+    const newBookH = new Book(title, texte, author, timestamp);
     this.booksService.createNewBookH(newBookH);
 
-    // const newBookAll = new Book(title, texte, author, timestamp);
-    // this.booksService.createNewBookAll(newBookAll);
+    const newBookAll = new Book(title, texte, author, timestamp);
+    this.booksService.createNewBookAll(newBookAll);
 
     this.router.navigate(['/books']);
   }

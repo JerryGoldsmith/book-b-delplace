@@ -48,49 +48,19 @@ export class BookFormJComponent implements OnInit {
     const title = this.bookForm.get('title').value;
     const texte = this.bookForm.get('texte').value;
     const author = this.bookForm.get('author').value;
+    const timestamp = this.bookForm.get('timestamp').value;
 
     // var dateTime = firebase.database.ServerValue.TIMESTAMP
     // let now: Date = new Date();
     // var timestamp = now.getTime();
 
-    const newBookJ = new Book(title, texte, author);
+    const newBookJ = new Book(title, texte, author, timestamp);
     this.booksService.createNewBookJ(newBookJ);
 
-    const newBookAll = new Book(title, texte, author);
+    const newBookAll = new Book(title, texte, author, timestamp);
     this.booksService.createNewBookAll(newBookAll);
 
     this.router.navigate(['/books']);
   }
-
-  // onSaveArticleA() {
-  //   const title = this.bookForm.get('title').value;
-  //   const texte = this.bookForm.get('texte').value;
-  //   const author = this.bookForm.get('author').value;
-  //   const newArticleA = new ArticleA(title, texte, author);
-  //
-  //   if(this.fileUrl && this.fileUrl != '') {
-  //     newArticleA.photo = this.fileUrl;
-  //   }
-  //
-  //   this.booksService.createNewArticleA(newArticleA);
-  //   this.router.navigate(['/books']);
-  // }
-
-  // ------
-
-  // onUploadFile(file: File) {
-  //   this.fileIsUploading = true;
-  //   this.booksService.uploadFile(file).then(
-  //     (url: string) => {
-  //       this.fileUrl = url;
-  //       this.fileIsUploading = false; // déjà chargé donc false
-  //       this.fileUploaded = true;
-  //     }
-  //   );
-  // }
-
-  // detectFiles(event) {
-  //   this.onUploadFile(event.target.files[0]);
-  // }
 
 }

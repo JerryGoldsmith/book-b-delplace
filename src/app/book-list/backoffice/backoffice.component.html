@@ -1,25 +1,3 @@
-<!-- <nav>
-  <ul>
-    <li>
-      <a routerLink="">Back-office</a>
-    </li>
-    <li>
-      <a routerLink="">Rendu web</a>
-    </li>
-  </ul>
-</nav> -->
-
-<!-- <nav> -->
-  <!-- <div class='pagination'>
-    <a class='first' href='#'>Back office</a>
-    <a href='#'>1</a>
-    <a href='#'>2</a>
-    <a href='#'>3</a>
-    <a class='last' href='#'>Last</a>
-  </div> -->
-  <!-- end: .pagination -->
-<!-- </nav> -->
-
 <section class="layout-rules">
   <div class="row" id="all-form">
 
@@ -29,55 +7,6 @@
 
     <div class="box">
       <section class="col-xs-12 bottomBlocs">
-
-        <!-- article A -->
-
-        <!-- <article *ngFor="let i of rowIndexArray">
-          <div *ngIf="i==0">
-
-            <div class="layout-article-A">
-              <span *ngFor="let bookA of bookAs; let i = index">
-
-                <h3 class="title-A"
-                [hidden]="imageListA[0+i].caption !== 'demo'">
-                  <strong>{{ bookA.title }}</strong>
-                </h3>
-
-                <div *ngFor="let i of rowIndexArray">
-                  <div *ngIf="i==0">
-                    <span (click)="onViewBookA(i)">
-                      <img [src]="imageListA[0+i].imageUrl"
-                      width="940px" alt="images" class="linkPhoto"
-                      [hidden]="imageListA[0+i].caption !== 'demo'">
-                    </span>
-                  </div>
-                </div>
-
-                <p class="three-lines-only currentText-A"
-                [hidden]="imageListA[0+i].caption !== 'demo'">{{ bookA.texte }}</p>
-
-                <button class="waves-effect waves-light submit-button buttons"
-                (click)="onRefreshButton()"
-                (click)="onClearArticleAStorage()"
-                (click)="onClearImageDetailAs()"
-                (click)="onClearBookAs()">
-                Supprimer cet article</button>
-
-                <p *ngIf="imageListA[0+i].caption !== 'demo'" class="note">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
-
-                <p *ngIf="imageListA[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
-
-              </span>
-            </div>
-
-            <button class="waves-effect waves-light submit-button buttons"
-            (click)="onNewBookA()"
-            *ngIf="imageList"
-            [hidden]="imageListA[0+i].category === 'articleA'"
-            >Editer cet article</button>
-
-          </div>
-        </article> -->
 
         <article *ngFor="let i of rowIndexArray">
           <div *ngIf="i==0">

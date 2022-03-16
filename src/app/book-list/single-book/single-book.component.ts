@@ -5,9 +5,6 @@ import { ImageService } from '../../services/image.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import '@angular/common/locales/global/fr';
-// import localeFr from '@angular/common/locales/fr';
-// registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
-
 
 @Component({
   selector: 'app-single-book',
@@ -41,7 +38,7 @@ export class SingleBookComponent implements OnInit {
   }
 
   initGetSingleBookById() {
-    this.book = new Book('', '', ''); // Book temporaire vide pour empêcher le plantage
+    this.book = new Book('', '', '', new Date());
     const id = this.route.snapshot.params['id'];
     this.booksService.getSingleBook(+id).then(
       (book: Book) => {

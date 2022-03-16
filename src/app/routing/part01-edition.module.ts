@@ -13,19 +13,19 @@ import { BookListComponent } from 'src/app/book-list/book-list.component';
 
 import { BookFormComponent } from 'src/app/book-list/book-form/book-form.component';
 import { BookFormBComponent } from 'src/app/book-list/book-form-b/book-form-b.component';
-import { BookFormCComponent } from 'src/app/book-list/book-form-c/book-form-c.component';
-import { BookFormDComponent } from 'src/app/book-list/book-form-d/book-form-d.component';
-import { BookFormEComponent } from 'src/app/book-list/book-form-e/book-form-e.component';
-import { BookFormFComponent } from 'src/app/book-list/book-form-f/book-form-f.component';
-import { BookFormGComponent } from 'src/app/book-list/book-form-g/book-form-g.component';
-import { BookFormHComponent } from 'src/app/book-list/book-form-h/book-form-h.component';
-import { BookFormIComponent } from 'src/app/book-list/book-form-i/book-form-i.component';
-import { BookFormJComponent } from 'src/app/book-list/book-form-j/book-form-j.component';
-import { BookFormKComponent } from 'src/app/book-list/book-form-k/book-form-k.component';
-import { BookFormLComponent } from 'src/app/book-list/book-form-l/book-form-l.component';
+// import { BookFormCComponent } from 'src/app/book-list/book-form-c/book-form-c.component';
+// import { BookFormDComponent } from 'src/app/book-list/book-form-d/book-form-d.component';
+// import { BookFormEComponent } from 'src/app/book-list/book-form-e/book-form-e.component';
+// import { BookFormFComponent } from 'src/app/book-list/book-form-f/book-form-f.component';
+// import { BookFormGComponent } from 'src/app/book-list/book-form-g/book-form-g.component';
+// import { BookFormHComponent } from 'src/app/book-list/book-form-h/book-form-h.component';
+// import { BookFormIComponent } from 'src/app/book-list/book-form-i/book-form-i.component';
+// import { BookFormJComponent } from 'src/app/book-list/book-form-j/book-form-j.component';
+// import { BookFormKComponent } from 'src/app/book-list/book-form-k/book-form-k.component';
+// import { BookFormLComponent } from 'src/app/book-list/book-form-l/book-form-l.component';
 
-// import { SingleBookComponent } from 'src/app/book-list/single-book/single-book.component';
-// import { SingleBookBComponent } from 'src/app/book-list/single-book-b/single-book-b.component';
+import { SingleBookComponent } from 'src/app/book-list/single-book/single-book.component';
+import { SingleBookBComponent } from 'src/app/book-list/single-book-b/single-book-b.component';
 // import { SingleBookCComponent } from 'src/app/book-list/single-book-c/single-book-c.component';
 // import { SingleBookDComponent } from 'src/app/book-list/single-book-d/single-book-d.component';
 // import { SingleBookEComponent } from 'src/app/book-list/single-book-e/single-book-e.component';
@@ -94,21 +94,21 @@ const routes: Routes = [
 
   { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
   { path: 'bookBs/new', canActivate: [AuthGuardService], component: BookFormBComponent },
-  { path: 'bookCs/new', canActivate: [AuthGuardService], component: BookFormCComponent },
-  { path: 'bookDs/new', canActivate: [AuthGuardService], component: BookFormDComponent },
-  { path: 'bookEs/new', canActivate: [AuthGuardService], component: BookFormEComponent },
-  { path: 'bookFs/new', canActivate: [AuthGuardService], component: BookFormFComponent },
+//   { path: 'bookCs/new', canActivate: [AuthGuardService], component: BookFormCComponent },
+//   { path: 'bookDs/new', canActivate: [AuthGuardService], component: BookFormDComponent },
+//   { path: 'bookEs/new', canActivate: [AuthGuardService], component: BookFormEComponent },
+//   { path: 'bookFs/new', canActivate: [AuthGuardService], component: BookFormFComponent },
 
-  { path: 'bookGs/new', canActivate: [AuthGuardService], component: BookFormGComponent },
+//   { path: 'bookGs/new', canActivate: [AuthGuardService], component: BookFormGComponent },
 
-  { path: 'bookHs/new', canActivate: [AuthGuardService], component: BookFormHComponent },
-  { path: 'bookIs/new', canActivate: [AuthGuardService], component: BookFormIComponent },
-  { path: 'bookJs/new', canActivate: [AuthGuardService], component: BookFormJComponent },
-  { path: 'bookKs/new', canActivate: [AuthGuardService], component: BookFormKComponent },
-  { path: 'bookLs/new', canActivate: [AuthGuardService], component: BookFormLComponent },
+//   { path: 'bookHs/new', canActivate: [AuthGuardService], component: BookFormHComponent },
+//   { path: 'bookIs/new', canActivate: [AuthGuardService], component: BookFormIComponent },
+//   { path: 'bookJs/new', canActivate: [AuthGuardService], component: BookFormJComponent },
+//   { path: 'bookKs/new', canActivate: [AuthGuardService], component: BookFormKComponent },
+//   { path: 'bookLs/new', canActivate: [AuthGuardService], component: BookFormLComponent },
 
-//   { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
-//   { path: 'bookBs/view/:id', canActivate: [AuthGuardService], component: SingleBookBComponent },
+  { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
+  { path: 'bookBs/view/:id', canActivate: [AuthGuardService], component: SingleBookBComponent },
 //   { path: 'bookCs/view/:id', canActivate: [AuthGuardService], component: SingleBookCComponent },
 //   { path: 'bookDs/view/:id', canActivate: [AuthGuardService], component: SingleBookDComponent },
 //   { path: 'bookEs/view/:id', canActivate: [AuthGuardService], component: SingleBookEComponent },
@@ -119,6 +119,7 @@ const routes: Routes = [
 //   { path: 'bookJs/view/:id', canActivate: [AuthGuardService], component: SingleBookJComponent },
 //   { path: 'bookKs/view/:id', canActivate: [AuthGuardService], component: SingleBookKComponent },
 //   { path: 'bookLs/view/:id', canActivate: [AuthGuardService], component: SingleBookLComponent },
+
 //   { path: 'bookAlls/view/:id', canActivate: [AuthGuardService], component: SingleBookAllComponent },
 //   { path: 'bookAllOnes/view/:id', canActivate: [AuthGuardService], component: SingleBookAllOneComponent },
 //   { path: 'bookAllTwos/view/:id', canActivate: [AuthGuardService], component: SingleBookAllTwoComponent },
@@ -225,19 +226,19 @@ const routes: Routes = [
 
     BookFormComponent,
     BookFormBComponent,
-    BookFormCComponent,
-    BookFormDComponent,
-    BookFormEComponent,
-    BookFormFComponent,
-    BookFormGComponent,
-    BookFormHComponent,
-    BookFormIComponent,
-    BookFormJComponent,
-    BookFormKComponent,
-    BookFormLComponent
+    // BookFormCComponent,
+    // BookFormDComponent,
+    // BookFormEComponent,
+    // BookFormFComponent,
+    // BookFormGComponent,
+    // BookFormHComponent,
+    // BookFormIComponent,
+    // BookFormJComponent,
+    // BookFormKComponent,
+    // BookFormLComponent,
 
-    // SingleBookComponent,
-    // SingleBookBComponent,
+    SingleBookComponent,
+    SingleBookBComponent
     // SingleBookCComponent,
     // SingleBookDComponent,
     // SingleBookEComponent,
@@ -247,7 +248,7 @@ const routes: Routes = [
     // SingleBookIComponent,
     // SingleBookJComponent,
     // SingleBookKComponent,
-    // SingleBookLComponent,
+    // SingleBookLComponent
 
     // SingleBookAllComponent,
     // SingleBookAllOneComponent,

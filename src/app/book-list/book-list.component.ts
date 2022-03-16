@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss', 
-  './header.component.scss',
-  './../normalize.component.scss']
+  './header.component.scss']
 })
 export class BookListComponent implements OnInit {
 

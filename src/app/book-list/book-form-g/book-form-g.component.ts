@@ -67,6 +67,7 @@ export class BookFormGComponent implements OnInit {
     const texteI = this.bookForm.get('texteI').value;
     const texteJ = this.bookForm.get('texteJ').value;
     const author = this.bookForm.get('author').value;
+    
 
     var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
