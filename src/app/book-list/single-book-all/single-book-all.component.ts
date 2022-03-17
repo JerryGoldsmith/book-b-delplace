@@ -68,21 +68,13 @@ export class SingleBookAllComponent implements OnInit {
   }
 
   initGetSingleBookById() {
-    this.bookAll = new Book('', '', ''); // Book temporaire vide pour empêcher le plantage
+    this.bookAll = new Book('', '', '');
     const id = this.route.snapshot.params['id'];
     this.booksService.getSingleBookAll(+id).then(
       (bookAll: Book) => {
         this.bookAll = bookAll;
       }
     );
-
-    // this.book = new Book('', '', ''); // Book temporaire vide pour empêcher le plantage
-    // const id = this.route.snapshot.params['id'];
-    // this.booksService.getSingleBook(+id).then(
-    //   (book: Book) => {
-    //     this.book = book;
-    //   }
-    // );
   }
 
   onBack() {

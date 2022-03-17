@@ -37,7 +37,7 @@ export class SingleBookBComponent implements OnInit {
   }
 
   initGetSingleBookById() {
-    this.bookB = new Book('', '', '', new Date());
+    this.bookB = new Book('', '', '');
     const id = this.route.snapshot.params['id'];
     this.booksService.getSingleBookB(+id).then(
       (bookB: Book) => {

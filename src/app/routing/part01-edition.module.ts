@@ -13,6 +13,7 @@ import { BackofficeComponent } from 'src/app/book-list/backoffice/backoffice.com
 
 import { BookListComponent } from 'src/app/book-list/book-list.component';
 
+// book-form
 import { BookFormComponent } from 'src/app/book-list/book-form/book-form.component';
 import { BookFormBComponent } from 'src/app/book-list/book-form-b/book-form-b.component';
 import { BookFormCComponent } from 'src/app/book-list/book-form-c/book-form-c.component';
@@ -26,6 +27,7 @@ import { BookFormJComponent } from 'src/app/book-list/book-form-j/book-form-j.co
 import { BookFormKComponent } from 'src/app/book-list/book-form-k/book-form-k.component';
 import { BookFormLComponent } from 'src/app/book-list/book-form-l/book-form-l.component';
 
+// single-book
 import { SingleBookComponent } from 'src/app/book-list/single-book/single-book.component';
 import { SingleBookBComponent } from 'src/app/book-list/single-book-b/single-book-b.component';
 import { SingleBookCComponent } from 'src/app/book-list/single-book-c/single-book-c.component';
@@ -39,20 +41,21 @@ import { SingleBookJComponent } from 'src/app/book-list/single-book-j/single-boo
 import { SingleBookKComponent } from 'src/app/book-list/single-book-k/single-book-k.component';
 import { SingleBookLComponent } from 'src/app/book-list/single-book-l/single-book-l.component';
 
-// import { SingleBookAllComponent } from 'src/app/book-list/single-book-all/single-book-all.component';
-// import { SingleBookAllOneComponent } from 'src/app/book-list/single-book-all-one/single-book-all-one.component';
-// import { SingleBookAllTwoComponent } from 'src/app/book-list/single-book-all-two/single-book-all-two.component';
-// import { SingleBookAllThreeComponent } from 'src/app/book-list/single-book-all-three/single-book-all-three.component';
-// import { SingleBookAllFourComponent } from 'src/app/book-list/single-book-all-four/single-book-all-four.component';
-// import { SingleBookAllFiveComponent } from 'src/app/book-list/single-book-all-five/single-book-all-five.component';
-// import { SingleBookAllSixComponent } from 'src/app/book-list/single-book-all-six/single-book-all-six.component';
+// single-book-archives
+import { SingleBookAllComponent } from 'src/app/book-list/single-book-all/single-book-all.component';
+import { SingleBookAllOneComponent } from 'src/app/book-list/single-book-all-one/single-book-all-one.component';
+import { SingleBookAllTwoComponent } from 'src/app/book-list/single-book-all-two/single-book-all-two.component';
+import { SingleBookAllThreeComponent } from 'src/app/book-list/single-book-all-three/single-book-all-three.component';
+import { SingleBookAllFourComponent } from 'src/app/book-list/single-book-all-four/single-book-all-four.component';
+import { SingleBookAllFiveComponent } from 'src/app/book-list/single-book-all-five/single-book-all-five.component';
+import { SingleBookAllSixComponent } from 'src/app/book-list/single-book-all-six/single-book-all-six.component';
 
 // images
 
-// import { ImagesComponent } from 'src/app/book-list/images/images.component';
+import { ImagesComponent } from 'src/app/book-list/images/images.component';
 
-// import { ImageComponent } from 'src/app/book-list/images/image/image.component';
-// import { ImageArchiveComponent } from 'src/app/book-list/images/image-archive/image-archive.component';
+import { ImageComponent } from 'src/app/book-list/images/image/image.component';
+import { ImageArchiveComponent } from 'src/app/book-list/images/image-archive/image-archive.component';
 // import { ImageBComponent } from 'src/app/book-list/images/image-b/image-b.component';
 // import { ImageBArchiveComponent } from 'src/app/book-list/images/image-b-archive/image-b-archive.component';
 // import { ImageCComponent } from 'src/app/book-list/images/image-c/image-c.component';
@@ -122,23 +125,23 @@ const routes: Routes = [
   { path: 'bookKs/view/:id', canActivate: [AuthGuardService], component: SingleBookKComponent },
   { path: 'bookLs/view/:id', canActivate: [AuthGuardService], component: SingleBookLComponent },
 
-//   { path: 'bookAlls/view/:id', canActivate: [AuthGuardService], component: SingleBookAllComponent },
-//   { path: 'bookAllOnes/view/:id', canActivate: [AuthGuardService], component: SingleBookAllOneComponent },
-//   { path: 'bookAllTwos/view/:id', canActivate: [AuthGuardService], component: SingleBookAllTwoComponent },
-//   { path: 'bookAllThrees/view/:id', canActivate: [AuthGuardService], component: SingleBookAllThreeComponent },
-//   { path: 'bookAllFours/view/:id', canActivate: [AuthGuardService], component: SingleBookAllFourComponent },
-//   { path: 'bookAllFives/view/:id', canActivate: [AuthGuardService], component: SingleBookAllFiveComponent },
-//   { path: 'bookAllSixs/view/:id', canActivate: [AuthGuardService], component: SingleBookAllSixComponent },
+  { path: 'bookAlls/view/:id', canActivate: [AuthGuardService], component: SingleBookAllComponent },
+  { path: 'bookAllOnes/view/:id', canActivate: [AuthGuardService], component: SingleBookAllOneComponent },
+  { path: 'bookAllTwos/view/:id', canActivate: [AuthGuardService], component: SingleBookAllTwoComponent },
+  { path: 'bookAllThrees/view/:id', canActivate: [AuthGuardService], component: SingleBookAllThreeComponent },
+  { path: 'bookAllFours/view/:id', canActivate: [AuthGuardService], component: SingleBookAllFourComponent },
+  { path: 'bookAllFives/view/:id', canActivate: [AuthGuardService], component: SingleBookAllFiveComponent },
+  { path: 'bookAllSixs/view/:id', canActivate: [AuthGuardService], component: SingleBookAllSixComponent },
 
   { path: 'backoffice', canActivate: [AuthGuardService], component: BackofficeComponent },
   { path: 'archives', canActivate: [AuthGuardService], component: ArchivesComponent },
 
   // images
 
-//   { path: 'image', canActivate: [AuthGuardService], component: ImagesComponent },
+  { path: 'image', canActivate: [AuthGuardService], component: ImagesComponent },
 
-//   { path: 'upload', canActivate: [AuthGuardService], component: ImageComponent },
-//   { path: 'uploadArchive', canActivate: [AuthGuardService], component: ImageArchiveComponent },
+  { path: 'upload', canActivate: [AuthGuardService], component: ImageComponent },
+  { path: 'uploadArchive', canActivate: [AuthGuardService], component: ImageArchiveComponent }
 //   { path: 'uploadB', canActivate: [AuthGuardService], component: ImageBComponent },
 //   { path: 'uploadArchiveB', canActivate: [AuthGuardService], component: ImageBArchiveComponent },
 //   { path: 'uploadC', canActivate: [AuthGuardService], component: ImageCComponent },
@@ -186,10 +189,10 @@ const routes: Routes = [
         ArchivesComponent,
         BackofficeComponent,
 
-        // ImagesComponent,
+        ImagesComponent,
 
-    // ImageComponent,
-    // ImageArchiveComponent,
+        ImageComponent,
+        ImageArchiveComponent,
     // ImageBComponent,
     // ImageBArchiveComponent,
     // ImageCComponent,
@@ -250,15 +253,15 @@ const routes: Routes = [
     SingleBookIComponent,
     SingleBookJComponent,
     SingleBookKComponent,
-    SingleBookLComponent
+    SingleBookLComponent,
 
-    // SingleBookAllComponent,
-    // SingleBookAllOneComponent,
-    // SingleBookAllTwoComponent,
-    // SingleBookAllThreeComponent,
-    // SingleBookAllFourComponent,
-    // SingleBookAllFiveComponent,
-    // SingleBookAllSixComponent
+    SingleBookAllComponent,
+    SingleBookAllOneComponent,
+    SingleBookAllTwoComponent,
+    SingleBookAllThreeComponent,
+    SingleBookAllFourComponent,
+    SingleBookAllFiveComponent,
+    SingleBookAllSixComponent
       ],
     imports: [
         RouterModule.forRoot(routes,

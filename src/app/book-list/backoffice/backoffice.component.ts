@@ -56,8 +56,6 @@ export class BackofficeComponent implements OnInit {
   bookAllsSubscription: Subscription;
 
   imageList: any[];
-
-  // imageListA: any[];
   imageListB: any[];
   imageListC: any[];
   imageListD: any[];
@@ -70,22 +68,6 @@ export class BackofficeComponent implements OnInit {
   imageListK: any[];
   imageListL: any[];
   imageListAll: any[];
-
-  // imageList: ImageList[];
-
-  // // imageListA: any[];
-  // imageListB: ImageListB[];
-  // imageListC: ImageListC[];
-  // imageListD: ImageListD[];
-  // imageListE: ImageListE[];
-  // imageListF: ImageListF[];
-  // imageListG: ImageListG[];
-  // imageListH: ImageListH[];
-  // imageListI: ImageListI[];
-  // imageListJ: ImageListJ[];
-  // imageListK: ImageListK[];
-  // imageListL: ImageListL[];
-  // imageListAll: ImageListAll[];
 
   rowIndexArray: any[];
 
@@ -119,25 +101,6 @@ export class BackofficeComponent implements OnInit {
     );
     this.booksService.getBooks();
     this.booksService.emitBooks();
-
-    // a ------
-
-    // this.imageService.getImageDetailListA();
-    //
-    // this.imageService.imageDetailListA.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListA = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListA.length +1) / 3)).keys());
-    //   }
-    // );
-    //
-    // this.bookAsSubscription = this.booksService.bookASubject.subscribe(
-    //   (bookAs: Book[]) => {
-    //     this.bookAs = bookAs;
-    //   }
-    // );
-    // this.booksService.getBookAs();
-    // this.booksService.emitBookAs();
 
     // b ------
 
@@ -352,8 +315,7 @@ export class BackofficeComponent implements OnInit {
 
     this.imageService.getImageDetailListAll();
 
-    //@ts-ignore
-    this.imageService.getImageDetailListAll.snapshotChanges().subscribe(
+    this.imageService.imageDetailListAll.snapshotChanges().subscribe(
       (      list: any[]) => {
         this.imageListAll = list.map(item => {return item.payload.val();});
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());

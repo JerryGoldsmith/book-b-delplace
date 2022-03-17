@@ -94,66 +94,66 @@ export class ImageService {
 
   // -------
 
-  insertImageDetails(imageDetails) {
+  insertImageDetails(imageDetails: { [x: string]: any; category: any; }) {
     this.imageDetailList.push(imageDetails);
   }
 
   // -----
 
-  insertImageDetailsA(imageDetailAs) {
+  insertImageDetailsA(imageDetailAs: { [x: string]: any; category: any; }): void {
     this.imageDetailListA.push(imageDetailAs);
   }
 
-  insertImageDetailsB(imageDetailBs) {
+  insertImageDetailsB(imageDetailBs: { [x: string]: any; category: any; }): void {
     this.imageDetailListB.push(imageDetailBs);
   }
 
-  insertImageDetailsC(imageDetailCs) {
+  insertImageDetailsC(imageDetailCs: { [x: string]: any; category: any; }): void {
     this.imageDetailListC.push(imageDetailCs);
   }
 
-  insertImageDetailsD(imageDetailDs) {
+  insertImageDetailsD(imageDetailDs: { [x: string]: any; category: any; }): void {
     this.imageDetailListD.push(imageDetailDs);
   }
 
-  insertImageDetailsE(imageDetailEs) {
+  insertImageDetailsE(imageDetailEs: { [x: string]: any; category: any; }): void {
     this.imageDetailListE.push(imageDetailEs);
   }
 
-  insertImageDetailsF(imageDetailFs) {
+  insertImageDetailsF(imageDetailFs: { [x: string]: any; category: any; }): void {
     this.imageDetailListF.push(imageDetailFs);
   }
 
-  insertImageDetailsG(imageDetailGs) {
+  insertImageDetailsG(imageDetailGs: { [x: string]: any; category: any; }): void {
     this.imageDetailListG.push(imageDetailGs);
   }
 
-  insertImageDetailsH(imageDetailHs) {
+  insertImageDetailsH(imageDetailHs: { [x: string]: any; category: any; }): void {
     this.imageDetailListH.push(imageDetailHs);
   }
 
-  insertImageDetailsI(imageDetailIs) {
+  insertImageDetailsI(imageDetailIs: { [x: string]: any; category: any; }): void {
     this.imageDetailListI.push(imageDetailIs);
   }
 
-  insertImageDetailsJ(imageDetailJs) {
+  insertImageDetailsJ(imageDetailJs: { [x: string]: any; category: any; }): void {
     this.imageDetailListJ.push(imageDetailJs);
   }
 
-  insertImageDetailsK(imageDetailKs) {
+  insertImageDetailsK(imageDetailKs: { [x: string]: any; category: any; }): void {
     this.imageDetailListK.push(imageDetailKs);
   }
 
-  insertImageDetailsL(imageDetailLs) {
+  insertImageDetailsL(imageDetailLs: { [x: string]: any; category: any; }): void {
     this.imageDetailListL.push(imageDetailLs);
   }
 
-  insertImageDetailsAll(imageDetailAlls) {
+  insertImageDetailsAll(imageDetailAlls: { [x: string]: any; category: any; }): void {
     this.imageDetailListAll.push(imageDetailAlls);
   }
 
-  // insertImageDetailsEach(imageDetailEachs) {
-  //   this.imageDetailListEach.push(imageDetailEachs);
-  // }
+  insertImageDetailsEach(imageDetailEachs: any) {
+    this.imageDetailListEach.push(imageDetailEachs);
+  }
 
 }

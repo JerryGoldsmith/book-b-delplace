@@ -37,7 +37,7 @@ export class SingleBookIComponent implements OnInit {
   }
 
   initGetSingleBookById() {
-    this.bookI = new Book('', '', '', new Date()); // Book temporaire vide pour empêcher le plantage
+    this.bookI = new Book('', '', ''); // Book temporaire vide pour empêcher le plantage
     const id = this.route.snapshot.params['id'];
     this.booksService.getSingleBookI(+id).then(
       (bookI: Book) => {

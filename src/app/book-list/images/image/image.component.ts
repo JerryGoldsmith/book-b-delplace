@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ImageService } from '../../../services/image.service';
-// import { Image } from '../../../models/image.model';
+import * as imageModel from '../../../models/image.model';
 import { finalize } from 'rxjs/operators';
 
 @Component({
@@ -16,7 +16,7 @@ export class ImageComponent implements OnInit {
   selectedImage: any;
   imageList: any[];
   // imageListAll: Image[];
-  // imageListEach: Image[];
+  imageListEach: imageModel.Image[];
   rowIndexArray: any[];
 
   formTemplate = new FormGroup(
@@ -59,14 +59,14 @@ export class ImageComponent implements OnInit {
 
     // ------
 
-    // this.imageService.getImageDetailListEach();
-    //
-    // this.imageService.imageDetailListEach.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListEach = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListEach.length +1) / 3)).keys());
-    //   }
-    // );
+    this.imageService.getImageDetailListEach();
+    
+    this.imageService.imageDetailListEach.snapshotChanges().subscribe(
+      list => {
+        this.imageListEach = list.map(item => {return item.payload.val();});
+        this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListEach.length +1) / 3)).keys());
+      }
+    );
   }
 
   showPreview(event:any) {
@@ -115,22 +115,22 @@ export class ImageComponent implements OnInit {
   //   }
   // }
 
-  // onSubmitEach(formValue) {
-  //   this.isSubmitted = true;
-  //   if(this.formTemplate.valid) {
-  //     var filePath = `${formValue.category}/${this.selectedImage.name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;
-  //     const fileRef = this.storage.ref(filePath);
-  //     this.storage.upload(filePath, this.selectedImage).snapshotChanges().pipe(
-  //       finalize(() => {
-  //         fileRef.getDownloadURL().subscribe((url) => {
-  //           formValue['imageUrlEach'] = url;
-  //           this.imageService.insertImageDetailsEach(formValue);
-  //           this.resetForm();
-  //         })
-  //       })
-  //     ).subscribe();
-  //   }
-  // }
+  onSubmitEach(formValue: { [x: string]: any; category: any; }) {
+    this.isSubmitted = true;
+    if(this.formTemplate.valid) {
+      var filePath = `${formValue.category}/${this.selectedImage.name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;
+      const fileRef = this.storage.ref(filePath);
+      this.storage.upload(filePath, this.selectedImage).snapshotChanges().pipe(
+        finalize(() => {
+          fileRef.getDownloadURL().subscribe((url) => {
+            formValue['imageUrlEach'] = url;
+            this.imageService.insertImageDetailsEach(formValue);
+            this.resetForm();
+          })
+        })
+      ).subscribe();
+    }
+  }
 
   get formControls() {
     return this.formTemplate['controls'];
