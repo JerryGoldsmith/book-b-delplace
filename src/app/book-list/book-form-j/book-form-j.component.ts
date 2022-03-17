@@ -9,8 +9,7 @@ import "firebase/database";
 @Component({
   selector: 'app-book-form-j',
   templateUrl: './book-form-j.component.html',
-  styleUrls: ['./../book-list.component.scss',
-  './../../normalize.component.scss']
+  styleUrls: ['./../book-list.component.scss']
 })
 export class BookFormJComponent implements OnInit {
 

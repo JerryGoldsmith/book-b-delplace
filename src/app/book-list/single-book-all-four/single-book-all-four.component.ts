@@ -10,8 +10,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-single-book-all-four',
   templateUrl: './single-book-all-four.component.html',
-  styleUrls: ['./../book-list.component.scss',
-  './../normalize.component.scss']
+  styleUrls: ['./../book-list.component.scss']
 })
 export class SingleBookAllFourComponent implements OnInit {
 

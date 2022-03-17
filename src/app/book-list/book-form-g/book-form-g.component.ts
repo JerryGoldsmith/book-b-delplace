@@ -11,8 +11,7 @@ import "firebase/database";
 @Component({
   selector: 'app-book-form-g',
   templateUrl: './book-form-g.component.html',
-  styleUrls: ['./../book-list.component.scss',
-  './../../normalize.component.scss']
+  styleUrls: ['./../book-list.component.scss']
 })
 export class BookFormGComponent implements OnInit {
 
@@ -47,7 +46,8 @@ export class BookFormGComponent implements OnInit {
         texteH: ['', Validators.required],
         texteI: ['', Validators.required],
         texteJ: ['', Validators.required],
-        author: ['', Validators.required]
+        author: ['', Validators.required],
+        timestamp: [new Date()]
       }
     );
   }
@@ -67,11 +67,12 @@ export class BookFormGComponent implements OnInit {
     const texteI = this.bookForm.get('texteI').value;
     const texteJ = this.bookForm.get('texteJ').value;
     const author = this.bookForm.get('author').value;
+    const timestamp = this.bookForm.get('timestamp').value;
     
 
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
-    let now: Date = new Date();
-    var timestamp = now.getTime();
+    // var dateTime = firebase.database.ServerValue.TIMESTAMP
+    // let now: Date = new Date();
+    // var timestamp = now.getTime();
 
     const newBookG = new BookG(
       title,
@@ -85,7 +86,8 @@ export class BookFormGComponent implements OnInit {
       texteH,
       texteI,
       texteJ,
-      author);
+      author,
+      timestamp);
     this.booksService.createNewBookG(newBookG);
 
     // const newBookAll = new Book(title, texte, author);

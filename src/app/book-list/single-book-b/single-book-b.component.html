@@ -11,8 +11,8 @@
         </div>
       </div>
 
-      <h1 class="title-big-single"><strong>{{ book.title }}</strong></h1>
-      <p class="textDate-single">{{ book.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookB.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor-single">{{ book.author }}</i></p>
+      <h1 class="title-big-single"><strong>{{ bookB.title }}</strong></h1>
+      <p class="textDate-single">{{ bookB.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookB.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor-single">{{ bookB.author }}</i></p>
 
       <div id="conteneur-right">
         <div id="spacer-right"></div>
@@ -20,11 +20,10 @@
         <div *ngFor="let i of rowIndexArray" id="encart-right">
           <div *ngIf="i==0">
             <img [src]="imageList[2+i].imageUrl" alt="images" width="660px" class="img-fluid imageDisplay-text">
-            <!-- <span class="imagebox-desc">{{ imageList[0+i].caption }}</span> -->
           </div>
         </div>
 
-        <h3 class="text-single">{{ book.texte }}</h3>
+        <h3 class="text-single">{{ bookB.texte }}</h3>
       </div>
 
       <button class="waves-effect waves-light submit-button-single-bottom buttons" (click)="onBack()">Retour</button>

@@ -11,8 +11,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-single-book-g',
   templateUrl: './single-book-g.component.html',
-  styleUrls: ['./../book-list.component.scss',
-  './../normalize.component.scss']
+  styleUrls: ['./../book-list.component.scss']
 })
 export class SingleBookGComponent implements OnInit {
 
@@ -51,7 +50,7 @@ export class SingleBookGComponent implements OnInit {
   }
 
   initGetSingleBookById() {
-    this.bookG = new BookG('', '', '', '', '', '', '', '', '', '', '', '');
+    this.bookG = new BookG('', '', '', '', '', '', '', '', '', '', '', '', new Date(''));
     const id = this.route.snapshot.params['id'];
     this.booksService.getSingleBookG(+id).then(
       (bookG: BookG) => {
