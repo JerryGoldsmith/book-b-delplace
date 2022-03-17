@@ -2,19 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
 import { AngularFireAuth } from "@angular/fire/auth";
-// import { Subject } from 'rxjs/Subject';
 import { Subject } from 'rxjs';
-// import * as firebase from 'firebase';
-// import firebase from "firebase/app";
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
-
-import { BehaviorSubject, Observable } from 'rxjs';
-
-
-// import {firebase} from '@firebase/app';
-// import '@firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -29,41 +20,6 @@ export class AuthService {
     private httpClient: HttpClient,
     private angularFireAuth: AngularFireAuth
   ) { }
-
-  // private authStatusSub = new BehaviorSubject(this.users);
-  // currentAuthStatus = this.authStatusSub.asObservable();
-
-  // authStatusListener(){
-  //   firebase.auth().onAuthStateChanged((credential)=>{
-  //     (user: User[]) => {
-  //       if(user){
-  //         console.log(credential);
-  //         this.authStatusSub.next(user);
-  //         console.log('User is logged in');
-  //       }
-  //       else{
-  //         this.authStatusSub.next(null);
-  //         console.log('User is logged out');
-  //       }
-  //     }
-      
-  //   })
-  // }
-
-  // Sign in with Google
-  // GoogleAuth() {
-  //   return this.AuthLogin(new firebase.GoogleAuthProvider());
-  // } 
-  
-  // Auth logic to run auth providers
-  // AuthLogin(provider) {
-  //   return this.angularFireAuth.auth.signInWithPopup(provider)
-  //   .then((result) => {
-  //       console.log('You have been successfully logged in!')
-  //   }).catch((error) => {
-  //       console.log(error)
-  //   })
-  // }
 
   emitUsers() {
     this.userSubject.next(this.users);

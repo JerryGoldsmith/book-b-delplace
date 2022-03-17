@@ -4,6 +4,6 @@ export class Book {
     public title: string,
     public texte: string,
     public author: string,
-    public timestamp: Date
+    public timestamp: Date = new Date()
   ) {}
 }

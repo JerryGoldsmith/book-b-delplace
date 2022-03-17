@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
+import { CommonModule } from '@angular/common';
+
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
 import { Part01EditionHomeComponent } from 'src/app/part01-edition-home/part01-edition-home.component';
@@ -12,7 +14,7 @@ import { BackofficeComponent } from 'src/app/book-list/backoffice/backoffice.com
 import { BookListComponent } from 'src/app/book-list/book-list.component';
 
 import { BookFormComponent } from 'src/app/book-list/book-form/book-form.component';
-import { BookFormBComponent } from 'src/app/book-list/book-form-b/book-form-b.component';
+// import { BookFormBComponent } from 'src/app/book-list/book-form-b/book-form-b.component';
 // import { BookFormCComponent } from 'src/app/book-list/book-form-c/book-form-c.component';
 // import { BookFormDComponent } from 'src/app/book-list/book-form-d/book-form-d.component';
 // import { BookFormEComponent } from 'src/app/book-list/book-form-e/book-form-e.component';
@@ -25,7 +27,7 @@ import { BookFormBComponent } from 'src/app/book-list/book-form-b/book-form-b.co
 // import { BookFormLComponent } from 'src/app/book-list/book-form-l/book-form-l.component';
 
 import { SingleBookComponent } from 'src/app/book-list/single-book/single-book.component';
-import { SingleBookBComponent } from 'src/app/book-list/single-book-b/single-book-b.component';
+// import { SingleBookBComponent } from 'src/app/book-list/single-book-b/single-book-b.component';
 // import { SingleBookCComponent } from 'src/app/book-list/single-book-c/single-book-c.component';
 // import { SingleBookDComponent } from 'src/app/book-list/single-book-d/single-book-d.component';
 // import { SingleBookEComponent } from 'src/app/book-list/single-book-e/single-book-e.component';
@@ -93,7 +95,7 @@ const routes: Routes = [
     { path: 'books', canActivate: [AuthGuardService], component: BookListComponent },
 
   { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
-  { path: 'bookBs/new', canActivate: [AuthGuardService], component: BookFormBComponent },
+  // { path: 'bookBs/new', canActivate: [AuthGuardService], component: BookFormBComponent },
 //   { path: 'bookCs/new', canActivate: [AuthGuardService], component: BookFormCComponent },
 //   { path: 'bookDs/new', canActivate: [AuthGuardService], component: BookFormDComponent },
 //   { path: 'bookEs/new', canActivate: [AuthGuardService], component: BookFormEComponent },
@@ -108,7 +110,7 @@ const routes: Routes = [
 //   { path: 'bookLs/new', canActivate: [AuthGuardService], component: BookFormLComponent },
 
   { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
-  { path: 'bookBs/view/:id', canActivate: [AuthGuardService], component: SingleBookBComponent },
+  // { path: 'bookBs/view/:id', canActivate: [AuthGuardService], component: SingleBookBComponent },
 //   { path: 'bookCs/view/:id', canActivate: [AuthGuardService], component: SingleBookCComponent },
 //   { path: 'bookDs/view/:id', canActivate: [AuthGuardService], component: SingleBookDComponent },
 //   { path: 'bookEs/view/:id', canActivate: [AuthGuardService], component: SingleBookEComponent },
@@ -225,7 +227,7 @@ const routes: Routes = [
     // ImageListLComponent,
 
     BookFormComponent,
-    BookFormBComponent,
+    // BookFormBComponent,
     // BookFormCComponent,
     // BookFormDComponent,
     // BookFormEComponent,
@@ -237,8 +239,8 @@ const routes: Routes = [
     // BookFormKComponent,
     // BookFormLComponent,
 
-    SingleBookComponent,
-    SingleBookBComponent
+    SingleBookComponent
+    // SingleBookBComponent
     // SingleBookCComponent,
     // SingleBookDComponent,
     // SingleBookEComponent,
@@ -260,7 +262,8 @@ const routes: Routes = [
       ],
     imports: [
         RouterModule.forRoot(routes,
-          { preloadingStrategy: AuthPreloadStrategy })
+          { preloadingStrategy: AuthPreloadStrategy }),
+        CommonModule
       ],
     exports: [
       RouterModule

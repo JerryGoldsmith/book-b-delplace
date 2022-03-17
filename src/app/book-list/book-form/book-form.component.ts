@@ -38,7 +38,8 @@ export class BookFormComponent implements OnInit {
       {
         title: ['', Validators.required],
         texte: ['', Validators.required],
-        author: ['', Validators.required]
+        author: ['', Validators.required],
+        timestamp: [new Date()]
       }
     );
   }
@@ -54,8 +55,6 @@ export class BookFormComponent implements OnInit {
     // const timestamp = now.getTime();
 
     // var dateTime = firebase.database.ServerValue.TIMESTAMP
-    // let now: Date = new Date();
-    // var timestamp = now.getTime();
 
     const newBook = new Book(title, texte, author, timestamp);
     this.booksService.createNewBook(newBook);

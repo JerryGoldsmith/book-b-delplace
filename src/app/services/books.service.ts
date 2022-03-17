@@ -134,6 +134,11 @@ export class BooksService {
 
   saveBooks() {
     firebase.database().ref('/books').set(this.books);
+    // let now: Date = new Date();
+    // var postsRef = firebase.database().ref('/books')
+    // postsRef.set(
+    //   this.books
+    //   );
   }
 
   // -----
