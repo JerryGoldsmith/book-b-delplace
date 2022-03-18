@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ImageService } from '../../../services/image.service';
-import * as imageModel from '../../../models/image.model';
+import { Image } from '../../../models/image.model';
 import { finalize } from 'rxjs/operators';
 import "firebase/database";
 
@@ -16,14 +16,13 @@ export class ImageComponent implements OnInit {
   imgSrc: string;
   selectedImage: any;
   imageList: any[];
-  // imageListAll: Image[];
-  imageListEach: imageModel.Image[];
+  imageListEach: Image[];
   rowIndexArray: any[];
 
   formTemplate = new FormGroup(
     {
       caption : new FormControl('', Validators.required),
-      category : new FormControl(''),
+      category : new FormControl('', Validators.required),
       imageUrl : new FormControl('', Validators.required)
     }
   );
@@ -46,17 +45,6 @@ export class ImageComponent implements OnInit {
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
       }
     );
-
-    // ----
-
-    // this.imageService.getImageDetailListAll();
-    //
-    // this.imageService.imageDetailListAll.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListAll = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
-    //   }
-    // );
 
     // ------
 
@@ -82,11 +70,16 @@ export class ImageComponent implements OnInit {
     }
   }
 
-  onSubmit(formValue: { [x: string]: any; category: any; }) {
+  onSubmit(formValue: { [x: string]: any; category: any; }): void {
+
     this.isSubmitted = true;
+
     if(this.formTemplate.valid) {
+
       var filePath = `${formValue.category}/${this.selectedImage.name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;
       const fileRef = this.storage.ref(filePath);
+      console.log('storage file path' + filePath);
+
       this.storage.upload(filePath, this.selectedImage).snapshotChanges().pipe(
         finalize(() => {
           fileRef.getDownloadURL().subscribe((url) => {
@@ -99,7 +92,7 @@ export class ImageComponent implements OnInit {
     }
   }
 
-  // onSubmitAll(formValue) {
+  // onSubmitEach(formValue: { [x: string]: any; category: any; }): void {
   //   this.isSubmitted = true;
   //   if(this.formTemplate.valid) {
   //     var filePath = `${formValue.category}/${this.selectedImage.name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;
@@ -107,31 +100,14 @@ export class ImageComponent implements OnInit {
   //     this.storage.upload(filePath, this.selectedImage).snapshotChanges().pipe(
   //       finalize(() => {
   //         fileRef.getDownloadURL().subscribe((url) => {
-  //           formValue['imageUrlAll'] = url;
-  //           this.imageService.insertImageDetailsAll(formValue);
+  //           formValue['imageUrlEach'] = url;
+  //           this.imageService.insertImageDetailsEach(formValue);
   //           this.resetForm();
   //         })
   //       })
   //     ).subscribe();
   //   }
   // }
-
-  onSubmitEach(formValue: { [x: string]: any; category: any; }) {
-    this.isSubmitted = true;
-    if(this.formTemplate.valid) {
-      var filePath = `${formValue.category}/${this.selectedImage.name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;
-      const fileRef = this.storage.ref(filePath);
-      this.storage.upload(filePath, this.selectedImage).snapshotChanges().pipe(
-        finalize(() => {
-          fileRef.getDownloadURL().subscribe((url) => {
-            formValue['imageUrlEach'] = url;
-            this.imageService.insertImageDetailsEach(formValue);
-            this.resetForm();
-          })
-        })
-      ).subscribe();
-    }
-  }
 
   get formControls() {
     return this.formTemplate['controls'];

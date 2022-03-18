@@ -8,8 +8,6 @@ import { HttpClient } from '@angular/common/http';
 // // import * as firebase from 'firebase';
 import firebase from "firebase/app";
 import "firebase/database";
-import { Timestamp } from 'rxjs-compat';
-// import { AngularFirestore } from "@angular/fire/firestore";
 
 @Component({
   selector: 'app-book-form',

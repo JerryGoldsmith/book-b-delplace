@@ -1,9 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ImageService } from '../../../services/image.service';
+// import * as imageModel from '../../../models/image.model';
 import { Image } from '../../../models/image.model';
 import { finalize } from 'rxjs/operators';
+import "firebase/database";
 
 @Component({
   selector: 'app-image-archive',
@@ -41,7 +43,6 @@ export class ImageArchiveComponent implements OnInit {
     this.imageService.imageDetailList.snapshotChanges().subscribe(
       list => {
         this.imageList = list.map(item => {return item.payload.val();});
-        //@ts-ignore
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
       }
     );
@@ -82,10 +83,14 @@ export class ImageArchiveComponent implements OnInit {
   }
 
   onSubmit(formValue: { [x: string]: any; category: any; }) {
+
     this.isSubmitted = true;
+
     if(this.formTemplateArchive.valid) {
       var filePath = `${formValue.category}/${this.selectedImage.name.split('.').slice(0, -1).join('.')}_${new Date().getTime()}`;
       const fileRef = this.storage.ref(filePath);
+      console.log('storage file path archive' + filePath);
+
       this.storage.upload(filePath, this.selectedImage).snapshotChanges().pipe(
         finalize(() => {
           fileRef.getDownloadURL().subscribe((url) => {

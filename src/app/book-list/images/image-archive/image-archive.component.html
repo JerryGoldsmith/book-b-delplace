@@ -6,7 +6,7 @@
 
 <section class="frame-image-choice">
   <div class="card-body">
-    <form *ngIf="formTemplateArchive" [formGroup]="formTemplateArchive"
+    <form [formGroup]="formTemplateArchive"
     (submit)="onSubmit(formTemplateArchive.value)">
 
       <div class="imageDisplay">

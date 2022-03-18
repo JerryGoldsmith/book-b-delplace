@@ -6,7 +6,9 @@ import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, registerLocaleData } from '@angular/common';
-import * as fr from "@angular/common/locales/fr";
+import * as fr from "@angular/common/locales/fr"; // date
+
+// import { RoutingModule } from 'src/app/routing/routing-module'
 
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
@@ -273,7 +275,13 @@ const routes: Routes = [
         // CommonFormReactiveModule
         CommonModule,
         FormsModule, 
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        // RoutingModule
+    //     AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireAuthGuardModule,
+    // AngularFirestoreModule,
+    // AngularFireStorageModule,
+    // AngularFireDatabaseModule
       ],
     exports: [
       RouterModule
