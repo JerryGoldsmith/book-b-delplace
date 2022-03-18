@@ -8,8 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import * as fr from "@angular/common/locales/fr"; // date
 
-// import { RoutingModule } from 'src/app/routing/routing-module'
-
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
 import { Part01EditionHomeComponent } from 'src/app/part01-edition-home/part01-edition-home.component';

@@ -52,13 +52,13 @@ export class BookFormFComponent implements OnInit {
     // const timestamp = this.bookForm.get('timestamp').value;
 
     // var dateTime = firebase.database.ServerValue.TIMESTAMP
-    // let now: Date = new Date();
-    // var timestamp = now.getTime();
+    let now: Date = new Date();
+    var timestamp = now.getTime();
 
-    const newBookF = new Book(title, texte, author);
+    const newBookF = new Book(title, texte, author, timestamp);
     this.booksService.createNewBookF(newBookF);
 
-    const newBookAll = new Book(title, texte, author);
+    const newBookAll = new Book(title, texte, author, timestamp);
     this.booksService.createNewBookAll(newBookAll);
 
     this.router.navigate(['/books']);

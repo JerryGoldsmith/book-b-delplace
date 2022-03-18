@@ -113,25 +113,6 @@ export class Part01EditionHomeComponent implements OnInit {
     this.booksService.getBooks();
     this.booksService.emitBooks();
 
-    // a ------
-
-    // this.imageService.getImageDetailListA();
-    //
-    // this.imageService.imageDetailListA.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListA = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListA.length +1) / 3)).keys());
-    //   }
-    // );
-    //
-    // this.bookAsSubscription = this.booksService.bookASubject.subscribe(
-    //   (bookAs: Book[]) => {
-    //     this.bookAs = bookAs;
-    //   }
-    // );
-    // this.booksService.getBookAs();
-    // this.booksService.emitBookAs();
-
     // b ------
 
     this.imageService.getImageDetailListB();

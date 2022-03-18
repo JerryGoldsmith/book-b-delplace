@@ -6,7 +6,6 @@ import { Book } from '../../models/book.model';
 import { Router } from '@angular/router';
 // import firebase from 'firebase';
 import "firebase/database";
-import { timestamp } from 'rxjs/operators';
 
 @Component({
   selector: 'app-book-form-b',
@@ -53,13 +52,13 @@ export class BookFormBComponent implements OnInit {
     // const timestamp = this.bookForm.get('timestamp').value;
 
     // var dateTime = firebase.database.ServerValue.TIMESTAMP
-    // let now: Date = new Date();
-    // var timestamp = now.getTime();
+    let now: Date = new Date();
+    var timestamp = now.getTime();
 
-    const newBookB = new Book(title, texte, author);
+    const newBookB = new Book(title, texte, author, timestamp);
     this.booksService.createNewBookB(newBookB);
 
-    const newBookAll = new Book(title, texte, author);
+    const newBookAll = new Book(title, texte, author, timestamp);
     this.booksService.createNewBookAll(newBookAll);
 
     this.router.navigate(['/books']);

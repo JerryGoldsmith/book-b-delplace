@@ -52,7 +52,7 @@ export class SingleBookAllFiveComponent implements OnInit {
   }
 
   initGetSingleBookById() {
-    this.bookAll = new Book('', '', '') // bug preservation
+    this.bookAll = new Book('', '', '', 3) // bug preservation
     const id = this.route.snapshot.params['id'];
     this.booksService.getSingleBookAll(+id).then(
       (bookAll: Book) => {
