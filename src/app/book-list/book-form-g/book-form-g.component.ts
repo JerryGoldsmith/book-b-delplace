@@ -46,8 +46,7 @@ export class BookFormGComponent implements OnInit {
         texteH: ['', Validators.required],
         texteI: ['', Validators.required],
         texteJ: ['', Validators.required],
-        author: ['', Validators.required],
-        timestamp: [new Date()]
+        author: ['', Validators.required]
       }
     );
   }
@@ -67,12 +66,11 @@ export class BookFormGComponent implements OnInit {
     const texteI = this.bookForm.get('texteI').value;
     const texteJ = this.bookForm.get('texteJ').value;
     const author = this.bookForm.get('author').value;
-    const timestamp = this.bookForm.get('timestamp').value;
     
 
-    // var dateTime = firebase.database.ServerValue.TIMESTAMP
-    // let now: Date = new Date();
-    // var timestamp = now.getTime();
+    var dateTime = firebase.database.ServerValue.TIMESTAMP
+    let now: Date = new Date();
+    var timestamp = now.getTime();
 
     const newBookG = new BookG(
       title,
@@ -86,8 +84,7 @@ export class BookFormGComponent implements OnInit {
       texteH,
       texteI,
       texteJ,
-      author,
-      timestamp);
+      author);
     this.booksService.createNewBookG(newBookG);
 
     // const newBookAll = new Book(title, texte, author);
