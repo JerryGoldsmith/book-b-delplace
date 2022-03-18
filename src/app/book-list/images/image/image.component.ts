@@ -4,7 +4,6 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { ImageService } from '../../../services/image.service';
 import { Image } from '../../../models/image.model';
 import { finalize } from 'rxjs/operators';
-import "firebase/database";
 
 @Component({
   selector: 'app-image',

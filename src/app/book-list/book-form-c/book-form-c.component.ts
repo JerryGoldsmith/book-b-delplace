@@ -60,7 +60,7 @@ export class BookFormCComponent implements OnInit {
     const newBookAll = new Book(title, texte, author, timestamp);
     this.booksService.createNewBookAll(newBookAll);
 
-    this.router.navigate(['/books']);
+    this.router.navigate(['/backoffice']);
   }
 
   // ------

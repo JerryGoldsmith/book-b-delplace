@@ -122,7 +122,7 @@ export class ArchivesComponent implements OnInit {
   }
 
   onBack() {
-    this.router.navigate(['/books']);
+    this.router.navigate(['/backoffice']);
   }
 
   bookAllTitle(index, bookAll) {

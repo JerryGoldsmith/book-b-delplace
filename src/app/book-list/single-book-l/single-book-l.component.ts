@@ -47,7 +47,7 @@ export class SingleBookLComponent implements OnInit {
   }
 
   onBack() {
-    this.router.navigate(['/books']);
+    this.router.navigate(['/backoffice']);
   }
 
 }

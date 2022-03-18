@@ -11,12 +11,14 @@ import "firebase/database";
 @Component({
   selector: 'app-part01-backoffice-home',
   templateUrl: './part01-backoffice-home.component.html',
-  styleUrls: ['./part01-edition-home.component.scss',
+  styleUrls: ['./part01-backoffice-home.component.scss',
   './book-list.component.scss',
   './header.component.scss',
   './../normalize.component.scss']
 })
 export class Part01BackofficeHomeComponent implements OnInit {
+
+  isAuth: boolean;
 
   books: Book[];
   booksSubscription: Subscription;
@@ -1041,7 +1043,7 @@ export class Part01BackofficeHomeComponent implements OnInit {
   }
 
   onBack() {
-    this.router.navigate(['/edition-home']);
+    this.router.navigate(['/edition']);
   }
 
 }

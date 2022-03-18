@@ -88,7 +88,7 @@ export class BookFormGComponent implements OnInit {
       timestamp);
     this.booksService.createNewBookG(newBookG);
 
-    this.router.navigate(['/books']);
+    this.router.navigate(['/backoffice']);
   }
 
   // ------
