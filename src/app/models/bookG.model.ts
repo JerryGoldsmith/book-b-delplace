@@ -12,6 +12,7 @@ export class BookG {
     public texteH: string,
     public texteI: string,
     public texteJ: string,
-    public author: string
+    public author: string,
+    public timestamp: number
   ) {}
 }

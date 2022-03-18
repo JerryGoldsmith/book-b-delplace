@@ -4,8 +4,8 @@ import { BookG } from '../models/bookG.model';
 import { BooksService } from '../services/books.service';
 import { ImageService } from '../services/image.service';
 import { Subscription } from 'rxjs/Subscription';
-// import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import "firebase/database";
 
 @Component({
   selector: 'app-book-list',

@@ -23,5 +23,5 @@ const routes: Routes = [];
   export class CommonFormReactiveModule { 
     constructor() {
         registerLocaleData(fr.default);
-      }
+    }
   }

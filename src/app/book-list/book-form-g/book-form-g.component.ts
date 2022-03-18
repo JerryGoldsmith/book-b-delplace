@@ -70,7 +70,7 @@ export class BookFormGComponent implements OnInit {
 
     var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
-    var timestamp = now.getTime();
+    const timestamp = now.getTime();
 
     const newBookG = new BookG(
       title,
@@ -84,31 +84,29 @@ export class BookFormGComponent implements OnInit {
       texteH,
       texteI,
       texteJ,
-      author);
+      author,
+      timestamp);
     this.booksService.createNewBookG(newBookG);
-
-    // const newBookAll = new Book(title, texte, author);
-    // this.booksService.createNewBookAll(newBookAll);
 
     this.router.navigate(['/books']);
   }
 
   // ------
 
-  onUploadFile(file: File) {
-    this.fileIsUploading = true;
-    //@ts-ignore
-    this.booksService.uploadFile(file).then(
-      (url: string) => {
-        this.fileUrl = url;
-        this.fileIsUploading = false; // déjà chargé donc false
-        this.fileUploaded = true;
-      }
-    );
-  }
+  // onUploadFile(file: File) {
+  //   this.fileIsUploading = true;
+  //   //@ts-ignore
+  //   this.booksService.uploadFile(file).then(
+  //     (url: string) => {
+  //       this.fileUrl = url;
+  //       this.fileIsUploading = false; // déjà chargé donc false
+  //       this.fileUploaded = true;
+  //     }
+  //   );
+  // }
 
-  detectFiles(event) {
-    this.onUploadFile(event.target.files[0]);
-  }
+  // detectFiles(event: { target: { files: File[]; }; }) {
+  //   this.onUploadFile(event.target.files[0]);
+  // }
 
 }

@@ -5,6 +5,7 @@ import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
+import "firebase/database";
 
 @Component({
   selector: 'app-backoffice',

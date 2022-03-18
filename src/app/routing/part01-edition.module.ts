@@ -5,7 +5,8 @@ import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 // import { CommonFormReactiveModule } from 'src/app/routing/common-form-reactive.module'
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
+import * as fr from "@angular/common/locales/fr";
 
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
@@ -281,4 +282,8 @@ const routes: Routes = [
         AuthGuardService
     ]})
 
-export class Part01EditionModule { }
+export class Part01EditionModule { 
+  constructor() {
+    registerLocaleData(fr.default);
+  }
+}

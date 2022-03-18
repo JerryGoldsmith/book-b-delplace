@@ -4,10 +4,11 @@ import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { Book } from '../../models/book.model';
 import { Router } from '@angular/router';
-// import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 // // import * as firebase from 'firebase';
 import firebase from "firebase/app";
 import "firebase/database";
+import { Timestamp } from 'rxjs-compat';
 // import { AngularFirestore } from "@angular/fire/firestore";
 
 @Component({
@@ -23,6 +24,7 @@ export class BookFormComponent implements OnInit {
   fileUploaded = false;
 
   constructor(
+    private httpClient: HttpClient,
     private formBuilder: FormBuilder,
     private booksService: BooksService,
     private imageService: ImageService,
