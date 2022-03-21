@@ -12,64 +12,11 @@ import { Router } from '@angular/router';
 })
 export class ArchivesComponent implements OnInit {
 
-  // books: Book[];
-  // booksSubscription: Subscription;
-  //
-  // bookAs: Book[];
-  // bookAsSubscription: Subscription;
-  //
-  // bookBs: Book[];
-  // bookBsSubscription: Subscription;
-  //
-  // bookCs: Book[];
-  // bookCsSubscription: Subscription;
-  //
-  // bookDs: Book[];
-  // bookDsSubscription: Subscription;
-  //
-  // bookEs: Book[];
-  // bookEsSubscription: Subscription;
-  //
-  // bookFs: Book[];
-  // bookFsSubscription: Subscription;
-  //
-  // bookGs: Book[];
-  // bookGsSubscription: Subscription;
-  //
-  // bookHs: Book[];
-  // bookHsSubscription: Subscription;
-  //
-  // bookIs: Book[];
-  // bookIsSubscription: Subscription;
-  //
-  // bookJs: Book[];
-  // bookJsSubscription: Subscription;
-  //
-  // bookKs: Book[];
-  // bookKsSubscription: Subscription;
-  //
-  // bookLs: Book[];
-  // bookLsSubscription: Subscription;
-
   bookAlls: Book[];
   bookAllsSubscription: Subscription;
 
-  // imageList: any[];
-  //
-  // imageListA: any[];
-  // imageListB: any[];
-  // imageListC: any[];
-  // imageListD: any[];
-  // imageListE: any[];
-  // imageListF: any[];
-  // imageListG: any[];
-  // imageListH: any[];
-  // imageListI: any[];
-  // imageListJ: any[];
-  // imageListK: any[];
-  // imageListL: any[];
   imageListAll: any[];
-  // imageListEach: any[];
+  imageListEach: any[];
 
   rowIndexArray: any[];
 
@@ -98,7 +45,7 @@ export class ArchivesComponent implements OnInit {
     // ------
 
     // this.imageService.getImageDetailListEach();
-    //
+    
     // this.imageService.imageDetailListEach.snapshotChanges().subscribe(
     //   list => {
     //     this.imageListEach = list.map(item => {return item.payload.val();});
@@ -107,6 +54,14 @@ export class ArchivesComponent implements OnInit {
     // );
 
     // ------
+
+    this.bookAllsSubscription = this.booksService.bookAllSubject.subscribe(
+      (bookAlls: Book[]) => {
+        this.bookAlls = bookAlls;
+      }
+    );
+    this.booksService.getBookAlls();
+    this.booksService.emitBookAlls();
 
     this.bookAllsSubscription = this.booksService.bookAllSubject.subscribe(
       (bookAlls: Book[]) => {

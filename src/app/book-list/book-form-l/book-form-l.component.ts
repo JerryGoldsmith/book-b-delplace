@@ -5,7 +5,6 @@ import { ImageService } from '../../services/image.service';
 import { Book } from '../../models/book.model';
 import { Router } from '@angular/router';
 import "firebase/database";
-// import { timestamp } from 'rxjs-compat/operator/timestamp';
 
 @Component({
   selector: 'app-book-form-l',
@@ -48,9 +47,7 @@ export class BookFormLComponent implements OnInit {
     const title = this.bookForm.get('title').value;
     const texte = this.bookForm.get('texte').value;
     const author = this.bookForm.get('author').value;
-    // const timestamp = this.bookForm.get('timestamp').value;
 
-    // var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
     var timestamp = now.getTime();
 

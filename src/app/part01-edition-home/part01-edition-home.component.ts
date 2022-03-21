@@ -708,9 +708,9 @@ export class Part01EditionHomeComponent implements OnInit {
 
   // ------
 
-  onClearBookAs() {
-    this.booksService.clearBookAs();
-  }
+  // onClearBookAs() {
+  //   this.booksService.clearBookAs();
+  // }
 
   onClearBookBs() {
     this.booksService.clearBookBs();

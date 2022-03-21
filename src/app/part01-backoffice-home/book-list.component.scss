@@ -328,7 +328,7 @@ input, textarea {
   flex-wrap: wrap;
   position: relative;
   margin-left: -20px;
-  width: 1080px;
+  width: 990px;
 }
 
 .title-A {
@@ -1275,14 +1275,16 @@ input, textarea {
   background-color: var(--color-palesun);
 }
 
+// erase button
+
 .submit-button {
   display: inline-block;
   margin: auto;
-  background-color: var(--color-gold);
+  background-color: var(--color-darkpurple);
   font-size: 20px;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: white;
-  border: solid 2px var(--color-gold);
+  border: solid 2px var(--color-darkpurple);
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;
@@ -1304,6 +1306,53 @@ input, textarea {
 
 .submit-button-disabled {
   display: inline-block;
+  background-color: var(--color-darkpurple);
+  opacity: 0.5;
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-darkpurple);
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  margin-left: 18px;
+  // margin-top: 12px;
+  // margin-bottom: 12px;
+}
+
+// edition button
+
+.submit-button-edition {
+  display: inline-block;
+  margin: auto;
+  background-color: var(--color-palesun);
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-darkpurple);
+  border: solid 2px var(--color-palesun);
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 18px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.submit-button-edition:hover {
+  background-color: var(--color-gold);
+  color: white;
+  animation: ani9 0.8s ease-in-out infinite alternate;
+  transform: translatex(12px);
+  box-shadow: none;
+}
+
+.submit-button-edition-disabled {
+  display: inline-block;
   background-color: var(--color-gold);
   opacity: 0.5;
   font-size: 20px;
@@ -1317,9 +1366,9 @@ input, textarea {
   padding-bottom: 10px;
   text-align: center;
   margin-left: 18px;
-  // margin-top: 12px;
-  // margin-bottom: 12px;
 }
+
+// -----
 
 .displayRight {
   display: inline-block;

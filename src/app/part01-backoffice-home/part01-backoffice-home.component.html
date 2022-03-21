@@ -32,53 +32,6 @@
 
                 <!-- article A -->
 
-                <!-- <article *ngFor="let i of rowIndexArray">
-                  <div *ngIf="i==0">
-
-                    <div class="layout-article-A">
-                      <span *ngFor="let bookA of bookAs; let i = index">
-
-                        <h3 class="title-A"
-                        [hidden]="imageListA[0+i].caption !== 'demo'">
-                          <strong>{{ bookA.title }}</strong>
-                        </h3>
-
-                        <div *ngFor="let i of rowIndexArray">
-                          <div *ngIf="i==0">
-                            <span (click)="onViewBookA(i)">
-                              <img [src]="imageListA[0+i].imageUrl"
-                              width="940px" alt="images" class="linkPhoto"
-                              [hidden]="imageListA[0+i].caption !== 'demo'">
-                            </span>
-                          </div>
-                        </div>
-
-                        <p class="three-lines-only currentText-A"
-                        [hidden]="imageListA[0+i].caption !== 'demo'">{{ bookA.texte }}</p>
-
-                        <button class="waves-effect waves-light submit-button buttons"
-                        (click)="onRefreshButton()"
-                        (click)="onClearArticleAStorage()"
-                        (click)="onClearImageDetailAs()"
-                        (click)="onClearBookAs()">
-                        Supprimer cet article</button>
-
-                        <p *ngIf="imageListA[0+i].caption !== 'demo'" class="note">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
-
-                        <p *ngIf="imageListA[0+i].caption === 'demo'" class="note">Article déjà édité. Pour le modifier, vous devez le supprimer pour ensuite le rééditer.</p>
-
-                      </span>
-                    </div>
-
-                    <button class="waves-effect waves-light submit-button buttons"
-                    (click)="onNewBookA()"
-                    *ngIf="imageList"
-                    [hidden]="imageListA[0+i].category === 'articleA'"
-                    >Editer cet article</button>
-
-                  </div>
-                </article> -->
-
                 <article *ngFor="let i of rowIndexArray">
                   <div *ngIf="i==0">
 
@@ -105,12 +58,12 @@
                         <p class="three-lines-only currentText-A"
                         [hidden]="imageList[0+i].caption !== 'demo'">{{ book.texte }}</p>
 
-                        <button class="waves-effect waves-light submit-button buttons"
+                        <button class="waves-effect waves-light submit-button"
                         (click)="onRefreshButton()"
                         (click)="onClearArticleAStorage()"
                         (click)="onClearImageDetails()"
                         (click)="onClearBooks()">
-                        Supprimer cet article</button>
+                        Supprimer l'article principal</button>
 
                         <p *ngIf="imageList[0+i].caption !== 'demo'" class="note">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -119,11 +72,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button buttons"
+                    <button class="waves-effect waves-light submit-button-edition"
                     (click)="onNewBook()"
                     *ngIf="imageList"
                     [hidden]="imageList[0+i].category === 'articleA'"
-                    >Editer cet article</button>
+                    >Editer l'article principal</button>
 
                   </div>
                 </article>
@@ -140,7 +93,7 @@
                     <div class="layout-article-E">
                       <span *ngFor="let bookE of bookEs; let i = index">
 
-                        <h3 class="title-E"
+                        <h3 class="title-E" width="510px"
                           [hidden]="imageListE[0+i].caption !== 'demo'">
                           <strong>{{ bookE.title }}</strong>
                         </h3>
@@ -157,7 +110,7 @@
                           </div>
                         </div>
 
-                        <p class="three-lines-only currentText-E"
+                        <p class="three-lines-only currentText-E" width="510px"
                         [hidden]="imageListE[0+i].caption !== 'demo'">{{ bookE.texte }}</p>
 
                         <button class="waves-effect waves-light submit-button buttons"
@@ -165,7 +118,7 @@
                         (click)="onClearArticleEStorage()"
                         (click)="onClearImageDetailEs()"
                         (click)="onClearBookEs()">
-                        Supprimer cet article</button>
+                        Supprimer l'article du dessous à gauche</button>
 
                         <p *ngIf="imageListE[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -174,11 +127,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button buttons"
+                    <button class="waves-effect waves-light submit-button-edition"
                     (click)="onNewBookE()"
                     *ngIf="imageListE"
                     [hidden]="imageListE[0+i].category === 'articleE'"
-                    >Editer cet article</button>
+                    >Editer l'article du dessous à gauche</button>
 
                     <!-- <button class="submit-button-disabled"
                     *ngIf="imageListE[0+i].caption === 'demo'"
@@ -225,7 +178,7 @@
                         (click)="onClearArticleFStorage()"
                         (click)="onClearImageDetailFs()"
                         (click)="onClearBookFs()">
-                        Supprimer cet article</button>
+                        Supprimer l'article du dessous à droite</button>
 
                         <p *ngIf="imageListF[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -234,11 +187,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button buttons"
+                    <button class="waves-effect waves-light submit-button-edition"
                     (click)="onNewBookF()"
                     *ngIf="imageListF"
                     [hidden]="imageListF[0+i].category === 'articleF'"
-                    >Editer cet article</button>
+                    >Editer l'article du dessous à droite</button>
 
                     <!-- <button class="submit-button-disabled"
                     *ngIf="imageListE[0+i].caption === 'demo'"
@@ -287,7 +240,7 @@
                         (click)="onClearArticleGStorage()"
                         (click)="onClearImageDetailGs()"
                         (click)="onClearBookGs()">
-                        Supprimer cet article</button>
+                        Supprimer la gallerie d'images</button>
 
                         <p *ngIf="imageListG[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -296,11 +249,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button buttons"
+                    <button class="waves-effect waves-light submit-button-edition"
                     (click)="onNewBookG()"
                     *ngIf="imageListG"
                     [hidden]="imageListG[0+i].category === 'articleG'"
-                    >Editer cet article</button>
+                    >Editer la gallerie d'images</button>
 
                     <!-- <button class="submit-button-disabled"
                     *ngIf="imageListE[0+i].caption === 'demo'"
@@ -357,7 +310,7 @@
                         (click)="onClearArticleBStorage()"
                         (click)="onClearImageDetailBs()"
                         (click)="onClearBookBs()">
-                        Supprimer cet article</button>
+                        Supprimer l'article colonne de droite en haut</button>
 
                         <p *ngIf="imageListB[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -366,11 +319,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button buttons"
+                    <button class="waves-effect waves-light submit-button-edition"
                     (click)="onNewBookB()"
                     *ngIf="imageListB"
                     [hidden]="imageListB[0+i].category === 'articleB'"
-                    >Editer cet article</button>
+                    >Editer l'article colonne de droite en haut</button>
 
                     <!-- <button class="submit-button-disabled"
                     *ngIf="imageListB[0+i].caption === 'demo'"
@@ -417,7 +370,7 @@
                         (click)="onClearArticleCStorage()"
                         (click)="onClearImageDetailCs()"
                         (click)="onClearBookCs()">
-                        Supprimer cet article</button>
+                        Supprimer l'article colonne de droite au centre</button>
 
                         <p *ngIf="imageListC[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -426,16 +379,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button buttons"
+                    <button class="waves-effect waves-light submit-button-edition"
                     (click)="onNewBookC()"
                     *ngIf="imageListC"
                     [hidden]="imageListC[0+i].category === 'articleC'"
-                    >Editer cet article</button>
-
-                    <!-- <button class="submit-button-disabled"
-                    *ngIf="imageListC[0+i].caption === 'demo'"
-                    [disabled]="imageListC[0+i].caption === 'demo'"
-                    >Article déjà édité</button> -->
+                    >Editer l'article colonne de droite au centre</button>
 
                   </div>
                 </article>
@@ -477,7 +425,7 @@
                         (click)="onClearArticleDStorage()"
                         (click)="onClearImageDetailDs()"
                         (click)="onClearBookDs()">
-                        Supprimer cet article</button>
+                        Supprimer l'article colonne de droite en bas</button>
 
                         <p *ngIf="imageListD[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -486,11 +434,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button buttons"
+                    <button class="waves-effect waves-light submit-button-edition"
                     (click)="onNewBookD()"
                     *ngIf="imageListD"
                     [hidden]="imageListD[0+i].category === 'articleD'"
-                    >Editer cet article</button>
+                    >Editer l'article colonne de droite en bas</button>
 
                     <!-- <button class="submit-button-disabled"
                     *ngIf="imageListD[0+i].caption === 'demo'"

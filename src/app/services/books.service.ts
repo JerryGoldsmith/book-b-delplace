@@ -15,8 +15,8 @@ export class BooksService {
   books: Book[] = [];
   bookSubject = new Subject.Subject<Book[]>();
 
-  bookAs: Book[] = [];
-  bookASubject = new Subject.Subject<Book[]>();
+  // bookAs: Book[] = [];
+  // bookASubject = new Subject.Subject<Book[]>();
 
   bookBs: Book[] = [];
   bookBSubject = new Subject.Subject<Book[]>();
@@ -72,9 +72,9 @@ export class BooksService {
 
   // ----
 
-  emitBookAs() {
-    this.bookASubject.next(this.bookAs);
-  }
+  // emitBookAs() {
+  //   this.bookASubject.next(this.bookAs);
+  // }
 
   emitBookBs() {
     this.bookBSubject.next(this.bookBs);
@@ -143,9 +143,9 @@ export class BooksService {
 
   // -----
 
-  saveBookAs() {
-    firebase.database().ref('/bookAs').set(this.bookAs);
-  }
+  // saveBookAs() {
+  //   firebase.database().ref('/bookAs').set(this.bookAs);
+  // }
 
   saveBookBs() {
     firebase.database().ref('/bookBs').set(this.bookBs);
@@ -207,13 +207,13 @@ export class BooksService {
 
   // -----
 
-  getBookAs() {
-    firebase.database().ref('/bookAs')
-    .on('value', (data) => {
-      this.bookAs = data.val() ? data.val() : [];
-      this.emitBookAs();
-    });
-  }
+  // getBookAs() {
+  //   firebase.database().ref('/bookAs')
+  //   .on('value', (data) => {
+  //     this.bookAs = data.val() ? data.val() : [];
+  //     this.emitBookAs();
+  //   });
+  // }
 
   getBookBs() {
     firebase.database().ref('/bookBs')
@@ -329,19 +329,19 @@ export class BooksService {
 
   // ------
 
-  getSingleBookA(id: number) {
-    return new Promise(
-      (resolve, reject) => {
-        firebase.database().ref('/bookAs/' + id).once('value').then(
-          (data) => {
-            resolve(data.val());
-          }, (error) => {
-            reject(error);
-          }
-        );
-      }
-    );
-  }
+  // getSingleBookA(id: number) {
+  //   return new Promise(
+  //     (resolve, reject) => {
+  //       firebase.database().ref('/bookAs/' + id).once('value').then(
+  //         (data) => {
+  //           resolve(data.val());
+  //         }, (error) => {
+  //           reject(error);
+  //         }
+  //       );
+  //     }
+  //   );
+  // }
 
   getSingleBookB(id: number) {
     return new Promise(
@@ -500,7 +500,7 @@ export class BooksService {
   getSingleBookAll(id: number) {
     return new Promise(
       (resolve, reject) => {
-        firebase.database().ref('/bookAlls/' + id).once('value').then(
+        firebase.database().ref(newSingleBookAll() + id).once('value').then(
           (data) => {
             resolve(data.val());
           }, (error) => {
@@ -509,6 +509,10 @@ export class BooksService {
         );
       }
     );
+
+    function newSingleBookAll() {
+      return '/bookAlls/';
+    }
   }
 
   // -----
@@ -537,11 +541,11 @@ export class BooksService {
 
   // ------
 
-  createNewBookA(newBookA: Book) {
-    this.bookAs.push(newBookA);
-    this.saveBookAs();
-    this.emitBookAs();
-  }
+  // createNewBookA(newBookA: Book) {
+  //   this.bookAs.push(newBookA);
+  //   this.saveBookAs();
+  //   this.emitBookAs();
+  // }
 
   // ----
 
@@ -629,13 +633,13 @@ export class BooksService {
 
   // -----
 
-  clearBookAs(){
-    var updates = {};
-    updates['/bookAs'] = {};
-    firebase.database().ref()
-    .update(updates);
-    alert('Cet article a été supprimé');
-  }
+  // clearBookAs(){
+  //   var updates = {};
+  //   updates['/bookAs'] = {};
+  //   firebase.database().ref()
+  //   .update(updates);
+  //   alert('Cet article a été supprimé');
+  // }
 
   clearBookBs(){
     var updates = {};

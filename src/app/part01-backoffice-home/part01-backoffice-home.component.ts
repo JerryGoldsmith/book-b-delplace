@@ -86,7 +86,15 @@ export class Part01BackofficeHomeComponent implements OnInit {
     private booksService: BooksService,
     private imageService: ImageService,
     private router: Router
-  ) { }
+  ) { 
+    this.getScreenSize();
+  }
+
+  // ajustement en hauteur (écran)
+  getScreenSize() {
+    //@ts-ignore
+    this.scrHeight = window.innerHeight;
+  }
 
   // private changeRoute(menuSelection) {
   //   this.router.navigate([menuSelection]);
@@ -729,9 +737,9 @@ export class Part01BackofficeHomeComponent implements OnInit {
 
   // ------
 
-  onClearBookAs() {
-    this.booksService.clearBookAs();
-  }
+  // onClearBookAs() {
+  //   this.booksService.clearBookAs();
+  // }
 
   onClearBookBs() {
     this.booksService.clearBookBs();

@@ -47,9 +47,7 @@ export class BookFormIComponent implements OnInit {
     const title = this.bookForm.get('title').value;
     const texte = this.bookForm.get('texte').value;
     const author = this.bookForm.get('author').value;
-    // const timestamp = this.bookForm.get('timestamp').value;
 
-    // var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
     var timestamp = now.getTime();
 

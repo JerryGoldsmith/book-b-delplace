@@ -4,8 +4,6 @@ import { BooksService } from '../../services/books.service';
 import { ImageService } from '../../services/image.service';
 import { BookG } from '../../models/bookG.model';
 import { Router } from '@angular/router';
-import firebase from 'firebase';
-// import firebase from "firebase/app";
 import "firebase/database";
 
 @Component({
@@ -67,8 +65,6 @@ export class BookFormGComponent implements OnInit {
     const texteJ = this.bookForm.get('texteJ').value;
     const author = this.bookForm.get('author').value;
     
-
-    var dateTime = firebase.database.ServerValue.TIMESTAMP
     let now: Date = new Date();
     const timestamp = now.getTime();
 
@@ -90,23 +86,5 @@ export class BookFormGComponent implements OnInit {
 
     this.router.navigate(['/backoffice']);
   }
-
-  // ------
-
-  // onUploadFile(file: File) {
-  //   this.fileIsUploading = true;
-  //   //@ts-ignore
-  //   this.booksService.uploadFile(file).then(
-  //     (url: string) => {
-  //       this.fileUrl = url;
-  //       this.fileIsUploading = false; // déjà chargé donc false
-  //       this.fileUploaded = true;
-  //     }
-  //   );
-  // }
-
-  // detectFiles(event: { target: { files: File[]; }; }) {
-  //   this.onUploadFile(event.target.files[0]);
-  // }
 
 }
