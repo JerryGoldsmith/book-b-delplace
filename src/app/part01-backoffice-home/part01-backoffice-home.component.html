@@ -499,7 +499,7 @@
 
                     <p *ngIf="imageListH[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
-                    <button class="waves-effect waves-light submit-button buttons"
+                    <button class="waves-effect waves-light submit-button-edition"
                     (click)="onNewBookH()"
                     >Ajouter une news</button>
 
@@ -656,7 +656,7 @@
                       (click)="onClearArticleJStorage()"
                       (click)="onClearImageDetailJs()"
                       (click)="onClearBookJs()">
-                      Supprimer cet article</button>
+                      Supprimer l'article en bas à gauche</button>
 
                       <p *ngIf="imageListJ[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -665,11 +665,11 @@
                     </span>
                   </div>
 
-                  <button class="waves-effect waves-light submit-button buttons"
+                  <button class="waves-effect waves-light submit-button-edition"
                   (click)="onNewBookJ()"
                   *ngIf="imageListJ"
                   [hidden]="imageListJ[0+i].category === 'articleJ'"
-                  >Editer cet article</button>
+                  >Editer l'article en bas à gauche</button>
 
                   <!-- <button class="submit-button-disabled"
                   *ngIf="imageListE[0+i].caption === 'demo'"
@@ -712,7 +712,7 @@
                       (click)="onClearArticleKStorage()"
                       (click)="onClearImageDetailKs()"
                       (click)="onClearBookKs()">
-                      Supprimer cet article</button>
+                      Supprimer l'article en bas au centre</button>
 
                       <p *ngIf="imageListK[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -721,11 +721,11 @@
                     </span>
                   </div>
 
-                  <button class="waves-effect waves-light submit-button buttons"
+                  <button class="waves-effect waves-light submit-button-edition"
                   (click)="onNewBookK()"
                   *ngIf="imageListK"
                   [hidden]="imageListK[0+i].category === 'articleK'"
-                  >Editer cet article</button>
+                  >Editer l'article en bas au centre</button>
 
                   <!-- <button class="submit-button-disabled"
                   *ngIf="imageListE[0+i].caption === 'demo'"
@@ -768,7 +768,7 @@
                       (click)="onClearArticleLStorage()"
                       (click)="onClearImageDetailLs()"
                       (click)="onClearBookLs()">
-                      Supprimer cet article</button>
+                      Supprimer l'article en bas à droite</button>
 
                       <p *ngIf="imageListL[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
@@ -777,11 +777,11 @@
                     </span>
                   </div>
 
-                  <button class="waves-effect waves-light submit-button buttons"
+                  <button class="waves-effect waves-light submit-button-edition"
                   (click)="onNewBookL()"
                   *ngIf="imageListL"
                   [hidden]="imageListL[0+i].category === 'articleL'"
-                  >Editer cet article</button>
+                  >Editer l'article en bas à droite</button>
 
                   <!-- <button class="submit-button-disabled"
                   *ngIf="imageListE[0+i].caption === 'demo'"

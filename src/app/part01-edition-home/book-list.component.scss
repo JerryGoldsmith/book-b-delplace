@@ -15,6 +15,7 @@ a {
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: var(--color-fluo);
   padding-left: 18px;
+  text-decoration: none;
 }
 
 a:hover {
@@ -610,9 +611,13 @@ input, textarea {
 	font-size: 18px;
 	font-family: NanumMyeongjo-Regular, serif;
   font-weight: 400;
+  text-decoration: none;
 	line-height: 1.2;
-  margin-top: -10px;
   margin-bottom: 10px;
+}
+
+.currentText-news:hover {
+  color: var(--color-gold);
 }
 
 .horizontalLine-news {

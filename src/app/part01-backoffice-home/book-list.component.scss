@@ -610,6 +610,7 @@ input, textarea {
 	font-size: 18px;
 	font-family: NanumMyeongjo-Regular, serif;
   font-weight: 400;
+  text-decoration: none;
 	line-height: 1.2;
   margin-top: -10px;
   margin-bottom: 10px;
@@ -760,6 +761,7 @@ input, textarea {
 	font-size: 28px;
 	font-family: NanumMyeongjo-Regular, serif;
   font-weight: 400;
+  text-decoration: none;
   padding-top: 20px;
   padding-bottom: 0.5px;
 	letter-spacing: 1px;
@@ -1281,11 +1283,11 @@ input, textarea {
 .submit-button {
   display: inline-block;
   margin: auto;
-  background-color: var(--color-darkpurple);
+  background-color: var(--color-bluesuperdark);
   font-size: 20px;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: white;
-  border: solid 2px var(--color-darkpurple);
+  border: solid 2px var(--color-bluesuperdark);
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;
@@ -1298,10 +1300,10 @@ input, textarea {
 }
 
 .submit-button:hover {
-  background-color: var(--color-palesun);
-  color: black;
+  background-color: var(--color-gold);
+  border: solid 2px var(--color-palesun);
   animation: ani9 0.8s ease-in-out infinite alternate;
-  transform: translatey(6px);
+  transform: translatex(12px);
   box-shadow: none;
 }
 
