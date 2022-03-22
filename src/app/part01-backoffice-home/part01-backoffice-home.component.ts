@@ -87,7 +87,7 @@ export class Part01BackofficeHomeComponent implements OnInit {
     private imageService: ImageService,
     private router: Router
   ) { 
-    this.getScreenSize();
+    // this.getScreenSize();
   }
 
   // ajustement en hauteur (écran)
