@@ -44,17 +44,6 @@ export class ArchivesComponent implements OnInit {
 
     // ------
 
-    // this.imageService.getImageDetailListEach();
-    
-    // this.imageService.imageDetailListEach.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListEach = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListEach.length +1) / 3)).keys());
-    //   }
-    // );
-
-    // ------
-
     this.bookAllsSubscription = this.booksService.bookAllSubject.subscribe(
       (bookAlls: Book[]) => {
         this.bookAlls = bookAlls;

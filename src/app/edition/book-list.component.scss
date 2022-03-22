@@ -323,6 +323,30 @@ p, span {
   // margin-top: 10px;
 }
 
+// archives
+
+// lines -------
+
+.verticalLine-left {
+  display: inline-block;
+  border: solid 0.5px var(--color-white);
+  opacity: 0.5;
+  height: 800px;
+  margin-right: 40px;
+  margin-left: -20px;
+  margin-top: 10px;
+}
+
+.verticalLine-right {
+  display: inline-block;
+  border: solid 0.5px var(--color-white);
+  opacity: 0.5;
+  height: 100%;
+  margin-right: 40px;
+  margin-left: -20px;
+  margin-top: 10px;
+}
+
 .horizontalLine {
   border: solid 0.5px var(--color-white);
   opacity: 0.5;

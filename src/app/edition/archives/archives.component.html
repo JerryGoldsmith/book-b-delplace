@@ -1,11 +1,13 @@
 <article class="col-xs-8">
+  
   <div *ngFor="let i of rowIndexArray">
     <div *ngIf="i==0">
       <div class="layout-article-I">
 
         <span>
 
-          <button class="waves-effect waves-light submit-button-archives-top" (click)="onBack()">Retour</button>
+          <button class="waves-effect waves-light submit-button-archives-top" 
+          (click)="onBack()">Retour</button>
 
           <h3 class="title-archives">Archives</h3>
           <div class="horizontalLine-archive"></div>
@@ -14,19 +16,10 @@
             <div *ngIf="x==0">
               <div *ngFor="let book of bookAlls; let i = index; trackBy: bookAllTitle">
 
-                <!-- <div *ngIf="i==0"> -->
-                  <!-- <div *ngIf="x<10"> -->
-                  <!-- <div *ngIf="imageListAll[i].category === 'articleAll'"> -->
-
                     <div *ngIf="imageListAll[i]">
                       <img [src]="imageListAll[i].imageUrl" alt="images"
                       class="img-fluid imageArchives">
                     </div>
-                    
-
-                  <!-- </div> -->
-                  <!-- </div> -->
-                <!-- </div> -->
 
                 <a class="link-archives">
                   <div>
@@ -46,13 +39,8 @@
 
         </span>
 
-        <button class="waves-effect waves-light submit-button-archives-bottom" (click)="onBack()">Retour</button>
-
-        <!-- <a routerLink="/books" class="currentText-All">
-          <div class="currentText-all-margin">
-          Retour
-          </div>
-        </a> -->
+        <button class="waves-effect waves-light submit-button-archives-bottom" 
+        (click)="onBack()">Retour</button>
 
       </div>
 

@@ -10,13 +10,8 @@
     <form *ngIf="bookForm" [formGroup]="bookForm" (ngSubmit)="onSaveBookG()">
 
       <div class="form-group">
-        <!-- <label for="title"> Etape 2 : titre</label> -->
         <textarea type="text" class="form-control" id="title" formControlName="title" cols="50" rows="1" placeholder="Etape 2 : choisir le titre de la série d'images"></textarea>
       </div>
-
-      <!-- <div class="form-group">
-        <textarea type="text" class="form-control" id="texteA" formControlName="texte" cols="50" rows="3" placeholder="Etape 3 (1/10) : choisir la légende le l'image 1"></textarea>
-      </div> -->
 
       <div class="form-group">
         <textarea type="text" class="form-control" id="texteA" formControlName="texteA" cols="50" rows="3" placeholder="Etape 3 (1/10) : choisir la légende le l'image 1"></textarea>
@@ -58,65 +53,10 @@
         <textarea type="text" class="form-control" id="texteJ" formControlName="texteJ" cols="50" rows="3" placeholder="Etape 3 (10/10) : choisir la légende le l'image 10"></textarea>
       </div>
 
-      <!-- <div class="form-group">
-        <label for="texteB">Etape 3 : légende des images</label>
-        <input type="text" class="form-control" id="texteB" formControlName="texteB">
-      </div> -->
-
-      <!-- <div class="form-group">
-        <label for="texteC">Etape 3 : légende des images</label>
-        <input type="text" class="form-control" id="texteC" formControlName="texteC">
-      </div> -->
-
-      <!-- <div class="form-group">
-        <label for="texteD">Etape 3 : légende des images</label>
-        <input type="text" class="form-control" id="texteD" formControlName="texteD">
-      </div> -->
-
-      <!-- <div class="form-group">
-        <label for="texteE">Etape 3 : légende des images</label>
-        <input type="text" class="form-control" id="texteE" formControlName="texteE">
-      </div> -->
-
-      <!-- <div class="form-group">
-        <label for="texteF">Etape 3 : légende des images</label>
-        <input type="text" class="form-control" id="texteF" formControlName="texteF">
-      </div> -->
-
-      <!-- <div class="form-group">
-        <label for="texteG">Etape 3 : légende des images</label>
-        <input type="text" class="form-control" id="texteG" formControlName="texteG">
-      </div> -->
-
-      <!-- <div class="form-group">
-        <label for="texteH">Etape 3 : légende des images</label>
-        <input type="text" class="form-control" id="texteH" formControlName="texteH">
-      </div> -->
-
-      <!-- <div class="form-group">
-        <label for="texteI">Etape 3 : légende des images</label>
-        <input type="text" class="form-control" id="texteI" formControlName="texteI">
-      </div> -->
-
-      <!-- <div class="form-group">
-        <label for="texteJ">Etape 3 : légende des images</label>
-        <input type="text" class="form-control" id="texteJ" formControlName="texteJ">
-      </div> -->
-
       <div class="form-group">
         <textarea type="text" class="form-control" id="author" formControlName="author" cols="50" rows="1" placeholder="Etape 4 : quel est l'auteur ?"></textarea>
       </div>
 
-      <!-- <div class="form-group">
-        <label for="author">Etape 4 : auteur de l'article</label>
-        <input type="text" class="form-control" id="author" formControlName="author">
-      </div> -->
-
-      <!-- <div class="form-group">
-        <h4>Ajouter une photo</h4>
-        <input type="file" (change)="detectFiles($event)" class="form-control" accept="image/*">
-        <p class="text-success" *ngIf="fileUploaded">Fichier chargé</p>
-      </div> -->
       <button
         class="waves-effect waves-light submit-button-step-one"
         [disabled]="bookForm.invalid || fileIsUploading"

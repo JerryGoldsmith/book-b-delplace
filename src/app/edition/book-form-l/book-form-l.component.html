@@ -9,16 +9,12 @@
 
     <form *ngIf="bookForm" [formGroup]="bookForm" (ngSubmit)="onSaveBookL()">
       <div class="form-group">
-        <!-- <label for="title"> Etape 2 : titre</label> -->
         <textarea type="text" class="form-control" id="title" formControlName="title" cols="50" rows="1" placeholder="Etape 2 : choisir le titre de l'article"></textarea>
       </div>
       <div class="form-group">
-        <!-- <label for="texte">Etape 3 : texte de l'article</label> -->
-        <!-- <input type="text" class="form-control" id="texte" formControlName="texte"> -->
         <textarea type="text" class="form-control" id="texte" formControlName="texte" cols="50" rows="15" placeholder="Etape 3 : choisir le texte de l'article"></textarea>
       </div>
       <div class="form-group">
-        <!-- <label for="author">Etape 4 : auteur de l'article</label> -->
         <textarea type="text" class="form-control" id="author" formControlName="author" cols="50" rows="1" placeholder="Etape 4 : quel est l'auteur ?"></textarea>
       </div>
 
