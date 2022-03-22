@@ -115,6 +115,28 @@ p, span {
   color: black;
 }
 
+#submit-button-edition-bottom {
+  background: var(--color-fluo);
+  border-bottom: solid 6px var(--color-gold);
+  border-left: solid 6px var(--color-gold);
+  border-right: solid 6px var(--color-gold);
+  font-size: 40px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  letter-spacing: -1px;
+  color: white;
+  padding: 40px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  margin-left: 132px;
+  text-align: center;
+  width: 1520px;
+}
+
+#submit-button-edition-bottom:hover {
+  background: var(--color-gold);
+  color: black;
+}
+
 #submit-button-rendu {
   background: var(--color-gold);
   border-left: solid 6px var(--color-gold);
