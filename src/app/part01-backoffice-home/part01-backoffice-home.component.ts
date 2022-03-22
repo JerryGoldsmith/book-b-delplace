@@ -5,7 +5,6 @@ import { BooksService } from '../services/books.service';
 import { ImageService } from '../services/image.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
-// import firebase from "firebase/app";
 import "firebase/database";
 
 @Component({
@@ -86,19 +85,7 @@ export class Part01BackofficeHomeComponent implements OnInit {
     private booksService: BooksService,
     private imageService: ImageService,
     private router: Router
-  ) { 
-    // this.getScreenSize();
-  }
-
-  // ajustement en hauteur (écran)
-  getScreenSize() {
-    //@ts-ignore
-    this.scrHeight = window.innerHeight;
-  }
-
-  // private changeRoute(menuSelection) {
-  //   this.router.navigate([menuSelection]);
-  // }
+  ) { }
 
   ngOnInit(): void {
 
@@ -122,25 +109,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     );
     this.booksService.getBooks();
     this.booksService.emitBooks();
-
-    // a ------
-
-    // this.imageService.getImageDetailListA();
-    //
-    // this.imageService.imageDetailListA.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListA = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListA.length +1) / 3)).keys());
-    //   }
-    // );
-    //
-    // this.bookAsSubscription = this.booksService.bookASubject.subscribe(
-    //   (bookAs: Book[]) => {
-    //     this.bookAs = bookAs;
-    //   }
-    // );
-    // this.booksService.getBookAs();
-    // this.booksService.emitBookAs();
 
     // b ------
 
@@ -350,17 +318,6 @@ export class Part01BackofficeHomeComponent implements OnInit {
     );
     this.booksService.getBookLs();
     this.booksService.emitBookLs();
-
-    // all ----
-
-    // this.imageService.getImageDetailListAll();
-    //
-    // this.imageService.getImageDetailListAll.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListAll = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
-    //   }
-    // );
 
     this.bookAllsSubscription = this.booksService.bookAllSubject.subscribe(
       (bookAlls: Book[]) => {
