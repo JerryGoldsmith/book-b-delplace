@@ -14,7 +14,8 @@
 
           <div *ngFor="let i of rowIndexArray; let x = index">
             <div *ngIf="x==0">
-              <div *ngFor="let book of bookAlls; let i = index; trackBy: bookAllTitle">
+              <div *ngFor="let book of bookAlls; let i = index; trackBy: bookAllTitle"
+              class="background-archives">
 
                     <div *ngIf="imageListAll[i]">
                       <img [src]="imageListAll[i].imageUrl" alt="images"

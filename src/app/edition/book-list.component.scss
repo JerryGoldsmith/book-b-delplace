@@ -792,6 +792,7 @@ input, textarea {
 // I (archives) ------
 
 .layout-article-I {
+  background-color: var(--color-darkpurple);
   margin-top: -28px;
   margin-left: 20px;
   width: 1080px;
@@ -1226,7 +1227,7 @@ input, textarea {
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 30px;
+  margin-top: 60px;
   margin-left: 470px;
   margin-bottom: 10px;
   text-align: center;
@@ -1256,7 +1257,7 @@ input, textarea {
   padding-bottom: 10px;
   margin-left: 488px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 
@@ -1359,11 +1360,18 @@ input, textarea {
 
 // -----
 
+.background-archives {
+  background-color: var(--main-color);
+  margin: 20px;
+  padding: 20px;
+}
+
 .link-archives {
   color: var(--color-white);
 	font-size: 26px;
 	font-family: NanumMyeongjo-Regular, serif;
   font-weight: 400;
+  text-decoration: none;
   text-align: center;
   padding-top: 0.5px;
   padding-bottom: 0.5px;
