@@ -13,89 +13,89 @@ import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { Part01EditionHomeComponent } from 'src/app/part01-edition-home/part01-edition-home.component';
 import { Part01BackofficeHomeComponent } from 'src/app/part01-backoffice-home/part01-backoffice-home.component';
 
-import { ArchivesComponent } from 'src/app/book-list/archives/archives.component';
+import { ArchivesComponent } from 'src/app/edition/archives/archives.component';
 // import { BackofficeComponent } from 'src/app/book-list/backoffice/backoffice.component';
 
 // import { BookListComponent } from 'src/app/book-list/book-list.component';
 
 // book-form
-import { BookFormComponent } from 'src/app/book-list/book-form/book-form.component';
-import { BookFormBComponent } from 'src/app/book-list/book-form-b/book-form-b.component';
-import { BookFormCComponent } from 'src/app/book-list/book-form-c/book-form-c.component';
-import { BookFormDComponent } from 'src/app/book-list/book-form-d/book-form-d.component';
-import { BookFormEComponent } from 'src/app/book-list/book-form-e/book-form-e.component';
-import { BookFormFComponent } from 'src/app/book-list/book-form-f/book-form-f.component';
-import { BookFormGComponent } from 'src/app/book-list/book-form-g/book-form-g.component';
-import { BookFormHComponent } from 'src/app/book-list/book-form-h/book-form-h.component';
-import { BookFormIComponent } from 'src/app/book-list/book-form-i/book-form-i.component';
-import { BookFormJComponent } from 'src/app/book-list/book-form-j/book-form-j.component';
-import { BookFormKComponent } from 'src/app/book-list/book-form-k/book-form-k.component';
-import { BookFormLComponent } from 'src/app/book-list/book-form-l/book-form-l.component';
+import { BookFormComponent } from 'src/app/edition/book-form/book-form.component';
+import { BookFormBComponent } from 'src/app/edition/book-form-b/book-form-b.component';
+import { BookFormCComponent } from 'src/app/edition/book-form-c/book-form-c.component';
+import { BookFormDComponent } from 'src/app/edition/book-form-d/book-form-d.component';
+import { BookFormEComponent } from 'src/app/edition/book-form-e/book-form-e.component';
+import { BookFormFComponent } from 'src/app/edition/book-form-f/book-form-f.component';
+import { BookFormGComponent } from 'src/app/edition/book-form-g/book-form-g.component';
+import { BookFormHComponent } from 'src/app/edition/book-form-h/book-form-h.component';
+import { BookFormIComponent } from 'src/app/edition/book-form-i/book-form-i.component';
+import { BookFormJComponent } from 'src/app/edition/book-form-j/book-form-j.component';
+import { BookFormKComponent } from 'src/app/edition/book-form-k/book-form-k.component';
+import { BookFormLComponent } from 'src/app/edition/book-form-l/book-form-l.component';
 
 // single-book
-import { SingleBookComponent } from 'src/app/book-list/single-book/single-book.component';
-import { SingleBookBComponent } from 'src/app/book-list/single-book-b/single-book-b.component';
-import { SingleBookCComponent } from 'src/app/book-list/single-book-c/single-book-c.component';
-import { SingleBookDComponent } from 'src/app/book-list/single-book-d/single-book-d.component';
-import { SingleBookEComponent } from 'src/app/book-list/single-book-e/single-book-e.component';
-import { SingleBookFComponent } from 'src/app/book-list/single-book-f/single-book-f.component';
-import { SingleBookGComponent } from 'src/app/book-list/single-book-g/single-book-g.component';
-import { SingleBookHComponent } from 'src/app/book-list/single-book-h/single-book-h.component';
-import { SingleBookIComponent } from 'src/app/book-list/single-book-i/single-book-i.component';
-import { SingleBookJComponent } from 'src/app/book-list/single-book-j/single-book-j.component';
-import { SingleBookKComponent } from 'src/app/book-list/single-book-k/single-book-k.component';
-import { SingleBookLComponent } from 'src/app/book-list/single-book-l/single-book-l.component';
+import { SingleBookComponent } from 'src/app/edition/single-book/single-book.component';
+import { SingleBookBComponent } from 'src/app/edition/single-book-b/single-book-b.component';
+import { SingleBookCComponent } from 'src/app/edition/single-book-c/single-book-c.component';
+import { SingleBookDComponent } from 'src/app/edition/single-book-d/single-book-d.component';
+import { SingleBookEComponent } from 'src/app/edition/single-book-e/single-book-e.component';
+import { SingleBookFComponent } from 'src/app/edition/single-book-f/single-book-f.component';
+import { SingleBookGComponent } from 'src/app/edition/single-book-g/single-book-g.component';
+import { SingleBookHComponent } from 'src/app/edition/single-book-h/single-book-h.component';
+import { SingleBookIComponent } from 'src/app/edition/single-book-i/single-book-i.component';
+import { SingleBookJComponent } from 'src/app/edition/single-book-j/single-book-j.component';
+import { SingleBookKComponent } from 'src/app/edition/single-book-k/single-book-k.component';
+import { SingleBookLComponent } from 'src/app/edition/single-book-l/single-book-l.component';
 
 // single-book-archives
-import { SingleBookAllComponent } from 'src/app/book-list/single-book-all/single-book-all.component';
-import { SingleBookAllOneComponent } from 'src/app/book-list/single-book-all-one/single-book-all-one.component';
-import { SingleBookAllTwoComponent } from 'src/app/book-list/single-book-all-two/single-book-all-two.component';
-import { SingleBookAllThreeComponent } from 'src/app/book-list/single-book-all-three/single-book-all-three.component';
-import { SingleBookAllFourComponent } from 'src/app/book-list/single-book-all-four/single-book-all-four.component';
-import { SingleBookAllFiveComponent } from 'src/app/book-list/single-book-all-five/single-book-all-five.component';
-import { SingleBookAllSixComponent } from 'src/app/book-list/single-book-all-six/single-book-all-six.component';
+import { SingleBookAllComponent } from 'src/app/edition/single-book-all/single-book-all.component';
+import { SingleBookAllOneComponent } from 'src/app/edition/single-book-all-one/single-book-all-one.component';
+import { SingleBookAllTwoComponent } from 'src/app/edition/single-book-all-two/single-book-all-two.component';
+import { SingleBookAllThreeComponent } from 'src/app/edition/single-book-all-three/single-book-all-three.component';
+import { SingleBookAllFourComponent } from 'src/app/edition/single-book-all-four/single-book-all-four.component';
+import { SingleBookAllFiveComponent } from 'src/app/edition/single-book-all-five/single-book-all-five.component';
+import { SingleBookAllSixComponent } from 'src/app/edition/single-book-all-six/single-book-all-six.component';
 
 // images
 
-import { ImagesComponent } from 'src/app/book-list/images/images.component';
+import { ImagesComponent } from 'src/app/edition/images/images.component';
 
-import { ImageComponent } from 'src/app/book-list/images/image/image.component';
-import { ImageArchiveComponent } from 'src/app/book-list/images/image-archive/image-archive.component';
-import { ImageBComponent } from 'src/app/book-list/images/image-b/image-b.component';
-import { ImageBArchiveComponent } from 'src/app/book-list/images/image-b-archive/image-b-archive.component';
-import { ImageCComponent } from 'src/app/book-list/images/image-c/image-c.component';
-import { ImageCArchiveComponent } from 'src/app/book-list/images/image-c-archive/image-c-archive.component';
-import { ImageDComponent } from 'src/app/book-list/images/image-d/image-d.component';
-import { ImageDArchiveComponent } from 'src/app/book-list/images/image-d-archive/image-d-archive.component';
-import { ImageEComponent } from 'src/app/book-list/images/image-e/image-e.component';
-import { ImageEArchiveComponent } from 'src/app/book-list/images/image-e-archive/image-e-archive.component';
-import { ImageFComponent } from 'src/app/book-list/images/image-f/image-f.component';
-import { ImageFArchiveComponent } from 'src/app/book-list/images/image-f-archive/image-f-archive.component';
-import { ImageGComponent } from 'src/app/book-list/images/image-g/image-g.component';
-import { ImageGArchiveComponent } from 'src/app/book-list/images/image-g-archive/image-g-archive.component';
-import { ImageHComponent } from 'src/app/book-list/images/image-h/image-h.component';
-import { ImageHArchiveComponent } from 'src/app/book-list/images/image-h-archive/image-h-archive.component';
-import { ImageIComponent } from 'src/app/book-list/images/image-i/image-i.component';
-import { ImageIArchiveComponent } from 'src/app/book-list/images/image-i-archive/image-i-archive.component';
-import { ImageJComponent } from 'src/app/book-list/images/image-j/image-j.component';
-import { ImageJArchiveComponent } from 'src/app/book-list/images/image-j-archive/image-j-archive.component';
-import { ImageKComponent } from 'src/app/book-list/images/image-k/image-k.component';
-import { ImageKArchiveComponent } from 'src/app/book-list/images/image-k-archive/image-k-archive.component';
-import { ImageLComponent } from 'src/app/book-list/images/image-l/image-l.component';
-import { ImageLArchiveComponent } from 'src/app/book-list/images/image-l-archive/image-l-archive.component';
+import { ImageComponent } from 'src/app/edition/images/image/image.component';
+import { ImageArchiveComponent } from 'src/app/edition/images/image-archive/image-archive.component';
+import { ImageBComponent } from 'src/app/edition/images/image-b/image-b.component';
+import { ImageBArchiveComponent } from 'src/app/edition/images/image-b-archive/image-b-archive.component';
+import { ImageCComponent } from 'src/app/edition/images/image-c/image-c.component';
+import { ImageCArchiveComponent } from 'src/app/edition/images/image-c-archive/image-c-archive.component';
+import { ImageDComponent } from 'src/app/edition/images/image-d/image-d.component';
+import { ImageDArchiveComponent } from 'src/app/edition/images/image-d-archive/image-d-archive.component';
+import { ImageEComponent } from 'src/app/edition/images/image-e/image-e.component';
+import { ImageEArchiveComponent } from 'src/app/edition/images/image-e-archive/image-e-archive.component';
+import { ImageFComponent } from 'src/app/edition/images/image-f/image-f.component';
+import { ImageFArchiveComponent } from 'src/app/edition/images/image-f-archive/image-f-archive.component';
+import { ImageGComponent } from 'src/app/edition/images/image-g/image-g.component';
+import { ImageGArchiveComponent } from 'src/app/edition/images/image-g-archive/image-g-archive.component';
+import { ImageHComponent } from 'src/app/edition/images/image-h/image-h.component';
+import { ImageHArchiveComponent } from 'src/app/edition/images/image-h-archive/image-h-archive.component';
+import { ImageIComponent } from 'src/app/edition/images/image-i/image-i.component';
+import { ImageIArchiveComponent } from 'src/app/edition/images/image-i-archive/image-i-archive.component';
+import { ImageJComponent } from 'src/app/edition/images/image-j/image-j.component';
+import { ImageJArchiveComponent } from 'src/app/edition/images/image-j-archive/image-j-archive.component';
+import { ImageKComponent } from 'src/app/edition/images/image-k/image-k.component';
+import { ImageKArchiveComponent } from 'src/app/edition/images/image-k-archive/image-k-archive.component';
+import { ImageLComponent } from 'src/app/edition/images/image-l/image-l.component';
+import { ImageLArchiveComponent } from 'src/app/edition/images/image-l-archive/image-l-archive.component';
 
-import { ImageListComponent } from 'src/app/book-list/images/imagelist/imagelist.component';
-import { ImageListBComponent } from 'src/app/book-list/images/imagelist-b/imagelist-b.component';
-import { ImageListCComponent } from 'src/app/book-list/images/imagelist-c/imagelist-c.component';
-import { ImageListDComponent } from 'src/app/book-list/images/imagelist-d/imagelist-d.component';
-import { ImageListEComponent } from 'src/app/book-list/images/imagelist-e/imagelist-e.component';
-import { ImageListFComponent } from 'src/app/book-list/images/imagelist-f/imagelist-f.component';
-import { ImageListGComponent } from 'src/app/book-list/images/imagelist-g/imagelist-g.component';
-import { ImageListHComponent } from 'src/app/book-list/images/imagelist-h/imagelist-h.component';
-import { ImageListIComponent } from 'src/app/book-list/images/imagelist-i/imagelist-i.component';
-import { ImageListJComponent } from 'src/app/book-list/images/imagelist-j/imagelist-j.component';
-import { ImageListKComponent } from 'src/app/book-list/images/imagelist-k/imagelist-k.component';
-import { ImageListLComponent } from 'src/app/book-list/images/imagelist-l/imagelist-l.component';
+import { ImageListComponent } from 'src/app/edition/images/imagelist/imagelist.component';
+import { ImageListBComponent } from 'src/app/edition/images/imagelist-b/imagelist-b.component';
+import { ImageListCComponent } from 'src/app/edition/images/imagelist-c/imagelist-c.component';
+import { ImageListDComponent } from 'src/app/edition/images/imagelist-d/imagelist-d.component';
+import { ImageListEComponent } from 'src/app/edition/images/imagelist-e/imagelist-e.component';
+import { ImageListFComponent } from 'src/app/edition/images/imagelist-f/imagelist-f.component';
+import { ImageListGComponent } from 'src/app/edition/images/imagelist-g/imagelist-g.component';
+import { ImageListHComponent } from 'src/app/edition/images/imagelist-h/imagelist-h.component';
+import { ImageListIComponent } from 'src/app/edition/images/imagelist-i/imagelist-i.component';
+import { ImageListJComponent } from 'src/app/edition/images/imagelist-j/imagelist-j.component';
+import { ImageListKComponent } from 'src/app/edition/images/imagelist-k/imagelist-k.component';
+import { ImageListLComponent } from 'src/app/edition/images/imagelist-l/imagelist-l.component';
 
 const routes: Routes = [
     { path: 'edition', component: Part01EditionHomeComponent },

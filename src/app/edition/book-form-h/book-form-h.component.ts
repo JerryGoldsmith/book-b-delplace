@@ -53,6 +53,8 @@ export class BookFormHComponent implements OnInit {
     const newBookH = new Book(title, texte, author, timestamp);
     this.booksService.createNewBookH(newBookH);
 
+    // Pas de sauvegarde dans archives
+
     this.router.navigate(['/backoffice']);
   }
 

@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 // import { Subscription } from 'rxjs/Subscription';
 
 import { EditionRenduRoutingModule } from './edition-rendu-routing.module';
-import { BookListComponent } from 'src/app/book-list/book-list.component';
+import { BookListComponent } from 'src/app/edition/book-list.component';
 // import { AEditionRoutingModule } from 'src/app/mod/private/a-edition/a-edition-routing.module';
 
 

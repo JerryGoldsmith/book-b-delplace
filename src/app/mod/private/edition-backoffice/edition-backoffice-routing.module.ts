@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BackofficeComponent } from 'src/app/book-list/backoffice/backoffice.component';
+import { BackofficeComponent } from 'src/app/edition/backoffice/backoffice.component';
 
 const routes: Routes = [
   { path: '', component: BackofficeComponent }

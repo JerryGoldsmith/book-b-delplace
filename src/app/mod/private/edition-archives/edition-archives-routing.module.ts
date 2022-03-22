@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ArchivesComponent } from 'src/app/book-list/archives/archives.component';
+import { ArchivesComponent } from 'src/app/edition/archives/archives.component';
 
 const routes: Routes = [
   { path: '', component: ArchivesComponent }
