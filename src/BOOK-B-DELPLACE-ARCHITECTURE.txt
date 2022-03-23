@@ -34,9 +34,11 @@ app/
  |
  |--- routing
  |       |
- |     routing.module.ts (part01 - part02 - Part03 - Part04)
  |     common-form-reactive.module.ts (common, form/reactive form)
- |     part01-resto.module.ts
+ |     routing.module.ts (part01 - part02 - Part03 - Part04)
+ |     part01-resto.module.ts (part01 > resto)
+ |     part01-edition.module.ts (part01 > edition)
+ |     part01-edition-images.module.ts (part01 > edition)
  |
  |--- pre-loading (PreloadingStrategy)
  |       |

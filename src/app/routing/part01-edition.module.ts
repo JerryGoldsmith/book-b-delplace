@@ -8,15 +8,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import * as fr from "@angular/common/locales/fr"; // date
 
+// guard
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
-import { Part01EditionHomeComponent } from 'src/app/part01-edition-home/part01-edition-home.component';
+// home
+// import { Part01EditionHomeComponent } from 'src/app/part01-edition-home/part01-edition-home.component';
+
+// backoffice
 import { Part01BackofficeHomeComponent } from 'src/app/part01-backoffice-home/part01-backoffice-home.component';
 
 import { ArchivesComponent } from 'src/app/edition/archives/archives.component';
-// import { BackofficeComponent } from 'src/app/book-list/backoffice/backoffice.component';
-
-// import { BookListComponent } from 'src/app/book-list/book-list.component';
 
 // book-form
 import { BookFormComponent } from 'src/app/edition/book-form/book-form.component';
@@ -56,7 +57,40 @@ import { SingleBookAllFiveComponent } from 'src/app/edition/single-book-all-five
 import { SingleBookAllSixComponent } from 'src/app/edition/single-book-all-six/single-book-all-six.component';
 
 const routes: Routes = [
-    { path: 'edition', component: Part01EditionHomeComponent },
+
+    // {
+  //   path: 'edition-home',
+  //   canActivate: [AuthGuardService],
+  //   loadChildren: () => import('src/app/mod/private/a-edition/a-edition.module')
+  //     .then(mod => mod.AEditionModule)
+  // },
+  // {
+  //   path: 'backoffice-home',
+  //   canActivate: [AuthGuardService],
+  //   loadChildren: () => import('src/app/mod/private/edition-backoffice/edition-backoffice.module')
+  //     .then(mod => mod.EditionBackofficeModule)
+  // },
+  {
+    path: 'edition',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/edition-rendu/edition-rendu.module')
+      .then(mod => mod.EditionRenduModule)
+  },
+  // {
+  //   path: 'backoffice',
+  //   canActivate: [AuthGuardService],
+  //   loadChildren: () => import('src/app/mod/private/edition-backoffice/edition-backoffice.module')
+  //     .then(mod => mod.EditionBackofficeModule)
+  // },
+  // {
+  //   path: 'archives',
+  //   canActivate: [AuthGuardService],
+  //   loadChildren: () => import('src/app/mod/private/edition-archives/edition-archives.module')
+  //     .then(mod => mod.EditionArchivesModule)
+  // }
+
+    // { path: 'edition', component: Part01EditionHomeComponent },
+
     { path: 'backoffice', component: Part01BackofficeHomeComponent },
 
     { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
@@ -101,7 +135,7 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [
-      Part01EditionHomeComponent, // home
+      // Part01EditionHomeComponent, // home
       Part01BackofficeHomeComponent,
 
       ArchivesComponent,
