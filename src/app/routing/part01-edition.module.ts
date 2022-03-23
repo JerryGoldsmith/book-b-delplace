@@ -58,30 +58,22 @@ import { SingleBookAllSixComponent } from 'src/app/edition/single-book-all-six/s
 
 const routes: Routes = [
 
-    // {
-  //   path: 'edition-home',
-  //   canActivate: [AuthGuardService],
-  //   loadChildren: () => import('src/app/mod/private/a-edition/a-edition.module')
-  //     .then(mod => mod.AEditionModule)
-  // },
-  // {
-  //   path: 'backoffice-home',
-  //   canActivate: [AuthGuardService],
-  //   loadChildren: () => import('src/app/mod/private/edition-backoffice/edition-backoffice.module')
-  //     .then(mod => mod.EditionBackofficeModule)
-  // },
+  // Part01EditionHomeComponent
   {
     path: 'edition',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/edition-rendu/edition-rendu.module')
       .then(mod => mod.EditionRenduModule)
   },
+
+  // Part01BackofficeHomeComponent
   // {
   //   path: 'backoffice',
   //   canActivate: [AuthGuardService],
   //   loadChildren: () => import('src/app/mod/private/edition-backoffice/edition-backoffice.module')
   //     .then(mod => mod.EditionBackofficeModule)
   // },
+
   // {
   //   path: 'archives',
   //   canActivate: [AuthGuardService],
