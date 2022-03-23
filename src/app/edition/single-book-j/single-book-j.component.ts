@@ -9,7 +9,8 @@ import '@angular/common/locales/global/fr';
 @Component({
   selector: 'app-single-book-j',
   templateUrl: './single-book-j.component.html',
-  styleUrls: ['./../book-list.component.scss']
+  styleUrls: ['./../book-list.component.scss',
+  '../../../assets/css/button-effects.css']
 })
 export class SingleBookJComponent implements OnInit {
 

@@ -9,7 +9,8 @@ import '@angular/common/locales/global/fr';
 @Component({
   selector: 'app-single-book-d',
   templateUrl: './single-book-d.component.html',
-  styleUrls: ['./../book-list.component.scss']
+  styleUrls: ['./../book-list.component.scss',
+  '../../../assets/css/button-effects.css']
 })
 export class SingleBookDComponent implements OnInit {
 
