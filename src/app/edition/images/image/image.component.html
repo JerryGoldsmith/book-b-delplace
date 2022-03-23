@@ -10,11 +10,6 @@
     (submit)="onSubmit(formTemplate.value)">
 
       <div class="imageDisplay">
-        <!-- <p class="text-pub image-radius"
-        width="650px" height="550px"
-        (click)="fileUploader.click()">
-          <strong>Choisissez votre image</strong>
-        </p> -->
         <img [src]="imgSrc" width="650px" height="100%"
         class="image-radius">
         <!-- <span>Choisissez votre image</span> -->
@@ -40,9 +35,8 @@
       <div class="form-group">
         <textarea type="text" class="form-control textarea-image" formControlName="caption"
         placeholder="Saisissez votre identifiant" cols="50" rows="1"></textarea>
-        <!-- <input class="form-control" formControlName="caption"
-        placeholder="Votre identifiant"> -->
-        <div class="text-danger down"
+
+      <div class="text-danger down"
         *ngIf="isSubmitted && formControls.caption.errors?.required">Votre identifiant est requis</div>
       </div>
 
@@ -53,9 +47,6 @@
       </div>
 
       <div class="form-row">
-        <!-- <div class="form-group col md-6">
-          <a routerLink="/list" class="btn btn-primary btn-block float-right">Voir les images</a>
-        </div> -->
         <div class="form-group col md-6">
           <button type="submit"
           class="waves-effect waves-light button-submit-image">

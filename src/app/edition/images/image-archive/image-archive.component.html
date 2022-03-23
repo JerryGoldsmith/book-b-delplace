@@ -10,11 +10,6 @@
     (submit)="onSubmit(formTemplateArchive.value)">
 
       <div class="imageDisplay">
-        <!-- <p class="text-pub image-radius"
-        width="650px" height="550px"
-        (click)="fileUploader.click()">
-          <strong>Choisissez votre image</strong>
-        </p> -->
         <img [src]="imgSrc" width="650px" height="100%"
         class="image-radius">
         <!-- <span>Choisissez votre image</span> -->
@@ -40,8 +35,6 @@
       <div class="form-group">
         <textarea type="text" class="form-control textarea-image" formControlName="caption"
         placeholder="Saisissez votre identifiant" cols="50" rows="1"></textarea>
-        <!-- <input class="form-control" formControlName="caption"
-        placeholder="Votre identifiant"> -->
         <div class="text-danger down"
         *ngIf="isSubmitted && formControls.caption.errors?.required">Votre identifiant est requis</div>
       </div>
@@ -53,9 +46,6 @@
       </div>
 
       <div class="form-row">
-        <!-- <div class="form-group col md-6">
-          <a routerLink="/list" class="btn btn-primary btn-block float-right">Voir les images</a>
-        </div> -->
         <div class="form-group col md-6">
           <button type="submit"
           class="waves-effect waves-light button-submit-image">
@@ -70,54 +60,3 @@
 <button type="submit"
 class="waves-effect waves-light submit-button-next"
 routerLink="/books/new">Passer aux choix de textes</button>
-
-<!-- <h2>Notice</h2>
-<p class="notice">Etape 1 : enregistrez <strong>une seule image</strong> pour les archives</p>
-<p class="notice">Etape 2 : utilisez l'identifiant <strong>demo</strong> pour être autorisé à éditer cet article.</p>
-<p class="notice">Etape 3 : passer aux textes</p>
-
-<div class="card" style="width:25rem">
-  <div class="card-body">
-    <form [formGroup]="formTemplateArchive"
-    (submit)="onSubmit(formTemplateArchive.value)">
-
-      <div class="text-center">
-        <img [src]="imgSrc" width="350px" height="250px"
-        (click)="fileUploader.click()">
-      </div>
-
-      <div class="form-group">
-        <label>Selectionner le fichier à télécharger</label>
-        <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl"
-        (change)="showPreview($event)">
-        <div class="text-danger"
-        *ngIf="isSubmitted && formControls.imageUrl.errors?.required">Ce champs est requis.</div>
-      </div>
-
-      <div class="form-group">
-        <input class="form-control" formControlName="caption"
-        placeholder="Votre identifiant">
-        <div class="text-danger"
-        *ngIf="isSubmitted && formControls.caption.errors?.required">Votre identifiant est requis.</div>
-      </div>
-
-      <div class="form-group">
-        <select formControlName="category" class="form-control">
-          <option value="articleAll" selected>Archives</option>
-        </select>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col md-6">
-          <button type="submit" class="btn btn-success btn-block float-right">
-            Enregistrer
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-
-<button type="submit"
-class="waves-effect waves-light submit-button"
-routerLink="/books/new">Passer au textes</button> -->

@@ -31,22 +31,6 @@ export class SingleBookAllComponent implements OnInit {
   ngOnInit(): void {
     this.initGetSingleBookById();
 
-    // this.imageService.getImageDetailList();
-
-    // this.imageService.getImageDetailList();
-    // this.imageService.getImageDetailListB();
-    // this.imageService.getImageDetailListC();
-    // this.imageService.getImageDetailListD();
-    // this.imageService.getImageDetailListE();
-    // this.imageService.getImageDetailListF();
-
-    // this.imageService.imageDetailList.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageList = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageList.length +1) / 3)).keys());
-    //   }
-    // );
-
     // -----
 
     this.imageService.getImageDetailListAll();
@@ -57,6 +41,8 @@ export class SingleBookAllComponent implements OnInit {
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
       }
     );
+
+    // -----
 
     this.bookAllsSubscription = this.booksService.bookAllSubject.subscribe(
       (bookAlls: Book[]) => {

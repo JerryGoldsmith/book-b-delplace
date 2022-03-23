@@ -107,25 +107,6 @@ export class BookListComponent implements OnInit {
     this.booksService.getBooks();
     this.booksService.emitBooks();
 
-    // a ------
-
-    // this.imageService.getImageDetailListA();
-    //
-    // this.imageService.imageDetailListA.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListA = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListA.length +1) / 3)).keys());
-    //   }
-    // );
-    //
-    // this.bookAsSubscription = this.booksService.bookASubject.subscribe(
-    //   (bookAs: Book[]) => {
-    //     this.bookAs = bookAs;
-    //   }
-    // );
-    // this.booksService.getBookAs();
-    // this.booksService.emitBookAs();
-
     // b ------
 
     this.imageService.getImageDetailListB();
@@ -334,17 +315,6 @@ export class BookListComponent implements OnInit {
     );
     this.booksService.getBookLs();
     this.booksService.emitBookLs();
-
-    // all ----
-
-    // this.imageService.getImageDetailListAll();
-    //
-    // this.imageService.getImageDetailListAll.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListAll = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
-    //   }
-    // );
 
     this.bookAllsSubscription = this.booksService.bookAllSubject.subscribe(
       (bookAlls: Book[]) => {
@@ -624,10 +594,6 @@ export class BookListComponent implements OnInit {
     this.router.navigate(['/books', 'new']);
   }
 
-  onNewBookA() {
-    this.router.navigate(['/bookAs', 'new']);
-  }
-
   onNewBookB() {
     this.router.navigate(['/bookBs', 'new']);
   }
@@ -682,12 +648,6 @@ export class BookListComponent implements OnInit {
     this.booksService.clearBooks();
   }
 
-  // ------
-
-  onClearBookAs() {
-    this.booksService.clearBookAs();
-  }
-
   onClearBookBs() {
     this.booksService.clearBookBs();
   }
@@ -736,12 +696,6 @@ export class BookListComponent implements OnInit {
 
   onClearImageDetails() {
     this.booksService.clearImageDetails();
-  }
-
-  // -------
-
-  onClearImageDetailAs() {
-    this.booksService.clearImageDetailAs();
   }
 
   onClearImageDetailBs() {
@@ -861,10 +815,6 @@ export class BookListComponent implements OnInit {
     this.router.navigate(['/books', 'view', id]);
   }
 
-  onViewBookA(id: number) {
-    this.router.navigate(['/bookAs', 'view', id]);
-  }
-
   onViewBookB(id: number) {
     this.router.navigate(['/bookBs', 'view', id]);
   }
@@ -941,10 +891,6 @@ export class BookListComponent implements OnInit {
 
   onDestroy() {
     this.booksSubscription.unsubscribe();
-  }
-
-  onDestroyA() {
-    this.bookAsSubscription.unsubscribe();
   }
 
   onDestroyB() {

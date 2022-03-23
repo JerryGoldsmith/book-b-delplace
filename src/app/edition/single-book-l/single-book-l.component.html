@@ -7,12 +7,11 @@
       <div *ngFor="let i of rowIndexArray" class="image-top-single">
         <div *ngIf="i==0">
           <img [src]="imageList[1+i].imageUrl" width="720px" alt="images" class="img-fluid imageDisplay-top">
-          <!-- <span class="imagebox-desc">{{ imageList[0+i].caption }}</span> -->
         </div>
       </div>
 
       <h1 class="title-big-single"><strong>{{ bookL.title }}</strong></h1>
-      <!-- <p class="textDate-single">{{ bookL.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookL.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor-single">{{ bookL.author }}</i></p> -->
+      <p class="textDate-single">{{ bookL.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookL.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthor-single">{{ bookL.author }}</i></p>
 
       <div id="conteneur-right">
         <div id="spacer-right"></div>
@@ -20,7 +19,6 @@
         <div *ngFor="let i of rowIndexArray" id="encart-right">
           <div *ngIf="i==0">
             <img [src]="imageList[2+i].imageUrl" alt="images" width="660px" class="img-fluid imageDisplay-text">
-            <!-- <span class="imagebox-desc">{{ imageList[0+i].caption }}</span> -->
           </div>
         </div>
 

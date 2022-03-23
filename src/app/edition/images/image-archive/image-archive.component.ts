@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { ImageService } from '../../../services/image.service';
-// import * as imageModel from '../../../models/image.model';
 import { Image } from '../../../models/image.model';
 import { finalize } from 'rxjs/operators';
 
