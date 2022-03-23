@@ -6,7 +6,6 @@
         <!-- entete -->
 
         <section class="item">
-          <!-- <img src="../../assets/logo.png" class="logo"> -->
           <h1 class="big-title">
             <span class="title-sequence">Editer du contenu éditorial</span>
           </h1>
@@ -57,7 +56,7 @@
                         <p class="three-lines-only currentText-A"
                         [hidden]="imageList[0+i].caption !== 'demo'">{{ book.texte }}</p>
 
-                        <button class="waves-effect waves-light submit-button"
+                        <button class="btnfos-width-archives-supprimer btnfos-5 submit-button"
                         (click)="onRefreshButton()"
                         (click)="onClearArticleAStorage()"
                         (click)="onClearImageDetails()"
@@ -71,7 +70,7 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button-edition"
+                    <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                     (click)="onNewBook()"
                     *ngIf="imageList"
                     [hidden]="imageList[0+i].category === 'articleA'"
@@ -112,7 +111,7 @@
                         <p class="three-lines-only currentText-E" width="510px"
                         [hidden]="imageListE[0+i].caption !== 'demo'">{{ bookE.texte }}</p>
 
-                        <button class="waves-effect waves-light submit-button buttons"
+                        <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                         (click)="onRefreshButton()"
                         (click)="onClearArticleEStorage()"
                         (click)="onClearImageDetailEs()"
@@ -126,23 +125,14 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button-edition"
+                    <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                     (click)="onNewBookE()"
                     *ngIf="imageListE"
                     [hidden]="imageListE[0+i].category === 'articleE'"
                     >Editer l'article du dessous à gauche</button>
 
-                    <!-- <button class="submit-button-disabled"
-                    *ngIf="imageListE[0+i].caption === 'demo'"
-                    [disabled]="imageListE[0+i].caption === 'demo'"
-                    >Article déjà édité</button> -->
-
                   </div>
                 </article>
-
-                <!-- ligne verticale -->
-
-                <!-- <div class="verticalLine-bottom bottomBlocs"></div> -->
 
                 <!-- article F -->
 
@@ -172,7 +162,7 @@
                         <p class="three-lines-only currentText-F"
                         [hidden]="imageListF[0+i].caption !== 'demo'">{{ bookF.texte }}</p>
 
-                        <button class="waves-effect waves-light submit-button buttons"
+                        <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                         (click)="onRefreshButton()"
                         (click)="onClearArticleFStorage()"
                         (click)="onClearImageDetailFs()"
@@ -186,22 +176,14 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button-edition"
+                    <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                     (click)="onNewBookF()"
                     *ngIf="imageListF"
                     [hidden]="imageListF[0+i].category === 'articleF'"
                     >Editer l'article du dessous à droite</button>
 
-                    <!-- <button class="submit-button-disabled"
-                    *ngIf="imageListE[0+i].caption === 'demo'"
-                    [disabled]="imageListE[0+i].caption === 'demo'"
-                    >Article déjà édité</button> -->
-
                   </div>
                 </article>
-
-                <!-- ligne horizontale -->
-                <!-- <div class="horizontalLine"></div> -->
 
                 <!-- article G -->
 
@@ -210,11 +192,6 @@
 
                     <div class="layout-article-G">
                       <span *ngFor="let bookG of bookGs; let i = index">
-
-                        <!-- <h3 class="titleAside"
-                          [hidden]="imageListG[0+i].caption !== 'demo'">
-                          <strong>{{ bookG.title }}</strong>
-                        </h3> -->
 
                         <div *ngFor="let i of rowIndexArray">
                           <div *ngIf="i==0">
@@ -231,10 +208,7 @@
 
                         <p class="textDateG">{{ bookG.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookG.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthorG">{{ bookG.author }}</i></p>
 
-                        <!-- <p class="three-lines-only currentTextAside"
-                        [hidden]="imageListG[0+i].caption !== 'demo'">{{ bookG.texte }}</p> -->
-
-                        <button class="waves-effect waves-light submit-button buttons"
+                        <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                         (click)="onRefreshButton()"
                         (click)="onClearArticleGStorage()"
                         (click)="onClearImageDetailGs()"
@@ -248,16 +222,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button-edition"
+                    <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                     (click)="onNewBookG()"
                     *ngIf="imageListG"
                     [hidden]="imageListG[0+i].category === 'articleG'"
                     >Editer la gallerie d'images</button>
-
-                    <!-- <button class="submit-button-disabled"
-                    *ngIf="imageListE[0+i].caption === 'demo'"
-                    [disabled]="imageListE[0+i].caption === 'demo'"
-                    >Article déjà édité</button> -->
 
                   </div>
                 </article>
@@ -302,9 +271,7 @@
                         <p class="three-lines-only currentTextAside"
                         [hidden]="imageListB[0+i].caption !== 'demo'">{{ bookB.texte }}</p>
 
-                        <!-- <button (click)="onViewBook(i)" class="list-group-item-text submit-button buttons">Lire la suite</button> -->
-
-                        <button class="waves-effect waves-light submit-button buttons"
+                        <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                         (click)="onRefreshButton()"
                         (click)="onClearArticleBStorage()"
                         (click)="onClearImageDetailBs()"
@@ -318,16 +285,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button-edition"
+                    <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                     (click)="onNewBookB()"
                     *ngIf="imageListB"
                     [hidden]="imageListB[0+i].category === 'articleB'"
                     >Editer l'article colonne de droite en haut</button>
-
-                    <!-- <button class="submit-button-disabled"
-                    *ngIf="imageListB[0+i].caption === 'demo'"
-                    [disabled]="imageListB[0+i].caption === 'demo'"
-                    >Article déjà édité</button> -->
 
                   </div>
                 </article>
@@ -362,9 +324,7 @@
                         <p class="three-lines-only currentTextAside"
                         [hidden]="imageListC[0+i].caption !== 'demo'">{{ bookC.texte }}</p>
 
-                        <!-- <button (click)="onViewBook(i)" class="list-group-item-text submit-button buttons">Lire la suite</button> -->
-
-                        <button class="waves-effect waves-light submit-button buttons"
+                        <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                         (click)="onRefreshButton()"
                         (click)="onClearArticleCStorage()"
                         (click)="onClearImageDetailCs()"
@@ -378,7 +338,7 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button-edition"
+                    <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                     (click)="onNewBookC()"
                     *ngIf="imageListC"
                     [hidden]="imageListC[0+i].category === 'articleC'"
@@ -417,9 +377,7 @@
                         <p class="three-lines-only currentTextAside"
                         [hidden]="imageListD[0+i].caption !== 'demo'">{{ bookD.texte }}</p>
 
-                        <!-- <button (click)="onViewBook(i)" class="list-group-item-text submit-button buttons">Lire la suite</button> -->
-
-                        <button class="waves-effect waves-light submit-button buttons"
+                        <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                         (click)="onRefreshButton()"
                         (click)="onClearArticleDStorage()"
                         (click)="onClearImageDetailDs()"
@@ -433,16 +391,11 @@
                       </span>
                     </div>
 
-                    <button class="waves-effect waves-light submit-button-edition"
+                    <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                     (click)="onNewBookD()"
                     *ngIf="imageListD"
                     [hidden]="imageListD[0+i].category === 'articleD'"
                     >Editer l'article colonne de droite en bas</button>
-
-                    <!-- <button class="submit-button-disabled"
-                    *ngIf="imageListD[0+i].caption === 'demo'"
-                    [disabled]="imageListD[0+i].caption === 'demo'"
-                    >Article déjà édité</button> -->
 
                   </div>
                 </article>
@@ -487,7 +440,7 @@
                       </span>
                     </div>
 
-                      <button class="waves-effect waves-light submit-button buttons"
+                      <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                       *ngIf="imageListH"
                       [visible]="imageListH[0+i].category === 'articleH'"
                       (click)="onRefreshButton()"
@@ -498,7 +451,7 @@
 
                     <p *ngIf="imageListH[0+i].caption !== 'demo'">Vous n'avez pas l'autorisation de publication. Supprimez d'abord cet article et recommencez avec un indentifiant correct !</p>
 
-                    <button class="btnfos-width-100 btnfos-5 submit-button-edition"
+                    <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                     (click)="onNewBookH()"
                     >Ajouter une news</button>
 
@@ -515,33 +468,14 @@
                       <div class="layout-article-I">
                         <span>
 
-                          <!-- <h3 class="titleAside">
-                            <strong>{{ book.title }}</strong>
-                          </h3> -->
-
-                          <!-- <div *ngFor="let i of rowIndexArray">
-                            <div *ngIf="i==0">
-                              <span (click)="onViewBook(i)">
-                                <img [src]="imageList[0+i].imageUrl"
-                                width="940px" alt="images" class="linkPhoto"
-                                [hidden]="imageList[0+i].caption !== 'demo'">
-                              </span>
-                            </div>
-                          </div> -->
-
                           <h3 class="titleTheme-I">Archives</h3>
 
-                          <!-- <div *ngFor="let book of books; let i = index"> -->
                             <div *ngFor="let i of rowIndexArray; let x = index">
                               <div *ngIf="x==0">
                                 <div *ngFor="let bookAll of bookAlls | slice: 0:6; let i = index">
 
                                   <a class="currentText-I">
                                     <div *ngIf="i<6" class="currentText-I-margin">
-
-                                      <!-- <div (click)="onViewBookAll(i)">
-                                        {{ bookAll.title }}
-                                      </div> -->
 
                                       <div *ngIf="i==0" (click)="onViewBookAllOne(i)"
                                       class="archive-width">
@@ -568,31 +502,6 @@
                                         {{ bookAll.title }}
                                       </div>
 
-                                      <!-- <div *ngIf="i==6" (click)="onViewBookAll(i)">
-                                        {{ bookAll.title }}
-                                      </div> -->
-
-                                      <!-- <div *ngIf="i==0" (click)="onViewBook(i)">
-                                        {{ bookAll.title }}
-                                      </div>
-                                      <div *ngIf="i==1" (click)="onViewBookB(i-1)">
-                                        {{ bookAll.title }}
-                                      </div>
-                                      <div *ngIf="i==2" (click)="onViewBookC(i-2)">
-                                        {{ bookAll.title }}
-                                      </div>
-                                      <div *ngIf="i==3" (click)="onViewBookD(i-3)">
-                                        {{ bookAll.title }}
-                                      </div>
-                                      <div *ngIf="i==4" (click)="onViewBookE(i-4)">
-                                        {{ bookAll.title }}
-                                      </div>
-                                      <div *ngIf="i==5" (click)="onViewBookF(i-5)">
-                                        {{ bookAll.title }}
-                                      </div>
-                                      <div *ngIf="i==6" (click)="onViewBookG(i-6)">
-                                        {{ bookAll.title }}
-                                      </div> -->
                                     </div>
                                   </a>
 
@@ -619,8 +528,6 @@
               <!--  -->
 
               <div class="horizontalLineComplete-bottom"></div>
-
-              <!--  -->
 
               <!-- article J -->
 
@@ -650,7 +557,7 @@
                       <p class="three-lines-only currentTextAside"
                       [hidden]="imageListJ[0+i].caption !== 'demo'">{{ bookJ.texte }}</p>
 
-                      <button class="waves-effect waves-light submit-button buttons"
+                      <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                       (click)="onRefreshButton()"
                       (click)="onClearArticleJStorage()"
                       (click)="onClearImageDetailJs()"
@@ -664,16 +571,11 @@
                     </span>
                   </div>
 
-                  <button class="waves-effect waves-light submit-button-edition"
+                  <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                   (click)="onNewBookJ()"
                   *ngIf="imageListJ"
                   [hidden]="imageListJ[0+i].category === 'articleJ'"
                   >Editer l'article en bas à gauche</button>
-
-                  <!-- <button class="submit-button-disabled"
-                  *ngIf="imageListE[0+i].caption === 'demo'"
-                  [disabled]="imageListE[0+i].caption === 'demo'"
-                  >Article déjà édité</button> -->
 
                 </div>
               </article>
@@ -706,7 +608,7 @@
                       <p class="three-lines-only currentTextAside"
                       [hidden]="imageListK[0+i].caption !== 'demo'">{{ bookK.texte }}</p>
 
-                      <button class="waves-effect waves-light submit-button buttons"
+                      <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                       (click)="onRefreshButton()"
                       (click)="onClearArticleKStorage()"
                       (click)="onClearImageDetailKs()"
@@ -720,16 +622,11 @@
                     </span>
                   </div>
 
-                  <button class="waves-effect waves-light submit-button-edition"
+                  <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                   (click)="onNewBookK()"
                   *ngIf="imageListK"
                   [hidden]="imageListK[0+i].category === 'articleK'"
                   >Editer l'article en bas au centre</button>
-
-                  <!-- <button class="submit-button-disabled"
-                  *ngIf="imageListE[0+i].caption === 'demo'"
-                  [disabled]="imageListE[0+i].caption === 'demo'"
-                  >Article déjà édité</button> -->
 
                 </div>
               </article>
@@ -762,7 +659,7 @@
                       <p class="three-lines-only currentTextAside"
                       [hidden]="imageListL[0+i].caption !== 'demo'">{{ bookL.texte }}</p>
 
-                      <button class="waves-effect waves-light submit-button buttons"
+                      <button class="btnfos-width-archives-supprimer btnfos-5 submit-button buttons"
                       (click)="onRefreshButton()"
                       (click)="onClearArticleLStorage()"
                       (click)="onClearImageDetailLs()"
@@ -776,16 +673,11 @@
                     </span>
                   </div>
 
-                  <button class="waves-effect waves-light submit-button-edition"
+                  <button class="btnfos-width-archives-ajouter btnfos-5 submit-button-edition"
                   (click)="onNewBookL()"
                   *ngIf="imageListL"
                   [hidden]="imageListL[0+i].category === 'articleL'"
                   >Editer l'article en bas à droite</button>
-
-                  <!-- <button class="submit-button-disabled"
-                  *ngIf="imageListE[0+i].caption === 'demo'"
-                  [disabled]="imageListE[0+i].caption === 'demo'"
-                  >Article déjà édité</button> -->
 
                 </div>
               </article>

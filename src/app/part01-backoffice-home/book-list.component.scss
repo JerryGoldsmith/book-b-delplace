@@ -611,6 +611,7 @@ input, textarea {
 // ----
 
 .currentText-news {
+  cursor: pointer;
   color: var(--color-white);
 	font-size: 18px;
 	font-family: NanumMyeongjo-Regular, serif;
@@ -619,7 +620,10 @@ input, textarea {
 	line-height: 1.2;
   margin-top: -10px;
   margin-bottom: 10px;
-  // width: 920px;
+}
+
+.currentText-news:hover {
+  color: var(--color-gold);
 }
 
 .horizontalLine-news {
@@ -719,6 +723,7 @@ input, textarea {
 // ----
 
 .currentText-I {
+  cursor: pointer;
   color: var(--color-white);
 	font-size: 22px;
 	font-family: NanumMyeongjo-Regular, serif;
