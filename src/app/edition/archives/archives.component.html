@@ -6,41 +6,51 @@
 
         <span>
 
-          <button class="waves-effect waves-light submit-button-archives-top" 
+          <button class="btnfos-width-160 btnfos-5 submit-button-archives-top" 
           (click)="onBack()">Retour</button>
 
           <h3 class="title-archives">Archives</h3>
-          <div class="horizontalLine-archive"></div>
 
           <div *ngFor="let i of rowIndexArray; let x = index">
             <div *ngIf="x==0">
+
+              <!-- flex container -->
               <div *ngFor="let book of bookAlls; let i = index; trackBy: bookAllTitle"
-              class="background-archives">
+                class="background-archives containerArchives">
 
-                    <div *ngIf="imageListAll[i]">
-                      <img [src]="imageListAll[i].imageUrl" alt="images"
-                      class="img-fluid imageArchives">
-                    </div>
-
-                <a class="link-archives">
-                  <div>
-
-                    <div (click)="onViewBookAll(i)"
-                    class="archive-width-big">
-                      {{ book.title }}
-                    </div>
-
-                    <div class="horizontalLine-archives"></div>
+                  <div *ngIf="imageListAll[i]">
+                    <img [src]="imageListAll[i].imageUrl" alt="images"
+                      class="img-archives btnfos-width-620 btnfos-3" (click)="onViewBookAll(i)">
                   </div>
-                </a>
 
+                  <a class="link-archives">
+                    <div>
+
+                      <div class="horizontalLine-archive-links-top"></div>
+
+                      <div class="date-archives">
+                        <p class="textDate-main">{{ book.timestamp | date:'fullDate' : '' : 'fr-FR' }} par <i class="textAuthor">{{ book.author }}</i></p>
+                      </div>
+
+                      <div (click)="onViewBookAll(i)"
+                      class="archive-width-big">
+                        {{ book.title }}
+                      </div>
+
+                      <div class="horizontalLine-archive-links-bottom"></div>
+
+                    </div>
+                  </a>
+                
               </div>
+              <!-- end flex -->
+
             </div>
           </div>
 
         </span>
 
-        <button class="waves-effect waves-light submit-button-archives-bottom" 
+        <button class="btnfos-width-160 btnfos-5 submit-button-archives-bottom" 
         (click)="onBack()">Retour</button>
 
       </div>

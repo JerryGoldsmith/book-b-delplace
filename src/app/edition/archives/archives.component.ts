@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-archives',
   templateUrl: './archives.component.html',
-  styleUrls: ['./../book-list.component.scss']
+  styleUrls: ['./../book-list.component.scss',
+  '../../../assets/css/button-effects.css']
 })
 export class ArchivesComponent implements OnInit {
 
@@ -16,7 +17,6 @@ export class ArchivesComponent implements OnInit {
   bookAllsSubscription: Subscription;
 
   imageListAll: any[];
-  imageListEach: any[];
 
   rowIndexArray: any[];
 
@@ -69,7 +69,7 @@ export class ArchivesComponent implements OnInit {
     this.router.navigate(['/backoffice']);
   }
 
-  bookAllTitle(index, bookAll) {
+  bookAllTitle(bookAll: { title: any; }) {
     return bookAll.title;
   }
 

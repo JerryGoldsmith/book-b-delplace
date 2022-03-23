@@ -26,6 +26,15 @@ p, span {
   padding-left: 18px;
 }
 
+.img-archives {
+  width: 620px;
+  cursor: pointer;
+}
+
+.img-archives:hover {
+  opacity: 0.7;
+}
+
 .layout-rules {
   // width: 1480px;
   text-align: center;
@@ -151,6 +160,8 @@ p, span {
   text-align: left;
   width: 1520px;
 }
+
+// BUTTONS
 
 #submit-button-backoffice {
   background: var(--color-fluo);
@@ -792,7 +803,7 @@ input, textarea {
 // I (archives) ------
 
 .layout-article-I {
-  background-color: var(--color-darkpurple);
+  background-color: var(--color-bluesuperdark);
   margin-top: -28px;
   margin-left: 20px;
   width: 1080px;
@@ -837,12 +848,12 @@ input, textarea {
   text-align: center;
   line-height: 0.8;
   letter-spacing: 6px;
-  font-size: 62px;
+  font-size: 82px;
 	font-family: NanumMyeongjo-Regular, serif;
   padding-left: 14px;
   // padding-right: 10px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-top: -30px;
+  margin-bottom: 30px;
 }
 
 .horizontalLine-archive {
@@ -850,6 +861,22 @@ input, textarea {
   opacity: 0.2;
   width: 420px;
   margin-left: 320px;
+}
+
+.horizontalLine-archive-links-top {
+  border: solid 0.5px var(--color-gold);
+  opacity: 0.6;
+  width: 240px;
+  margin-left: 46px;
+  margin-top: 120px;
+}
+
+.horizontalLine-archive-links-bottom {
+  border: solid 2px var(--color-gold);
+  opacity: 0.8;
+  width: 340px;
+  margin-top: 20px;
+  margin-left: -20px;
 }
 
 // ----
@@ -933,9 +960,19 @@ input, textarea {
 }
 
 .archive-width-big {
-  width: 860px;
-  margin-left: 105px;
+  text-align: left;
+  width: 340px;
+  padding-top: 120px;
+  margin-right: 10px;
   line-height: 1.2;
+  cursor: pointer;
+}
+
+.date-archives {
+  width: 280px;
+  padding-top: 10px;
+  padding-left: 30px;
+  cursor: auto;
 }
 
 // -------
@@ -1218,27 +1255,31 @@ input, textarea {
   display: inline-block;
   margin: auto;
   background-color: var(--color-gold);
-  font-size: 20px;
+  font-size: 24px;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-gold);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, 
+  rgba(0, 0, 0, 0.09) 0px 4px 2px, 
+  rgba(0, 0, 0, 0.09) 0px 8px 4px, 
+  rgba(0, 0, 0, 0.09) 0px 16px 8px, 
+  rgba(0, 0, 0, 0.09) 0px 32px 16px;
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 60px;
-  margin-left: 470px;
+  margin-left: -60px;
   margin-bottom: 10px;
   text-align: center;
-  // margin-bottom: 12px;
 }
 
 .submit-button-archives-top:hover {
   background-color: var(--color-palesun);
   color: black;
   animation: ani9 0.8s ease-in-out infinite alternate;
-  transform: translatey(6px);
+  transform: translatex(6px);
   box-shadow: none;
 }
 
@@ -1250,12 +1291,17 @@ input, textarea {
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-gold);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, 
+  rgba(0, 0, 0, 0.09) 0px 4px 2px, 
+  rgba(0, 0, 0, 0.09) 0px 8px 4px, 
+  rgba(0, 0, 0, 0.09) 0px 16px 8px, 
+  rgba(0, 0, 0, 0.09) 0px 32px 16px;
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-left: 488px;
+  margin-left: -60px;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 30px;
@@ -1265,7 +1311,7 @@ input, textarea {
   background-color: var(--color-palesun);
   color: black;
   animation: ani9 0.8s ease-in-out infinite alternate;
-  transform: translatey(6px);
+  transform: translatex(6px);
   box-shadow: none;
 }
 
@@ -1361,7 +1407,12 @@ input, textarea {
 // -----
 
 .background-archives {
-  background-color: var(--main-color);
+  // background-color: var(--main-color);
+  border-radius: 20px;
+  background:
+  linear-gradient(217deg, var(--main-color), var(--color-bluesuperdark) 80%),
+  linear-gradient(127deg, var(--main-color), var(--color-bluesuperdark) 100%),
+  linear-gradient(336deg, var(--main-color), var(--color-bluesuperdark) 100%);
   margin: 20px;
   padding: 20px;
 }
@@ -1384,9 +1435,14 @@ input, textarea {
   color: var(--color-gold);
 }
 
+.containerArchives {
+  display: flex;
+  flex-direction: row;
+}
+
 .imageArchives {
-  width: 200px;
-  margin-left: 440px;
+  width: 400px;
+  margin-left: 40px;
   margin-top: 20px;
   margin-bottom: 20px;
 }

@@ -13,6 +13,7 @@ import "firebase/database";
   styleUrls: ['./part01-backoffice-home.component.scss',
   './book-list.component.scss',
   './header.component.scss',
+  '../../assets/css/button-effects.css',
   './../normalize.component.scss']
 })
 export class Part01BackofficeHomeComponent implements OnInit {
