@@ -11,6 +11,8 @@ import * as fr from "@angular/common/locales/fr"; // date
 // guard
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
+import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
+
 // home
 // import { Part01EditionHomeComponent } from 'src/app/part01-edition-home/part01-edition-home.component';
 
@@ -175,7 +177,8 @@ const routes: Routes = [
       RouterModule
     ],
     providers: [
-        AuthGuardService
+        AuthGuardService,
+        LazyImgDirective
     ]})
 
 export class Part01EditionModule { 
