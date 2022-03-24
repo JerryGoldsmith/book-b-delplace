@@ -11,42 +11,43 @@
 
           <h3 class="title-archives">Archives</h3>
 
+          <!-- hidden -->
           <div *ngFor="let i of rowIndexArray; let x = index">
             <div *ngIf="x==0">
 
-              <!-- flex container -->
-              <div *ngFor="let book of bookAlls; let i = index; trackBy: bookAllTitle"
+              <!-- flex container - first > first item of an array -->
+              <div *ngFor="let book of bookAlls; let i = index; trackBy: bookAllTitle; let isFirst = first"
                 class="background-archives containerArchives">
 
-                  <div *ngIf="imageListAll[i]">
-                    <img [src]="imageListAll[i].imageUrl" alt="images"
-                      class="img-archives btnfos-width-620 btnfos-3 star" (click)="onViewBookAll(i)">
-                  </div>
+                <img [src]="imageListAll[i].imageUrl" alt="images"
+                class="img-archives btnfos-width-620 btnfos-3 star"
+                (click)="onViewBookAll(i)" [ngClass]="{'starVisible': isFirst, 'star': i}">
+                
+                <a class="link-archives">
+                  <div>
 
-                  <a class="link-archives">
-                    <div>
+                    <div class="horizontalLine-archive-links-top"></div>
 
-                      <div class="horizontalLine-archive-links-top"></div>
-
-                      <div class="date-archives">
-                        <p class="textDate-main">{{ book.timestamp | date:'fullDate' : '' : 'fr-FR' }} par <i class="textAuthor">{{ book.author }}</i></p>
-                      </div>
-
-                      <div (click)="onViewBookAll(i)"
-                      class="archive-width-big">
-                        {{ book.title }}
-                      </div>
-
-                      <div class="horizontalLine-archive-links-bottom"></div>
-
+                    <div class="date-archives">
+                      <p class="textDate-main">{{ book.timestamp | date:'fullDate' : '' : 'fr-FR' }} par <i class="textAuthor">{{ book.author }}</i></p>
                     </div>
-                  </a>
+
+                    <div (click)="onViewBookAll(i)"
+                    class="archive-width-big">
+                      {{ book.title }}
+                    </div>
+
+                    <div class="horizontalLine-archive-links-bottom"></div>
+
+                  </div>
+                </a>
                 
               </div>
               <!-- end flex -->
 
             </div>
           </div>
+          <!-- end hidden -->
 
         </span>
 

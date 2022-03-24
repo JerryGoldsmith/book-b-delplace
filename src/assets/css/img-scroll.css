@@ -2,6 +2,10 @@
     visibility: hidden;
 }
 
+.starVisible {
+  visibility: visible;
+}
+
 .fadeIn {
     -webkit-animation: animat_show 0.8s;
     animation: fadeIn 2s;

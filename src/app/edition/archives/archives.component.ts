@@ -77,7 +77,7 @@ export class ArchivesComponent implements OnInit {
 
     // if the image in the window of browser when the page is loaded, show that image
     $(function(){
-        showImages('.star');
+        showImages('.starVisible');
     });
 
     // if the image in the window of browser when scrolling the page, show that image
