@@ -11,7 +11,8 @@ import { Subscription } from 'rxjs';
   selector: 'app-single-book-g',
   templateUrl: './single-book-g.component.html',
   styleUrls: ['./../book-list.component.scss',
-  '../../../assets/css/button-effects.css']
+  '../../../assets/css/button-effects.css',
+  '../../../assets/css/img-scroll.css']
 })
 export class SingleBookGComponent implements OnInit {
 
@@ -47,6 +48,28 @@ export class SingleBookGComponent implements OnInit {
     );
     this.booksService.getBookGs();
     this.booksService.emitBookGs();
+
+    // ---------
+
+    function showImages(el: string) {
+      var windowHeight = jQuery( window ).height();
+      $(el).each(function(){
+          var thisPos = $(this).offset().top;
+
+          var topOfWindow = $(window).scrollTop();
+          if (topOfWindow + windowHeight - 200 > thisPos ) {
+              $(this).addClass("fadeIn");
+          }
+      });
+    }
+
+    $(function(){
+        showImages('.starVisible');
+    });
+
+    $(window).on('scroll', function () {
+        showImages('.star');
+    });
   }
 
   initGetSingleBookById() {

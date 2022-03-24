@@ -11,14 +11,15 @@
 
           <h3 class="title-archives">Archives</h3>
 
-          <!-- hidden -->
+          <!-- image scroll effects -->
           <div *ngFor="let i of rowIndexArray; let x = index">
             <div *ngIf="x==0">
 
-              <!-- flex container - first > first item of an array -->
+              <!-- flex container - first > first item of book -->
               <div *ngFor="let book of bookAlls; let i = index; trackBy: bookAllTitle; let isFirst = first"
                 class="background-archives containerArchives">
 
+                <!-- only first item of book visible -->
                 <img [src]="imageListAll[i].imageUrl" alt="images"
                 class="img-archives btnfos-width-620 btnfos-3 star"
                 (click)="onViewBookAll(i)" [ngClass]="{'starVisible': isFirst, 'star': i}">
@@ -47,7 +48,7 @@
 
             </div>
           </div>
-          <!-- end hidden -->
+          <!-- end image scroll effects -->
 
         </span>
 
