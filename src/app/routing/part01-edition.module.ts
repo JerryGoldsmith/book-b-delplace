@@ -15,7 +15,7 @@ import { AuthGuardService } from 'src/app/services/auth-guard.service';
 // import { Part01EditionHomeComponent } from 'src/app/part01-edition-home/part01-edition-home.component';
 
 // backoffice
-import { Part01BackofficeHomeComponent } from 'src/app/part01-backoffice-home/part01-backoffice-home.component';
+// import { Part01BackofficeHomeComponent } from 'src/app/part01-backoffice-home/part01-backoffice-home.component';
 
 import { ArchivesComponent } from 'src/app/edition/archives/archives.component';
 
@@ -58,21 +58,18 @@ import { SingleBookAllSixComponent } from 'src/app/edition/single-book-all-six/s
 
 const routes: Routes = [
 
-  // Part01EditionHomeComponent
-  {
+  { // Part01EditionHomeComponent
     path: 'edition',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/edition-rendu/edition-rendu.module')
       .then(mod => mod.EditionRenduModule)
   },
-
-  // Part01BackofficeHomeComponent
-  // {
-  //   path: 'backoffice',
-  //   canActivate: [AuthGuardService],
-  //   loadChildren: () => import('src/app/mod/private/edition-backoffice/edition-backoffice.module')
-  //     .then(mod => mod.EditionBackofficeModule)
-  // },
+  { // Part01BackofficeHomeComponent
+    path: 'backoffice',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/edition-backoffice/edition-backoffice.module')
+      .then(mod => mod.EditionBackofficeModule)
+  },
 
   // {
   //   path: 'archives',
@@ -83,7 +80,7 @@ const routes: Routes = [
 
     // { path: 'edition', component: Part01EditionHomeComponent },
 
-    { path: 'backoffice', component: Part01BackofficeHomeComponent },
+    // { path: 'backoffice', component: Part01BackofficeHomeComponent },
 
     { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
     { path: 'bookBs/new', canActivate: [AuthGuardService], component: BookFormBComponent },
@@ -128,7 +125,7 @@ const routes: Routes = [
 @NgModule({
     declarations: [
       // Part01EditionHomeComponent, // home
-      Part01BackofficeHomeComponent,
+      // Part01BackofficeHomeComponent,
 
       ArchivesComponent,
 

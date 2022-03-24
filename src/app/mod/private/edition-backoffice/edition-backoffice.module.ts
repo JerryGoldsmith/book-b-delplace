@@ -2,19 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EditionBackofficeRoutingModule } from './edition-backoffice-routing.module';
-import { BackofficeComponent } from 'src/app/edition/backoffice/backoffice.component';
+
+import { Part01BackofficeHomeComponent } from 'src/app/part01-backoffice-home/part01-backoffice-home.component';
 
 
 @NgModule({
   declarations: [
-    BackofficeComponent
+    Part01BackofficeHomeComponent
   ],
   imports: [
     CommonModule,
     EditionBackofficeRoutingModule
   ],
   exports: [
-    BackofficeComponent
+    Part01BackofficeHomeComponent
   ]
 })
 export class EditionBackofficeModule { }

@@ -80,6 +80,58 @@ export class Part01EditionHomeComponent implements OnInit {
 
   buttonDisabled: boolean;
 
+  /* lazyLoad images */
+  defaultImage = '../../assets/image-default.svg';
+
+  // AImage01 = 'https://firebasestorage.googleapis.com/v0/b/book-b-delplace.appspot.com/o/articleA%2Flavillette-11_1647961531540?alt=media&token=ca7333f5-e83c-4204-b15e-36dc6199e615';
+  // AImage02 = 'https://firebasestorage.googleapis.com/v0/b/book-b-delplace.appspot.com/o/articleA%2Flavillette-09_1647961561118?alt=media&token=015e654f-7da0-465e-9d74-d55b9850b195';
+  // AImage03 = 'https://firebasestorage.googleapis.com/v0/b/book-b-delplace.appspot.com/o/articleA%2Flavillette-10_1647961545052?alt=media&token=f8fa4628-0b53-4070-9f06-0bf2043e489e';
+
+  // BImage01 = '';
+  // BImage02 = '';
+  // BImage03 = '';
+
+  // CImage01 = '';
+  // CImage02 = '';
+  // CImage03 = '';
+
+  // DImage01 = '';
+  // DImage02 = '';
+  // DImage03 = '';
+
+  // EImage01 = '';
+  // EImage02 = '';
+  // EImage03 = '';
+
+  // FImage01 = '';
+  // FImage02 = '';
+  // FImage03 = '';
+
+  // GImage01 = '';
+  // GImage02 = '';
+  // GImage03 = '';
+
+  // HImage01 = '';
+  // HImage02 = '';
+  // HImage03 = '';
+
+  // IImage01 = '';
+  // IImage02 = '';
+  // IImage03 = '';
+
+  // JImage01 = '';
+  // JImage02 = '';
+  // JImage03 = '';
+
+  // KImage01 = '';
+  // KImage02 = '';
+  // KImage03 = '';
+
+  // LImage01 = '';
+  // LImage02 = '';
+  // LImage03 = '';
+  
+
   constructor(
     private booksService: BooksService,
     private imageService: ImageService,
