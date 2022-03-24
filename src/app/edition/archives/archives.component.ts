@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   selector: 'app-archives',
   templateUrl: './archives.component.html',
   styleUrls: ['./../book-list.component.scss',
+  '../../../assets/css/img-scroll.css',
   '../../../assets/css/button-effects.css']
 })
 export class ArchivesComponent implements OnInit {
@@ -59,6 +60,30 @@ export class ArchivesComponent implements OnInit {
     );
     this.booksService.getBookAlls();
     this.booksService.emitBookAlls();
+
+    // ---------
+
+    function showImages(el: string) {
+      var windowHeight = jQuery( window ).height();
+      $(el).each(function(){
+          var thisPos = $(this).offset().top;
+
+          var topOfWindow = $(window).scrollTop();
+          if (topOfWindow + windowHeight - 200 > thisPos ) {
+              $(this).addClass("fadeIn");
+          }
+      });
+    }
+
+    // if the image in the window of browser when the page is loaded, show that image
+    $(function(){
+        showImages('.star');
+    });
+
+    // if the image in the window of browser when scrolling the page, show that image
+    $(window).on('scroll', function () {
+        showImages('.star');
+    });
   }
 
   onViewBookAll(id: number) {

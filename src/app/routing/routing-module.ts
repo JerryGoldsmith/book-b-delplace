@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
-// import { CommonModule, registerLocaleData } from "@angular/common";
-import * as fr from "@angular/common/locales/fr";
+// lazy load images
+import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
 
 /* AngularFire */
-
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
@@ -16,15 +15,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { CommonModule } from "@angular/common";
 
-// import { BrowserModule } from '@angular/platform-browser';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-// SharedModule needs CommonModule (app.module)
 import { SharedModule } from "./../shared/shared.module";
 
 import { MainComponent } from './../main/main.component';
-
-// import { Part01Component } from './../part01/part01.component';
 
 /* -------------------------------------------- */
 /* ------------------ AUTH -------------------- */
@@ -32,33 +25,12 @@ import { MainComponent } from './../main/main.component';
 
 import { SignupComponent } from './../auth/signup/signup.component';
 import { SignupLightComponent } from './../auth/signuplight/signuplight.component';
-// import { SigninComponent } from './../auth/signin/signin.component';
 import { SigninlistComponent } from './../auth/signinlist/signinlist.component';
 
-/* ---- Footer ----- */
 
-// import { FooterComponent } from './../footer/footer.component';
+import { environment } from '../../environments/environment';
 
-/* -------------------------------------------------- */
-/* --------------------- SERVICES ------------------- */
-/* -------------------------------------------------- */
-
-/* Auth */
-import { AuthService } from './../services/auth.service';
-import { AuthGuardService } from './../services/auth-guard.service';
-import { AuthentificationService } from "./../services/authentification.service";
-
-    /* Acces Firebase */
-    import { environment } from '../../environments/environment';
-    // import { HttpClientModule } from '@angular/common/http'; // Acces Firebase
-
-    /* FormsModule */
-
-    // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-    /* AngularResizedEvent */
-
-    import { AngularResizeEventModule } from 'angular-resize-event';
+import { AngularResizeEventModule } from 'angular-resize-event';
 
 const routes: Routes = [
   { 
@@ -69,7 +41,6 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
-  // { path: 'partA', component: Part01Component },
   {
     path: 'partA',
     loadChildren: () => import('src/app/mod/public/a/a.module')
@@ -91,12 +62,7 @@ const routes: Routes = [
     loadChildren: () => import('src/app/mod/public/d/d.module')
     .then(mod => mod.DModule)
   },
-
-  // -----
-  // auth :
-  // -----
-
-  {
+  { // auth
     path: 'auth/signin',
     loadChildren: () => import('src/app/mod/public/auth/signin/signin.module')
       .then(mod => mod.SigninModule),
@@ -118,7 +84,6 @@ const routes: Routes = [
   //     .then(mod => mod.SignuplightModule)
   // },
 
-  // { path: 'auth/signin', component: SigninComponent },
   { path: 'auth/signinlist', component: SigninlistComponent },
 
   { path: 'auth/signup', component: SignupComponent },
@@ -126,19 +91,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    // FooterComponent
-    // Part01Component
-  ],
   imports: [
     RouterModule.forRoot(routes,
       { preloadingStrategy: AuthPreloadStrategy }),
-    // BrowserModule,
-    // BrowserAnimationsModule,
+ 
     SharedModule,
-    // CommonModule,
 
-    // HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireAuthGuardModule,
@@ -146,10 +104,8 @@ const routes: Routes = [
     AngularFireStorageModule,
     AngularFireDatabaseModule,
 
-    // FormsModule,
-    // ReactiveFormsModule,
     AngularResizeEventModule,
-    CommonModule // display auth in partA
+    CommonModule
   ],
   exports: [
     RouterModule,
@@ -157,13 +113,8 @@ const routes: Routes = [
     AngularResizeEventModule
   ],
   providers: [
-    // AuthService,
-    // AuthGuardService,
-    // AuthentificationService
+    LazyImgDirective
   ]
 })
 export class RoutingModule {
-  // constructor() {
-  //   registerLocaleData(fr.default);
-  // }
  }

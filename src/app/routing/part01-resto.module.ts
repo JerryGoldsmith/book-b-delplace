@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
+// lazy load images
+import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
+
 import { AuthGuardService } from './../services/auth-guard.service';
 
 const routes: Routes = [
@@ -126,6 +129,10 @@ const routes: Routes = [
     ],
   exports: [
     RouterModule
-  ]})
+  ],
+  providers: [
+    LazyImgDirective
+  ]
+})
 
 export class Part01RestoModule { }
