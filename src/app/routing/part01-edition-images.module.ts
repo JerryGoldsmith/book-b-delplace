@@ -8,6 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import * as fr from "@angular/common/locales/fr"; // date
 
+// lazy load images
+import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
+
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
 // ---------
@@ -149,7 +152,8 @@ const routes: Routes = [
         RouterModule
     ],
     providers: [
-        AuthGuardService
+        AuthGuardService,
+        LazyImgDirective
     ]
 })
 

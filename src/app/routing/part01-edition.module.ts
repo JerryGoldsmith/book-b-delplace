@@ -8,17 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import * as fr from "@angular/common/locales/fr"; // date
 
-// lazy load images
-import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
-
 // guard
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
-
-// home
-// import { Part01EditionHomeComponent } from 'src/app/part01-edition-home/part01-edition-home.component';
-
-// backoffice
-// import { Part01BackofficeHomeComponent } from 'src/app/part01-backoffice-home/part01-backoffice-home.component';
 
 import { ArchivesComponent } from 'src/app/edition/archives/archives.component';
 
@@ -178,8 +169,7 @@ const routes: Routes = [
       RouterModule
     ],
     providers: [
-        AuthGuardService,
-        LazyImgDirective
+        AuthGuardService
     ]})
 
 export class Part01EditionModule { 

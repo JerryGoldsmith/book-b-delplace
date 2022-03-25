@@ -7,159 +7,58 @@
   margin-bottom: -20px;
 }
 
+// fonds image ------
+
+.backgroundA {
+  width: 618px;
+  height: 548px;
+  background-image: url("../../../assets/sky-tree-03.png");
+  background-size: 1260px 1260px; // background visual
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border: solid 8px var(--color-gold);
+  margin-top: 80px;
+  margin-left: -20px;
+}
+
+.backgroundB {
+  width: 618px;
+  height: 548px;
+  background-image: url("../../../assets/sky-tree-03.png");
+  background-size: 1260px 1260px;
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border: solid 8px var(--color-gold);
+  margin-top: 80px;
+}
+
+.backgroundC {
+  width: 1236px;
+  height: 598px;
+  background-image: url("../../../assets/sky-tree-03.png");
+  background-size: 1260px 1260px;
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border: solid 8px var(--color-gold);
+  margin-top: 18px;
+  margin-left: -20px;
+  margin-right: -16px;
+  margin-bottom: 80px;
+}
+
 // ------
 
-.textAlignCenter {
-  text-align: center;
-}
-
-.verticalMiddle {
-  padding-top: 240px;
-}
-
-// @keyframes move {
-//   from {
-//     margin-left: 100%;
-//     width: 300%;
-//   }
-//
-//   to {
-//     margin-left: 0%;
-//     width: 100%;
-//   }
-// }
-
-
-@-webkit-keyframes move {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-
-// ------
-
-.link-A {
-  // background-color: var(--color-fluo);
-  background:
-  linear-gradient(127deg, rgba(253,72,60), rgba(14,31,62,0) 100%),
-  linear-gradient(336deg, rgba(22,93,125), rgba(14,31,62,1) 70%),
-  linear-gradient(336deg, rgba(14,31,62), rgba(22,93,125,1) 100%);
-  padding-top: 213px;
-  padding-bottom: 206px;
-  margin-left: -1px;
-  padding-left: 106px;
-  padding-right: 208px;
-  color: var(--color-white);
-  font-size: 96px;
-  // text-transform: uppercase;
-  letter-spacing: -0.05em;
-  text-decoration: none;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
-  // animation: move 2s;
-  // -webkit-animation: move 2s;
-}
-
-.link-A:hover {
-  opacity: 0;
-  // background:
-  // linear-gradient(217deg, rgba(150,128,94), rgba(150,128,94,0) 100%),
-  // // linear-gradient(127deg, rgba(253,207,155), rgba(238,178,122,0) 70%),
-  // linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,0) 100%);
-}
-
-// -----
-
-.link-B {
-  // background-color: var(--color-night);
-  background:
-  linear-gradient(127deg, rgba(192,200,97), rgba(253,72,60,0) 70%),
-  linear-gradient(336deg, rgba(253,72,60), rgba(192,200,97) 100%),
-  linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,1) 100%);
-  padding-top: 213px;
-  padding-bottom: 206px;
-  margin-left: -8px;
-  padding-left: 106px;
-  padding-right: 84px;
-  color: var(--color-white);
-  font-size: 96px;
-  letter-spacing: -0.05em;
-  text-decoration: none;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
-}
-
-.link-B:hover {
-  opacity: 0;
-  // background:
-  // linear-gradient(217deg, rgba(150,128,94), rgba(150,128,94,0) 100%),
-  // // linear-gradient(127deg, rgba(253,207,155), rgba(238,178,122,0) 70%),
-  // linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,0) 100%);
-}
-
-.link-C {
-  // background-color: var(--color-supergreen);
-  background:
-  linear-gradient(336deg, rgba(77,29,72), rgba(178,37,44,1) 100%),
-  linear-gradient(127deg, rgba(178,37,44), rgba(233,229,73,0) 100%),
-  linear-gradient(336deg, rgba(233,229,73), rgba(77,29,72,1) 100%);
-  padding-top: 214px;
-  padding-bottom: 75px;
-  margin-left: -8px;
-  padding-left: 272px; // size gradient background
-  padding-right: 659px;
-  margin-right: -8px;
-  color: var(--color-white);
-  font-size: 96px;
-  letter-spacing: -0.05em;
-  text-decoration: none;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
-  // animation: move 3s;
-  // -webkit-animation: move 3s;
-}
-
-.link-C:hover {
-  opacity: 0;
-  // background:
-  // linear-gradient(217deg, rgba(150,128,94), rgba(150,128,94,0) 100%),
-  // // linear-gradient(127deg, rgba(253,207,155), rgba(238,178,122,0) 70%),
-  // linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,0) 100%);
-}
-
-.link-D {
-  background-color: var(--color-gold);
-  padding-top: 225px;
-  padding-bottom: 219px;
-  margin-left: -34px;
-  padding-left: 106px;
-  padding-right: 208px;
-  color: var(--color-white);
-  font-size: 96px;
-  letter-spacing: -0.05em;
-  text-decoration: none;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
-}
-
-.link-D:hover {
-  opacity: 0;
-  // background:
-  // linear-gradient(217deg, rgba(150,150,150), rgba(150,128,94,0) 100%),
-  // // linear-gradient(127deg, rgba(253,207,155), rgba(238,178,122,0) 70%),
-  // linear-gradient(336deg, rgba(169,169,169), rgba(67,67,67,0) 50%);
-}
-
-// liens background -----
+// textes background -----
 
 .textOnBackground-A {
   color: var(--color-fluo);
   font-size: 214px;
   letter-spacing: -0.06em;
-  margin-bottom: -364px;
-  margin-left: -22px;
+  margin-top: 6rem;
+  margin-left: -15px;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
@@ -168,7 +67,8 @@
   color: var(--color-night);
   font-size: 157px;
   letter-spacing: -0.08em;
-  margin-left: -22px;
+  margin-top: 4rem;
+  margin-left: 40px;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
@@ -177,7 +77,7 @@
   color: var(--color-supergreen);
   font-size: 229px;
   letter-spacing: -0.08em;
-  margin-left: -10px;
+  margin-left: 18rem;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
@@ -191,82 +91,69 @@
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
 
-// -------
+// button au premier plan ------
 
-.big-background {
+.link-A {
   background:
   linear-gradient(127deg, rgba(253,72,60), rgba(14,31,62,0) 100%),
   linear-gradient(336deg, rgba(22,93,125), rgba(14,31,62,1) 70%),
   linear-gradient(336deg, rgba(14,31,62), rgba(22,93,125,1) 100%);
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  // animation: move 2s;
-  // -webkit-animation: move 2s;
+  padding-top: 434px;
+  padding-bottom: 120px;
+  padding-left: 190px;
+  padding-right: 180px;
+  // position: relative;
+  color: var(--color-white);
+  font-size: 106px;
+  letter-spacing: -0.05em;
+  text-decoration: none;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
 
-.backgroundA {
-  background-image: url("../../../assets/sky-tree-03.png");
-  // background-image: url("../../../assets/tree.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 1160px 1160px;
-  // background-color: #cccccc; /* Used if the image is unavailable */
-  // height: 500px; /* You must set a specified height */
-  // background-position: center; /* Center the image */
-  // background-repeat: no-repeat; /* Do not repeat the image */
-  // background-size: cover; /* Resize the background image to cover the entire container */
-  border: solid 8px var(--color-gold);
-  // border-radius: 10px;
-  // padding: 20px;
-  // text-align: left;
-  margin-top: 80px;
-  margin-left: -20px;
-  width: 548px;
-  height: 548px;
+.link-A:hover {
+  opacity: 0;
 }
 
-.backgroundB {
-  background-image: url("../../../assets/sky-tree-03.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 1160px 1160px;
-  // background-image: url("../../../assets/matrixPictures/C.jpeg");
-  // background-color: #cccccc; /* Used if the image is unavailable */
-  // height: 500px; /* You must set a specified height */
-  // background-position: center; /* Center the image */
-  // background-repeat: no-repeat; /* Do not repeat the image */
-  // background-size: cover; /* Resize the background image to cover the entire container */
-  border: solid 8px var(--color-gold);
-  // border-radius: 10px;
-  // padding: 20px;
-  // text-align: left;
-  margin-top: 80px;
-  width: 548px;
-  height: 548px;
+// -----
+
+.link-B {
+  background:
+  linear-gradient(127deg, rgba(192,200,97), rgba(253,72,60,0) 70%),
+  linear-gradient(336deg, rgba(253,72,60), rgba(192,200,97) 100%),
+  linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,1) 100%);
+  padding-top: 314px;
+  padding-bottom: 112px;
+  padding-left: 176px;
+  padding-right: 76px;
+  // position: relative;
+  color: var(--color-white);
+  font-size: 96px;
+  letter-spacing: -0.05em;
+  text-decoration: none;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
 
-.backgroundC {
-  background-image: url("../../../assets/sky-tree-03.png");
-  // background-color: #cccccc; /* Used if the image is unavailable */
-  // height: 500px; /* You must set a specified height */
-  // background-position: center; /* Center the image */
-  // background-repeat: no-repeat; /* Do not repeat the image */
-  // background-size: cover; /* Resize the background image to cover the entire container */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 1160px 1160px;
-  border: solid 8px var(--color-gold);
-  // border-radius: 10px;
-  // padding: 20px;
-  // text-align: left;
-  margin-top: 14px;
-  margin-left: -20px;
-  margin-right: -16px;
-  margin-bottom: 80px;
-  width: 1148px;
-  height: 418px;
+.link-B:hover {
+  opacity: 0;
+}
+
+.link-C {
+  background:
+  linear-gradient(336deg, rgba(77,29,72), rgba(178,37,44,1) 100%),
+  linear-gradient(127deg, rgba(178,37,44), rgba(233,229,73,0) 100%),
+  linear-gradient(336deg, rgba(233,229,73), rgba(77,29,72,1) 100%);
+  padding-top: 360px;
+  padding-bottom: 110px;
+  padding-left: 292px;
+  padding-right: 763px;
+  // position: relative;
+  color: var(--color-white);
+  font-size: 96px;
+  letter-spacing: -0.05em;
+  text-decoration: none;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}
+
+.link-C:hover {
+  opacity: 0;
 }

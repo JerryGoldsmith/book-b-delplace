@@ -1,19 +1,19 @@
 <div class="resize" (resized)="onResized($event)">
 
   <div class="blocks">
-    <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundA textAlignCenter verticalMiddle">
+    <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundA">
       <div class="textOnBackground-A">Réserver</div>
       <a routerLink="/reservation" class="link-A">Réserver</a>
     </div>
 
-    <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundB textAlignCenter verticalMiddle">
+    <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundB">
       <div class="textOnBackground-B">Commander</div>
       <a routerLink="/resto-home" class="link-B">Commander</a>
     </div>
   </div>
 
   <div class="blocks">
-    <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundC textAlignCenter verticalMiddle">
+    <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundC">
       <div class="textOnBackground-C">Editer</div>
       <a routerLink="/edition" class="link-C">Editer</a>
     </div>
