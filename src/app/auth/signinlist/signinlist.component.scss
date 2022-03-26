@@ -36,7 +36,7 @@
 
 .backgroundC {
   width: 1236px;
-  height: 384px;
+  height: 414px;
   background-image: url("../../../assets/sky-tree-03.png");
   background-size: 1260px 1260px;
   background-position: center 100%;
@@ -50,8 +50,8 @@
 .baseline-A {
   position: relative;
   z-index:10;
-  padding-left: 60px;
-  padding-top: 100px;
+  padding-left: 30px;
+  padding-top: 70px;
   // padding-left: 176px;
   // padding-top: 70px;
   font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
@@ -70,8 +70,8 @@
 .baseline-B {
   position: relative;
   z-index:10;
-  padding-left: 60px;
-  padding-top: 100px;
+  padding-left: 30px;
+  padding-top: 70px;
   // padding-left: 186px;
   // padding-top: 70px;
   color: var(--color-gold);
@@ -90,7 +90,7 @@
 .baseline-C {
   position: relative;
   z-index:10;
-  padding-left: 280px;
+  padding-left: 30px;
   padding-top: 30px;
   // padding-left: 442px;
   color: var(--color-gold);
@@ -114,7 +114,7 @@
   linear-gradient(336deg, rgba(22,93,125), rgba(14,31,62,1) 70%),
   linear-gradient(336deg, rgba(14,31,62), rgba(22,93,125,1) 100%);
   padding-top: 237px;
-  padding-bottom: 167px;
+  padding-bottom: 197px;
   padding-left: 171px;
   padding-right: 171px;
   color: var(--color-white);
@@ -136,7 +136,7 @@
   linear-gradient(336deg, rgba(253,72,60), rgba(192,200,97) 100%),
   linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,1) 100%);
   padding-top: 237px;
-  padding-bottom: 167px;
+  padding-bottom: 197px;
   padding-left: 110px;
   padding-right: 110px;
   color: var(--color-white);
