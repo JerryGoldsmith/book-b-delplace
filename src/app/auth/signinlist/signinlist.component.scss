@@ -55,10 +55,10 @@
 
 .textOnBackground-A {
   color: var(--color-fluo);
-  font-size: 214px;
+  font-size: 197px;
   letter-spacing: -0.06em;
-  margin-top: 6rem;
   margin-left: -15px;
+  // margin-bottom: -120px;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
@@ -67,7 +67,6 @@
   color: var(--color-night);
   font-size: 157px;
   letter-spacing: -0.08em;
-  margin-top: 4rem;
   margin-left: 40px;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
@@ -82,15 +81,6 @@
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
 
-.textOnBackground-D {
-  color: var(--color-gold);
-  font-size: 179px;
-  letter-spacing: -0.05em;
-  margin-left: -10px;
-  text-decoration: none;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
-}
-
 // button au premier plan ------
 
 .link-A {
@@ -98,11 +88,10 @@
   linear-gradient(127deg, rgba(253,72,60), rgba(14,31,62,0) 100%),
   linear-gradient(336deg, rgba(22,93,125), rgba(14,31,62,1) 70%),
   linear-gradient(336deg, rgba(14,31,62), rgba(22,93,125,1) 100%);
-  padding-top: 434px;
-  padding-bottom: 120px;
-  padding-left: 190px;
-  padding-right: 180px;
-  // position: relative;
+  padding-top: 312px;
+  padding-bottom: 180px;
+  padding-left: 110px;
+  padding-right: 226px;
   color: var(--color-white);
   font-size: 106px;
   letter-spacing: -0.05em;
@@ -121,13 +110,12 @@
   linear-gradient(127deg, rgba(192,200,97), rgba(253,72,60,0) 70%),
   linear-gradient(336deg, rgba(253,72,60), rgba(192,200,97) 100%),
   linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,1) 100%);
-  padding-top: 314px;
-  padding-bottom: 112px;
-  padding-left: 176px;
-  padding-right: 76px;
-  // position: relative;
+  padding-top: 254px;
+  padding-bottom: 172px;
+  padding-left: 66px;
+  padding-right: 114px;
   color: var(--color-white);
-  font-size: 96px;
+  font-size: 116px;
   letter-spacing: -0.05em;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
@@ -146,7 +134,6 @@
   padding-bottom: 110px;
   padding-left: 292px;
   padding-right: 763px;
-  // position: relative;
   color: var(--color-white);
   font-size: 96px;
   letter-spacing: -0.05em;

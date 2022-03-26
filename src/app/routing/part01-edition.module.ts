@@ -118,8 +118,6 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [
-      // Part01EditionHomeComponent, // home
-      // Part01BackofficeHomeComponent,
 
       ArchivesComponent,
 
