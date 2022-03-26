@@ -17,9 +17,9 @@
   background-position: center 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  border: solid 8px var(--color-gold);
-  margin-top: 80px;
-  margin-left: -20px;
+  // border: solid 8px var(--color-gold);
+  // margin-top: 20px;
+  // margin-left: -20px;
 }
 
 .backgroundB {
@@ -30,55 +30,74 @@
   background-position: center 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  border: solid 8px var(--color-gold);
-  margin-top: 80px;
+  // border: solid 8px var(--color-gold);
+  // margin-top: 20px;
 }
 
 .backgroundC {
   width: 1236px;
-  height: 598px;
+  height: 384px;
   background-image: url("../../../assets/sky-tree-03.png");
   background-size: 1260px 1260px;
   background-position: center 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  border: solid 8px var(--color-gold);
-  margin-top: 18px;
-  margin-left: -20px;
-  margin-right: -16px;
-  margin-bottom: 80px;
+  // border: solid 8px var(--color-gold);
 }
 
-// ------
+// baseline plan intermédiaire ------------
 
-// textes background -----
-
-.textOnBackground-A {
-  color: var(--color-fluo);
-  font-size: 197px;
-  letter-spacing: -0.06em;
-  margin-left: -15px;
-  // margin-bottom: -120px;
+.baseline-A {
+  position: relative;
+  z-index:10;
+  padding-left: 176px;
+  padding-top: 70px;
+  font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-gold);
+  font-size: 62px;
+  letter-spacing: -0.05em;
   text-decoration: none;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  border: none;
+  background: none;
 }
 
-.textOnBackground-B {
+.baseline-A:hover {
   color: var(--color-night);
-  font-size: 157px;
-  letter-spacing: -0.08em;
-  margin-left: 40px;
+}
+
+.baseline-B {
+  position: relative;
+  z-index:10;
+  padding-left: 186px;
+  padding-top: 70px;
+  color: var(--color-gold);
+  font-size: 62px;
+  letter-spacing: -0.05em;
   text-decoration: none;
+  border: none;
+  background: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
 }
 
-.textOnBackground-C {
-  color: var(--color-supergreen);
-  font-size: 229px;
-  letter-spacing: -0.08em;
-  margin-left: 18rem;
+.baseline-B:hover {
+  color: var(--color-night);
+}
+
+.baseline-C {
+  position: relative;
+  z-index:10;
+  padding-left: 442px;
+  color: var(--color-gold);
+  font-size: 62px;
+  letter-spacing: -0.05em;
   text-decoration: none;
+  border: none;
+  background: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+}
+
+.baseline-C:hover {
+  color: var(--color-night);
 }
 
 // button au premier plan ------
@@ -88,10 +107,10 @@
   linear-gradient(127deg, rgba(253,72,60), rgba(14,31,62,0) 100%),
   linear-gradient(336deg, rgba(22,93,125), rgba(14,31,62,1) 70%),
   linear-gradient(336deg, rgba(14,31,62), rgba(22,93,125,1) 100%);
-  padding-top: 312px;
-  padding-bottom: 180px;
-  padding-left: 110px;
-  padding-right: 226px;
+  padding-top: 237px;
+  padding-bottom: 167px;
+  padding-left: 171px;
+  padding-right: 171px;
   color: var(--color-white);
   font-size: 106px;
   letter-spacing: -0.05em;
@@ -110,12 +129,12 @@
   linear-gradient(127deg, rgba(192,200,97), rgba(253,72,60,0) 70%),
   linear-gradient(336deg, rgba(253,72,60), rgba(192,200,97) 100%),
   linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,1) 100%);
-  padding-top: 254px;
-  padding-bottom: 172px;
-  padding-left: 66px;
-  padding-right: 114px;
+  padding-top: 237px;
+  padding-bottom: 167px;
+  padding-left: 110px;
+  padding-right: 110px;
   color: var(--color-white);
-  font-size: 116px;
+  font-size: 106px;
   letter-spacing: -0.05em;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
@@ -127,15 +146,15 @@
 
 .link-C {
   background:
-  linear-gradient(336deg, rgba(77,29,72), rgba(178,37,44,1) 100%),
-  linear-gradient(127deg, rgba(178,37,44), rgba(233,229,73,0) 100%),
+  linear-gradient(336deg, rgba(77,29,72), rgba(78,137,144,1) 100%),
+  linear-gradient(127deg, rgba(78,137,144), rgba(233,229,73,0) 100%),
   linear-gradient(336deg, rgba(233,229,73), rgba(77,29,72,1) 100%);
-  padding-top: 360px;
-  padding-bottom: 110px;
-  padding-left: 292px;
-  padding-right: 763px;
+  padding-top: 165px;
+  padding-bottom: 165px;
+  padding-left: 522px;
+  padding-right: 521px;
   color: var(--color-white);
-  font-size: 96px;
+  font-size: 106px;
   letter-spacing: -0.05em;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;

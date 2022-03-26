@@ -2,19 +2,21 @@
 
   <div class="blocks">
     <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundA">
-      <div class="textOnBackground-A">Réserver</div>
+      <button routerLink="/reservation" class="baseline-A">Evénenement</button>
       <a routerLink="/reservation" class="link-A">Réserver</a>
     </div>
 
     <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundB">
-      <div class="textOnBackground-B">Commander</div>
+      <button routerLink="/resto-home" class="baseline-B">Restaurant</button>
+      <!-- <div class="textOnBackground-B">Commander</div> -->
       <a routerLink="/resto-home" class="link-B">Commander</a>
     </div>
   </div>
 
   <div class="blocks">
     <div routerLinkActive="active" *ngIf="!isAuth" class="backgroundC">
-      <div class="textOnBackground-C">Editer</div>
+      <button routerLink="/edition" class="baseline-C">Backoffice éditorial</button>
+      <!-- <div class="textOnBackground-C">Editer</div> -->
       <a routerLink="/edition" class="link-C">Editer</a>
     </div>
   </div>
