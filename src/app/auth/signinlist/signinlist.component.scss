@@ -44,7 +44,7 @@
 .baseline-A {
   position: relative;
   z-index:1;
-  padding-left: 1.875rem;
+  padding-left: 3.875rem;
   padding-top: 4.375rem;
   font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: var(--color-gold);
@@ -62,7 +62,7 @@
 .baseline-B {
   position: relative;
   z-index:1;
-  padding-left: 1.875rem;
+  padding-left: 3.875rem;
   padding-top: 4.375rem;
   color: var(--color-gold);
   font-size: 3.875rem;
@@ -74,13 +74,13 @@
 }
 
 .baseline-B:hover {
-  color: var(--color-palesun);
+  color: var(--color-darkpurple);
 }
 
 .baseline-C {
   position: relative;
   z-index:1;
-  padding-left: 1.875rem;
+  padding-left: 16.675rem;
   padding-top: 1.875rem;
   color: var(--color-gold);
   font-size: 3.875rem;
@@ -92,7 +92,7 @@
 }
 
 .baseline-C:hover {
-  color: var(--color-darkpurple);
+  color: var(--color-palesun);
 }
 
 // button au premier plan ------
@@ -121,9 +121,9 @@
 
 .link-B {
   background:
-  linear-gradient(127deg, rgba(192,200,97), rgba(253,72,60,0) 70%),
-  linear-gradient(336deg, rgba(253,72,60), rgba(192,200,97) 100%),
-  linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,1) 100%);
+  linear-gradient(336deg, rgba(77,29,72), rgba(78,137,144,1) 100%),
+  linear-gradient(127deg, rgba(78,137,144), rgba(233,229,73,0) 100%),
+  linear-gradient(336deg, rgba(233,229,73), rgba(77,29,72,1) 100%);
   padding-top: 14.813rem;
   padding-bottom: 12.313rem;
   padding-left: 6.875rem;
@@ -141,9 +141,9 @@
 
 .link-C {
   background:
-  linear-gradient(336deg, rgba(77,29,72), rgba(78,137,144,1) 100%),
-  linear-gradient(127deg, rgba(78,137,144), rgba(233,229,73,0) 100%),
-  linear-gradient(336deg, rgba(233,229,73), rgba(77,29,72,1) 100%);
+  linear-gradient(127deg, rgba(192,200,97), rgba(253,72,60,0) 70%),
+  linear-gradient(336deg, rgba(253,72,60), rgba(192,200,97) 100%),
+  linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,1) 100%);
   padding-top: 10.313rem;
   padding-bottom: 10.375rem;
   padding-left: 32.625rem;

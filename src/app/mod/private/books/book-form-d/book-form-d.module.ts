@@ -3,12 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { BookFormDRoutingModule } from './book-form-d-routing.module';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    BookFormDRoutingModule
+    BookFormDRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
   ]
 })
 export class BookFormDModule { }
