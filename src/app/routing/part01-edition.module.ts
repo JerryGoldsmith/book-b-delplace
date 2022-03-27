@@ -191,7 +191,15 @@ const routes: Routes = [
 
   // -----------
 
-  // edition/book-single-one---six.compoment
+  // edition/book-single-all.compoment
+  {
+    path: 'bookAlls/view/:id',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all/book-single-all.module')
+      .then(mod => mod.BookSingleAllModule)
+  },
+
+  // edition/book-single-all-one---six.compoment
   {
     path: 'bookAllOnes/view/:id',
     canActivate: [AuthGuardService],
