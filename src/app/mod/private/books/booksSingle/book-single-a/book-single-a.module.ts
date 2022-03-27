@@ -3,9 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { BookSingleARoutingModule } from './book-single-a-routing.module';
 
+import { SingleBookComponent } from 'src/app/edition/single-book/single-book.component';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SingleBookComponent
+  ],
   imports: [
     CommonModule,
     BookSingleARoutingModule

@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { SingleBookJComponent } from 'src/app/edition/single-book-j/single-book-j.component';
+
+const routes: Routes = [
+  { path: '', component: SingleBookJComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

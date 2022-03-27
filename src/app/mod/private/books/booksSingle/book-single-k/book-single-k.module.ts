@@ -3,9 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { BookSingleKRoutingModule } from './book-single-k-routing.module';
 
+import { SingleBookKComponent } from 'src/app/edition/single-book-k/single-book-k.component';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SingleBookKComponent
+  ],
   imports: [
     CommonModule,
     BookSingleKRoutingModule
