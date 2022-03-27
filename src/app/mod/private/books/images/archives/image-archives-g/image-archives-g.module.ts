@@ -3,12 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { ImageArchivesGRoutingModule } from './image-archives-g-routing.module';
 
+import { ImageGArchiveComponent } from 'src/app/edition/images/image-g-archive/image-g-archive.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ImageGArchiveComponent
+  ],
   imports: [
     CommonModule,
-    ImageArchivesGRoutingModule
+    ImageArchivesGRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
   ]
 })
 export class ImageArchivesGModule { }
