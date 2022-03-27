@@ -1,62 +1,54 @@
 .blocks {
   display: flex;
   justify-content: space-between;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-top: -20px;
-  margin-bottom: -20px;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  margin-top: -2.5rem;
+  margin-bottom: -2.5rem;
 }
 
 // fonds image ------
 
 .backgroundA {
-  width: 618px;
-  height: 548px;
+  width: 38.625rem;
+  height: 34.25;
   background-image: url("../../../assets/sky-tree-03.png");
-  background-size: 1260px 1260px; // background visual
+  background-size: 78.75rem 78.75rem;
   background-position: center 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  // border: solid 8px var(--color-gold);
-  // margin-top: 20px;
-  // margin-left: -20px;
 }
 
 .backgroundB {
-  width: 618px;
-  height: 548px;
+  width: 38.625rem;
+  height: 34.25rem;
   background-image: url("../../../assets/sky-tree-03.png");
-  background-size: 1260px 1260px;
+  background-size: 78.75rem 78.75rem;
   background-position: center 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  // border: solid 8px var(--color-gold);
-  // margin-top: 20px;
 }
 
 .backgroundC {
-  width: 1236px;
-  height: 414px;
+  width: 77.25rem;
+  height: 25.875rem;
   background-image: url("../../../assets/sky-tree-03.png");
-  background-size: 1260px 1260px;
+  background-size: 78.75rem 78.75rem;
   background-position: center 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  // border: solid 8px var(--color-gold);
 }
 
 // baseline plan intermédiaire ------------
 
 .baseline-A {
   position: relative;
-  z-index:10;
-  padding-left: 30px;
-  padding-top: 70px;
-  // padding-left: 176px;
-  // padding-top: 70px;
+  z-index:1;
+  padding-left: 1.875rem;
+  padding-top: 4.375rem;
   font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: var(--color-gold);
-  font-size: 62px;
+  font-size: 3.875rem;
   letter-spacing: -0.05em;
   text-decoration: none;
   border: none;
@@ -64,18 +56,16 @@
 }
 
 .baseline-A:hover {
-  color: var(--color-night);
+  color: var(--color-fluo);
 }
 
 .baseline-B {
   position: relative;
-  z-index:10;
-  padding-left: 30px;
-  padding-top: 70px;
-  // padding-left: 186px;
-  // padding-top: 70px;
+  z-index:1;
+  padding-left: 1.875rem;
+  padding-top: 4.375rem;
   color: var(--color-gold);
-  font-size: 62px;
+  font-size: 3.875rem;
   letter-spacing: -0.05em;
   text-decoration: none;
   border: none;
@@ -84,17 +74,16 @@
 }
 
 .baseline-B:hover {
-  color: var(--color-night);
+  color: var(--color-palesun);
 }
 
 .baseline-C {
   position: relative;
-  z-index:10;
-  padding-left: 30px;
-  padding-top: 30px;
-  // padding-left: 442px;
+  z-index:1;
+  padding-left: 1.875rem;
+  padding-top: 1.875rem;
   color: var(--color-gold);
-  font-size: 62px;
+  font-size: 3.875rem;
   letter-spacing: -0.05em;
   text-decoration: none;
   border: none;
@@ -103,7 +92,7 @@
 }
 
 .baseline-C:hover {
-  color: var(--color-night);
+  color: var(--color-darkpurple);
 }
 
 // button au premier plan ------
@@ -113,12 +102,12 @@
   linear-gradient(127deg, rgba(253,72,60), rgba(14,31,62,0) 100%),
   linear-gradient(336deg, rgba(22,93,125), rgba(14,31,62,1) 70%),
   linear-gradient(336deg, rgba(14,31,62), rgba(22,93,125,1) 100%);
-  padding-top: 237px;
-  padding-bottom: 197px;
-  padding-left: 171px;
-  padding-right: 171px;
+  padding-top: 14.813rem;
+  padding-bottom: 12.313rem;
+  padding-left: 10.688rem;
+  padding-right: 10.688rem;
   color: var(--color-white);
-  font-size: 106px;
+  font-size: 6.625rem;
   letter-spacing: -0.05em;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
@@ -135,12 +124,12 @@
   linear-gradient(127deg, rgba(192,200,97), rgba(253,72,60,0) 70%),
   linear-gradient(336deg, rgba(253,72,60), rgba(192,200,97) 100%),
   linear-gradient(336deg, rgba(67,67,67), rgba(67,67,67,1) 100%);
-  padding-top: 237px;
-  padding-bottom: 197px;
-  padding-left: 110px;
-  padding-right: 110px;
+  padding-top: 14.813rem;
+  padding-bottom: 12.313rem;
+  padding-left: 6.875rem;
+  padding-right: 6.875rem;
   color: var(--color-white);
-  font-size: 106px;
+  font-size: 6.625rem;
   letter-spacing: -0.05em;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
@@ -155,12 +144,12 @@
   linear-gradient(336deg, rgba(77,29,72), rgba(78,137,144,1) 100%),
   linear-gradient(127deg, rgba(78,137,144), rgba(233,229,73,0) 100%),
   linear-gradient(336deg, rgba(233,229,73), rgba(77,29,72,1) 100%);
-  padding-top: 165px;
-  padding-bottom: 165px;
-  padding-left: 522px;
-  padding-right: 521px;
+  padding-top: 10.313rem;
+  padding-bottom: 10.375rem;
+  padding-left: 32.625rem;
+  padding-right: 32.563rem;
   color: var(--color-white);
-  font-size: 106px;
+  font-size: 6.625rem;
   letter-spacing: -0.05em;
   text-decoration: none;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
