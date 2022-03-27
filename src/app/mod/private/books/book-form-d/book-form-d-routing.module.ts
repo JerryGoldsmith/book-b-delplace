@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { BookFormDComponent } from 'src/app/edition/book-form-d/book-form-d.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: BookFormDComponent }
+];
 
 @NgModule({
   imports: [

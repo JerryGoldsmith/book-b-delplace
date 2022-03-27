@@ -11,22 +11,6 @@ import * as fr from "@angular/common/locales/fr"; // date
 // guard
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
-import { ArchivesComponent } from 'src/app/edition/archives/archives.component';
-
-// book-form
-import { BookFormComponent } from 'src/app/edition/book-form/book-form.component';
-import { BookFormBComponent } from 'src/app/edition/book-form-b/book-form-b.component';
-import { BookFormCComponent } from 'src/app/edition/book-form-c/book-form-c.component';
-import { BookFormDComponent } from 'src/app/edition/book-form-d/book-form-d.component';
-import { BookFormEComponent } from 'src/app/edition/book-form-e/book-form-e.component';
-import { BookFormFComponent } from 'src/app/edition/book-form-f/book-form-f.component';
-import { BookFormGComponent } from 'src/app/edition/book-form-g/book-form-g.component';
-import { BookFormHComponent } from 'src/app/edition/book-form-h/book-form-h.component';
-import { BookFormIComponent } from 'src/app/edition/book-form-i/book-form-i.component';
-import { BookFormJComponent } from 'src/app/edition/book-form-j/book-form-j.component';
-import { BookFormKComponent } from 'src/app/edition/book-form-k/book-form-k.component';
-import { BookFormLComponent } from 'src/app/edition/book-form-l/book-form-l.component';
-
 // single-book
 import { SingleBookComponent } from 'src/app/edition/single-book/single-book.component';
 import { SingleBookBComponent } from 'src/app/edition/single-book-b/single-book-b.component';
@@ -65,31 +49,92 @@ const routes: Routes = [
       .then(mod => mod.EditionBackofficeModule)
   },
 
-  // {
-  //   path: 'archives',
-  //   canActivate: [AuthGuardService],
-  //   loadChildren: () => import('src/app/mod/private/edition-archives/edition-archives.module')
-  //     .then(mod => mod.EditionArchivesModule)
-  // }
+  // ----------
 
-    // { path: 'edition', component: Part01EditionHomeComponent },
 
-    // { path: 'backoffice', component: Part01BackofficeHomeComponent },
+  // edition/archives.component
+  {
+    path: 'archives',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/edition-archives/edition-archives.module')
+      .then(mod => mod.EditionArchivesModule)
+  },
 
-    { path: 'books/new', canActivate: [AuthGuardService], component: BookFormComponent },
-    { path: 'bookBs/new', canActivate: [AuthGuardService], component: BookFormBComponent },
-    { path: 'bookCs/new', canActivate: [AuthGuardService], component: BookFormCComponent },
-    { path: 'bookDs/new', canActivate: [AuthGuardService], component: BookFormDComponent },
-    { path: 'bookEs/new', canActivate: [AuthGuardService], component: BookFormEComponent },
-    { path: 'bookFs/new', canActivate: [AuthGuardService], component: BookFormFComponent },
+  // ---------
 
-    { path: 'bookGs/new', canActivate: [AuthGuardService], component: BookFormGComponent },
-
-    { path: 'bookHs/new', canActivate: [AuthGuardService], component: BookFormHComponent },
-    { path: 'bookIs/new', canActivate: [AuthGuardService], component: BookFormIComponent },
-    { path: 'bookJs/new', canActivate: [AuthGuardService], component: BookFormJComponent },
-    { path: 'bookKs/new', canActivate: [AuthGuardService], component: BookFormKComponent },
-    { path: 'bookLs/new', canActivate: [AuthGuardService], component: BookFormLComponent },
+  // edition/book-form.compoment
+  {
+    path: 'books/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-a/book-form-a.module')
+      .then(mod => mod.BookFormAModule)
+  },
+  {
+    path: 'bookBs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-b/book-form-b.module')
+      .then(mod => mod.BookFormBModule)
+  },
+  {
+    path: 'bookCs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-c/book-form-c.module')
+      .then(mod => mod.BookFormCModule)
+  },
+  {
+    path: 'bookDs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-d/book-form-d.module')
+      .then(mod => mod.BookFormDModule)
+  },
+  {
+    path: 'bookEs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-e/book-form-e.module')
+      .then(mod => mod.BookFormEModule)
+  },
+  {
+    path: 'bookFs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-f/book-form-f.module')
+      .then(mod => mod.BookFormFModule)
+  },
+  {
+    path: 'bookGs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-g/book-form-g.module')
+      .then(mod => mod.BookFormGModule)
+  },
+  {
+    path: 'bookHs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-h/book-form-h.module')
+      .then(mod => mod.BookFormHModule)
+  },
+  {
+    path: 'bookIs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-i/book-form-i.module')
+      .then(mod => mod.BookFormIModule)
+  },
+  {
+    path: 'bookJs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-j/book-form-j.module')
+      .then(mod => mod.BookFormJModule)
+  },
+  {
+    path: 'bookKs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-k/book-form-k.module')
+      .then(mod => mod.BookFormKModule)
+  },
+  {
+    path: 'bookLs/new',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/book-form-l/book-form-l.module')
+      .then(mod => mod.BookFormLModule)
+  },
 
     { path: 'books/view/:id', canActivate: [AuthGuardService], component: SingleBookComponent },
     { path: 'bookBs/view/:id', canActivate: [AuthGuardService], component: SingleBookBComponent },
@@ -110,29 +155,12 @@ const routes: Routes = [
     { path: 'bookAllThrees/view/:id', canActivate: [AuthGuardService], component: SingleBookAllThreeComponent },
     { path: 'bookAllFours/view/:id', canActivate: [AuthGuardService], component: SingleBookAllFourComponent },
     { path: 'bookAllFives/view/:id', canActivate: [AuthGuardService], component: SingleBookAllFiveComponent },
-    { path: 'bookAllSixs/view/:id', canActivate: [AuthGuardService], component: SingleBookAllSixComponent },
-
-    { path: 'archives', canActivate: [AuthGuardService], component: ArchivesComponent }
+    { path: 'bookAllSixs/view/:id', canActivate: [AuthGuardService], component: SingleBookAllSixComponent }
 
 ];
 
 @NgModule({
     declarations: [
-
-      ArchivesComponent,
-
-      BookFormComponent,
-      BookFormBComponent,
-      BookFormCComponent,
-      BookFormDComponent,
-      BookFormEComponent,
-      BookFormFComponent,
-      BookFormGComponent,
-      BookFormHComponent,
-      BookFormIComponent,
-      BookFormJComponent,
-      BookFormKComponent,
-      BookFormLComponent,
 
       SingleBookComponent,
       SingleBookBComponent,
