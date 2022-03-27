@@ -15,9 +15,6 @@ export class BooksService {
   books: Book[] = [];
   bookSubject = new Subject.Subject<Book[]>();
 
-  // bookAs: Book[] = [];
-  // bookASubject = new Subject.Subject<Book[]>();
-
   bookBs: Book[] = [];
   bookBSubject = new Subject.Subject<Book[]>();
 
@@ -58,9 +55,6 @@ export class BooksService {
   bookAlls: Book[] = [];
   bookAllSubject = new Subject.Subject<Book[]>();
 
-  // articleAs: ArticleA[] = [];
-  // articleASubject = new Subject<ArticleA[]>();
-
   constructor(
     private httpClient: HttpClient,
     private firestore: AngularFirestore
@@ -71,10 +65,6 @@ export class BooksService {
   }
 
   // ----
-
-  // emitBookAs() {
-  //   this.bookASubject.next(this.bookAs);
-  // }
 
   emitBookBs() {
     this.bookBSubject.next(this.bookBs);
@@ -124,28 +114,13 @@ export class BooksService {
     this.bookAllSubject.next(this.bookAlls);
   }
 
-  // -----
-
-  // emitArticleAs() {
-  //   this.articleASubject.next(this.articleAs);
-  // }
-
   // ------
 
   saveBooks() {
     firebase.database().ref('/books').set(this.books);
-    // let now: Date = new Date();
-    // var postsRef = firebase.database().ref('/books')
-    // postsRef.set(
-    //   this.books
-    //   );
   }
 
   // -----
-
-  // saveBookAs() {
-  //   firebase.database().ref('/bookAs').set(this.bookAs);
-  // }
 
   saveBookBs() {
     firebase.database().ref('/bookBs').set(this.bookBs);
@@ -206,14 +181,6 @@ export class BooksService {
   }
 
   // -----
-
-  // getBookAs() {
-  //   firebase.database().ref('/bookAs')
-  //   .on('value', (data) => {
-  //     this.bookAs = data.val() ? data.val() : [];
-  //     this.emitBookAs();
-  //   });
-  // }
 
   getBookBs() {
     firebase.database().ref('/bookBs')
@@ -328,20 +295,6 @@ export class BooksService {
   }
 
   // ------
-
-  // getSingleBookA(id: number) {
-  //   return new Promise(
-  //     (resolve, reject) => {
-  //       firebase.database().ref('/bookAs/' + id).once('value').then(
-  //         (data) => {
-  //           resolve(data.val());
-  //         }, (error) => {
-  //           reject(error);
-  //         }
-  //       );
-  //     }
-  //   );
-  // }
 
   getSingleBookB(id: number) {
     return new Promise(
@@ -539,14 +492,6 @@ export class BooksService {
     this.emitBooks();
   }
 
-  // ------
-
-  // createNewBookA(newBookA: Book) {
-  //   this.bookAs.push(newBookA);
-  //   this.saveBookAs();
-  //   this.emitBookAs();
-  // }
-
   // ----
 
   createNewBookB(newBookB: Book) {
@@ -632,14 +577,6 @@ export class BooksService {
   }
 
   // -----
-
-  // clearBookAs(){
-  //   var updates = {};
-  //   updates['/bookAs'] = {};
-  //   firebase.database().ref()
-  //   .update(updates);
-  //   alert('Cet article a été supprimé');
-  // }
 
   clearBookBs(){
     var updates = {};

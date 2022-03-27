@@ -3,12 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { ImagesJRoutingModule } from './images-j-routing.module';
 
+import { ImageJComponent } from 'src/app/edition/images/image-j/image-j.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ImageJComponent
+  ],
   imports: [
     CommonModule,
-    ImagesJRoutingModule
+    ImagesJRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
   ]
 })
 export class ImagesJModule { }

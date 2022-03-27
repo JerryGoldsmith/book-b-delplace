@@ -3,12 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { ImagesHRoutingModule } from './images-h-routing.module';
 
+import { ImageHComponent } from 'src/app/edition/images/image-h/image-h.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ImageHComponent
+  ],
   imports: [
     CommonModule,
-    ImagesHRoutingModule
+    ImagesHRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
   ]
 })
 export class ImagesHModule { }
