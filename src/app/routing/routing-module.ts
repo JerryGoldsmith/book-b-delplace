@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
 // lazy load images
 import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
+import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 /* AngularFire */
 import { AngularFireModule } from "@angular/fire";
@@ -50,17 +51,20 @@ const routes: Routes = [
   {
     path: 'partB',
     loadChildren: () => import('src/app/mod/public/b/b.module')
-    .then(mod => mod.BModule)
+    .then(mod => mod.BModule),
+    data: { preload: true, delay:1000 }
   },
   {
     path: 'partC',
     loadChildren: () => import('src/app/mod/public/c/c.module')
-    .then(mod => mod.CModule)
+    .then(mod => mod.CModule),
+    data: { preload: true, delay:1000 }
   },
   {
     path: 'partD',
     loadChildren: () => import('src/app/mod/public/d/d.module')
-    .then(mod => mod.DModule)
+    .then(mod => mod.DModule),
+    data: { preload: true, delay:1000 }
   },
   { // auth
     path: 'auth/signin',
@@ -93,7 +97,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes,
-      { preloadingStrategy: AuthPreloadStrategy }),
+    { preloadingStrategy: AuthPreloadStrategy }),
+    LazyLoadImageModule,
  
     SharedModule,
 
@@ -113,7 +118,8 @@ const routes: Routes = [
     AngularResizeEventModule
   ],
   providers: [
-    LazyImgDirective
+    LazyImgDirective,
+    AuthPreloadStrategy
   ]
 })
 export class RoutingModule {

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
 // lazy load images
 import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
+import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
+// guard
 import { AuthGuardService } from './../services/auth-guard.service';
 
 const routes: Routes = [
@@ -125,13 +127,15 @@ const routes: Routes = [
 @NgModule({
   imports: [
       RouterModule.forRoot(routes,
-        { preloadingStrategy: AuthPreloadStrategy })
+      { preloadingStrategy: AuthPreloadStrategy }),
+      LazyLoadImageModule
     ],
   exports: [
     RouterModule
   ],
   providers: [
-    LazyImgDirective
+    LazyImgDirective,
+    AuthPreloadStrategy
   ]
 })
 

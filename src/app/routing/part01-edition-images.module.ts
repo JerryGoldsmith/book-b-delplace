@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
 import { CommonFormReactiveModule } from 'src/app/routing/common-form-reactive.module'
 
@@ -10,7 +9,10 @@ import * as fr from "@angular/common/locales/fr"; // date
 
 // lazy load images
 import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
+import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
+// guard
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
 // ---------
@@ -64,73 +66,85 @@ const routes: Routes = [
         path: 'upload',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-a/images-a.module')
-          .then(mod => mod.ImagesAModule)
+          .then(mod => mod.ImagesAModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadB',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-b/images-b.module')
-          .then(mod => mod.ImagesBModule)
+          .then(mod => mod.ImagesBModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadC',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-c/images-c.module')
-          .then(mod => mod.ImagesCModule)
+          .then(mod => mod.ImagesCModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadD',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-d/images-d.module')
-          .then(mod => mod.ImagesDModule)
+          .then(mod => mod.ImagesDModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadE',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-e/images-e.module')
-          .then(mod => mod.ImagesEModule)
+          .then(mod => mod.ImagesEModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadF',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-f/images-f.module')
-          .then(mod => mod.ImagesFModule)
+          .then(mod => mod.ImagesFModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadG',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-g/images-g.module')
-          .then(mod => mod.ImagesGModule)
+          .then(mod => mod.ImagesGModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadH',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-h/images-h.module')
-          .then(mod => mod.ImagesHModule)
+          .then(mod => mod.ImagesHModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadI',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-i/images-i.module')
-          .then(mod => mod.ImagesIModule)
+          .then(mod => mod.ImagesIModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadJ',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-j/images-j.module')
-          .then(mod => mod.ImagesJModule)
+          .then(mod => mod.ImagesJModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadK',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-k/images-k.module')
-          .then(mod => mod.ImagesKModule)
+          .then(mod => mod.ImagesKModule),
+          data: { preload: true, delay:1000 }
     },
     {
         path: 'uploadL',
         canActivate: [AuthGuardService],
         loadChildren: () => import('src/app/mod/private/books/images/images-l/images-l.module')
-          .then(mod => mod.ImagesLModule)
+          .then(mod => mod.ImagesLModule),
+          data: { preload: true, delay:1000 }
     },
 
     // { path: 'image', canActivate: [AuthGuardService], component: ImagesComponent },
@@ -219,7 +233,8 @@ const routes: Routes = [
     ],
     imports: [
         RouterModule.forRoot(routes,
-            { preloadingStrategy: AuthPreloadStrategy }),
+        { preloadingStrategy: AuthPreloadStrategy }),
+        LazyLoadImageModule,
         CommonModule,
         FormsModule, 
         ReactiveFormsModule,
@@ -230,7 +245,8 @@ const routes: Routes = [
     ],
     providers: [
         AuthGuardService,
-        LazyImgDirective
+        LazyImgDirective,
+        AuthPreloadStrategy
     ]
 })
 

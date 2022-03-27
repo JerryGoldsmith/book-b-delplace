@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 
 import { CommonFormReactiveModule } from 'src/app/routing/common-form-reactive.module'
 
@@ -11,19 +10,25 @@ import * as fr from "@angular/common/locales/fr"; // date
 // guard
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
+import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
+import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
 const routes: Routes = [
 
   { // Part01EditionHomeComponent
     path: 'edition',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/edition-rendu/edition-rendu.module')
-      .then(mod => mod.EditionRenduModule)
+      .then(mod => mod.EditionRenduModule),
+      data: { preload: true, delay:1000 }
   },
   { // Part01BackofficeHomeComponent
     path: 'backoffice',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/edition-backoffice/edition-backoffice.module')
-      .then(mod => mod.EditionBackofficeModule)
+      .then(mod => mod.EditionBackofficeModule),
+      data: { preload: true, delay:2000 }
   },
 
   // ----------
@@ -34,7 +39,8 @@ const routes: Routes = [
     path: 'archives',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/edition-archives/edition-archives.module')
-      .then(mod => mod.EditionArchivesModule)
+      .then(mod => mod.EditionArchivesModule),
+      data: { preload: true, delay:3000 }
   },
 
   // ---------
@@ -120,73 +126,85 @@ const routes: Routes = [
     path: 'books/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-a/book-single-a.module')
-      .then(mod => mod.BookSingleAModule)
+      .then(mod => mod.BookSingleAModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookBs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-b/book-single-b.module')
-      .then(mod => mod.BookSingleBModule)
+      .then(mod => mod.BookSingleBModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookCs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-c/book-single-c.module')
-      .then(mod => mod.BookSingleCModule)
+      .then(mod => mod.BookSingleCModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookDs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-d/book-single-d.module')
-      .then(mod => mod.BookSingleDModule)
+      .then(mod => mod.BookSingleDModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookEs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-e/book-single-e.module')
-      .then(mod => mod.BookSingleEModule)
+      .then(mod => mod.BookSingleEModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookFs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-f/book-single-f.module')
-      .then(mod => mod.BookSingleFModule)
+      .then(mod => mod.BookSingleFModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookGs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-g/book-single-g.module')
-      .then(mod => mod.BookSingleGModule)
+      .then(mod => mod.BookSingleGModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookHs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-h/book-single-h.module')
-      .then(mod => mod.BookSingleHModule)
+      .then(mod => mod.BookSingleHModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookIs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-i/book-single-i.module')
-      .then(mod => mod.BookSingleIModule)
+      .then(mod => mod.BookSingleIModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookJs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-j/book-single-j.module')
-      .then(mod => mod.BookSingleJModule)
+      .then(mod => mod.BookSingleJModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookKs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-k/book-single-k.module')
-      .then(mod => mod.BookSingleKModule)
+      .then(mod => mod.BookSingleKModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookLs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-l/book-single-l.module')
-      .then(mod => mod.BookSingleLModule)
+      .then(mod => mod.BookSingleLModule),
+      data: { preload: true, delay:3000 }
   },
 
   // -----------
@@ -196,7 +214,8 @@ const routes: Routes = [
     path: 'bookAlls/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all/book-single-all.module')
-      .then(mod => mod.BookSingleAllModule)
+      .then(mod => mod.BookSingleAllModule),
+      data: { preload: true, delay:3000 }
   },
 
   // edition/book-single-all-one---six.compoment
@@ -204,37 +223,43 @@ const routes: Routes = [
     path: 'bookAllOnes/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-one/book-single-all-one.module')
-      .then(mod => mod.BookSingleAllOneModule)
+      .then(mod => mod.BookSingleAllOneModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookAllTwos/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-two/book-single-all-two.module')
-      .then(mod => mod.BookSingleAllTwoModule)
+      .then(mod => mod.BookSingleAllTwoModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookAllThrees/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-three/book-single-all-three.module')
-      .then(mod => mod.BookSingleAllThreeModule)
+      .then(mod => mod.BookSingleAllThreeModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookAllFours/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-four/book-single-all-four.module')
-      .then(mod => mod.BookSingleAllFourModule)
+      .then(mod => mod.BookSingleAllFourModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookAllFives/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-five/book-single-all-five.module')
-      .then(mod => mod.BookSingleAllFiveModule)
+      .then(mod => mod.BookSingleAllFiveModule),
+      data: { preload: true, delay:3000 }
   },
   {
     path: 'bookAllSixs/view/:id',
     canActivate: [AuthGuardService],
     loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-six/book-single-all-six.module')
-      .then(mod => mod.BookSingleAllSixModule)
+      .then(mod => mod.BookSingleAllSixModule),
+      data: { preload: true, delay:3000 }
   }
 
 ];
@@ -242,7 +267,8 @@ const routes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(routes,
-          { preloadingStrategy: AuthPreloadStrategy }),
+        { preloadingStrategy: AuthPreloadStrategy }),
+        LazyLoadImageModule,
         CommonModule,
         FormsModule, 
         ReactiveFormsModule,
@@ -252,7 +278,9 @@ const routes: Routes = [
       RouterModule
     ],
     providers: [
-        AuthGuardService
+        AuthGuardService,
+        AuthPreloadStrategy,
+        LazyImgDirective
     ]})
 
 export class Part01EditionModule { 
