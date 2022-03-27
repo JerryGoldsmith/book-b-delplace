@@ -11,15 +11,6 @@ import * as fr from "@angular/common/locales/fr"; // date
 // guard
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
-// single-book-archives
-// import { SingleBookAllComponent } from 'src/app/edition/single-book-all/single-book-all.component';
-import { SingleBookAllOneComponent } from 'src/app/edition/single-book-all-one/single-book-all-one.component';
-import { SingleBookAllTwoComponent } from 'src/app/edition/single-book-all-two/single-book-all-two.component';
-import { SingleBookAllThreeComponent } from 'src/app/edition/single-book-all-three/single-book-all-three.component';
-import { SingleBookAllFourComponent } from 'src/app/edition/single-book-all-four/single-book-all-four.component';
-import { SingleBookAllFiveComponent } from 'src/app/edition/single-book-all-five/single-book-all-five.component';
-import { SingleBookAllSixComponent } from 'src/app/edition/single-book-all-six/single-book-all-six.component';
-
 const routes: Routes = [
 
   { // Part01EditionHomeComponent
@@ -198,27 +189,49 @@ const routes: Routes = [
       .then(mod => mod.BookSingleLModule)
   },
 
-    // { path: 'bookAlls/view/:id', canActivate: [AuthGuardService], component: SingleBookAllComponent },
-    { path: 'bookAllOnes/view/:id', canActivate: [AuthGuardService], component: SingleBookAllOneComponent },
-    { path: 'bookAllTwos/view/:id', canActivate: [AuthGuardService], component: SingleBookAllTwoComponent },
-    { path: 'bookAllThrees/view/:id', canActivate: [AuthGuardService], component: SingleBookAllThreeComponent },
-    { path: 'bookAllFours/view/:id', canActivate: [AuthGuardService], component: SingleBookAllFourComponent },
-    { path: 'bookAllFives/view/:id', canActivate: [AuthGuardService], component: SingleBookAllFiveComponent },
-    { path: 'bookAllSixs/view/:id', canActivate: [AuthGuardService], component: SingleBookAllSixComponent }
+  // -----------
+
+  // edition/book-single-one---six.compoment
+  {
+    path: 'bookAllOnes/view/:id',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-one/book-single-all-one.module')
+      .then(mod => mod.BookSingleAllOneModule)
+  },
+  {
+    path: 'bookAllTwos/view/:id',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-two/book-single-all-two.module')
+      .then(mod => mod.BookSingleAllTwoModule)
+  },
+  {
+    path: 'bookAllThrees/view/:id',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-three/book-single-all-three.module')
+      .then(mod => mod.BookSingleAllThreeModule)
+  },
+  {
+    path: 'bookAllFours/view/:id',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-four/book-single-all-four.module')
+      .then(mod => mod.BookSingleAllFourModule)
+  },
+  {
+    path: 'bookAllFives/view/:id',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-five/book-single-all-five.module')
+      .then(mod => mod.BookSingleAllFiveModule)
+  },
+  {
+    path: 'bookAllSixs/view/:id',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('src/app/mod/private/books/booksSingle/book-single-all-six/book-single-all-six.module')
+      .then(mod => mod.BookSingleAllSixModule)
+  }
 
 ];
 
 @NgModule({
-    declarations: [
-
-      // SingleBookAllComponent,
-      SingleBookAllOneComponent,
-      SingleBookAllTwoComponent,
-      SingleBookAllThreeComponent,
-      SingleBookAllFourComponent,
-      SingleBookAllFiveComponent,
-      SingleBookAllSixComponent
-      ],
     imports: [
         RouterModule.forRoot(routes,
           { preloadingStrategy: AuthPreloadStrategy }),
