@@ -15,38 +15,6 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 // guard
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
-// ---------
-
-// import { ImagesComponent } from 'src/app/edition/images/images.component';
-
-// -----
-
-// import { ImageComponent } from 'src/app/edition/images/image/image.component';
-import { ImageArchiveComponent } from 'src/app/edition/images/image-archive/image-archive.component';
-// import { ImageBComponent } from 'src/app/edition/images/image-b/image-b.component';
-import { ImageBArchiveComponent } from 'src/app/edition/images/image-b-archive/image-b-archive.component';
-// import { ImageCComponent } from 'src/app/edition/images/image-c/image-c.component';
-import { ImageCArchiveComponent } from 'src/app/edition/images/image-c-archive/image-c-archive.component';
-// import { ImageDComponent } from 'src/app/edition/images/image-d/image-d.component';
-import { ImageDArchiveComponent } from 'src/app/edition/images/image-d-archive/image-d-archive.component';
-// import { ImageEComponent } from 'src/app/edition/images/image-e/image-e.component';
-import { ImageEArchiveComponent } from 'src/app/edition/images/image-e-archive/image-e-archive.component';
-// import { ImageFComponent } from 'src/app/edition/images/image-f/image-f.component';
-import { ImageFArchiveComponent } from 'src/app/edition/images/image-f-archive/image-f-archive.component';
-// import { ImageGComponent } from 'src/app/edition/images/image-g/image-g.component';
-import { ImageGArchiveComponent } from 'src/app/edition/images/image-g-archive/image-g-archive.component';
-// import { ImageHComponent } from 'src/app/edition/images/image-h/image-h.component';
-import { ImageHArchiveComponent } from 'src/app/edition/images/image-h-archive/image-h-archive.component';
-// import { ImageIComponent } from 'src/app/edition/images/image-i/image-i.component';
-import { ImageIArchiveComponent } from 'src/app/edition/images/image-i-archive/image-i-archive.component';
-// import { ImageJComponent } from 'src/app/edition/images/image-j/image-j.component';
-import { ImageJArchiveComponent } from 'src/app/edition/images/image-j-archive/image-j-archive.component';
-// import { ImageKComponent } from 'src/app/edition/images/image-k/image-k.component';
-import { ImageKArchiveComponent } from 'src/app/edition/images/image-k-archive/image-k-archive.component';
-// import { ImageLComponent } from 'src/app/edition/images/image-l/image-l.component';
-import { ImageLArchiveComponent } from 'src/app/edition/images/image-l-archive/image-l-archive.component';
-
-import { ImageListComponent } from 'src/app/edition/images/imagelist/imagelist.component';
 import { ImageListBComponent } from 'src/app/edition/images/imagelist-b/imagelist-b.component';
 import { ImageListCComponent } from 'src/app/edition/images/imagelist-c/imagelist-c.component';
 import { ImageListDComponent } from 'src/app/edition/images/imagelist-d/imagelist-d.component';
@@ -61,7 +29,7 @@ import { ImageListLComponent } from 'src/app/edition/images/imagelist-l/imagelis
 
 const routes: Routes = [
 
-    // upload
+    // upload 3 > images backoffice/rendu
     {
         path: 'upload',
         canActivate: [AuthGuardService],
@@ -147,34 +115,104 @@ const routes: Routes = [
           data: { preload: true, delay:1000 }
     },
 
-    // { path: 'image', canActivate: [AuthGuardService], component: ImagesComponent },
+    // upload 1 > image archive
 
-    // { path: 'upload', canActivate: [AuthGuardService], component: ImageComponent },
-    { path: 'uploadArchive', canActivate: [AuthGuardService], component: ImageArchiveComponent },
-    // { path: 'uploadB', canActivate: [AuthGuardService], component: ImageBComponent },
-    { path: 'uploadArchiveB', canActivate: [AuthGuardService], component: ImageBArchiveComponent },
-    // { path: 'uploadC', canActivate: [AuthGuardService], component: ImageCComponent },
-    { path: 'uploadArchiveC', canActivate: [AuthGuardService], component: ImageCArchiveComponent },
-    // { path: 'uploadD', canActivate: [AuthGuardService], component: ImageDComponent },
-    { path: 'uploadArchiveD', canActivate: [AuthGuardService], component: ImageDArchiveComponent },
-    // { path: 'uploadE', canActivate: [AuthGuardService], component: ImageEComponent },
-    { path: 'uploadArchiveE', canActivate: [AuthGuardService], component: ImageEArchiveComponent },
-    // { path: 'uploadF', canActivate: [AuthGuardService], component: ImageFComponent },
-    { path: 'uploadArchiveF', canActivate: [AuthGuardService], component: ImageFArchiveComponent },
-    // { path: 'uploadG', canActivate: [AuthGuardService], component: ImageGComponent },
-    { path: 'uploadArchiveG', canActivate: [AuthGuardService], component: ImageGArchiveComponent },
-    // { path: 'uploadH', canActivate: [AuthGuardService], component: ImageHComponent },
-    { path: 'uploadArchiveH', canActivate: [AuthGuardService], component: ImageHArchiveComponent },
-    // { path: 'uploadI', canActivate: [AuthGuardService], component: ImageIComponent },
-    { path: 'uploadArchiveI', canActivate: [AuthGuardService], component: ImageIArchiveComponent },
-    // { path: 'uploadJ', canActivate: [AuthGuardService], component: ImageJComponent },
-    { path: 'uploadArchiveJ', canActivate: [AuthGuardService], component: ImageJArchiveComponent },
-    // { path: 'uploadK', canActivate: [AuthGuardService], component: ImageKComponent },
-    { path: 'uploadArchiveK', canActivate: [AuthGuardService], component: ImageKArchiveComponent },
-    // { path: 'uploadL', canActivate: [AuthGuardService], component: ImageLComponent },
-    { path: 'uploadArchiveL', canActivate: [AuthGuardService], component: ImageLArchiveComponent },
+    {
+        path: 'uploadArchive',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-a/image-archives-a.module')
+          .then(mod => mod.ImageArchivesAModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveB',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-b/image-archives-b.module')
+          .then(mod => mod.ImageArchivesBModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveC',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-c/image-archives-c.module')
+          .then(mod => mod.ImageArchivesCModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveD',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-d/image-archives-d.module')
+          .then(mod => mod.ImageArchivesDModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveE',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-e/image-archives-e.module')
+          .then(mod => mod.ImageArchivesEModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveF',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-f/image-archives-f.module')
+          .then(mod => mod.ImageArchivesFModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveG',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-g/image-archives-g.module')
+          .then(mod => mod.ImageArchivesGModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveH',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-h/image-archives-h.module')
+          .then(mod => mod.ImageArchivesHModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveI',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-i/image-archives-i.module')
+          .then(mod => mod.ImageArchivesIModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveJ',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-j/image-archives-j.module')
+          .then(mod => mod.ImageArchivesJModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveK',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-k/image-archives-k.module')
+          .then(mod => mod.ImageArchivesKModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'uploadArchiveL',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/archives/image-archives-l/image-archives-l.module')
+          .then(mod => mod.ImageArchivesLModule),
+          data: { preload: true, delay:1000 }
+    },
+    
 
-    { path: 'list', canActivate: [AuthGuardService], component: ImageListComponent },
+    // list images > backoffice/rendu
+
+    {
+        path: 'list',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-a/images-list-a.module')
+          .then(mod => mod.ImagesListAModule),
+          data: { preload: true, delay:1000 }
+    },
+
     { path: 'listB', canActivate: [AuthGuardService], component: ImageListBComponent },
     { path: 'listC', canActivate: [AuthGuardService], component: ImageListCComponent },
     { path: 'listD', canActivate: [AuthGuardService], component: ImageListDComponent },
@@ -190,35 +228,6 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [
-        
-        // ImagesComponent,
-
-        // ImageComponent,
-        ImageArchiveComponent,
-        // ImageBComponent,
-        ImageBArchiveComponent,
-        // ImageCComponent,
-        ImageCArchiveComponent,
-        // ImageDComponent,
-        ImageDArchiveComponent,
-        // ImageEComponent,
-        ImageEArchiveComponent,
-        // ImageFComponent,
-        ImageFArchiveComponent,
-        // ImageGComponent,
-        ImageGArchiveComponent,
-        // ImageHComponent,
-        ImageHArchiveComponent,
-        // ImageIComponent,
-        ImageIArchiveComponent,
-        // ImageJComponent,
-        ImageJArchiveComponent,
-        // ImageKComponent,
-        ImageKArchiveComponent,
-        // ImageLComponent,
-        ImageLArchiveComponent,
-
-        ImageListComponent,
         ImageListBComponent,
         ImageListCComponent,
         ImageListDComponent,
