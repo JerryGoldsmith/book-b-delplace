@@ -91,7 +91,7 @@ export class ImageService {
   // -------
 
   insertImageDetails(imageDetails: { [x: string]: any; category: any; }) {
-    this.imageDetailList.push(imageDetails);
+    this.imageDetailList.push(imageDetails) ;
   }
 
   // -----

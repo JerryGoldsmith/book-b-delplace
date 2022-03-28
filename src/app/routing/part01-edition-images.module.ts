@@ -15,18 +15,6 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 // guard
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
-import { ImageListBComponent } from 'src/app/edition/images/imagelist-b/imagelist-b.component';
-import { ImageListCComponent } from 'src/app/edition/images/imagelist-c/imagelist-c.component';
-import { ImageListDComponent } from 'src/app/edition/images/imagelist-d/imagelist-d.component';
-import { ImageListEComponent } from 'src/app/edition/images/imagelist-e/imagelist-e.component';
-import { ImageListFComponent } from 'src/app/edition/images/imagelist-f/imagelist-f.component';
-import { ImageListGComponent } from 'src/app/edition/images/imagelist-g/imagelist-g.component';
-import { ImageListHComponent } from 'src/app/edition/images/imagelist-h/imagelist-h.component';
-import { ImageListIComponent } from 'src/app/edition/images/imagelist-i/imagelist-i.component';
-import { ImageListJComponent } from 'src/app/edition/images/imagelist-j/imagelist-j.component';
-import { ImageListKComponent } from 'src/app/edition/images/imagelist-k/imagelist-k.component';
-import { ImageListLComponent } from 'src/app/edition/images/imagelist-l/imagelist-l.component';
-
 const routes: Routes = [
 
     // upload 3 > images backoffice/rendu
@@ -212,34 +200,86 @@ const routes: Routes = [
           .then(mod => mod.ImagesListAModule),
           data: { preload: true, delay:1000 }
     },
-
-    { path: 'listB', canActivate: [AuthGuardService], component: ImageListBComponent },
-    { path: 'listC', canActivate: [AuthGuardService], component: ImageListCComponent },
-    { path: 'listD', canActivate: [AuthGuardService], component: ImageListDComponent },
-    { path: 'listE', canActivate: [AuthGuardService], component: ImageListEComponent },
-    { path: 'listF', canActivate: [AuthGuardService], component: ImageListFComponent },
-    { path: 'listG', canActivate: [AuthGuardService], component: ImageListGComponent },
-    { path: 'listH', canActivate: [AuthGuardService], component: ImageListHComponent },
-    { path: 'listI', canActivate: [AuthGuardService], component: ImageListIComponent },
-    { path: 'listJ', canActivate: [AuthGuardService], component: ImageListJComponent },
-    { path: 'listK', canActivate: [AuthGuardService], component: ImageListKComponent },
-    { path: 'listL', canActivate: [AuthGuardService], component: ImageListLComponent }
+    {
+        path: 'listB',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-b/images-list-b.module')
+          .then(mod => mod.ImagesListBModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listC',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-c/images-list-c.module')
+          .then(mod => mod.ImagesListCModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listD',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-d/images-list-d.module')
+          .then(mod => mod.ImagesListDModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listE',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-e/images-list-e.module')
+          .then(mod => mod.ImagesListEModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listF',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-f/images-list-f.module')
+          .then(mod => mod.ImagesListFModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listG',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-g/images-list-g.module')
+          .then(mod => mod.ImagesListGModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listH',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-h/images-list-h.module')
+          .then(mod => mod.ImagesListHModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listI',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-i/images-list-i.module')
+          .then(mod => mod.ImagesListIModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listJ',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-j/images-list-j.module')
+          .then(mod => mod.ImagesListJModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listK',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-k/images-list-k.module')
+          .then(mod => mod.ImagesListKModule),
+          data: { preload: true, delay:1000 }
+    },
+    {
+        path: 'listL',
+        canActivate: [AuthGuardService],
+        loadChildren: () => import('src/app/mod/private/books/images/list/images-list-l/images-list-l.module')
+          .then(mod => mod.ImagesListLModule),
+          data: { preload: true, delay:1000 }
+    }
 ];
 
 @NgModule({
-    declarations: [
-        ImageListBComponent,
-        ImageListCComponent,
-        ImageListDComponent,
-        ImageListEComponent,
-        ImageListFComponent,
-        ImageListGComponent,
-        ImageListHComponent,
-        ImageListIComponent,
-        ImageListJComponent,
-        ImageListKComponent,
-        ImageListLComponent
-    ],
     imports: [
         RouterModule.forRoot(routes,
         { preloadingStrategy: AuthPreloadStrategy }),
