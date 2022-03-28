@@ -18,6 +18,7 @@ import { AuthGuardService } from 'src/app/services/auth-guard.service';
 const routes: Routes = [
 
     // upload 3 > images backoffice/rendu
+    
     {
         path: 'upload',
         canActivate: [AuthGuardService],

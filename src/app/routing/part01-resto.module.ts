@@ -21,8 +21,6 @@ const routes: Routes = [
       data: { preload: true, delay:1000 }
   },
 
-  // { path: 'resto-home', component: Part01RestoHomeComponent },
-
   /* add (selection menus) */
   {
     path: 'addA',

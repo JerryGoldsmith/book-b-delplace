@@ -44,12 +44,6 @@ import { SigninlistComponent } from './auth/signinlist/signinlist.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SignupLightComponent } from './auth/signuplight/signuplight.component';
 
-// --------------------------------------------------
-// ------------- partA / resto (restos) ------------- :
-// --------------------------------------------------
-
-import { Part01RestoHomeComponent } from 'src/app/part01-resto-home/part01-resto-home.component';
-
 
 /* -------------------------------------------------- */
 /* --------------------- SERVICES ------------------- */
@@ -82,8 +76,6 @@ const appRoutes: Routes = [
     SignupLightComponent,
     SigninComponent,
     SigninlistComponent,
-
-    Part01RestoHomeComponent,
     FooterComponent
   ],
   imports: [
