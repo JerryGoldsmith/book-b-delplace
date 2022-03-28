@@ -88,10 +88,6 @@ export class ImageService {
     this.imageDetailListAll = this.firebase.list('imageDetailAlls');
   }
 
-  getImageDetailListEach() {
-    this.imageDetailListEach = this.firebase.list('imageDetailEachs');
-  }
-
   // -------
 
   insertImageDetails(imageDetails: { [x: string]: any; category: any; }) {
@@ -150,10 +146,6 @@ export class ImageService {
 
   insertImageDetailsAll(imageDetailAlls: { [x: string]: any; category: any; }): void {
     this.imageDetailListAll.push(imageDetailAlls);
-  }
-
-  insertImageDetailsEach(imageDetailEachs: any) {
-    this.imageDetailListEach.push(imageDetailEachs);
   }
 
 }

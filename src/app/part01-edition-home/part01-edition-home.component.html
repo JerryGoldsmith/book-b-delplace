@@ -45,7 +45,7 @@
                         <div *ngFor="let i of rowIndexArray">
                           <div *ngIf="i==0">
                             <span (click)="onViewBook(i)">
-                              <img [src]="imageList[0+i].imageUrl"
+                              <img [src]="imageList[i].imageUrl"
                               width="940px" alt="images" class="linkPhoto">
                             </span>
                           </div>
@@ -80,7 +80,7 @@
                         <div *ngFor="let i of rowIndexArray">
                           <div *ngIf="i==0">
                             <span (click)="onViewBookE(i)">
-                              <img [src]="imageListE[0+i].imageUrl"
+                              <img [src]="imageListE[i]?.imageUrl"
                               width="510px" alt="images" class="linkPhoto">
                             </span>
                           </div>
@@ -115,7 +115,7 @@
                         <div *ngFor="let i of rowIndexArray">
                           <div *ngIf="i==0">
                             <span (click)="onViewBookF(i)">
-                              <img [src]="imageListF[0+i].imageUrl"
+                              <img [src]="imageListF[i]?.imageUrl"
                               width="360px" alt="images" class="linkPhoto">
                             </span>
                           </div>
@@ -143,7 +143,7 @@
                         <div *ngFor="let i of rowIndexArray">
                           <div *ngIf="i==0">
                             <span (click)="onViewBookG(i)">
-                              <img [src]="imageListG[0+i].imageUrl"
+                              <img [src]="imageListG[i]?.imageUrl"
                               width="940px" alt="images" class="linkPhoto-image">
                             </span>
                           </div>
@@ -189,7 +189,7 @@
                         <div *ngFor="let i of rowIndexArray">
                           <div *ngIf="i==0">
                             <span (click)="onViewBookB(i)">
-                              <img [src]="imageListB[0+i].imageUrl"
+                              <img [src]="imageListB[i].imageUrl"
                               width="420px" alt="images" class="linkPhoto">
                             </span>
                           </div>
@@ -222,7 +222,7 @@
                         <div *ngFor="let i of rowIndexArray">
                           <div *ngIf="i==0">
                             <span (click)="onViewBookC(i)">
-                              <img [src]="imageListC[0+i].imageUrl"
+                              <img [src]="imageListC[i].imageUrl"
                               width="420px" alt="images" class="linkPhoto">
                             </span>
                           </div>
@@ -255,7 +255,7 @@
                         <div *ngFor="let i of rowIndexArray">
                           <div *ngIf="i==0">
                             <span (click)="onViewBookD(i)">
-                              <img [src]="imageListD[0+i].imageUrl"
+                              <img [src]="imageListD[i].imageUrl"
                               width="420px" alt="images" class="linkPhoto">
                             </span>
                           </div>
@@ -299,7 +299,8 @@
                       <div class="image-top-single">
 
                         <span *ngFor="let bookH of bookHs; let i = index">
-                          <img [src]="imageListH[i+0].imageUrl" alt="images" class="img-fluid imageDisplay-H">
+                          <img [src]="imageListH[i]?.imageUrl" alt="images" 
+                          class="img-fluid imageDisplay-H">
 
                           <p class="textDate-H">{{ bookH.timestamp | date:'fullDate' : '' : 'fr-FR' }} à {{ bookH.timestamp | date:'shortTime' : '' : 'fr-FR' }} par <i class="textAuthorH">{{ bookH.author }}</i></p>
                           <a class="two-lines-only currentText-news"
@@ -396,7 +397,7 @@
                       <div *ngFor="let i of rowIndexArray">
                         <div *ngIf="i==0">
                           <span (click)="onViewBookJ(i)">
-                            <img [src]="imageListJ[0+i].imageUrl"
+                            <img [src]="imageListJ[i]?.imageUrl"
                             width="420px" alt="images" class="linkPhoto">
                           </span>
                         </div>
@@ -427,7 +428,7 @@
                       <div *ngFor="let i of rowIndexArray">
                         <div *ngIf="i==0">
                           <span (click)="onViewBookK(i)">
-                            <img [src]="imageListK[0+i].imageUrl"
+                            <img [src]="imageListK[i]?.imageUrl"
                             width="420px" alt="images" class="linkPhoto">
                           </span>
                         </div>
@@ -458,7 +459,7 @@
                       <div *ngFor="let i of rowIndexArray">
                         <div *ngIf="i==0">
                           <span (click)="onViewBookL(i)">
-                            <img [src]="imageListL[0+i].imageUrl"
+                            <img [src]="imageListL[i]?.imageUrl"
                             width="420px" alt="images" class="linkPhoto">
                           </span>
                         </div>

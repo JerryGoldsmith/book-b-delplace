@@ -1,0 +1,6 @@
+part01-backoffice-home && part01-edition-home :
+> console > ligne 225... > Cannot read properties of undefined (reading '0')
+
+services/a.services --- l.service : rêglé
+>> ligne 6  - 166 à 168...
+> import { O2A } from 'object-to-array-convert'; (obsolète > Angular 12)

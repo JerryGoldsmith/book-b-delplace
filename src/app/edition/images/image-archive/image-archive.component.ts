@@ -55,17 +55,6 @@ export class ImageArchiveComponent implements OnInit {
         this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
       }
     );
-
-    // ------
-
-    this.imageService.getImageDetailListEach();
-
-    this.imageService.imageDetailListEach.snapshotChanges().subscribe(
-      list => {
-        this.imageListEach = list.map(item => {return item.payload.val();});
-        this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListEach.length +1) / 3)).keys());
-      }
-    );
   }
 
   showPreview(event:any) {
