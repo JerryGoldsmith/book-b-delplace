@@ -19,6 +19,7 @@
     "esModuleInterop": true, //
     "strictPropertyInitialization": false, //
     "allowSyntheticDefaultImports": true, // true > empêche l'affichage de l'erreur
+    // "strictNullChecks": true, // avoid Cannot read properties of undefined
     "target": "es5", // anciennement 'es2017'
     "module": "commonjs", // anciennement 'es2020' et ensuite 'esnext'
     "skipLibCheck": true,
