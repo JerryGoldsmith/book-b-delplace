@@ -4,11 +4,15 @@ body {
 
 h1 {
   color: var(--color-white);
-  font-size: 80px;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  font-size: 80px;
   letter-spacing: -0.05em;
   text-align: left;
   padding-bottom: 30px;
+}
+
+.title {
+  font-size: 80px;
 }
 
 // -----
@@ -123,11 +127,17 @@ h1 {
   background-color: var(--main-color);
 }
 
-// -----
+// ----- text fields -------
+
+input {
+  padding: 24px;
+}
+
 #fields {
   font-size: 26px;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: var(--color-white);
+  margin: 30px;
 }
 
 #borderline {
@@ -147,7 +157,7 @@ h1 {
 #noborderline {
   font-size: 16px;
 	font-family: paralucent, sans-serif;
-  padding: 10px;
+  padding: 40px;
   border: solid 0px var(--main-color);
   background-color: var(--color-fluo);
   color: var(--color-main);

@@ -1,5 +1,5 @@
 <body>
-  <h1>Réservation</h1>
+  <h1 class="title">Réservation</h1>
   <form [formGroup]="this.ordersService.form">
 
     <div>
@@ -7,20 +7,20 @@
         placeholder="Prénom"
         formControlName="customerFirstName"
         type="text"
-        id="fields">
+        id="fields noborderline">
 
       <input
         placeholder="Nom"
         formControlName="customerName"
         type="text"
-        id="fields"
+        id="fields noborderline"
         class="input-field col s12"/>
 
       <input
         placeholder="Pays"
         formControlName="customerCountry"
         type="text"
-        id="fields"
+        id="fields noborderline"
         class="input-field col s12"/>
 
       <!-- <input

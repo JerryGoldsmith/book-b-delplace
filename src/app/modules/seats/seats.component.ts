@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SeatService } from "../../services/seat.service";
 import { OrderReservationService } from "../../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
-import { NgForm } from "@angular/forms";
+// import { NgForm } from "@angular/forms";
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 
 @Component({
@@ -11,6 +12,8 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
   styleUrls: ['./seats.component.scss']
 })
 export class SeatsComponent implements OnInit {
+
+  seatsForm: FormGroup;
 
   seatOneSubscription: Subscription; // subscrition (observables)
   seatOnes: any[];

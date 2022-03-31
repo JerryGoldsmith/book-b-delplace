@@ -29,7 +29,7 @@ export class OrderReservationListComponent implements OnInit {
     this.ordersService
       .getSeatAdminOrders()
       //@ts-ignore
-      .subscribe(result => (this.seatOneOrders = result));
+      .subscribe(result => (this.seatOneOrders$ = result));
 
   markCompleted = (data: { payload: { doc: { id: string; }; }; }) => this.ordersService.updateSeatOneOrder(data);
 

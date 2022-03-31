@@ -17,8 +17,8 @@ export class OrdersService {
     orderNumber: new FormControl(""),
     customerCountry: new FormControl(""),
     // coffeeOrder: new FormControl(""),
-    seatOneOrder: new FormControl("")
-    // completed: new FormControl(false)
+    seatOneOrder: new FormControl(""),
+    completed: new FormControl(false)
   });
 
   //Firestore CRUD actions example
