@@ -14,6 +14,7 @@ import { CommonFormReactiveModule } from './routing/common-form-reactive.module'
 import { Part01RestoModule } from './routing/part01-resto.module'
 import { Part01EditionModule } from './routing/part01-edition.module'
 import { Part01EditionImagesModule } from './routing/part01-edition-images.module'
+import { Part01ReservationModule } from './routing/part01-reservation.module'
 import { RoutingModule } from './routing/routing-module'
 
 /* -------------------------------------------------- */
@@ -87,6 +88,7 @@ const appRoutes: Routes = [
     Part01RestoModule,
     Part01EditionModule,
     Part01EditionImagesModule,
+    Part01ReservationModule,
     CommonFormReactiveModule,
     RouterModule.forRoot(appRoutes,
       { preloadingStrategy: AuthPreloadStrategy }),

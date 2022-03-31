@@ -1,20 +1,29 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-// import { NgForm } from "@angular/forms";
-import { OrderReservationService } from "../services/order-reservation.service";
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from "@angular/forms";
+import { OrderReservationService } from "../../services/order-reservation.service";
+// import { SeatService } from "../services/seat.service";
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-order-reservation-show-buttons',
-  templateUrl: './order-reservation-show-buttons.component.html',
-  styleUrls: ['./order-reservation-show-buttons.component.scss',
-  './../normalize.component.scss']
+  selector: 'app-button-validation',
+  templateUrl: './button-validation.component.html',
+  styleUrls: ['./button-validation.component.scss']
 })
-export class OrderReservationShowButtonsComponent implements OnInit {
+export class ButtonValidationComponent implements OnInit {
 
   isShow = false;
-  seatOneSubscription: Subscription; // subscrition (observables)
+
   seatOnes: any[];
+  seatOneSubscription: Subscription; // subscrition (observables)
+
+  buttonDisabled: boolean;
+
+  showDiv = {
+  previous : false,
+  current : false,
+  next : false
+  }
 
   constructor(
     public ordersService: OrderReservationService,
@@ -22,6 +31,7 @@ export class OrderReservationShowButtonsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.buttonDisabled = false;
 
     this.seatOneSubscription = this.ordersService.seatOneSubject.subscribe( // subscrition (observables)
       (seatOnes: any[]) => {
@@ -30,11 +40,6 @@ export class OrderReservationShowButtonsComponent implements OnInit {
     );
     this.ordersService.emitSeatOneSubject();
   }
-
-  // seatOnes = [
-  //   "One",
-  //   "two"
-  // ];
 
   seatOneOrder = [];
 
@@ -49,7 +54,6 @@ export class OrderReservationShowButtonsComponent implements OnInit {
     this.ordersService.form.value.seatOneOrder = this.seatOneOrder;
 
     let data = this.ordersService.form.value;
-
     this.ordersService.createSeatOneOrder(data).then(res => {
       /*do something here....maybe clear the form or give a success message*/
       console.log("OK");
@@ -68,8 +72,12 @@ export class OrderReservationShowButtonsComponent implements OnInit {
     this.ordersService.saveSeatsFromFirebaseinServer();
   }
 
-  onDestroy() {
-    this.seatOneSubscription.unsubscribe();
+  onNewSeat() {
+    this.router.navigate(['/seats']);
+  }
+
+  onViewSeat(id: number) {
+    this.router.navigate(['/seats', 'view', id]);
   }
 
 }

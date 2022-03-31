@@ -1,10 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
-import { FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+// import { NgForm } from "@angular/forms";
+// import { FormGroup } from '@angular/forms';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { OrdersService } from "../services/orders.service";
-import * as firebase from 'firebase';
-// import { OrderReservationOrchestreService } from "../services/order-reservation-orchestre.service";
+// import * as firebase from 'firebase';
 // import { SeatService } from "../services/seat.service";
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
@@ -37,7 +36,6 @@ export class OrderReservationComponent implements OnInit {
   constructor(
     public ordersService: OrderReservationService,
     public orderService: OrdersService,
-    // public ordersOrchestreService: OrderReservationOrchestreService,
     private router: Router
   ) { }
 
@@ -70,11 +68,11 @@ export class OrderReservationComponent implements OnInit {
   // seatOneOrders$ = this.ordersService.getSeatOneOrders();
   // seatOrchestre = [];
 
-  addSeatOne = seatOne => this.seatOneOrder.push(seatOne);
+  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
   // addSeatOrchestre = seatOrchestre => this.seatOrchestres.push(seatOrchestre);
   // addSeat = seatOne => this.seat.push(seatOne);
 
-  removeSeatOne = seatOne => {
+  removeSeatOne = (seatOne: any) => {
     let index = this.seatOneOrder.indexOf(seatOne);
     if (index > -1) this.seatOneOrder.splice(index, 1);
   };

@@ -1,16 +1,14 @@
 import { Injectable } from "@angular/core";
-import * as Subject from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 // import { of, pipe } from 'rxjs';
 // import { filter, map } from 'rxjs/operators';
 import { Seat } from "../models/seats.model";
 import { FormControl, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http'; // Acces Firebase
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 // import firebase from "firebase/app";
 import "firebase/database";
-import {
-  AngularFirestore,
-} from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: "root"
@@ -18,7 +16,6 @@ import {
 export class OrderReservationService {
 
   seatOneOrder: Seat[]; // Firestore
-  //@ts-ignore
   seatOneSubject = new Subject<any[]>(); // subject (observables)
 
   results = [];
@@ -221,7 +218,6 @@ export class OrderReservationService {
   constructor(
     private httpClient: HttpClient, // Acces Firebase
     private afs: AngularFirestore
-    // private _service: OrderReservationService
   ) {}
 
   form = new FormGroup({
@@ -244,7 +240,7 @@ export class OrderReservationService {
   } // permet aux différentes méthodes de ce service d'accéder au tableau
 
   //Firestore CRUD actions
-  createSeatOneOrder(data) { // C is for Create
+  createSeatOneOrder(data: unknown) { // C is for Create
     return new Promise<any>((resolve, reject) => {
       this.afs
         .collection("seatOneOrders")
@@ -277,7 +273,7 @@ export class OrderReservationService {
     });
   }
 
-  createSeatOneOrderFinalResult(data) { // C is for Create
+  createSeatOneOrderFinalResult(data: Partial<unknown>) { // C is for Create
     var seatsRef = this.afs.collection("seatOneOrders").doc("results-id")
     return  new Promise<any>((resolve, reject) => {
       seatsRef
@@ -329,14 +325,14 @@ export class OrderReservationService {
     // return this.firestore.collection("seatOneOrders", ref => ref.where ('seatOneOrder', 'array-contains-any', ['Siège 3', 'Siège 11'])).snapshotChanges();
   }
 
-  updateSeatOneOrder(data) { // U is for Update
+  updateSeatOneOrder(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
     return this.afs
       .collection("seatOneOrders")
       .doc(data.payload.doc.id)
       .set({ completed: true }, { merge: true });
   }
 
-  deleteSeatOneOrder(data) { // D is for Delete
+  deleteSeatOneOrder(data: { payload: { doc: { id: string; }; }; }) { // D is for Delete
     return this.afs
       .collection("seatOneOrders")
       .doc(data.payload.doc.id)

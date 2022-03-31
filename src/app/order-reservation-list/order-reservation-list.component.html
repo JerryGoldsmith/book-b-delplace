@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let order of seatOneOrders">
+    <tr *ngFor="let order of seatOneOrders$">
       <!-- <td id="all-forms" class="vertical-lign-fluo">{{ order.payload.doc.data().orderNumber }}</td> -->
       <td class="cell-left">{{ order.payload.doc.data().customerFirstName }}</td>
       <td class="cell-right">{{ order.payload.doc.data().customerName }}</td>

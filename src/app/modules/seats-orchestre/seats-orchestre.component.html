@@ -1,0 +1,46 @@
+<form #myForm="ngForm" [formGroup]="this.ordersService.form">
+
+  <!-- <div
+  *ngIf="seatStatus === 'éteint'"
+  id="notAvailable">{{ seatName }}</div> -->
+
+  <!-- <div
+  *ngIf="seatStatus === 'allumé'"
+  id="items-button">{{ seatName }}</div> -->
+
+  <!-- <div *ngIf="showDiv.current"> -->
+    <!-- <div
+    *ngIf="seatStatus === 'allumé'"
+    [style.display]="'block'"> -->
+
+      <!-- <button type="submit"
+      class="waves-effect waves-light"
+      id="items-button"
+      *ngIf="seatStatus === 'allumé'"
+      (click)="onSwitch()">{{ seatName }}</button>
+
+      <button type="submit"
+      class="waves-effect waves-light"
+      id="notAvailable"
+      *ngIf="seatStatus === 'éteint'"
+      disabled="{{buttonDisabled}}"
+      (click)="onSwitch()">{{ seatName }}</button> -->
+    <!-- </div> -->
+  <!-- </div> -->
+
+  <!-- <div
+  *ngIf="seatStatus === 'allumé'"
+  id="notAvailable">{{ seatName }}</div>
+
+  <div
+  *ngIf="seatStatus === 'éteint'"
+  disabled="{{buttonDisabled}}">
+    <button
+    class="waves-effect waves-light"
+    id="items-button"
+    *ngIf="seatStatus === 'allumé'"
+    (click)="onSwitch()">{{ seatName }}</button>
+  </div> -->
+
+
+</form>

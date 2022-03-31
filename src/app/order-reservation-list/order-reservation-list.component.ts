@@ -1,27 +1,22 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
-import { OrderReservationOrchestreService } from "../services/order-reservation-orchestre.service";
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-order-reservation-list',
   templateUrl: './order-reservation-list.component.html',
-  styleUrls: ['./order-reservation-list.component.scss',
-  './../normalize.component.scss']
+  styleUrls: ['./order-reservation-list.component.scss']
 })
 export class OrderReservationListComponent implements OnInit {
 
   isShow = false;
 
   seatOneSubscription: Subscription; // subscrition (observables)
-  // seatOneOrchestreSubscription: Subscription;
 
   seatOnes: any[];
-  // seatOrchestres: any[];
 
   constructor(
-    public ordersService: OrderReservationService,
-    public ordersOrchestreService: OrderReservationOrchestreService,
+    public ordersService: OrderReservationService
   ) { }
 
   ngOnInit(): void {
@@ -33,11 +28,12 @@ export class OrderReservationListComponent implements OnInit {
   getSeatAdminOrders = () =>
     this.ordersService
       .getSeatAdminOrders()
+      //@ts-ignore
       .subscribe(result => (this.seatOneOrders = result));
 
-  markCompleted = data => this.ordersService.updateSeatOneOrder(data);
+  markCompleted = (data: { payload: { doc: { id: string; }; }; }) => this.ordersService.updateSeatOneOrder(data);
 
-  deleteOrder = data => this.ordersService.deleteSeatOneOrder(data);
+  deleteOrder = (data: { payload: { doc: { id: string; }; }; }) => this.ordersService.deleteSeatOneOrder(data);
 
   toggleDisplay() {
     this.isShow = !this.isShow;

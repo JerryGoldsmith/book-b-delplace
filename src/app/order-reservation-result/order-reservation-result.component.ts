@@ -1,9 +1,8 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+// import { NgForm } from "@angular/forms";
 import { OrderReservationService } from "../services/order-reservation.service";
-import { OrderReservationOrchestreService } from "../services/order-reservation-orchestre.service";
 import { Subscription } from 'rxjs/Subscription';
-import { AngularFirestore } from "@angular/fire/firestore";
+import { AngularFirestore, DocumentChangeAction } from "@angular/fire/firestore";
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,7 +18,6 @@ export class OrderReservationResultComponent implements OnInit {
 
   constructor(
     private reservationService: OrderReservationService,
-    public ordersOrchestreService: OrderReservationOrchestreService,
     private db: AngularFirestore,
     private router: Router
   ) {}
@@ -46,7 +44,7 @@ export class OrderReservationResultComponent implements OnInit {
     this.reservationService.emitSeatOneSubject();
   }
 
-  seatOneOrders;
+  seatOneOrders: DocumentChangeAction<unknown>[];
   seatOneOrder = [];
 
   // getSeatOneOrders = () =>

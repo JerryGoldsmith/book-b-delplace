@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Seat } from "../models/seats.model";
 import { OrderReservationService } from "../services/order-reservation.service";
-import { OrderReservationOrchestreService } from "../services/order-reservation-orchestre.service";
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -18,7 +17,6 @@ export class OrderReservationListConfirmComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private service: OrderReservationService,
-    private serviceOrchestre: OrderReservationOrchestreService,
     private router: Router
   ) { }
 
@@ -26,8 +24,8 @@ export class OrderReservationListConfirmComponent implements OnInit {
     // this.initGetSingleReservationById();
   }
 
-  // initGetSingleReservationById() {
-  //   this.seat = new Seat('', '', '', ''); // Book temporaire vide pour empêcher le plantage
+  // initGetSingleReservationById(): void {
+  //   this.seat = new Seat('', '', '', '');
   //   const id = this.route.snapshot.params['id'];
   //   this.service.getSeatTwoOrders(+id).then(
   //     (seat: Seat) => {

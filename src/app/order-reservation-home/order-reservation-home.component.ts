@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
-import { Book } from '../models/book.model';
-import { BooksService } from '../services/books.service';
 // import { Subscription } from 'rxjs/Subscription';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 // import * as firebase from 'firebase';
 // import { OrdersService } from "../services/orders.service";
 
@@ -13,6 +11,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./order-reservation-home.component.scss',
   './../normalize.component.scss']
 })
+
+// @Component({
+//     selector: 'app-order-reservation',
+//     templateUrl: './order-reservation.component.html',
+//     styleUrls: ['./order-reservation.component.scss',
+//     './../normalize.component.scss']
+// })
+
+// @Component({
+//     selector: 'app-order-reservation-list',
+//     templateUrl: './order-reservation-list.component.html',
+//     styleUrls: ['./order-reservation-list.component.scss',
+//     './../normalize.component.scss']
+// })
+
 export class OrderReservationHomeComponent implements OnInit {
 
   constructor() { }
@@ -57,9 +70,12 @@ export class OrderReservationHomeComponent implements OnInit {
         class Item {
             constructor(el) {
                 // the .item element
+                //@ts-ignore
                 this.DOM = {el: el};
                 // the inner image
+                //@ts-ignore
                 this.DOM.image = this.DOM.el.querySelector('.item__img');
+                //@ts-ignore
                 this.renderedStyles = {
                     // here we define which property will change as we scroll the page and the items is inside the viewport
                     // in this case we will be translating the image on the y-axis
@@ -72,14 +88,17 @@ export class OrderReservationHomeComponent implements OnInit {
                         // amount to interpolate
                         ease: 0.1,
                         // the maximum value to translate the image is set in a CSS variable (--overflow)
+                        //@ts-ignore
                         maxValue: parseInt(getComputedStyle(this.DOM.image).getPropertyValue('--overflow'), 10),
                         // current value setter
                         // the value of the translation will be:
                         // when the item's top value (relative to the viewport) equals the window's height (items just came into the viewport) the translation = minimum value (- maximum value)
                         // when the item's top value (relative to the viewport) equals "-item's height" (item just exited the viewport) the translation = maximum value
                         setValue: () => {
+                            //@ts-ignore
                             const maxValue = this.renderedStyles.innerTranslationY.maxValue;
                             const minValue = -1 * maxValue;
+                            //@ts-ignore
                             return Math.max(Math.min(MathUtils.map(this.props.top - docScroll, winsize.height, -1 * this.props.height, minValue, maxValue), maxValue), minValue)
                         }
                     }
@@ -88,9 +107,12 @@ export class OrderReservationHomeComponent implements OnInit {
                 this.update();
                 // use the IntersectionObserver API to check when the element is inside the viewport
                 // only then the element translation will be updated
+                //@ts-ignore
                 this.observer = new IntersectionObserver((entries) => {
+                    //@ts-ignore
                     entries.forEach(entry => this.isVisible = entry.intersectionRatio > 0);
                 });
+                //@ts-ignore
                 this.observer.observe(this.DOM.el);
                 // init/bind events
                 this.initEvents();
@@ -99,14 +121,18 @@ export class OrderReservationHomeComponent implements OnInit {
                 // gets the item's height and top (relative to the document)
                 this.getSize();
                 // sets the initial value (no interpolation)
+                //@ts-ignore
                 for (const key in this.renderedStyles ) {
+                    //@ts-ignore
                     this.renderedStyles[key].current = this.renderedStyles[key].previous = this.renderedStyles[key].setValue();
                 }
                 // translate the image
                 this.layout();
             }
             getSize() {
+                //@ts-ignore
                 const rect = this.DOM.el.getBoundingClientRect();
+                //@ts-ignore
                 this.props = {
                     // item's height
                     height: rect.height,
@@ -123,8 +149,11 @@ export class OrderReservationHomeComponent implements OnInit {
             }
             render() {
                 // update the current and interpolated values
+                //@ts-ignore
                 for (const key in this.renderedStyles ) {
+                    //@ts-ignore
                     this.renderedStyles[key].current = this.renderedStyles[key].setValue();
+                    //@ts-ignore
                     this.renderedStyles[key].previous = MathUtils.lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].ease);
                 }
                 // and translates the image
@@ -132,6 +161,7 @@ export class OrderReservationHomeComponent implements OnInit {
             }
             layout() {
                 // translates the image
+                //@ts-ignore
                 this.DOM.image.style.transform = `translate3d(0,${this.renderedStyles.innerTranslationY.previous}px,0)`;
             }
         }
@@ -140,16 +170,21 @@ export class OrderReservationHomeComponent implements OnInit {
         class SmoothScroll {
             constructor() {
                 // the <main> element
+                //@ts-ignore
                 this.DOM = {main: document.querySelector('main')};
                 // the scrollable element
                 // we translate this element when scrolling (y-axis)
+                //@ts-ignore
                 this.DOM.scrollable = this.DOM.main.querySelector('div[data-scroll]');
                 // the items on the page
+                //@ts-ignore
                 this.items = [];
+                //@ts-ignore
                 [...this.DOM.main.querySelectorAll('.content > .item')].forEach(item => this.items.push(new Item(item)));
                 // here we define which property will change as we scroll the page
                 // in this case we will be translating on the y-axis
                 // we interpolate between the previous and current value to achieve the smooth scrolling effect
+                //@ts-ignore
                 this.renderedStyles = {
                     translationY: {
                         // interpolated value
@@ -176,7 +211,9 @@ export class OrderReservationHomeComponent implements OnInit {
             }
             update() {
                 // sets the initial value (no interpolation) - translate the scroll value
+                //@ts-ignore
                 for (const key in this.renderedStyles ) {
+                    //@ts-ignore
                     this.renderedStyles[key].current = this.renderedStyles[key].previous = this.renderedStyles[key].setValue();
                 }
                 // translate the scrollable element
@@ -184,18 +221,24 @@ export class OrderReservationHomeComponent implements OnInit {
             }
             layout() {
                 // translates the scrollable element
+                //@ts-ignore
                 this.DOM.scrollable.style.transform = `translate3d(0,${-1*this.renderedStyles.translationY.previous}px,0)`;
             }
             setSize() {
                 // set the heigh of the body in order to keep the scrollbar on the page
+                //@ts-ignore
                 body.style.height = `${this.DOM.scrollable.scrollHeight}px`;
             }
             style() {
                 // the <main> needs to "stick" to the screen and not scroll
                 // for that we set it to position fixed and overflow hidden
+                //@ts-ignore
                 this.DOM.main.style.position = 'fixed';
+                //@ts-ignore
                 this.DOM.main.style.width = this.DOM.main.style.height = '100%';
+                //@ts-ignore
                 this.DOM.main.style.top = this.DOM.main.style.left = 0;
+                //@ts-ignore
                 this.DOM.main.style.overflow = 'hidden';
             }
             initEvents() {
@@ -204,14 +247,18 @@ export class OrderReservationHomeComponent implements OnInit {
             }
             render() {
                 // update the current and interpolated values
+                //@ts-ignore
                 for (const key in this.renderedStyles ) {
+                    //@ts-ignore
                     this.renderedStyles[key].current = this.renderedStyles[key].setValue();
+                    //@ts-ignore
                     this.renderedStyles[key].previous = MathUtils.lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].ease);
                 }
                 // and translate the scrollable element
                 this.layout();
 
                 // for every item
+                //@ts-ignore
                 for (const item of this.items) {
                     // if the item is inside the viewport call it's render function
                     // this will update the item's inner image translation, based on the document scroll value and the item's position on the viewport

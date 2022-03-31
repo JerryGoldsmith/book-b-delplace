@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Seat } from "../models/seats.model";
 import { OrderReservationService } from "../services/order-reservation.service";
-import { OrderReservationOrchestreService } from "../services/order-reservation-orchestre.service";
 import { Subscription } from 'rxjs/Subscription';
 import { AngularFirestore } from "@angular/fire/firestore";
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
@@ -26,7 +25,6 @@ export class OrderReservationConfirmationComponent implements OnInit {
   constructor(
     private db: AngularFirestore,
     public ordersService: OrderReservationService,
-    public ordersOrchestreService: OrderReservationOrchestreService,
     private route: ActivatedRoute // routes parametres avec id
   ) {
 
