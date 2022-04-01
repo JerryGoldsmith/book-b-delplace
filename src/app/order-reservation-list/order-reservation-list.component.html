@@ -32,12 +32,21 @@
         (click)="markCompleted(order)" class="cell-right">
         <i class="material-icons">check</i>
       </td> -->
-      <td
+
+      <!-- <td
         [hidden]="order.payload.doc.data().completed"
         (click)="deleteOrder(order)" class="cell-right-border">
         <i class="material-icons">delete_forever</i>
+      </td> -->
+
+      <td
+        [hidden]="order.payload.doc.data().completed"
+        (click)="deleteOrder(order)" class="cell-right-border"
+        href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+        <span class="material-icons cursorPoint">delete</span>  
       </td>
     </tr>
+
     <!-- <tr>
       <td id="all-form-titles"></td>
     </tr> -->

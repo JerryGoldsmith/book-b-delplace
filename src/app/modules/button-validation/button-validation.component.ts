@@ -43,9 +43,9 @@ export class ButtonValidationComponent implements OnInit {
 
   seatOneOrder = [];
 
-  addSeatOne = seatOne => this.seatOneOrder.push(seatOne);
+  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
-  removeSeatOne = seatOne => {
+  removeSeatOne = (seatOne: any) => {
     let index = this.seatOneOrder.indexOf(seatOne);
     if (index > -1) this.seatOneOrder.splice(index, 1);
   };

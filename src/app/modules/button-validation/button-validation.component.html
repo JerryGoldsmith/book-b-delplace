@@ -1,22 +1,22 @@
 <form #myForm="ngForm" [formGroup]="this.ordersService.form">
-
-<!-- <li *ngFor="let seatOne of seatOneOrder">
-  <div *ngIf="showDiv.current"> -->
-
-    <button
-    class="waves-effect waves-light"
-    id="submit-button"
-    <!-- (click)="onSubmit()"
-    (click) = "onSaveOnFirebase()" -->
-    >Réserver ce siège</button>
-
-    <button
-    <!-- class="waves-effect waves-light" -->
-    id="submit-button"
-    routerLink="confirmation">Valider ma commande</button>
-
-    <span class="col s9" id="fields"> {{ seatOne }} </span>
-    <a class="col s9" (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</a>
-  <!-- </div>
-</li> -->
+  <li *ngFor="let seatOne of seatOneOrder">
+    <div *ngIf="showDiv.current">
+  
+      <button
+      class="waves-effect waves-light"
+      id="submit-button"
+      (click)="onSubmit()"
+      (click) = "onSaveOnFirebase()"
+      >Réserver ce siège</button>
+  
+      <button
+      class="waves-effect waves-light"
+      id="submit-button"
+      routerLink="confirmation">Valider ma commande</button>
+  
+      <span class="col s9" id="fields"> {{ seatOne }} </span>
+      <a class="col s9" (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</a>
+  
+    </div>
+  </li>
 </form>
