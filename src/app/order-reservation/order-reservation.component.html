@@ -42,11 +42,20 @@
 
       <ul>
         <li>
+
+          <!-- <div *ngFor="let item of sortedData | keyValue">
+            <h2>{{ item.key }}</h2>
+          
+            <div *ngFor="let obj of item.value">{{ obj.age }}</div>
+          </div> -->
+
+
           <div *ngIf="showDiv.current">
-            <!-- <div *ngFor="let seatOne of seatOnes; let i = index">
-              <span *ngIf="i <= 11 && i === 0">Balcon</span>
-              <span *ngIf="i >= 12 && i === 12">Orchestre</span>
+
+            <!-- <div *ngFor="let seatOne of sortedData | keyValue">
+              <h1>{{ seatName.key }}</h1>
             </div> -->
+
             <app-seats
             class="input-field col s3"
             *ngFor="let seatOne of seatOnes; let i = index"

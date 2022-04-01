@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SeatService } from "../../services/seat.service";
 import { OrderReservationService } from "../../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
-// import { NgForm } from "@angular/forms";
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 
@@ -29,6 +28,8 @@ export class SeatsComponent implements OnInit {
   current : false,
   next : false
   }
+
+  // sortedData: any;
 
   @Input() seatName: string; // propriétés personnalisées pour transmettre des données depuis l'extérieur
   // ne pas oublier d'importer Input en haut dans import
@@ -58,6 +59,18 @@ export class SeatsComponent implements OnInit {
       }
     );
     this.ordersService.emitSeatOneSubject();
+
+    // ------
+
+    // this.sortedData = this.seatOnes.reduce((acc, curr) => {
+    //   if (acc.hasOwnProperty(curr.fiche)) {
+    //     acc[curr.fiche].push(curr);
+    //     return acc;
+    //   }
+
+    //   acc[curr.fiche] = [curr];
+    //   return acc;
+    // }, {});
   }
 
   getStatus() {
@@ -66,9 +79,9 @@ export class SeatsComponent implements OnInit {
 
   seatOneOrder = [];
 
-  addSeatOne = seatOne => this.seatOneOrder.push(seatOne);
+  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
-  removeSeatOne = seatOne => {
+  removeSeatOne = (seatOne: any) => {
     let index = this.seatOneOrder.indexOf(seatOne);
     if (index > -1) this.seatOneOrder.splice(index, 1);
   };
