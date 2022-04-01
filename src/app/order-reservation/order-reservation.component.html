@@ -53,17 +53,18 @@
           <div *ngIf="showDiv.current">
 
             <!-- <div *ngFor="let seatOne of sortedData | keyValue">
-              <h1>{{ seatName.key }}</h1>
-            </div> -->
+              <h1>{{ seatName.key }}</h1> -->
 
-            <app-seats
+              <app-seats
             class="input-field col s3"
             *ngFor="let seatOne of seatOnes; let i = index"
-            [seatName]="seatOne.name" [seatId]="seatOne.id" 
+            [seatName]="seatOne.name" [seatFiche]="seatOne.fiche" [seatId]="seatOne.id" 
             [seatStatus]="seatOne.status"
             (click)="addSeatOne(seatOne.name)"
             [index]="i">
             </app-seats>
+            
+            <!-- </div> -->
           </div>
         </li>
 
@@ -97,8 +98,7 @@
             <div *ngIf = "!showDiv.current">
               <button
               id="submit-button"
-              (click) = "onFetchFromFirebase()"
-              (click) = "onFetchOrchestreFromFirebase()">Afficher les sièges disponibles</button>
+              (click) = "onFetchFromFirebase()">Afficher les sièges disponibles</button>
             </div>
         </div>
 
@@ -122,8 +122,7 @@
             <button
             *ngIf="showDiv.current"
             id="close-button"
-            (click) = "onFetchFromFirebase()"
-            (click) = "onFetchOrchestreFromFirebase()">Cacher les sièges</button>
+            (click) = "onFetchFromFirebase()">Cacher les sièges</button>
         </div>
 
       </div>

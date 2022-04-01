@@ -27,7 +27,7 @@ export class OrderReservationComponent implements OnInit {
 
   sortedData: any;
 
-  @Input() seatName: string;
+  // @Input() seatName: string;
 
   constructor(
     public ordersService: OrderReservationService,
