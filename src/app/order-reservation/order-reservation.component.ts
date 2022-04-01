@@ -8,6 +8,9 @@ import { OrdersService } from "../services/orders.service";
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 
+import { MDCFormField } from '@material/form-field';
+import { MDCCheckbox } from '@material/checkbox';
+
 @Component({
   selector: 'app-order-reservation',
   // selector: 'app-order-reservation-orchestre',
@@ -49,6 +52,11 @@ export class OrderReservationComponent implements OnInit {
       }
     );
     this.ordersService.emitSeatOneSubject();
+
+    // material/formField
+    const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
+    const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
+    formField.input = checkbox;
 
     // this.seatOrchestreSubscription = this.ordersService.seatOrchestreSubject.subscribe( // subscrition (observables)
     //   (seatOrchestres: any[]) => {

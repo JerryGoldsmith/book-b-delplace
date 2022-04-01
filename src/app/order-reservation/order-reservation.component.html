@@ -1,105 +1,62 @@
 <body>
-  <h1 class="title">Réservation</h1>
+  <h1 class="title verticalOptimisation">Réservation</h1>
   <form [formGroup]="this.ordersService.form">
 
-    <div>
-      <input
+    <div class="verticalOptimisation">
+      <div class="mdc-text-field">
+        <input
+        size="42"
         placeholder="Prénom"
         formControlName="customerFirstName"
         type="text"
-        id="fields noborderline">
+        id="fields"
+        class="col s12">
 
-      <input
+        <!-- <div class="mdc-line-ripple"></div> -->
+      </div>
+
+      <div class="mdc-text-field">
+        <input
+        size="42"
         placeholder="Nom"
         formControlName="customerName"
         type="text"
-        id="fields noborderline"
-        class="input-field col s12"/>
+        id="fields"
+        class="col s12"/>
 
-      <input
+        <!-- <div class="mdc-line-ripple"></div> -->
+      </div>
+
+      <div class="mdc-text-field">
+        <input
+        size="42"
         placeholder="Pays"
         formControlName="customerCountry"
         type="text"
-        id="fields noborderline"
-        class="input-field col s12"/>
-
-      <!-- <input
-        class="input-field col s12"
-        placeholder="Order Number"
         id="fields"
-        formControlName="orderNumber"
-        type="number"/> -->
+        class="col s12"/>
 
-        <!-- <button
-          class="waves-effect waves-light"
-          id="items-button"
-          *ngFor="let seatOne of seatOnes"
-          (click)="addSeatOne(seatOne)">
-          {{ seatOne }}
-        </button> -->
-
-      <!-- <div> -->
+        <!-- <div class="mdc-line-ripple"></div> -->
+      </div>
 
 
       <ul>
         <li>
           <div *ngIf="showDiv.current">
-            <!-- <h1>Balcon</h1> -->
+            <!-- <div *ngFor="let seatOne of seatOnes; let i = index">
+              <span *ngIf="i <= 11 && i === 0">Balcon</span>
+              <span *ngIf="i >= 12 && i === 12">Orchestre</span>
+            </div> -->
             <app-seats
             class="input-field col s3"
             *ngFor="let seatOne of seatOnes; let i = index"
-            [seatName]="seatOne.name" [seatId]="seatOne.id" [seatStatus]="seatOne.status"
+            [seatName]="seatOne.name" [seatId]="seatOne.id" 
+            [seatStatus]="seatOne.status"
             (click)="addSeatOne(seatOne.name)"
             [index]="i">
             </app-seats>
           </div>
         </li>
-
-        <!-- <li>
-          <div *ngIf="showDiv.current">
-            <h1>Orchestre</h1>
-            <app-seats-orchestre
-            class="input-field col s3"
-            *ngFor="let seatOrchestre of seatOrchestres; let i = index"
-            [seatName]="seatOrchestre.name" [seatStatus]="seatOrchestre.status"
-            (click)="addSeatOrchestre(seatOrchestre.name)"
-            [index]="i">
-            </app-seats-orchestre>
-          </div>
-        </li> -->
-
-        <!-- <li *ngIf="showDiv.current">
-          <app-button-validation
-          class="waves-effect waves-light"
-          id="submit-button">
-          </app-button-validation>
-          <span class="col s9" id="fields"> {{ seatOne }} </span>
-          <a class="col s9" (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</a>
-        </li>
-        <li *ngIf="showDiv.current">
-          <app-button-validation-orchestre
-          class="waves-effect waves-light"
-          id="submit-button">
-          </app-button-validation-orchestre>
-          <span class="col s24" id="fields"> {{ seatOrchestre }} </span>
-          <a class="col s9" (click)="removeSeatOrchestre(seatOrchestre)">J'ai changé d'avis pour ce siège</a>
-        </li> -->
-
-
-        <!-- <li *ngFor="let seatOne of seatOneOrder">
-          <div *ngIf="showDiv.current">
-            <app-button-validation (click)="onSubmit()"
-            (click) = "onSaveOnFirebase()"></app-button-validation>
-          </div>
-        </li>
-
-        <li *ngFor="let seatOrchestre of seatOrchestres">
-          <div *ngIf="showDiv.current">
-            <app-button-validation-orchestre
-            (click)="onSubmitOrchestre()"
-            (click) = "onSaveOrchestreOnFirebase()"></app-button-validation-orchestre>
-          </div>
-        </li> -->
 
         <li>
           <div *ngFor="let seatOne of seatOneOrder">
@@ -120,82 +77,8 @@
             <div *ngIf="showDiv.current" class="whiteLineHorizontal"></div>
           </div>
 
-          <!-- <div *ngFor="let seatOrchestre of seatOrchestres">
-            <div *ngIf="showDiv.current">
-
-              <button class="waves-effect waves-light"
-              id="submit-button"
-              (click)="onSubmitOrchestre()"
-              (click) = "onSaveOrchestreOnFirebase()">Réserver ce siège</button>
-
-              <button class="waves-effect waves-light"
-              id="submit-button"
-              routerLink="confirmation">Valider ma commande</button>
-
-              <span class="col s9" id="fields"> {{ seatOrchestre }} </span>
-              <a class="col s9" (click)="removeSeatOrchestre(seatOrchestre)">J'ai changé d'avis pour ce siège</a>
-            </div>
-          </div> -->
         </li>
-
-        <!-- <li *ngFor="let seatOrchestre of seatOrchestres">
-
-          <div *ngIf="showDiv.current">
-
-            <button class="waves-effect waves-light"
-            id="submit-button"
-            (click)="onSubmitOrchestre()"
-            (click) = "onSaveOrchestreOnFirebase()">Réserver ce siège</button>
-
-            <button class="waves-effect waves-light"
-            id="submit-button"
-            routerLink="confirmation">Valider ma commande</button>
-
-            <span class="col s9" id="fields"> {{ seatOrchestre }} </span>
-            <a class="col s9" (click)="removeSeatOrchestre(seatOrchestre)">J'ai changé d'avis pour ce siège</a>
-          </div>
-        </li> -->
-
-
-
-
-
-        <!-- <li *ngFor="let seatOrchestre of seatOrchestres">
-          <div *ngIf="showDiv.current">
-
-            <button class="waves-effect waves-light"
-            id="submit-button"
-            (click)="onSubmit()"
-            (click) = "onSaveOnFirebase()"
-            (click)="onSubmitOrchestre()"
-            (click) = "onSaveOrchestreOnFirebase()">Réserver ce siège</button>
-
-            <button class="waves-effect waves-light"
-            id="submit-button"
-            routerLink="confirmation">Valider ma commande</button>
-
-            <span class="col s9" id="fields"> {{ seatOne }} </span>
-            <a class="col s9" (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</a>
-
-            <span class="col s24" id="fields"> {{ seatOrchestre }} </span>
-            <a class="col s9" (click)="removeSeatOrchestre(seatOrchestre)">J'ai changé d'avis pour ce siège</a>
-          </div>
-        </li> -->
       </ul>
-      <!-- </div>
-
-      <div> -->
-
-
-
-      <!-- </div> -->
-
-      <!-- <app-app-order-reservation-show-buttons></app-app-order-reservation-show-buttons> -->
-
-      <!-- <button
-      class="waves-effect waves-light"
-      id="submit-button"
-      (click) = "onFetchFromFirebase()">Afficher les sièges disponibles</button> -->
 
       <div class="center">
 
@@ -204,7 +87,6 @@
             showDiv.next = false">
             <div *ngIf = "!showDiv.current">
               <button
-              class="waves-effect waves-light"
               id="submit-button"
               (click) = "onFetchFromFirebase()"
               (click) = "onFetchOrchestreFromFirebase()">Afficher les sièges disponibles</button>
@@ -213,7 +95,6 @@
 
         <button type="submit"
         *ngIf="showDiv.current"
-        class="waves-effect waves-light"
         id="submit-button"
         (click)="onSubmit()"
         (click) = "onSaveOnFirebase()">Placer dans l'admin*</button>
@@ -231,21 +112,10 @@
         class="center">
             <button
             *ngIf="showDiv.current"
-            class="waves-effect waves-light"
             id="close-button"
             (click) = "onFetchFromFirebase()"
             (click) = "onFetchOrchestreFromFirebase()">Cacher les sièges</button>
         </div>
-
-      <!-- <div (click)="showDiv.current = !showDiv.current;
-          showDiv.previous = false;
-          showDiv.next = false"
-          *ngIf="showDiv.current">
-          <button
-          *ngIf="showDiv.current"
-          class="waves-effect waves-light"
-          id="submit-button">Cacher les sièges disponibles</button>
-      </div> -->
 
       </div>
 

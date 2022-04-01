@@ -1,4 +1,5 @@
 body {
+  // width: 300px;
   padding-top: 60px;
 }
 
@@ -15,6 +16,23 @@ h1 {
   font-size: 80px;
 }
 
+.mdc-text-field {
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+ul
+{
+  list-style-type:none;
+  padding:0px;
+  margin:0px;
+}
+
+.verticalOptimisation {
+  margin-top: -100px;
+  margin-bottom: 80px;
+}
+
 // -----
 
 .center {
@@ -24,6 +42,9 @@ h1 {
 // -----
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: var(--color-gold);
+  // background-color: var(--color-gold);
+  // padding: 30px;
+
 }
 ::-moz-placeholder { /* Firefox 19+ */
   color: var(--color-gold);
@@ -131,13 +152,20 @@ h1 {
 
 input {
   padding: 24px;
+  font-size: 22px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-fluo);
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
 }
 
 #fields {
-  font-size: 26px;
+  font-size: 22px;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: var(--color-white);
-  margin: 30px;
+  
 }
 
 #borderline {
@@ -158,15 +186,16 @@ input {
   font-size: 16px;
 	font-family: paralucent, sans-serif;
   padding: 40px;
-  border: solid 0px var(--main-color);
-  background-color: var(--color-fluo);
-  color: var(--color-main);
+  border: solid 0px;
 }
 
 #noborderline:hover {
-  background-color: var(--color-gold);
-  border: solid 0px var(--color-gold);
-  color: white;
+  font-size: 16px;
+	font-family: paralucent, sans-serif;
+  padding: 40px;
+  border: solid 0px;
+  background-color: var(--color-fluo);
+  color: var(--color-main);
 }
 
 #items {

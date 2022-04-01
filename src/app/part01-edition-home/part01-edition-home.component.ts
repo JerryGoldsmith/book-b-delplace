@@ -10,7 +10,6 @@ import "firebase/database";
 @Component({
   selector: 'app-part01-edition-home',
   templateUrl: './part01-edition-home.component.html',
-  // template: `<app-book-list></app-book-list>`,
   styleUrls: ['./part01-edition-home.component.scss',
   './book-list.component.scss',
   './header.component.scss',
@@ -317,17 +316,6 @@ export class Part01EditionHomeComponent implements OnInit {
     );
     this.booksService.getBookLs();
     this.booksService.emitBookLs();
-
-    // all ----
-
-    // this.imageService.getImageDetailListAll();
-    //
-    // this.imageService.getImageDetailListAll.snapshotChanges().subscribe(
-    //   list => {
-    //     this.imageListAll = list.map(item => {return item.payload.val();});
-    //     this.rowIndexArray = Array.from(Array(Math.ceil((this.imageListAll.length +1) / 3)).keys());
-    //   }
-    // );
 
     this.bookAllsSubscription = this.booksService.bookAllSubject.subscribe(
       (bookAlls: Book[]) => {
