@@ -18,6 +18,9 @@ export class OrderReservationService {
   seatOneOrder: Seat[]; // Firestore
   seatOneSubject = new Subject<any[]>(); // subject (observables)
 
+  // seats: Seat[] = [];
+  // seatSubject = new Subject<Seat[]>();
+
   results = [];
 
   seatOnes = [ // rend seulement accessible l'array avec subscrition (observables)
@@ -241,6 +244,19 @@ export class OrderReservationService {
     // this.seatOneSubject.next(this.seatOnes.slice(+1));
     this.seatOneSubject.next(this.seatOnes.slice()); // la methode slice() pour faire une copie du tableau appareils
   } // permet aux différentes méthodes de ce service d'accéder au tableau
+
+  // addSeat(name: string, status: string, completed: boolean) {
+  //   const seatOnesObject = {
+  //     name: '',
+  //     status: '',
+  //     completed: ''
+  //   };
+  //   seatOnesObject.name   = name;
+  //   seatOnesObject.status = status;
+  
+  //   this.seats.push(seatOnesObject);
+  //   this.emitSeatOneSubject();
+  // }
 
   //Firestore CRUD actions
   createSeatOneOrder(data: unknown) { // C is for Create

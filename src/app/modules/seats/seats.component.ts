@@ -112,9 +112,9 @@ export class SeatsComponent implements OnInit {
     if(this.seatStatus === "allumé") {
       this.ordersService.switchOffOne(this.index);
     }
-    // else if(this.seatStatus === "éteint") {
-    //   this.ordersService.switchOnOne(this.index);
-    // }
+    else if(this.seatStatus === "éteint") {
+      this.ordersService.switchOnOne(this.index);
+    }
   }
 
   onSaveOnFirebase() { // pour recevoir de Firebase (fetch)

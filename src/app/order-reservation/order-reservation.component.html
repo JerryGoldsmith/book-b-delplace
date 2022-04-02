@@ -43,33 +43,115 @@
       <ul>
         <li>
 
-          <!-- <div *ngFor="let item of sortedData | keyValue">
-            <h2>{{ item.key }}</h2>
-          
-            <div *ngFor="let obj of item.value">{{ obj.age }}</div>
-          </div> -->
-
-
           <div *ngIf="showDiv.current">
 
             <div *ngFor="let seatOne of sortedData | keyValue">
+
+              <!-- Balcon -->
+              <div [hidden]="seatOne.key === 'Orchestre'">
+
+                <h1>{{ seatOne.key }}</h1>
+
+                <app-seats
+                class="input-field col s3"
+                *ngFor="let seatOne of seatOnes; let i = index"
+                [seatName]="seatOne.name" 
+                [seatKind]="seatOne.kind"
+                [seatId]="seatOne.id" 
+                [seatStatus]="seatOne.status"
+                (click)="addSeatOne(seatOne.name)"
+                (click)="addSeatOne(seatOne.kind)"
+                [index]="i"
+                [visible]="seatOne.name === 'Balcon 1' 
+              || seatOne.name === 'Balcon 2' 
+              || seatOne.name === 'Balcon 3'
+              || seatOne.name === 'Balcon 4'
+              || seatOne.name === 'Balcon 5'
+              || seatOne.name === 'Balcon 6'
+              || seatOne.name === 'Balcon 7'
+              || seatOne.name === 'Balcon 8'
+              || seatOne.name === 'Balcon 9'
+              || seatOne.name === 'Balcon 10'
+              || seatOne.name === 'Balcon 11'
+              || seatOne.name === 'Balcon 12'" 
+              [hidden]="seatOne.name === 'Orchestre 13' 
+              || seatOne.name === 'Orchestre 14'
+              || seatOne.name === 'Orchestre 15'
+              || seatOne.name === 'Orchestre 16'
+              || seatOne.name === 'Orchestre 17'
+              || seatOne.name === 'Orchestre 18'
+              || seatOne.name === 'Orchestre 19'
+              || seatOne.name === 'Orchestre 20'
+              || seatOne.name === 'Orchestre 21'
+              || seatOne.name === 'Orchestre 22' 
+              || seatOne.name === 'Orchestre 23'
+              || seatOne.name === 'Orchestre 24'
+              || seatOne.name === 'Orchestre 25'
+              || seatOne.name === 'Orchestre 26'
+              || seatOne.name === 'Orchestre 27'
+              || seatOne.name === 'Orchestre 28'
+              || seatOne.name === 'Orchestre 29'
+              || seatOne.name === 'Orchestre 30'
+              || seatOne.name === 'Orchestre 31'
+              || seatOne.name === 'Orchestre 32'">
+                </app-seats>
+
+            </div>
+
+            <!-- Orchestre -->
+            <div [hidden]="seatOne.key === 'Balcon'">
+
               <h1>{{ seatOne.key }}</h1>
 
               <app-seats
               class="input-field col s3"
               *ngFor="let seatOne of seatOnes; let i = index"
               [seatName]="seatOne.name" 
-              [seatKind]="seatOne.kind" 
+              [seatKind]="seatOne.kind"
               [seatId]="seatOne.id" 
               [seatStatus]="seatOne.status"
               (click)="addSeatOne(seatOne.name)"
               (click)="addSeatOne(seatOne.kind)"
-              [index]="i">
+              [index]="i"
+              [visible]="seatOne.name === 'Orchestre 13' 
+            || seatOne.name === 'Orchestre 14'
+            || seatOne.name === 'Orchestre 15'
+            || seatOne.name === 'Orchestre 16'
+            || seatOne.name === 'Orchestre 17'
+            || seatOne.name === 'Orchestre 18'
+            || seatOne.name === 'Orchestre 19'
+            || seatOne.name === 'Orchestre 20'
+            || seatOne.name === 'Orchestre 21'
+            || seatOne.name === 'Orchestre 22' 
+            || seatOne.name === 'Orchestre 23'
+            || seatOne.name === 'Orchestre 24'
+            || seatOne.name === 'Orchestre 25'
+            || seatOne.name === 'Orchestre 26'
+            || seatOne.name === 'Orchestre 27'
+            || seatOne.name === 'Orchestre 28'
+            || seatOne.name === 'Orchestre 29'
+            || seatOne.name === 'Orchestre 30'
+            || seatOne.name === 'Orchestre 31'
+            || seatOne.name === 'Orchestre 32'"
+            [hidden]="seatOne.name === 'Balcon 1' 
+            || seatOne.name === 'Balcon 2' 
+            || seatOne.name === 'Balcon 3'
+            || seatOne.name === 'Balcon 4'
+            || seatOne.name === 'Balcon 5'
+            || seatOne.name === 'Balcon 6'
+            || seatOne.name === 'Balcon 7'
+            || seatOne.name === 'Balcon 8'
+            || seatOne.name === 'Balcon 9'
+            || seatOne.name === 'Balcon 10'
+            || seatOne.name === 'Balcon 11'
+            || seatOne.name === 'Balcon 12'">
               </app-seats>
-            
+
             </div>
+            
           </div>
-        </li>
+        </div>
+      </li>
 
         <li>
           <div *ngFor="let seatOne of seatOneOrder">

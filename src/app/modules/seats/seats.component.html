@@ -1,12 +1,20 @@
 <form #seatsForm="ngForm" [formGroup]="this.ordersService.form">
 
-      <!-- <div *ngFor="let seatOne of sortedData | keyValue">
+      <!-- <div *ngFor="let seatOne of sortedData | keyValue"> -->
             
-            <h1>{{ seatOne.kind }}</h1> -->
+            <!-- <h1>{{ seatOne.kind }}</h1> -->
 
             <button type="submit"
             id="items-button"
             *ngIf="seatStatus === 'allumé'"
+            [hidden]="seatKind === 'Orchestre'"
+            (click)="onSwitch()"
+            >{{ seatName }}</button>
+
+            <button type="submit"
+            id="items-button"
+            *ngIf="seatStatus === 'allumé'"
+            [hidden]="seatKind === 'Balcon'"
             (click)="onSwitch()"
             >{{ seatName }}</button>
 
