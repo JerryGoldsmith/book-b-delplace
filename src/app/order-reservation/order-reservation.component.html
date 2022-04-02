@@ -154,23 +154,32 @@
       </li>
 
         <li>
-          <div *ngFor="let seatOne of seatOneOrder">
-            <div *ngIf="showDiv.current" class="center">
+          <!-- <div *ngFor="let seatOne of sortedData | keyValue"> -->
 
-              <span class="col s9 seat-display">
-                <strong>{{ seatOne }}</strong>
-              </span>
+            <!-- <div [hidden]="seatOne.key === 'Balcon' && seatOne.key === 'Orchestre'"> -->
 
-              <button class="col s9 change-mind"
-              type="submit"
-              class="waves-effect waves-light"
-              id="change-mind-button"
-              (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</button>
+              <div *ngFor="let seatOne of seatOneOrder">
+                <div *ngIf="showDiv.current" class="center">
+    
+                  <span class="col s9 seat-display">
+                    <strong>{{ seatOne }}</strong>
+                  </span>
+    
+                  <button class="col s9 change-mind"
+                  type="submit"
+                  class="waves-effect waves-light"
+                  id="change-mind-button"
+                  (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</button>
+    
+                </div>
+    
+                <div *ngIf="showDiv.current" class="whiteLineHorizontal"></div>
+              </div>
 
-            </div>
+            <!-- </div> -->
+          <!-- </div> -->
 
-            <div *ngIf="showDiv.current" class="whiteLineHorizontal"></div>
-          </div>
+          
 
         </li>
       </ul>

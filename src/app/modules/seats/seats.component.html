@@ -4,6 +4,7 @@
             
             <!-- <h1>{{ seatOne.kind }}</h1> -->
 
+            <!-- Balcon -->
             <button type="submit"
             id="items-button"
             *ngIf="seatStatus === 'allumé'"
@@ -11,6 +12,7 @@
             (click)="onSwitch()"
             >{{ seatName }}</button>
 
+            <!-- Orchestre -->
             <button type="submit"
             id="items-button"
             *ngIf="seatStatus === 'allumé'"
