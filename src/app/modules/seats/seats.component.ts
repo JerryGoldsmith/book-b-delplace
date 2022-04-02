@@ -21,6 +21,7 @@ export class SeatsComponent implements OnInit {
 
   name: string    = 'SeatOn';
   status: string  = 'Status';
+  kind: string    = 'Kind';
   // customerName: string  = 'customerName';
 
   showDiv = {
@@ -29,11 +30,12 @@ export class SeatsComponent implements OnInit {
   next : false
   }
 
-  // sortedData: any;
+  sortedData: any;
 
   @Input() seatName: string; // propriétés personnalisées pour transmettre des données depuis l'extérieur
   // ne pas oublier d'importer Input en haut dans import
   @Input() seatStatus: string;
+  @Input() seatKind: string;
   @Input() seatCompleted: boolean;
   @Input() index: number;
 
@@ -52,6 +54,7 @@ export class SeatsComponent implements OnInit {
     this.name = this.ordersService.getSeatById(+id).name; // routes parametres avec id (étape 2 OK)
     this.status = this.ordersService.getSeatById(+id).status; // routes parametres avec id (étape 2 OK)
     // url pour y accéder : http://localhost:4200/nom-component/numeroDeId
+    this.kind = this.ordersService.getSeatById(+id).kind;
 
     this.seatOneSubscription = this.ordersService.seatOneSubject.subscribe( // subscrition (observables)
       (seatOnes: any[]) => {

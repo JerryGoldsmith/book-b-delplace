@@ -52,19 +52,22 @@
 
           <div *ngIf="showDiv.current">
 
-            <!-- <div *ngFor="let seatOne of sortedData | keyValue">
-              <h1>{{ seatName.key }}</h1> -->
+            <div *ngFor="let seatOne of sortedData | keyValue">
+              <h1>{{ seatOne.key }}</h1>
 
               <app-seats
-            class="input-field col s3"
-            *ngFor="let seatOne of seatOnes; let i = index"
-            [seatName]="seatOne.name" [seatFiche]="seatOne.fiche" [seatId]="seatOne.id" 
-            [seatStatus]="seatOne.status"
-            (click)="addSeatOne(seatOne.name)"
-            [index]="i">
-            </app-seats>
+              class="input-field col s3"
+              *ngFor="let seatOne of seatOnes; let i = index"
+              [seatName]="seatOne.name" 
+              [seatKind]="seatOne.kind" 
+              [seatId]="seatOne.id" 
+              [seatStatus]="seatOne.status"
+              (click)="addSeatOne(seatOne.name)"
+              (click)="addSeatOne(seatOne.kind)"
+              [index]="i">
+              </app-seats>
             
-            <!-- </div> -->
+            </div>
           </div>
         </li>
 

@@ -16,6 +16,7 @@ export class OrdersService {
     customerName: new FormControl(""),
     orderNumber: new FormControl(""),
     customerCountry: new FormControl(""),
+    kind: new FormControl(""),
     // coffeeOrder: new FormControl(""),
     seatOneOrder: new FormControl(""),
     completed: new FormControl(false)

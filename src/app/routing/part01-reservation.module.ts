@@ -39,6 +39,8 @@ import { OrderReservationResultComponent } from 'src/app/order-reservation-resul
 import { SeatsOrchestreComponent } from 'src/app/modules/seats-orchestre/seats-orchestre.component';
 import { ButtonValidationComponent } from 'src/app/modules/button-validation/button-validation.component';
 
+import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
+
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
     { path: 'show', component: OrderReservationResultComponent },
@@ -61,7 +63,8 @@ const routes: Routes = [
         OrderReservationShowResultComponent,
         OrderReservationResultComponent,
         SeatsOrchestreComponent,
-        ButtonValidationComponent
+        ButtonValidationComponent,
+        KeyValuePipe
     ],
     imports: [
         RouterModule.forRoot(routes,

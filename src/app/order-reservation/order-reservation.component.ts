@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { OrdersService } from "../services/orders.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -49,12 +49,12 @@ export class OrderReservationComponent implements OnInit {
     // ------
 
     this.sortedData = this.seatOnes.reduce((acc, curr) => {
-      if (acc.hasOwnProperty(curr.fiche)) {
-        acc[curr.fiche].push(curr);
+      if (acc.hasOwnProperty(curr.kind)) {
+        acc[curr.kind].push(curr);
         return acc;
       }
 
-      acc[curr.fiche] = [curr];
+      acc[curr.kind] = [curr];
       return acc;
     }, {});
   }

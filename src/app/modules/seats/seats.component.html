@@ -1,19 +1,21 @@
 <form #seatsForm="ngForm" [formGroup]="this.ordersService.form">
 
       <!-- <div *ngFor="let seatOne of sortedData | keyValue">
-              <h2>{{ seatName.key }}</h2>
-            </div> -->
+            
+            <h1>{{ seatOne.kind }}</h1> -->
 
-      <button type="submit"
-      id="items-button"
-      *ngIf="seatStatus === 'allumé'"
-      (click)="onSwitch()"
-      >{{ seatName }}</button>
+            <button type="submit"
+            id="items-button"
+            *ngIf="seatStatus === 'allumé'"
+            (click)="onSwitch()"
+            >{{ seatName }}</button>
 
-      <button type="submit"
-      id="notAvailable"
-      *ngIf="seatStatus === 'éteint'"
-      disabled="{{buttonDisabled}}"
-      (click)="onSwitch()">{{ seatName }}</button>
+            <button type="submit"
+            id="notAvailable"
+            *ngIf="seatStatus === 'éteint'"
+            disabled="{{buttonDisabled}}"
+            (click)="onSwitch()">{{ seatName }}</button>
+
+      <!-- </div> -->
 
 </form>
