@@ -44,7 +44,7 @@
 
                 <app-seats
                   class="input-field col s3"
-                  *ngFor="let seatOne of seatOnes; let i = index"
+                  *ngFor="let seatOne of seatOnes | valueArray; let i = index"
                   [seatName]="seatOne.name" 
                   [seatKind]="seatOne.kind"
                   [seatId]="seatOne.id" 
@@ -97,7 +97,7 @@
 
               <app-seats
                 class="input-field col s3"
-                *ngFor="let seatOne of seatOnes; let i = index"
+                *ngFor="let seatOne of seatOnes | valueArray; let i = index"
                 [seatName]="seatOne.name" 
                 [seatKind]="seatOne.kind"
                 [seatId]="seatOne.id" 
@@ -218,7 +218,7 @@
 
         </div>
       </div>
-      
+
     </div>
 
   </form>

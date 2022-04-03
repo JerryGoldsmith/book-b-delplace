@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SeatService } from "../../services/seat.service";
 import { OrderReservationService } from "../../services/order-reservation.service";
+import { Seat } from "../../models/seats.model";
 import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 
@@ -12,9 +14,11 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 })
 export class SeatsComponent implements OnInit {
 
+  public seatOnes$: Observable<Seat[]>;
+
   seatsForm: FormGroup;
 
-  seatOneSubscription: Subscription; // subscrition (observables)
+  seatOneSubscription$: Subscription; // subscrition (observables)
   seatOnes: any[];
   // seatOrchestres: any[];
   buttonDisabled: boolean;
@@ -40,7 +44,7 @@ export class SeatsComponent implements OnInit {
   @Input() index: number;
 
   constructor(
-    public ordersService: OrderReservationService,
+    public reservationService: OrderReservationService,
     public seatService: SeatService,
     private route: ActivatedRoute // routes parametres avec id
   ) { }
@@ -50,34 +54,35 @@ export class SeatsComponent implements OnInit {
     this.buttonDisabled = false;
 
     // this.name = this.route.snapshot.params['id']; // routes parametres avec id (étape 1 transitoire)
-    const id = this.route.snapshot.params['id']; // routes parametres avec id (étape 2 OK)
-    this.name = this.ordersService.getSeatById(+id).name; // routes parametres avec id (étape 2 OK)
-    this.status = this.ordersService.getSeatById(+id).status; // routes parametres avec id (étape 2 OK)
-    // url pour y accéder : http://localhost:4200/nom-component/numeroDeId
-    this.kind = this.ordersService.getSeatById(+id).kind;
+    const id = this.route.snapshot.params['id'];
+    this.getName();
+    this.getStatus();
+    this.getKind();
+    // this.name = this.reservationService.getSeatById(+id).name;
+    // this.status = this.reservationService.getSeatById(+id).status;
+    // this.kind = this.reservationService.getSeatById(+id).kind;
 
-    this.seatOneSubscription = this.ordersService.seatOneSubject.subscribe( // subscrition (observables)
+    this.seatOneSubscription$ = this.reservationService.seatOneSubject.subscribe( // subscrition (observables)
       (seatOnes: any[]) => {
         this.seatOnes = seatOnes;
       }
     );
-    this.ordersService.emitSeatOneSubject();
+    this.reservationService.emitSeatOneSubject();
+  }
 
-    // ------
-
-    // this.sortedData = this.seatOnes.reduce((acc, curr) => {
-    //   if (acc.hasOwnProperty(curr.fiche)) {
-    //     acc[curr.fiche].push(curr);
-    //     return acc;
-    //   }
-
-    //   acc[curr.fiche] = [curr];
-    //   return acc;
-    // }, {});
+  getName() {
+    this.name = this.route.snapshot.params['id'];
+    return this.name;
   }
 
   getStatus() {
-    return this.seatStatus;
+    this.status = this.route.snapshot.params['id'];
+    return this.status;
+  }
+
+  getKind() {
+    this.kind = this.route.snapshot.params['id'];
+    return this.kind;
   }
 
   seatOneOrder = [];
@@ -90,11 +95,11 @@ export class SeatsComponent implements OnInit {
   };
 
   onSubmit() {
-    this.ordersService.form.value.seatOneOrder = this.seatOneOrder;
+    this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
 
-    let data = this.ordersService.form.value;
+    let data = this.reservationService.form.value;
 
-    this.ordersService.createSeatOneOrder(data).then(res => {
+    this.reservationService.createSeatOneOrder(data).then(res => {
       /*do something here....maybe clear the form or give a success message*/
       console.log("OK");
     });
@@ -110,19 +115,19 @@ export class SeatsComponent implements OnInit {
 
   onSwitch() {
     if(this.seatStatus === "allumé") {
-      this.ordersService.switchOffOne(this.index);
+      this.reservationService.switchOffOne(this.index);
     }
     else if(this.seatStatus === "éteint") {
-      this.ordersService.switchOnOne(this.index);
+      this.reservationService.switchOnOne(this.index);
     }
   }
 
   onSaveOnFirebase() { // pour recevoir de Firebase (fetch)
-    this.ordersService.saveSeatsToFirebaseinServer();
+    this.reservationService.saveSeatsToFirebaseinServer();
   }
 
   onFetchFromFirebase() { // pour recevoir de Firebase (fetch)
-    this.ordersService.saveSeatsFromFirebaseinServer();
+    this.reservationService.saveSeatsFromFirebaseinServer();
   }
 
   // onSwitch() {

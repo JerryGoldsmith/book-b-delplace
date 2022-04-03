@@ -5,6 +5,7 @@ import { AngularFirestore } from "@angular/fire/firestore";
 @Injectable({
   providedIn: "root"
 })
+
 export class OrdersService {
 
   constructor(
@@ -72,3 +73,4 @@ export class OrdersService {
       .delete();
   }
 }
+

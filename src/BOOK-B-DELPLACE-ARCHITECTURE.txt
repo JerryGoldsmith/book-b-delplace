@@ -488,7 +488,7 @@ app/
  |      |--- books (part01 > editer)
  |      |--- image (part01 > editer)
  |      |
- |      |--- order-reservation (part01 > réserver)
+ |      |--- order-reservation (part01 > réserver - use pipes/key-value.pipes.ts)
  |      |
  |      |--- seat (part01 > réserver)
  |      |
@@ -510,6 +510,9 @@ app/
  |
  |--- helpers
  |      |--- must-match-validator (auth)
+ | 
+ |--- pipes
+ |      |--- key-value.pipes.ts (order-reservation.component.ts .html)
  |
  |--- mod/ (lazyloading)
  |      |--- private

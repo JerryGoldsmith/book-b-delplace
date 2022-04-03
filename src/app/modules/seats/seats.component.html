@@ -1,4 +1,4 @@
-<form #seatsForm="ngForm" [formGroup]="this.ordersService.form">
+<form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
       
       <!-- Balcon -->
       <button type="submit"
@@ -6,6 +6,7 @@
       *ngIf="seatStatus === 'allumé'"
       [hidden]="seatKind === 'Orchestre'"
       (click)="onSwitch()"
+      [value]="seatName.id"
       >{{ seatName }}</button>
 
       <!-- Orchestre -->
@@ -14,12 +15,14 @@
       *ngIf="seatStatus === 'allumé'"
       [hidden]="seatKind === 'Balcon'"
       (click)="onSwitch()"
+      [value]="seatName.id"
       >{{ seatName }}</button>
 
       <button type="submit"
       id="notAvailable"
       *ngIf="seatStatus === 'éteint'"
       disabled="{{buttonDisabled}}"
+      [value]="seatName.id"
       (click)="onSwitch()">{{ seatName }}</button>
-      
+
 </form>

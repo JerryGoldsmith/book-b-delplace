@@ -40,6 +40,7 @@ import { SeatsOrchestreComponent } from 'src/app/modules/seats-orchestre/seats-o
 import { ButtonValidationComponent } from 'src/app/modules/button-validation/button-validation.component';
 
 import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
+import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
@@ -64,7 +65,8 @@ const routes: Routes = [
         OrderReservationResultComponent,
         SeatsOrchestreComponent,
         ButtonValidationComponent,
-        KeyValuePipe
+        KeyValuePipe,
+        ValueArrayPipe
     ],
     imports: [
         RouterModule.forRoot(routes,

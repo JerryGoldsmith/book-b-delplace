@@ -12,10 +12,11 @@ import { Router } from '@angular/router';
 })
 export class OrderReservationComponent implements OnInit {
 
+
   isShow = false;
 
   seatOnes: any[];
-  seatOneSubscription: Subscription; // subscrition (observables)
+  seatOneSubscription: Subscription;
 
   buttonDisabled: boolean;
 
@@ -33,6 +34,10 @@ export class OrderReservationComponent implements OnInit {
     private router: Router
   ) { }
 
+  // ngOnDestroy(): void {
+  //   throw new Error('Method not implemented.');
+  // }
+
   ngOnInit(): void {
 
     this.buttonDisabled = false;
@@ -40,8 +45,10 @@ export class OrderReservationComponent implements OnInit {
     this.seatOneSubscription = this.ordersService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
         this.seatOnes = seatOnes;
+        console.log('this.seatOnes : ' + this.seatOnes);
       }
     );
+    console.log('this.seatOneSubscription : ' + this.seatOneSubscription);
     this.ordersService.emitSeatOneSubject();
 
     // ---- h1 > Balcon / Orchestre --
@@ -96,5 +103,9 @@ export class OrderReservationComponent implements OnInit {
   onViewSeat(id: number) {
     this.router.navigate(['/seats', 'view', id]);
   }
+
+  // OnDestroy(){
+  //   this.seatOneSubscription.unsubscribe();
+  // }
 
 }
