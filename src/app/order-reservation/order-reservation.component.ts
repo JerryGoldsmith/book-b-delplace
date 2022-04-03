@@ -15,7 +15,8 @@ export class OrderReservationComponent implements OnInit {
 
   isShow = false;
 
-  seatOnes: any[];
+  seatOnes: Array<any> = [];
+
   seatOneSubscription: Subscription;
 
   buttonDisabled: boolean;

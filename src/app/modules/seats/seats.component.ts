@@ -3,7 +3,7 @@ import { SeatService } from "../../services/seat.service";
 import { OrderReservationService } from "../../services/order-reservation.service";
 import { Seat } from "../../models/seats.model";
 import { Subscription } from 'rxjs/Subscription';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 
@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 })
 export class SeatsComponent implements OnInit {
 
-  public seatOnes$: Observable<Seat[]>;
+  // public seatOnes$: Observable<Seat[]>;
 
   seatsForm: FormGroup;
 
