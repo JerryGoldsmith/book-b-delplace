@@ -232,11 +232,9 @@ export class OrderReservationService {
     completed: new FormControl(false)
   });
 
-  // ---- emit -----
-
-  emitSeatOneSubject() {
-    this.seatOneSubject.next(this.seatOnes.slice());
-  }
+  // -----------------------------
+  // FIREBASE > FIRESTORE DATABASE
+  // -----------------------------
 
   // ---- create -----
 
@@ -384,7 +382,15 @@ export class OrderReservationService {
   //     .firebase_.firestore.FieldValue.serverTimestamp();
   // }
 
-  // ---- saveToFirebase -------
+  // ----------------------------
+  // FIREBASE > REALTIME DATABASE
+  // ----------------------------
+
+  emitSeatOneSubject() {
+    this.seatOneSubject.next(this.seatOnes.slice());
+  }
+
+  // ---- to Firebase -------
 
   saveSeatsToFirebaseinServer() { 
     this.httpClient
@@ -398,6 +404,8 @@ export class OrderReservationService {
       }
     );
   }
+
+  // ---- from Firebase -------
 
   saveSeatsFromFirebaseinServer() {
     this.httpClient
@@ -414,7 +422,9 @@ export class OrderReservationService {
     );
   }
 
-  // -------- status on/off ----------
+  // --------------
+  //  SWITCH STATUS
+  // --------------
 
   switchOnAll() { // on all
     for(let seatOne of this.seatOnes) {

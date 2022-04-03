@@ -82,7 +82,9 @@ export class SeatService {
   }
 
   getSeatOrders() {
-    return this.firestore.collection("seatOrders").snapshotChanges();
+    return this.firestore
+      .collection("seatOrders")
+      .snapshotChanges();
   }
 
   // ---- update -----

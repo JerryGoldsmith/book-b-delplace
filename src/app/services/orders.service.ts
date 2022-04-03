@@ -24,6 +24,10 @@ export class OrdersService {
     completed: new FormControl(false)
   });
 
+  // -----------------------------
+  // FIREBASE > FIRESTORE DATABASE
+  // -----------------------------
+
   // ---- create -----
 
   createSeatOneOrder(data: unknown) {
