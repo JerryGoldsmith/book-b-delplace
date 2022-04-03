@@ -55,8 +55,6 @@ export class OrderReservationComponent implements OnInit {
       acc[curr.kind] = [curr];
       return acc;
     }, {});
-
-    // --------------------------
   }
 
   seat = [];

@@ -5,42 +5,30 @@
   <form [formGroup]="this.ordersService.form">
 
     <div class="verticalOptimisation">
+
+      <!-- firstName > form -->
       <div class="mdc-text-field">
-        <input
-        size="42"
-        placeholder="Prénom"
+        <input size="42" placeholder="Prénom"
         formControlName="customerFirstName"
-        type="text"
-        id="fields"
+        type="text" id="fields"
         class="col s12">
-
-        <!-- <div class="mdc-line-ripple"></div> -->
       </div>
 
+      <!-- name > form -->
       <div class="mdc-text-field">
-        <input
-        size="42"
-        placeholder="Nom"
+        <input size="42" placeholder="Nom"
         formControlName="customerName"
-        type="text"
-        id="fields"
+        type="text" id="fields"
         class="col s12"/>
-
-        <!-- <div class="mdc-line-ripple"></div> -->
       </div>
 
+      <!-- country > form -->
       <div class="mdc-text-field">
-        <input
-        size="42"
-        placeholder="Pays"
+        <input size="42" placeholder="Pays"
         formControlName="customerCountry"
-        type="text"
-        id="fields"
+        type="text" id="fields"
         class="col s12"/>
-
-        <!-- <div class="mdc-line-ripple"></div> -->
       </div>
-
 
       <ul>
         <li>
@@ -49,12 +37,65 @@
 
             <div *ngFor="let seatOne of sortedData | keyValue">
 
-              <!-- Balcon -->
+              <!-- Display buttons Balcon (app-seats) -->
               <div [hidden]="seatOne.key === 'Orchestre'">
 
                 <h1>{{ seatOne.key }}</h1>
 
                 <app-seats
+                  class="input-field col s3"
+                  *ngFor="let seatOne of seatOnes; let i = index"
+                  [seatName]="seatOne.name" 
+                  [seatKind]="seatOne.kind"
+                  [seatId]="seatOne.id" 
+                  [seatStatus]="seatOne.status"
+                  (click)="addSeatOne(seatOne.name)"
+                  (click)="addSeatOne(seatOne.kind)"
+                  [index]="i"
+
+                  [visible]="seatOne.name === 'Balcon 1' 
+                  || seatOne.name === 'Balcon 2' 
+                  || seatOne.name === 'Balcon 3'
+                  || seatOne.name === 'Balcon 4'
+                  || seatOne.name === 'Balcon 5'
+                  || seatOne.name === 'Balcon 6'
+                  || seatOne.name === 'Balcon 7'
+                  || seatOne.name === 'Balcon 8'
+                  || seatOne.name === 'Balcon 9'
+                  || seatOne.name === 'Balcon 10'
+                  || seatOne.name === 'Balcon 11'
+                  || seatOne.name === 'Balcon 12'" 
+
+                  [hidden]="seatOne.name === 'Orchestre 13' 
+                  || seatOne.name === 'Orchestre 14'
+                  || seatOne.name === 'Orchestre 15'
+                  || seatOne.name === 'Orchestre 16'
+                  || seatOne.name === 'Orchestre 17'
+                  || seatOne.name === 'Orchestre 18'
+                  || seatOne.name === 'Orchestre 19'
+                  || seatOne.name === 'Orchestre 20'
+                  || seatOne.name === 'Orchestre 21'
+                  || seatOne.name === 'Orchestre 22' 
+                  || seatOne.name === 'Orchestre 23'
+                  || seatOne.name === 'Orchestre 24'
+                  || seatOne.name === 'Orchestre 25'
+                  || seatOne.name === 'Orchestre 26'
+                  || seatOne.name === 'Orchestre 27'
+                  || seatOne.name === 'Orchestre 28'
+                  || seatOne.name === 'Orchestre 29'
+                  || seatOne.name === 'Orchestre 30'
+                  || seatOne.name === 'Orchestre 31'
+                  || seatOne.name === 'Orchestre 32'">
+                </app-seats>
+
+            </div>
+
+            <!-- Display buttons Orchestre (app-seats) -->
+            <div [hidden]="seatOne.key === 'Balcon'">
+
+              <h1>{{ seatOne.key }}</h1>
+
+              <app-seats
                 class="input-field col s3"
                 *ngFor="let seatOne of seatOnes; let i = index"
                 [seatName]="seatOne.name" 
@@ -64,89 +105,40 @@
                 (click)="addSeatOne(seatOne.name)"
                 (click)="addSeatOne(seatOne.kind)"
                 [index]="i"
-                [visible]="seatOne.name === 'Balcon 1' 
-              || seatOne.name === 'Balcon 2' 
-              || seatOne.name === 'Balcon 3'
-              || seatOne.name === 'Balcon 4'
-              || seatOne.name === 'Balcon 5'
-              || seatOne.name === 'Balcon 6'
-              || seatOne.name === 'Balcon 7'
-              || seatOne.name === 'Balcon 8'
-              || seatOne.name === 'Balcon 9'
-              || seatOne.name === 'Balcon 10'
-              || seatOne.name === 'Balcon 11'
-              || seatOne.name === 'Balcon 12'" 
-              [hidden]="seatOne.name === 'Orchestre 13' 
-              || seatOne.name === 'Orchestre 14'
-              || seatOne.name === 'Orchestre 15'
-              || seatOne.name === 'Orchestre 16'
-              || seatOne.name === 'Orchestre 17'
-              || seatOne.name === 'Orchestre 18'
-              || seatOne.name === 'Orchestre 19'
-              || seatOne.name === 'Orchestre 20'
-              || seatOne.name === 'Orchestre 21'
-              || seatOne.name === 'Orchestre 22' 
-              || seatOne.name === 'Orchestre 23'
-              || seatOne.name === 'Orchestre 24'
-              || seatOne.name === 'Orchestre 25'
-              || seatOne.name === 'Orchestre 26'
-              || seatOne.name === 'Orchestre 27'
-              || seatOne.name === 'Orchestre 28'
-              || seatOne.name === 'Orchestre 29'
-              || seatOne.name === 'Orchestre 30'
-              || seatOne.name === 'Orchestre 31'
-              || seatOne.name === 'Orchestre 32'">
-                </app-seats>
 
-            </div>
+                [visible]="seatOne.name === 'Orchestre 13' 
+                || seatOne.name === 'Orchestre 14'
+                || seatOne.name === 'Orchestre 15'
+                || seatOne.name === 'Orchestre 16'
+                || seatOne.name === 'Orchestre 17'
+                || seatOne.name === 'Orchestre 18'
+                || seatOne.name === 'Orchestre 19'
+                || seatOne.name === 'Orchestre 20'
+                || seatOne.name === 'Orchestre 21'
+                || seatOne.name === 'Orchestre 22' 
+                || seatOne.name === 'Orchestre 23'
+                || seatOne.name === 'Orchestre 24'
+                || seatOne.name === 'Orchestre 25'
+                || seatOne.name === 'Orchestre 26'
+                || seatOne.name === 'Orchestre 27'
+                || seatOne.name === 'Orchestre 28'
+                || seatOne.name === 'Orchestre 29'
+                || seatOne.name === 'Orchestre 30'
+                || seatOne.name === 'Orchestre 31'
+                || seatOne.name === 'Orchestre 32'"
 
-            <!-- Orchestre -->
-            <div [hidden]="seatOne.key === 'Balcon'">
-
-              <h1>{{ seatOne.key }}</h1>
-
-              <app-seats
-              class="input-field col s3"
-              *ngFor="let seatOne of seatOnes; let i = index"
-              [seatName]="seatOne.name" 
-              [seatKind]="seatOne.kind"
-              [seatId]="seatOne.id" 
-              [seatStatus]="seatOne.status"
-              (click)="addSeatOne(seatOne.name)"
-              (click)="addSeatOne(seatOne.kind)"
-              [index]="i"
-              [visible]="seatOne.name === 'Orchestre 13' 
-            || seatOne.name === 'Orchestre 14'
-            || seatOne.name === 'Orchestre 15'
-            || seatOne.name === 'Orchestre 16'
-            || seatOne.name === 'Orchestre 17'
-            || seatOne.name === 'Orchestre 18'
-            || seatOne.name === 'Orchestre 19'
-            || seatOne.name === 'Orchestre 20'
-            || seatOne.name === 'Orchestre 21'
-            || seatOne.name === 'Orchestre 22' 
-            || seatOne.name === 'Orchestre 23'
-            || seatOne.name === 'Orchestre 24'
-            || seatOne.name === 'Orchestre 25'
-            || seatOne.name === 'Orchestre 26'
-            || seatOne.name === 'Orchestre 27'
-            || seatOne.name === 'Orchestre 28'
-            || seatOne.name === 'Orchestre 29'
-            || seatOne.name === 'Orchestre 30'
-            || seatOne.name === 'Orchestre 31'
-            || seatOne.name === 'Orchestre 32'"
-            [hidden]="seatOne.name === 'Balcon 1' 
-            || seatOne.name === 'Balcon 2' 
-            || seatOne.name === 'Balcon 3'
-            || seatOne.name === 'Balcon 4'
-            || seatOne.name === 'Balcon 5'
-            || seatOne.name === 'Balcon 6'
-            || seatOne.name === 'Balcon 7'
-            || seatOne.name === 'Balcon 8'
-            || seatOne.name === 'Balcon 9'
-            || seatOne.name === 'Balcon 10'
-            || seatOne.name === 'Balcon 11'
-            || seatOne.name === 'Balcon 12'">
+                [hidden]="seatOne.name === 'Balcon 1' 
+                || seatOne.name === 'Balcon 2' 
+                || seatOne.name === 'Balcon 3'
+                || seatOne.name === 'Balcon 4'
+                || seatOne.name === 'Balcon 5'
+                || seatOne.name === 'Balcon 6'
+                || seatOne.name === 'Balcon 7'
+                || seatOne.name === 'Balcon 8'
+                || seatOne.name === 'Balcon 9'
+                || seatOne.name === 'Balcon 10'
+                || seatOne.name === 'Balcon 11'
+                || seatOne.name === 'Balcon 12'">
               </app-seats>
 
             </div>
@@ -156,40 +148,39 @@
       </li>
       
       <li>
-        <!-- <div *ngFor="let seatOne of sortedData | keyValue"> -->
+        <div>
 
-          <div>
+          <div *ngFor="let seatOne of seatOneOrder">
+            <div *ngIf="showDiv.current" class="center">
 
-            <div *ngFor="let seatOne of seatOneOrder">
-              <div *ngIf="showDiv.current" class="center">
-  
-                <span class="col s9 seat-display"
+              <!-- Display buttons balcon/orchestre selection (only seatOne.name) -->
+              <span class="col s9 seat-display"
                 [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'">
-                  <strong>{{ seatOne }}</strong>
-                </span>
-  
-                <button class="col s9 change-mind"
+                <strong>{{ seatOne }}</strong>
+              </span>
+
+              <!-- Display button 'change mind' for balcon/orchestre (only seatOne.name) -->
+              <button class="col s9 change-mind"
                 type="submit"
                 class="waves-effect waves-light"
                 id="change-mind-button"
                 [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'"
                 (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</button>
-  
-              </div>
-  
-              <div *ngIf="showDiv.current" class="whiteLineHorizontal"></div>
+
             </div>
 
+            <!-- separate line between buttons (only seatOne.name) -->
+            <div *ngIf="showDiv.current" class="whiteLineHorizontal"
+              [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'"></div>
           </div>
-        <!-- </div> -->
 
-        
-
+        </div>
       </li>
     </ul>
 
-      <div class="center">
+    <div class="center">
 
+      <!-- button > show balcon/orchestre buttons -->
         <div (click)="showDiv.current = !showDiv.current;
             showDiv.previous = false;
             showDiv.next = false">
@@ -200,12 +191,14 @@
             </div>
         </div>
 
+        <!-- button > save choice on Firebase -->
         <button type="submit"
         *ngIf="showDiv.current"
         id="submit-button"
         (click)="onSubmit()"
         (click) = "onSaveOnFirebase()">Placer dans l'admin*</button>
 
+        <!-- button > routerLink > /confirmation -->
         <button class="waves-effect waves-light"
         *ngIf="showDiv.current"
         id="submit-button"
@@ -213,20 +206,20 @@
 
         <p *ngIf="showDiv.current" class="small-text">* deux boutons uniquement pour la démo.</p>
 
+        <!-- button > hide balcon/orchestre buttons -->
         <div (click)="showDiv.previous = !showDiv.previous;
-        showDiv.current = false;
-        showDiv.next = false"
-        class="center">
-            <button
-            *ngIf="showDiv.current"
+          showDiv.current = false;
+          showDiv.next = false"
+          class="center">
+
+          <button *ngIf="showDiv.current"
             id="close-button"
             (click) = "onFetchFromFirebase()">Cacher les sièges</button>
+
         </div>
-
       </div>
-
+      
     </div>
-
 
   </form>
 </body>
