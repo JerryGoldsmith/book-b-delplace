@@ -27,8 +27,6 @@ export class OrderReservationComponent implements OnInit {
 
   sortedData: any;
 
-  // @Input() seatName: string;
-
   constructor(
     public ordersService: OrderReservationService,
     public orderService: OrdersService,
@@ -39,14 +37,14 @@ export class OrderReservationComponent implements OnInit {
 
     this.buttonDisabled = false;
 
-    this.seatOneSubscription = this.ordersService.seatOneSubject.subscribe( // subscrition (observables)
+    this.seatOneSubscription = this.ordersService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
         this.seatOnes = seatOnes;
       }
     );
     this.ordersService.emitSeatOneSubject();
 
-    // ------
+    // ---- h1 > Balcon / Orchestre --
 
     this.sortedData = this.seatOnes.reduce((acc, curr) => {
       if (acc.hasOwnProperty(curr.kind)) {
@@ -57,6 +55,8 @@ export class OrderReservationComponent implements OnInit {
       acc[curr.kind] = [curr];
       return acc;
     }, {});
+
+    // --------------------------
   }
 
   seat = [];

@@ -1,8 +1,6 @@
 import { Injectable } from "@angular/core";
-import { Subject } from 'rxjs/Subject'; // import observables avec rxjs
+import { Subject } from 'rxjs/Subject';
 import { FormControl, FormGroup } from "@angular/forms";
-import * as firebase from 'firebase/app';
-// import firebase from "firebase/app";
 import "firebase/database";
 import { AngularFirestore } from "@angular/fire/firestore";
 
@@ -12,9 +10,9 @@ import { AngularFirestore } from "@angular/fire/firestore";
 
 export class SeatService {
 
-  seatSubject = new Subject<any[]>(); // subject (observables)
+  seatSubject = new Subject<any[]>();
 
-  seatOnes = [ // rend seulement accessible l'array avec subscrition (observables)
+  seatOnes = [
     {
       id: 1,
       name: "One",
@@ -45,92 +43,25 @@ export class SeatService {
     private firestore: AngularFirestore
   ) {}
 
+  // ---- form initialisation -----
+
   form = new FormGroup({
     firstName: new FormControl(""),
     lastName: new FormControl(""),
     country: new FormControl(""),
     choiceOfSeat: new FormControl(""),
     status: new FormControl("")
-    // completed: new FormControl(false)
   });
 
-  // ------------- routing parametres (id) -------------------
+  // --------- emit ---------
 
-  getSeatById(id: number) { // routes parametres avec id (number pour retrouver par son identifiant)
-    const seat = this.seatOnes.find(
-      (seatObject) => {
-        return seatObject.id === id;
-      }
-    );
-    return seat;
+  emitSeatOneSubject() {
+    this.seatSubject.next(this.seatOnes.slice());
   }
 
-  // -------------- subject (observable) -----------------
+  // ---- create -----
 
-  emitSeatOneSubject() { // emit comme envoi des données (observables)
-    this.seatSubject.next(this.seatOnes.slice()); // la methode slice() pour faire une copie du tableau appareils
-  } // permet aux différentes méthodes de ce service d'accéder au tableau
-
-  // ----------- methodes liée au status des appareils ------------------
-
-  switchOnAll() {
-    for(let seat of this.seatOnes) {
-      seat.status = 'allumé';
-    }
-    this.emitSeatOneSubject(); // permet d'émmetre le subject après la manipulation
-  }
-
-  switchOffAll() {
-    for(let seat of this.seatOnes) {
-      seat.status = "éteint";
-    }
-    this.emitSeatOneSubject(); // permet d'émmetre le subject après la manipulation
-  }
-
-  // ----------- methodes liée au status des appareils (avec index) ----------------
-
-  switchOnOne(i: number) {
-    this.seatOnes[i].status = 'allumé';
-    this.emitSeatOneSubject(); // permet d'émmetre le subject après la manipulation
-  }
-
-  switchOffOne(i: number) {
-    this.seatOnes[i].status = 'éteint';
-    this.emitSeatOneSubject(); // permet d'émmetre le subject après la manipulation
-  }
-
-  // --------------- methodes liée à edits ---------------
-
-  // méthode template (ajoute un nouvel appareil)
-
-  // addSeat(
-  //   firstName: string,
-  //   lastName: string,
-  //   country: string,
-  //   choiceOfSeat: string,
-  //   status: string) {
-  //   const seatObject = {
-  //     id: 0, // démarre à 0 d'où (this.appareils.length - 1) ci-dessous
-  //     // path: '', // dans l'array donc il faut le mettre !
-  //     firstName: '',
-  //     lastName: '',
-  //     country: '',
-  //     choiceOfSeat: '',
-  //     status: ''
-  //   };
-  //   seatObject.id = this.seatOnes[(this.seatOnes.length - 1)].id + 1;
-  //   seatObject.firstName = firstName;
-  //   seatObject.lastName = lastName;
-  //   seatObject.country = country;
-  //   seatObject.choiceOfSeat = choiceOfSeat;
-  //   seatObject.status = status;
-  //
-  //   this.seatOnes.push(seatObject);
-  //   this.emitSeatOneSubject();
-  // }
-
-  //Firestore CRUD actions
-  createSeatOrder(data) { // C is for Create
+  createSeatOrder(data: unknown) {
     return new Promise<any>((resolve, reject) => {
       this.firestore
         .collection("seatOrders")
@@ -139,21 +70,74 @@ export class SeatService {
     });
   }
 
-  getSeatOrders() { // R is for Read
+  // ---- read -----
+
+  getSeatById(id: number) { // id
+    const seat = this.seatOnes.find(
+      (seatObject) => {
+        return seatObject.id === id;
+      }
+    );
+    return seat;
+  }
+
+  getSeatOrders() {
     return this.firestore.collection("seatOrders").snapshotChanges();
   }
 
-  updateSeatOrder(data) { // U is for Update
+  // ---- update -----
+
+  updateSeatOrder(data: 
+    { payload: 
+      { doc: 
+        { id: string; 
+        }; 
+      }; 
+    }) {
     return this.firestore
       .collection("seatOrders")
       .doc(data.payload.doc.id)
       .set({ completed: true }, { merge: true });
   }
 
-  deleteSeatOrder(data) { // D is for Delete
+  // ---- delete -----
+
+  deleteSeatOrder(data: 
+    { payload: 
+      { doc: 
+        { id: string; 
+        }; 
+      }; 
+    }) {
     return this.firestore
       .collection("seatOrders")
       .doc(data.payload.doc.id)
       .delete();
+  }
+
+  // -------- status on/off ----------
+
+  switchOnAll() { // on all
+    for(let seat of this.seatOnes) {
+      seat.status = 'allumé';
+    }
+    this.emitSeatOneSubject();
+  }
+
+  switchOffAll() { // off all
+    for(let seat of this.seatOnes) {
+      seat.status = "éteint";
+    }
+    this.emitSeatOneSubject();
+  }
+
+  switchOnOne(i: number) { // on index
+    this.seatOnes[i].status = 'allumé';
+    this.emitSeatOneSubject();
+  }
+
+  switchOffOne(i: number) { // off index
+    this.seatOnes[i].status = 'éteint';
+    this.emitSeatOneSubject();
   }
 }

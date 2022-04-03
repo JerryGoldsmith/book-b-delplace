@@ -1,12 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs';
-// import { of, pipe } from 'rxjs';
-// import { filter, map } from 'rxjs/operators';
 import { Seat } from "../models/seats.model";
 import { FormControl, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http'; // Acces Firebase
 import firebase from 'firebase/app';
-// import firebase from "firebase/app";
 import "firebase/database";
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -15,15 +12,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class OrderReservationService {
 
-  seatOneOrder: Seat[]; // Firestore
-  seatOneSubject = new Subject<any[]>(); // subject (observables)
-
-  // seats: Seat[] = [];
-  // seatSubject = new Subject<Seat[]>();
+  seatOneOrder: Seat[];
+  seatOneSubject = new Subject<any[]>();
 
   results = [];
 
-  seatOnes = [ // rend seulement accessible l'array avec subscrition (observables)
+  seatOnes = [
     {
       id: 1,
       name: "Balcon 1",
@@ -219,47 +213,34 @@ export class OrderReservationService {
   ];
 
   constructor(
-    private httpClient: HttpClient, // Acces Firebase
+    private httpClient: HttpClient,
     private afs: AngularFirestore
   ) {}
+
+  // ---- form initialisation -----
 
   form = new FormGroup({
     id: new FormControl(this.afs.createId()),
     customerFirstName: new FormControl(""),
     customerName: new FormControl(""),
     customerCountry: new FormControl(""),
-    // count: new FormControl(firebase.firestore.FieldValue.increment(1)),
     date: new FormControl(
       {
         time: firebase.firestore.FieldValue.serverTimestamp()
       }),
-    // seat: new FormControl(""),
     seatOneOrder: new FormControl(""),
     completed: new FormControl(false)
   });
 
-  // -------------- subject (observable) -----------------
+  // ---- emit -----
 
-  emitSeatOneSubject() { // emit comme envoi des données (observables)
-    // this.seatOneSubject.next(this.seatOnes.slice(+1));
-    this.seatOneSubject.next(this.seatOnes.slice()); // la methode slice() pour faire une copie du tableau appareils
-  } // permet aux différentes méthodes de ce service d'accéder au tableau
+  emitSeatOneSubject() {
+    this.seatOneSubject.next(this.seatOnes.slice());
+  }
 
-  // addSeat(name: string, status: string, completed: boolean) {
-  //   const seatOnesObject = {
-  //     name: '',
-  //     status: '',
-  //     completed: ''
-  //   };
-  //   seatOnesObject.name   = name;
-  //   seatOnesObject.status = status;
-  
-  //   this.seats.push(seatOnesObject);
-  //   this.emitSeatOneSubject();
-  // }
+  // ---- create -----
 
-  //Firestore CRUD actions
-  createSeatOneOrder(data: unknown) { // C is for Create
+  createSeatOneOrder(data: unknown) {
     return new Promise<any>((resolve, reject) => {
       this.afs
         .collection("seatOneOrders")
@@ -268,7 +249,7 @@ export class OrderReservationService {
     });
   }
 
-  createOneSingle() { // C is for Create
+  createOneSingle() {
     return new Promise<any>((resolve, reject) => {
       this.afs
         .collection("seatOneOrders")
@@ -280,7 +261,7 @@ export class OrderReservationService {
     });
   }
 
-  createTwoSingle() { // C is for Create
+  createTwoSingle() {
     return new Promise<any>((resolve, reject) => {
       this.afs
         .collection("seatOneOrders")
@@ -292,78 +273,32 @@ export class OrderReservationService {
     });
   }
 
-  createSeatOneOrderFinalResult(data: Partial<unknown>) { // C is for Create
-    var seatsRef = this.afs.collection("seatOneOrders").doc("results-id")
+  createSeatOneOrderFinalResult(data: Partial<unknown>) {
+    var seatsRef = this.afs
+      .collection("seatOneOrders")
+      .doc("results-id")
     return  new Promise<any>((resolve, reject) => {
       seatsRef
-      // .set({
-      //   customerFirstName: "Tom",
-      //   customerName: "Tim",
-      //   customerCountry: "USA"
-      // })
         .update(data)
         .then(res => {}, err => reject(err));
         console.log("Document successfully written!");
     });
   }
 
-  createSeatOneOrderFinalResultCount() { // C is for Create
+  createSeatOneOrderFinalResultCount() {
     var seatsRef = this.afs.collection("seatOneOrders").doc("results-id")
     return  seatsRef
-        .update({ SeatsCount: firebase.firestore.FieldValue.increment(1) })
+        .update({ 
+          SeatsCount: firebase.firestore
+          .FieldValue.increment(1) 
+        })
   }
 
-  getSeatAdminOrders() { // R is for Read
-    return this.afs.collection("seatOneOrders").snapshotChanges();
-  }
+  // ---- read -----
 
-  getSeatOneOrders() { // R is for Read
-    return this.afs.collection("seatOneOrders", ref => ref
-    .orderBy ('date', 'desc')
-    .limit(1))
-    // .startAfter(0)
-    // .endAt(1))
-    .snapshotChanges();
-    // return this.afs.collection("seatOneOrders").snapshotChanges();
-  }
-
-  getSeatTwoOrders() { // R is for Read
-
-    return this.afs.collection("seatOneOrders", ref => ref
-    .orderBy ('id')
-    .limit(1))
-    .snapshotChanges();
-  }
-
-  private getTimestamp(): Object {
-    return this.afs.firestore['_firebaseApp']
-      .firebase_.firestore.FieldValue.serverTimestamp();
-}
-
-  getSeatThreeOrders() { // R is for Read
-    return this.afs.collection("seatOneOrders", 
-      ref => ref.where ('seatOneOrder', 'array-contains', 6)).snapshotChanges();
-    // return this.firestore.collection("seatOneOrders", ref => ref.where ('seatOneOrder', 'array-contains-any', ['Siège 3', 'Siège 11'])).snapshotChanges();
-  }
-
-  updateSeatOneOrder(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
-    return this.afs
-      .collection("seatOneOrders")
-      .doc(data.payload.doc.id)
-      .set({ completed: true }, { merge: true });
-  }
-
-  deleteSeatOneOrder(data: { payload: { doc: { id: string; }; }; }) { // D is for Delete
-    return this.afs
-      .collection("seatOneOrders")
-      .doc(data.payload.doc.id)
-      .delete();
-  }
-
-  // ------------- routing parametres (id) -------------------
-
-  getSeatById(id: number) { // routes parametres avec id (number pour retrouver par son identifiant)
-    const seatOne = this.seatOnes.find(
+  getSeatById(id: number) { // id
+    const seatOne = this.seatOnes
+      .find(
       (seatOneObject) => {
         return seatOneObject.id === id;
       }
@@ -371,46 +306,90 @@ export class OrderReservationService {
     return seatOne;
   }
 
+  getSeatAdminOrders() {
+    return this.afs
+      .collection("seatOneOrders")
+      .snapshotChanges();
+  }
+
+  getSeatOneOrders() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .orderBy ('date', 'desc')
+      .limit(1))
+      .snapshotChanges();
+  }
+
+  getSeatTwoOrders() {
+
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .orderBy ('id')
+      .limit(1))
+      .snapshotChanges();
+  }
+
+  getSeatThreeOrders() {
+    return this.afs
+      .collection("seatOneOrders", 
+      ref => ref.where ('seatOneOrder', 'array-contains', 6))
+      .snapshotChanges();
+  }
+
   getDate() {
-    this.afs.collection('events' , ref => ref.where('date' , '<' , new Date()))
-    .snapshotChanges();
+    this.afs
+      .collection('events' , 
+      ref => ref.where('date' , '<' , new Date()))
+      .snapshotChanges();
   }
 
-  // ----------- methodes liée au status des appareils ------------------
+  // ---- update -----
 
-  switchOnAll() {
-    for(let seatOne of this.seatOnes) {
-      seatOne.status = 'allumé';
-    }
-    this.emitSeatOneSubject(); // permet d'émmetre le subject après la manipulation
+  updateSeatOneOrder(data: { 
+    payload: { 
+      doc: { 
+      id: string; 
+      }; 
+    }; 
+  }) {
+  return this.afs
+    .collection("seatOneOrders")
+    .doc(data.payload.doc.id)
+    .set({ 
+      completed: true
+      }, { 
+      merge: true 
+    });
   }
 
-  switchOffAll() {
-    for(let seatOne of this.seatOnes) {
-      seatOne.status = "éteint";
-    }
-    this.emitSeatOneSubject(); // permet d'émmetre le subject après la manipulation
+  // ---- delete -----
+
+  deleteSeatOneOrder(data: { 
+    payload: { 
+      doc: { 
+        id: string; 
+      }; 
+    }; 
+  }) {
+  return this.afs
+    .collection("seatOneOrders")
+    .doc(data.payload.doc.id)
+    .delete();
   }
 
-  // ----------- methodes liée au status des seats (avec index) ----------------
+  // ---------------
 
-  switchOnOne(i: number) {
-    this.seatOnes[i].status = 'allumé';
-    this.emitSeatOneSubject(); // permet d'émettre le subject après la manipulation
-  }
+  // private getTimestamp(): Object {
+  //   return this.afs.firestore['_firebaseApp']
+  //     .firebase_.firestore.FieldValue.serverTimestamp();
+  // }
 
-  switchOffOne(i: number) {
-    this.seatOnes[i].status = 'éteint';
-    this.emitSeatOneSubject(); // permet d'émettre le subject après la manipulation
-  }
+  // ---- saveToFirebase -------
 
-  // ----------- methodes liée au status des seats (avec index) ----------------
-
-  saveSeatsToFirebaseinServer() { // Acces vers Firebase
+  saveSeatsToFirebaseinServer() { 
     this.httpClient
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/seats.json', this.seatOnes)
-    // put plutôt que post : s'il existe déjà sur firebase, put va l'écraser
-    .subscribe( // réagit à la réponse du serveur
+    .subscribe(
       () => {
         console.log('Enregistrement terminé');
       },
@@ -423,8 +402,7 @@ export class OrderReservationService {
   saveSeatsFromFirebaseinServer() {
     this.httpClient
     .get<any[]>('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/seats.json')
-    // get pour récupérer les données depuis firebase
-    .subscribe( // réagit à la réponse du serveur
+    .subscribe( 
       (response) => {
         console.log('Chargement terminé');
         this.seatOnes = response;
@@ -434,5 +412,31 @@ export class OrderReservationService {
         console.log('Erreur de chargement !' + error);
       }
     );
+  }
+
+  // -------- status on/off ----------
+
+  switchOnAll() { // on all
+    for(let seatOne of this.seatOnes) {
+      seatOne.status = 'allumé';
+    }
+    this.emitSeatOneSubject();
+  }
+
+  switchOffAll() { // off all
+    for(let seatOne of this.seatOnes) {
+      seatOne.status = "éteint";
+    }
+    this.emitSeatOneSubject();
+  }
+
+  switchOnOne(i: number) { // on index
+    this.seatOnes[i].status = 'allumé';
+    this.emitSeatOneSubject();
+  }
+
+  switchOffOne(i: number) { // off index
+    this.seatOnes[i].status = 'éteint';
+    this.emitSeatOneSubject();
   }
 }

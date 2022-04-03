@@ -11,28 +11,21 @@ export class OrdersService {
     private firestore: AngularFirestore
   ) {}
 
+  // ---- form initialisation -----
+
   form = new FormGroup({
     customerFirstName: new FormControl(""),
     customerName: new FormControl(""),
     orderNumber: new FormControl(""),
     customerCountry: new FormControl(""),
     kind: new FormControl(""),
-    // coffeeOrder: new FormControl(""),
     seatOneOrder: new FormControl(""),
     completed: new FormControl(false)
   });
 
-  //Firestore CRUD actions example
-  // createCoffeeOrder(data: unknown) { // C is for Create
-  //   return new Promise<any>((resolve, reject) => {
-  //     this.firestore
-  //       .collection("coffeeOrders")
-  //       .add(data)
-  //       .then(res => {}, err => reject(err));
-  //   });
-  // }
+  // ---- create -----
 
-  createSeatOneOrder(data: unknown) { // C is for Create
+  createSeatOneOrder(data: unknown) {
     return new Promise<any>((resolve, reject) => {
       this.firestore
         .collection("seatOneOrders")
@@ -41,36 +34,38 @@ export class OrdersService {
     });
   }
 
-  // getCoffeeOrders() { // R is for Read
-  //   return this.firestore.collection("coffeeOrders").snapshotChanges();
-  // }
+  // ---- read -----
 
-  getSeatOneOrders() { // R is for Read
-    return this.firestore.collection("seatOneOrders").snapshotChanges();
+  getSeatOneOrders() {
+    return this.firestore
+      .collection("seatOneOrders")
+      .snapshotChanges();
   }
 
-  // updateCoffeeOrder(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
-  //   return this.firestore
-  //     .collection("coffeeOrders")
-  //     .doc(data.payload.doc.id)
-  //     .set({ completed: true }, { merge: true });
-  // }
+  // ---- update -----
 
-  updateSeatOneOrder(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
+  updateSeatOneOrder(data: 
+    { payload: 
+      { doc: 
+        { id: string; 
+        }; 
+      }; 
+    }) {
     return this.firestore
       .collection("seatOneOrders")
       .doc(data.payload.doc.id)
       .set({ completed: true }, { merge: true });
   }
 
-  // deleteCoffeeOrder(data: { payload: { doc: { id: string; }; }; }) { // D is for Delete
-  //   return this.firestore
-  //     .collection("coffeeOrders")
-  //     .doc(data.payload.doc.id)
-  //     .delete();
-  // }
+  // ---- delete -----
 
-  deleteSeatOneOrder(data: { payload: { doc: { id: string; }; }; }) { // D is for Delete
+  deleteSeatOneOrder(data: 
+    { payload: 
+      { doc: 
+        { id: string; 
+        }; 
+      }; 
+    }) {
     return this.firestore
       .collection("seatOneOrders")
       .doc(data.payload.doc.id)

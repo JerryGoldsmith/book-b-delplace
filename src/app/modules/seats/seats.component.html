@@ -1,31 +1,25 @@
 <form #seatsForm="ngForm" [formGroup]="this.ordersService.form">
+      
+      <!-- Balcon -->
+      <button type="submit"
+      id="items-button"
+      *ngIf="seatStatus === 'allumé'"
+      [hidden]="seatKind === 'Orchestre'"
+      (click)="onSwitch()"
+      >{{ seatName }}</button>
 
-      <!-- <div *ngFor="let seatOne of sortedData | keyValue"> -->
-            
-            <!-- <h1>{{ seatOne.kind }}</h1> -->
+      <!-- Orchestre -->
+      <button type="submit"
+      id="items-button"
+      *ngIf="seatStatus === 'allumé'"
+      [hidden]="seatKind === 'Balcon'"
+      (click)="onSwitch()"
+      >{{ seatName }}</button>
 
-            <!-- Balcon -->
-            <button type="submit"
-            id="items-button"
-            *ngIf="seatStatus === 'allumé'"
-            [hidden]="seatKind === 'Orchestre'"
-            (click)="onSwitch()"
-            >{{ seatName }}</button>
-
-            <!-- Orchestre -->
-            <button type="submit"
-            id="items-button"
-            *ngIf="seatStatus === 'allumé'"
-            [hidden]="seatKind === 'Balcon'"
-            (click)="onSwitch()"
-            >{{ seatName }}</button>
-
-            <button type="submit"
-            id="notAvailable"
-            *ngIf="seatStatus === 'éteint'"
-            disabled="{{buttonDisabled}}"
-            (click)="onSwitch()">{{ seatName }}</button>
-
-      <!-- </div> -->
-
+      <button type="submit"
+      id="notAvailable"
+      *ngIf="seatStatus === 'éteint'"
+      disabled="{{buttonDisabled}}"
+      (click)="onSwitch()">{{ seatName }}</button>
+      
 </form>

@@ -1,5 +1,7 @@
 <body>
+
   <h1 class="title verticalOptimisation">Réservation</h1>
+
   <form [formGroup]="this.ordersService.form">
 
     <div class="verticalOptimisation">
@@ -152,37 +154,39 @@
           </div>
         </div>
       </li>
+      
+      <li>
+        <!-- <div *ngFor="let seatOne of sortedData | keyValue"> -->
 
-        <li>
-          <!-- <div *ngFor="let seatOne of sortedData | keyValue"> -->
+          <div>
 
-            <!-- <div [hidden]="seatOne.key === 'Balcon' && seatOne.key === 'Orchestre'"> -->
-
-              <div *ngFor="let seatOne of seatOneOrder">
-                <div *ngIf="showDiv.current" class="center">
-    
-                  <span class="col s9 seat-display">
-                    <strong>{{ seatOne }}</strong>
-                  </span>
-    
-                  <button class="col s9 change-mind"
-                  type="submit"
-                  class="waves-effect waves-light"
-                  id="change-mind-button"
-                  (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</button>
-    
-                </div>
-    
-                <div *ngIf="showDiv.current" class="whiteLineHorizontal"></div>
+            <div *ngFor="let seatOne of seatOneOrder">
+              <div *ngIf="showDiv.current" class="center">
+  
+                <span class="col s9 seat-display"
+                [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'">
+                  <strong>{{ seatOne }}</strong>
+                </span>
+  
+                <button class="col s9 change-mind"
+                type="submit"
+                class="waves-effect waves-light"
+                id="change-mind-button"
+                [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'"
+                (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</button>
+  
               </div>
+  
+              <div *ngIf="showDiv.current" class="whiteLineHorizontal"></div>
+            </div>
 
-            <!-- </div> -->
-          <!-- </div> -->
+          </div>
+        <!-- </div> -->
 
-          
+        
 
-        </li>
-      </ul>
+      </li>
+    </ul>
 
       <div class="center">
 
