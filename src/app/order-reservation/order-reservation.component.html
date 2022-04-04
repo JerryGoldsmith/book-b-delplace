@@ -150,7 +150,7 @@
       <li>
         <div>
 
-          <div *ngFor="let seatOne of seatOneOrder">
+          <div *ngFor="let seatOne of seatOneOrder; let i = index">
             <div *ngIf="showDiv.current" class="center">
 
               <!-- Display buttons balcon/orchestre selection (only seatOne.name) -->
@@ -187,7 +187,8 @@
             <div *ngIf = "!showDiv.current">
               <button
               id="submit-button"
-              (click) = "onFetchFromFirebase()">Afficher les sièges disponibles</button>
+              (click) = "onFetchFromFirebase()"
+              (click) = "onSaveSeatsOnFirebase()">Afficher les sièges disponibles</button>
             </div>
         </div>
 

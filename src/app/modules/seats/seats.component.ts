@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SeatService } from "../../services/seat.service";
+// import { SeatService } from "../../services/seat.service";
 import { OrderReservationService } from "../../services/order-reservation.service";
 import { Seat } from "../../models/seats.model";
 import { Subscription } from 'rxjs/Subscription';
@@ -18,7 +18,7 @@ export class SeatsComponent implements OnInit {
 
   seatsForm: FormGroup;
 
-  seatOneSubscription$: Subscription; // subscrition (observables)
+  seatOneSubscription: Subscription; // subscrition (observables)
   seatOnes: any[];
   // seatOrchestres: any[];
   buttonDisabled: boolean;
@@ -45,7 +45,7 @@ export class SeatsComponent implements OnInit {
 
   constructor(
     public reservationService: OrderReservationService,
-    public seatService: SeatService,
+    // public seatService: SeatService,
     private route: ActivatedRoute // routes parametres avec id
   ) { }
 
@@ -62,7 +62,7 @@ export class SeatsComponent implements OnInit {
     // this.status = this.reservationService.getSeatById(+id).status;
     // this.kind = this.reservationService.getSeatById(+id).kind;
 
-    this.seatOneSubscription$ = this.reservationService.seatOneSubject.subscribe( // subscrition (observables)
+    this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe( // subscrition (observables)
       (seatOnes: any[]) => {
         this.seatOnes = seatOnes;
       }
@@ -120,15 +120,17 @@ export class SeatsComponent implements OnInit {
     else if(this.seatStatus === "éteint") {
       this.reservationService.switchOnOne(this.index);
     }
+    console.log('this.seatStatus : ' + this.seatStatus);
+    console.log('this.index : ' + this.index);
   }
 
-  onSaveOnFirebase() { // pour recevoir de Firebase (fetch)
-    this.reservationService.saveSeatsToFirebaseinServer();
-  }
+  // onSaveOnFirebase() { // pour recevoir de Firebase (fetch)
+  //   this.reservationService.saveSeatsToFirebaseinServer();
+  // }
 
-  onFetchFromFirebase() { // pour recevoir de Firebase (fetch)
-    this.reservationService.saveSeatsFromFirebaseinServer();
-  }
+  // onFetchFromFirebase() { // pour recevoir de Firebase (fetch)
+  //   this.reservationService.saveSeatsFromFirebaseinServer();
+  // }
 
   // onSwitch() {
   //   if(this.seatStatus === "allumé") {

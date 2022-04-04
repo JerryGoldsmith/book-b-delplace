@@ -422,6 +422,25 @@ export class OrderReservationService {
     );
   }
 
+  public saveSeats(): void { 
+    var postsRef = firebase.database().ref('/seats')
+    postsRef
+    .orderByKey()
+    .on('value', (snapshot) => {
+
+      // convert Object to Array
+      let dataArray = [];
+          const value = snapshot.forEach((childSnapshot): void => {
+          dataArray[childSnapshot.key] = childSnapshot.val();
+          console.log('Seats childSnapshot.key : ' + childSnapshot.key);
+        });
+
+        console.log('Seats value : ' + value);
+        return value;
+
+    });
+  }
+
   // --------------
   //  SWITCH STATUS
   // --------------

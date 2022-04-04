@@ -1,3 +1,6 @@
+order-reservation
+> console > Cannot find a differ supporting object '[object Object]' of type 'object'. NgFor only supports binding to Iterables such as Arrays
+
 part01-backoffice-home && part01-edition-home :
 > console > ligne 225... > Cannot read properties of undefined (reading '0')
 

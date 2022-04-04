@@ -1,4 +1,7 @@
 <h1>Administration</h1>
+
+<form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
+
 <table>
   <thead>
     <tr>
@@ -13,8 +16,8 @@
     </tr>
   </thead>
 
-  <tbody>
-    <tr *ngFor="let order of seatOneOrders$">
+  <tbody *ngFor="let order of seatOneOrders">
+    <tr>
       <!-- <td id="all-forms" class="vertical-lign-fluo">{{ order.payload.doc.data().orderNumber }}</td> -->
       <td class="cell-left">{{ order.payload.doc.data().customerFirstName }}</td>
       <td class="cell-right">{{ order.payload.doc.data().customerName }}</td>
@@ -40,9 +43,14 @@
       </td> -->
 
       <td
-        [hidden]="order.payload.doc.data().completed"
-        (click)="deleteOrder(order)" class="cell-right-border"
-        href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+        (click) = "deleteOrder(order)"
+        class = "cell-right-border"
+        href = "/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+        <button 
+        type="submit"
+        *ngIf="seatStatus === 'éteint'"
+        (click)="onSwitch()"
+        [value]="seatStatus.id">{{ seatStatus }}</button>
         <span class="material-icons cursorPoint">delete</span>  
       </td>
     </tr>
@@ -52,3 +60,6 @@
     </tr> -->
   </tbody>
 </table>
+
+</form>
+

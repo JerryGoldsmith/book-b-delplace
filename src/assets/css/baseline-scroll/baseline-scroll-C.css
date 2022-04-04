@@ -3,8 +3,8 @@
 }
 
 .fadeIn {
-    -webkit-animation: animat_show 0.8s;
-    animation: fadeIn 16s;
+    -webkit-animation: animat_show 0.4s;
+    animation: fadeIn 4s;
     visibility: visible !important;
 }
 

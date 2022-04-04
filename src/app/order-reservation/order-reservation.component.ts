@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
 })
 export class OrderReservationComponent implements OnInit {
 
-
   isShow = false;
 
+  // seatOnes: any = [];
   seatOnes: Array<any> = [];
 
   seatOneSubscription: Subscription;
@@ -35,10 +35,6 @@ export class OrderReservationComponent implements OnInit {
     private router: Router
   ) { }
 
-  // ngOnDestroy(): void {
-  //   throw new Error('Method not implemented.');
-  // }
-
   ngOnInit(): void {
 
     this.buttonDisabled = false;
@@ -46,10 +42,10 @@ export class OrderReservationComponent implements OnInit {
     this.seatOneSubscription = this.ordersService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
         this.seatOnes = seatOnes;
-        console.log('this.seatOnes : ' + this.seatOnes);
+        // console.log('this.seatOnes : ' + seatOnes);
       }
     );
-    console.log('this.seatOneSubscription : ' + this.seatOneSubscription);
+    // console.log('this.seatOneSubscription : ' + this.seatOneSubscription);
     this.ordersService.emitSeatOneSubject();
 
     // ---- h1 > Balcon / Orchestre --
@@ -95,6 +91,12 @@ export class OrderReservationComponent implements OnInit {
 
   onFetchFromFirebase() { 
     this.ordersService.saveSeatsFromFirebaseinServer();
+  }
+
+  // ----
+
+  onSaveSeatsOnFirebase() {
+    this.ordersService.saveSeats();
   }
 
   onNewSeat() {
