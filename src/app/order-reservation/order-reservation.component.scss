@@ -12,6 +12,11 @@ h1 {
   padding-bottom: 30px;
 }
 
+.container {
+  flex-direction: row;
+  flex-direction: column;
+}
+
 .title {
   font-size: 80px;
 }

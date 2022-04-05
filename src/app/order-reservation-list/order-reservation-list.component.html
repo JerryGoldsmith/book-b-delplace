@@ -43,14 +43,15 @@
       </td> -->
 
       <td
-        (click) = "deleteOrder(order)"
-        class = "cell-right-border"
-        href = "/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+        (click)="deleteOrder(order)"
+        class="cell-right-border"
+        href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
         <button 
         type="submit"
         *ngIf="seatStatus === 'éteint'"
-        (click)="onSwitch()"
-        [value]="seatStatus.id">{{ seatStatus }}</button>
+        (click)="onSwitchDelete(seatOne.status)"
+        (click)="addSeatOne(seatOne.status)"
+        [value]="seatStatus.id"></button>
         <span class="material-icons cursorPoint">delete</span>  
       </td>
     </tr>
@@ -60,11 +61,6 @@
     </tr> -->
   </tbody>
 </table>
-
-<button
-type="button"
-
-        (click)="onSwitch()">TEST</button>
 
 </form>
 

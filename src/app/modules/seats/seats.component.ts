@@ -1,9 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { SeatService } from "../../services/seat.service";
 import { OrderReservationService } from "../../services/order-reservation.service";
-import { Seat } from "../../models/seats.model";
 import { Subscription } from 'rxjs/Subscription';
-// import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 
@@ -20,6 +17,11 @@ export class SeatsComponent implements OnInit {
 
   seatOneSubscription: Subscription; // subscrition (observables)
   seatOnes: any[];
+
+  seat = [];
+  seatOneOrder = [];
+
+
   // seatOrchestres: any[];
   buttonDisabled: boolean;
 
@@ -53,6 +55,8 @@ export class SeatsComponent implements OnInit {
 
     this.buttonDisabled = false;
 
+    this.getSeatAdminOrders();
+
     // this.name = this.route.snapshot.params['id']; // routes parametres avec id (étape 1 transitoire)
     const id = this.route.snapshot.params['id'];
     this.getName();
@@ -62,12 +66,44 @@ export class SeatsComponent implements OnInit {
     // this.status = this.reservationService.getSeatById(+id).status;
     // this.kind = this.reservationService.getSeatById(+id).kind;
 
-    this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe( // subscrition (observables)
+    this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
         this.seatOnes = seatOnes;
       }
     );
     this.reservationService.emitSeatOneSubject();
+  }
+
+  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
+
+  seatOneOrders = this.reservationService.getSeatOneOrders();
+
+  getSeatAdminOrders = () =>
+    this.reservationService
+      .getSeatAdminOrders()
+      //@ts-ignore
+      .subscribe(result => (this.seatOneOrders = result));
+
+  markCompleted = (data: 
+    { payload: 
+      { doc: 
+        { 
+          id: string; 
+        }; 
+      }; 
+    }) => this.reservationService.updateSeatOneOrder(data);
+
+  deleteOrder = (data: 
+    { payload: 
+      { doc: 
+        { 
+          id: string;
+        }; 
+      }; 
+    }) => this.reservationService.deleteSeatOneOrder(data);
+
+  onDestroy() {
+    this.seatOneSubscription.unsubscribe();
   }
 
   getName() {
@@ -85,14 +121,13 @@ export class SeatsComponent implements OnInit {
     return this.kind;
   }
 
-  seatOneOrder = [];
-
-  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
-
-  removeSeatOne = (seatOne: any) => {
-    let index = this.seatOneOrder.indexOf(seatOne);
-    if (index > -1) this.seatOneOrder.splice(index, 1);
-  };
+  // getColor() {
+  //   if(this.seatStatus === 'allumé') {
+  //     return 'green';
+  //   } else if(this.seatStatus === 'éteint') {
+  //     return 'red';
+  //   }
+  // }
 
   onSubmit() {
     this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
@@ -105,13 +140,9 @@ export class SeatsComponent implements OnInit {
     });
   }
 
-  // getColor() {
-  //   if(this.seatStatus === 'allumé') {
-  //     return 'green';
-  //   } else if(this.seatStatus === 'éteint') {
-  //     return 'red';
-  //   }
-  // }
+  onSaveOnFirebase() {
+    this.reservationService.saveSeatsToFirebaseinServer();
+  }
 
   onSwitch() {
     if(this.seatStatus === "allumé") {
@@ -120,8 +151,19 @@ export class SeatsComponent implements OnInit {
     else if(this.seatStatus === "éteint") {
       this.reservationService.switchOnOne(this.index);
     }
-    console.log('this.seatStatus : ' + this.seatStatus);
-    console.log('this.index : ' + this.index);
+    console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
+    console.log('onSwitch : this.index : ' + this.index);
+  }
+
+  onSwitchDelete() {
+    if(this.seatStatus === "éteint") {
+      this.reservationService.switchOnOne(this.index);
+    }
+    else if(this.seatStatus === "allumé") {
+      this.reservationService.switchOffOne(this.index);
+    }
+    console.log('onSwitchDelete : this.seatStatus : ' + this.seatStatus);
+    console.log('onSwitchDelete : this.index : ' + this.index);
   }
 
   // onSaveOnFirebase() { // pour recevoir de Firebase (fetch)

@@ -1,13 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
+// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-order-reservation-list',
   templateUrl: './order-reservation-list.component.html',
   styleUrls: ['./order-reservation-list.component.scss']
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OrderReservationListComponent implements OnInit {
 
@@ -15,8 +17,13 @@ export class OrderReservationListComponent implements OnInit {
 
   seatsForm: FormGroup;
 
+  buttonDisabled: boolean;
+
   seatOneSubscription: Subscription;
   seatOnes: any[];
+
+  seat = [];
+  seatOneOrder = [];
 
   name: string    = 'SeatOn';
   status: string  = 'Status';
@@ -32,9 +39,12 @@ export class OrderReservationListComponent implements OnInit {
   constructor(
     public reservationService: OrderReservationService,
     private route: ActivatedRoute
-  ) { }
+    // private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
+
+    this.buttonDisabled = false;
     
     this.getSeatAdminOrders();
 
@@ -46,6 +56,7 @@ export class OrderReservationListComponent implements OnInit {
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
         this.seatOnes = seatOnes;
+        // this.cd.markForCheck();
       }
     );
     this.reservationService.emitSeatOneSubject();
@@ -114,22 +125,54 @@ export class OrderReservationListComponent implements OnInit {
   }
 
   onSaveOnFirebase() {
-    this.reservationService.saveSeatsToFirebaseinServer();
+    this.reservationService.saveSeatsSelectToFirebaseinServer();
   }
 
   onSaveSeatsOnFirebase() {
     this.reservationService.saveSeats();
   }
 
+  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
+
+  onSubmit() {
+    this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
+
+    let data = this.reservationService.form.value;
+
+    this.reservationService.createSeatOneOrder(data).then(res => {
+      console.log("OK");
+    });
+  }
+
   onSwitch() {
-    if(this.status === "allumé") {
-      this.reservationService.switchOffOne(this.index);
-    }
-    else if(this.status === "éteint") {
+    // for(let seatOne of this.seatOnes) {
+    //   if(seatOne.status = "éteint") {
+    //     this.seatOnes[i].status = 'allumé';
+    //     console.log('seatOne.status : ' + seatOne.status);
+    //   } else if(seatOne.status = "allumé") {
+    //     this.seatOnes[i].status = 'éteint';
+    //     console.log('seatOne.status : ' + seatOne.status);
+    //   }
+    // }
+    if(this.status === "éteint") {
       this.reservationService.switchOnOne(this.index);
     }
-    console.log('this.seatStatus : ' + this.seatStatus);
+    else if(this.status === "allumé") {
+      this.reservationService.switchOffOne(this.index);
+    }
+    console.log('this.seatStatus : ' + this.status);
     console.log('this.index : ' + this.index);
+  }
+
+  onSwitchDelete() {
+    if(this.seatStatus === "éteint") {
+      this.reservationService.switchOnOne(this.index);
+    }
+    else if(this.seatStatus === "allumé") {
+      this.reservationService.switchOffOne(this.index);
+    }
+    console.log('onSwitchDelete : this.seatStatus : ' + this.seatStatus);
+    console.log('onSwitchDelete : this.index : ' + this.index);
   }
 
 }

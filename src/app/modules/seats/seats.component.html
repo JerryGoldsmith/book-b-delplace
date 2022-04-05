@@ -9,6 +9,24 @@
       [value]="seatName.id"
       >{{ seatName }}</button>
 
+      <div>
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="seatStatus === 'éteint'"
+            [hidden]="seatKind === 'Orchestre'"
+            (click)="onSwitchDelete()"
+            [value]="seatName.id">J'ai changé d'avis pour ce siège
+      </button>
+      </div>
+      <div *ngFor="let order of seatOneOrders">
+            <button type="submit"
+            id="items-delete-button-small"
+            (click)="deleteOrder(order)"
+            (click)="onSaveOnFirebase()"
+            [value]="seatStatus.id">Je supprime définitivement ce siège
+      </button>
+      </div>
+
       <!-- Orchestre -->
       <button type="submit"
       id="items-button"
