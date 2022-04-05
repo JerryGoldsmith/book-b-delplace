@@ -18,12 +18,13 @@
             [value]="seatName.id">J'ai changé d'avis pour ce siège
       </button>
       </div>
-      <div *ngFor="let order of seatOneOrders">
+      <div *ngFor="let order of seatOneOrders; let i = index">
             <button type="submit"
             id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé'"
             (click)="deleteOrder(order)"
             (click)="onSaveOnFirebase()"
-            [value]="seatStatus.id">Je supprime définitivement ce siège
+            [value]="seatStatus[i].id">Je supprime définitivement ce siège
       </button>
       </div>
 
