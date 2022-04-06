@@ -1,6 +1,8 @@
 <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
       
-      <!-- Balcon -->
+      <!-- ----------- Balcon ------------ -->
+
+      <!-- each seats names inside the button -->
       <button type="submit"
       id="items-button"
       *ngIf="seatStatus === 'allumé'"
@@ -9,23 +11,117 @@
       [value]="seatName.id"
       >{{ seatName }}</button>
 
-      <div>
+      <div *ngFor="let seat of seatOneOrders; let i = index">
+
+            <!-- display for all buttons off -->
             <button type="submit"
             id="items-delete-button-small"
-            *ngIf="seatStatus === 'éteint'"
+            *ngIf="seatStatus === 'éteint' && i===0"
             [hidden]="seatKind === 'Orchestre'"
             (click)="onSwitchDelete()"
-            [value]="seatName.id">J'ai changé d'avis pour ce siège
-      </button>
-      </div>
-      <div *ngFor="let order of seatOneOrders; let i = index">
+            (click)="onSaveOnFirebase()"
+            [value]="seatStatus[i].id">J'ai changé d'avis
+            </button>
+
+            <!-- display if buttons on, each by seatName -->
+
+            <!-- Balcon 1 -->
             <button type="submit"
             id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'allumé'"
-            (click)="deleteOrder(order)"
-            (click)="onSaveOnFirebase()"
-            [value]="seatStatus[i].id">Je supprime définitivement ce siège
-      </button>
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 1' && seatId === 1"
+            (click)="deleteOrder(i)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 2 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 2'"
+            [visible]="seatStatus === 'éteint' && seatId === 2"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 3 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 3'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 4 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 4'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 5 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 5'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 6 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 6'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 7 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 7'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 8 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 8'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 9 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 9'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 10 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 10'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 11 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 11'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
+            <!-- Balcon 12 -->
+            <button type="submit"
+            id="items-delete-button-small"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 12'"
+            (click)="deleteOrder(seat)"
+            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            </button>
+
       </div>
 
       <!-- Orchestre -->
@@ -40,8 +136,14 @@
       <button type="submit"
       id="notAvailable"
       *ngIf="seatStatus === 'éteint'"
+      [value]="seatName.id"
+      (click)="onSwitch()">Supprimer :<br />{{ seatName }}</button>
+
+      <!-- <button type="submit"
+      id="notAvailable"
+      *ngIf="seatStatus === 'éteint'"
       disabled="{{buttonDisabled}}"
       [value]="seatName.id"
-      (click)="onSwitch()">{{ seatName }}</button>
+      (click)="onSwitch()">{{ seatName }}</button> -->
 
 </form>

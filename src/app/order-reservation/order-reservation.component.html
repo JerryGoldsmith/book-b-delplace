@@ -43,7 +43,7 @@
                 <h1>{{ seatOne.key }}</h1>
 
                 <app-seats
-                  class="input-field col s3"
+                  class="input-field col s1"
                   *ngFor="let seatOne of seatOnes | valueArray; let i = index"
                   [seatName]="seatOne.name" 
                   [seatKind]="seatOne.kind"
@@ -95,7 +95,7 @@
               <h1>{{ seatOne.key }}</h1>
 
               <app-seats
-                class="input-field col s3"
+                class="input-field col s1"
                 *ngFor="let seatOne of seatOnes | valueArray; let i = index"
                 [seatName]="seatOne.name" 
                 [seatKind]="seatOne.kind"
@@ -195,13 +195,14 @@
         *ngIf="showDiv.current"
         id="submit-button"
         (click)="onSubmit()"
-        (click) = "onSaveOnFirebase()">Placer dans l'admin*</button>
+        (click) = "onSaveOnFirebase()"
+        routerLink="/confirmation">Valider ma commande</button>
 
         <!-- button > routerLink > /confirmation -->
-        <button class="waves-effect waves-light"
+        <!-- <button class="waves-effect waves-light"
         *ngIf="showDiv.current"
         id="submit-button"
-        routerLink="/confirmation">Valider ma commande*</button>
+        routerLink="/confirmation">Valider ma commande*</button> -->
 
         <button type="submit"
         *ngIf="showDiv.current"
@@ -274,6 +275,7 @@
     
           <td
             (click)="deleteOrder(order)"
+            (click)="onSaveOnFirebase()"
             class="cell-right-border"
             href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet"
             >

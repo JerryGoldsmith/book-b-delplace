@@ -284,7 +284,9 @@ export class OrderReservationService {
   }
 
   createSeatOneOrderFinalResultCount() {
-    var seatsRef = this.afs.collection("seatOneOrders").doc("results-id")
+    var seatsRef = this.afs
+      .collection("seatOneOrders")
+      .doc("results-id")
     return  seatsRef
         .update({ 
           SeatsCount: firebase.firestore
@@ -482,6 +484,11 @@ export class OrderReservationService {
 
   switchOnOne(i: number) { // on index
     this.seatOnes[i].status = 'allumé';
+    this.emitSeatOneSubject();
+  }
+
+  switchMiddleOne(i: number) { // on index
+    this.seatOnes[i].status = 'middle';
     this.emitSeatOneSubject();
   }
 

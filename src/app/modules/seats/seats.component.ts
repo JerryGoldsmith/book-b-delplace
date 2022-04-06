@@ -15,9 +15,11 @@ export class SeatsComponent implements OnInit {
 
   seatsForm: FormGroup;
 
+  // realtime database
   seatOneSubscription: Subscription; // subscrition (observables)
   seatOnes: any[];
 
+  // firestore database
   seat = [];
   seatOneOrder = [];
 
@@ -25,10 +27,10 @@ export class SeatsComponent implements OnInit {
   // seatOrchestres: any[];
   buttonDisabled: boolean;
 
+  id: number      = 3;
   name: string    = 'SeatOn';
   status: string  = 'Status';
   kind: string    = 'Kind';
-  // customerName: string  = 'customerName';
 
   showDiv = {
   previous : false,
@@ -38,8 +40,9 @@ export class SeatsComponent implements OnInit {
 
   sortedData: any;
 
-  @Input() seatName: string; // propriétés personnalisées pour transmettre des données depuis l'extérieur
-  // ne pas oublier d'importer Input en haut dans import
+  // realtime database
+  @Input() seatId: number;
+  @Input() seatName: string;
   @Input() seatStatus: string;
   @Input() seatKind: string;
   @Input() seatCompleted: boolean;
@@ -59,6 +62,7 @@ export class SeatsComponent implements OnInit {
 
     // this.name = this.route.snapshot.params['id']; // routes parametres avec id (étape 1 transitoire)
     const id = this.route.snapshot.params['id'];
+    this.getId()
     this.getName();
     this.getStatus();
     this.getKind();
@@ -74,9 +78,10 @@ export class SeatsComponent implements OnInit {
     this.reservationService.emitSeatOneSubject();
   }
 
-  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
-
+  // realtime database
   seatOneOrders = this.reservationService.getSeatOneOrders();
+
+  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
   getSeatAdminOrders = () =>
     this.reservationService
@@ -84,6 +89,7 @@ export class SeatsComponent implements OnInit {
       //@ts-ignore
       .subscribe(result => (this.seatOneOrders = result));
 
+  // firestore database
   markCompleted = (data: 
     { payload: 
       { doc: 
@@ -104,6 +110,11 @@ export class SeatsComponent implements OnInit {
 
   onDestroy() {
     this.seatOneSubscription.unsubscribe();
+  }
+
+  getId() {
+    this.id = this.route.snapshot.params['id'];
+    return this.id;
   }
 
   getName() {
@@ -146,6 +157,36 @@ export class SeatsComponent implements OnInit {
 
   onSwitch() {
     if(this.seatStatus === "allumé") {
+      this.reservationService.switchOffOne(this.index);
+    }
+    else if(this.seatStatus === "éteint") {
+      this.reservationService.switchOnOne(this.index);
+    }
+    console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
+    console.log('onSwitch : this.index : ' + this.index);
+  }
+
+  onSwitchOnMiddle() {
+    if(this.seatStatus === "allumé") {
+      this.reservationService.switchMiddleOne(this.index);
+    }
+    else if(this.seatStatus === "éteint") {
+      this.reservationService.switchOnOne(this.index);
+    }
+    console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
+    console.log('onSwitch : this.index : ' + this.index);
+  }
+
+  onSwitchMiddleOn() {
+    if(this.seatStatus === "middle") {
+      this.reservationService.switchOnOne(this.index);
+    }
+    console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
+    console.log('onSwitch : this.index : ' + this.index);
+  }
+
+  onSwitchOffMiddle() {
+    if(this.seatStatus === "middle") {
       this.reservationService.switchOffOne(this.index);
     }
     else if(this.seatStatus === "éteint") {
