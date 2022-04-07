@@ -29,6 +29,11 @@ import { EditSeatComponent } from 'src/app/edits/edit-seat/edit-seat.component';
 // reservation
 
 import { OrderReservationHomeComponent } from 'src/app/order-reservation-home/order-reservation-home.component';
+import { OrderReservationHomeAdminComponent } from 'src/app/order-reservation-home-admin/order-reservation-home-admin.component';
+import { OrderReservationHomeReserveSeatsComponent } from 'src/app/order-reservation-home-reserve-seats/order-reservation-home-reserve-seats.component';
+
+import { OrderReservationPictureComponent } from 'src/app/order-reservation-picture/order-reservation-picture.component';
+
 import { OrderReservationListComponent } from 'src/app/order-reservation-list/order-reservation-list.component';
 import { OrderReservationComponent } from 'src/app/order-reservation/order-reservation.component';
 
@@ -44,6 +49,7 @@ import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
+    { path: 'admin', component: OrderReservationHomeAdminComponent },
     { path: 'show', component: OrderReservationResultComponent },
     { path: 'result', component: OrderReservationShowResultComponent },
     { path: 'confirmation', component: OrderReservationResultComponent }
@@ -55,6 +61,9 @@ const routes: Routes = [
         // OrderListComponent,
         // OrdersComponent,
         OrderReservationHomeComponent,
+        OrderReservationHomeAdminComponent,
+        OrderReservationHomeReserveSeatsComponent,
+        OrderReservationPictureComponent,
         OrderReservationListComponent,
         OrderReservationComponent,
         SeatsComponent,

@@ -412,14 +412,14 @@ export class OrderReservationService {
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/seats.json', this.seatOnes)
     .subscribe(
       () => {
-        for(let seatOne of this.seatOnes) {
-          if(seatOne.status = "allumé") {
-            console.log('seatOne.status : ' + seatOne.status);
-          } else if(seatOne.status = "éteint") {
-            console.log('seatOne.status : ' + seatOne.status);
-          }
-        }
-        this.emitSeatOneSubject();
+        // for(let seatOne of this.seatOnes) {
+        //   if(seatOne.status = "allumé") {
+        //     console.log('seatOne.status : ' + seatOne.status);
+        //   } else if(seatOne.status = "éteint") {
+        //     console.log('seatOne.status : ' + seatOne.status);
+        //   }
+        // }
+        // this.emitSeatOneSubject();
         console.log('Enregistrement terminé');
       },
       (error) => {

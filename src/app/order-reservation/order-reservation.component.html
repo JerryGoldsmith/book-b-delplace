@@ -30,6 +30,18 @@
         class="col s12"/>
       </div>
 
+      <!-- button > hide balcon/orchestre buttons -->
+      <div (click)="showDiv.previous = !showDiv.previous;
+      showDiv.current = false;
+      showDiv.next = false"
+      class="center">
+
+      <button *ngIf="showDiv.current"
+        id="close-button"
+        (click) = "onFetchFromFirebase()">Cacher les sièges</button>
+
+    </div>
+
       <ul>
         <li>
 
@@ -43,7 +55,7 @@
                 <h1>{{ seatOne.key }}</h1>
 
                 <app-seats
-                  class="input-field col s1"
+                  class="input-field col s4"
                   *ngFor="let seatOne of seatOnes | valueArray; let i = index"
                   [seatName]="seatOne.name" 
                   [seatKind]="seatOne.kind"
@@ -95,7 +107,7 @@
               <h1>{{ seatOne.key }}</h1>
 
               <app-seats
-                class="input-field col s1"
+                class="input-field col s4"
                 *ngFor="let seatOne of seatOnes | valueArray; let i = index"
                 [seatName]="seatOne.name" 
                 [seatKind]="seatOne.kind"
@@ -190,28 +202,6 @@
             </div>
         </div>
 
-        <!-- button > save choice on Firebase -->
-        <button type="submit"
-        *ngIf="showDiv.current"
-        id="submit-button"
-        (click)="onSubmit()"
-        (click) = "onSaveOnFirebase()"
-        routerLink="/confirmation">Valider ma commande</button>
-
-        <!-- button > routerLink > /confirmation -->
-        <!-- <button class="waves-effect waves-light"
-        *ngIf="showDiv.current"
-        id="submit-button"
-        routerLink="/confirmation">Valider ma commande*</button> -->
-
-        <button type="submit"
-        *ngIf="showDiv.current"
-        id="submit-button"
-        (click)="deleteOrder(order)"
-        (click) = "onSaveOnFirebase()">Supprimer toutes les réservations sur firebase</button>
-
-        <p *ngIf="showDiv.current" class="small-text">* deux boutons uniquement pour la démo.</p>
-
         <!-- button > hide balcon/orchestre buttons -->
         <div (click)="showDiv.previous = !showDiv.previous;
           showDiv.current = false;
@@ -223,75 +213,19 @@
             (click) = "onFetchFromFirebase()">Cacher les sièges</button>
 
         </div>
+
+        <!-- button > save choice on Firebase -->
+        <button type="submit"
+        *ngIf="showDiv.current"
+        id="submit-button"
+        (click)="onSubmit()"
+        (click) = "onSaveOnFirebase()"
+        routerLink="/confirmation">Valider ma commande</button>
+
       </div>
 
     </div>
 
-    <div>
-      <h1>Administration</h1>
-
-    
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <!-- <th id="all-form-titles" class="vertical-lign-white">Order No.</th> -->
-          <th class="vertical-lign-maincolor cell-title-right">Prénom</th>
-          <th class="vertical-lign-maincolor cell-title-right">Nom</th>
-          <th class="vertical-lign-maincolor cell-title-right">Pays</th>
-          <th class="vertical-lign-maincolor cell-title-right">Votre siège</th>
-          <!-- <th id="all-form-titles">Checked</th> -->
-          <!-- <th class="vertical-lign-maincolor cell-title-right">Check</th> -->
-          <th class="vertical-lign-maincolor cell-title-left">Supprimer</th>
-        </tr>
-      </thead>
-    
-      <tbody *ngFor="let order of seatOneOrders">
-        <tr>
-          <!-- <td id="all-forms" class="vertical-lign-fluo">{{ order.payload.doc.data().orderNumber }}</td> -->
-          <td class="cell-left">{{ order.payload.doc.data().customerFirstName }}</td>
-          <td class="cell-right">{{ order.payload.doc.data().customerName }}</td>
-          <td class="cell-right">{{ order.payload.doc.data().customerCountry }}</td>
-          <td class="cell-right">
-            <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">{{ seatOne }}   </span>
-            <!-- <span *ngFor="let seatOrchestre of order.payload.doc.data().seatOneOrder">{{ seatOrchestre }}   </span> -->
-            <!-- <span *ngFor="let seatOne of order.payload.doc.data().seatTwoOrder">{{ seatTwo }}   </span> -->
-          </td>
-          <!-- <td id="all-forms" class="vertical-lign-fluo">
-            <span *ngFor="let car of order.payload.doc.data().carOrder">{{ car }}</span>
-          </td> -->
-          <!-- <td
-            [hidden]="order.payload.doc.data().completed"
-            (click)="markCompleted(order)" class="cell-right">
-            <i class="material-icons">check</i>
-          </td> -->
-    
-          <!-- <td
-            [hidden]="order.payload.doc.data().completed"
-            (click)="deleteOrder(order)" class="cell-right-border">
-            <i class="material-icons">delete_forever</i>
-          </td> -->
-    
-          <td
-            (click)="deleteOrder(order)"
-            (click)="onSaveOnFirebase()"
-            class="cell-right-border"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet"
-            >
-            <button 
-            type="submit"
-            *ngIf="seatStatus === 'éteint'"
-            [value]="seatStatus.id"></button>
-            <span class="material-icons cursorPoint">delete</span>  
-          </td>
-        </tr>
-    
-        <!-- <tr>
-          <td id="all-form-titles"></td>
-        </tr> -->
-      </tbody>
-    </table>
 
   </form>
 </body>
