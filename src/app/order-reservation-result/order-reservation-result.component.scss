@@ -9,12 +9,12 @@ section {
 @keyframes move {
   from {
     margin-left: 100%;
-    width: 300%;
+    width: 40%;
   }
 
   to {
     margin-left: 0%;
-    width: 100%;
+    width: 40%;
   }
 }
 
@@ -25,7 +25,7 @@ section {
   }
 
   to {
-    margin-left: 0%;
+    margin-left: 10%;
     width: 100%;
   }
 }
@@ -40,15 +40,17 @@ section {
 }
 
 .layout-resa-result-home {
+  width: 520px;
+  height: 700px;
   color: var(--color-white);
   font-size: 60px;
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   line-height: 1.2;
   text-align: center;
-  padding: 60px;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-right: 40px;
+  // padding: 60px;
+  margin-left: 110px;
+  // margin-right: 10px;
+  // margin-right: 10px;
   margin-top: 40px;
   animation: move 2s;
   -webkit-animation: move 2s;
@@ -72,4 +74,23 @@ section {
 	width: 100%;
 	margin: 0 auto;
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+}
+
+// ----------
+
+#submit-button {
+  background-color: var(--color-fluo);
+  font-size: 20px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-fluo);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 20px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+#submit-button:hover {
+  background-color: var(--main-color);
 }

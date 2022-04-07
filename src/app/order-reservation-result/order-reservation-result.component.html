@@ -3,7 +3,7 @@
   <div *ngFor="let order of seatOneOrders" class="row">
 
     <div routerLinkActive="active" *ngIf="!isAuth"
-    class="background-resa-result layout-resa-result-home">
+    class="layout-resa-result-home">
       <p>Cher
         <span><strong>{{ order.payload.doc.data().customerFirstName }} </strong></span>
         <span><strong>{{ order.payload.doc.data().customerName }}, </strong></span>
@@ -19,15 +19,15 @@
         </span>
       </p>
       <p><span>Merci pour votre commande !</span></p>
-      <div class="layout-resa-video">
-        <h2>En attendant le concert, découvrez un court extrait :</h2>
+      <!-- <div class="layout-resa-video"> -->
+        <!-- <h2>En attendant le concert, découvrez un court extrait :</h2> -->
 
-        <article class="video">
+        <!-- <article class="video"> -->
   				<!-- <video controls src="./assets/video/waters.mov"> -->
-  					Votre navigateur ne peut pas lire cette vidéo
+  					<!-- Votre navigateur ne peut pas lire cette vidéo -->
   				<!-- </video> -->
-  			</article>
-      </div>
+  			<!-- </article> -->
+      <!-- </div> -->
 
       <!-- <p>Votre pays :
         <span><strong>{{ order.payload.doc.data().customerCountry }} </strong></span>
@@ -45,6 +45,11 @@
     </div>
 
   </div>
+
+  <!-- button > save choice on Firebase -->
+  <button type="submit"
+  id="submit-button"
+  routerLink="/admin">Voir la partie administrateur</button>
 
   <!-- <div>
     <a routerLink = "/part01" class="link">Retour</a>

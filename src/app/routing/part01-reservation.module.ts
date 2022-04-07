@@ -33,6 +33,8 @@ import { OrderReservationHomeAdminComponent } from 'src/app/order-reservation-ho
 import { OrderReservationHomeReserveSeatsComponent } from 'src/app/order-reservation-home-reserve-seats/order-reservation-home-reserve-seats.component';
 
 import { OrderReservationPictureComponent } from 'src/app/order-reservation-picture/order-reservation-picture.component';
+import { OrderReservationPictureBisComponent } from 'src/app/order-reservation-picture-bis/order-reservation-picture-bis.component';
+import { OrderReservationPictureTerComponent } from 'src/app/order-reservation-picture-ter/order-reservation-picture-ter.component';
 
 import { OrderReservationListComponent } from 'src/app/order-reservation-list/order-reservation-list.component';
 import { OrderReservationComponent } from 'src/app/order-reservation/order-reservation.component';
@@ -41,7 +43,6 @@ import { OrderReservationConfirmationComponent } from 'src/app/order-reservation
 import { OrderReservationListConfirmComponent } from 'src/app/order-reservation-list-confirm/order-reservation-list-confirm.component';
 import { OrderReservationShowResultComponent } from 'src/app/order-reservation-show-result/order-reservation-show-result.component';
 import { OrderReservationResultComponent } from 'src/app/order-reservation-result/order-reservation-result.component';
-import { SeatsOrchestreComponent } from 'src/app/modules/seats-orchestre/seats-orchestre.component';
 import { ButtonValidationComponent } from 'src/app/modules/button-validation/button-validation.component';
 
 import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
@@ -50,6 +51,7 @@ import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
     { path: 'admin', component: OrderReservationHomeAdminComponent },
+    { path: 'home-result', component: OrderReservationHomeReserveSeatsComponent },
     { path: 'show', component: OrderReservationResultComponent },
     { path: 'result', component: OrderReservationShowResultComponent },
     { path: 'confirmation', component: OrderReservationResultComponent }
@@ -64,6 +66,8 @@ const routes: Routes = [
         OrderReservationHomeAdminComponent,
         OrderReservationHomeReserveSeatsComponent,
         OrderReservationPictureComponent,
+        OrderReservationPictureBisComponent,
+        OrderReservationPictureTerComponent,
         OrderReservationListComponent,
         OrderReservationComponent,
         SeatsComponent,
@@ -72,7 +76,6 @@ const routes: Routes = [
         OrderReservationListConfirmComponent,
         OrderReservationShowResultComponent,
         OrderReservationResultComponent,
-        SeatsOrchestreComponent,
         ButtonValidationComponent,
         KeyValuePipe,
         ValueArrayPipe
