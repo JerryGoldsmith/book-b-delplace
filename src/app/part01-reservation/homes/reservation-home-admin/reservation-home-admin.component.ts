@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-order-reservation-home-admin',
-  templateUrl: './order-reservation-home-admin.component.html',
-  styleUrls: ['./order-reservation-home-admin.component.scss',
+  selector: 'app-reservation-home-admin',
+  templateUrl: './reservation-home-admin.component.html',
+  styleUrls: ['./reservation-home-admin.component.scss',
   './../normalize.component.scss']
 })
-export class OrderReservationHomeAdminComponent implements OnInit {
+export class ReservationHomeAdminComponent implements OnInit {
 
   constructor() { }
 
