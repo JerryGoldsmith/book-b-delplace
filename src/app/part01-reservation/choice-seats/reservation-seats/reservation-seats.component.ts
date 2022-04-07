@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-order-reservation-seats',
-  templateUrl: './order-reservation-seats.component.html',
-  styleUrls: ['./order-reservation-seats.component.scss',
-  './../order-reservation-list/order-reservation-list.component.scss',
+  selector: 'app-reservation-seats',
+  templateUrl: './reservation-seats.component.html',
+  styleUrls: ['./reservation-seats.component.scss',
+  './../reservation-list/reservation-list.component.scss',
   './../normalize.component.scss']
 })
-export class OrderReservationSeatsComponent implements OnInit {
+export class ReservationSeatsComponent implements OnInit {
 
   isShow = false;
 

@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 // import { NgForm } from "@angular/forms";
-import { OrderReservationService } from "../services/order-reservation.service";
+import { OrderReservationService } from "src/app/services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
 import { AngularFirestore, DocumentChangeAction } from "@angular/fire/firestore";
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-order-reservation-result',
-  templateUrl: './order-reservation-result.component.html',
-  styleUrls: ['./order-reservation-result.component.scss',
+  selector: 'app-reservation-confirm',
+  templateUrl: './reservation-confirm.component.html',
+  styleUrls: ['./reservation-confirm.component.scss',
   './../normalize.component.scss']
 })
-export class OrderReservationResultComponent implements OnInit {
+export class ReservationConfirmComponent implements OnInit {
 
   seatOneSubscription: Subscription; // subscrition (observables)
   seatOnes: any[];

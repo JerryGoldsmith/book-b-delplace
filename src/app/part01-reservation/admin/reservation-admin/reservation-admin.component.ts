@@ -1,17 +1,15 @@
-import { Component, Input, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OrderReservationService } from "src/app/services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
-// import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-order-reservation-list-seats',
-  templateUrl: './order-reservation-list-seats.component.html',
-  styleUrls: ['./order-reservation-list-seats.component.scss']
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-reservation-admin',
+  templateUrl: './reservation-admin.component.html',
+  styleUrls: ['./reservation-admin.component.scss']
 })
-export class OrderReservationListSeatsComponent implements OnInit {
+export class ReservationAdminComponent implements OnInit {
 
   isShow = false;
 
@@ -29,8 +27,7 @@ export class OrderReservationListSeatsComponent implements OnInit {
   status: string  = 'Status';
   kind: string    = 'Kind';
 
-  @Input() seatName: string; // propriétés personnalisées pour transmettre des données depuis l'extérieur
-  // ne pas oublier d'importer Input en haut dans import
+  @Input() seatName: string;
   @Input() seatStatus: string;
   @Input() seatKind: string;
   @Input() seatCompleted: boolean;
@@ -39,7 +36,6 @@ export class OrderReservationListSeatsComponent implements OnInit {
   constructor(
     public reservationService: OrderReservationService,
     private route: ActivatedRoute
-    // private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -56,7 +52,6 @@ export class OrderReservationListSeatsComponent implements OnInit {
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
         this.seatOnes = seatOnes;
-        // this.cd.markForCheck();
       }
     );
     this.reservationService.emitSeatOneSubject();
@@ -145,15 +140,6 @@ export class OrderReservationListSeatsComponent implements OnInit {
   }
 
   onSwitch() {
-    // for(let seatOne of this.seatOnes) {
-    //   if(seatOne.status = "éteint") {
-    //     this.seatOnes[i].status = 'allumé';
-    //     console.log('seatOne.status : ' + seatOne.status);
-    //   } else if(seatOne.status = "allumé") {
-    //     this.seatOnes[i].status = 'éteint';
-    //     console.log('seatOne.status : ' + seatOne.status);
-    //   }
-    // }
     if(this.status === "éteint") {
       this.reservationService.switchOnOne(this.index);
     }
