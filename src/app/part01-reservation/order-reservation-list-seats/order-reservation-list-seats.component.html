@@ -1,0 +1,66 @@
+<h1>Administration</h1>
+
+<form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
+
+<table>
+  <thead>
+    <tr>
+      <!-- <th id="all-form-titles" class="vertical-lign-white">Order No.</th> -->
+      <th class="vertical-lign-maincolor cell-title-right">Prénom</th>
+      <th class="vertical-lign-maincolor cell-title-right">Nom</th>
+      <th class="vertical-lign-maincolor cell-title-right">Pays</th>
+      <th class="vertical-lign-maincolor cell-title-right">Votre siège</th>
+      <!-- <th id="all-form-titles">Checked</th> -->
+      <!-- <th class="vertical-lign-maincolor cell-title-right">Check</th> -->
+      <th class="vertical-lign-maincolor cell-title-left">Supprimer</th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let order of seatOneOrders">
+    <tr>
+      <!-- <td id="all-forms" class="vertical-lign-fluo">{{ order.payload.doc.data().orderNumber }}</td> -->
+      <td class="cell-left">{{ order.payload.doc.data().customerFirstName }}</td>
+      <td class="cell-right">{{ order.payload.doc.data().customerName }}</td>
+      <td class="cell-right">{{ order.payload.doc.data().customerCountry }}</td>
+      <td class="cell-right">
+        <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">{{ seatOne }}   </span>
+        <!-- <span *ngFor="let seatOrchestre of order.payload.doc.data().seatOneOrder">{{ seatOrchestre }}   </span> -->
+        <!-- <span *ngFor="let seatOne of order.payload.doc.data().seatTwoOrder">{{ seatTwo }}   </span> -->
+      </td>
+      <!-- <td id="all-forms" class="vertical-lign-fluo">
+        <span *ngFor="let car of order.payload.doc.data().carOrder">{{ car }}</span>
+      </td> -->
+      <!-- <td
+        [hidden]="order.payload.doc.data().completed"
+        (click)="markCompleted(order)" class="cell-right">
+        <i class="material-icons">check</i>
+      </td> -->
+
+      <!-- <td
+        [hidden]="order.payload.doc.data().completed"
+        (click)="deleteOrder(order)" class="cell-right-border">
+        <i class="material-icons">delete_forever</i>
+      </td> -->
+
+      <td
+        (click)="deleteOrder(order)"
+        class="cell-right-border"
+        href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+        <button 
+        type="submit"
+        *ngIf="seatStatus === 'éteint'"
+        (click)="onSwitchDelete(seatOne.status)"
+        (click)="addSeatOne(seatOne.status)"
+        [value]="seatStatus.id"></button>
+        <span class="material-icons cursorPoint">delete</span>  
+      </td>
+    </tr>
+
+    <!-- <tr>
+      <td id="all-form-titles"></td>
+    </tr> -->
+  </tbody>
+</table>
+
+</form>
+

@@ -17,14 +17,7 @@ import { AuthGuardService } from './../services/auth-guard.service';
 
 import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
 
-// import { OrderListComponent } from 'src/app/order-list/order-list.component';
-// import { OrdersComponent } from 'src/app/orders/orders.component';
-
-// import { OrderReservationOrchestreComponent } from './order-reservation/order-reservation-orchestre.component';
-
 import { SeatsComponent } from 'src/app/modules/seats/seats.component';
-
-import { EditSeatComponent } from 'src/app/edits/edit-seat/edit-seat.component';
 
 // reservation
 
@@ -39,44 +32,36 @@ import { OrderReservationPictureTerComponent } from 'src/app/order-reservation-p
 import { OrderReservationListComponent } from 'src/app/order-reservation-list/order-reservation-list.component';
 import { OrderReservationComponent } from 'src/app/order-reservation/order-reservation.component';
 
-import { OrderReservationConfirmationComponent } from 'src/app/order-reservation-confirmation/order-reservation-confirmation.component';
-import { OrderReservationListConfirmComponent } from 'src/app/order-reservation-list-confirm/order-reservation-list-confirm.component';
-import { OrderReservationShowResultComponent } from 'src/app/order-reservation-show-result/order-reservation-show-result.component';
 import { OrderReservationResultComponent } from 'src/app/order-reservation-result/order-reservation-result.component';
-import { ButtonValidationComponent } from 'src/app/modules/button-validation/button-validation.component';
 
 import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
 import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
-    { path: 'admin', component: OrderReservationHomeAdminComponent },
-    { path: 'home-result', component: OrderReservationHomeReserveSeatsComponent },
-    { path: 'show', component: OrderReservationResultComponent },
-    { path: 'result', component: OrderReservationShowResultComponent },
-    { path: 'confirmation', component: OrderReservationResultComponent }
+    { path: 'admin', canActivate: [AuthGuardService], component: OrderReservationHomeAdminComponent },
+    { path: 'home-result', canActivate: [AuthGuardService], component: OrderReservationHomeReserveSeatsComponent },
+    { path: 'show', canActivate: [AuthGuardService], component: OrderReservationResultComponent },
+    { path: 'confirmation', canActivate: [AuthGuardService], component: OrderReservationResultComponent }
 ];
 
 @NgModule({
     declarations: [
         Part01ReservationHomeComponent,
-        // OrderListComponent,
-        // OrdersComponent,
         OrderReservationHomeComponent,
         OrderReservationHomeAdminComponent,
         OrderReservationHomeReserveSeatsComponent,
+
         OrderReservationPictureComponent,
         OrderReservationPictureBisComponent,
         OrderReservationPictureTerComponent,
-        OrderReservationListComponent,
+
         OrderReservationComponent,
+        OrderReservationListComponent,
+
         SeatsComponent,
-        EditSeatComponent,
-        OrderReservationConfirmationComponent,
-        OrderReservationListConfirmComponent,
-        OrderReservationShowResultComponent,
         OrderReservationResultComponent,
-        ButtonValidationComponent,
+
         KeyValuePipe,
         ValueArrayPipe
     ],

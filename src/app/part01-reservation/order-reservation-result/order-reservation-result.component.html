@@ -1,0 +1,61 @@
+<section>
+  <!-- <h1>Votre réservation</h1> -->
+  <div *ngFor="let order of seatOneOrders" class="row">
+
+    <div routerLinkActive="active" *ngIf="!isAuth"
+    class="layout-resa-result-home">
+      <p>Cher
+        <span><strong>{{ order.payload.doc.data().customerFirstName }} </strong></span>
+        <span><strong>{{ order.payload.doc.data().customerName }}, </strong></span>
+
+        <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">
+          <!-- {{ seat.seatOneOrder }} -->
+          <br /><span>le siège
+            <strong>{{ seatOne }}</strong> vous est bien réservé.
+          </span>
+          <!-- <span *ngIf="seatOne === 'Siège 6'">
+            {{ seatOne }}
+          </span> -->
+        </span>
+      </p>
+      <p><span>Merci pour votre commande !</span></p>
+      <!-- <div class="layout-resa-video"> -->
+        <!-- <h2>En attendant le concert, découvrez un court extrait :</h2> -->
+
+        <!-- <article class="video"> -->
+  				<!-- <video controls src="./assets/video/waters.mov"> -->
+  					<!-- Votre navigateur ne peut pas lire cette vidéo -->
+  				<!-- </video> -->
+  			<!-- </article> -->
+      <!-- </div> -->
+
+      <!-- <p>Votre pays :
+        <span><strong>{{ order.payload.doc.data().customerCountry }} </strong></span>
+      </p> -->
+
+
+
+      <!-- <span>
+          <p>Le compteur rend :
+        <strong>
+        {{ order.payload.doc.data().SeatsCount }}
+        </strong>
+        </p>
+      </span> -->
+    </div>
+
+  </div>
+
+  <!-- button > save choice on Firebase -->
+  <button type="submit"
+  id="submit-button"
+  routerLink="/admin">Voir la partie administrateur</button>
+
+  <!-- <div>
+    <a routerLink = "/part01" class="link">Retour</a>
+  </div> -->
+
+  <!-- <div class="row">
+    <app-order-reservation-show-result class="col s6"></app-order-reservation-show-result>
+  </div> -->
+</section>
