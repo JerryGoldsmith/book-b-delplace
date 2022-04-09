@@ -4,14 +4,12 @@ import { OrderReservationComponent } from "../order-reservation/order-reservatio
 import { SeatsComponent } from "../modules/seats/seats.component";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
-// import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router'; // with id
 
 @Component({
   selector: 'app-order-reservation-list',
   templateUrl: './order-reservation-list.component.html',
   styleUrls: ['./order-reservation-list.component.scss']
-  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OrderReservationListComponent implements OnInit, AfterViewInit {
 
@@ -71,23 +69,64 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
 
     this.buttonDisabled = false;
     
+    // firestore database
     this.getSeatAdminOrders();
 
-    const id = this.route.snapshot.params['id'];
-    this.getName();
-    this.getStatus();
-    this.getKind();
+    // const id = this.route.snapshot.params['id'];
+    // this.getName();
+    // this.getStatus();
+    // this.getKind();
 
+    // realtime database
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
         this.seatOnes = seatOnes;
-        // this.cd.markForCheck();
       }
     );
     this.reservationService.emitSeatOneSubject();
   }
 
+  // realtime database
+
+  // getName() {
+  //   this.name = this.route.snapshot.params['id'];
+  //   return this.name;
+  // }
+
+  // getStatus() {
+  //   this.status = this.route.snapshot.params['id'];
+  //   return this.status;
+  // }
+
+  // getKind() {
+  //   this.kind = this.route.snapshot.params['id'];
+  //   return this.kind;
+  // }
+
+  onSaveOnFirebase() {
+    this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
+  }
+
+  onSaveSeatsOnFirebase() {
+    this.reservationService.saveSeats();
+  }
+
+  onSwitch() {
+    if(this.seatStatus === "éteint") {
+      this.reservationService.switchOnOne(this.index);
+    }
+    else if(this.seatStatus === "allumé") {
+      this.reservationService.switchOffOne(this.index);
+    }
+    console.log('this.seatStatus list : ' + this.status);
+    console.log('this.index list : ' + this.index);
+  }
+
+  // firestore database
+
   seatOneOrders = this.reservationService.getSeatOneOrders();
+
+  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
   getSeatAdminOrders = () =>
     this.reservationService
@@ -121,74 +160,14 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
     this.seatOneSubscription.unsubscribe();
   }
 
-  // realtime database
-
   // onSubmit() {
   //   this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
 
   //   let data = this.reservationService.form.value;
 
   //   this.reservationService.createSeatOneOrder(data).then(res => {
-  //     /*do something here....maybe clear the form or give a success message*/
   //     console.log("OK");
   //   });
   // }
-
-  getName() {
-    this.name = this.route.snapshot.params['id'];
-    return this.name;
-  }
-
-  getStatus() {
-    this.status = this.route.snapshot.params['id'];
-    return this.status;
-  }
-
-  getKind() {
-    this.kind = this.route.snapshot.params['id'];
-    return this.kind;
-  }
-
-  onSaveOnFirebase() {
-    this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
-  }
-
-  onSaveSeatsOnFirebase() {
-    this.reservationService.saveSeats();
-  }
-
-  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
-
-  onSubmit() {
-    this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
-
-    let data = this.reservationService.form.value;
-
-    this.reservationService.createSeatOneOrder(data).then(res => {
-      console.log("OK");
-    });
-  }
-
-  onSwitch() {
-    if(this.seatStatus === "éteint") {
-      this.reservationService.switchOnOne(this.index);
-    }
-    else if(this.seatStatus === "allumé") {
-      this.reservationService.switchOffOne(this.index);
-    }
-    console.log('this.seatStatus list : ' + this.status);
-    console.log('this.index list : ' + this.index);
-  }
-
-  onSwitchDelete() {
-    if(this.seatStatus === "éteint") {
-      this.reservationService.switchOnOne(this.index);
-    }
-    else if(this.seatStatus === "allumé") {
-      this.reservationService.switchOffOne(this.index);
-    }
-    console.log('onSwitchDelete : this.seatStatus : ' + this.seatStatus);
-    console.log('onSwitchDelete : this.index : ' + this.index);
-  }
 
 }
