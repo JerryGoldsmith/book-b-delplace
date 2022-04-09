@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
+import { OrderReservationComponent } from "../order-reservation/order-reservation.component";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
   styleUrls: ['./order-reservation-list.component.scss']
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OrderReservationListComponent implements OnInit {
+export class OrderReservationListComponent implements OnInit, AfterViewInit {
 
   isShow = false;
 
@@ -29,18 +30,42 @@ export class OrderReservationListComponent implements OnInit {
   status: string  = 'Status';
   kind: string    = 'Kind';
 
-  @Input() seatName: string; // propriétés personnalisées pour transmettre des données depuis l'extérieur
-  // ne pas oublier d'importer Input en haut dans import
-  @Input() seatStatus: string;
-  @Input() seatKind: string;
-  @Input() seatCompleted: boolean;
-  @Input() index: number;
+  // @Input() seatName: string;
+  // @Input() seatStatus: string;
+  // @Input() seatKind: string;
+  // @Input() seatCompleted: boolean;
+  // @Input() index: number;
+
+  seatName = 'Name';  
+      @ViewChild(OrderReservationComponent) childName: any;
+  
+  seatStatus = 'Status';  
+      @ViewChild(OrderReservationComponent) childStatus: any;
+
+  seatKind = 'Kind';  
+      @ViewChild(OrderReservationComponent) childKind: any;
+
+  seatCompleted = 'Completed';  
+      @ViewChild(OrderReservationComponent) childCompleted: any;
+
+  index = 3;  
+      @ViewChild(OrderReservationComponent) childIndex: any;
+
+      
 
   constructor(
     public reservationService: OrderReservationService,
     private route: ActivatedRoute
     // private cd: ChangeDetectorRef
   ) {}
+
+  ngAfterViewInit(): void {
+    this.seatName = this.childName.seatName;
+    this.seatStatus = this.childStatus.seatStatus;
+    this.seatKind = this.childKind.seatKind;
+    this.seatCompleted = this.childCompleted.seatCompleted;
+    this.index = this.childIndex.index;
+  }
 
   ngOnInit(): void {
 
