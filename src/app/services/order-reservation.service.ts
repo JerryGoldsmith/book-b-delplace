@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs';
 import { Seat } from "../models/seats.model";
-import { SeatOne } from "../models/seatOne.model";
 import { FormControl, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http'; // Acces Firebase
 import firebase from 'firebase/app';
@@ -313,6 +312,15 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
+  // by country > USA
+  getSeatByCountry() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .orderBy ('customerCountry', 'asc')
+      .limit(100))
+      .snapshotChanges();
+  }
+
   getSeatOneOrders() {
     return this.afs
       .collection("seatOneOrders", ref => ref
@@ -337,7 +345,14 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
-  getDate() {
+  getSeatBySeatsAscent() {
+    return this.afs
+      .collection("seatOneOrders", 
+      ref => ref.where ('seatOneOrder', 'array-contains', 100))
+      .snapshotChanges();
+  }
+
+  getDate(): void {
     this.afs
       .collection('events' , 
       ref => ref.where('date' , '<' , new Date()))

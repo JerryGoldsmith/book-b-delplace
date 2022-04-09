@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { OrderReservationComponent } from "../order-reservation/order-reservation.component";
+import { SeatsComponent } from "../modules/seats/seats.component";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
@@ -36,30 +37,29 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
   // @Input() seatCompleted: boolean;
   // @Input() index: number;
 
+  // passing data from parent (OrderReservationComponent)
   seatName = 'Name';  
-      @ViewChild(OrderReservationComponent) childName: any;
+      @ViewChild(SeatsComponent) childName: any;
   
-  seatStatus = 'Status';  
-      @ViewChild(OrderReservationComponent) childStatus: any;
+  seatStatus = '';  
+      @ViewChild(SeatsComponent) childStatus: any;
 
   seatKind = 'Kind';  
-      @ViewChild(OrderReservationComponent) childKind: any;
+      @ViewChild(SeatsComponent) childKind: any;
 
   seatCompleted = 'Completed';  
-      @ViewChild(OrderReservationComponent) childCompleted: any;
+      @ViewChild(SeatsComponent) childCompleted: any;
 
   index = 3;  
-      @ViewChild(OrderReservationComponent) childIndex: any;
-
-      
+      @ViewChild(SeatsComponent) childIndex: any;
 
   constructor(
     public reservationService: OrderReservationService,
     private route: ActivatedRoute
-    // private cd: ChangeDetectorRef
   ) {}
 
   ngAfterViewInit(): void {
+    // passing data from parent (OrderReservationComponent)
     this.seatName = this.childName.seatName;
     this.seatStatus = this.childStatus.seatStatus;
     this.seatKind = this.childKind.seatKind;
@@ -91,7 +91,7 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
 
   getSeatAdminOrders = () =>
     this.reservationService
-      .getSeatAdminOrders()
+      .getSeatByCountry()
       //@ts-ignore
       .subscribe(result => (this.seatOneOrders = result));
 
@@ -150,7 +150,7 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
   }
 
   onSaveOnFirebase() {
-    this.reservationService.saveSeatsSelectToFirebaseinServer();
+    this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
   }
 
   onSaveSeatsOnFirebase() {
@@ -170,23 +170,14 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
   }
 
   onSwitch() {
-    // for(let seatOne of this.seatOnes) {
-    //   if(seatOne.status = "éteint") {
-    //     this.seatOnes[i].status = 'allumé';
-    //     console.log('seatOne.status : ' + seatOne.status);
-    //   } else if(seatOne.status = "allumé") {
-    //     this.seatOnes[i].status = 'éteint';
-    //     console.log('seatOne.status : ' + seatOne.status);
-    //   }
-    // }
-    if(this.status === "éteint") {
+    if(this.seatStatus === "éteint") {
       this.reservationService.switchOnOne(this.index);
     }
-    else if(this.status === "allumé") {
+    else if(this.seatStatus === "allumé") {
       this.reservationService.switchOffOne(this.index);
     }
-    console.log('this.seatStatus : ' + this.status);
-    console.log('this.index : ' + this.index);
+    console.log('this.seatStatus list : ' + this.status);
+    console.log('this.index list : ' + this.index);
   }
 
   onSwitchDelete() {
