@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs';
 import { Seat } from "../models/seats.model";
+import { SeatOne } from "../models/seatOne.model";
 import { FormControl, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http'; // Acces Firebase
 import firebase from 'firebase/app';
@@ -389,7 +390,8 @@ export class OrderReservationService {
   // ----------------------------
 
   emitSeatOneSubject() {
-    this.seatOneSubject.next(this.seatOnes.slice());
+    this.seatOneSubject.next(this.seatOnes);
+    // console.log('emitSeatOneSubject : ' + this.seatOnes);
   }
 
   // ---- to Firebase -------
@@ -407,19 +409,42 @@ export class OrderReservationService {
     );
   }
 
+  saveSeatsObjectToArrayToFirebaseinServer() { 
+    this.httpClient
+    .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/seats.json', this.seatOnes)
+    .subscribe(
+      () => {
+
+        var postsRef = firebase.database().ref('/seats')
+        postsRef
+        .orderByKey()
+        .on('value', (snapshot) => {
+
+          // convert Object to Array
+          let dataArray = [];
+            const value = snapshot.forEach((childSnapshot): void => {
+            dataArray[childSnapshot.key] = childSnapshot.val();
+            console.log('Seats childSnapshot.key : ' + childSnapshot.key);
+          });
+
+          console.log('Seats value : ' + value);
+          return value;
+
+        });
+
+        console.log('Enregistrement terminé');
+      },
+      (error) => {
+        console.log('Erreur de sauvegarde !' + error);
+      }
+    );
+  }
+
   saveSeatsSelectToFirebaseinServer() { 
     this.httpClient
     .put('https://book-b-delplace-default-rtdb.europe-west1.firebasedatabase.app/seats.json', this.seatOnes)
     .subscribe(
       () => {
-        // for(let seatOne of this.seatOnes) {
-        //   if(seatOne.status = "allumé") {
-        //     console.log('seatOne.status : ' + seatOne.status);
-        //   } else if(seatOne.status = "éteint") {
-        //     console.log('seatOne.status : ' + seatOne.status);
-        //   }
-        // }
-        // this.emitSeatOneSubject();
         console.log('Enregistrement terminé');
       },
       (error) => {

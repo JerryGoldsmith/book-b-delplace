@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { OrderReservationService } from "../../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
   templateUrl: './seats.component.html',
   styleUrls: ['./seats.component.scss']
 })
-export class SeatsComponent implements OnInit {
+export class SeatsComponent implements OnInit, OnChanges {
 
   // public seatOnes$: Observable<Seat[]>;
 
@@ -54,6 +54,39 @@ export class SeatsComponent implements OnInit {
     private route: ActivatedRoute // routes parametres avec id
   ) { }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    // if(this.seatId){
+    //   const contentKey: any = Object.keys(this.seatId)[0];
+    //   this.seatId = this.seatId[contentKey];
+    //   console.log('ngOnChanges Id : ' + this.seatId);
+    // }
+    // if(this.seatName){
+    //   const contentKey: any = Object.keys(this.seatName)[0];
+    //   this.seatName = this.seatName[contentKey];
+    //   console.log('ngOnChanges Name : ' + this.seatName);
+    // }
+    // if(this.seatStatus){
+    //   const contentKey: any = Object.keys(this.seatStatus)[0];
+    //   this.seatStatus = this.seatStatus[contentKey];
+    //   console.log('ngOnChanges Status : ' + this.seatStatus);
+    // }
+    // if(this.seatKind){
+    //   const contentKey: any = Object.keys(this.seatKind)[0];
+    //   this.seatKind = this.seatKind[contentKey];
+    //   console.log('ngOnChanges kind : ' + this.seatKind);
+    // }
+    // if(this.seatCompleted){
+    //   const contentKey: any = Object.keys(this.seatCompleted)[0];
+    //   this.seatCompleted = this.seatCompleted[contentKey];
+    //   console.log('ngOnChanges completed : ' + this.seatCompleted);
+    // }
+    // if(this.index){
+    //   const contentKey: any = Object.keys(this.index)[0];
+    //   this.index = this.index[contentKey];
+    //   console.log('ngOnChanges index : ' + this.index);
+    // }
+  }
+
   ngOnInit(): void {
 
     this.buttonDisabled = false;
@@ -72,6 +105,9 @@ export class SeatsComponent implements OnInit {
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
+        if(!seatOnes){
+          return;
+        }
         this.seatOnes = seatOnes;
       }
     );
@@ -152,7 +188,7 @@ export class SeatsComponent implements OnInit {
   }
 
   onSaveOnFirebase() {
-    this.reservationService.saveSeatsToFirebaseinServer();
+    this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
   }
 
   onSwitch() {
@@ -206,21 +242,5 @@ export class SeatsComponent implements OnInit {
     console.log('onSwitchDelete : this.seatStatus : ' + this.seatStatus);
     console.log('onSwitchDelete : this.index : ' + this.index);
   }
-
-  // onSaveOnFirebase() { // pour recevoir de Firebase (fetch)
-  //   this.reservationService.saveSeatsToFirebaseinServer();
-  // }
-
-  // onFetchFromFirebase() { // pour recevoir de Firebase (fetch)
-  //   this.reservationService.saveSeatsFromFirebaseinServer();
-  // }
-
-  // onSwitch() {
-  //   if(this.seatStatus === "allumé") {
-  //     this.ordersService.switchOnAll();
-  //   } else if(this.seatStatus === "éteint") {
-  //     this.ordersService.switchOffAll();
-  //   }
-  // }
 
 }
