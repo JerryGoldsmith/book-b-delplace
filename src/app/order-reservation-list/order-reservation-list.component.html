@@ -2,6 +2,9 @@
 
 <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
 
+<h2> {{ seatName }} </h2>
+<h2> {{ seatStatus }} </h2>
+
 <table>
   <thead>
     <tr>
@@ -41,6 +44,10 @@
       <td
         (click)="deleteOrder(order)"
         class="cell-right-border"
+        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="seatName"
+        [(ngModel)]="seatStatus"
+        ngDefaultControl
         (click)="onSwitch()"
         (click)="onSaveOnFirebase()"
         href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
@@ -50,6 +57,7 @@
         (click)="deleteOrder(order)"
         class="cell-right-border"
         (click)="onSwitch()"
+        [ngModelOptions]="{standalone: true}"
         href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
         <span class="material-icons cursorPoint">delete</span>  
       </td> -->

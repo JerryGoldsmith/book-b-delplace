@@ -85,4 +85,8 @@ const routes: Routes = [
     ]
 })
 
-export class Part01ReservationModule { }
+export class Part01ReservationModule {
+    constructor() {
+        registerLocaleData(fr.default);
+    }
+ }

@@ -1,9 +1,7 @@
-import { Component, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
-import { OrderReservationComponent } from "../order-reservation/order-reservation.component";
-import { SeatsComponent } from "../modules/seats/seats.component";
 import { Subscription } from 'rxjs/Subscription';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // with id
 
 @Component({
@@ -11,16 +9,25 @@ import { ActivatedRoute } from '@angular/router'; // with id
   templateUrl: './order-reservation-list.component.html',
   styleUrls: ['./order-reservation-list.component.scss']
 })
-export class OrderReservationListComponent implements OnInit, AfterViewInit {
+export class OrderReservationListComponent implements OnInit {
 
   isShow = false;
 
-  seatsForm: FormGroup;
+  // seatsForm: FormGroup;
+
+  seatsForm = new FormGroup({
+    seatId: new FormControl(),
+    seatName: new FormControl(''),
+    seatStatus: new FormControl(''),
+    seatKind: new FormControl(''),
+    seatCompleted: new FormControl(),
+    index: new FormControl()
+  });
 
   buttonDisabled: boolean;
 
   seatOneSubscription: Subscription;
-  seatOnes: any[];
+  seatOnes: any[] = [];
 
   seat = [];
   seatOneOrder = [];
@@ -35,34 +42,61 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
   // @Input() seatCompleted: boolean;
   // @Input() index: number;
 
-  // passing data from parent (OrderReservationComponent)
-  seatName = 'Name';  
-      @ViewChild(SeatsComponent) childName: any;
+  // seatName: string;
+  // seatStatus: string;
+  // seatKind: string;
+  // seatCompleted: boolean;
+  // index: number;
+
+  @Output() seatName = new EventEmitter();
+  @Output() seatStatus = new EventEmitter();
+  @Output() seatKind = new EventEmitter();
+  @Output() seatCompleted = new EventEmitter();
+  @Output() index = new EventEmitter(); 
   
-  seatStatus = '';  
-      @ViewChild(SeatsComponent) childStatus: any;
+  setName = (seatName: { value: string; }): void => {  
+   this.seatName.emit(seatName.value);  
+  }
 
-  seatKind = 'Kind';  
-      @ViewChild(SeatsComponent) childKind: any;
+  setStatus = (seatStatus: { value: string; }): void => {  
+    this.seatStatus.emit(seatStatus.value);  
+  }
 
-  seatCompleted = 'Completed';  
-      @ViewChild(SeatsComponent) childCompleted: any;
+  setKind = (seatKind: { value: string; }): void => {  
+    this.seatKind.emit(seatKind.value);  
+  }
 
-  index = 3;  
-      @ViewChild(SeatsComponent) childIndex: any;
+  setCompleted = (seatCompleted: { value: any; }): void => {  
+    this.seatKind.emit(seatCompleted.value);  
+  }
+  
+  setIndex = (index: { value: number; }): void =>{  
+    this.index.emit(index.value);  
+  } 
+  
+  // PostData() {
+  //   this.seatNameEmitter.emit(this.seatName);
+  //   this.seatStatusEmitter.emit(this.seatStatus); 
+  //   this.seatKindEmitter.emit(this.seatKind); 
+  //   this.seatCompletedEmitter.emit(this.seatCompleted); 
+  //   this.indexEmitter.emit(this.index);   
+  // }
 
   constructor(
     public reservationService: OrderReservationService,
     private route: ActivatedRoute
   ) {}
 
+  // receiveName($event: string) {  
+  //   this.seatName= $event;  
+  // }
+
+  // receiveStatus($event: string) {  
+  //   this.seatStatus = $event;  
+  // } 
+
   ngAfterViewInit(): void {
-    // passing data from parent (OrderReservationComponent)
-    this.seatName = this.childName.seatName;
-    this.seatStatus = this.childStatus.seatStatus;
-    this.seatKind = this.childKind.seatKind;
-    this.seatCompleted = this.childCompleted.seatCompleted;
-    this.index = this.childIndex.index;
+    // this.setName('name');
   }
 
   ngOnInit(): void {
@@ -83,7 +117,7 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
         this.seatOnes = seatOnes;
       }
     );
-    this.reservationService.emitSeatOneSubject();
+    this.reservationService.emitSeatOneSubject(); 
   }
 
   // realtime database
@@ -112,13 +146,13 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
   }
 
   onSwitch() {
-    if(this.seatStatus === "éteint") {
-      this.reservationService.switchOnOne(this.index);
+    if(this.seatStatus as unknown === "éteint") {
+      this.reservationService.switchOnOne(this.index[0]);
     }
-    else if(this.seatStatus === "allumé") {
-      this.reservationService.switchOffOne(this.index);
+    else if(this.seatStatus  as unknown === "allumé") {
+      this.reservationService.switchOffOne(this.index[0]);
     }
-    console.log('this.seatStatus list : ' + this.status);
+    console.log('this.seatStatus list : ' + this.seatStatus);
     console.log('this.index list : ' + this.index);
   }
 

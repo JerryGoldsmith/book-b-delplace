@@ -110,7 +110,7 @@ export class OrderReservationComponent implements OnInit {
   }
 
   onSaveOnFirebase() {
-    this.reservationService.saveSeatsToFirebaseinServer();
+    this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
   }
 
   onFetchFromFirebase() { 

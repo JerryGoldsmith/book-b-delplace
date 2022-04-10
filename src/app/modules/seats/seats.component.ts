@@ -1,7 +1,8 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { OrderReservationService } from "../../services/order-reservation.service";
+import { OrderReservationListComponent } from "../../order-reservation-list/order-reservation-list.component";
 import { Subscription } from 'rxjs/Subscription';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 
 @Component({
@@ -9,11 +10,20 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
   templateUrl: './seats.component.html',
   styleUrls: ['./seats.component.scss']
 })
-export class SeatsComponent implements OnInit, OnChanges {
+export class SeatsComponent implements OnInit, AfterViewInit {
 
   // public seatOnes$: Observable<Seat[]>;
 
-  seatsForm: FormGroup;
+  // seatsForm: FormGroup;
+
+  seatsForm = new FormGroup({
+    seatId: new FormControl(),
+    seatName: new FormControl(),
+    seatStatus: new FormControl(),
+    seatKind: new FormControl(),
+    seatCompleted: new FormControl(),
+    index: new FormControl()
+  });
 
   // realtime database
   seatOneSubscription: Subscription; // subscrition (observables)
@@ -48,43 +58,26 @@ export class SeatsComponent implements OnInit, OnChanges {
   @Input() seatCompleted: boolean;
   @Input() index: number;
 
+  @ViewChild(OrderReservationListComponent) childId: any;
+  @ViewChild(OrderReservationListComponent) childName: any;
+  @ViewChild(OrderReservationListComponent) childStatus: any;
+  @ViewChild(OrderReservationListComponent) childKind: any;
+  @ViewChild(OrderReservationListComponent) childCompleted: any;
+  @ViewChild(OrderReservationListComponent) childIndex: any;
+
   constructor(
     public reservationService: OrderReservationService,
     // public seatService: SeatService,
     private route: ActivatedRoute // routes parametres avec id
   ) { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    // if(this.seatId){
-    //   const contentKey: any = Object.keys(this.seatId)[0];
-    //   this.seatId = this.seatId[contentKey];
-    //   console.log('ngOnChanges Id : ' + this.seatId);
-    // }
-    // if(this.seatName){
-    //   const contentKey: any = Object.keys(this.seatName)[0];
-    //   this.seatName = this.seatName[contentKey];
-    //   console.log('ngOnChanges Name : ' + this.seatName);
-    // }
-    // if(this.seatStatus){
-    //   const contentKey: any = Object.keys(this.seatStatus)[0];
-    //   this.seatStatus = this.seatStatus[contentKey];
-    //   console.log('ngOnChanges Status : ' + this.seatStatus);
-    // }
-    // if(this.seatKind){
-    //   const contentKey: any = Object.keys(this.seatKind)[0];
-    //   this.seatKind = this.seatKind[contentKey];
-    //   console.log('ngOnChanges kind : ' + this.seatKind);
-    // }
-    // if(this.seatCompleted){
-    //   const contentKey: any = Object.keys(this.seatCompleted)[0];
-    //   this.seatCompleted = this.seatCompleted[contentKey];
-    //   console.log('ngOnChanges completed : ' + this.seatCompleted);
-    // }
-    // if(this.index){
-    //   const contentKey: any = Object.keys(this.index)[0];
-    //   this.index = this.index[contentKey];
-    //   console.log('ngOnChanges index : ' + this.index);
-    // }
+  ngAfterViewInit(): void {
+    this.seatId = this.childId.seatId;
+    this.seatName = this.childName.seatName;
+    this.seatStatus = this.childStatus.seatStatus;
+    this.seatKind = this.childKind.seatKind;
+    this.seatCompleted = this.childCompleted.seatCompleted;
+    this.index = this.childIndex.index;
   }
 
   ngOnInit(): void {
@@ -103,7 +96,8 @@ export class SeatsComponent implements OnInit, OnChanges {
     // this.status = this.reservationService.getSeatById(+id).status;
     // this.kind = this.reservationService.getSeatById(+id).kind;
 
-    this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
+    this.seatOneSubscription = this.reservationService.seatOneSubject
+    .subscribe(
       (seatOnes: any[]) => {
         if(!seatOnes){
           return;
@@ -244,3 +238,4 @@ export class SeatsComponent implements OnInit, OnChanges {
   }
 
 }
+
