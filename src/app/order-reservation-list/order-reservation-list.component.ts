@@ -27,7 +27,8 @@ export class OrderReservationListComponent implements OnInit {
   buttonDisabled: boolean;
 
   seatOneSubscription: Subscription;
-  seatOnes: any[] = [];
+  seatOnes: Array<any> = [];
+  // seatOnes: any[];
 
   seat = [];
   seatOneOrder = [];
@@ -54,7 +55,7 @@ export class OrderReservationListComponent implements OnInit {
   @Output() seatCompleted = new EventEmitter();
   @Output() index = new EventEmitter(); 
   
-  setName = (seatName: { value: string; }): void => {  
+  setName = (seatName: { value: any; }): void => {  
    this.seatName.emit(seatName.value);  
   }
 
@@ -96,7 +97,7 @@ export class OrderReservationListComponent implements OnInit {
   // } 
 
   ngAfterViewInit(): void {
-    // this.setName('name');
+    // this.setName(this.seatName.);
   }
 
   ngOnInit(): void {
@@ -139,10 +140,6 @@ export class OrderReservationListComponent implements OnInit {
 
   onSaveOnFirebase() {
     this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
-  }
-
-  onSaveSeatsOnFirebase() {
-    this.reservationService.saveSeats();
   }
 
   onSwitch() {

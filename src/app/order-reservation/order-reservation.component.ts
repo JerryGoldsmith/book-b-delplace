@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { OrdersService } from "../services/orders.service";
+import { OrderReservationListComponent } from "../order-reservation-list/order-reservation-list.component";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -13,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   './../order-reservation-list/order-reservation-list.component.scss',
   './../normalize.component.scss']
 })
-export class OrderReservationComponent implements OnInit {
+export class OrderReservationComponent implements OnInit, AfterViewInit {
 
   isShow = false;
 
@@ -33,12 +34,17 @@ export class OrderReservationComponent implements OnInit {
   status: string  = 'Status';
   kind: string    = 'Kind';
 
-  @Input() seatName: string; // propriétés personnalisées pour transmettre des données depuis l'extérieur
-  // ne pas oublier d'importer Input en haut dans import
+  @Input() seatName: string;
   @Input() seatStatus: string;
   @Input() seatKind: string;
   @Input() seatCompleted: boolean;
   @Input() index: number;
+
+  @ViewChild(OrderReservationListComponent) childName: any;
+  @ViewChild(OrderReservationListComponent) childStatus: any;
+  @ViewChild(OrderReservationListComponent) childKind: any;
+  @ViewChild(OrderReservationListComponent) childCompleted: any;
+  @ViewChild(OrderReservationListComponent) childIndex: any;
 
   showDiv = {
   previous : false,
@@ -54,6 +60,14 @@ export class OrderReservationComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) { }
+
+  ngAfterViewInit(): void {
+    this.seatName = this.childName.seatName;
+    this.seatStatus = this.childStatus.seatStatus;
+    this.seatKind = this.childKind.seatKind;
+    this.seatCompleted = this.childCompleted.seatCompleted;
+    this.index = this.childIndex.index;
+  }
 
   ngOnInit(): void {
 
