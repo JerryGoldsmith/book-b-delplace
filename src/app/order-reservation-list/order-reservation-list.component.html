@@ -1,13 +1,8 @@
 <h1>Administration</h1>
 
-<form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
-
-  <!-- <div *ngIf="seatOnes"> -->
-    <h2> {{ seatName }} </h2>
-  <!-- </div> -->
+<h2> {{ seatName }} </h2>
 <h2> {{ seatStatus }} </h2>
 
-<!-- <table *ngIf="seatOneOrders$ | async as seatOneOrders"> -->
 <table>
   <thead>
     <tr>
@@ -20,7 +15,6 @@
     </tr>
   </thead>
 
-  <!-- <tbody *ngFor="let order of seatOneOrders$ | async"> -->
   <tbody *ngFor="let order of seatOneOrders">
     <tr>
       <!-- <td id="all-forms" class="vertical-lign-fluo">{{ order.payload.doc.data().date.time }}</td> -->
@@ -30,52 +24,16 @@
       <td class="cell-right">
         <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">{{ seatOne }}   </span>
       </td>
-      <!-- <td id="all-forms" class="vertical-lign-fluo">
-        <span *ngFor="let car of order.payload.doc.data().carOrder">{{ car }}</span>
-      </td> -->
-      <!-- <td
-        [hidden]="order.payload.doc.data().completed"
-        (click)="markCompleted(order)" class="cell-right">
-        <i class="material-icons">check</i>
-      </td> -->
-
-      <!-- <td
-        [hidden]="order.payload.doc.data().completed"
-        (click)="deleteOrder(order)" class="cell-right-border">
-        <i class="material-icons">delete_forever</i>
-      </td> -->
-
       <td
         (click)="deleteOrder(order)"
         class="cell-right-border"
         [ngModelOptions]="{ standalone: true }"
-        [(ngModel)]="seatName"
-        [(ngModel)]="seatStatus"
         ngDefaultControl
-        (click)="onSwitch()"
-        (click)="onSaveOnFirebase()"
         href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
         <span class="material-icons cursorPoint"
         >delete</span>  
       </td>
-      <!-- <td
-        (click)="deleteOrder(order)"
-        class="cell-right-border"
-        (click)="onSwitch()"
-        [ngModelOptions]="{standalone: true}"
-        href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-        <span class="material-icons cursorPoint">delete</span>  
-      </td> -->
     </tr>
   </tbody>
 </table>
-
-<!-- <h2> {{ seatName }} </h2>
-  <h2> {{ seatStatus }} </h2>
-  <h2> {{ seatKind }} </h2>
-  <h2> {{ seatCompleted }} </h2>
-  <h2> {{ index }} </h2> -->
-  <app-order-reservation></app-order-reservation>
-
-</form>
 

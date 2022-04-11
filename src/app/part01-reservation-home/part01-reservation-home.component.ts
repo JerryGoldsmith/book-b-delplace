@@ -1,14 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { NgForm } from "@angular/forms";
-// import { Book } from '../models/book.model';
-// import { BooksService } from '../services/books.service';
-// import { Subscription } from 'rxjs/Subscription';
-// import { Router } from '@angular/router';
-// import * as firebase from 'firebase';
-// import firebase from "firebase/app";
 import "firebase/database";
-// import { OrdersService } from "../services/orders.service";
-// import { OrderReservationService } from "../services/order-reservation.service";
 
 @Component({
   selector: 'app-part01-reservation-home',
@@ -18,13 +9,7 @@ import "firebase/database";
 })
 export class Part01ReservationHomeComponent implements OnInit {
 
-  // isAuth: boolean;
-
-  constructor(
-    // private booksService: BooksService,
-    // private router: Router,
-    // public orderReservationService: OrderReservationService,
-  ) {}
+  constructor() {}
 
   ngOnInit(): void {
 

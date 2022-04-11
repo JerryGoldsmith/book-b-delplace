@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
-import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // with id
 
 @Component({
@@ -13,45 +12,19 @@ export class OrderReservationListComponent implements OnInit {
 
   isShow = false;
 
-  seatsForm: FormGroup;
-
-  // seatsForm = new FormGroup({
-  //   seatId: new FormControl(),
-  //   seatName: new FormControl(''),
-  //   seatStatus: new FormControl(''),
-  //   seatKind: new FormControl(''),
-  //   seatCompleted: new FormControl(),
-  //   index: new FormControl()
-  // });
-
-  buttonDisabled: boolean;
-
   seatOneSubscription: Subscription;
   seatOnes: Array<any> = [];
-  // seatOnes: any[];
-  // get seatOnes(): Array<any> {
-  //   return (Object as any).values(this.reservationService.seatOnes);
-  // }
 
-  seat = [];
-  seatOneOrder = [];
-
-  id: number      = 3;
-  name: string    = 'SeatOn';
-  status: string  = 'Status';
-  kind: string    = 'Kind';
+  // id: number      = 3;
+  // name: string    = 'SeatOn';
+  // status: string  = 'Status';
+  // kind: string    = 'Kind';
 
   @Input() seatName: string;
   @Input() seatStatus: string;
   @Input() seatKind: string;
   @Input() seatCompleted: boolean;
   @Input() index: number;
-
-  // seatName: string;
-  // seatStatus: string;
-  // seatKind: string;
-  // seatCompleted: boolean;
-  // index: number;
 
   // @Output() seatName = new EventEmitter();
   // @Output() seatStatus = new EventEmitter();
@@ -88,8 +61,8 @@ export class OrderReservationListComponent implements OnInit {
   // }
 
   constructor(
-    public reservationService: OrderReservationService,
-    private route: ActivatedRoute
+    public reservationService: OrderReservationService
+    // private route: ActivatedRoute
   ) {}
 
   // receiveName($event: string) {  
@@ -100,57 +73,57 @@ export class OrderReservationListComponent implements OnInit {
   //   this.seatStatus = $event;  
   // } 
 
-  ngAfterViewInit(): void {
-    // this.setName(this.seatName.);
-  }
+  // ngAfterViewInit(): void {
+  //   // this.setName(this.seatName.);
+  // }
 
   ngOnInit(): void {
 
-    this.buttonDisabled = false;
+    // this.buttonDisabled = false;
     
     // firestore database
     this.getSeatAdminOrders();
 
-    const id = this.route.snapshot.params['id'];
-    this.getId()
-    this.getName();
-    this.getStatus();
-    this.getKind();
+    // const id = this.route.snapshot.params['id'];
+    // this.getId()
+    // this.getName();
+    // this.getStatus();
+    // this.getKind();
 
     // realtime database
     this.seatOneSubscription = this.reservationService.seatOneSubject
     .subscribe(
       (seatOnes: any[]) => {
-        if(!seatOnes){
-          return;
-        }
+        // if(!seatOnes){
+        //   return;
+        // }
         this.seatOnes = seatOnes;
-        console.log('seatOnes : ' + seatOnes);
+        // console.log('seatOnes : ' + seatOnes);
       }
     );
     this.reservationService.emitSeatOneSubject();
-    console.log('seatOneSubscription : ' + this.seatOneSubscription);
+    // console.log('seatOneSubscription : ' + this.seatOneSubscription);
   }
 
-  getId() {
-    this.id = this.route.snapshot.params['id'];
-    return this.id;
-  }
+  // getId() {
+  //   this.id = this.route.snapshot.params['id'];
+  //   return this.id;
+  // }
 
-  getName() {
-    this.name = this.route.snapshot.params['id'];
-    return this.name;
-  }
+  // getName() {
+  //   this.name = this.route.snapshot.params['id'];
+  //   return this.name;
+  // }
 
-  getStatus() {
-    this.status = this.route.snapshot.params['id'];
-    return this.status;
-  }
+  // getStatus() {
+  //   this.status = this.route.snapshot.params['id'];
+  //   return this.status;
+  // }
 
-  getKind() {
-    this.kind = this.route.snapshot.params['id'];
-    return this.kind;
-  }
+  // getKind() {
+  //   this.kind = this.route.snapshot.params['id'];
+  //   return this.kind;
+  // }
 
   // realtime database
 
@@ -174,11 +147,11 @@ export class OrderReservationListComponent implements OnInit {
   }
 
   onSwitch() {
-    if(this.seatStatus as unknown === "éteint") {
-      this.reservationService.switchOnOne(this.index[0]);
+    if(this.seatStatus === "éteint") {
+      this.reservationService.switchOnOne(this.index);
     }
-    else if(this.seatStatus  as unknown === "allumé") {
-      this.reservationService.switchOffOne(this.index[0]);
+    else if(this.seatStatus === "allumé") {
+      this.reservationService.switchOffOne(this.index);
     }
     console.log('this.seatStatus list : ' + this.seatStatus);
     console.log('this.index list : ' + this.index);
@@ -189,7 +162,7 @@ export class OrderReservationListComponent implements OnInit {
   // seatOneOrders$ = this.reservationService.getSeatOneOrders();
   seatOneOrders = this.reservationService.getSeatOneOrders();
 
-  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
+  // addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
   getSeatAdminOrders = () =>
     this.reservationService

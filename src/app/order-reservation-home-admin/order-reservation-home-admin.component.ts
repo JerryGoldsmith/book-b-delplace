@@ -11,8 +11,9 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class OrderReservationHomeAdminComponent implements OnInit {
 
-    seatOnes: Array<any> = [];
+    
   seatOneSubscription: Subscription;
+  seatOnes: Array<any> = [];
 
   @Input() seatId: number;
   @Input() seatName: string;
@@ -21,12 +22,12 @@ export class OrderReservationHomeAdminComponent implements OnInit {
   @Input() seatCompleted: boolean;
   @Input() index: number;
 
-  @ViewChild(OrderReservationListComponent) childId: any;
-  @ViewChild(OrderReservationListComponent) childName: any;
-  @ViewChild(OrderReservationListComponent) childStatus: any;
-  @ViewChild(OrderReservationListComponent) childKind: any;
-  @ViewChild(OrderReservationListComponent) childCompleted: any;
-  @ViewChild(OrderReservationListComponent) childIndex: any;
+//   @ViewChild(OrderReservationListComponent) childId: any;
+//   @ViewChild(OrderReservationListComponent) childName: any;
+//   @ViewChild(OrderReservationListComponent) childStatus: any;
+//   @ViewChild(OrderReservationListComponent) childKind: any;
+//   @ViewChild(OrderReservationListComponent) childCompleted: any;
+//   @ViewChild(OrderReservationListComponent) childIndex: any;
 
   constructor(
     public reservationService: OrderReservationService

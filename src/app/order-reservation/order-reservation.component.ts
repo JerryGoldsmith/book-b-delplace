@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
   './../order-reservation-list/order-reservation-list.component.scss',
   './../normalize.component.scss']
 })
-export class OrderReservationComponent implements OnInit, AfterViewInit {
+export class OrderReservationComponent implements OnInit {
 
   isShow = false;
 
@@ -22,7 +22,6 @@ export class OrderReservationComponent implements OnInit, AfterViewInit {
 
   // seatOnes: any = [];
   seatOnes: Array<any> = [];
-
   seatOneSubscription: Subscription;
 
   buttonDisabled: boolean;
@@ -41,12 +40,12 @@ export class OrderReservationComponent implements OnInit, AfterViewInit {
   @Input() seatCompleted: boolean;
   @Input() index: number;
 
-  @ViewChild(OrderReservationListComponent) childId: any;
-  @ViewChild(OrderReservationListComponent) childName: any;
-  @ViewChild(OrderReservationListComponent) childStatus: any;
-  @ViewChild(OrderReservationListComponent) childKind: any;
-  @ViewChild(OrderReservationListComponent) childCompleted: any;
-  @ViewChild(OrderReservationListComponent) childIndex: any;
+  // @ViewChild(OrderReservationListComponent) childId: any;
+  // @ViewChild(OrderReservationListComponent) childName: any;
+  // @ViewChild(OrderReservationListComponent) childStatus: any;
+  // @ViewChild(OrderReservationListComponent) childKind: any;
+  // @ViewChild(OrderReservationListComponent) childCompleted: any;
+  // @ViewChild(OrderReservationListComponent) childIndex: any;
 
   showDiv = {
   previous : false,
@@ -63,14 +62,14 @@ export class OrderReservationComponent implements OnInit, AfterViewInit {
     private route: ActivatedRoute
   ) { }
 
-  ngAfterViewInit(): void {
-    // this.seatId = this.childId.seatId;
-    // this.seatName = this.childName.seatName;
-    // this.seatStatus = this.childStatus.seatStatus;
-    // this.seatKind = this.childKind.seatKind;
-    // this.seatCompleted = this.childCompleted.seatCompleted;
-    // this.index = this.childIndex.index;
-  }
+  // ngAfterViewInit(): void {
+  //   // this.seatId = this.childId.seatId;
+  //   // this.seatName = this.childName.seatName;
+  //   // this.seatStatus = this.childStatus.seatStatus;
+  //   // this.seatKind = this.childKind.seatKind;
+  //   // this.seatCompleted = this.childCompleted.seatCompleted;
+  //   // this.index = this.childIndex.index;
+  // }
 
   ngOnInit(): void {
 
@@ -78,10 +77,10 @@ export class OrderReservationComponent implements OnInit, AfterViewInit {
 
     this.getSeatAdminOrders();
 
-    const id = this.route.snapshot.params['id'];
-    this.getName();
-    this.getStatus();
-    this.getKind();
+    // const id = this.route.snapshot.params['id'];
+    // this.getName();
+    // this.getStatus();
+    // this.getKind();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -196,50 +195,19 @@ export class OrderReservationComponent implements OnInit, AfterViewInit {
   //   });
   // }
 
-  getName() {
-    this.name = this.route.snapshot.params['id'];
-    return this.name;
-  }
+  // getName() {
+  //   this.name = this.route.snapshot.params['id'];
+  //   return this.name;
+  // }
 
-  getStatus() {
-    this.status = this.route.snapshot.params['id'];
-    return this.status;
-  }
+  // getStatus() {
+  //   this.status = this.route.snapshot.params['id'];
+  //   return this.status;
+  // }
 
-  getKind() {
-    this.kind = this.route.snapshot.params['id'];
-    return this.kind;
-  }
-
-  onSwitch() {
-    // for(let seatOne of this.seatOnes) {
-    //   if(seatOne.status = "éteint") {
-    //     this.seatOnes[i].status = 'allumé';
-    //     console.log('seatOne.status : ' + seatOne.status);
-    //   } else if(seatOne.status = "allumé") {
-    //     this.seatOnes[i].status = 'éteint';
-    //     console.log('seatOne.status : ' + seatOne.status);
-    //   }
-    // }
-    if(this.status === "éteint") {
-      this.reservationService.switchOnOne(this.index);
-    }
-    else if(this.status === "allumé") {
-      this.reservationService.switchOffOne(this.index);
-    }
-    console.log('this.seatStatus : ' + this.status);
-    console.log('this.index : ' + this.index);
-  }
-
-  onSwitchDelete() {
-    if(this.seatStatus === "éteint") {
-      this.reservationService.switchOnOne(this.index);
-    }
-    else if(this.seatStatus === "allumé") {
-      this.reservationService.switchOffOne(this.index);
-    }
-    console.log('onSwitchDelete : this.seatStatus : ' + this.seatStatus);
-    console.log('onSwitchDelete : this.index : ' + this.index);
-  }
+  // getKind() {
+  //   this.kind = this.route.snapshot.params['id'];
+  //   return this.kind;
+  // }
 
 }
