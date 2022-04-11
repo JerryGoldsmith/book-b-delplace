@@ -13,26 +13,30 @@ export class OrderReservationListComponent implements OnInit {
 
   isShow = false;
 
-  // seatsForm: FormGroup;
+  seatsForm: FormGroup;
 
-  seatsForm = new FormGroup({
-    seatId: new FormControl(),
-    seatName: new FormControl(''),
-    seatStatus: new FormControl(''),
-    seatKind: new FormControl(''),
-    seatCompleted: new FormControl(),
-    index: new FormControl()
-  });
+  // seatsForm = new FormGroup({
+  //   seatId: new FormControl(),
+  //   seatName: new FormControl(''),
+  //   seatStatus: new FormControl(''),
+  //   seatKind: new FormControl(''),
+  //   seatCompleted: new FormControl(),
+  //   index: new FormControl()
+  // });
 
   buttonDisabled: boolean;
 
   seatOneSubscription: Subscription;
   seatOnes: Array<any> = [];
   // seatOnes: any[];
+  // get seatOnes(): Array<any> {
+  //   return (Object as any).values(this.reservationService.seatOnes);
+  // }
 
   seat = [];
   seatOneOrder = [];
 
+  id: number      = 3;
   name: string    = 'SeatOn';
   status: string  = 'Status';
   kind: string    = 'Kind';
@@ -107,18 +111,45 @@ export class OrderReservationListComponent implements OnInit {
     // firestore database
     this.getSeatAdminOrders();
 
-    // const id = this.route.snapshot.params['id'];
-    // this.getName();
-    // this.getStatus();
-    // this.getKind();
+    const id = this.route.snapshot.params['id'];
+    this.getId()
+    this.getName();
+    this.getStatus();
+    this.getKind();
 
     // realtime database
-    this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
+    this.seatOneSubscription = this.reservationService.seatOneSubject
+    .subscribe(
       (seatOnes: any[]) => {
+        if(!seatOnes){
+          return;
+        }
         this.seatOnes = seatOnes;
+        console.log('seatOnes : ' + seatOnes);
       }
     );
-    this.reservationService.emitSeatOneSubject(); 
+    this.reservationService.emitSeatOneSubject();
+    console.log('seatOneSubscription : ' + this.seatOneSubscription);
+  }
+
+  getId() {
+    this.id = this.route.snapshot.params['id'];
+    return this.id;
+  }
+
+  getName() {
+    this.name = this.route.snapshot.params['id'];
+    return this.name;
+  }
+
+  getStatus() {
+    this.status = this.route.snapshot.params['id'];
+    return this.status;
+  }
+
+  getKind() {
+    this.kind = this.route.snapshot.params['id'];
+    return this.kind;
   }
 
   // realtime database
@@ -155,6 +186,7 @@ export class OrderReservationListComponent implements OnInit {
 
   // firestore database
 
+  // seatOneOrders$ = this.reservationService.getSeatOneOrders();
   seatOneOrders = this.reservationService.getSeatOneOrders();
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);

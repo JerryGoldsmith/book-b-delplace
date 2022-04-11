@@ -85,7 +85,7 @@ export class OrderReservationResultComponent implements OnInit {
   }
 
   onSaveOnFirebase() {
-    this.reservationService.saveSeatsToFirebaseinServer();
+    this.reservationService.saveSeats();
   }
 
   onFetchFromFirebase() { // pour recevoir de Firebase (fetch)

@@ -33,8 +33,6 @@ export class SeatsComponent implements OnInit, AfterViewInit {
   seat = [];
   seatOneOrder = [];
 
-
-  // seatOrchestres: any[];
   buttonDisabled: boolean;
 
   id: number      = 3;
@@ -67,8 +65,7 @@ export class SeatsComponent implements OnInit, AfterViewInit {
 
   constructor(
     public reservationService: OrderReservationService,
-    // public seatService: SeatService,
-    private route: ActivatedRoute // routes parametres avec id
+    private route: ActivatedRoute // with id
   ) { }
 
   ngAfterViewInit(): void {
@@ -111,6 +108,26 @@ export class SeatsComponent implements OnInit, AfterViewInit {
   // realtime database
   seatOneOrders = this.reservationService.getSeatOneOrders();
 
+  getId() {
+    this.id = this.route.snapshot.params['id'];
+    return this.id;
+  }
+
+  getName() {
+    this.name = this.route.snapshot.params['id'];
+    return this.name;
+  }
+
+  getStatus() {
+    this.status = this.route.snapshot.params['id'];
+    return this.status;
+  }
+
+  getKind() {
+    this.kind = this.route.snapshot.params['id'];
+    return this.kind;
+  }
+
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
   getSeatAdminOrders = () =>
@@ -140,26 +157,6 @@ export class SeatsComponent implements OnInit, AfterViewInit {
 
   onDestroy() {
     this.seatOneSubscription.unsubscribe();
-  }
-
-  getId() {
-    this.id = this.route.snapshot.params['id'];
-    return this.id;
-  }
-
-  getName() {
-    this.name = this.route.snapshot.params['id'];
-    return this.name;
-  }
-
-  getStatus() {
-    this.status = this.route.snapshot.params['id'];
-    return this.status;
-  }
-
-  getKind() {
-    this.kind = this.route.snapshot.params['id'];
-    return this.kind;
   }
 
   // getColor() {

@@ -5,6 +5,7 @@
 <h2> {{ seatName }} </h2>
 <h2> {{ seatStatus }} </h2>
 
+<!-- <table *ngIf="seatOneOrders$ | async as seatOneOrders"> -->
 <table>
   <thead>
     <tr>
@@ -17,6 +18,7 @@
     </tr>
   </thead>
 
+  <!-- <tbody *ngFor="let order of seatOneOrders$ | async"> -->
   <tbody *ngFor="let order of seatOneOrders">
     <tr>
       <!-- <td id="all-forms" class="vertical-lign-fluo">{{ order.payload.doc.data().date.time }}</td> -->
@@ -51,7 +53,8 @@
         (click)="onSwitch()"
         (click)="onSaveOnFirebase()"
         href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-        <span class="material-icons cursorPoint">delete</span>  
+        <span class="material-icons cursorPoint"
+        >delete</span>  
       </td>
       <!-- <td
         (click)="deleteOrder(order)"

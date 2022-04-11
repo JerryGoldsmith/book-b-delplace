@@ -34,12 +34,14 @@ export class OrderReservationComponent implements OnInit, AfterViewInit {
   status: string  = 'Status';
   kind: string    = 'Kind';
 
+  @Input() seatId: number;
   @Input() seatName: string;
   @Input() seatStatus: string;
   @Input() seatKind: string;
   @Input() seatCompleted: boolean;
   @Input() index: number;
 
+  @ViewChild(OrderReservationListComponent) childId: any;
   @ViewChild(OrderReservationListComponent) childName: any;
   @ViewChild(OrderReservationListComponent) childStatus: any;
   @ViewChild(OrderReservationListComponent) childKind: any;
@@ -62,11 +64,12 @@ export class OrderReservationComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngAfterViewInit(): void {
-    this.seatName = this.childName.seatName;
-    this.seatStatus = this.childStatus.seatStatus;
-    this.seatKind = this.childKind.seatKind;
-    this.seatCompleted = this.childCompleted.seatCompleted;
-    this.index = this.childIndex.index;
+    // this.seatId = this.childId.seatId;
+    // this.seatName = this.childName.seatName;
+    // this.seatStatus = this.childStatus.seatStatus;
+    // this.seatKind = this.childKind.seatKind;
+    // this.seatCompleted = this.childCompleted.seatCompleted;
+    // this.index = this.childIndex.index;
   }
 
   ngOnInit(): void {
@@ -133,9 +136,9 @@ export class OrderReservationComponent implements OnInit, AfterViewInit {
 
   // ----
 
-  onSaveSeatsOnFirebase() {
-    this.reservationService.saveSeats();
-  }
+  // onSaveSeatsOnFirebase() {
+  //   this.reservationService.saveSeats();
+  // }
 
   onNewSeat() {
     this.router.navigate(['/seats']);

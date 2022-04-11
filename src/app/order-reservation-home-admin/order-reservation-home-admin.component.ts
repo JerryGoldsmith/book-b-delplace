@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { OrderReservationService } from "../services/order-reservation.service";
+import { OrderReservationListComponent } from "../order-reservation-list/order-reservation-list.component";
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-order-reservation-home-admin',
@@ -8,9 +11,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderReservationHomeAdminComponent implements OnInit {
 
-  constructor() { }
+    seatOnes: Array<any> = [];
+  seatOneSubscription: Subscription;
+
+  @Input() seatId: number;
+  @Input() seatName: string;
+  @Input() seatStatus: string;
+  @Input() seatKind: string;
+  @Input() seatCompleted: boolean;
+  @Input() index: number;
+
+  @ViewChild(OrderReservationListComponent) childId: any;
+  @ViewChild(OrderReservationListComponent) childName: any;
+  @ViewChild(OrderReservationListComponent) childStatus: any;
+  @ViewChild(OrderReservationListComponent) childKind: any;
+  @ViewChild(OrderReservationListComponent) childCompleted: any;
+  @ViewChild(OrderReservationListComponent) childIndex: any;
+
+  constructor(
+    public reservationService: OrderReservationService
+  ) { }
 
   ngOnInit(): void {
+
+    this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
+        (seatOnes: any[]) => {
+          this.seatOnes = seatOnes;
+          // console.log('this.seatOnes : ' + seatOnes);
+        }
+      );
+      // console.log('this.seatOneSubscription : ' + this.seatOneSubscription);
+      this.reservationService.emitSeatOneSubject();
     /**
     * demo.js
     * http://www.codrops.com
