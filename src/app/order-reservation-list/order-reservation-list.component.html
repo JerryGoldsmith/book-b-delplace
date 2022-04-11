@@ -2,7 +2,9 @@
 
 <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
 
-<h2> {{ seatName }} </h2>
+  <!-- <div *ngIf="seatOnes"> -->
+    <h2> {{ seatName }} </h2>
+  <!-- </div> -->
 <h2> {{ seatStatus }} </h2>
 
 <!-- <table *ngIf="seatOneOrders$ | async as seatOneOrders"> -->

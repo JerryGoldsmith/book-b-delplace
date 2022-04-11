@@ -41,11 +41,11 @@ export class OrderReservationListComponent implements OnInit {
   status: string  = 'Status';
   kind: string    = 'Kind';
 
-  // @Input() seatName: string;
-  // @Input() seatStatus: string;
-  // @Input() seatKind: string;
-  // @Input() seatCompleted: boolean;
-  // @Input() index: number;
+  @Input() seatName: string;
+  @Input() seatStatus: string;
+  @Input() seatKind: string;
+  @Input() seatCompleted: boolean;
+  @Input() index: number;
 
   // seatName: string;
   // seatStatus: string;
@@ -53,31 +53,31 @@ export class OrderReservationListComponent implements OnInit {
   // seatCompleted: boolean;
   // index: number;
 
-  @Output() seatName = new EventEmitter();
-  @Output() seatStatus = new EventEmitter();
-  @Output() seatKind = new EventEmitter();
-  @Output() seatCompleted = new EventEmitter();
-  @Output() index = new EventEmitter(); 
+  // @Output() seatName = new EventEmitter();
+  // @Output() seatStatus = new EventEmitter();
+  // @Output() seatKind = new EventEmitter();
+  // @Output() seatCompleted = new EventEmitter();
+  // @Output() index = new EventEmitter(); 
   
-  setName = (seatName: { value: any; }): void => {  
-   this.seatName.emit(seatName.value);  
-  }
+  // setName = (seatName: { value: any; }): void => {  
+  //  this.seatName.emit(seatName.value);  
+  // }
 
-  setStatus = (seatStatus: { value: string; }): void => {  
-    this.seatStatus.emit(seatStatus.value);  
-  }
+  // setStatus = (seatStatus: { value: string; }): void => {  
+  //   this.seatStatus.emit(seatStatus.value);  
+  // }
 
-  setKind = (seatKind: { value: string; }): void => {  
-    this.seatKind.emit(seatKind.value);  
-  }
+  // setKind = (seatKind: { value: string; }): void => {  
+  //   this.seatKind.emit(seatKind.value);  
+  // }
 
-  setCompleted = (seatCompleted: { value: any; }): void => {  
-    this.seatKind.emit(seatCompleted.value);  
-  }
+  // setCompleted = (seatCompleted: { value: any; }): void => {  
+  //   this.seatKind.emit(seatCompleted.value);  
+  // }
   
-  setIndex = (index: { value: number; }): void =>{  
-    this.index.emit(index.value);  
-  } 
+  // setIndex = (index: { value: number; }): void =>{  
+  //   this.index.emit(index.value);  
+  // } 
   
   // PostData() {
   //   this.seatNameEmitter.emit(this.seatName);

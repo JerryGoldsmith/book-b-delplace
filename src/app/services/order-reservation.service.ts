@@ -321,20 +321,23 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
+  // by country && only USA
   getSeatByUSA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .orderBy ('customerCountry', 'asc')
-      .where ('USA', 'array-contains', 100)
+      .where ('customerCountry', '==', 'USA')
       .limit(100))
       .snapshotChanges();
+  }
 
-      // this.fs.collection("products", ref => ref
-      // .where("userId", "==", userId)
-      // .orderBy("created", "desc")
-      // .startAfter(lastDoc.created)
-      // .limit(12)).valueChanges()
-      // .subscribe(resolve, reject);
+  // by country && firstName
+  getSeatByCountryFirstName() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('customerCountry', '==', 'USA')
+      .where ('customerFirstName', '==', 'Tom')
+      .limit(100))
+      .snapshotChanges();
   }
 
   getSeatOneOrders() {
