@@ -5,11 +5,11 @@ import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute } from '@angular/router'; // with id
 
 @Component({
-  selector: 'app-order-reservation-list',
-  templateUrl: './order-reservation-list.component.html',
-  styleUrls: ['./order-reservation-list.component.scss']
+  selector: 'app-order-reservation-list-query-country',
+  templateUrl: './order-reservation-list-query-country.component.html',
+  styleUrls: ['./order-reservation-list-query-country.component.scss']
 })
-export class OrderReservationListComponent implements OnInit, AfterViewInit {
+export class OrderReservationListQueryCountryComponent implements OnInit, AfterViewInit {
 
   isShow = false;
 
@@ -34,8 +34,8 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
   // @Output() seatKind = new EventEmitter();
   // @Output() seatCompleted = new EventEmitter();
 
-  @ViewChild(OrderReservationListComponent, { static: false }) seatNameRef: OrderReservationListComponent;
-  @ViewChild(OrderReservationListComponent, { static: false }) seatStatusRef: OrderReservationListComponent;
+  @ViewChild(OrderReservationListQueryCountryComponent, { static: false }) seatNameRef: OrderReservationListQueryCountryComponent;
+  @ViewChild(OrderReservationListQueryCountryComponent, { static: false }) seatStatusRef: OrderReservationListQueryCountryComponent;
   // @ViewChildren('OrderReservationListComponent') reservationListReferences: QueryList<SeatsComponent>;
 
   // childName: any;
@@ -193,7 +193,7 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
 
   getSeatAdminOrders = () =>
     this.reservationService
-      .getSeatByCountry()
+      .getSeatByUSA()
       //@ts-ignore
       .subscribe(result => (this.seatOneOrders = result));
 

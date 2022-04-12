@@ -1,21 +1,12 @@
 <section class="container">
 
-  <h2> {{ seatName }} </h2>
-  <h2> {{ seatStatus }} </h2>
-
-
     <div class="row">
       <div class="resa-left">
         <app-order-reservation-picture-ter class="background-resa-admin-home layout-resa-picture-home"></app-order-reservation-picture-ter>
       </div>
       <div class="resa-right">
-
-        <app-order-reservation-list class="background-resa-admin-home layout-resa-admin-home"></app-order-reservation-list>
-        <!-- <app-order-reservation-list class="background-resa-admin-home layout-resa-admin-home"
-        *ngFor="let seatOne of seatOnes | valueArray; let i = index"
-                  [seatName]="seatOne.name" 
-                  [seatStatus]="seatOne.status"
-                  [index]="i"></app-order-reservation-list> -->
+        <app-order-reservation-list></app-order-reservation-list>
+        <app-order-reservation-list-query-country></app-order-reservation-list-query-country>
       </div>
     </div>
   </section>

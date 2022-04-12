@@ -67,15 +67,15 @@ export class OrderReservationResultComponent implements OnInit {
   //     .getSeatOneSingle()
   //     .subscribe(result => (this.seatOneOrders = result));
 
-  markCompleted = data => this.reservationService.updateSeatOneOrder(data);
+  markCompleted = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.updateSeatOneOrder(data);
 
-  deleteOrder = data => this.reservationService.deleteSeatOneOrder(data);
+  deleteOrder = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.deleteSeatOneOrder(data);
 
   // Part 2
 
-  addSeatOne = seatOne => this.seatOneOrder.push(seatOne);
+  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
-  removeSeatOne = seatOne => {
+  removeSeatOne = (seatOne: any) => {
     let index = this.seatOneOrder.indexOf(seatOne);
     if (index > -1) this.seatOneOrder.splice(index, 1);
   };

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { OrderReservationService } from "../../services/order-reservation.service";
 import { OrderReservationListComponent } from "../../order-reservation-list/order-reservation-list.component";
 import { Subscription } from 'rxjs/Subscription';
@@ -32,6 +32,9 @@ export class SeatsComponent implements OnInit {
 
   sortedData: any;
 
+  name: string    = 'SeatOn';
+  status: string  = 'Status';
+
   // realtime database
   @Input() seatId: number;
   @Input() seatName: string;
@@ -40,15 +43,16 @@ export class SeatsComponent implements OnInit {
   @Input() seatCompleted: boolean;
   @Input() index: number;
 
-  // @ViewChild(OrderReservationListComponent) childId: any;
-  // @ViewChild(OrderReservationListComponent) childName: any;
-  // @ViewChild(OrderReservationListComponent) childStatus: any;
-  // @ViewChild(OrderReservationListComponent) childKind: any;
-  // @ViewChild(OrderReservationListComponent) childCompleted: any;
-  // @ViewChild(OrderReservationListComponent) childIndex: any;
+  @ViewChild(OrderReservationListComponent) childId: any;
+  @ViewChild(OrderReservationListComponent) childName: any;
+  @ViewChild(OrderReservationListComponent) childStatus: any;
+  @ViewChild(OrderReservationListComponent) childKind: any;
+  @ViewChild(OrderReservationListComponent) childCompleted: any;
+  @ViewChild(OrderReservationListComponent) childIndex: any;
 
   constructor(
-    public reservationService: OrderReservationService
+    public reservationService: OrderReservationService,
+    private route: ActivatedRoute // with id
   ) { }
 
   // ngAfterViewInit(): void {
@@ -65,6 +69,10 @@ export class SeatsComponent implements OnInit {
     this.buttonDisabled = false;
 
     this.getSeatQuery();
+
+    const id = this.route.snapshot.params['id'];
+    this.name = this.reservationService.getSeatById(+id).name;
+    this.status = this.reservationService.getSeatById(+id).status;
 
     // this.name = this.route.snapshot.params['id']; // routes parametres avec id (étape 1 transitoire)
     // const id = this.route.snapshot.params['id'];
@@ -171,16 +179,16 @@ export class SeatsComponent implements OnInit {
   //   });
   // }
 
-  // onSwitchDelete() {
-  //   if(this.seatStatus === "éteint") {
-  //     this.reservationService.switchOnOne(this.index);
-  //   }
-  //   else if(this.seatStatus === "allumé") {
-  //     this.reservationService.switchOffOne(this.index);
-  //   }
-  //   console.log('onSwitchDelete : this.seatStatus : ' + this.seatStatus);
-  //   console.log('onSwitchDelete : this.index : ' + this.index);
-  // }
+  onSwitchDelete() {
+    if(this.seatStatus === "éteint") {
+      this.reservationService.switchOnOne(this.index);
+    }
+    else if(this.seatStatus === "allumé") {
+      this.reservationService.switchOffOne(this.index);
+    }
+    console.log('onSwitchDelete : this.seatStatus : ' + this.seatStatus);
+    console.log('onSwitchDelete : this.index : ' + this.index);
+  }
 
 }
 

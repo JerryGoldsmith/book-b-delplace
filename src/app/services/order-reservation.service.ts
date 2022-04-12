@@ -546,10 +546,10 @@ export class OrderReservationService {
     this.emitSeatOneSubject();
   }
 
-  switchMiddleOne(i: number) { // on index
-    this.seatOnes[i].status = 'middle';
-    this.emitSeatOneSubject();
-  }
+  // switchMiddleOne(i: number) { // on index
+  //   this.seatOnes[i].status = 'middle';
+  //   this.emitSeatOneSubject();
+  // }
 
   switchOffOne(i: number) { // off index
     this.seatOnes[i].status = 'éteint';

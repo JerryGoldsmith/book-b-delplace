@@ -11,17 +11,6 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class OrderReservationHomeAdminComponent implements OnInit {
 
-    
-  seatOneSubscription: Subscription;
-  seatOnes: Array<any> = [];
-
-  @Input() seatId: number;
-  @Input() seatName: string;
-  @Input() seatStatus: string;
-  @Input() seatKind: string;
-  @Input() seatCompleted: boolean;
-  @Input() index: number;
-
 //   @ViewChild(OrderReservationListComponent) childId: any;
 //   @ViewChild(OrderReservationListComponent) childName: any;
 //   @ViewChild(OrderReservationListComponent) childStatus: any;
@@ -34,15 +23,6 @@ export class OrderReservationHomeAdminComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
-        (seatOnes: any[]) => {
-          this.seatOnes = seatOnes;
-          // console.log('this.seatOnes : ' + seatOnes);
-        }
-      );
-      // console.log('this.seatOneSubscription : ' + this.seatOneSubscription);
-      this.reservationService.emitSeatOneSubject();
     /**
     * demo.js
     * http://www.codrops.com

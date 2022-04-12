@@ -1,7 +1,4 @@
-<h1>Administration</h1>
-
-<!-- <h2> {{ seatStatus }} </h2> -->
-
+<h2>Par clients américains</h2>
 <table>
   <thead>
     <tr>
@@ -9,8 +6,8 @@
       <th class="vertical-lign-maincolor cell-title-right">Prénom</th>
       <th class="vertical-lign-maincolor cell-title-right">Nom</th>
       <th class="vertical-lign-maincolor cell-title-right">Pays</th>
-      <th class="vertical-lign-maincolor cell-title-right">Votre siège</th>
-      <th class="vertical-lign-maincolor cell-title-left">Supprimer</th>
+      <th class="vertical-lign-maincolor cell-title-left">Votre siège</th>
+      <!-- <th class="vertical-lign-maincolor cell-title-left">Supprimer</th> -->
     </tr>
   </thead>
 
@@ -23,7 +20,7 @@
       <td class="cell-right">
         <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">{{ seatOne }}   </span>
       </td>
-      <td
+      <!-- <td
         (click)="deleteOrder(order)"
         class="cell-right-border"
         [ngModelOptions]="{ standalone: true }"
@@ -33,7 +30,7 @@
         href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
         <span class="material-icons cursorPoint"
         >delete</span>  
-      </td>
+      </td> -->
     </tr>
   </tbody>
 </table>

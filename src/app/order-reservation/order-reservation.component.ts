@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
-import { OrdersService } from "../services/orders.service";
 import { OrderReservationListComponent } from "../order-reservation-list/order-reservation-list.component";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
@@ -57,7 +56,6 @@ export class OrderReservationComponent implements OnInit {
 
   constructor(
     public reservationService: OrderReservationService,
-    public orderService: OrdersService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -104,54 +102,15 @@ export class OrderReservationComponent implements OnInit {
     }, {});
   }
 
-  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
-
-  removeSeatOne = (seatOne: any) => {
-    let index = this.seatOneOrder.indexOf(seatOne);
-    if (index > -1) this.seatOneOrder.splice(index, 1);
-  };
-
-  onSubmit() {
-    this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
-
-    let data = this.reservationService.form.value;
-
-    this.reservationService.createSeatOneOrder(data).then(res => {
-      console.log("OK");
-    });
-  }
-
   toggleDisplay() {
     this.isShow = !this.isShow;
   }
 
-  onSaveOnFirebase() {
-    this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
-  }
-
-  onFetchFromFirebase() { 
-    this.reservationService.saveSeatsFromFirebaseinServer();
-  }
-
-  // ----
-
-  // onSaveSeatsOnFirebase() {
-  //   this.reservationService.saveSeats();
-  // }
-
-  onNewSeat() {
-    this.router.navigate(['/seats']);
-  }
-
-  onViewSeat(id: number) {
-    this.router.navigate(['/seats', 'view', id]);
-  }
-
-  // OnDestroy(){
-  //   this.seatOneSubscription.unsubscribe();
-  // }
+  // Cloud Firestore
 
   seatOneOrders = this.reservationService.getSeatOneOrders();
+
+  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
   getSeatAdminOrders = () =>
     this.reservationService
@@ -177,12 +136,48 @@ export class OrderReservationComponent implements OnInit {
       }; 
     }) => this.reservationService.deleteSeatOneOrder(data);
 
+  removeSeatOne = (seatOne: any) => {
+    let index = this.seatOneOrder.indexOf(seatOne);
+    if (index > -1) this.seatOneOrder.splice(index, 1);
+   };
+
+  onSubmit() {
+    this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
+
+    let data = this.reservationService.form.value;
+
+    this.reservationService.createSeatOneOrder(data).then(res => {
+      console.log("OK");
+    });
+  }
+
+  // realtime database
+
+  onSaveOnFirebase() {
+    this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
+  }
+
+  onFetchFromFirebase() { 
+    this.reservationService.saveSeatsFromFirebaseinServer();
+  }
 
   onDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 
-  // realtime database
+  // ----
+
+  onNewSeat() {
+    this.router.navigate(['/seats']);
+  }
+
+  onViewSeat(id: number) {
+    this.router.navigate(['/seats', 'view', id]);
+  }
+
+  // OnDestroy(){
+  //   this.seatOneSubscription.unsubscribe();
+  // }
 
   // onSubmit() {
   //   this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
