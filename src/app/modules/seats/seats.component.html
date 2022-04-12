@@ -25,7 +25,6 @@
             *ngIf="seatStatus === 'éteint' && i===0"
             [hidden]="seatKind === 'Orchestre'"
             (click)="onSwitchDelete()"
-            (click)="onSaveOnFirebase()"
             [value]="seatStatus[i].id">J'ai changé d'avis
             </button>
 
@@ -66,7 +65,7 @@
             || seatId === 29
             || seatId === 30
             || seatId === 31"
-            (click)="deleteOrder(i)"
+            (click)="deleteOrder(seat)"
             (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
             </button>
 
