@@ -1,3 +1,7 @@
+.material-icons:hover {
+  opacity: 0.5;
+}
+
 #items-button {
   width: 100px;
   height: 80px;
@@ -32,18 +36,38 @@
   background-color: var(--main-color);
 }
 
-#items-delete-button-small {
-  // width: 36px;
-  height: 36px;
-  background-color: var(--color-fluo);
-  border: solid 1px var(--color-fluo);
+#items-delete-button-change-mind {
+  font-size: 17px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-white);
+  background-color: var(--color-ocre);
+  border: solid 1px var(--color-gold);
   border-radius: 10px;
-  padding: 2px;
+  margin-left: -8px;
+  padding: 8px;
   text-align: center;
 }
 
+#items-delete-button-change-mind:hover {
+  color: var(--color-gold);
+}
+
+#items-delete-button-small {
+  width: 34px;
+  height: 34px;
+  color: var(--color-white);
+  background-color: var(--color-ocre);
+  border: solid 1px var(--color-gold);
+  border-radius: 10px;
+  margin-top: -60px;
+  margin-left: 32px;
+  padding: 2px;
+  text-align: center;
+  z-index: 10;
+}
+
 #items-delete-button-small:hover {
-  background-color: var(--color-white);
+  color: var(--color-gold);
 }
 
 #editable {

@@ -10,7 +10,7 @@
       id="items-button"
       *ngIf="seatStatus === 'allumé'"
       [hidden]="seatKind === 'Orchestre'"
-      (click)="onSwitch()"
+      (click)="onSwitchOn()"
       [value]="seatName.id"
       >{{ seatName }}</button>
 
@@ -21,7 +21,7 @@
             
             <!-- display for all buttons off -->
             <button type="submit"
-            id="items-delete-button-small"
+            id="items-delete-button-change-mind"
             *ngIf="seatStatus === 'éteint' && i===0"
             [hidden]="seatKind === 'Orchestre'"
             (click)="onSwitchDelete()"
@@ -33,40 +33,13 @@
             <!-- Balcon 1 -->
             <button type="submit"
             id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 1' && seatId === 1"
+            *ngIf="i===0 && seatStatus === 'allumé' && seatName === 'Balcon 1'"
             [visible]="seatStatus === 'éteint' && seatId === 1"
-            [hidden]="seatId === 2 
-            || seatId === 3
-            || seatId === 4
-            || seatId === 5
-            || seatId === 6
-            || seatId === 7
-            || seatId === 8
-            || seatId === 9
-            || seatId === 10
-            || seatId === 11
-            || seatId === 12
-            || seatId === 13
-            || seatId === 14
-            || seatId === 15
-            || seatId === 16
-            || seatId === 17
-            || seatId === 18
-            || seatId === 19
-            || seatId === 20
-            || seatId === 21
-            || seatId === 22
-            || seatId === 23
-            || seatId === 24
-            || seatId === 25
-            || seatId === 26
-            || seatId === 27
-            || seatId === 28
-            || seatId === 29
-            || seatId === 30
-            || seatId === 31"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()" 
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 2 -->
@@ -74,38 +47,11 @@
             id="items-delete-button-small"
             *ngIf="i===1 && seatStatus === 'allumé' && seatName === 'Balcon 2'"
             [visible]="seatStatus === 'éteint' && seatId === 2"
-            [hidden]="seatId === 1 
-            || seatId === 3
-            || seatId === 4
-            || seatId === 5
-            || seatId === 6
-            || seatId === 7
-            || seatId === 8
-            || seatId === 9
-            || seatId === 10
-            || seatId === 11
-            || seatId === 12
-            || seatId === 13
-            || seatId === 14
-            || seatId === 15
-            || seatId === 16
-            || seatId === 17
-            || seatId === 18
-            || seatId === 19
-            || seatId === 20
-            || seatId === 21
-            || seatId === 22
-            || seatId === 23
-            || seatId === 24
-            || seatId === 25
-            || seatId === 26
-            || seatId === 27
-            || seatId === 28
-            || seatId === 29
-            || seatId === 30
-            || seatId === 31"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()" 
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 3 -->
@@ -113,38 +59,11 @@
             id="items-delete-button-small"
             *ngIf="i===2 && seatStatus === 'allumé' && seatName === 'Balcon 3'"
             [visible]="seatStatus === 'éteint' && seatId === 3"
-            [hidden]="seatId === 1 
-            || seatId === 2
-            || seatId === 4
-            || seatId === 5
-            || seatId === 6
-            || seatId === 7
-            || seatId === 8
-            || seatId === 9
-            || seatId === 10
-            || seatId === 11
-            || seatId === 12
-            || seatId === 13
-            || seatId === 14
-            || seatId === 15
-            || seatId === 16
-            || seatId === 17
-            || seatId === 18
-            || seatId === 19
-            || seatId === 20
-            || seatId === 21
-            || seatId === 22
-            || seatId === 23
-            || seatId === 24
-            || seatId === 25
-            || seatId === 26
-            || seatId === 27
-            || seatId === 28
-            || seatId === 29
-            || seatId === 30
-            || seatId === 31"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 4 -->
@@ -152,38 +71,11 @@
             id="items-delete-button-small"
             *ngIf="i===3 && seatStatus === 'allumé' && seatName === 'Balcon 4'"
             [visible]="seatStatus === 'éteint' && seatId === 4"
-            [hidden]="seatId === 1 
-            || seatId === 2
-            || seatId === 3
-            || seatId === 5
-            || seatId === 6
-            || seatId === 7
-            || seatId === 8
-            || seatId === 9
-            || seatId === 10
-            || seatId === 11
-            || seatId === 12
-            || seatId === 13
-            || seatId === 14
-            || seatId === 15
-            || seatId === 16
-            || seatId === 17
-            || seatId === 18
-            || seatId === 19
-            || seatId === 20
-            || seatId === 21
-            || seatId === 22
-            || seatId === 23
-            || seatId === 24
-            || seatId === 25
-            || seatId === 26
-            || seatId === 27
-            || seatId === 28
-            || seatId === 29
-            || seatId === 30
-            || seatId === 31"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 5 -->
@@ -191,94 +83,95 @@
             id="items-delete-button-small"
             *ngIf="i===4 && seatStatus === 'allumé' && seatName === 'Balcon 5'"
             [visible]="seatStatus === 'éteint' && seatId === 5"
-            [hidden]="seatId === 1 
-            || seatId === 2
-            || seatId === 3
-            || seatId === 4
-            || seatId === 6
-            || seatId === 7
-            || seatId === 8
-            || seatId === 9
-            || seatId === 10
-            || seatId === 11
-            || seatId === 12
-            || seatId === 13
-            || seatId === 14
-            || seatId === 15
-            || seatId === 16
-            || seatId === 17
-            || seatId === 18
-            || seatId === 19
-            || seatId === 20
-            || seatId === 21
-            || seatId === 22
-            || seatId === 23
-            || seatId === 24
-            || seatId === 25
-            || seatId === 26
-            || seatId === 27
-            || seatId === 28
-            || seatId === 29
-            || seatId === 30
-            || seatId === 31"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 6 -->
             <button type="submit"
             id="items-delete-button-small"
             *ngIf="i===5 && seatStatus === 'allumé' && seatName === 'Balcon 6'"
+            [visible]="seatStatus === 'éteint' && seatId === 6"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 7 -->
             <button type="submit"
             id="items-delete-button-small"
             *ngIf="i===6 && seatStatus === 'allumé' && seatName === 'Balcon 7'"
+            [visible]="seatStatus === 'éteint' && seatId === 7"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 8 -->
             <button type="submit"
             id="items-delete-button-small"
             *ngIf="i===7 && seatStatus === 'allumé' && seatName === 'Balcon 8'"
+            [visible]="seatStatus === 'éteint' && seatId === 8"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 9 -->
             <button type="submit"
             id="items-delete-button-small"
             *ngIf="i===8 && seatStatus === 'allumé' && seatName === 'Balcon 9'"
+            [visible]="seatStatus === 'éteint' && seatId === 9"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 10 -->
             <button type="submit"
             id="items-delete-button-small"
             *ngIf="i===9 && seatStatus === 'allumé' && seatName === 'Balcon 10'"
+            [visible]="seatStatus === 'éteint' && seatId === 10"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 11 -->
             <button type="submit"
             id="items-delete-button-small"
             *ngIf="i===10 && seatStatus === 'allumé' && seatName === 'Balcon 11'"
+            [visible]="seatStatus === 'éteint' && seatId === 11"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
 
             <!-- Balcon 12 -->
             <button type="submit"
             id="items-delete-button-small"
             *ngIf="i===11 && seatStatus === 'allumé' && seatName === 'Balcon 12'"
+            [visible]="seatStatus === 'éteint' && seatId === 12"
             (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()">Je supprime définitivement ce siège
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >delete</span> 
             </button>
       </div>
 
@@ -287,7 +180,7 @@
       id="items-button"
       *ngIf="seatStatus === 'allumé'"
       [hidden]="seatKind === 'Balcon'"
-      (click)="onSwitch()"
+      (click)="onSwitchOn()"
       [value]="seatName.id"
       >{{ seatName }}</button>
 
@@ -297,6 +190,6 @@
       *ngIf="seatStatus === 'éteint'"
       disabled="{{buttonDisabled}}"
       [value]="seatName.id"
-      (click)="onSwitch()">{{ seatName }}</button>
+      (click)="onSwitchOn()">{{ seatName }}</button>
 
 </form>

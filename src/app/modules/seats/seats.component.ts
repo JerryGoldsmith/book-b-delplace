@@ -154,12 +154,23 @@ export class SeatsComponent implements OnInit {
     this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
   }
 
-  onSwitch() {
+  onSwitchOn() {
     if(this.seatStatus === "allumé") {
       this.reservationService.switchOffOne(this.index);
     }
     else if(this.seatStatus === "éteint") {
       this.reservationService.switchOnOne(this.index);
+    }
+    console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
+    console.log('onSwitch : this.index : ' + this.index);
+  }
+
+  onSwitchOff() {
+    if(this.seatStatus === "éteint") {
+      this.reservationService.switchOnOne(this.index);
+    }
+    else if(this.seatStatus === "allumé") {
+      this.reservationService.switchOffOne(this.index);
     }
     console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
     console.log('onSwitch : this.index : ' + this.index);
