@@ -32,6 +32,7 @@ export class SeatsComponent implements OnInit {
 
   sortedData: any;
 
+  id: number      = 3;
   name: string    = 'SeatOn';
   status: string  = 'Status';
 
