@@ -24,7 +24,7 @@
             id="items-delete-button-change-mind"
             *ngIf="seatStatus === 'éteint' && i===0"
             [hidden]="seatKind === 'Orchestre'"
-            (click)="onSwitchDelete()"
+            (click)="onSwitchOff()"
             [value]="seatStatus[i].id">J'ai changé d'avis
             </button> -->
 
@@ -33,11 +33,11 @@
             <!-- Balcon 1 -->
             <button type="submit"
             id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint'"
+            *ngIf="i===0
+            && seatStatus === 'éteint'"
             (click)="deleteOrder(seat)"
-            (click)="onSwitchOn()" 
-            (click)="onSaveOnFirebase()"
-            [value]="seatStatus[i].id"
+            (click)="onSwitchOff()"
+            [index]="i"
             href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
             <span class="material-icons cursorPoint"
             >delete</span> 

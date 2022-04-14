@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { OrderReservationService } from "../../services/order-reservation.service";
-import { OrderReservationListComponent } from "../../order-reservation-list/order-reservation-list.component";
+// import { OrderReservationListComponent } from "../../order-reservation-list/order-reservation-list.component";
 import { Subscription } from 'rxjs/Subscription';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 
 @Component({
@@ -44,12 +44,12 @@ export class SeatsComponent implements OnInit {
   @Input() seatCompleted: boolean;
   @Input() index: number;
 
-  @ViewChild(OrderReservationListComponent) childId: any;
-  @ViewChild(OrderReservationListComponent) childName: any;
-  @ViewChild(OrderReservationListComponent) childStatus: any;
-  @ViewChild(OrderReservationListComponent) childKind: any;
-  @ViewChild(OrderReservationListComponent) childCompleted: any;
-  @ViewChild(OrderReservationListComponent) childIndex: any;
+  // @ViewChild(OrderReservationListComponent) childId: any;
+  // @ViewChild(OrderReservationListComponent) childName: any;
+  // @ViewChild(OrderReservationListComponent) childStatus: any;
+  // @ViewChild(OrderReservationListComponent) childKind: any;
+  // @ViewChild(OrderReservationListComponent) childCompleted: any;
+  // @ViewChild(OrderReservationListComponent) childIndex: any;
 
   constructor(
     public reservationService: OrderReservationService,
@@ -191,16 +191,16 @@ export class SeatsComponent implements OnInit {
   //   });
   // }
 
-  onSwitchDelete() {
-    if(this.seatStatus === "éteint") {
-      this.reservationService.switchOnOne(this.index);
-    }
-    else if(this.seatStatus === "allumé") {
-      this.reservationService.switchOffOne(this.index);
-    }
-    console.log('onSwitchDelete : this.seatStatus : ' + this.seatStatus);
-    console.log('onSwitchDelete : this.index : ' + this.index);
-  }
+  // onSwitchDelete() {
+  //   if(this.seatStatus === "éteint") {
+  //     this.reservationService.switchOnOne(this.index);
+  //   }
+  //   else if(this.seatStatus === "allumé") {
+  //     this.reservationService.switchOffOne(this.index);
+  //   }
+  //   console.log('onSwitchDelete : this.seatStatus : ' + this.seatStatus);
+  //   console.log('onSwitchDelete : this.index : ' + this.index);
+  // }
 
 }
 

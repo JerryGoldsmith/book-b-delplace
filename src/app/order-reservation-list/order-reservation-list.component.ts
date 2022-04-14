@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, Output, EventEmitter, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
-import { SeatsComponent } from "src/app/modules/seats/seats.component";
+// import { SeatsComponent } from "src/app/modules/seats/seats.component";
 import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute } from '@angular/router'; // with id
 
@@ -9,19 +9,20 @@ import { ActivatedRoute } from '@angular/router'; // with id
   templateUrl: './order-reservation-list.component.html',
   styleUrls: ['./order-reservation-list.component.scss']
 })
-export class OrderReservationListComponent implements OnInit, AfterViewInit {
+export class OrderReservationListComponent implements OnInit {
 
   isShow = false;
 
+  seat = [];
   seatOneOrder = [];
 
   seatOneSubscription: Subscription;
   seatOnes: Array<any> = [];
 
-  // id: number      = 3;
-  // name: string    = 'SeatOn';
-  // status: string  = 'Status';
-  // kind: string    = 'Kind';
+  id: number      = 3;
+  name: string    = 'SeatOn';
+  status: string  = 'Status';
+  kind: string    = 'Kind';
 
   @Input() seatName: string;
   @Input() seatStatus: string;
@@ -34,8 +35,8 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
   // @Output() seatKind = new EventEmitter();
   // @Output() seatCompleted = new EventEmitter();
 
-  @ViewChild(OrderReservationListComponent, { static: false }) seatNameRef: OrderReservationListComponent;
-  @ViewChild(OrderReservationListComponent, { static: false }) seatStatusRef: OrderReservationListComponent;
+  // @ViewChild(OrderReservationListComponent, { static: false }) seatNameRef: OrderReservationListComponent;
+  // @ViewChild(OrderReservationListComponent, { static: false }) seatStatusRef: OrderReservationListComponent;
   // @ViewChildren('OrderReservationListComponent') reservationListReferences: QueryList<SeatsComponent>;
 
   // childName: any;
@@ -88,15 +89,15 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
   //   this.seatStatus = $event;  
   // } 
 
-  ngAfterViewInit(): void {
-    console.log(this.seatNameRef.seatName);
-    console.log(this.seatName); 
-    // this.seatName = this.childName.seatName;
-    // this.seatStatus = this.childStatus.seatStatus;
-    // this.seatKind = this.childKind.seatKind;
-    // this.seatCompleted = this.childCompleted.seatCompleted;
-    // this.index = this.childIndex.index;
-  }
+  // ngAfterViewInit(): void {
+  //   console.log(this.seatNameRef.seatName);
+  //   console.log(this.seatName); 
+  //   // this.seatName = this.childName.seatName;
+  //   // this.seatStatus = this.childStatus.seatStatus;
+  //   // this.seatKind = this.childKind.seatKind;
+  //   // this.seatCompleted = this.childCompleted.seatCompleted;
+  //   // this.index = this.childIndex.index;
+  // }
   // seatName(seatName: any) {
   //   this.seatName = this.seatNameRef.seatName;
   //   // throw new Error('Method not implemented.');
@@ -108,12 +109,6 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
     
     // firestore database
     this.getSeatAdminOrders();
-
-    // const id = this.route.snapshot.params['id'];
-    // this.getId()
-    // this.getName();
-    // this.getStatus();
-    // this.getKind();
 
     // realtime database
     this.seatOneSubscription = this.reservationService.seatOneSubject
@@ -132,42 +127,7 @@ export class OrderReservationListComponent implements OnInit, AfterViewInit {
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
-  // getId() {
-  //   this.id = this.route.snapshot.params['id'];
-  //   return this.id;
-  // }
-
-  // getName() {
-  //   this.name = this.route.snapshot.params['id'];
-  //   return this.name;
-  // }
-
-  // getStatus() {
-  //   this.status = this.route.snapshot.params['id'];
-  //   return this.status;
-  // }
-
-  // getKind() {
-  //   this.kind = this.route.snapshot.params['id'];
-  //   return this.kind;
-  // }
-
   // realtime database
-
-  // getName() {
-  //   this.name = this.route.snapshot.params['id'];
-  //   return this.name;
-  // }
-
-  // getStatus() {
-  //   this.status = this.route.snapshot.params['id'];
-  //   return this.status;
-  // }
-
-  // getKind() {
-  //   this.kind = this.route.snapshot.params['id'];
-  //   return this.kind;
-  // }
 
   onSaveOnFirebase() {
     this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
