@@ -6,6 +6,7 @@
       <th class="vertical-lign-maincolor cell-title-right">Prénom</th>
       <th class="vertical-lign-maincolor cell-title-right">Nom</th>
       <th class="vertical-lign-maincolor cell-title-right">Pays</th>
+      <th class="vertical-lign-maincolor cell-title-right">Age</th>
       <th class="vertical-lign-maincolor cell-title-left">Votre siège</th>
       <!-- <th class="vertical-lign-maincolor cell-title-left">Supprimer</th> -->
     </tr>
@@ -17,6 +18,7 @@
       <td class="cell-left">{{ order.payload.doc.data().customerFirstName }}</td>
       <td class="cell-right">{{ order.payload.doc.data().customerName }}</td>
       <td class="cell-right">{{ order.payload.doc.data().customerCountry }}</td>
+      <td class="cell-right">{{ order.payload.doc.data().customerAge }}</td>
       <td class="cell-right">
         <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">{{ seatOne }}   </span>
       </td>

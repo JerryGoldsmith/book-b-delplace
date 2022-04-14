@@ -30,6 +30,14 @@
         class="col s12"/>
       </div>
 
+      <!-- age > form -->
+      <div class="mdc-text-field">
+        <input size="42" placeholder="Age"
+        formControlAge="customerAge"
+        type="number" id="fields"
+        class="col s12"/>
+      </div>
+
       <!-- button > hide balcon/orchestre buttons -->
       <div (click)="showDiv.previous = !showDiv.previous;
       showDiv.current = false;
@@ -210,17 +218,27 @@
           <button *ngIf="showDiv.current"
             id="close-button"
             (click) = "onFetchFromFirebase()">Cacher les sièges</button>
-
         </div>
 
         <!-- button > save choice on Firebase -->
-        <!-- supprimer > (click)="deleteOrder(order)" remplace (click)="onSubmit()"-->
+
+        <!-- add in seatOneOrders (firestore) -->
         <button type="submit"
         *ngIf="showDiv.current"
         id="submit-button"
         (click)="onSubmit()"
         (click) = "onSaveOnFirebase()"
         routerLink="/home-result">Valider ma commande</button>
+
+        <!-- remove in seatOneOrders (firestore) -->
+        <!-- <div *ngFor="let seatOne of seatOneOrder; let i = index">
+          <button type="submit"
+            *ngIf="i===0 && showDiv.current"
+            id="submit-button"
+            (click) = "onSaveOnFirebase()"
+            routerLink="/home-result"
+            [index]="i+1">Valider ma commande</button>
+        </div> -->
 
       </div>
 

@@ -17,7 +17,7 @@
       <!-- research to remove each seat selected 
       ( give up because not usefull in that case - not finished) -->
 
-      <div *ngFor="let seat of seatOneOrders; let i = index">
+      <div *ngFor="let seat of seatOneOrders  | valueArray; let i = index">
             
             <!-- display for all buttons off -->
             <!-- <button type="submit"
@@ -35,7 +35,6 @@
             id="items-delete-button-small"
             *ngIf="i===0
             && seatStatus === 'éteint'"
-            (click)="deleteOrder(seat)"
             (click)="onSwitchOff()"
             [index]="i"
             href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">

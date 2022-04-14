@@ -7,6 +7,7 @@ export class Seat {
     public customerName : string,
     public customerFirstName : string,
     public customerCountry : string,
+    public customerAge : number,
     public seatOneOrder : String
   ) {}
 }

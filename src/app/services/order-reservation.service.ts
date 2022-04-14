@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs';
 import { Seat } from "../models/seats.model";
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { HttpClient } from '@angular/common/http'; // Acces Firebase
 import firebase from 'firebase/app';
 import "firebase/database";
@@ -224,6 +224,7 @@ export class OrderReservationService {
     customerFirstName: new FormControl(""),
     customerName: new FormControl(""),
     customerCountry: new FormControl(""),
+    customerAge: new FormControl(""),
     date: new FormControl(
       {
         time: firebase.firestore.FieldValue.serverTimestamp()
