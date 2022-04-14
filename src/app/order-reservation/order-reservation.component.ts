@@ -2,9 +2,11 @@ import { Component, Input, OnInit, AfterViewInit, ViewChild } from '@angular/cor
 import { OrderReservationService } from "../services/order-reservation.service";
 import { OrderReservationListComponent } from "../order-reservation-list/order-reservation-list.component";
 import { Subscription } from 'rxjs/Subscription';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import firebase from 'firebase';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-order-reservation',
@@ -17,7 +19,20 @@ export class OrderReservationComponent implements OnInit {
 
   isShow = false;
 
-  seatsForm: FormGroup;
+  // seatsForm: FormGroup;
+  seatsForm = new FormGroup({
+    id: new FormControl(this.afs.createId()),
+    customerFirstName: new FormControl(""),
+    customerName: new FormControl(""),
+    customerCountry: new FormControl(""),
+    customerAge: new FormControl(""),
+    date: new FormControl(
+      {
+        time: firebase.firestore.FieldValue.serverTimestamp()
+      }),
+    seatOneOrder: new FormControl(""),
+    completed: new FormControl(false)
+  });
 
   // seatOnes: any = [];
   seatOnes: Array<any> = [];
@@ -56,6 +71,7 @@ export class OrderReservationComponent implements OnInit {
 
   constructor(
     public reservationService: OrderReservationService,
+    private afs: AngularFirestore,
     private router: Router,
     private route: ActivatedRoute
   ) { }
