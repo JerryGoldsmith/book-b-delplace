@@ -1,3 +1,7 @@
+<h1 *ngIf="userData | async" class="textAuth">
+  Bonjour  <span class="emailAuth"> {{ (userData | async)?.email }}</span>
+</h1>
+
 <div class="resize" (resized)="onResized($event)">
 
   <div class="blocks">

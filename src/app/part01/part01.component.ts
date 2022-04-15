@@ -1,22 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
-import { Book } from '../models/book.model';
-import { BooksService } from '../services/books.service';
-import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
-// import * as firebase from 'firebase';
-// import firebase from "firebase/app";
-import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 import "firebase/database";
-
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-
 import { AuthService } from '../services/auth.service';
 import { AuthGuardService } from '../services/auth-guard.service';
-// import { OrdersService } from "../services/orders.service";
 
 @Component({
   selector: 'app-part01',
@@ -30,6 +20,7 @@ import { AuthGuardService } from '../services/auth-guard.service';
 export class Part01Component implements OnInit {
 
     isAuth: boolean;
+    userData: Observable<firebase.User>;
 
     /* LazyLoadImageModule appelé dans mod/public/a/a.module */
     defaultImage = '../../assets/image-default.svg';
@@ -41,7 +32,9 @@ export class Part01Component implements OnInit {
     private authService: AuthService,
     private authGuardService: AuthGuardService,
     private AFAuth: AngularFireAuth
-  ) {}
+  ) {
+    this.userData = AFAuth.authState;
+  }
 
   ngOnInit(): void {
 
@@ -49,8 +42,7 @@ export class Part01Component implements OnInit {
         (user) => {
           if(user) {
             this.isAuth = true;
-          } else { // deconnection
-            // this.router.navigate(['partA']);
+          } else { 
             this.isAuth = false;
           }
         }

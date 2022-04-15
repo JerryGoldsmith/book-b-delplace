@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // custom validator to validate password and confirm password fields match
 import { ResizedEvent } from 'angular-resize-event';
+import { Observable } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-signinlist',
@@ -11,6 +13,8 @@ import { ResizedEvent } from 'angular-resize-event';
   '../../../assets/css/baseline-scroll/baseline-scroll-C.css']
 })
 export class SigninlistComponent implements OnInit {
+
+  userData: Observable<firebase.User>;
 
   width: 0;
   height: 0;
@@ -25,7 +29,10 @@ export class SigninlistComponent implements OnInit {
   }
 
   constructor(
-      ) { }
+    private AFAuth: AngularFireAuth
+      ) { 
+        this.userData = AFAuth.authState;
+      }
 
   ngOnInit(): void {
 

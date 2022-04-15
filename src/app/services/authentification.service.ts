@@ -8,18 +8,17 @@ import { Observable } from 'rxjs';
 
 export class AuthentificationService {
 
-  //@ts-ignore
   userData: Observable<firebase.User>;
 
   constructor(
-    private angularFireAuth: AngularFireAuth
+    private AFAuth: AngularFireAuth
   ) {
-    this.userData = angularFireAuth.authState;
+    this.userData = AFAuth.authState;
   }
 
   /* Sign up */
   SignUp(email: string, password: string) {
-    this.angularFireAuth
+    this.AFAuth
       .createUserWithEmailAndPassword(email, password)
       .then(res => {
         console.log('Successfully signed up!', res);
@@ -31,7 +30,7 @@ export class AuthentificationService {
 
   /* Sign in */
   SignIn(email: string, password: string) {
-    this.angularFireAuth
+    this.AFAuth
       .signInWithEmailAndPassword(email, password)
       .then(res => {
         console.log('Successfully signed in!');
@@ -43,7 +42,7 @@ export class AuthentificationService {
 
   /* Sign out */
   SignOut() {
-    this.angularFireAuth
+    this.AFAuth
       .signOut();
   }
 

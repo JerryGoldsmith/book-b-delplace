@@ -1,3 +1,21 @@
+.textAuth {
+  position: relative;
+  font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-white);
+  font-size: 2.6rem;
+  letter-spacing: -0.05em;
+  // padding-top: 68px;
+  // margin-left: 19.5em;
+  transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+
+.emailAuth {
+  position: relative;
+  font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-fluo);
+  font-size: 2.6rem;
+}
+
 .blocks {
   display: flex;
   justify-content: space-between;
@@ -11,7 +29,7 @@
 
 .backgroundA {
   width: 38.625rem;
-  height: 34.25;
+  height: 30.25;
   background-image: url("../../../assets/sahara.jpg");
   background-size: 78.75rem 78.75rem;
   background-position: center 100%;

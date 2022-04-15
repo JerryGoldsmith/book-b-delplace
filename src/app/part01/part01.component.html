@@ -27,19 +27,20 @@
         <!-- identification -->
 
         <section class="layoutFrame background">
+
             <ul>
-              <li routerLinkActive="active" *ngIf="!isAuth">
+              <li routerLinkActive="active" *ngIf="!isAuth && userData | async">
                 <a routerLink="/auth/signup" class="link">Créer un compte</a>
               </li>
-              <li routerLinkActive="active" *ngIf="!isAuth">
+              <li routerLinkActive="active" *ngIf="!isAuth && !(userData | async)">
                 <a routerLink="/auth/signin" class="link">Connection</a>
-                <div class="baseline-frame">
+                <div class="baseline-frame" *ngIf="!(userData | async)">
                   <h2 class="baseline-title"><strong>Identifiants démos</strong></h2>
                   <p class="baseline"><strong>demo@demo.com</strong> - <strong>DemoDemoDemo</strong></p>
                 </div>
               </li>
               <li>
-                <a (click)="onSignOut()" *ngIf="isAuth" style="cursor: pointer" class="link">Déconnection</a>
+                <a (click)="onSignOut()" *ngIf="isAuth && userData | async" style="cursor: pointer" class="link">Déconnection</a>
               </li>
               <li>
                 <a *ngIf="isAuth" routerLink="/auth/signinlist" style="cursor: pointer" class="link-back">Retour à la liste</a>
