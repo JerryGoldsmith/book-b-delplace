@@ -1,7 +1,6 @@
 <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
 
-      <!-- <h2> {{ seatName }} </h2>
-      <h2> {{ seatStatus }} </h2> -->
+      <!-- <h2> {{ seatStatus }} </h2> -->
       
       <!-- ----------- Balcon ------------ -->
 
@@ -30,149 +29,17 @@
 
             <!-- display if buttons on, each by seatName -->
 
-            <!-- Balcon 1 -->
             <button type="submit"
             id="items-delete-button-small"
             *ngIf="i===0
             && seatStatus === 'éteint'"
             (click)="onSwitchOff()"
+            (click)="deleteOrder(order)"
             [index]="i"
             href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
             <span class="material-icons cursorPoint"
             >delete</span> 
             </button>
-
-            <!-- Balcon 2 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 2'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 3 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 3'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 4 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 4'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 5 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 5'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 6 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 6'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 7 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 7'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 8 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 8'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 9 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 9'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 10 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 10'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 11 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 11'"
-            (click)="deleteOrder(seat)"
-            (click)="onSwitchDelete()" 
-            (click)="onSaveOnFirebase()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
-
-            <!-- Balcon 12 -->
-            <!-- <button type="submit"
-            id="items-delete-button-small"
-            *ngIf="i===0 && seatStatus === 'éteint' && seatName === 'Balcon 12'"
-            (click)="deleteOrder(seat)"
-            (click)="onSaveOnFirebase()"
-            (click)="onSwitchDelete()"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button> -->
       </div>
 
       <!-- Orchestre -->

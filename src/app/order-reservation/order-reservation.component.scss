@@ -12,6 +12,16 @@ h1 {
   padding-bottom: 30px;
 }
 
+h3 {
+  color: var(--color-fluo);
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  font-size: 68px;
+  letter-spacing: -0.05em;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .container {
   flex-direction: row;
   flex-direction: column;

@@ -18,7 +18,7 @@
       <td class="cell-left">{{ order.payload.doc.data().customerFirstName }}</td>
       <td class="cell-right">{{ order.payload.doc.data().customerName }}</td>
       <td class="cell-right">{{ order.payload.doc.data().customerCountry }}</td>
-      <td class="cell-right">{{ order.payload.doc.data().customerAge }}</td>
+      <td class="cell-right">{{ order.payload.doc.data().customerAge }} ans</td>
       <td class="cell-right">
         <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">{{ seatOne }}   </span>
       </td>

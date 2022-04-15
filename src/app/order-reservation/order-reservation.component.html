@@ -2,7 +2,7 @@
 
   <h1 class="title verticalOptimisation">Réservation</h1>
 
-  <form [formGroup]="this.reservationService.form">
+  <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
 
     <div class="verticalOptimisation">
 
@@ -27,7 +27,8 @@
         <input size="42" placeholder="Pays"
         formControlName="customerCountry"
         type="text" id="fields"
-        class="col s12"/>
+        class="col s12"/><br />
+        <p>* uniquement FR, USA, UK, IT, ESP, CAN</p>
       </div>
 
       <!-- age > form -->
@@ -60,7 +61,7 @@
               <!-- Display buttons Balcon (app-seats) -->
               <div [hidden]="seatOne.key === 'Orchestre'">
 
-                <h1>{{ seatOne.key }}</h1>
+                <h3>{{ seatOne.key }}</h3>
 
                 <app-seats
                   class="input-field col s4"
@@ -112,7 +113,7 @@
             <!-- Display buttons Orchestre (app-seats) -->
             <div [hidden]="seatOne.key === 'Balcon'">
 
-              <h1>{{ seatOne.key }}</h1>
+              <h3>{{ seatOne.key }}</h3>
 
               <app-seats
                 class="input-field col s4"
@@ -233,11 +234,12 @@
         <!-- remove in seatOneOrders (firestore) -->
         <!-- <div *ngFor="let seatOne of seatOneOrder; let i = index">
           <button type="submit"
-            *ngIf="i===0 && showDiv.current"
+            *ngIf="i===0 
+            && showDiv.current"
             id="submit-button"
             (click) = "onSaveOnFirebase()"
             routerLink="/home-result"
-            [index]="i+1">Valider ma commande</button>
+            [index]="i">Valider ma commande</button>
         </div> -->
 
       </div>

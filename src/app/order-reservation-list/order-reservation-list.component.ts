@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 // import { SeatsComponent } from "src/app/modules/seats/seats.component";
 import { Subscription } from 'rxjs/Subscription';
@@ -24,6 +24,7 @@ export class OrderReservationListComponent implements OnInit {
   status: string  = 'Status';
   kind: string    = 'Kind';
 
+  @Input() toto: string;
   @Input() seatName: string;
   @Input() seatStatus: string;
   @Input() seatKind: string;
@@ -32,7 +33,7 @@ export class OrderReservationListComponent implements OnInit {
 
   // @Output() seatName = new EventEmitter();
   // @Output() seatStatus = new EventEmitter();
-  // @Output() seatKind = new EventEmitter();
+  // @Output() childStatus = new EventEmitter();
   // @Output() seatCompleted = new EventEmitter();
 
   // @ViewChild(OrderReservationListComponent, { static: false }) seatNameRef: OrderReservationListComponent;
@@ -77,8 +78,7 @@ export class OrderReservationListComponent implements OnInit {
   // }
 
   constructor(
-    public reservationService: OrderReservationService,
-    private route: ActivatedRoute
+    public reservationService: OrderReservationService
   ) {}
 
   // receiveName($event: string) {  

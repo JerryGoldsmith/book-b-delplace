@@ -15,24 +15,24 @@ import { AngularFirestore } from '@angular/fire/firestore';
   './../order-reservation-list/order-reservation-list.component.scss',
   './../normalize.component.scss']
 })
-export class OrderReservationComponent implements OnInit {
+export class OrderReservationComponent implements OnInit, AfterViewInit {
 
   isShow = false;
 
-  // seatsForm: FormGroup;
-  seatsForm = new FormGroup({
-    id: new FormControl(this.afs.createId()),
-    customerFirstName: new FormControl(""),
-    customerName: new FormControl(""),
-    customerCountry: new FormControl(""),
-    customerAge: new FormControl(""),
-    date: new FormControl(
-      {
-        time: firebase.firestore.FieldValue.serverTimestamp()
-      }),
-    seatOneOrder: new FormControl(""),
-    completed: new FormControl(false)
-  });
+  seatsForm: FormGroup;
+  // seatsForm = new FormGroup({
+  //   id: new FormControl(this.afs.createId()),
+  //   customerFirstName: new FormControl(""),
+  //   customerName: new FormControl(""),
+  //   customerCountry: new FormControl(""),
+  //   customerAge: new FormControl(""),
+  //   date: new FormControl(
+  //     {
+  //       time: firebase.firestore.FieldValue.serverTimestamp()
+  //     }),
+  //   seatOneOrder: new FormControl(""),
+  //   completed: new FormControl(false)
+  // });
 
   // seatOnes: any = [];
   seatOnes: Array<any> = [];
@@ -47,6 +47,7 @@ export class OrderReservationComponent implements OnInit {
   status: string  = 'Status';
   kind: string    = 'Kind';
 
+  toto = 'Welcome Test';
   @Input() seatId: number;
   @Input() seatName: string;
   @Input() seatStatus: string;
@@ -54,6 +55,7 @@ export class OrderReservationComponent implements OnInit {
   @Input() seatCompleted: boolean;
   @Input() index: number;
 
+  @ViewChild(OrderReservationListComponent) child: any;
   // @ViewChild(OrderReservationListComponent) childId: any;
   // @ViewChild(OrderReservationListComponent) childName: any;
   // @ViewChild(OrderReservationListComponent) childStatus: any;
@@ -76,14 +78,15 @@ export class OrderReservationComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  // ngAfterViewInit(): void {
-  //   // this.seatId = this.childId.seatId;
-  //   // this.seatName = this.childName.seatName;
-  //   // this.seatStatus = this.childStatus.seatStatus;
-  //   // this.seatKind = this.childKind.seatKind;
-  //   // this.seatCompleted = this.childCompleted.seatCompleted;
-  //   // this.index = this.childIndex.index;
-  // }
+  ngAfterViewInit(): void {
+    this.toto = this.child.toto;
+    // this.seatId = this.childId.seatId;
+    // this.seatName = this.childName.seatName;
+    // this.seatStatus = this.childStatus.seatStatus;
+    // this.seatKind = this.childKind.seatKind;
+    // this.seatCompleted = this.childCompleted.seatCompleted;
+    // this.index = this.childIndex.index;
+  }
 
   ngOnInit(): void {
 
