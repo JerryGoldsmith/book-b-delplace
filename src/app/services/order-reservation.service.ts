@@ -341,6 +341,16 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
+  // by country && age
+  getSeatByCountryAge() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('customerCountry', '==', 'USA')
+      .where ('customerAge', '<', 50)
+      .limit(100))
+      .snapshotChanges();
+  }
+
   getSeatOneOrders() {
     return this.afs
       .collection("seatOneOrders", ref => ref
