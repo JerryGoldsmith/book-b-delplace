@@ -238,8 +238,11 @@
             <button type="submit"
               *ngIf="i===0 
               && showDiv.current
+              && 'Balcon 1'
+              && 'Balcon 2'
               && 'Balcon 10'"
               id="submit-button"
+              (click)="markCompleted(order)"
               (click)="deleteOrder(order)"
               (click) = "onSaveOnFirebase()"
               [index]="i"
