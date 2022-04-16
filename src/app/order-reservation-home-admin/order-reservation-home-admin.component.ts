@@ -1,7 +1,5 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
-import { OrderReservationListComponent } from "../order-reservation-list/order-reservation-list.component";
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-order-reservation-home-admin',
@@ -10,13 +8,6 @@ import { Subscription } from 'rxjs/Subscription';
   './../normalize.component.scss']
 })
 export class OrderReservationHomeAdminComponent implements OnInit {
-
-//   @ViewChild(OrderReservationListComponent) childId: any;
-//   @ViewChild(OrderReservationListComponent) childName: any;
-//   @ViewChild(OrderReservationListComponent) childStatus: any;
-//   @ViewChild(OrderReservationListComponent) childKind: any;
-//   @ViewChild(OrderReservationListComponent) childCompleted: any;
-//   @ViewChild(OrderReservationListComponent) childIndex: any;
 
   constructor(
     public reservationService: OrderReservationService

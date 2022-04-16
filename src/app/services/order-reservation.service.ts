@@ -419,7 +419,10 @@ export class OrderReservationService {
   }) {
   return this.afs
     .collection("seatOneOrders")
-    .doc(data.payload.doc.id)
+    .doc(data
+      .payload
+      .doc
+      .id)
     .delete();
   }
 

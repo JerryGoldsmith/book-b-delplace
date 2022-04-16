@@ -2,19 +2,16 @@
 <table>
   <thead>
     <tr>
-      <!-- <th id="all-form-titles" class="vertical-lign-white">Timestamp</th> -->
       <th class="vertical-lign-maincolor cell-title-right">Prénom</th>
       <th class="vertical-lign-maincolor cell-title-right">Nom</th>
       <th class="vertical-lign-maincolor cell-title-right">Pays</th>
       <th class="vertical-lign-maincolor cell-title-right">Age</th>
       <th class="vertical-lign-maincolor cell-title-left">Votre siège</th>
-      <!-- <th class="vertical-lign-maincolor cell-title-left">Supprimer</th> -->
     </tr>
   </thead>
 
   <tbody *ngFor="let order of seatOneOrders">
     <tr>
-      <!-- <td id="all-forms" class="vertical-lign-fluo">{{ order.payload.doc.data().date.time }}</td> -->
       <td class="cell-left">{{ order.payload.doc.data().customerFirstName }}</td>
       <td class="cell-right">{{ order.payload.doc.data().customerName }}</td>
       <td class="cell-right">{{ order.payload.doc.data().customerCountry }}</td>
@@ -22,20 +19,7 @@
       <td class="cell-right">
         <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">{{ seatOne }}   </span>
       </td>
-      <!-- <td
-        (click)="deleteOrder(order)"
-        class="cell-right-border"
-        [ngModelOptions]="{ standalone: true }"
-        (click)="onSwitch()"
-        (click) = "onSaveOnFirebase()"
-        ngDefaultControl
-        href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-        <span class="material-icons cursorPoint"
-        >delete</span>  
-      </td> -->
     </tr>
   </tbody>
 </table>
-
-<!-- <app-order-reservation></app-order-reservation> -->
 

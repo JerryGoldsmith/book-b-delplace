@@ -34,7 +34,6 @@
             *ngIf="i===0
             && seatStatus === 'éteint'"
             (click)="onSwitchOff()"
-            (click)="deleteOrder(order)"
             [index]="i"
             href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
             <span class="material-icons cursorPoint"
@@ -55,7 +54,7 @@
       <button type="submit"
       id="notAvailable"
       *ngIf="seatStatus === 'éteint'"
-      disabled="{{buttonDisabled}}"
+      disabled="{{ buttonDisabled }}"
       [value]="seatName.id"
       (click)="onSwitchOn()">{{ seatName }}</button>
 
