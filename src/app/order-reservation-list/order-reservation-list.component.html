@@ -23,7 +23,7 @@
       </td>
       <td
         [hidden]="order.payload.doc.data().completed"
-        class="cell-right-border"
+        class="cell-right"
         [ngModelOptions]="{ standalone: true }"
         (click)="onSwitch()"
         (click)="deleteOrder(order)"
@@ -33,12 +33,12 @@
         <span class="material-icons cursorPoint"
         >delete</span>  
       </td>
-      <!-- <td
+      <td
         [hidden]="order.payload.doc.data().completed"
         class="cell-right-border"
         (click)="markCompleted(order)">
         <i class="material-icons">check</i>
-      </td> -->
+      </td>
     </tr>
   </tbody>
 </table>
