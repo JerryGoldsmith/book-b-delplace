@@ -277,7 +277,7 @@ export class OrderReservationService {
     var seatsRef = this.afs
       .collection("seatOneOrders")
       .doc("results-id")
-    return  new Promise<any>((resolve, reject) => {
+    return new Promise<any>((resolve, reject) => {
       seatsRef
         .update(data)
         .then(res => {}, err => reject(err));
@@ -289,7 +289,7 @@ export class OrderReservationService {
     var seatsRef = this.afs
       .collection("seatOneOrders")
       .doc("results-id")
-    return  seatsRef
+    return seatsRef
         .update({ 
           SeatsCount: firebase.firestore
           .FieldValue.increment(1) 
@@ -298,19 +298,17 @@ export class OrderReservationService {
 
   // ---- read -----
 
-  getSeatById(id: number) { // id
-    const seatOne = this.seatOnes
-      .find(
-      (seatOneObject) => {
-        return seatOneObject.id === id;
-      }
-    );
-    return seatOne;
-  }
-
   getSeatAdminOrders() {
     return this.afs
       .collection("seatOneOrders")
+      .snapshotChanges();
+  }
+
+  getSeatId() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .orderBy ('id', 'asc')
+      .limit(100))
       .snapshotChanges();
   }
 
@@ -352,18 +350,18 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
-  getSeatOneOrderById() {
-    this.afs.collection<any>('seatOneOrders')
-    .snapshotChanges()
-    .pipe(map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data();
-        const id = a.payload.doc.id;
-        console.log('id', id, 'data', data);
-        return {id, data};
-      });
-    })).subscribe();
-  }
+  // getSeatOneOrderById() {
+  //   this.afs.collection<any>('seatOneOrders')
+  //   .snapshotChanges()
+  //   .pipe(map(actions => {
+  //     return actions.map(a => {
+  //       const data = a.payload.doc.data();
+  //       const id = a.payload.doc.id;
+  //       console.log('id', id, 'data', data);
+  //       return {id, data};
+  //     });
+  //   })).subscribe();
+  // }
 
   getSeatOneOrders() {
     return this.afs
@@ -562,6 +560,18 @@ export class OrderReservationService {
         return value;
 
     });
+  }
+
+  // -------
+
+  getSeatById(id: number) { // id
+    const seatOne = this.seatOnes
+      .find(
+      (seatOneObject) => {
+        return seatOneObject.id === id;
+      }
+    );
+    return seatOne;
   }
 
   // --------------

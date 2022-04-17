@@ -252,6 +252,7 @@
               *ngIf="i===0 
               && showDiv.current"
               id="submit-button"
+              (click)="getSeatIds()"
               (click)="deleteOrder(order)"
               (click) = "onSaveOnFirebase()"
               [index]="i"

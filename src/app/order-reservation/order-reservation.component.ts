@@ -43,7 +43,7 @@ export class OrderReservationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getSeatAdminOrders();
+    this.getSeatIds();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -75,9 +75,9 @@ export class OrderReservationComponent implements OnInit {
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
-  getSeatAdminOrders = () =>
+  getSeatIds = () =>
     this.reservationService
-      .getSeatAdminOrders()
+      .getSeatId()
       .subscribe(result => (this.seatOneOrders = result));
 
   markCompleted = (data: 
