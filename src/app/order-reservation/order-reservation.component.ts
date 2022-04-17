@@ -88,7 +88,7 @@ export class OrderReservationComponent implements OnInit {
         }; 
       }; 
     }): Promise<void> => {
-      return this.reservationService.updateSeatOne();
+      return this.reservationService.updateSeatOne(data);
   };
 
   deleteOrder = (data: 

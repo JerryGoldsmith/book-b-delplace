@@ -391,10 +391,13 @@ export class OrderReservationService {
 
   // ---- update -----
 
-  updateSeatOne() { // U is for Update
+  updateSeatOne(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
     return this.afs
       .collection("seatOneOrders")
-      .doc("completed")
+      .doc(data
+        .payload
+        .doc
+        .id)
       .set({ completed: true }, { merge: true });
   }
 
