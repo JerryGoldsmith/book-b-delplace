@@ -234,18 +234,30 @@
         <!-- remove in seatOneOrders (firestore) -->
         <div *ngFor="let order of seatOneOrders; let i = index">
           <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
-            {{ order.payload.doc.data().completed }}
-            <button type="submit"
-              [ngModel]="order.payload.doc.data().completed"
-              *ngIf="i===0 
-              && showDiv.current
-              && true"
+
+            {{ order.payload.doc.data().id }}
+
+            <div>
+              <button type="submit"
+              *ngIf="i===0
+              && showDiv.current"
               id="submit-button"
               (click)="markCompleted(order)"
+              (click) = "onSaveOnFirebase()"
+              routerLink="/home-result">Passer en true</button>
+            </div>
+
+            <div *ngIf="order.payload.doc.data().completed">
+              <button type="submit"
+              *ngIf="i===0 
+              && showDiv.current"
+              id="submit-button"
               (click)="deleteOrder(order)"
               (click) = "onSaveOnFirebase()"
               [index]="i"
               routerLink="/home-result">Supprimer ma commande</button>
+            </div>
+
           </div>
         </div>
 
@@ -255,12 +267,11 @@
             <button type="submit"
               *ngIf="i===0 
               && showDiv.current
-              && 'Balcon 1'
               && 'Balcon 2'
+              && 'Balcon 5'
               && 'Balcon 10'"
               id="submit-button"
               (click)="markCompleted(order)"
-              (click)="deleteOrder(order)"
               (click) = "onSaveOnFirebase()"
               [index]="i"
               routerLink="/home-result">Supprimer ma commande</button>

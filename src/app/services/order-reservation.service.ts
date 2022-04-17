@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http'; // Acces Firebase
 import firebase from 'firebase/app';
 import "firebase/database";
 import { AngularFirestore } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: "root"
@@ -349,6 +350,19 @@ export class OrderReservationService {
       .where ('customerAge', '<', 50)
       .limit(100))
       .snapshotChanges();
+  }
+
+  getSeatOneOrderById() {
+    this.afs.collection<any>('seatOneOrders')
+    .snapshotChanges()
+    .pipe(map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        console.log('id', id, 'data', data);
+        return {id, data};
+      });
+    })).subscribe();
   }
 
   getSeatOneOrders() {

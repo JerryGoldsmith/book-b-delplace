@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthFsService } from '../../services/auth-fs.service';
+// import { AuthFsService } from '../../services/auth-fs.service';
 import { AuthGuardService } from '../../services/auth-guard.service';
 import { Router } from '@angular/router';
 // import custom validator to validate that password and confirm password fields match
@@ -27,7 +27,7 @@ export class SignupFsComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthFsService,
+    // private authService: AuthFsService,
     private authGuardService: AuthGuardService,
     private router: Router
   ) { }
@@ -135,16 +135,16 @@ export class SignupFsComponent implements OnInit {
     //   console.log("OK");
     // });
 
-    this.authService.createNewUserPushInFirebase(newUser);
+    // this.authService.createNewUserPushInFirebase(newUser);
 
-    this.authService.createNewUser(email, password).then(
-      () => {
-        this.router.navigate(['/users']);
-      },
-      (error) => {
-        this.errorMessage = error;
-      }
-    );
+    // this.authService.createNewUser(email, password).then(
+    //   () => {
+    //     this.router.navigate(['/users']);
+    //   },
+    //   (error) => {
+    //     this.errorMessage = error;
+    //   }
+    // );
   }
 
   onReset() {

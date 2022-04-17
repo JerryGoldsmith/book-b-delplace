@@ -32,9 +32,9 @@ export class SeatsComponent implements OnInit {
 
   // sortedData: any;
 
-  // id: number      = 3;
-  // name: string    = 'SeatOn';
-  // status: string  = 'Status';
+  id: number      = 3;
+  name: string    = 'SeatOn';
+  status: string  = 'Status';
 
   // realtime database
   @Input() seatId: number;
@@ -45,8 +45,8 @@ export class SeatsComponent implements OnInit {
   @Input() index: number;
 
   constructor(
-    public reservationService: OrderReservationService
-    // private route: ActivatedRoute // with id
+    public reservationService: OrderReservationService,
+    private route: ActivatedRoute // with id
   ) { }
 
   ngOnInit(): void {
@@ -55,9 +55,9 @@ export class SeatsComponent implements OnInit {
 
     this.getSeatQuery(); // display delate buttons
 
-    // const id = this.route.snapshot.params['id'];
-    // this.name = this.reservationService.getSeatById(+id).name;
-    // this.status = this.reservationService.getSeatById(+id).status;
+    const id = this.route.snapshot.params['id'];
+    this.name = this.reservationService.getSeatById(+id).name;
+    this.status = this.reservationService.getSeatById(+id).status;
 
     this.seatOneSubscription = this.reservationService.seatOneSubject
     .subscribe(
