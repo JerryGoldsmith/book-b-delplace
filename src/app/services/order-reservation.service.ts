@@ -307,9 +307,10 @@ export class OrderReservationService {
   getSeatId() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .orderBy ('id', 'asc')
-      .limit(100))
-      .snapshotChanges();
+      .orderBy ('date', 'desc') // order by timestamp
+      .endAt('id') // focus id
+      .limit(32)) // 32 buttons
+      .snapshotChanges()
   }
 
   // by country

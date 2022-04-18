@@ -100,22 +100,7 @@ export class OrderReservationComponent implements OnInit {
       }; 
     }) => this.reservationService.deleteSeatOneOrder(data);
 
-  removeSeatOne = (seatOne: any) => {
-    let index = this.seatOneOrder.indexOf(seatOne);
-    if (index > -1) this.seatOneOrder.splice(index, 1);
-   };
-
   onSubmit() {
-    this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
-
-    let data = this.reservationService.form.value;
-
-    this.reservationService.createSeatOneOrder(data).then(res => {
-      console.log("OK");
-    });
-  }
-
-  onSubmitDelete() {
     this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
 
     let data = this.reservationService.form.value;
@@ -134,6 +119,11 @@ export class OrderReservationComponent implements OnInit {
   onFetchFromFirebase() { 
     this.reservationService.saveSeatsFromFirebaseinServer();
   }
+
+  removeSeatOne = (seatOne: any) => {
+    let index = this.seatOneOrder.indexOf(seatOne);
+    if (index > -1) this.seatOneOrder.splice(index, 1);
+  };
 
   onDestroy() {
     this.seatOneSubscription.unsubscribe();
