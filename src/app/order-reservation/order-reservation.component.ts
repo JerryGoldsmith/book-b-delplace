@@ -75,6 +75,11 @@ export class OrderReservationComponent implements OnInit {
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
+  getSeatIdThree = () =>
+    this.reservationService
+      .getSeatId()
+      .subscribe(result => (this.seatOneOrders = result));
+
   getSeatIds = () =>
     this.reservationService
       .getSeatId()

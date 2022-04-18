@@ -1,0 +1,29 @@
+<p>button-a works</p>
+<form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
+
+    <div *ngFor="let order of seatOneOrders; let i = index">
+        <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
+    
+          {{ order.payload.doc.data().id }}
+          {{ order.payload.doc.data().customerName }}
+    
+          <div>
+            <button type="submit"
+              id="submit-button"
+              (click)="markCompleted(order)"
+              (click) = "onSaveOnFirebase()"
+              routerLink="/home-result">Passer en true : Balcon 6</button>
+          </div>
+    
+          <div *ngIf="order.payload.doc.data().completed">
+            <button type="submit"
+            id="submit-button"
+            (click)="getSeatIds()"
+            (click)="deleteOrder(order)"
+            (click) = "onSaveOnFirebase()"
+            routerLink="/home-result">Supprimer ma commande</button>
+          </div>
+    
+        </div>
+      </div>
+</form>

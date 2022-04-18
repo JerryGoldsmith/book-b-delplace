@@ -307,10 +307,20 @@ export class OrderReservationService {
   getSeatId() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .orderBy ('date', 'desc') // order by timestamp
-      .endAt('id') // focus id
-      .limit(32)) // 32 buttons
+      // .orderBy ('date', 'asc') // order by timestamp
+      .where ('seatOneOrder', 'array-contains', 'Balcon 6')
+      // .orderBy ('id', 'desc')
+      // .startAt('id') // focus id
+      // .endAt('id')
+      .limit(1)) // 32 buttons
       .snapshotChanges()
+      // .pipe(
+      //   map(changes => changes.map(({ payload: { doc } }) => {
+      //     const data = doc.data();
+      //     const id = doc.id
+      //     return { id };
+      //   })),
+      //   map((products) => products.find(doc => doc.id === id)))
   }
 
   // by country
