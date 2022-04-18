@@ -10,6 +10,8 @@
           <div>
             <button type="submit"
               id="submit-button"
+              [hidden]="order.payload.doc.data().seatOneOrder == 'Balcon 1'
+              || order.payload.doc.data().seatOneOrder == 'Balcon 7'"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()"
               routerLink="/home-result">Passer en true : Balcon 6</button>
