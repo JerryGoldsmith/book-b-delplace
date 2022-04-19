@@ -13,38 +13,38 @@ export class ReservationDeleteButtonsService {
       ) {}
 
       /*
-  AA > 1
-  BA > 2 
-  CA > 3
-  DA > 4
-  EA > 5
-  FA > 6
-  GA > 7
-  HA > 8
-  IA > 9
-  JA > 10
-  KA > 11
-  LA > 12
-  MA > 13
-  NA > 14
-  OA > 15
-  PA > 16
-  QA > 17
-  RA > 18
-  SA > 19
-  TA > 20
-  UA > 21
-  VA > 22
-  WA > 23
-  XA > 24
-  YA > 25
-  ZA > 26
-  AB > 27
-  BB > 28
-  CB > 29
-  DB > 30
-  EB > 31
-  FB > 32
+  AA > Balcon 1
+  BA > Balcon 2 
+  CA > Balcon 3
+  DA > Balcon 4
+  EA > Balcon 5
+  FA > Balcon 6
+  GA > Balcon 7
+  HA > Balcon 8
+  IA > Balcon 9
+  JA > Balcon 10
+  KA > Balcon 11
+  LA > Balcon 12
+  MA > Orchestre 13
+  NA > Orchestre 14
+  OA > Orchestre 15
+  PA > Orchestre 16
+  QA > Orchestre 17
+  RA > Orchestre 18
+  SA > Orchestre 19
+  TA > Orchestre 20
+  UA > Orchestre 21
+  VA > Orchestre 22
+  WA > Orchestre 23
+  XA > Orchestre 24
+  YA > Orchestre 25
+  ZA > Orchestre 26
+  AB > Orchestre 27
+  BB > Orchestre 28
+  CB > Orchestre 29
+  DB > Orchestre 30
+  EB > Orchestre 31
+  FB > Orchestre 32
   */
 
   getSeatDeleteButtonAA() {

@@ -205,20 +205,9 @@
             showDiv.next = false">
             <div *ngIf = "!showDiv.current">
               <button
-              id="submit-button"
+              id="close-button"
               (click) = "onFetchFromFirebase()">Afficher les sièges disponibles</button>
             </div>
-        </div>
-
-        <!-- button > hide balcon/orchestre buttons -->
-        <div (click)="showDiv.previous = !showDiv.previous;
-          showDiv.current = false;
-          showDiv.next = false"
-          class="center">
-
-          <button *ngIf="showDiv.current"
-            id="close-button"
-            (click) = "onFetchFromFirebase()">Cacher les sièges</button>
         </div>
 
         <!-- button > save choice on Firebase -->
@@ -235,6 +224,8 @@
         <div *ngFor="let order of seatOneOrders; let i = index">
           <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
 
+            <!-- balcon -->
+
             <app-button-aa
             *ngIf="i===0
               && showDiv.current" [index]="i"
@@ -248,7 +239,125 @@
             *ngIf="i===0
               && showDiv.current" [index]="i"></app-button-ca>
 
-            <!-- <div>
+            <app-button-da
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-da>
+
+            <app-button-ea
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ea>
+
+            <app-button-fa
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-fa>
+
+            <app-button-ga
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ga>
+
+            <app-button-ha
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ha>
+
+            <app-button-ia
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ia>
+
+            <app-button-ja
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ja>
+
+            <app-button-ka
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ka>
+
+            <app-button-la
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-la>
+
+            <!-- orchestre -->
+
+            <app-button-ma
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ma>
+
+            <app-button-na
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-na>
+
+            <app-button-oa
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-oa>
+
+            <app-button-pa
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-pa>
+
+            <app-button-qa
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-qa>
+
+            <app-button-ra
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ra>
+
+            <app-button-sa
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-sa>
+
+            <app-button-ta
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ta>
+
+            <app-button-ua
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ua>
+
+            <app-button-va
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-va>
+
+            <app-button-wa
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-wa>
+
+            <app-button-xa
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-xa>
+
+            <app-button-ya
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ya>
+
+            <app-button-za
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-za>
+
+            <app-button-ab
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ab>
+
+            <app-button-bb
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-bb>
+
+            <app-button-cb
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-cb>
+
+            <app-button-db
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-db>
+
+            <app-button-eb
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-eb>
+
+            <app-button-fb
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-fb>
+
+              <!-- <div>
               <button type="submit"
               *ngIf="i===0
               && showDiv.current"
@@ -289,6 +398,17 @@
               routerLink="/home-result">Supprimer ma commande</button>
           </div>
         </div> -->
+
+        <!-- button > hide balcon/orchestre buttons -->
+        <div (click)="showDiv.previous = !showDiv.previous;
+          showDiv.current = false;
+          showDiv.next = false"
+          class="center">
+
+          <button *ngIf="showDiv.current"
+            id="close-button"
+            (click) = "onFetchFromFirebase()">Cacher les sièges</button>
+        </div>
 
       </div>
 
