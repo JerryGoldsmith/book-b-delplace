@@ -1,4 +1,3 @@
-<p>button-a works</p>
 <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
 
     <div *ngFor="let order of seatOneOrders; let i = index">
@@ -9,7 +8,7 @@
               id="submit-button"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()"
-              routerLink="/home-result">Passer en true : Balcon 1</button>
+              routerLink="/home-result">Passer en true : Balcon 3</button>
           </div>
     
           <div *ngIf="order.payload.doc.data().completed">

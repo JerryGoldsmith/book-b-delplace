@@ -6,11 +6,11 @@ import { FormGroup } from '@angular/forms';
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-button-aa',
-  templateUrl: './button-aa.component.html',
-  styleUrls: ['./button-aa.component.scss']
+  selector: 'app-button-ba',
+  templateUrl: './button-ba.component.html',
+  styleUrls: ['./../buttons.component.scss']
 })
-export class ButtonAAComponent implements OnInit {
+export class ButtonBAComponent implements OnInit {
 
   seatsForm: FormGroup;
 
@@ -26,8 +26,7 @@ export class ButtonAAComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.getSeatIds();
-    this.getDeleteButtonAA();
+    this.getDeleteButtonBA();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -41,14 +40,9 @@ export class ButtonAAComponent implements OnInit {
 
   seatOneOrders: DocumentChangeAction<unknown>[];
 
-  getDeleteButtonAA = () =>
+  getDeleteButtonBA = () =>
     this.deleteButtonsService
-      .getSeatDeleteButtonAA()
-      .subscribe(result => (this.seatOneOrders = result));
-
-  getSeatIds = () =>
-    this.reservationService
-      .getSeatId()
+      .getSeatDeleteButtonBA()
       .subscribe(result => (this.seatOneOrders = result));
 
   markCompleted = (data: 

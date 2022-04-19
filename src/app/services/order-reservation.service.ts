@@ -244,7 +244,11 @@ export class OrderReservationService {
       this.afs
         .collection("seatOneOrders")
         .add(data)
-        .then(res => {}, err => reject(err));
+        .then(result => {
+          resolve(result);
+        }).catch(err => {
+          reject(err);
+        });
     });
   }
 

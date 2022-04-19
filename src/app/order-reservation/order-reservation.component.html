@@ -237,9 +237,16 @@
 
             <app-button-aa
             *ngIf="i===0
-              && showDiv.current" [index]="i"></app-button-aa>
+              && showDiv.current" [index]="i"
+              ></app-button-aa>
 
-            {{ order.payload.doc.data().id }}
+            <app-button-ba
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ba>
+
+            <app-button-ca
+            *ngIf="i===0
+              && showDiv.current" [index]="i"></app-button-ca>
 
             <!-- <div>
               <button type="submit"
