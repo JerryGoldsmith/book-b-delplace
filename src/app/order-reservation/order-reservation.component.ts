@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
+import { ReservationDeleteButtonsService } from "../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -38,12 +39,49 @@ export class OrderReservationComponent implements OnInit {
 
   constructor(
     public reservationService: OrderReservationService,
+    public deleteButtonsService: ReservationDeleteButtonsService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
 
-    this.getSeatIds();
+    /*
+  AA > 1
+  BA > 2 
+  CA > 3
+  DA > 4
+  EA > 5
+  FA > 6
+  GA > 7
+  HA > 8
+  IA > 9
+  JA > 10
+  KA > 11
+  LA > 12
+  MA > 13
+  NA > 14
+  OA > 15
+  PA > 16
+  QA > 17
+  RA > 18
+  SA > 19
+  TA > 20
+  UA > 21
+  VA > 22
+  WA > 23
+  XA > 24
+  YA > 25
+  ZA > 26
+  AB > 27
+  BB > 28
+  CB > 29
+  DB > 30
+  EB > 31
+  FB > 32
+  */
+
+    // this.getSeatIds();
+    this.getDeleteButtonFA();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -75,15 +113,20 @@ export class OrderReservationComponent implements OnInit {
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
-  getSeatIdThree = () =>
-    this.reservationService
-      .getSeatId()
+  getDeleteButtonFA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonFA()
       .subscribe(result => (this.seatOneOrders = result));
 
-  getSeatIds = () =>
-    this.reservationService
-      .getSeatId()
-      .subscribe(result => (this.seatOneOrders = result));
+  // getSeatIdThree = () =>
+  //   this.reservationService
+  //     .getSeatId()
+  //     .subscribe(result => (this.seatOneOrders = result));
+
+  // getSeatIds = () =>
+  //   this.reservationService
+  //     .getSeatId()
+  //     .subscribe(result => (this.seatOneOrders = result));
 
   markCompleted = (data: 
     { payload: 

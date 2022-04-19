@@ -235,9 +235,9 @@
         <div *ngFor="let order of seatOneOrders; let i = index">
           <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
 
-            <app-button-a
+            <app-button-aa
             *ngIf="i===0
-              && showDiv.current" [index]="i"></app-button-a>
+              && showDiv.current" [index]="i"></app-button-aa>
 
             {{ order.payload.doc.data().id }}
 

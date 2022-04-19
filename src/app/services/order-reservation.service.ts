@@ -1,12 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs';
 import { Seat } from "../models/seats.model";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormControl, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http'; // Acces Firebase
 import firebase from 'firebase/app';
 import "firebase/database";
 import { AngularFirestore } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: "root"
@@ -304,23 +303,59 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
+  /*
+  aa > 1
+  ba > 2 
+  ca > 3
+  da > 4
+  ea > 5
+  fa > 6
+  ga > 7
+  ha > 8
+  ia > 9
+  ja > 10
+  ka > 11
+  la > 12
+  ma > 13
+  na > 14
+  oa > 15
+  pa > 16
+  qa > 17
+  ra > 18
+  sa > 19
+  ta > 20
+  ua > 21
+  va > 22
+  wa > 23
+  xa > 24
+  ya > 25
+  za > 26
+  ab > 27
+  bb > 28
+  cb > 29
+  db > 30
+  eb > 31
+  fb > 32
+  */
+
   getSeatId() {
     return this.afs
       .collection("seatOneOrders", ref => ref
       // .orderBy ('date', 'asc') // order by timestamp
-      .where ('seatOneOrder', 'array-contains', 'Balcon 6')
-      // .orderBy ('id', 'desc')
       // .startAt('id') // focus id
-      // .endAt('id')
-      .limit(1)) // 32 buttons
+      .where ('seatOneOrder', 'array-contains', 'Balcon 9')
+      .limit(1))
       .snapshotChanges()
-      // .pipe(
-      //   map(changes => changes.map(({ payload: { doc } }) => {
-      //     const data = doc.data();
-      //     const id = doc.id
-      //     return { id };
-      //   })),
-      //   map((products) => products.find(doc => doc.id === id)))
+  }
+
+  getSeatDeleteButtonFA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      // .orderBy ('date', 'asc') // order by timestamp
+      // .startAt('id') // focus id
+      .where ('seatOneOrder', 'array-contains', 'Balcon 9')
+      .limit(1))
+      .snapshotChanges()
   }
 
   // by country

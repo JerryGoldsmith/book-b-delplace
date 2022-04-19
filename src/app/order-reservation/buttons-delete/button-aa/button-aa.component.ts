@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderReservationService } from "../../../services/order-reservation.service";
+import { ReservationDeleteButtonsService } from "../../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-button-a',
-  templateUrl: './button-a.component.html',
-  styleUrls: ['./button-a.component.scss']
+  selector: 'app-button-aa',
+  templateUrl: './button-aa.component.html',
+  styleUrls: ['./button-aa.component.scss']
 })
-export class ButtonAComponent implements OnInit {
+export class ButtonAAComponent implements OnInit {
 
   seatsForm: FormGroup;
 
@@ -19,12 +20,14 @@ export class ButtonAComponent implements OnInit {
   seatOneOrder = [];
 
   constructor(
-    public reservationService: OrderReservationService
+    public reservationService: OrderReservationService,
+    public deleteButtonsService: ReservationDeleteButtonsService
   ) { }
 
   ngOnInit(): void {
 
-    this.getSeatIds();
+    // this.getSeatIds();
+    this.getDeleteButtonFA();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -37,6 +40,11 @@ export class ButtonAComponent implements OnInit {
   // Cloud Firestore
 
   seatOneOrders: DocumentChangeAction<unknown>[];
+
+  getDeleteButtonFA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonFA()
+      .subscribe(result => (this.seatOneOrders = result));
 
   getSeatIds = () =>
     this.reservationService
