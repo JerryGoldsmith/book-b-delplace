@@ -84,7 +84,7 @@ export class OrderReservationComponent implements OnInit {
     this.getDeleteButtonAA();
     this.getDeleteButtonBA();
     this.getDeleteButtonCA();
-    this.getDeleteButtonDA();
+    // this.getDeleteButtonDA();
     // this.getDeleteButtonFA();
     // this.getDeleteButtonRA();
 

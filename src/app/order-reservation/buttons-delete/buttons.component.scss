@@ -33,3 +33,17 @@
   #submit-button-def:hover {
     background-color: var(--main-color);
   }
+
+  // ------
+
+  #notAvailable {
+    background-color: var(--color-gold);
+    font-size: 20px;
+    font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+    color: white;
+    border: solid 2px var(--color-gold);
+    opacity: 0.4;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }

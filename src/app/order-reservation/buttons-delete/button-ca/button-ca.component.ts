@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OrderReservationService } from "../../../services/order-reservation.service";
 import { ReservationDeleteButtonsService } from "../../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -16,6 +16,8 @@ export class ButtonCAComponent implements OnInit {
 
   seatOnes: Array<any> = [];
   seatOneSubscription: Subscription;
+
+  @Input() seatStatus: string;
 
   seatOneOrder = [];
 
