@@ -80,8 +80,13 @@ export class OrderReservationComponent implements OnInit {
   FB > 32
   */
 
-    // this.getSeatIds();
-    this.getDeleteButtonFA();
+
+    this.getDeleteButtonAA();
+    this.getDeleteButtonBA();
+    this.getDeleteButtonCA();
+    this.getDeleteButtonDA();
+    // this.getDeleteButtonFA();
+    // this.getDeleteButtonRA();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -113,20 +118,40 @@ export class OrderReservationComponent implements OnInit {
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
+  getDeleteButtonAA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonAA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonBA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonBA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonCA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonCA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonDA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonDA()
+      .subscribe(result => (this.seatOneOrders = result));
+
   getDeleteButtonFA = () =>
     this.deleteButtonsService
       .getSeatDeleteButtonFA()
       .subscribe(result => (this.seatOneOrders = result));
 
-  // getSeatIdThree = () =>
-  //   this.reservationService
-  //     .getSeatId()
-  //     .subscribe(result => (this.seatOneOrders = result));
+  getDeleteButtonRA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonRA()
+      .subscribe(result => (this.seatOneOrders = result));
 
-  // getSeatIds = () =>
-  //   this.reservationService
-  //     .getSeatId()
-  //     .subscribe(result => (this.seatOneOrders = result));
+  getSeatAdminOrders = () =>
+    this.reservationService
+      .getSeatAdminOrders()
+      .subscribe(result => (this.seatOneOrders = result));
 
   markCompleted = (data: 
     { payload: 

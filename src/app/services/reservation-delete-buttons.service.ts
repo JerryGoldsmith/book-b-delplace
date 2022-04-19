@@ -146,7 +146,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonMA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 13')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 13')
       .limit(1))
       .snapshotChanges()
   }
@@ -154,7 +154,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonNA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 14')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 14')
       .limit(1))
       .snapshotChanges()
   }
@@ -162,7 +162,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonOA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 15')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 15')
       .limit(1))
       .snapshotChanges()
   }
@@ -170,7 +170,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonPA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 16')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 16')
       .limit(1))
       .snapshotChanges()
   }
@@ -178,7 +178,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonQA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 17')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 17')
       .limit(1))
       .snapshotChanges()
   }
@@ -186,7 +186,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonRA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 18')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 18')
       .limit(1))
       .snapshotChanges()
   }
@@ -194,7 +194,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonSA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 19')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 19')
       .limit(1))
       .snapshotChanges()
   }
@@ -202,7 +202,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonTA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 20')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 20')
       .limit(1))
       .snapshotChanges()
   }
@@ -210,7 +210,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonUA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 21')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 21')
       .limit(1))
       .snapshotChanges()
   }
@@ -218,7 +218,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonVA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 22')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 22')
       .limit(1))
       .snapshotChanges()
   }
@@ -226,7 +226,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonWA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 23')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 23')
       .limit(1))
       .snapshotChanges()
   }
@@ -234,7 +234,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonXA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 24')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 24')
       .limit(1))
       .snapshotChanges()
   }
@@ -242,7 +242,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonYA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 25')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 25')
       .limit(1))
       .snapshotChanges()
   }
@@ -250,7 +250,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonZA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 26')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 26')
       .limit(1))
       .snapshotChanges()
   }
@@ -258,7 +258,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonAB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 27')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 27')
       .limit(1))
       .snapshotChanges()
   }
@@ -266,7 +266,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonBB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 28')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 28')
       .limit(1))
       .snapshotChanges()
   }
@@ -274,7 +274,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonCB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 29')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 29')
       .limit(1))
       .snapshotChanges()
   }
@@ -282,7 +282,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonDB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 30')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 30')
       .limit(1))
       .snapshotChanges()
   }
@@ -290,7 +290,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonEB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 31')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 31')
       .limit(1))
       .snapshotChanges()
   }
@@ -298,7 +298,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonFB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 32')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 32')
       .limit(1))
       .snapshotChanges()
   }
