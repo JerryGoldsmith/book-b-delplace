@@ -14,3 +14,22 @@
   #submit-button:hover {
     background-color: var(--main-color);
   }
+
+  // -----
+
+  #submit-button-def {
+    background-color: var(--color-terre-de-sienne-brule);
+    font-size: 20px;
+      font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+    color: white;
+    border: solid 2px var(--color-terre-de-sienne-brule);
+    border-radius: 10px;
+    padding: 24px;
+    margin-top: 20px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  #submit-button-def:hover {
+    background-color: var(--main-color);
+  }

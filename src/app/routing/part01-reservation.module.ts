@@ -34,6 +34,8 @@ import { OrderReservationListQueryCountryComponent } from 'src/app/order-reserva
 
 import { OrderReservationComponent } from 'src/app/order-reservation/order-reservation.component';
 import { ButtonAAComponent } from 'src/app/order-reservation/buttons-delete/button-aa/button-aa.component';
+import { ButtonBAComponent } from 'src/app/order-reservation/buttons-delete/button-ba/button-ba.component';
+import { ButtonCAComponent } from 'src/app/order-reservation/buttons-delete/button-ca/button-ca.component';
 
 import { OrderReservationResultComponent } from 'src/app/order-reservation-result/order-reservation-result.component';
 
@@ -61,6 +63,8 @@ const routes: Routes = [
 
         OrderReservationComponent,
         ButtonAAComponent,
+        ButtonBAComponent,
+        ButtonCAComponent,
         
         OrderReservationListComponent,
         OrderReservationListQueryCountryComponent,

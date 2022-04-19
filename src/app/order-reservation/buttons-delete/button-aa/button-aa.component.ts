@@ -8,7 +8,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 @Component({
   selector: 'app-button-aa',
   templateUrl: './button-aa.component.html',
-  styleUrls: ['./button-aa.component.scss']
+  styleUrls: ['./../buttons.component.scss']
 })
 export class ButtonAAComponent implements OnInit {
 

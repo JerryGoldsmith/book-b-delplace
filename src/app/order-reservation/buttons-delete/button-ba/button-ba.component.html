@@ -3,21 +3,21 @@
     <div *ngFor="let order of seatOneOrders; let i = index">
         <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
     
-          <div>
+          <div [visible]="seat === 'Balcon 2'">
             <button type="submit"
               id="submit-button"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()"
-              routerLink="/home-result">Passer en true : Balcon 6</button>
+              routerLink="/home-result">Je supprime le balcon 2</button>
           </div>
     
           <div *ngIf="order.payload.doc.data().completed">
             <button type="submit"
-            id="submit-button"
+            id="submit-button-def"
             (click)="getSeatIds()"
             (click)="deleteOrder(order)"
             (click) = "onSaveOnFirebase()"
-            routerLink="/home-result">Supprimer ma commande</button>
+            routerLink="/home-result">Je confirme supprimer le balcon 2</button>
           </div>
     
         </div>
