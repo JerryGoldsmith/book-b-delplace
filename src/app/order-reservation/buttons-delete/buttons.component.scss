@@ -33,7 +33,9 @@
   }
   
   #submit-button-def:hover {
-    background-color: var(--main-color);
+    color: var(--color-darkbluelight);
+    background-color: var(--color-palesun);
+    border: solid 2px var(--color-palesun);
   }
 
   // ------

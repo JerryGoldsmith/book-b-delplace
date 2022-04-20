@@ -75,9 +75,11 @@
 	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
   color: var(--color-white);
   padding: 10px;
+  margin-left: -15px;
+  margin-top: -6px;
   box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  width:144px;
-  }
+  width:130px;
+}
 
 #editable {
   width: 100px;
