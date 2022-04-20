@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { OrderReservationService } from "../../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
@@ -44,10 +44,30 @@ export class SeatsComponent implements OnInit {
   @Input() seatCompleted: boolean;
   @Input() index: number;
 
+  @ViewChild('items-delete-button-small') toggleButton: ElementRef;
+  @ViewChild('menu') menu: ElementRef;
+
   constructor(
     public reservationService: OrderReservationService,
+    private renderer: Renderer2,
     private route: ActivatedRoute // with id
-  ) { }
+  ) { 
+    /**
+     * This events get called by all clicks on the page
+     */
+     this.renderer.listen('window', 'click',(e:Event)=>{
+      /**
+       * Only run when toggleButton is not clicked
+       * If we don't check this, all clicks (even on the toggle button) gets into this
+       * section which in the result we might never see the menu open!
+       * And the menu itself is checked here, and it's where we check just outside of
+       * the menu and button the condition abbove must close the menu
+       */
+     if(e.target !== this.toggleButton.nativeElement && e.target!==this.menu.nativeElement){
+         this.isMenuOpen=false;
+     }
+    });
+   }
 
   ngOnInit(): void {
 
@@ -69,6 +89,12 @@ export class SeatsComponent implements OnInit {
       }
     );
     this.reservationService.emitSeatOneSubject();
+  }
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   // firestore database

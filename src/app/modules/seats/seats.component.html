@@ -33,12 +33,19 @@
             id="items-delete-button-small"
             *ngIf="i===0
             && seatStatus === 'éteint'"
+            #toggleButton 
+            (click)="toggleMenu()"
             (click)="onSwitchOff()"
             [index]="i"
             href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
             <span class="material-icons cursorPoint"
             >delete</span> 
             </button>
+
+            <div class="menu" *ngIf="i===0 && isMenuOpen" #menu
+            [index]="i">
+                  Valider en bas de page.
+            </div>
       </div>
 
       <!-- Orchestre -->

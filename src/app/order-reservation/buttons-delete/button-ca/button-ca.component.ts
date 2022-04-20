@@ -12,6 +12,8 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 })
 export class ButtonCAComponent implements OnInit {
 
+  buttonDisabled: boolean;
+
   seatsForm: FormGroup;
 
   seatOnes: Array<any> = [];
@@ -21,12 +23,20 @@ export class ButtonCAComponent implements OnInit {
 
   seatOneOrder = [];
 
+  showDiv = {
+    previous : false,
+    current : false,
+    next : false
+    }
+
   constructor(
     public reservationService: OrderReservationService,
     public deleteButtonsService: ReservationDeleteButtonsService
   ) { }
 
   ngOnInit(): void {
+
+    this.buttonDisabled = false;
 
     this.getDeleteButtonCA();
 
