@@ -222,51 +222,61 @@
 
         <!-- remove in firestore -->
 
-        <!-- <div *ngFor="let seatOne of sortedData | keyValue"> -->
+        <div *ngFor="let seatOne of sortedData | keyValue">
 
           <div *ngFor="let order of seatOneOrders; let i = index">
             <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
   
               <!-- balcon -->
-  
-              <app-button-aa *ngIf="showDiv.current"></app-button-aa>
-              <app-button-ba *ngIf="showDiv.current"></app-button-ba>
-              <app-button-ca *ngIf="showDiv.current"></app-button-ca>
-              <app-button-da *ngIf="showDiv.current"></app-button-da>
-              <app-button-ea *ngIf="showDiv.current"></app-button-ea>
-              <app-button-fa *ngIf="showDiv.current"></app-button-fa>
-              <app-button-ga *ngIf="showDiv.current"></app-button-ga>
-              <app-button-ha *ngIf="showDiv.current"></app-button-ha>
-              <app-button-ia *ngIf="showDiv.current"></app-button-ia>
-              <app-button-ja *ngIf="showDiv.current"></app-button-ja>
-              <app-button-ka *ngIf="showDiv.current"></app-button-ka>
-              <app-button-la *ngIf="showDiv.current"></app-button-la>
+
+              <div [hidden]="seatOne.key === 'Orchestre'">
+
+                <app-button-aa *ngIf="showDiv.current"></app-button-aa>
+                <app-button-ba *ngIf="showDiv.current"></app-button-ba>
+                <app-button-ca *ngIf="showDiv.current"></app-button-ca>
+                <app-button-da *ngIf="showDiv.current"></app-button-da>
+                <app-button-ea *ngIf="showDiv.current"></app-button-ea>
+                <app-button-fa *ngIf="showDiv.current"></app-button-fa>
+                <app-button-ga *ngIf="showDiv.current"></app-button-ga>
+                <app-button-ha *ngIf="showDiv.current"></app-button-ha>
+                <app-button-ia *ngIf="showDiv.current"></app-button-ia>
+                <app-button-ja *ngIf="showDiv.current"></app-button-ja>
+                <app-button-ka *ngIf="showDiv.current"></app-button-ka>
+                <app-button-la *ngIf="showDiv.current"></app-button-la>
+
+              </div>
   
               <!-- orchestre -->
-  
-              <app-button-ma *ngIf="showDiv.current"></app-button-ma>
-              <app-button-na *ngIf="showDiv.current"></app-button-na>
-              <app-button-oa *ngIf="showDiv.current"></app-button-oa>
-              <app-button-pa *ngIf="showDiv.current"></app-button-pa>
-              <app-button-qa *ngIf="showDiv.current"></app-button-qa>
-              <app-button-ra *ngIf="showDiv.current"></app-button-ra>
-              <app-button-sa *ngIf="showDiv.current"></app-button-sa>
-              <app-button-ta *ngIf="showDiv.current"></app-button-ta>
-              <app-button-ua *ngIf="showDiv.current"></app-button-ua>
-              <app-button-va *ngIf="showDiv.current"></app-button-va>
-              <app-button-wa *ngIf="showDiv.current"></app-button-wa>
-              <app-button-xa *ngIf="showDiv.current"></app-button-xa>
-              <app-button-ya *ngIf="showDiv.current"></app-button-ya>
-              <app-button-za *ngIf="showDiv.current"></app-button-za>
-              <app-button-ab *ngIf="showDiv.current"></app-button-ab>
-              <app-button-bb *ngIf="showDiv.current"></app-button-bb>
-              <app-button-cb *ngIf="showDiv.current"></app-button-cb>
-              <app-button-db *ngIf="showDiv.current"></app-button-db>
-              <app-button-eb *ngIf="showDiv.current"></app-button-eb>
-              <app-button-fb *ngIf="showDiv.current"></app-button-fb>
+
+              <div [hidden]="seatOne.key === 'Balcon'">
+
+                <app-button-ma *ngIf="showDiv.current"></app-button-ma>
+                <app-button-na *ngIf="showDiv.current"></app-button-na>
+                <app-button-oa *ngIf="showDiv.current"></app-button-oa>
+                <app-button-pa *ngIf="showDiv.current"></app-button-pa>
+                <app-button-qa *ngIf="showDiv.current"></app-button-qa>
+                <app-button-ra *ngIf="showDiv.current"></app-button-ra>
+                <app-button-sa *ngIf="showDiv.current"></app-button-sa>
+                <app-button-ta *ngIf="showDiv.current"></app-button-ta>
+                <app-button-ua *ngIf="showDiv.current"></app-button-ua>
+                <app-button-va *ngIf="showDiv.current"></app-button-va>
+                <app-button-wa *ngIf="showDiv.current"></app-button-wa>
+                <app-button-xa *ngIf="showDiv.current"></app-button-xa>
+                <app-button-ya *ngIf="showDiv.current"></app-button-ya>
+                <app-button-za *ngIf="showDiv.current"></app-button-za>
+                <app-button-ab *ngIf="showDiv.current"></app-button-ab>
+                <app-button-bb *ngIf="showDiv.current"></app-button-bb>
+                <app-button-cb *ngIf="showDiv.current"></app-button-cb>
+                <app-button-db *ngIf="showDiv.current"></app-button-db>
+                <app-button-eb *ngIf="showDiv.current"></app-button-eb>
+                <app-button-fb *ngIf="showDiv.current"></app-button-fb>
+
+              </div>
   
             </div>
           </div>
+
+        </div>
 
         <!-- button > hide balcon/orchestre buttons -->
         <div (click)="showDiv.previous = !showDiv.previous;

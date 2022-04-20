@@ -13,10 +13,9 @@
           <div *ngIf="order.payload.doc.data().completed">
             <button type="submit"
             id="submit-button-def"
-            (click)="getSeatIds()"
             (click)="deleteOrder(order)"
             (click) = "onSaveOnFirebase()"
-            routerLink="/home-result">Je confirme supprimer l'orchestre 19</button>
+            routerLink="/home-result">Je confirme supprimer les données de l'orchestre 19</button>
           </div>
     
         </div>
