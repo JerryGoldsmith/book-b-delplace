@@ -13,6 +13,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 export class SeatsComponent implements OnInit {
 
   buttonDisabled: boolean;
+  isShow = false;
 
   seatsForm: FormGroup;
 
@@ -42,6 +43,7 @@ export class SeatsComponent implements OnInit {
   @Input() seatStatus: string;
   @Input() seatKind: string;
   @Input() seatCompleted: boolean;
+  @Input() isChecked: boolean;
   @Input() index: number;
 
   @ViewChild('items-delete-button-small') toggleButton: ElementRef;
@@ -73,7 +75,7 @@ export class SeatsComponent implements OnInit {
 
     this.buttonDisabled = false;
 
-    this.getSeatQuery(); // display delate buttons
+    this.getSeatQuery(); // display delete buttons
 
     const id = this.route.snapshot.params['id'];
     this.name = this.reservationService.getSeatById(+id).name;
@@ -97,9 +99,24 @@ export class SeatsComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
+
   // firestore database
 
-  seatOneOrders: DocumentChangeAction<unknown>[];
+  seatOneOrders: DocumentChangeAction<unknown>[]
+
+  markCompleted = (data: 
+    { payload: 
+      { doc: 
+        { 
+          id: string; 
+        }; 
+      }; 
+    }): Promise<void> => {
+      return this.reservationService.updateSeatOne(data);
+  };
 
   getSeatQuery = () =>
     this.reservationService

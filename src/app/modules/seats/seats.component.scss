@@ -70,6 +70,15 @@
   color: var(--color-gold);
 }
 
+.menu{
+  font-size: 16px;
+	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+  color: var(--color-white);
+  padding: 10px;
+  box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  width:144px;
+  }
+
 #editable {
   width: 100px;
   height: 80px;

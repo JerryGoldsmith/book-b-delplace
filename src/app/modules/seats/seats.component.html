@@ -34,6 +34,7 @@
             *ngIf="i===0
             && seatStatus === 'éteint'"
             #toggleButton 
+            [hidden]="seat.isShow"
             (click)="toggleMenu()"
             (click)="onSwitchOff()"
             [index]="i"
@@ -42,9 +43,10 @@
             >delete</span> 
             </button>
 
+            <!-- short indication when I click -->
             <div class="menu" *ngIf="i===0 && isMenuOpen" #menu
             [index]="i">
-                  Valider en bas de page.
+                  Valider en bas de page
             </div>
       </div>
 
