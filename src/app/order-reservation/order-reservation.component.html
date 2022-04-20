@@ -59,9 +59,10 @@
             <div *ngFor="let seatOne of sortedData | keyValue">
 
               <!-- Display buttons Balcon (app-seats) -->
-              <div [hidden]="seatOne.key === 'Orchestre'">
+              <div [hidden]="seatOne.key === 'Orchestre'"
+              class="position">
 
-                <h3>{{ seatOne.key }}</h3>
+                <h3>{{ seatOne.key | uppercase }}</h3>
 
                 <app-seats
                   class="input-field col s4"
@@ -113,7 +114,7 @@
             <!-- Display buttons Orchestre (app-seats) -->
             <div [hidden]="seatOne.key === 'Balcon'">
 
-              <h3>{{ seatOne.key }}</h3>
+              <h3>{{ seatOne.key | uppercase }}</h3>
 
               <app-seats
                 class="input-field col s4"

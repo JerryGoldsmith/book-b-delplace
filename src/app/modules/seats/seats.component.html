@@ -1,6 +1,4 @@
 <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
-
-      <!-- <h2> {{ toto }} </h2> -->
       
       <!-- ----------- Balcon ------------ -->
 
@@ -12,9 +10,6 @@
       (click)="onSwitchOn()"
       [value]="seatName.id"
       >{{ seatName }}</button>
-
-      <!-- research to remove each seat selected 
-      ( give up because not usefull in that case - not finished) -->
 
       <div *ngFor="let seat of seatOneOrders  | valueArray; let i = index">
             
@@ -30,6 +25,7 @@
             <!-- display if buttons on, each by seatName -->
 
             <button type="submit"
+            class="position"
             id="items-delete-button-small"
             *ngIf="i===0
             && seatStatus === 'éteint'"
@@ -58,7 +54,7 @@
       [value]="seatName.id"
       >{{ seatName }}</button>
 
-      <!-- not available -->
+      <!-- not available (Balcon & Orchestre)-->
       <button type="submit"
       id="notAvailable"
       *ngIf="seatStatus === 'éteint'"
