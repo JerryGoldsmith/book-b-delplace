@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { OrderReservationService } from "../../../services/order-reservation.service";
 import { ReservationDeleteButtonsService } from "../../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -15,7 +15,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 
 export class ButtonCAComponent implements OnInit {
 
-  buttonDisabled: boolean;
+  isShow = false;
 
   seatsForm: FormGroup;
 
@@ -32,13 +32,10 @@ export class ButtonCAComponent implements OnInit {
 
   constructor(
     public reservationService: OrderReservationService,
-    private elementRef: ElementRef,
     public deleteButtonsService: ReservationDeleteButtonsService
   ) { }
 
   ngOnInit(): void {
-
-    this.buttonDisabled = false;
 
     this.getDeleteButtonCA();
 
@@ -50,11 +47,8 @@ export class ButtonCAComponent implements OnInit {
     this.reservationService.emitSeatOneSubject();
   }
 
-  public onPageClick(toggleButton: any) {
-    const clickedInside = this.elementRef.nativeElement.contains(toggleButton);
-    if (!clickedInside) {
-    //Do something. 
-    }
+  toggleDisplay() {
+    this.isShow = !this.isShow;
   }
 
   // Cloud Firestore

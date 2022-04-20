@@ -5,6 +5,8 @@
     
           <button type="submit"
               id="submit-button"
+              *ngIf="order.payload.doc.data().completed === false"
+              [hidden]="order.isShow"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()">Je supprime l'orchestre 30</button>
 

@@ -5,19 +5,10 @@
     
           <button type="submit"
               id="submit-button"
-              (onPageClick)="items-delete-button-small"
-              #toggleButton (click)="toggleMenu()"
+              *ngIf="order.payload.doc.data().completed === false"
+              [hidden]="order.isShow"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()">Je supprime le balcon 3</button>
-
-          <!-- <button type="submit"
-            id="notAvailable"
-            *ngIf="seat === 'Balcon 3'"
-            disabled="{{ buttonDisabled }}">Je supprime le balcon 3</button> -->
-
-            <div class="menu" *ngIf="isMenuOpen" #menu>
-              I'm the menu. Click outside to close me
-              </div>
 
           <div *ngIf="order.payload.doc.data().completed">
             <button type="submit"

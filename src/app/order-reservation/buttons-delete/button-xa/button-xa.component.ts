@@ -12,6 +12,8 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 })
 export class ButtonXAComponent implements OnInit {
 
+  isShow = false;
+
   seatsForm: FormGroup;
 
   seatOnes: Array<any> = [];
@@ -34,6 +36,10 @@ export class ButtonXAComponent implements OnInit {
       }
     );
     this.reservationService.emitSeatOneSubject();
+  }
+
+  toggleDisplay() {
+    this.isShow = !this.isShow;
   }
 
   // Cloud Firestore

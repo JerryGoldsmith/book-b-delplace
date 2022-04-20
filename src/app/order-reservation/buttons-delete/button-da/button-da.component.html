@@ -5,13 +5,14 @@
     
           <button type="submit"
               id="submit-button"
+              *ngIf="order.payload.doc.data().completed === false"
+              [hidden]="order.isShow"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()">Je supprime le balcon 4</button>
 
           <div *ngIf="order.payload.doc.data().completed">
             <button type="submit"
             id="submit-button-def"
-            (click)="getSeatIds()"
             (click)="deleteOrder(order)"
             (click) = "onSaveOnFirebase()"
             routerLink="/home-result">Je confirme supprimer le balcon 4</button>

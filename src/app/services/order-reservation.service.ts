@@ -230,8 +230,7 @@ export class OrderReservationService {
         time: firebase.firestore.FieldValue.serverTimestamp()
       }),
     seatOneOrder: new FormControl(""),
-    completed: new FormControl(false),
-    isChecked: new FormControl(false)
+    completed: new FormControl(false)
   });
 
   // -----------------------------
