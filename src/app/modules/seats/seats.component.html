@@ -8,18 +8,29 @@
       *ngIf="seatStatus === 'allumé'"
       [hidden]="seatKind === 'Orchestre'"
       (click)="onSwitchOn()"
-      [value]="seatName.id"
       >{{ seatName }}</button>
 
-      <div *ngFor="let seat of seatOneOrders  | valueArray; let i = index">
+      <!-- <app-button-delete *ngFor="let seatOne of seatOnes | valueArray; let i = index"
+      #toggleButton 
+      [hidden]="seat.isShow"
+      (click)="toggleMenu()"
+      (click)="onSwitchOff()"
+      (click)="markCompleted(order)"
+      (click) = "onSaveOnFirebase()"></app-button-delete> -->
+
+      <div *ngFor="let seat of seatOneOrders; let i = index">
             
             <!-- display for all buttons off -->
             <!-- <button type="submit"
-            id="items-delete-button-change-mind"
-            *ngIf="seatStatus === 'éteint' && i===0"
-            [hidden]="seatKind === 'Orchestre'"
-            (click)="onSwitchOff()"
-            [value]="seatStatus[i].id">J'ai changé d'avis
+            id="items-delete-button-small"
+            *ngIf="i===0 && seat.payload.doc.data().checked === false"
+            #toggleButton 
+            [hidden]="seat.isShow"
+            (click)="markChecked(seat)"
+            (click)="onSaveOnFirebase()"
+            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+            <span class="material-icons cursorPoint"
+            >architecture</span> 
             </button> -->
 
             <!-- display if buttons on, each by seatName -->
@@ -28,11 +39,15 @@
             class="position"
             id="items-delete-button-small"
             *ngIf="i===0
-            && seatStatus === 'éteint'"
+            && seatStatus === 'éteint'
+            || i===0 
+            && seat.payload.doc.data().checked === false"
             #toggleButton 
             [hidden]="seat.isShow"
             (click)="toggleMenu()"
             (click)="onSwitchOff()"
+            (click)="markChecked(seat)"
+            (click)="onSaveOnFirebase()"
             [index]="i"
             href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
             <span class="material-icons cursorPoint"
@@ -51,7 +66,6 @@
       *ngIf="seatStatus === 'allumé'"
       [hidden]="seatKind === 'Balcon'"
       (click)="onSwitchOn()"
-      [value]="seatName.id"
       >{{ seatName }}</button>
 
       <!-- not available (Balcon & Orchestre)-->
@@ -59,7 +73,6 @@
       id="notAvailable"
       *ngIf="seatStatus === 'éteint'"
       disabled="{{ buttonDisabled }}"
-      [value]="seatName.id"
       (click)="onSwitchOn()">{{ seatName }}</button>
 
 </form>

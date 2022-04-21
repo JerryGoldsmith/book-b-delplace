@@ -230,7 +230,8 @@ export class OrderReservationService {
         time: firebase.firestore.FieldValue.serverTimestamp()
       }),
     seatOneOrder: new FormControl(""),
-    completed: new FormControl(false)
+    completed: new FormControl(false),
+    checked: new FormControl(false)
   });
 
   // -----------------------------
@@ -307,60 +308,25 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
-  /*
-  aa > 1
-  ba > 2 
-  ca > 3
-  da > 4
-  ea > 5
-  fa > 6
-  ga > 7
-  ha > 8
-  ia > 9
-  ja > 10
-  ka > 11
-  la > 12
-  ma > 13
-  na > 14
-  oa > 15
-  pa > 16
-  qa > 17
-  ra > 18
-  sa > 19
-  ta > 20
-  ua > 21
-  va > 22
-  wa > 23
-  xa > 24
-  ya > 25
-  za > 26
-  ab > 27
-  bb > 28
-  cb > 29
-  db > 30
-  eb > 31
-  fb > 32
-  */
+  // getSeatId() {
+  //   return this.afs
+  //     .collection("seatOneOrders", ref => ref
+  //     // .orderBy ('date', 'asc') // order by timestamp
+  //     // .startAt('id') // focus id
+  //     .where ('seatOneOrder', 'array-contains', 'Balcon 9')
+  //     .limit(1))
+  //     .snapshotChanges()
+  // }
 
-  getSeatId() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      // .orderBy ('date', 'asc') // order by timestamp
-      // .startAt('id') // focus id
-      .where ('seatOneOrder', 'array-contains', 'Balcon 9')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonFA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      // .orderBy ('date', 'asc') // order by timestamp
-      // .startAt('id') // focus id
-      .where ('seatOneOrder', 'array-contains', 'Balcon 9')
-      .limit(1))
-      .snapshotChanges()
-  }
+  // getSeatDeleteButtonFA() {
+  //   return this.afs
+  //     .collection("seatOneOrders", ref => ref
+  //     // .orderBy ('date', 'asc') // order by timestamp
+  //     // .startAt('id') // focus id
+  //     .where ('seatOneOrder', 'array-contains', 'Balcon 9')
+  //     .limit(1))
+  //     .snapshotChanges()
+  // }
 
   // by country
   getSeatByCountry() {
@@ -453,7 +419,18 @@ export class OrderReservationService {
 
   // ---- update -----
 
-  updateSeatOne(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
+  // updateSeatOne(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
+  //   return this.afs
+  //     .collection("seatOneOrders")
+  //     .doc(data
+  //       .payload
+  //       .doc
+  //       .id)
+  //     .set({ completed: true }, { merge: true });
+  // }
+
+  // completed
+  updateSeatCompleted(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
     return this.afs
       .collection("seatOneOrders")
       .doc(data
@@ -461,6 +438,17 @@ export class OrderReservationService {
         .doc
         .id)
       .set({ completed: true }, { merge: true });
+  }
+
+  // checked
+  updateSeatChecked(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
+    return this.afs
+      .collection("seatOneOrders")
+      .doc(data
+        .payload
+        .doc
+        .id)
+      .set({ checked: true }, { merge: true });
   }
 
   updateSeatOneOrder(data: { 

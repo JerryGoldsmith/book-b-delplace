@@ -4,8 +4,14 @@
         <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
     
           <button type="submit"
+              id="notAvailable"
+              *ngIf="order.payload.doc.data().checked === false"
+              disabled="{{ buttonDisabled }}">Je supprime le balcon 1</button>
+    
+          <button type="submit"
               id="submit-button"
-              *ngIf="order.payload.doc.data().completed === false"
+              *ngIf="order.payload.doc.data().checked === true
+              && seat === 'Balcon 1'"
               [hidden]="order.isShow"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()">Je supprime le balcon 1</button>

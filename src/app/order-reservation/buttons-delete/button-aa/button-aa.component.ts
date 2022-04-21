@@ -12,6 +12,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 })
 export class ButtonAAComponent implements OnInit {
 
+  buttonDisabled: boolean;
   isShow = false;
 
   seatsForm: FormGroup;
@@ -28,6 +29,9 @@ export class ButtonAAComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.buttonDisabled = false;
+
+    this.getIsChecked();
     this.getDeleteButtonAA();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
@@ -46,6 +50,11 @@ export class ButtonAAComponent implements OnInit {
 
   seatOneOrders: DocumentChangeAction<unknown>[];
 
+  getIsChecked = () =>
+    this.deleteButtonsService
+      .getSeatChecked()
+      .subscribe(result => (this.seatOneOrders = result));
+
   getDeleteButtonAA = () =>
     this.deleteButtonsService
       .getSeatDeleteButtonAA()
@@ -59,7 +68,7 @@ export class ButtonAAComponent implements OnInit {
         }; 
       }; 
     }): Promise<void> => {
-      return this.reservationService.updateSeatOne(data);
+      return this.reservationService.updateSeatCompleted(data);
   };
 
   deleteOrder = (data: 

@@ -59,7 +59,7 @@ export class ButtonABComponent implements OnInit {
         }; 
       }; 
     }): Promise<void> => {
-      return this.reservationService.updateSeatOne(data);
+      return this.reservationService.updateSeatCompleted(data);
   };
 
   deleteOrder = (data: 

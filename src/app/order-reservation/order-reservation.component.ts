@@ -45,48 +45,7 @@ export class OrderReservationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    /*
-  AA > 1
-  BA > 2 
-  CA > 3
-  DA > 4
-  EA > 5
-  FA > 6
-  GA > 7
-  HA > 8
-  IA > 9
-  JA > 10
-  KA > 11
-  LA > 12
-  MA > 13
-  NA > 14
-  OA > 15
-  PA > 16
-  QA > 17
-  RA > 18
-  SA > 19
-  TA > 20
-  UA > 21
-  VA > 22
-  WA > 23
-  XA > 24
-  YA > 25
-  ZA > 26
-  AB > 27
-  BB > 28
-  CB > 29
-  DB > 30
-  EB > 31
-  FB > 32
-  */
-
-
-    this.getDeleteButtonAA();
-    this.getDeleteButtonBA();
-    this.getDeleteButtonCA();
-    // this.getDeleteButtonDA();
-    // this.getDeleteButtonFA();
-    // this.getDeleteButtonRA();
+    this.getDeleteButtonInit(); // all buttons
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -118,34 +77,9 @@ export class OrderReservationComponent implements OnInit {
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
-  getDeleteButtonAA = () =>
+  getDeleteButtonInit = () =>
     this.deleteButtonsService
-      .getSeatDeleteButtonAA()
-      .subscribe(result => (this.seatOneOrders = result));
-
-  getDeleteButtonBA = () =>
-    this.deleteButtonsService
-      .getSeatDeleteButtonBA()
-      .subscribe(result => (this.seatOneOrders = result));
-
-  getDeleteButtonCA = () =>
-    this.deleteButtonsService
-      .getSeatDeleteButtonCA()
-      .subscribe(result => (this.seatOneOrders = result));
-
-  getDeleteButtonDA = () =>
-    this.deleteButtonsService
-      .getSeatDeleteButtonDA()
-      .subscribe(result => (this.seatOneOrders = result));
-
-  getDeleteButtonFA = () =>
-    this.deleteButtonsService
-      .getSeatDeleteButtonFA()
-      .subscribe(result => (this.seatOneOrders = result));
-
-  getDeleteButtonRA = () =>
-    this.deleteButtonsService
-      .getSeatDeleteButtonRA()
+      .getSeatDeleteButtonInit()
       .subscribe(result => (this.seatOneOrders = result));
 
   getSeatAdminOrders = () =>
@@ -161,7 +95,7 @@ export class OrderReservationComponent implements OnInit {
         }; 
       }; 
     }): Promise<void> => {
-      return this.reservationService.updateSeatOne(data);
+      return this.reservationService.updateSeatCompleted(data);
   };
 
   deleteOrder = (data: 

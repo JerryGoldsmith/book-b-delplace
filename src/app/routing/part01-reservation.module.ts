@@ -18,6 +18,7 @@ import { AuthGuardService } from './../services/auth-guard.service';
 import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
 
 import { SeatsComponent } from 'src/app/modules/seats/seats.component';
+// import { ButtonDeleteComponent } from 'src/app/modules/button-delete/button-delete.component';
 
 // reservation
 
@@ -130,6 +131,7 @@ const routes: Routes = [
         OrderReservationListQueryCountryComponent,
 
         SeatsComponent,
+        // ButtonDeleteComponent,
         OrderReservationResultComponent,
 
         KeyValuePipe,

@@ -67,7 +67,7 @@ export class OrderReservationResultComponent implements OnInit {
   //     .getSeatOneSingle()
   //     .subscribe(result => (this.seatOneOrders = result));
 
-  markCompleted = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.updateSeatOneOrder(data);
+  markCompleted = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.updateSeatCompleted(data);
 
   deleteOrder = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.deleteSeatOneOrder(data);
 

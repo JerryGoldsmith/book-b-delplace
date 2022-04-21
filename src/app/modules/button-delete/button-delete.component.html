@@ -1,0 +1,29 @@
+<div *ngFor="let seat of seatOneOrders  | valueArray; let i = index">
+            
+    <!-- display for all buttons off -->
+    <!-- <button type="submit"
+    id="items-delete-button-change-mind"
+    *ngIf="seatStatus === 'éteint' && i===0"
+    [hidden]="seatKind === 'Orchestre'"
+    (click)="onSwitchOff()"
+    [value]="seatStatus[i].id">J'ai changé d'avis
+    </button> -->
+
+    <!-- display if buttons on, each by seatName -->
+
+    <button type="submit"
+    class="position"
+    id="items-delete-button-small"
+    *ngIf="i===0
+    && seatStatus === 'éteint'
+    && seat.payload.doc.data().isChecked === false"
+    href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+    <span class="material-icons cursorPoint"
+    >delete</span> 
+    </button>
+
+    <!-- short indication when I click -->
+    <div class="menu" *ngIf="i===0 && isMenuOpen" #menu
+    [index]="i">Scroller pour valider</div>
+    
+</div>

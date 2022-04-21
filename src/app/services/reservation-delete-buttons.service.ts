@@ -12,6 +12,14 @@ export class ReservationDeleteButtonsService {
         private afs: AngularFirestore
       ) {}
 
+      getSeatChecked() {
+        return this.afs
+          .collection("seatOneOrders", ref => ref
+          .where ('isChecked', '==', true)
+          .limit(1))
+          .snapshotChanges()
+      }
+
       /*
   AA > Balcon 1
   BA > Balcon 2 
@@ -46,6 +54,14 @@ export class ReservationDeleteButtonsService {
   EB > Orchestre 31
   FB > Orchestre 32
   */
+
+  getSeatDeleteButtonInit() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .orderBy ('seatOneOrder', 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
 
   getSeatDeleteButtonAA() {
     return this.afs

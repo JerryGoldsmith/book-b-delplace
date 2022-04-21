@@ -68,17 +68,6 @@ export class OrderReservationListComponent implements OnInit {
       .getSeatAdminOrders()
       .subscribe(result => (this.seatOneOrders = result));
 
-  // markCompleted = (data: 
-  //   { payload: 
-  //     { doc: 
-  //       { 
-  //         id: string; 
-  //       }; 
-  //     }; 
-  //   }): Promise<void> => {
-  //     return this.reservationService.updateSeatOneOrder(data);
-  // };
-
   deleteOrder = (data: 
     { payload: 
       { doc: 
