@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { OrderReservationService } from "../../services/order-reservation.service";
+import { ReservationDeleteButtonsService } from "../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
@@ -51,6 +52,7 @@ export class SeatsComponent implements OnInit {
 
   constructor(
     public reservationService: OrderReservationService,
+    public deleteButtonsService: ReservationDeleteButtonsService,
     private renderer: Renderer2,
     private route: ActivatedRoute // with id
   ) { 
@@ -65,7 +67,9 @@ export class SeatsComponent implements OnInit {
 
     this.buttonDisabled = false;
 
-    this.getSeatQuery(); // display delete buttons
+    this.getDeleteButtonAA();
+    this.getDeleteButtonBA();
+    this.getDeleteButtonCA();
 
     // const id = this.route.snapshot.params['id'];
     // this.name = this.reservationService.getSeatById(+id).name;
@@ -128,6 +132,21 @@ export class SeatsComponent implements OnInit {
     }): Promise<void> => {
       return this.reservationService.updateSeatCompleted(data);
   };
+
+  getDeleteButtonAA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonAA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonBA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonBA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonCA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonCA()
+      .subscribe(result => (this.seatOneOrders = result));
 
   getSeatQuery = () =>
     this.reservationService

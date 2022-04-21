@@ -18,7 +18,32 @@
       (click)="markCompleted(order)"
       (click) = "onSaveOnFirebase()"></app-button-delete> -->
 
-      <div *ngFor="let seat of seatOneOrders; let i = index">
+      <div *ngFor="let seats of seatOneOrders; let i = index">
+
+                  <button 
+                  type="submit"
+                  class="position"
+                  id="items-delete-button-small"
+                  *ngIf="i===0
+                  && seats.payload.doc.data().checked === false"
+                  #toggleButton 
+                  [hidden]="seats.isShow"
+                  (click)="toggleMenu()"
+                  (click)="onSwitchOff()"
+                  (click)="markChecked(seats)"
+                  (click)="onSaveOnFirebase()"
+                  [index]="i+1"
+                  href="/path/to/material-icons/iconfont/material-icons.css" 
+                  rel="stylesheet">
+
+            <span class="material-icons cursorPoint"
+                  *ngIf="i===0 && seatStatus === 'éteint'">delete</span> 
+
+            </button>
+
+            <!-- short indication when I click -->
+            <div class="menu" *ngIf="i===0 && isMenuOpen" #menu
+            [index]="i">Valider plus bas</div>
             
             <!-- display for all buttons off -->
             <!-- <button type="submit"
@@ -34,29 +59,6 @@
             </button> -->
 
             <!-- display if buttons on, each by seatName -->
-
-            <button type="submit"
-            class="position"
-            id="items-delete-button-small"
-            *ngIf="i===0
-            && seatStatus === 'éteint'
-            || i===0 
-            && seat.payload.doc.data().checked === false"
-            #toggleButton 
-            [hidden]="seat.isShow"
-            (click)="toggleMenu()"
-            (click)="onSwitchOff()"
-            (click)="markChecked(seat)"
-            (click)="onSaveOnFirebase()"
-            [index]="i"
-            href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
-            <span class="material-icons cursorPoint"
-            >delete</span> 
-            </button>
-
-            <!-- short indication when I click -->
-            <div class="menu" *ngIf="i===0 && isMenuOpen" #menu
-            [index]="i">Scroller pour valider</div>
             
       </div>
 

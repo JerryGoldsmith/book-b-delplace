@@ -1,7 +1,7 @@
 <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
 
     <div *ngFor="let order of seatOneOrders | valueArray; let i = index">
-        <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
+        <!-- <div *ngFor="let seat of order.payload.doc.data().seatOneOrder"> -->
     
           <button type="submit"
               id="notAvailable"
@@ -23,6 +23,6 @@
             routerLink="/home-result">Je confirme supprimer les données du balcon 1</button>
           </div>
     
-        </div>
+        <!-- </div> -->
       </div>
 </form>
