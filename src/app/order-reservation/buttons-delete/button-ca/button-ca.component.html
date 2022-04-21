@@ -10,8 +10,7 @@
     
           <button type="submit"
               id="submit-button"
-              *ngIf="order.payload.doc.data().checked === true
-              && seat === 'Balcon 3'"
+              *ngIf="order.payload.doc.data().checked === true"
               [hidden]="order.isShow"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()">Je supprime le balcon 3</button>
