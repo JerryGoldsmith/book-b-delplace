@@ -18,25 +18,26 @@
       (click)="markCompleted(order)"
       (click) = "onSaveOnFirebase()"></app-button-delete> -->
 
-            <app-button-aa-picto
+            <!-- <app-button-aa-picto
             [hidden]="seats.isShow"
             *ngFor="let seats of seatOneOrders | valueArray; let fire = index"
+            id="items-delete-button-small"
             #toggleButton 
             (click)="toggleMenu()"
+            [hidden]="seats.isShow"
             (click)="onSwitchOff()"
             (click)="markChecked(seats)"
-            (click)="onSaveOnFirebase()"
-            [index]="fire">
+            (click)="onSaveOnFirebase()">
                   <span *ngIf="fire===0 && seats.payload.doc.data().checked === false">
                         <span *ngFor="let seatOne of seatOnes; let real = index">
                               <span *ngIf="real===0 && seatStatus === 'éteint'"></span>
                         </span>
                   </span>
-            </app-button-aa-picto>
+            </app-button-aa-picto> -->
 
-      <!-- <div *ngFor="let seats of seatOneOrders | valueArray; let i = index"> -->
+      <div *ngFor="let seats of seatOneOrders | valueArray; let i = index">
 
-                  <!-- <button 
+                  <button 
                   type="submit"
                   id="items-delete-button-small"
                   *ngIf="i===0
@@ -54,11 +55,11 @@
             <span class="material-icons"
                   *ngIf="i===0 && seatStatus === 'éteint'">delete</span> 
 
-            </button> -->
+            </button>
 
             <!-- short indication when I click -->
-            <!-- <div class="menu" *ngIf="i===0 && isMenuOpen" #menu
-            [index]="i">Valider plus bas</div> -->
+            <div class="menu" *ngIf="i===0 && isMenuOpen" #menu
+            [index]="i">Valider plus bas</div>
             
             <!-- display for all buttons off -->
             <!-- <button type="submit"
@@ -75,7 +76,7 @@
 
             <!-- display if buttons on, each by seatName -->
             
-      <!-- </div> -->
+      </div>
 
       <!-- Orchestre -->
       <button type="submit"

@@ -45,7 +45,12 @@ export class OrderReservationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getDeleteButtonAA(); // all buttons
+    this.getDeleteButtonAA();
+    this.getDeleteButtonBA();
+    this.getDeleteButtonCA();
+    this.getDeleteButtonDA();
+    this.getDeleteButtonEA();
+    this.getDeleteButtonFA();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -80,6 +85,31 @@ export class OrderReservationComponent implements OnInit {
   getDeleteButtonAA = () =>
     this.deleteButtonsService
       .getSeatDeleteButtonAA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonBA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonBA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonCA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonCA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonDA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonCA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonEA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonCA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonFA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonCA()
       .subscribe(result => (this.seatOneOrders = result));
 
   getDeleteButtonInit = () =>

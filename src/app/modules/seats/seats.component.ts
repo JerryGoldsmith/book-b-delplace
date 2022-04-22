@@ -68,8 +68,11 @@ export class SeatsComponent implements OnInit {
     this.buttonDisabled = false;
 
     this.getDeleteButtonAA();
-    // this.getDeleteButtonBA();
-    // this.getDeleteButtonCA();
+    this.getDeleteButtonBA();
+    this.getDeleteButtonCA();
+    this.getDeleteButtonDA();
+    this.getDeleteButtonEA();
+    this.getDeleteButtonFA();
 
     // const id = this.route.snapshot.params['id'];
     // this.name = this.reservationService.getSeatById(+id).name;
@@ -144,6 +147,21 @@ export class SeatsComponent implements OnInit {
       .subscribe(result => (this.seatOneOrders = result));
 
   getDeleteButtonCA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonCA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonDA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonCA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonEA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonCA()
+      .subscribe(result => (this.seatOneOrders = result));
+
+  getDeleteButtonFA = () =>
     this.deleteButtonsService
       .getSeatDeleteButtonCA()
       .subscribe(result => (this.seatOneOrders = result));
