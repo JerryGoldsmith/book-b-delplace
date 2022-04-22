@@ -20,15 +20,16 @@
 
             <app-button-aa-picto
             [hidden]="seats.isShow"
-            *ngFor="let seats of seatOneOrders | valueArray; let i = index"
+            *ngFor="let seats of seatOneOrders | valueArray; let fire = index"
             #toggleButton 
             (click)="toggleMenu()"
             (click)="onSwitchOff()"
             (click)="markChecked(seats)"
-            [index]="i">
-                  <span *ngIf="i===0 && seats.payload.doc.data().checked === false">
-                        <span *ngFor="let seatOne of seatOnes">
-                              <span *ngIf="i===0 && seatStatus === 'éteint'"></span>
+            (click)="onSaveOnFirebase()"
+            [index]="fire">
+                  <span *ngIf="fire===0 && seats.payload.doc.data().checked === false">
+                        <span *ngFor="let seatOne of seatOnes; let real = index">
+                              <span *ngIf="real===0 && seatStatus === 'éteint'"></span>
                         </span>
                   </span>
             </app-button-aa-picto>

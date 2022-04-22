@@ -45,7 +45,7 @@ export class OrderReservationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getDeleteButtonInit(); // all buttons
+    this.getDeleteButtonAA(); // all buttons
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -77,6 +77,11 @@ export class OrderReservationComponent implements OnInit {
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
+  getDeleteButtonAA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonAA()
+      .subscribe(result => (this.seatOneOrders = result));
+
   getDeleteButtonInit = () =>
     this.deleteButtonsService
       .getSeatDeleteButtonInit()
@@ -96,6 +101,17 @@ export class OrderReservationComponent implements OnInit {
       }; 
     }): Promise<void> => {
       return this.reservationService.updateSeatCompleted(data);
+  };
+
+  markChecked = (data: 
+    { payload: 
+      { doc: 
+        { 
+          id: string; 
+        }; 
+      }; 
+    }): Promise<void> => {
+      return this.reservationService.updateSeatChecked(data);
   };
 
   deleteOrder = (data: 
@@ -131,6 +147,15 @@ export class OrderReservationComponent implements OnInit {
     let index = this.seatOneOrder.indexOf(seatOne);
     if (index > -1) this.seatOneOrder.splice(index, 1);
   };
+
+  onSwitchOff() {
+    if(this.seatStatus === "éteint") {
+      this.reservationService.switchOnOne(this.index);
+    }
+    else if(this.seatStatus === "allumé") {
+      this.reservationService.switchOffOne(this.index);
+    }
+  }
 
   onDestroy() {
     this.seatOneSubscription.unsubscribe();

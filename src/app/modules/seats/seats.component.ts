@@ -177,8 +177,6 @@ export class SeatsComponent implements OnInit {
     else if(this.seatStatus === "allumé") {
       this.reservationService.switchOffOne(this.index);
     }
-    // console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
-    // console.log('onSwitch : this.index : ' + this.index);
   }
 
   onDestroy() {

@@ -64,6 +64,23 @@
 
                 <h3>{{ seatOne.key | uppercase }}</h3>
 
+                <!-- <div *ngFor="let seatOne of seatOnes | valueArray; let realtime = index">
+                  <div *ngFor="let seats of seatOneOrders | valueArray; let firestore = index">
+                    <app-button-aa-picto
+                      [hidden]="seats.isShow"
+                      *ngIf="realtime===0"
+                      #toggleButton 
+                      (click)="toggleMenu()"
+                      (click)="onSwitchOff()"
+                      (click)="markChecked(seats)"
+                      [index]="firestore">
+                        <span *ngIf="firestore===0 && seats.payload.doc.data().checked === false">
+                          <span *ngIf="realtime===0 && seatStatus === 'éteint'"></span>   
+                        </span>
+                    </app-button-aa-picto>
+                  </div>
+                </div> -->
+
                 <app-seats
                   class="input-field col s4"
                   *ngFor="let seatOne of seatOnes | valueArray; let i = index"

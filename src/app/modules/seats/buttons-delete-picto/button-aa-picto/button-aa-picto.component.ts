@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { OrderReservationService } from "../../../../services/order-reservation.service";
+import { ReservationDeleteButtonsService } from "../../../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
@@ -39,6 +40,7 @@ export class ButtonAAPictoComponent implements OnInit {
 
   constructor(
     public reservationService: OrderReservationService,
+    public deleteButtonsService: ReservationDeleteButtonsService,
     private renderer: Renderer2,
     private route: ActivatedRoute // with id
   ) { 
@@ -53,7 +55,7 @@ export class ButtonAAPictoComponent implements OnInit {
 
     this.buttonDisabled = false;
 
-    this.getSeatQuery(); // display delete buttons
+    this.getDeleteButtonAA(); // display delete buttons
 
     this.seatOneSubscription = this.reservationService.seatOneSubject
     .subscribe(
@@ -92,9 +94,9 @@ export class ButtonAAPictoComponent implements OnInit {
       return this.reservationService.updateSeatCompleted(data);
   };
 
-  getSeatQuery = () =>
-    this.reservationService
-      .getSeatAdminOrders()
+  getDeleteButtonAA = () =>
+    this.deleteButtonsService
+      .getSeatDeleteButtonAA()
       .subscribe(result => (this.seatOneOrders = result));
 
   // realtime database
@@ -106,8 +108,6 @@ export class ButtonAAPictoComponent implements OnInit {
     else if(this.seatStatus === "allumé") {
       this.reservationService.switchOffOne(this.index);
     }
-    // console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
-    // console.log('onSwitch : this.index : ' + this.index);
   }
 
   onSaveOnFirebase() {
