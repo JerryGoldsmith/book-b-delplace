@@ -68,8 +68,8 @@ export class SeatsComponent implements OnInit {
     this.buttonDisabled = false;
 
     this.getDeleteButtonAA();
-    this.getDeleteButtonBA();
-    this.getDeleteButtonCA();
+    // this.getDeleteButtonBA();
+    // this.getDeleteButtonCA();
 
     // const id = this.route.snapshot.params['id'];
     // this.name = this.reservationService.getSeatById(+id).name;

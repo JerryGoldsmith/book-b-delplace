@@ -1,16 +1,16 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, Renderer2 } from '@angular/core';
-import { OrderReservationService } from "../../services/order-reservation.service";
+import { OrderReservationService } from "../../../../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-button-delete',
-  templateUrl: './button-delete.component.html',
-  styleUrls: ['./button-delete.component.scss']
+  selector: 'app-button-aa-picto',
+  templateUrl: './button-aa-picto.component.html',
+  styleUrls: ['./../../seats.component.scss']
 })
-export class ButtonDeleteComponent implements OnInit {
+export class ButtonAAPictoComponent implements OnInit {
 
   buttonDisabled: boolean;
   isShow = false;

@@ -18,11 +18,25 @@
       (click)="markCompleted(order)"
       (click) = "onSaveOnFirebase()"></app-button-delete> -->
 
-      <div *ngFor="let seats of seatOneOrders; let i = index">
+            <app-button-aa-picto
+            [hidden]="seats.isShow"
+            *ngFor="let seats of seatOneOrders | valueArray; let i = index"
+            #toggleButton 
+            (click)="toggleMenu()"
+            (click)="onSwitchOff()"
+            (click)="markChecked(seats)"
+            [index]="i">
+                  <span *ngIf="i===0 && seats.payload.doc.data().checked === false">
+                        <span *ngFor="let seatOne of seatOnes">
+                              <span *ngIf="i===0 && seatStatus === 'éteint'"></span>
+                        </span>
+                  </span>
+            </app-button-aa-picto>
 
-                  <button 
+      <!-- <div *ngFor="let seats of seatOneOrders | valueArray; let i = index"> -->
+
+                  <!-- <button 
                   type="submit"
-                  class="position"
                   id="items-delete-button-small"
                   *ngIf="i===0
                   && seats.payload.doc.data().checked === false"
@@ -32,18 +46,18 @@
                   (click)="onSwitchOff()"
                   (click)="markChecked(seats)"
                   (click)="onSaveOnFirebase()"
-                  [index]="i+1"
+                  [index]="i"
                   href="/path/to/material-icons/iconfont/material-icons.css" 
                   rel="stylesheet">
 
-            <span class="material-icons cursorPoint"
+            <span class="material-icons"
                   *ngIf="i===0 && seatStatus === 'éteint'">delete</span> 
 
-            </button>
+            </button> -->
 
             <!-- short indication when I click -->
-            <div class="menu" *ngIf="i===0 && isMenuOpen" #menu
-            [index]="i">Valider plus bas</div>
+            <!-- <div class="menu" *ngIf="i===0 && isMenuOpen" #menu
+            [index]="i">Valider plus bas</div> -->
             
             <!-- display for all buttons off -->
             <!-- <button type="submit"
@@ -60,7 +74,7 @@
 
             <!-- display if buttons on, each by seatName -->
             
-      </div>
+      <!-- </div> -->
 
       <!-- Orchestre -->
       <button type="submit"

@@ -31,7 +31,6 @@ export class ButtonAAComponent implements OnInit {
 
     this.buttonDisabled = false;
 
-    this.getIsChecked();
     this.getDeleteButtonAA();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
@@ -49,11 +48,6 @@ export class ButtonAAComponent implements OnInit {
   // Cloud Firestore
 
   seatOneOrders: DocumentChangeAction<unknown>[];
-
-  getIsChecked = () =>
-    this.deleteButtonsService
-      .getSeatChecked()
-      .subscribe(result => (this.seatOneOrders = result));
 
   getDeleteButtonAA = () =>
     this.deleteButtonsService
