@@ -15,7 +15,7 @@ export class ReservationDeleteButtonsService {
       getSeatChecked() {
         return this.afs
           .collection("seatOneOrders", ref => ref
-          .where ('isChecked', '==', true)
+          .where ('isChecked', '==', false)
           .limit(1))
           .snapshotChanges()
       }
@@ -58,7 +58,7 @@ export class ReservationDeleteButtonsService {
   getSeatDeleteButtonInit() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .orderBy ('seatOneOrder', 'desc')
+      // .orderBy ('seatOneOrder', 'desc')
       .limit(1))
       .snapshotChanges()
   }

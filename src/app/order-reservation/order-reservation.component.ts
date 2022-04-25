@@ -45,12 +45,7 @@ export class OrderReservationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getDeleteButtonAA();
-    this.getDeleteButtonBA();
-    this.getDeleteButtonCA();
-    this.getDeleteButtonDA();
-    this.getDeleteButtonEA();
-    this.getDeleteButtonFA();
+    this.getDeleteButtonInit();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
