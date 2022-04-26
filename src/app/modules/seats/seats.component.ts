@@ -67,7 +67,14 @@ export class SeatsComponent implements OnInit, OnDestroy {
 
     this.buttonDisabled = false;
 
-    this.getSeatsByIdAA();
+    if(this.seatName === 'Balcon 1') {
+      this.getSeatsByIdAA();
+    } else if(this.seatName === 'Balcon 2') {
+      this.getSeatsByIdBA();
+    } else if(this.seatName === 'Balcon 3') {
+      this.getSeatsByIdCA();
+    }
+    
 
     // const id = this.route.snapshot.params['id'];
     // this.name = this.reservationService.getSeatById(+id).name;

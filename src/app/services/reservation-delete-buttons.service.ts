@@ -65,6 +65,264 @@ export class ReservationDeleteButtonsService {
   FB > Orchestre 32
   */
 
+  // Delete Buttons ---------
+
+  getSeatDeleteButtonAA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 1')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonBA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 2')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonCA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 3')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonDA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 4')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonEA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 5')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonFA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 6')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonGA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 7')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonHA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 8')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonIA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 9')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonJA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 10')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonKA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 11')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonLA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 12')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonMA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 13')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonNA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 14')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonOA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 15')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonPA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 16')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonQA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 17')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonRA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 18')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonSA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 19')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonTA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 20')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonUA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 21')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonVA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 22')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonWA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 23')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonXA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 24')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonYA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 25')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonZA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 26')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonAB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 27')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonBB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 28')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonCB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 29')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonDB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 30')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonEB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 31')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatDeleteButtonFB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 32')
+      .limit(1))
+      .snapshotChanges()
+  }
+
   // Seats By Ids -------------
 
   getSeatsByIdAA() {
@@ -351,264 +609,6 @@ export class ReservationDeleteButtonsService {
       .collection("seatOneOrders", ref => ref
       .where ('seatOneOrder', 'array-contains', 'Balcon 32')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  // Delete Buttons ---------
-
-  getSeatDeleteButtonAA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 1')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonBA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 2')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonCA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 3')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonDA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 4')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonEA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 5')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonFA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 6')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonGA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 7')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonHA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 8')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonIA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 9')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonJA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 10')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonKA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 11')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonLA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 12')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonMA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 13')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonNA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 14')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonOA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 15')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonPA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 16')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonQA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 17')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonRA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 18')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonSA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 19')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonTA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 20')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonUA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 21')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonVA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 22')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonWA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 23')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonXA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 24')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonYA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 25')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonZA() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 26')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonAB() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 27')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonBB() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 28')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonCB() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 29')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonDB() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 30')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonEB() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 31')
-      .limit(1))
-      .snapshotChanges()
-  }
-
-  getSeatDeleteButtonFB() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Orchestre 32')
       .limit(1))
       .snapshotChanges()
   }

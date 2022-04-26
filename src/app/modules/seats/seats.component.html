@@ -45,6 +45,7 @@
                   #toggleButton 
                   [hidden]="seats.isShow"
                   (click)="toggleMenu()"
+                  (click)="markChecked(seats)"
                   (click)="onSwitchOff()"
                   (click)="onSaveOnFirebase()"
                   [index]="i"
