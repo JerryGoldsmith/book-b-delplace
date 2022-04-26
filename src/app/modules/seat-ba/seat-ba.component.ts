@@ -7,11 +7,11 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-seat-aa',
-  templateUrl: './seat-aa.component.html',
+  selector: 'app-seat-ba',
+  templateUrl: './seat-ba.component.html',
   styleUrls: ['./../seats.component.scss']
 })
-export class SeatAAComponent implements OnInit, OnDestroy {
+export class SeatBAComponent implements OnInit, OnDestroy {
 
   buttonDisabled: boolean;
   isShow = false;
@@ -67,7 +67,7 @@ export class SeatAAComponent implements OnInit, OnDestroy {
 
     this.buttonDisabled = false;
 
-    this.getSeatsByIdAA();
+    this.getSeatsByIdBA();
 
     // const id = this.route.snapshot.params['id'];
     // this.name = this.reservationService.getSeatById(+id).name;
@@ -131,24 +131,9 @@ export class SeatAAComponent implements OnInit, OnDestroy {
       return this.reservationService.updateSeatCompleted(data);
   };
 
-  getSeatsByIdAA = () =>
-    this.deleteButtonsService
-      .getSeatsByIdAA()
-      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
-
   getSeatsByIdBA = () =>
     this.deleteButtonsService
       .getSeatsByIdBA()
-      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
-
-  getSeatsByIdCA = () =>
-    this.deleteButtonsService
-      .getSeatsByIdCA()
-      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
-
-  getSeatsById = () =>
-    this.deleteButtonsService
-      .getSeatsById()
       .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
 
   // realtime database
@@ -164,8 +149,6 @@ export class SeatAAComponent implements OnInit, OnDestroy {
     else if(this.seatStatus === "éteint") {
       this.reservationService.switchOnOne(this.index);
     }
-    // console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
-    // console.log('onSwitch : this.index : ' + this.index);
   }
 
   onSwitchOff() {

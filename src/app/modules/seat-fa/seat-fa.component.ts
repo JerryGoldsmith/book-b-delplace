@@ -7,11 +7,11 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-seat-aa',
-  templateUrl: './seat-aa.component.html',
+  selector: 'app-seat-fa',
+  templateUrl: './seat-fa.component.html',
   styleUrls: ['./../seats.component.scss']
 })
-export class SeatAAComponent implements OnInit, OnDestroy {
+export class SeatFAComponent implements OnInit, OnDestroy {
 
   buttonDisabled: boolean;
   isShow = false;
@@ -21,31 +21,14 @@ export class SeatAAComponent implements OnInit, OnDestroy {
   // realtime database
   seatOneSubscription: Subscription; // subscrition (observables)
   seatOnes: any[];
-
-  // firestore database
-  // seat = [];
-  seatOneOrder = [];
-
-  // showDiv = {
-  // previous : false,
-  // current : false,
-  // next : false
-  // }
-
-  // sortedData: any;
-
-  id: number      = 3;
-  name: string    = 'SeatOn';
-  status: string  = 'Status';
-
-  // realtime database
   @Input() seatId: number;
   @Input() seatName: string;
   @Input() seatStatus: string;
   @Input() seatKind: string;
-  // @Input() seatCompleted: boolean;
-  // @Input() seatChecked: boolean;
   @Input() index: number;
+
+  // firestore database
+  seatOneOrder = [];
 
   @ViewChild('items-delete-button-small') toggleButton: ElementRef;
   @ViewChild('menu') menu: ElementRef;
@@ -67,11 +50,7 @@ export class SeatAAComponent implements OnInit, OnDestroy {
 
     this.buttonDisabled = false;
 
-    this.getSeatsByIdAA();
-
-    // const id = this.route.snapshot.params['id'];
-    // this.name = this.reservationService.getSeatById(+id).name;
-    // this.status = this.reservationService.getSeatById(+id).status;
+    this.getSeatsByIdFA();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject
     .subscribe(
@@ -131,24 +110,9 @@ export class SeatAAComponent implements OnInit, OnDestroy {
       return this.reservationService.updateSeatCompleted(data);
   };
 
-  getSeatsByIdAA = () =>
+  getSeatsByIdFA = () =>
     this.deleteButtonsService
-      .getSeatsByIdAA()
-      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
-
-  getSeatsByIdBA = () =>
-    this.deleteButtonsService
-      .getSeatsByIdBA()
-      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
-
-  getSeatsByIdCA = () =>
-    this.deleteButtonsService
-      .getSeatsByIdCA()
-      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
-
-  getSeatsById = () =>
-    this.deleteButtonsService
-      .getSeatsById()
+      .getSeatsByIdFA()
       .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
 
   // realtime database
@@ -164,8 +128,6 @@ export class SeatAAComponent implements OnInit, OnDestroy {
     else if(this.seatStatus === "éteint") {
       this.reservationService.switchOnOne(this.index);
     }
-    // console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
-    // console.log('onSwitch : this.index : ' + this.index);
   }
 
   onSwitchOff() {

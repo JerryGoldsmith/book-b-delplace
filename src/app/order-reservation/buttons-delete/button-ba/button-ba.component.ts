@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OrderReservationService } from "../../../services/order-reservation.service";
 import { ReservationDeleteButtonsService } from "../../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -10,7 +10,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
   templateUrl: './button-ba.component.html',
   styleUrls: ['./../buttons.component.scss']
 })
-export class ButtonBAComponent implements OnInit {
+export class ButtonBAComponent implements OnInit, OnDestroy {
 
   isShow = false;
 
@@ -20,14 +20,6 @@ export class ButtonBAComponent implements OnInit {
   seatOneSubscription: Subscription;
 
   seatOneOrder = [];
-
-  // @Input() seatId: number;
-  // @Input() seatCompleted: boolean;
-  // @Input() seatCustomerAge: number;
-  // @Input() seatCustomerCountry: string;
-  // @Input() seatCustomerFirstName: string;
-  // @Input() seatCustomerName: string;
-  @Input() seatIsChecked: boolean;
 
   constructor(
     public reservationService: OrderReservationService,
@@ -85,7 +77,7 @@ export class ButtonBAComponent implements OnInit {
     this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
   }
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 

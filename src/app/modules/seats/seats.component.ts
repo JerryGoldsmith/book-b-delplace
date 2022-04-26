@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, Renderer2, OnDestroy } from '@angular/core';
 import { OrderReservationService } from "../../services/order-reservation.service";
 import { ReservationDeleteButtonsService } from "../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -11,7 +11,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
   templateUrl: './seats.component.html',
   styleUrls: ['./seats.component.scss']
 })
-export class SeatsComponent implements OnInit {
+export class SeatsComponent implements OnInit, OnDestroy {
 
   buttonDisabled: boolean;
   isShow = false;
@@ -177,7 +177,7 @@ export class SeatsComponent implements OnInit {
     }
   }
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 

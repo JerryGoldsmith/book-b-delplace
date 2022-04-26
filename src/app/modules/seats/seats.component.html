@@ -37,6 +37,7 @@
 
       <div *ngFor="let seats of seatOneOrders | valueArray; let i = index">
 
+                  <!-- (click)="markChecked(seats)" -->
                   <button 
                   type="submit"
                   id="items-delete-button-small"
@@ -45,7 +46,6 @@
                   [hidden]="seats.isShow"
                   (click)="toggleMenu()"
                   (click)="onSwitchOff()"
-                  (click)="markChecked(seats)"
                   (click)="onSaveOnFirebase()"
                   [index]="i"
                   href="/path/to/material-icons/iconfont/material-icons.css" 

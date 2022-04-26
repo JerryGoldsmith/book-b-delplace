@@ -13,6 +13,13 @@ export class ReservationDeleteButtonsService {
         private afs: AngularFirestore
       ) {}
 
+      getSeatDeleteButtonInit() {
+        return this.afs
+          .collection("seatOneOrders", ref => ref
+          .limit(1))
+          .snapshotChanges()
+      }
+
       getSeatsById() {
         return this.afs
           .collection("seatOneOrders", ref => ref
@@ -22,57 +29,6 @@ export class ReservationDeleteButtonsService {
           .limit(1))
           .snapshotChanges()
       }
-
-      getSeatsByIdAA() {
-        return this.afs
-          .collection("seatOneOrders", ref => ref
-          .where ('seatOneOrder', 'array-contains', 'Balcon 1')
-          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
-          .limit(1))
-          .snapshotChanges()
-      }
-
-      getSeatsByIdBA() {
-        return this.afs
-          .collection("seatOneOrders", ref => ref
-          .where ('seatOneOrder', 'array-contains', 'Balcon 2')
-          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
-          .limit(1))
-          .snapshotChanges()
-      }
-
-      getSeatsByIdCA() {
-        return this.afs
-          .collection("seatOneOrders", ref => ref
-          .where ('seatOneOrder', 'array-contains', 'Balcon 3')
-          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
-          .limit(1))
-          .snapshotChanges()
-      }
-
-      getSeatsByIdFA() {
-        return this.afs
-          .collection("seatOneOrders", ref => ref
-          .where ('seatOneOrder', 'array-contains', 'Balcon 6')
-          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
-          .limit(1))
-          .snapshotChanges()
-      }
-
-      getSeatDeleteButtonInit() {
-        return this.afs
-          .collection("seatOneOrders", ref => ref
-          .limit(1))
-          .snapshotChanges()
-      }
-
-      // getSeatChecked() {
-      //   return this.afs
-      //     .collection("seatOneOrders", ref => ref
-      //     .where ('isChecked', '==', false)
-      //     .limit(1))
-      //     .snapshotChanges()
-      // }
 
       /*
   AA > Balcon 1
@@ -108,6 +64,298 @@ export class ReservationDeleteButtonsService {
   EB > Orchestre 31
   FB > Orchestre 32
   */
+
+  // Seats By Ids -------------
+
+  getSeatsByIdAA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 1')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdBA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 2')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdCA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 3')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdDA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 4')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdEA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 5')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdFA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 6')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdGA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 7')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdHA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 8')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdIA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 9')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdJA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 10')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdKA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 11')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdLA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 12')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdMA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 13')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdNA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 14')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdOA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 15')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdPA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 16')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdQA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 17')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdRA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 18')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdSA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 19')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdTA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 20')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdUA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 21')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdVA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 22')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdWA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 23')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdXA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 24')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdYA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 25')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdZA() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 26')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdAB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 27')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdBB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 28')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdCB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 29')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdDB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 30')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdEB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 31')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  getSeatsByIdFB() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('seatOneOrder', 'array-contains', 'Balcon 32')
+      .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+      .limit(1))
+      .snapshotChanges()
+  }
+
+  // Delete Buttons ---------
 
   getSeatDeleteButtonAA() {
     return this.afs
