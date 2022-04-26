@@ -45,7 +45,7 @@ export class OrderReservationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getDeleteButtonInit();
+    this.getSeatsById();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
       (seatOnes: any[]) => {
@@ -76,6 +76,11 @@ export class OrderReservationComponent implements OnInit {
   seatOneOrders: DocumentChangeAction<unknown>[];
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
+
+  getSeatsById = () =>
+    this.deleteButtonsService
+      .getSeatsById()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
 
   getDeleteButtonAA = () =>
     this.deleteButtonsService

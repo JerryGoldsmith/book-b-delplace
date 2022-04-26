@@ -242,25 +242,25 @@
 
         <div *ngFor="let seatOne of sortedData | keyValue">
 
-          <div *ngFor="let order of seatOneOrders; let i = index">
+          <div *ngFor="let order of seatOneOrders; let fire = index">
             <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
   
               <!-- balcon -->
 
               <div [hidden]="seatOne.key === 'Orchestre'">
 
-                <app-button-aa *ngIf="showDiv.current"></app-button-aa>
-                <app-button-ba *ngIf="showDiv.current"></app-button-ba>
-                <app-button-ca *ngIf="showDiv.current"></app-button-ca>
-                <app-button-da *ngIf="showDiv.current"></app-button-da>
-                <app-button-ea *ngIf="showDiv.current"></app-button-ea>
-                <app-button-fa *ngIf="showDiv.current"></app-button-fa>
-                <app-button-ga *ngIf="showDiv.current"></app-button-ga>
-                <app-button-ha *ngIf="showDiv.current"></app-button-ha>
-                <app-button-ia *ngIf="showDiv.current"></app-button-ia>
-                <app-button-ja *ngIf="showDiv.current"></app-button-ja>
-                <app-button-ka *ngIf="showDiv.current"></app-button-ka>
-                <app-button-la *ngIf="showDiv.current"></app-button-la>
+                <app-button-aa *ngIf="fire==0 && showDiv.current"></app-button-aa>
+                <app-button-ba *ngIf="fire==0 && showDiv.current"></app-button-ba>
+                <app-button-ca *ngIf="fire==0 && showDiv.current"></app-button-ca>
+                <app-button-da *ngIf="fire==0 && showDiv.current"></app-button-da>
+                <app-button-ea *ngIf="fire==0 && showDiv.current"></app-button-ea>
+                <app-button-fa *ngIf="fire==0 && showDiv.current"></app-button-fa>
+                <app-button-ga *ngIf="fire==0 && showDiv.current"></app-button-ga>
+                <app-button-ha *ngIf="fire==0 && showDiv.current"></app-button-ha>
+                <app-button-ia *ngIf="fire==0 && showDiv.current"></app-button-ia>
+                <app-button-ja *ngIf="fire==0 && showDiv.current"></app-button-ja>
+                <app-button-ka *ngIf="fire==0 && showDiv.current"></app-button-ka>
+                <app-button-la *ngIf="fire==0 && showDiv.current"></app-button-la>
 
               </div>
   

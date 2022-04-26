@@ -12,6 +12,14 @@ export class ReservationDeleteButtonsService {
         private afs: AngularFirestore
       ) {}
 
+      getSeatsById() {
+        return this.afs
+          .collection("seatOneOrders", ref => ref
+          .orderBy ('id', 'asc')
+          .limit(32))
+          .snapshotChanges()
+      }
+
       getSeatChecked() {
         return this.afs
           .collection("seatOneOrders", ref => ref

@@ -67,7 +67,7 @@ export class SeatsComponent implements OnInit {
 
     this.buttonDisabled = false;
 
-    this.getDeleteButtonInit();
+    this.getSeatsById();
 
     // const id = this.route.snapshot.params['id'];
     // this.name = this.reservationService.getSeatById(+id).name;
@@ -130,6 +130,11 @@ export class SeatsComponent implements OnInit {
     }): Promise<void> => {
       return this.reservationService.updateSeatCompleted(data);
   };
+
+  getSeatsById = () =>
+    this.deleteButtonsService
+      .getSeatsById()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
 
   getDeleteButtonInit = () =>
     this.deleteButtonsService

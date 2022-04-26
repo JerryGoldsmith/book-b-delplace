@@ -3,13 +3,14 @@
     <div *ngFor="let order of seatOneOrders | valueArray; let i = index">
         <!-- <div *ngFor="let seat of order.payload.doc.data().seatOneOrder"> -->
     
-          <!-- <button type="submit"
+          <button type="submit"
               id="notAvailable"
               *ngIf="order.payload.doc.data().checked === false"
-              disabled="{{ buttonDisabled }}">Je supprime le balcon 1</button> -->
+              disabled="{{ buttonDisabled }}">Je supprime le balcon 1</button>
     
           <button type="submit"
               id="submit-button"
+              *ngIf="order.payload.doc.data().checked === true"
               [hidden]="order.isShow"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()">Je supprime le balcon 1</button>
