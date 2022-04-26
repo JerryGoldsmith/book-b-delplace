@@ -73,6 +73,12 @@ export class SeatsComponent implements OnInit, OnDestroy {
       this.getSeatsByIdBA();
     } else if(this.seatName === 'Balcon 3') {
       this.getSeatsByIdCA();
+    } else if(this.seatName === 'Balcon 4') {
+      this.getSeatsByIdDA();
+    } else if(this.seatName === 'Balcon 5') {
+      this.getSeatsByIdEA();
+    } else if(this.seatName === 'Balcon 6') {
+      this.getSeatsByIdFA();
     }
     
 
@@ -138,6 +144,8 @@ export class SeatsComponent implements OnInit, OnDestroy {
       return this.reservationService.updateSeatCompleted(data);
   };
 
+  // get Seats By Id
+
   getSeatsByIdAA = () =>
     this.deleteButtonsService
       .getSeatsByIdAA()
@@ -153,9 +161,149 @@ export class SeatsComponent implements OnInit, OnDestroy {
       .getSeatsByIdCA()
       .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
 
-  getSeatsById = () =>
+  getSeatsByIdDA = () =>
     this.deleteButtonsService
-      .getSeatsById()
+      .getSeatsByIdDA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdEA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdEA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdFA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdFA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdGA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdGA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdHA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdHA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdIA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdIA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdJA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdJA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdKA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdKA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdLA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdLA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdMA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdMA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdNA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdNA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdOA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdOA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdPA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdPA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdQA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdQA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdRA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdRA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdSA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdSA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdTA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdTA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdUA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdUA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdVA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdVA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdWA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdWA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdXA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdXA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdYA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdYA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdZA = () =>
+    this.deleteButtonsService
+      .getSeatsByIdZA()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdAB = () =>
+    this.deleteButtonsService
+      .getSeatsByIdAB()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdBB = () =>
+    this.deleteButtonsService
+      .getSeatsByIdBB()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdCB = () =>
+    this.deleteButtonsService
+      .getSeatsByIdCB()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdDB = () =>
+    this.deleteButtonsService
+      .getSeatsByIdDB()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdEB = () =>
+    this.deleteButtonsService
+      .getSeatsByIdEB()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
+
+  getSeatsByIdFB = () =>
+    this.deleteButtonsService
+      .getSeatsByIdFB()
       .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
 
   // realtime database
@@ -171,8 +319,6 @@ export class SeatsComponent implements OnInit, OnDestroy {
     else if(this.seatStatus === "éteint") {
       this.reservationService.switchOnOne(this.index);
     }
-    // console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
-    // console.log('onSwitch : this.index : ' + this.index);
   }
 
   onSwitchOff() {
