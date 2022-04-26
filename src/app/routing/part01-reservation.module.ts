@@ -18,13 +18,12 @@ import { AuthGuardService } from './../services/auth-guard.service';
 import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
 
 import { SeatsComponent } from 'src/app/modules/seats/seats.component';
-import { SeatAAComponent } from 'src/app/modules/seat-aa/seat-aa.component';
-import { SeatBAComponent } from 'src/app/modules/seat-ba/seat-ba.component';
-import { SeatCAComponent } from 'src/app/modules/seat-ca/seat-ca.component';
-import { SeatDAComponent } from 'src/app/modules/seat-da/seat-da.component';
-import { SeatEAComponent } from 'src/app/modules/seat-ea/seat-ea.component';
-import { SeatFAComponent } from 'src/app/modules/seat-fa/seat-fa.component';
-// import { ButtonAAPictoComponent } from 'src/app/modules/seats/buttons-delete-picto/Button-aa-picto/button-aa-picto.component';
+// import { SeatAAComponent } from 'src/app/modules/seat-aa/seat-aa.component';
+// import { SeatBAComponent } from 'src/app/modules/seat-ba/seat-ba.component';
+// import { SeatCAComponent } from 'src/app/modules/seat-ca/seat-ca.component';
+// import { SeatDAComponent } from 'src/app/modules/seat-da/seat-da.component';
+// import { SeatEAComponent } from 'src/app/modules/seat-ea/seat-ea.component';
+// import { SeatFAComponent } from 'src/app/modules/seat-fa/seat-fa.component';
 
 // reservation
 
@@ -137,13 +136,12 @@ const routes: Routes = [
         OrderReservationListQueryCountryComponent,
 
         SeatsComponent,
-        SeatAAComponent,
-        SeatBAComponent,
-        SeatCAComponent,
-        SeatDAComponent,
-        SeatEAComponent,
-        SeatFAComponent,
-        // ButtonAAPictoComponent,
+        // SeatAAComponent,
+        // SeatBAComponent,
+        // SeatCAComponent,
+        // SeatDAComponent,
+        // SeatEAComponent,
+        // SeatFAComponent,
 
         OrderReservationResultComponent,
 
