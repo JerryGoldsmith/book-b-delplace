@@ -7,11 +7,11 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-seats',
-  templateUrl: './seats.component.html',
-  styleUrls: ['./seats.component.scss']
+  selector: 'app-seat-aa',
+  templateUrl: './seat-aa.component.html',
+  styleUrls: ['./../seats.component.scss']
 })
-export class SeatsComponent implements OnInit {
+export class SeatAAComponent implements OnInit {
 
   buttonDisabled: boolean;
   isShow = false;
