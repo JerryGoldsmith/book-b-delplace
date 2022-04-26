@@ -55,7 +55,7 @@ export class ButtonAAPictoComponent implements OnInit {
 
     this.buttonDisabled = false;
 
-    this.getDeleteButtonAA(); // display delete buttons
+    this.getSeatsById(); // display delete buttons
 
     this.seatOneSubscription = this.reservationService.seatOneSubject
     .subscribe(
@@ -93,6 +93,11 @@ export class ButtonAAPictoComponent implements OnInit {
     }): Promise<void> => {
       return this.reservationService.updateSeatCompleted(data);
   };
+
+  getSeatsById = () =>
+    this.deleteButtonsService
+      .getSeatsById()
+      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
 
   getDeleteButtonAA = () =>
     this.deleteButtonsService

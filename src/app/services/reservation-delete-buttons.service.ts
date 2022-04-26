@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import "firebase/database";
 import { AngularFirestore } from '@angular/fire/firestore';
+import firebase from "firebase";
 
 @Injectable({
     providedIn: "root"
@@ -15,18 +16,63 @@ export class ReservationDeleteButtonsService {
       getSeatsById() {
         return this.afs
           .collection("seatOneOrders", ref => ref
-          .orderBy ('id', 'asc')
-          .limit(32))
-          .snapshotChanges()
-      }
-
-      getSeatChecked() {
-        return this.afs
-          .collection("seatOneOrders", ref => ref
-          .where ('isChecked', '==', false)
+          // .where(firebase.firestore.FieldPath.documentId(),"in",["104","102","101"])
+          .where ('seatOneOrder', 'array-contains', 'Balcon 6')
+          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
           .limit(1))
           .snapshotChanges()
       }
+
+      getSeatsByIdAA() {
+        return this.afs
+          .collection("seatOneOrders", ref => ref
+          .where ('seatOneOrder', 'array-contains', 'Balcon 1')
+          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+          .limit(1))
+          .snapshotChanges()
+      }
+
+      getSeatsByIdBA() {
+        return this.afs
+          .collection("seatOneOrders", ref => ref
+          .where ('seatOneOrder', 'array-contains', 'Balcon 2')
+          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+          .limit(1))
+          .snapshotChanges()
+      }
+
+      getSeatsByIdCA() {
+        return this.afs
+          .collection("seatOneOrders", ref => ref
+          .where ('seatOneOrder', 'array-contains', 'Balcon 3')
+          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+          .limit(1))
+          .snapshotChanges()
+      }
+
+      getSeatsByIdFA() {
+        return this.afs
+          .collection("seatOneOrders", ref => ref
+          .where ('seatOneOrder', 'array-contains', 'Balcon 6')
+          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
+          .limit(1))
+          .snapshotChanges()
+      }
+
+      getSeatDeleteButtonInit() {
+        return this.afs
+          .collection("seatOneOrders", ref => ref
+          .limit(1))
+          .snapshotChanges()
+      }
+
+      // getSeatChecked() {
+      //   return this.afs
+      //     .collection("seatOneOrders", ref => ref
+      //     .where ('isChecked', '==', false)
+      //     .limit(1))
+      //     .snapshotChanges()
+      // }
 
       /*
   AA > Balcon 1
@@ -62,14 +108,6 @@ export class ReservationDeleteButtonsService {
   EB > Orchestre 31
   FB > Orchestre 32
   */
-
-  getSeatDeleteButtonInit() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      // .orderBy ('seatOneOrder', 'desc')
-      .limit(1))
-      .snapshotChanges()
-  }
 
   getSeatDeleteButtonAA() {
     return this.afs

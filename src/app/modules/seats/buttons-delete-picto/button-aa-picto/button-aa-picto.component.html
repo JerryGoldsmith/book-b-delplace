@@ -1,10 +1,33 @@
 <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
 
+  <div *ngFor="let seats of seatOneOrders | valueArray; let i = index">
+
     <button 
+    type="submit"
+    id="items-delete-button-small"
+    *ngIf="i===0"
+    #toggleButton 
+    [hidden]="seats.isShow"
+    (click)="toggleMenu()"
+    (click)="onSwitchOff()"
+    (click)="markChecked(seats)"
+    (click)="onSaveOnFirebase()"
+    [index]="i"
+    href="/path/to/material-icons/iconfont/material-icons.css" 
+    rel="stylesheet">
+
+<span class="material-icons"
+    *ngIf="i===0 && seatStatus === 'éteint'">delete</span> 
+
+</button>
+
+</div>
+
+    <!-- <button 
     type="submit"
     class="material-icons cursorPoint"
     href="/path/to/material-icons/iconfont/material-icons.css" 
       rel="stylesheet"
-    >delete</button>
+    >delete</button> -->
 
 </form>
