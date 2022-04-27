@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Book } from '../models/book.model';
 import { BookG } from '../models/bookG.model';
 import { BooksService } from '../services/books.service';
@@ -13,7 +13,7 @@ import "firebase/database";
   styleUrls: ['./book-list.component.scss', 
   './header.component.scss']
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent implements OnInit, OnDestroy {
 
   books: Book[];
   booksSubscription: Subscription;
@@ -888,51 +888,51 @@ export class BookListComponent implements OnInit {
 
   // -----
 
-  onDestroy() {
+  ngOnDestroy() {
     this.booksSubscription.unsubscribe();
   }
 
-  onDestroyB() {
+  ngOnDestroyB() {
     this.bookBsSubscription.unsubscribe();
   }
 
-  onDestroyC() {
+  ngOnDestroyC() {
     this.bookCsSubscription.unsubscribe();
   }
 
-  onDestroyD() {
+  ngOnDestroyD() {
     this.bookDsSubscription.unsubscribe();
   }
 
-  onDestroyE() {
+  ngOnDestroyE() {
     this.bookEsSubscription.unsubscribe();
   }
 
-  onDestroyF() {
+  ngOnDestroyF() {
     this.bookFsSubscription.unsubscribe();
   }
 
-  onDestroyG() {
+  ngOnDestroyG() {
     this.bookGsSubscription.unsubscribe();
   }
 
-  onDestroyH() {
+  ngOnDestroyH() {
     this.bookHsSubscription.unsubscribe();
   }
 
-  onDestroyI() {
+  ngOnDestroyI() {
     this.bookIsSubscription.unsubscribe();
   }
 
-  onDestroyJ() {
+  ngOnDestroyJ() {
     this.bookJsSubscription.unsubscribe();
   }
 
-  onDestroyK() {
+  ngOnDestroyK() {
     this.bookKsSubscription.unsubscribe();
   }
 
-  onDestroyL() {
+  ngOnDestroyL() {
     this.bookLsSubscription.unsubscribe();
   }
 

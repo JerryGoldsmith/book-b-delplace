@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { OrderReservationService } from "src/app/services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './reservation-admin.component.html',
   styleUrls: ['./reservation-admin.component.scss']
 })
-export class ReservationAdminComponent implements OnInit {
+export class ReservationAdminComponent implements OnInit, OnDestroy {
 
   isShow = false;
 
@@ -87,7 +87,7 @@ export class ReservationAdminComponent implements OnInit {
     this.isShow = !this.isShow;
   }
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 

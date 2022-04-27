@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { OrderReservationService } from "src/app/services/order-reservation.service";
 import { OrdersService } from "src/app/services/orders.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
   './../reservation-list/reservation-list.component.scss',
   './../normalize.component.scss']
 })
-export class ReservationSeatsComponent implements OnInit {
+export class ReservationSeatsComponent implements OnInit, OnDestroy {
 
   isShow = false;
 
@@ -162,7 +162,7 @@ export class ReservationSeatsComponent implements OnInit {
     }) => this.reservationService.deleteSeatOneOrder(data);
 
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 

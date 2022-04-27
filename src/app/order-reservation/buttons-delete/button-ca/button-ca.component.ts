@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OrderReservationService } from "../../../services/order-reservation.service";
 import { ReservationDeleteButtonsService } from "../../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -11,9 +11,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
   styleUrls: ['./../buttons.component.scss']
 })
 
-@HostListener('document:click', ['$event.target'])
-
-export class ButtonCAComponent implements OnInit {
+export class ButtonCAComponent implements OnInit, OnDestroy {
 
   isShow = false;
 
@@ -86,7 +84,7 @@ export class ButtonCAComponent implements OnInit {
     this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
   }
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 

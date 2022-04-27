@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { OrderReservationService } from "../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './order-reservation-show-result.component.html',
   styleUrls: ['./order-reservation-show-result.component.scss']
 })
-export class OrderReservationShowResultComponent implements OnInit {
+export class OrderReservationShowResultComponent implements OnInit, OnDestroy {
 
   seatOneSubscription: Subscription; // subscrition (observables)
   seatOnes: any[];
@@ -53,6 +53,10 @@ export class OrderReservationShowResultComponent implements OnInit {
 
   onFetchFromFirebase() { // pour recevoir de Firebase (fetch)
     this.ordersService.saveSeatsFromFirebaseinServer();
+  }
+
+  ngOnDestroy() {
+    this.seatOneSubscription.unsubscribe();
   }
 
 }

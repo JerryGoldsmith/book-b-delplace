@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { OrderReservationService } from "src/app/services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
   templateUrl: './seats.component.html',
   styleUrls: ['./seats.component.scss']
 })
-export class SeatsComponent implements OnInit {
+export class SeatsComponent implements OnInit, OnDestroy {
 
   // public seatOnes$: Observable<Seat[]>;
 
@@ -108,7 +108,7 @@ export class SeatsComponent implements OnInit {
       }; 
     }) => this.reservationService.deleteSeatOneOrder(data);
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 
@@ -157,36 +157,6 @@ export class SeatsComponent implements OnInit {
 
   onSwitch() {
     if(this.seatStatus === "allumé") {
-      this.reservationService.switchOffOne(this.index);
-    }
-    else if(this.seatStatus === "éteint") {
-      this.reservationService.switchOnOne(this.index);
-    }
-    console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
-    console.log('onSwitch : this.index : ' + this.index);
-  }
-
-  onSwitchOnMiddle() {
-    if(this.seatStatus === "allumé") {
-      this.reservationService.switchMiddleOne(this.index);
-    }
-    else if(this.seatStatus === "éteint") {
-      this.reservationService.switchOnOne(this.index);
-    }
-    console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
-    console.log('onSwitch : this.index : ' + this.index);
-  }
-
-  onSwitchMiddleOn() {
-    if(this.seatStatus === "middle") {
-      this.reservationService.switchOnOne(this.index);
-    }
-    console.log('onSwitch : this.seatStatus : ' + this.seatStatus);
-    console.log('onSwitch : this.index : ' + this.index);
-  }
-
-  onSwitchOffMiddle() {
-    if(this.seatStatus === "middle") {
       this.reservationService.switchOffOne(this.index);
     }
     else if(this.seatStatus === "éteint") {

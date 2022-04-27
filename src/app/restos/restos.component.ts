@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { MatrixService } from "../services/resto/matrix.service";
@@ -21,7 +21,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './restos.component.html',
   styleUrls: ['./restos.component.scss', './main.component.scss']
 })
-export class RestosComponent implements OnInit {
+export class RestosComponent implements OnInit, OnDestroy {
 
   restoForm: FormGroup;
 
@@ -61,7 +61,7 @@ export class RestosComponent implements OnInit {
 
   // ----
 
-  onDestroy() {
+  ngOnDestroy() {
     this.matrixSubscription.unsubscribe();
   }
 

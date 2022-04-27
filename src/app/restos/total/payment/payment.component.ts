@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatrixService } from "../../../services/resto/matrix.service";
 import { AService } from "../../../services/resto/a.service";
 import { BService } from "../../../services/resto/b.service";
@@ -12,7 +12,6 @@ import { IService } from "../../../services/resto/i.service";
 import { JService } from "../../../services/resto/j.service";
 import { KService } from "../../../services/resto/k.service";
 import { LService } from "../../../services/resto/l.service";
-import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { ResizedEvent } from 'angular-resize-event';
 
@@ -23,7 +22,7 @@ import { ResizedEvent } from 'angular-resize-event';
     './../../restos.component.scss',
     './../total.component.scss']
 })
-export class PaymentComponent implements OnInit {
+export class PaymentComponent implements OnInit, OnDestroy {
 
   radioValue = true;
   isShow = false;
@@ -422,107 +421,107 @@ export class PaymentComponent implements OnInit {
 
   // -----
 
-  onDestroy() {
+  ngOnDestroy() {
     this.matrixSubscription.unsubscribe();
   }
 
   // ----
 
-  onDestroyPriceA() {
+  ngOnDestroyPriceA() {
     this.priceASubscription.unsubscribe();
   }
 
-  onDestroyPriceB() {
+  ngOnDestroyPriceB() {
     this.priceBSubscription.unsubscribe();
   }
 
-  onDestroyPriceC() {
+  ngOnDestroyPriceC() {
     this.priceCSubscription.unsubscribe();
   }
 
-  onDestroyPriceD() {
+  ngOnDestroyPriceD() {
     this.priceDSubscription.unsubscribe();
   }
 
-  onDestroyPriceE() {
+  ngOnDestroyPriceE() {
     this.priceESubscription.unsubscribe();
   }
 
-  onDestroyPriceF() {
+  ngOnDestroyPriceF() {
     this.priceFSubscription.unsubscribe();
   }
 
-  onDestroyPriceG() {
+  ngOnDestroyPriceG() {
     this.priceGSubscription.unsubscribe();
   }
 
-  onDestroyPriceH() {
+  ngOnDestroyPriceH() {
     this.priceHSubscription.unsubscribe();
   }
 
-  onDestroyPriceI() {
+  ngOnDestroyPriceI() {
     this.priceISubscription.unsubscribe();
   }
 
-  onDestroyPriceJ() {
+  ngOnDestroyPriceJ() {
     this.priceJSubscription.unsubscribe();
   }
 
-  onDestroyPriceK() {
+  ngOnDestroyPriceK() {
     this.priceKSubscription.unsubscribe();
   }
 
-  onDestroyPriceL() {
+  ngOnDestroyPriceL() {
     this.priceLSubscription.unsubscribe();
   }
 
   // ----
 
-  onDestroyItemPriceA() {
+  ngOnDestroyItemPriceA() {
     this.itemPriceASubscription.unsubscribe();
   }
 
-  onDestroyItemPriceB() {
+  ngOnDestroyItemPriceB() {
     this.itemPriceBSubscription.unsubscribe();
   }
 
-  onDestroyItemPriceC() {
+  ngOnDestroyItemPriceC() {
     this.itemPriceCSubscription.unsubscribe();
   }
 
-  onDestroyItemPriceD() {
+  ngOnDestroyItemPriceD() {
     this.itemPriceDSubscription.unsubscribe();
   }
 
-  onDestroyItemPriceE() {
+  ngOnDestroyItemPriceE() {
     this.itemPriceESubscription.unsubscribe();
   }
 
-  onDestroyItemPriceF() {
+  ngOnDestroyItemPriceF() {
     this.itemPriceFSubscription.unsubscribe();
   }
 
-  onDestroyItemPriceG() {
+  ngOnDestroyItemPriceG() {
     this.itemPriceGSubscription.unsubscribe();
   }
 
-  onDestroyItemPriceH() {
+  ngOnDestroyItemPriceH() {
     this.itemPriceHSubscription.unsubscribe();
   }
 
-  onDestroyItemPriceI() {
+  ngOnDestroyItemPriceI() {
     this.itemPriceISubscription.unsubscribe();
   }
 
-  onDestroyItemPriceJ() {
+  ngOnDestroyItemPriceJ() {
     this.itemPriceJSubscription.unsubscribe();
   }
 
-  onDestroyItemPriceK() {
+  ngOnDestroyItemPriceK() {
     this.itemPriceKSubscription.unsubscribe();
   }
 
-  onDestroyItemPriceL() {
+  ngOnDestroyItemPriceL() {
     this.itemPriceLSubscription.unsubscribe();
   }
 }

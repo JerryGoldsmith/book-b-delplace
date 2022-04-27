@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./order-reservation-show-buttons.component.scss',
   './../normalize.component.scss']
 })
-export class OrderReservationShowButtonsComponent implements OnInit {
+export class OrderReservationShowButtonsComponent implements OnInit, OnDestroy {
 
   isShow = false;
   seatOneSubscription: Subscription; // subscrition (observables)
@@ -68,7 +68,7 @@ export class OrderReservationShowButtonsComponent implements OnInit {
     this.ordersService.saveSeatsFromFirebaseinServer();
   }
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 

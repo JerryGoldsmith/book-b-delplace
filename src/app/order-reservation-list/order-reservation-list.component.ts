@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
 import { DocumentChangeAction } from '@angular/fire/firestore';
@@ -8,7 +8,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
   templateUrl: './order-reservation-list.component.html',
   styleUrls: ['./order-reservation-list.component.scss']
 })
-export class OrderReservationListComponent implements OnInit {
+export class OrderReservationListComponent implements OnInit, OnDestroy {
 
   seat = [];
   seatOneOrder = [];
@@ -55,7 +55,7 @@ export class OrderReservationListComponent implements OnInit {
     console.log('this.index list : ' + this.index);
   }
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 

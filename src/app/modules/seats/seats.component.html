@@ -1,8 +1,6 @@
 <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
 
       <!-- each seats names inside buttons -->
-
-      <!-- Balcon -->
       <button type="submit"
       id="items-button"
       *ngIf="seatStatus === 'allumé'"
@@ -17,9 +15,7 @@
       (click)="onSwitchOn()"
       >{{ seatName }}</button> -->
 
-      <!-- --- -->
       <!-- each delete icons in front of buttons -->
-
       <div *ngFor="let seats of seatOneOrders | valueArray; let i = index">
 
             <button 

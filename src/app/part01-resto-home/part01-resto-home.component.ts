@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { MatrixService } from "../services/resto/matrix.service";
@@ -25,7 +25,7 @@ import { LService } from "../services/resto/l.service";
     './../normalize.component.scss'
   ]
 })
-export class Part01RestoHomeComponent implements OnInit {
+export class Part01RestoHomeComponent implements OnInit, OnDestroy {
 
   // isAuth: boolean;
 
@@ -481,7 +481,7 @@ export class Part01RestoHomeComponent implements OnInit {
 
   // ----
 
-  onDestroy() {
+  ngOnDestroy() {
     this.matrixSubscription.unsubscribe();
   }
 }
