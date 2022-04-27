@@ -12,7 +12,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 })
 export class ButtonAAComponent implements OnInit, OnDestroy {
 
-  buttonDisabled: boolean;
+  // buttonDisabled: boolean;
   isShow = false;
 
   seatsForm: FormGroup;
@@ -29,7 +29,7 @@ export class ButtonAAComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.buttonDisabled = false;
+    // this.buttonDisabled = false;
 
     this.getDeleteButtonAA();
 

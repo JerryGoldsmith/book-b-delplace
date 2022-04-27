@@ -325,6 +325,8 @@ export class ReservationDeleteButtonsService {
 
   // Seats By Ids -------------
 
+  // Balcon
+
   getSeatsByIdAA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
@@ -433,10 +435,12 @@ export class ReservationDeleteButtonsService {
       .snapshotChanges()
   }
 
+  // Orchestre
+
   getSeatsByIdMA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 13')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 13')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -445,7 +449,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdNA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 14')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 14')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -454,7 +458,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdOA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 15')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 15')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -463,7 +467,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdPA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 16')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 16')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -472,7 +476,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdQA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 17')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 17')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -481,7 +485,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdRA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 18')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 18')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -490,7 +494,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdSA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 19')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 19')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -499,7 +503,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdTA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 20')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 20')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -508,7 +512,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdUA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 21')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 21')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -517,7 +521,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdVA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 22')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 22')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -526,7 +530,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdWA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 23')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 23')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -535,7 +539,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdXA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 24')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 24')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -544,7 +548,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdYA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 25')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 25')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -553,7 +557,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdZA() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 26')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 26')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -562,7 +566,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdAB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 27')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 27')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -571,7 +575,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdBB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 28')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 28')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -580,7 +584,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdCB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 29')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 29')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -589,7 +593,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdDB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 30')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 30')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -598,7 +602,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdEB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 31')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 31')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()
@@ -607,7 +611,7 @@ export class ReservationDeleteButtonsService {
   getSeatsByIdFB() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('seatOneOrder', 'array-contains', 'Balcon 32')
+      .where ('seatOneOrder', 'array-contains', 'Orchestre 32')
       .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
       .limit(1))
       .snapshotChanges()

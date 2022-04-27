@@ -3,7 +3,6 @@ import { OrderReservationService } from "../../services/order-reservation.servic
 import { ReservationDeleteButtonsService } from "../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router'; // routes parametres avec id
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
@@ -21,31 +20,14 @@ export class SeatsComponent implements OnInit, OnDestroy {
   // realtime database
   seatOneSubscription: Subscription; // subscrition (observables)
   seatOnes: any[];
-
-  // firestore database
-  // seat = [];
-  seatOneOrder = [];
-
-  // showDiv = {
-  // previous : false,
-  // current : false,
-  // next : false
-  // }
-
-  // sortedData: any;
-
-  id: number      = 3;
-  name: string    = 'SeatOn';
-  status: string  = 'Status';
-
-  // realtime database
   @Input() seatId: number;
   @Input() seatName: string;
   @Input() seatStatus: string;
   @Input() seatKind: string;
-  // @Input() seatCompleted: boolean;
-  // @Input() seatChecked: boolean;
   @Input() index: number;
+
+  // firestore database
+  seatOneOrder = [];
 
   @ViewChild('items-delete-button-small') toggleButton: ElementRef;
   @ViewChild('menu') menu: ElementRef;
@@ -53,8 +35,7 @@ export class SeatsComponent implements OnInit, OnDestroy {
   constructor(
     public reservationService: OrderReservationService,
     public deleteButtonsService: ReservationDeleteButtonsService,
-    private renderer: Renderer2,
-    private route: ActivatedRoute // with id
+    private renderer: Renderer2
   ) { 
      this.renderer.listen('window', 'click',(e:Event) => {
       if(e.target !== this.toggleButton.nativeElement && e.target!==this.menu.nativeElement) {
@@ -79,12 +60,59 @@ export class SeatsComponent implements OnInit, OnDestroy {
       this.getSeatsByIdEA();
     } else if(this.seatName === 'Balcon 6') {
       this.getSeatsByIdFA();
+    } else if(this.seatName === 'Balcon 7') {
+      this.getSeatsByIdGA();
+    } else if(this.seatName === 'Balcon 8') {
+      this.getSeatsByIdHA();
+    } else if(this.seatName === 'Balcon 9') {
+      this.getSeatsByIdIA();
+    } else if(this.seatName === 'Balcon 10') {
+      this.getSeatsByIdJA();
+    } else if(this.seatName === 'Balcon 11') {
+      this.getSeatsByIdKA();
+    } else if(this.seatName === 'Balcon 12') {
+      this.getSeatsByIdLA();
+    } else if(this.seatName === 'Orchestre 13') {
+      this.getSeatsByIdMA();
+    } else if(this.seatName === 'Orchestre 14') {
+      this.getSeatsByIdNA();
+    } else if(this.seatName === 'Orchestre 15') {
+      this.getSeatsByIdOA();
+    } else if(this.seatName === 'Orchestre 16') {
+      this.getSeatsByIdPA();
+    } else if(this.seatName === 'Orchestre 17') {
+      this.getSeatsByIdQA();
+    } else if(this.seatName === 'Orchestre 18') {
+      this.getSeatsByIdRA();
+    } else if(this.seatName === 'Orchestre 19') {
+      this.getSeatsByIdSA();
+    } else if(this.seatName === 'Orchestre 20') {
+      this.getSeatsByIdTA();
+    } else if(this.seatName === 'Orchestre 21') {
+      this.getSeatsByIdUA();
+    } else if(this.seatName === 'Orchestre 22') {
+      this.getSeatsByIdVA();
+    } else if(this.seatName === 'Orchestre 23') {
+      this.getSeatsByIdWA();
+    } else if(this.seatName === 'Orchestre 24') {
+      this.getSeatsByIdXA();
+    } else if(this.seatName === 'Orchestre 25') {
+      this.getSeatsByIdYA();
+    } else if(this.seatName === 'Orchestre 26') {
+      this.getSeatsByIdZA();
+    } else if(this.seatName === 'Orchestre 27') {
+      this.getSeatsByIdAB();
+    } else if(this.seatName === 'Orchestre 28') {
+      this.getSeatsByIdBB();
+    } else if(this.seatName === 'Orchestre 29') {
+      this.getSeatsByIdCB();
+    } else if(this.seatName === 'Orchestre 30') {
+      this.getSeatsByIdDB();
+    } else if(this.seatName === 'Orchestre 31') {
+      this.getSeatsByIdEB();
+    } else if(this.seatName === 'Orchestre 32') {
+      this.getSeatsByIdFB();
     }
-    
-
-    // const id = this.route.snapshot.params['id'];
-    // this.name = this.reservationService.getSeatById(+id).name;
-    // this.status = this.reservationService.getSeatById(+id).status;
 
     this.seatOneSubscription = this.reservationService.seatOneSubject
     .subscribe(

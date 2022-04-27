@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { ReservationDeleteButtonsService } from "../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -13,7 +13,7 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
   './../order-reservation-list/order-reservation-list.component.scss',
   './../normalize.component.scss']
 })
-export class OrderReservationComponent implements OnInit {
+export class OrderReservationComponent implements OnInit, OnDestroy {
 
   isShow = false;
   sortedData: any; // h3 > balcon/orchestre
@@ -76,46 +76,6 @@ export class OrderReservationComponent implements OnInit {
   seatOneOrders: DocumentChangeAction<unknown>[];
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
-
-  getSeatsById = () =>
-    this.deleteButtonsService
-      .getSeatsById()
-      .subscribe((result: DocumentChangeAction<unknown>[]) => (this.seatOneOrders = result));
-
-  // getDeleteButtonAA = () =>
-  //   this.deleteButtonsService
-  //     .getSeatDeleteButtonAA()
-  //     .subscribe(result => (this.seatOneOrders = result));
-
-  // getDeleteButtonBA = () =>
-  //   this.deleteButtonsService
-  //     .getSeatDeleteButtonBA()
-  //     .subscribe(result => (this.seatOneOrders = result));
-
-  // getDeleteButtonCA = () =>
-  //   this.deleteButtonsService
-  //     .getSeatDeleteButtonCA()
-  //     .subscribe(result => (this.seatOneOrders = result));
-
-  // getDeleteButtonDA = () =>
-  //   this.deleteButtonsService
-  //     .getSeatDeleteButtonCA()
-  //     .subscribe(result => (this.seatOneOrders = result));
-
-  // getDeleteButtonEA = () =>
-  //   this.deleteButtonsService
-  //     .getSeatDeleteButtonCA()
-  //     .subscribe(result => (this.seatOneOrders = result));
-
-  // getDeleteButtonFA = () =>
-  //   this.deleteButtonsService
-  //     .getSeatDeleteButtonCA()
-  //     .subscribe(result => (this.seatOneOrders = result));
-
-  // getDeleteButtonInit = () =>
-  //   this.deleteButtonsService
-  //     .getSeatDeleteButtonInit()
-  //     .subscribe(result => (this.seatOneOrders = result));
 
   getSeatAdminOrders = () =>
     this.reservationService
@@ -187,7 +147,7 @@ export class OrderReservationComponent implements OnInit {
     }
   }
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 

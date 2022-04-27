@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OrderReservationService } from "../../../services/order-reservation.service";
 import { ReservationDeleteButtonsService } from "../../../services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
@@ -10,8 +10,9 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
   templateUrl: './button-ma.component.html',
   styleUrls: ['./../buttons.component.scss']
 })
-export class ButtonMAComponent implements OnInit {
+export class ButtonMAComponent implements OnInit, OnDestroy {
 
+  buttonDisabled: boolean;
   isShow = false;
 
   seatsForm: FormGroup;
@@ -27,6 +28,8 @@ export class ButtonMAComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.buttonDisabled = false;
 
     this.getDeleteButtonMA();
 
@@ -77,7 +80,7 @@ export class ButtonMAComponent implements OnInit {
     this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
   }
 
-  onDestroy() {
+  ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();
   }
 
