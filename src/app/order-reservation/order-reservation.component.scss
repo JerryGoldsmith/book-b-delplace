@@ -19,17 +19,14 @@ h3 {
   letter-spacing: -0.05em;
   text-align: left;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
 
-.container {
+.buttons-position {
+  display: flex;
   flex-direction: row;
-  flex-direction: column;
-}
-
-.position {
-  flex-direction: row;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 40px 60px;
 }
 
 .title {
