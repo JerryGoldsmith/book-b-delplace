@@ -123,9 +123,9 @@ export class ReservationAdminComponent implements OnInit, OnDestroy {
     this.reservationService.saveSeatsSelectToFirebaseinServer();
   }
 
-  onSaveSeatsOnFirebase() {
-    this.reservationService.saveSeats();
-  }
+  // onSaveSeatsOnFirebase() {
+  //   this.reservationService.saveSeats();
+  // }
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 

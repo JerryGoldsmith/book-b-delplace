@@ -44,7 +44,7 @@ export class SeatsComponent implements OnInit, OnDestroy {
     });
    }
 
-  ngOnInit(): void {
+  async ngOnInit() {
 
     this.buttonDisabled = false;
 

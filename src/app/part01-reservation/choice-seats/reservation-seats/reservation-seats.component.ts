@@ -119,9 +119,9 @@ export class ReservationSeatsComponent implements OnInit, OnDestroy {
 
   // ----
 
-  onSaveSeatsOnFirebase() {
-    this.reservationService.saveSeats();
-  }
+  // onSaveSeatsOnFirebase() {
+  //   this.reservationService.saveSeats();
+  // }
 
   onNewSeat() {
     this.router.navigate(['/seats']);

@@ -220,15 +220,15 @@ export class OrderReservationService {
   // ---- form initialisation -----
 
   form = new FormGroup({
-    id: new FormControl(this.afs.createId()),
-    customerFirstName: new FormControl(""),
-    customerName: new FormControl(""),
-    customerCountry: new FormControl(""),
-    customerAge: new FormControl(""),
+    // id: new FormControl(this.afs.createId()),
     date: new FormControl(
       {
         time: firebase.firestore.FieldValue.serverTimestamp()
       }),
+    customerFirstName: new FormControl(""),
+    customerName: new FormControl(""),
+    customerCountry: new FormControl(""),
+    customerAge: new FormControl(""),
     seatOneOrder: new FormControl(""),
     completed: new FormControl(false),
     checked: new FormControl(false)
@@ -308,25 +308,30 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
-  // getSeatId() {
-  //   return this.afs
-  //     .collection("seatOneOrders", ref => ref
-  //     // .orderBy ('date', 'asc') // order by timestamp
-  //     // .startAt('id') // focus id
-  //     .where ('seatOneOrder', 'array-contains', 'Balcon 9')
-  //     .limit(1))
-  //     .snapshotChanges()
-  // }
+  getSeatTwoOrders() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .orderBy ('id')
+      .limit(1))
+      .snapshotChanges();
+  }
 
-  // getSeatDeleteButtonFA() {
-  //   return this.afs
-  //     .collection("seatOneOrders", ref => ref
-  //     // .orderBy ('date', 'asc') // order by timestamp
-  //     // .startAt('id') // focus id
-  //     .where ('seatOneOrder', 'array-contains', 'Balcon 9')
-  //     .limit(1))
-  //     .snapshotChanges()
-  // }
+  // by dates
+  getSeatOneOrders() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .orderBy ('date', 'desc')
+      .limit(1))
+      .snapshotChanges();
+  }
+
+  // only last sixth
+  getSeatThreeOrders() {
+    return this.afs
+      .collection("seatOneOrders", 
+      ref => ref.where ('seatOneOrder', 'array-contains', 6))
+      .snapshotChanges();
+  }
 
   // by country
   getSeatByCountry() {
@@ -366,43 +371,6 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
-  // getSeatOneOrderById() {
-  //   this.afs.collection<any>('seatOneOrders')
-  //   .snapshotChanges()
-  //   .pipe(map(actions => {
-  //     return actions.map(a => {
-  //       const data = a.payload.doc.data();
-  //       const id = a.payload.doc.id;
-  //       console.log('id', id, 'data', data);
-  //       return {id, data};
-  //     });
-  //   })).subscribe();
-  // }
-
-  getSeatOneOrders() {
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .orderBy ('date', 'desc')
-      .limit(1))
-      .snapshotChanges();
-  }
-
-  getSeatTwoOrders() {
-
-    return this.afs
-      .collection("seatOneOrders", ref => ref
-      .orderBy ('id')
-      .limit(1))
-      .snapshotChanges();
-  }
-
-  getSeatThreeOrders() {
-    return this.afs
-      .collection("seatOneOrders", 
-      ref => ref.where ('seatOneOrder', 'array-contains', 6))
-      .snapshotChanges();
-  }
-
   getSeatBySeatsAscent() {
     return this.afs
       .collection("seatOneOrders", 
@@ -418,16 +386,6 @@ export class OrderReservationService {
   }
 
   // ---- update -----
-
-  // updateSeatOne(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
-  //   return this.afs
-  //     .collection("seatOneOrders")
-  //     .doc(data
-  //       .payload
-  //       .doc
-  //       .id)
-  //     .set({ completed: true }, { merge: true });
-  // }
 
   // completed
   updateSeatCompleted(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
@@ -451,6 +409,7 @@ export class OrderReservationService {
       .set({ checked: true }, { merge: true });
   }
 
+  // submit
   updateSeatOneOrder(data: { 
     payload: { 
       doc: { 
@@ -488,13 +447,6 @@ export class OrderReservationService {
       .id)
     .delete();
   }
-
-  // ---------------
-
-  // private getTimestamp(): Object {
-  //   return this.afs.firestore['_firebaseApp']
-  //     .firebase_.firestore.FieldValue.serverTimestamp();
-  // }
 
   // ----------------------------
   // FIREBASE > REALTIME DATABASE
@@ -634,11 +586,6 @@ export class OrderReservationService {
     this.seatOnes[i].status = 'allumé';
     this.emitSeatOneSubject();
   }
-
-  // switchMiddleOne(i: number) { // on index
-  //   this.seatOnes[i].status = 'middle';
-  //   this.emitSeatOneSubject();
-  // }
 
   switchOffOne(i: number) { // off index
     this.seatOnes[i].status = 'éteint';

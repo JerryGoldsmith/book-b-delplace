@@ -9,26 +9,9 @@ import firebase from "firebase";
 
 export class ReservationDeleteButtonsService {
 
-    constructor(
-        private afs: AngularFirestore
-      ) {}
-
-      getSeatDeleteButtonInit() {
-        return this.afs
-          .collection("seatOneOrders", ref => ref
-          .limit(1))
-          .snapshotChanges()
-      }
-
-      getSeatsById() {
-        return this.afs
-          .collection("seatOneOrders", ref => ref
-          // .where(firebase.firestore.FieldPath.documentId(),"in",["104","102","101"])
-          .where ('seatOneOrder', 'array-contains', 'Balcon 6')
-          .orderBy(firebase.firestore.FieldPath.documentId(), 'desc')
-          .limit(1))
-          .snapshotChanges()
-      }
+  constructor(
+      private afs: AngularFirestore
+    ) {}
 
       /*
   AA > Balcon 1
@@ -66,6 +49,8 @@ export class ReservationDeleteButtonsService {
   */
 
   // Delete Buttons ---------
+
+  // Balcon
 
   getSeatDeleteButtonAA() {
     return this.afs
@@ -162,6 +147,8 @@ export class ReservationDeleteButtonsService {
       .limit(1))
       .snapshotChanges()
   }
+
+  // Orchestre
 
   getSeatDeleteButtonMA() {
     return this.afs
