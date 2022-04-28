@@ -3,25 +3,25 @@ import { OrderReservationService } from "../services/order-reservation.service";
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-order-reservation-list-query-country',
-  templateUrl: './order-reservation-list-query-country.component.html',
+  selector: 'app-order-reservation-list-query-usa',
+  templateUrl: './order-reservation-list-query-usa.component.html',
   styleUrls: ['./../order-reservation-list/order-reservation-list.component.scss']
 })
-export class OrderReservationListQueryCountryComponent implements OnInit {
+export class OrderReservationListQueryUsaComponent implements OnInit {
 
   constructor(
     public reservationService: OrderReservationService
   ) {}
 
   ngOnInit(): void {
-    this.getSeatsByCountry();
+    this.getSeatsByUSA();
   }
   
   seatOneOrders: DocumentChangeAction<unknown>[];
 
-  getSeatsByCountry = () =>
+  getSeatsByUSA = () =>
     this.reservationService
-      .getSeatByCountry()
+      .getSeatByUSA()
       .subscribe(result => (this.seatOneOrders = result));
 
 }

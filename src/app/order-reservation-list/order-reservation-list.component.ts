@@ -10,12 +10,13 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 })
 export class OrderReservationListComponent implements OnInit, OnDestroy {
 
+  // firestore
   seat = [];
   seatOneOrder = [];
 
+  // realtime
   seatOneSubscription: Subscription;
   seatOnes: Array<any> = [];
-
   @Input() seatStatus: string;
   @Input() index: number;
 
@@ -26,7 +27,7 @@ export class OrderReservationListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     
     // firestore database
-    this.getSeatAdminOrders();
+    this.getSeatsCurrentUser();
 
     // realtime database
     this.seatOneSubscription = this.reservationService.seatOneSubject
@@ -63,9 +64,9 @@ export class OrderReservationListComponent implements OnInit, OnDestroy {
 
   seatOneOrders: DocumentChangeAction<unknown>[];
 
-  getSeatAdminOrders = () =>
+  getSeatsCurrentUser = () =>
     this.reservationService
-      .getSeatAdminOrders()
+      .getSeatCurrentUser()
       .subscribe(result => (this.seatOneOrders = result));
 
   deleteOrder = (data: 

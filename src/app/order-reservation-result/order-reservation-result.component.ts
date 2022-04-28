@@ -1,9 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-// import { NgForm } from "@angular/forms";
 import { OrderReservationService } from "../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
-import { AngularFirestore, DocumentChangeAction } from "@angular/fire/firestore";
-import { Router } from '@angular/router';
+import { DocumentChangeAction } from "@angular/fire/firestore";
 
 @Component({
   selector: 'app-order-reservation-result',
@@ -13,28 +11,21 @@ import { Router } from '@angular/router';
 })
 export class OrderReservationResultComponent implements OnInit, OnDestroy {
 
-  seatOneSubscription: Subscription; // subscrition (observables)
+  // firestore
+  seatOneOrders: DocumentChangeAction<unknown>[];
+  seatOneOrder = [];
+
+  // realtime
+  seatOneSubscription: Subscription;
   seatOnes: any[];
 
   constructor(
-    private reservationService: OrderReservationService,
-    private db: AngularFirestore,
-    private router: Router
+    private reservationService: OrderReservationService
   ) {}
 
   ngOnInit(): void {
-    // this.getSeatOneOrders();
-    this.getSeatTwoOrders();
-    // this.getSeatThreeOrders();
-    // this.addSeatOne();
-    // this.getSeatThreeOrders();
-    // this.getSeatTransactionOrders();
-    // this.getSeatConpareOrders();
-    // this.createSingleSeatOne();
-    // this.getSeatOneSingle();
-    // this.getTransactionTest();
-    // this.getSeatThreeOrders();
-    // this.initGetSingleReservationById();
+
+    this.getCurrentUser();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe( // subscrition (observables)
       (seatOnes: any[]) => {
@@ -44,34 +35,15 @@ export class OrderReservationResultComponent implements OnInit, OnDestroy {
     this.reservationService.emitSeatOneSubject();
   }
 
-  seatOneOrders: DocumentChangeAction<unknown>[];
-  seatOneOrder = [];
-
-  // getSeatOneOrders = () =>
-  //   this.reservationService
-  //     .getSeatOneOrders()
-  //     .subscribe(result => (this.seatOneOrders = result));
-
-  getSeatTwoOrders = () =>
+  // firestore
+  getCurrentUser = () =>
     this.reservationService
-      .getSeatTwoOrders()
+      .getSeatCurrentUser()
       .subscribe(result => (this.seatOneOrders = result));
-
-  // getSeatTransactionOrders = () =>
-  //   this.reservationService
-  //     .getSeatTransactionOrders()
-  //     .subscribe(result => (this.seatOneOrders = result));
-
-  // getSeatConpareOrders = () =>
-  //   this.reservationService
-  //     .getSeatOneSingle()
-  //     .subscribe(result => (this.seatOneOrders = result));
 
   markCompleted = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.updateSeatCompleted(data);
 
   deleteOrder = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.deleteSeatOneOrder(data);
-
-  // Part 2
 
   addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
@@ -84,11 +56,12 @@ export class OrderReservationResultComponent implements OnInit, OnDestroy {
     this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
   }
 
+  // realtime
   onSaveOnFirebase() {
     this.reservationService.saveSeats();
   }
 
-  onFetchFromFirebase() { // pour recevoir de Firebase (fetch)
+  onFetchFromFirebase() {
     this.reservationService.saveSeatsFromFirebaseinServer();
   }
 

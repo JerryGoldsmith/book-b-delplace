@@ -308,7 +308,7 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
-  getSeatTwoOrders() {
+  getSeatCurrentUser() {
     return this.afs
       .collection("seatOneOrders", ref => ref
       .orderBy ('id')
@@ -317,21 +317,20 @@ export class OrderReservationService {
   }
 
   // by dates
-  getSeatOneOrders() {
+  getSeatsByDates() {
     return this.afs
       .collection("seatOneOrders", ref => ref
       .orderBy ('date', 'desc')
-      .limit(1))
+      .limit(32))
       .snapshotChanges();
   }
 
-  // only last sixth
-  getSeatThreeOrders() {
-    return this.afs
-      .collection("seatOneOrders", 
-      ref => ref.where ('seatOneOrder', 'array-contains', 6))
-      .snapshotChanges();
-  }
+  // getSeatThreeOrders() {
+  //   return this.afs
+  //     .collection("seatOneOrders", 
+  //     ref => ref.where ('seatOneOrder', 'array-contains', 6))
+  //     .snapshotChanges();
+  // }
 
   // by country
   getSeatByCountry() {
