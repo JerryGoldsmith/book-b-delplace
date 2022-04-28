@@ -8,16 +8,31 @@
   height: 80px;
   background-color: var(--color-gold);
   font-size: 20px;
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-gold);
   border-radius: 10px;
-  padding: 14px;
+  padding: 6px;
   text-align: center;
 }
 
 #items-button:hover {
   background-color: var(--main-color);
+}
+
+#notAvailable {
+  position: relative;
+  width: 100px;
+  height: 80px;
+  background-color: var(--color-gold);
+  font-size: 20px;
+	font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-gold);
+  opacity: 0.4;
+  border-radius: 10px;
+  padding: 6px;
+  text-align: center;
 }
 
 // #items-delete-button {
@@ -39,7 +54,7 @@
 
 #items-delete-button-change-mind {
   font-size: 17px;
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Bold, Helvetica, light, sans-serif;
   color: var(--color-white);
   // background-color: var(--color-ocre);
   border: solid 1px var(--color-gold);
@@ -73,7 +88,7 @@
 
 .menu{
   font-size: 16px;
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Bold, Helvetica, light, sans-serif;
   color: var(--color-white);
   padding: 10px;
   margin-left: -15px;
@@ -94,18 +109,3 @@
 //   padding: 14px;
 //   text-align: center;
 // }
-
-#notAvailable {
-  position: relative;
-  width: 100px;
-  height: 80px;
-  background-color: var(--color-gold);
-  font-size: 20px;
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
-  color: white;
-  border: solid 2px var(--color-gold);
-  opacity: 0.4;
-  border-radius: 10px;
-  padding: 14px;
-  text-align: center;
-}

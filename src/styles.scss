@@ -10,12 +10,16 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 /* --------------------- Fonts --------------------- */
 /* -------------------------------------------------- */
 
+// Nanum_Myeongjo
+
 @font-face {
     font-family: "Nanum_Myeongjo-regular";
     src: url(fonts/Nanum_Myeongjo/NanumMyeongjo-Regular.ttf);
     font-weight: normal;
     font-style: normal;
 }
+
+// Barlow_Condensed
 
 @font-face {
     font-family: "Barlow_Condensed-regular";
@@ -31,12 +35,16 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
     font-style: normal;
 }
 
+// Playfair_Display
+
 @font-face {
     font-family: "Playfair_Display-medium";
     src: url(fonts/Playfair_Display/PlayfairDisplay-Medium.ttf);
     font-weight: normal;
     font-style: normal;
 }
+
+// Dosis
 
 @font-face {
     font-family: "Dosis-Light";
@@ -45,9 +53,25 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
     font-style: normal;
 }
 
+// Cormorant_Garamond
+
 @font-face {
     font-family: "Cormorant_Garamond_Light";
     src: url(fonts/Cormorant_Garamond/CormorantGaramond-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Cormorant_Garamond_Medium";
+    src: url(fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Cormorant_Garamond_Bold";
+    src: url(fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf);
     font-weight: normal;
     font-style: normal;
 }

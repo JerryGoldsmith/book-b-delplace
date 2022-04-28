@@ -5,7 +5,7 @@ body {
 
 h1 {
   color: var(--color-white);
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Bold, Helvetica, light, sans-serif;
   font-size: 80px;
   letter-spacing: -0.05em;
   text-align: left;
@@ -14,12 +14,13 @@ h1 {
 
 h3 {
   color: var(--color-fluo);
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
-  font-size: 68px;
+	font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
+  font-size: 52px;
   letter-spacing: -0.05em;
   text-align: left;
   padding-top: 10px;
   padding-bottom: 30px;
+  margin-top: 20px;
 }
 
 .buttons-position {
@@ -114,7 +115,7 @@ ul
 #submit-button {
   background-color: var(--color-fluo);
   font-size: 20px;
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-fluo);
   border-radius: 10px;
@@ -151,7 +152,7 @@ ul
 #close-button {
   background-color: var(--color-gold);
   font-size: 20px;
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-gold);
   border-radius: 10px;
@@ -180,7 +181,7 @@ input:focus, textarea:focus, select:focus{
 
 #fields {
   font-size: 22px;
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Bold, Helvetica, light, sans-serif;
   color: var(--color-white);
   
 }
@@ -239,7 +240,7 @@ input:focus, textarea:focus, select:focus{
 #items-button {
   background-color: var(--color-fluo);
   font-size: 20px;
-	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-fluo);
   border-radius: 10px;

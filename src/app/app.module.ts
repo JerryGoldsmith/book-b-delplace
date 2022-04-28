@@ -17,6 +17,8 @@ import { Part01EditionImagesModule } from './routing/part01-edition-images.modul
 import { Part01ReservationModule } from './routing/part01-reservation.module'
 import { RoutingModule } from './routing/routing-module'
 
+// import { am5themes } from "@amcharts/amcharts5";
+
 /* -------------------------------------------------- */
 /* --------------------- ROUTES --------------------- */
 /* -------------------------------------------------- */

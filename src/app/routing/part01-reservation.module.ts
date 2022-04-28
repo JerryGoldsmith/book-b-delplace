@@ -38,6 +38,8 @@ import { OrderReservationListQueryUsaTomAgeComponent } from 'src/app/order-reser
 import { OrderReservationListQueryUsaComponent } from 'src/app/order-reservation-list-query-usa/order-reservation-list-query-usa.component';
 import { OrderReservationListQueryDateComponent } from 'src/app/order-reservation-list-query-date/order-reservation-list-query-date.component';
 
+import { OrderReservationListQueryGraphicsComponent } from 'src/app/order-reservation-list-query-graphics/order-reservation-list-query-graphics.component';
+
 import { OrderReservationComponent } from 'src/app/order-reservation/order-reservation.component';
 import { ButtonAAComponent } from 'src/app/order-reservation/buttons-delete/button-aa/button-aa.component';
 import { ButtonBAComponent } from 'src/app/order-reservation/buttons-delete/button-ba/button-ba.component';
@@ -81,6 +83,7 @@ import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
     { path: 'admin', canActivate: [AuthGuardService], component: OrderReservationHomeAdminComponent },
+    { path: 'graphic', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicsComponent },
     { path: 'home-result', canActivate: [AuthGuardService], component: OrderReservationHomeReserveSeatsComponent },
     { path: 'show', canActivate: [AuthGuardService], component: OrderReservationResultComponent },
     { path: 'confirmation', canActivate: [AuthGuardService], component: OrderReservationResultComponent }
@@ -140,6 +143,8 @@ const routes: Routes = [
         OrderReservationListQueryUsaComponent,
         OrderReservationListQueryUsaTomAgeComponent,
         OrderReservationListQueryDateComponent,
+
+        OrderReservationListQueryGraphicsComponent,
 
         SeatsComponent,
 
