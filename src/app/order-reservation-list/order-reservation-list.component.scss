@@ -45,6 +45,23 @@ h2 {
   margin-left: -15px;
 }
 
+#submit-button {
+  background-color: var(--color-fluo);
+  font-size: 32px;
+	font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-fluo);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 20px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+#submit-button:hover {
+  background-color: var(--main-color);
+}
+
 .sectionSize {
   width: 400px;
 }

@@ -21,166 +21,61 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
 
       // Define data for each year
       var chartData = {
-        "1995": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "1996": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "1997": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "1998": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "1999": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2000": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2001": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2002": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2003": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2004": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2005": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2006": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2007": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2008": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2009": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2010": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2011": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2012": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2013": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ],
-        "2014": [
-          { sector: "Nom", size: 6.6 },
-          { sector: "Prénom", size: 0.6 },
-          { sector: "Age", size: 23.2 },
-          { sector: "Pays", size: 2.2 },
-          { sector: "Balcon", size: 4.5 },
-          { sector: "Orchestre", size: 14.6 },
-          { sector: "Date", size: 9.3 } ]
+        "2018": [
+          { sector: "USA", size: 2.6 },
+          { sector: "France", size: 62.6 },
+          { sector: "Canada", size: 3.2 },
+          { sector: "Italie", size: 12.2 },
+          { sector: "Espagne", size: 14.5 },
+          { sector: "Iran", size: 0.6 },
+          { sector: "Pologne", size: 1.3 },
+          { sector: "Allemagne", size: 3.3 },
+          { sector: "Belgique", size: 9.3 },
+          { sector: "Suede", size: 2.3 } ],
+        "2019": [
+          { sector: "USA", size: 5.6 },
+          { sector: "France", size: 82.6 },
+          { sector: "Canada", size: 1.2 },
+          { sector: "Italie", size: 14.2 },
+          { sector: "Espagne", size: 10.5 },
+          { sector: "Iran", size: 0.1 },
+          { sector: "Pologne", size: 3.3 },
+          { sector: "Allemagne", size: 5.3 },
+          { sector: "Belgique", size: 5.3 },
+          { sector: "Suede", size: 1.3 } ],
+        "2020": [
+          { sector: "USA", size: 9.6 },
+          { sector: "France", size: 72.6 },
+          { sector: "Canada", size: 0.2 },
+          { sector: "Italie", size: 11.2 },
+          { sector: "Espagne", size: 8.5 },
+          { sector: "Iran", size: 0.0 },
+          { sector: "Pologne", size: 1.3 },
+          { sector: "Allemagne", size: 7.3 },
+          { sector: "Belgique", size: 12.3 },
+          { sector: "Suede", size: 0.3 } ],
+        "2021": [
+          { sector: "USA", size: 2.6 },
+          { sector: "France", size: 72.6 },
+          { sector: "Canada", size: 3.2 },
+          { sector: "Italie", size: 12.2 },
+          { sector: "Espagne", size: 17.5 },
+          { sector: "Iran", size: 0.6 },
+          { sector: "Pologne", size: 1.3 },
+          { sector: "Allemagne", size: 3.3 },
+          { sector: "Belgique", size: 9.3 },
+          { sector: "Suede", size: 2.3 } ],
+        "2022": [
+          { sector: "USA", size: 2.6 },
+          { sector: "France", size: 82.6 },
+          { sector: "Canada", size: 3.2 },
+          { sector: "Italie", size: 6.2 },
+          { sector: "Espagne", size: 8.5 },
+          { sector: "Iran", size: 0.0 },
+          { sector: "Pologne", size: 1.3 },
+          { sector: "Allemagne", size: 3.3 },
+          { sector: "Belgique", size: 9.3 },
+          { sector: "Suede", size: 2.3 } ]
       };
       
       // Create root element
@@ -214,13 +109,16 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
       // Set data
       // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
       series.data.setAll([
-        { sector: "Nom", size: 6.6 },
-        { sector: "Prénom", size: 0.6 },
-        { sector: "Age", size: 23.2 },
-        { sector: "Pays", size: 2.2 },
-        { sector: "Balcon", size: 4.5 },
-        { sector: "Orchestre", size: 14.6 },
-        { sector: "Date", size: 9.3 }
+        { sector: "USA", size: 6.6 },
+        { sector: "France", size: 0.6 },
+        { sector: "Canada", size: 23.2 },
+        { sector: "Italie", size: 2.2 },
+        { sector: "Espagne", size: 4.5 },
+        { sector: "Iran", size: 14.6 },
+        { sector: "Pologne", size: 9.3 },
+        { sector: "Allemagne", size: 9.3 },
+        { sector: "Belgique", size: 9.3 },
+        { sector: "Suede", size: 9.3 }
       ]);
       
       
@@ -235,18 +133,18 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
         y: am5.p50,
         centerX: am5.p50,
         centerY: am5.p50,
-        fill: am5.color(0x000000),
+        fill: am5.color(0xFFFFFF),
         fontSize: 50
       }));
       
       
       // Animate chart data
-      var currentYear = 1995;
+      var currentYear = 2018;
       function getCurrentData() {
         var data = chartData[currentYear];
         currentYear++;
-        if (currentYear > 2014)
-          currentYear = 1995;
+        if (currentYear > 2022)
+          currentYear = 2018;
         return data;
       }
       
