@@ -308,6 +308,7 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
+  // only current user
   getSeatCurrentUser() {
     return this.afs
       .collection("seatOneOrders", ref => ref
@@ -317,20 +318,13 @@ export class OrderReservationService {
   }
 
   // by dates
-  getSeatsByDates() {
+  getSeatByDates() {
     return this.afs
       .collection("seatOneOrders", ref => ref
       .orderBy ('date', 'desc')
       .limit(32))
       .snapshotChanges();
   }
-
-  // getSeatThreeOrders() {
-  //   return this.afs
-  //     .collection("seatOneOrders", 
-  //     ref => ref.where ('seatOneOrder', 'array-contains', 6))
-  //     .snapshotChanges();
-  // }
 
   // by country
   getSeatByCountry() {
@@ -350,23 +344,44 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
-  // by country && firstName
+  // by country USA && firstName Tom
   getSeatByCountryFirstName() {
     return this.afs
       .collection("seatOneOrders", ref => ref
       .where ('customerCountry', '==', 'USA')
       .where ('customerFirstName', '==', 'Tom')
-      .limit(100))
+      .limit(32))
       .snapshotChanges();
   }
 
-  // by country && age
-  getSeatByCountryAge() {
+  // by country USA && firstName Tom && < 50 years old
+  getSeatByCountryFirstNameAge() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('customerCountry', '==', 'USA')
+      .where ('customerFirstName', '==', 'Tom')
+      .where ('customerAge', '<', 50)
+      .limit(32))
+      .snapshotChanges();
+  }
+
+  // by USA && < 50 years old
+  getSeatByUSAAge() {
     return this.afs
       .collection("seatOneOrders", ref => ref
       .where ('customerCountry', '==', 'USA')
       .where ('customerAge', '<', 50)
-      .limit(100))
+      .limit(32))
+      .snapshotChanges();
+  }
+
+  // by France && > 50 years old
+  getSeatByFranceAge() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .where ('customerCountry', '==', 'France')
+      .where ('customerAge', '>', 50)
+      .limit(32))
       .snapshotChanges();
   }
 

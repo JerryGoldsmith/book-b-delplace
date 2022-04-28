@@ -1,4 +1,4 @@
-<h2>Tous les spectateurs des USA</h2>
+<h2>Par spectateurs américains</h2>
 <table>
   <thead>
     <tr>
@@ -12,12 +12,12 @@
 
   <tbody *ngFor="let order of seatOneOrders">
     <tr>
-      <td class="cell-left">{{ order.payload.doc.data().customerFirstName }}</td>
-      <td class="cell-right">{{ order.payload.doc.data().customerName }}</td>
-      <td class="cell-right">{{ order.payload.doc.data().customerCountry }}</td>
+      <td class="cell-left">{{ order.payload.doc.data().customerFirstName | uppercase }}</td>
+      <td class="cell-right">{{ order.payload.doc.data().customerName | uppercase }}</td>
+      <td class="cell-right">{{ order.payload.doc.data().customerCountry | uppercase }}</td>
       <td class="cell-right">{{ order.payload.doc.data().customerAge }} ans</td>
-      <td class="cell-right">
-        <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">{{ seatOne }}   </span>
+      <td class="cell-right-border">
+        <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">{{ seatOne | uppercase }}   </span>
       </td>
     </tr>
   </tbody>

@@ -5,7 +5,7 @@ body {
 
 h1 {
   color: var(--color-white);
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   font-size: 80px;
   letter-spacing: -0.05em;
   text-align: left;
@@ -14,7 +14,7 @@ h1 {
 
 h3 {
   color: var(--color-fluo);
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   font-size: 68px;
   letter-spacing: -0.05em;
   text-align: left;
@@ -75,7 +75,7 @@ ul
 
 .seat-display {
   font-size: 38px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: var(--color-white);
   padding-left: 100px;
   margin-top: 20px;
@@ -85,7 +85,7 @@ ul
 
 .change-mind {
   font-size: 24px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: var(--color-white);
   padding-top: 10px;
   padding-bottom: 10px;
@@ -93,7 +93,7 @@ ul
 
 .small-text {
   font-size: 16px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: var(--color-white);
   padding-top: 10px;
 }
@@ -114,7 +114,7 @@ ul
 #submit-button {
   background-color: var(--color-fluo);
   font-size: 20px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-fluo);
   border-radius: 10px;
@@ -131,7 +131,7 @@ ul
 #change-mind-button {
   background-color: var(--main-color);
   font-size: 20px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--main-color);
   border-radius: 10px;
@@ -151,7 +151,7 @@ ul
 #close-button {
   background-color: var(--color-gold);
   font-size: 20px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-gold);
   border-radius: 10px;
@@ -170,7 +170,7 @@ ul
 input {
   padding: 24px;
   font-size: 22px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: var(--color-fluo);
 }
 
@@ -180,7 +180,7 @@ input:focus, textarea:focus, select:focus{
 
 #fields {
   font-size: 22px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: var(--color-white);
   
 }
@@ -217,7 +217,7 @@ input:focus, textarea:focus, select:focus{
 
 #items {
   font-size: 30px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: white;
   // margin-left: 16px;
 }
@@ -239,7 +239,7 @@ input:focus, textarea:focus, select:focus{
 #items-button {
   background-color: var(--color-fluo);
   font-size: 20px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-fluo);
   border-radius: 10px;
@@ -255,7 +255,7 @@ input:focus, textarea:focus, select:focus{
 #all-form-title {
   background-color: var(--color-fluo);
   font-size: 20px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-fluo);
   padding: 30px;
@@ -266,7 +266,7 @@ input:focus, textarea:focus, select:focus{
 #all-forms {
   background-color: var(--main-color);
   font-size: 16px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: white;
   border-right: solid 2px var(--color-white);
   padding: 30px;
@@ -277,7 +277,7 @@ input:focus, textarea:focus, select:focus{
 #all-form {
   background-color: var(--main-color);
   font-size: 16px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: white;
   padding: 30px;
   text-align: center;
@@ -298,7 +298,7 @@ input:focus, textarea:focus, select:focus{
 
 a {
   font-size: 30px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   color: var(--color-fluo);
   padding-left: 18px;
 }
@@ -315,7 +315,7 @@ p {
 #return-gold {
   color: var(--color-gold);
   font-size: 30px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
 }
 
 #return-gold:hover {
@@ -325,7 +325,7 @@ p {
 
 .between {
   font-size: 22px;
-	font-family: Barlow_Condensed-regular, Helvetica, light, sans-serif;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
   padding-left: 10px;
   color: gray;
   text-align: left;

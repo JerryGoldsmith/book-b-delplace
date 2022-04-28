@@ -32,7 +32,11 @@ import { OrderReservationPictureTerComponent } from 'src/app/order-reservation-p
 import { OrderReservationListComponent } from 'src/app/order-reservation-list/order-reservation-list.component';
 import { OrderReservationListQueryAllComponent } from 'src/app/order-reservation-list-query-all/order-reservation-list-query-all.component';
 import { OrderReservationListQueryCountryComponent } from 'src/app/order-reservation-list-query-country/order-reservation-list-query-country.component';
+import { OrderReservationListQueryCountryAgeComponent } from 'src/app/order-reservation-list-query-country-age/order-reservation-list-query-country-age.component';
+import { OrderReservationListQueryFranceAgeComponent } from 'src/app/order-reservation-list-query-france-age/order-reservation-list-query-france-age.component';
+import { OrderReservationListQueryUsaTomAgeComponent } from 'src/app/order-reservation-list-query-usa-tom-age/order-reservation-list-query-usa-tom-age.component';
 import { OrderReservationListQueryUsaComponent } from 'src/app/order-reservation-list-query-usa/order-reservation-list-query-usa.component';
+import { OrderReservationListQueryDateComponent } from 'src/app/order-reservation-list-query-date/order-reservation-list-query-date.component';
 
 import { OrderReservationComponent } from 'src/app/order-reservation/order-reservation.component';
 import { ButtonAAComponent } from 'src/app/order-reservation/buttons-delete/button-aa/button-aa.component';
@@ -131,7 +135,11 @@ const routes: Routes = [
         OrderReservationListComponent,
         OrderReservationListQueryAllComponent,
         OrderReservationListQueryCountryComponent,
+        OrderReservationListQueryCountryAgeComponent,
+        OrderReservationListQueryFranceAgeComponent,
         OrderReservationListQueryUsaComponent,
+        OrderReservationListQueryUsaTomAgeComponent,
+        OrderReservationListQueryDateComponent,
 
         SeatsComponent,
 
