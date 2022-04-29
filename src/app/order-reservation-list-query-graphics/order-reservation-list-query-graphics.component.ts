@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderReservationService } from "../services/order-reservation.service";
+// import { ChartType, ChartOptions } from 'chart.js';
+// import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 
 @Component({
   selector: 'app-order-reservation-list-query-graphics',
@@ -8,10 +9,18 @@ import { OrderReservationService } from "../services/order-reservation.service";
 })
 export class OrderReservationListQueryGraphicsComponent implements OnInit {
 
-  constructor(
-    public reservationService: OrderReservationService
-  ) {
-    
+  // public pieChartOptions: ChartOptions = {
+  //   responsive: true,
+  // };
+  // public pieChartLabels: Label[] = [['SciFi'], ['Drama'], 'Comedy'];
+  // public pieChartData: SingleDataSet = [30, 50, 20];
+  // public pieChartType: ChartType = 'pie';
+  // public pieChartLegend = true;
+  // public pieChartPlugins = [];
+
+  constructor() {
+    // monkeyPatchChartJsTooltip();
+    // monkeyPatchChartJsLegend();
   }
 
   ngOnInit(): void {}
