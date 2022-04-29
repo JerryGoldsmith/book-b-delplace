@@ -17,7 +17,7 @@ import { Part01EditionImagesModule } from './routing/part01-edition-images.modul
 import { Part01ReservationModule } from './routing/part01-reservation.module'
 import { RoutingModule } from './routing/routing-module'
 
-// import { am5themes } from "@amcharts/amcharts5";
+import { NgChartsModule } from 'ng2-charts';
 
 /* -------------------------------------------------- */
 /* --------------------- ROUTES --------------------- */
@@ -86,6 +86,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
 
+    NgChartsModule,
     RoutingModule,
     Part01RestoModule,
     Part01EditionModule,

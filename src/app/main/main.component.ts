@@ -57,7 +57,7 @@ export class MainComponent implements OnInit {
 
         // calculate the viewport size
         //@ts-ignore
-        let winsize;
+        let winsize: { height: any; width?: number; };
         const calcWinsize = () => winsize = {width: window.innerWidth, height: window.innerHeight};
         calcWinsize();
         // and recalculate on resize
@@ -65,7 +65,7 @@ export class MainComponent implements OnInit {
 
         // scroll position and update function
         //@ts-ignore
-        let docScroll;
+        let docScroll: number;
         const getPageYScroll = () => docScroll = window.pageYOffset || document.documentElement.scrollTop;
         window.addEventListener('scroll', getPageYScroll);
 
@@ -97,7 +97,7 @@ export class MainComponent implements OnInit {
             //@ts-ignore
             isVisible: boolean;
             //@ts-ignore
-            constructor(el) {
+            constructor(el: any) {
                 // the .item element
                 this.DOM = {el: el};
                 // the inner image
