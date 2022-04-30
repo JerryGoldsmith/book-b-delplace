@@ -2,14 +2,18 @@
 
 <button type="submit" id="submit-button" routerLink="/admin">Retour</button>
 
-<!-- <div class="chart-wrapper">
-    <canvas baseChart 
-    [data]="pieChartData" 
-    [labels]="pieChartLabels" 
-    [chartType]="pieChartType"
-    [options]="pieChartOptions"
-    [plugins]="pieChartPlugins"
-    [legend]="pieChartLegend">
-  </canvas>
+<!-- <div class="toolbar" role="banner">
+  <span class="logo">Codingzee | Angular 12</span>
+  <div class="spacer"></div>
 </div> -->
 
+<div class="chart">
+  <canvas baseChart
+          [datasets]="chart_Data"
+          [labels]="chart_Labels"
+          [options]="chart_Options"
+          [plugins]="chart_Plugins"
+          [legend]="chart_Legend"
+          [chartType]="chart_Type">
+  </canvas>
+</div>

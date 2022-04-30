@@ -74,6 +74,39 @@ h2 {
 
 // -----
 
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #223c88;
+  color: white;
+  font-weight: 600;
+}
+.logo{padding-left:20px;
+      font-size: large;
+}
+
+.chart {
+  width: 800px;
+  height: 1100px;
+  display: block;
+  padding-top:100px;
+  padding-left:30px;
+}
+
+@media screen and (max-width: 575px) {
+  svg#rocket-smoke {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+// -----
+
 #all-form-titles {
   background-color: var(--color-gold);
   font-size: 20px;

@@ -80,6 +80,8 @@ import { OrderReservationResultComponent } from 'src/app/order-reservation-resul
 import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
 import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 
+import { ChartsModule } from 'ng2-charts';
+
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
     { path: 'admin', canActivate: [AuthGuardService], component: OrderReservationHomeAdminComponent },
@@ -160,7 +162,8 @@ const routes: Routes = [
         CommonModule,
         FormsModule, 
         ReactiveFormsModule,
-        CommonFormReactiveModule
+        CommonFormReactiveModule,
+        ChartsModule
     ],
     exports: [
         RouterModule,
