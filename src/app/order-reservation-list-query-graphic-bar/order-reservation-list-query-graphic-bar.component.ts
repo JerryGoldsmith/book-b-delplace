@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { Subscription } from 'rxjs/Subscription';
-import { DocumentChangeAction } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 import Chart from 'chart.js';
 import { ChartDataSets } from 'chart.js';
 import { ChartType, ChartOptions } from 'chart.js';
@@ -31,7 +31,8 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
   public pieChartPlugins = [];
 
   constructor(
-    public reservationService: OrderReservationService
+    public reservationService: OrderReservationService,
+    private afs: AngularFirestore
   ) {
     monkeyPatchChartJsTooltip();
     monkeyPatchChartJsLegend();
@@ -50,6 +51,22 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
 
     // ----
 
+    var labelsArray = [];
+    var dataArray = [];
+
+    this.afs.collection('seatOneOrders')
+    .get()
+    .subscribe((snapshot: { docs: any[]; }) => {
+    snapshot.docs.forEach(doc => {
+        var item = doc.data();
+
+        var customerCountry = item.customerCountry;
+        dataArray.push(customerCountry);
+
+        var customerAge = item.customerAge;
+        labelsArray.push(customerAge);
+      });
+    });
 
     const ctx = document.getElementById('myChart');
     //@ts-ignore
@@ -57,10 +74,11 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
         type: 'bar',
         data: {
             // labels: [{id: 'seatOneOrders', nested: {value: 32}}, {id: 'customerCountry', nested: {value: 500}}],
-            labels: ['USA', 'France', 'Espagne', 'Italie', 'Allemagne', 'Canada'],
+            labels: labelsArray,
             datasets: [{
                 label: 'France',
-                data: [2, 89, 33, 25, 44, 3],
+                // data: [2, 89, 33, 25, 44, 3],
+                data: dataArray,
                 backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
