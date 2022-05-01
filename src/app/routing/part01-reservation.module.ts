@@ -83,6 +83,7 @@ import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
 import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 
 import { ChartsModule } from 'ng2-charts';
+import { HighchartsChartModule } from "highcharts-angular";
 
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
@@ -169,7 +170,8 @@ const routes: Routes = [
         FormsModule, 
         ReactiveFormsModule,
         CommonFormReactiveModule,
-        ChartsModule
+        ChartsModule,
+        HighchartsChartModule
     ],
     exports: [
         RouterModule,

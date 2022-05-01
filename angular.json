@@ -38,7 +38,8 @@
               "@firebase/firestore",
               "@firebase/functions",
               "@firebase/performance",
-              "@firebase/remote-config"
+              "@firebase/remote-config",
+              "chart.js"
             ],
             "outputPath": "dist/book-b-delplace",
             "index": "src/index.html",
@@ -55,7 +56,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js"
+              "./node_modules/jquery/dist/jquery.min.js",
+              "node_modules/chart.js/dist/Chart.min.js"
             ]
           },
           "configurations": {
