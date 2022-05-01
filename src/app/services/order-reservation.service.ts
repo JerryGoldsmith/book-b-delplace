@@ -229,6 +229,7 @@ export class OrderReservationService {
     customerName: new FormControl(""),
     customerCountry: new FormControl(""),
     customerAge: new FormControl(""),
+    color: new FormControl(""),
     seatOneOrder: new FormControl(""),
     completed: new FormControl(false),
     checked: new FormControl(false)
@@ -250,6 +251,18 @@ export class OrderReservationService {
         }).catch(err => {
           reject(err);
         });
+    });
+  }
+
+  createColorUSA() {
+    return new Promise<any>((resolve, reject) => {
+      this.afs
+        .collection("seatOneOrders")
+        .doc("seatOneOrder")
+        .set({
+          color: "rgba(255, 99, 132, 0.2)"
+        })
+        .then(res => {}, err => reject(err));
     });
   }
 

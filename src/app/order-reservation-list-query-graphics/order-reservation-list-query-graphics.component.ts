@@ -53,4 +53,8 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  getChart() {
+    
+  }
+
 }
