@@ -91,12 +91,14 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
     const ctx = document.getElementById('myChart');
     //@ts-ignore
     const myChart = new Chart(ctx, {
+        // type: 'doughnut',
         type: 'bar',
+        // type: 'line',
+        // type: 'pie',
         data: {
-            // labels: [{id: 'seatOneOrders', nested: {value: 32}}, {id: 'customerCountry', nested: {value: 500}}],
             labels: this.chardata,
             datasets: [{
-                label: 'France',
+                label: ['USA'],
                 // data: [2, 89, 33, 25, 44, 3],
                 data: this.chardata,
                 backgroundColor: [
@@ -123,7 +125,8 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
                 'rgba(255, 206, 86, 0.2)',
                 'rgba(75, 192, 192, 0.2)',
                 'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
                 ],
                 borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -149,15 +152,28 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 0.2)',
                 ],
                 borderWidth: 1
-              }]
+              },
+              {
+                label: ['France'],
+                backgroundColor: [
+                  'rgba(54, 162, 235, 0.2)'
+                  ],
+                  borderColor: [
+                  'rgba(54, 162, 235, 1)'
+                  ],
+                  borderWidth: 1
+              }
+            ]
         },
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max: 32
                 }
             },
             options: {
@@ -178,10 +194,5 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
         }
     });
   }
-
-  getSeatsByCountry = () =>
-    this.reservationService
-      .getSeatByCountry()
-      .subscribe(result => (this.seatOneOrders = result));
 
 }

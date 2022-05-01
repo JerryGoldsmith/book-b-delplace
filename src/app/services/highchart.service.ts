@@ -17,7 +17,9 @@ import { map } from "rxjs/operators";
     constructor(
         private readonly firestoreservice: AngularFirestore
         ) {
-      this.customerAgeCollection = firestoreservice.collection < chartModal > ('seatOneOrders');
+      this.customerAgeCollection = firestoreservice.collection < chartModal > ('seatOneOrders', ref => ref
+      .orderBy ('customerCountry', 'asc')
+      .limit(32))
       // .snapshotChanges() returns a DocumentChangeAction[], which contains
       // a lot of information about "what happened" with each change. If you want to
       // get the data and the id use the map operator.
