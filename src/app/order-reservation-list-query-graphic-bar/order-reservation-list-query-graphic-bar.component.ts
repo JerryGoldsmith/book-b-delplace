@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
-import { Subscription } from 'rxjs/Subscription';
-import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import Chart from 'chart.js';
-import { ChartDataSets } from 'chart.js';
-import { ChartType, ChartOptions } from 'chart.js';
-import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
-import { HighchartService, chartModal } from "../services/highchart.service";
+import { HighchartFranceService, chartModal } from "../services/highchart-france.service";
 import * as Highcharts from "highcharts-angular";
 
 @Component({
@@ -22,53 +18,35 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
   items$: chartModal[];
   Highcharts: typeof Highcharts = Highcharts;
   chardata: any[] = [];
+  charcountry: any[] = [];
   chartOptions: any;
-
-  seatOneOrder = [];
-  seatOneOrders: DocumentChangeAction<unknown>[];
-
-  // realtime
-  seatOneSubscription: Subscription;
-  seatOnes: Array<any> = [];
-
-  public pieChartOptions: ChartOptions = {
-    responsive: true,
-  };
-  public pieChartLabels: Label[] = [['USA'], ['France'], ['Belgique'], ['Espagne'], ['UK'], ['Allemagne'], ['Canada']];
-  public pieChartData: SingleDataSet = [2, 80, 6, 4, 3, 3, 2];
-  public pieChartType: ChartType = 'pie';
-  public pieChartLegend = true;
-  public pieChartPlugins = [];
 
   constructor(
     public reservationService: OrderReservationService,
     private afs: AngularFirestore,
-    private highchartservice: HighchartService
-  ) {
-    monkeyPatchChartJsTooltip();
-    monkeyPatchChartJsLegend();
-  }
+    private highchartservice: HighchartFranceService
+  ) {}
 
   ngOnInit(): void {
 
-    // realtime database
-    this.seatOneSubscription = this.reservationService.seatOneSubject
-    .subscribe(
-      (seatOnes: any[]) => {
-        this.seatOnes = seatOnes;
-      }
-    );
-    this.reservationService.emitSeatOneSubject();
-
-    // ----
-
-    this.highchartservice.customerAge$.subscribe((assets) => {
+   this.highchartservice.customerAge$.subscribe((assets) => {
       this.items$ = assets;
       if (this.items$) {
         this.items$.forEach((element) => {
           this.chardata.push(element.customerAge);
         });
-        this.getChart();
+        
+        // customerCountry
+        this.highchartservice.customerCountry$.subscribe((assets) => {
+          this.items$ = assets;
+          if (this.items$) {
+            this.items$.forEach((element) => {
+              this.charcountry.push(element.customerCountry);
+            });
+
+            this.getChart();
+          }
+        });
       }
     });
 
@@ -84,7 +62,7 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
         // type: 'line',
         // type: 'pie',
         data: {
-            labels: this.chardata,
+            labels: this.charcountry,
             datasets: [{
                 label: ['Spectateur français'],
                 // data: [2, 89, 33, 25, 44, 3],

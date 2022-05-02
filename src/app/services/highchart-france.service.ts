@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
 @Injectable({
     providedIn: 'root'
 })
-  export class HighchartService {
+  export class HighchartFranceService {
     
     private customerAgeCollection: AngularFirestoreCollection < chartModal > ;
     customerAge$: Observable < chartModal[] > ;
@@ -19,14 +19,14 @@ import { map } from "rxjs/operators";
         ) {
       this.customerAgeCollection = firestoreservice.collection < chartModal > ('seatOneOrders', ref => ref
 
-      // .where ('customerCountry', '==', 'France')
-      // .limit(32))
+      .where ('customerCountry', '==', 'France')
+      .limit(32))
 
       // .orderBy ('date', 'desc')
       // .limit(32))
 
-      .orderBy ('customerCountry', 'asc')
-      .limit(32))
+    //   .orderBy ('customerCountry', 'asc')
+    //   .limit(32))
 
       this.customerAge$ = this.customerAgeCollection.snapshotChanges().pipe(
         map(actions => actions.map(a => {
@@ -43,11 +43,11 @@ import { map } from "rxjs/operators";
 
       this.customerCountryCollection = firestoreservice.collection < chartModal > ('seatOneOrders', ref => ref
 
-      // .where ('customerCountry', '==', 'France')
-      // .limit(32))
-
-      .orderBy ('customerCountry', 'asc')
+      .where ('customerCountry', '==', 'France')
       .limit(32))
+
+    //   .orderBy ('customerCountry', 'asc')
+    //   .limit(32))
 
       this.customerCountry$ = this.customerCountryCollection.snapshotChanges().pipe(
         map(actions => actions.map(a => {

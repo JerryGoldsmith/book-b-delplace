@@ -4,13 +4,8 @@
 <button type="submit" id="submit-button" routerLink="/pie">Pie</button>
 <button type="submit" id="submit-button" routerLink="/bar">Bar</button>
 
-<div class="chart">
+<div>
   <canvas baseChart
-          [datasets]="chart_Data"
-          [labels]="chart_Labels"
-          [options]="chart_Options"
-          [plugins]="chart_Plugins"
-          [legend]="chart_Legend"
-          [chartType]="chart_Type">
-  </canvas>
+  id="myChart">
+</canvas>
 </div>
