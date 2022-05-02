@@ -39,43 +39,49 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
           this.chardata.push(element.customerAge);
         });
         
-        this.getChart();
+        this.highchartservice.customerCountry$.subscribe((assets) => {
+          this.items$ = assets;
+          if (this.items$) {
+            this.items$.forEach((element) => {
+              this.charcountry.push(element.customerCountry);
+            });
+    
+            this.highchartservice.color$.subscribe((assets) => {
+              this.items$ = assets;
+              if (this.items$) {
+                this.items$.forEach((element) => {
+                  this.charcolor.push(element.color);
+              });
+        
+              this.getChart();
+              }
+            });
+          }
+        });
       }
     });
 
     // customerCountry
-    this.highchartservice.customerCountry$.subscribe((assets) => {
-      this.items$ = assets;
-      if (this.items$) {
-        this.items$.forEach((element) => {
-          this.charcountry.push(element.customerCountry);
-        });
-
-        this.getChart();
-      }
-    });
-
-    // color
-    this.highchartservice.color$.subscribe((assets) => {
-      this.items$ = assets;
-      if (this.items$) {
-        this.items$.forEach((element) => {
-          this.charcolor.push(element.color);
-      });
-
-      this.getChart();
-      }
-    });
-
-    // legend
-    // this.highchartservice.legend$.subscribe((assets) => {
+    // this.highchartservice.customerCountry$.subscribe((assets) => {
     //   this.items$ = assets;
     //   if (this.items$) {
     //     this.items$.forEach((element) => {
-    //       this.charlegend.push(element.legend);
-    //   });
+    //       this.charcountry.push(element.customerCountry);
+    //     });
 
     //     this.getChart();
+    //   }
+    // });
+
+    // color
+    // this.highchartservice.color$.subscribe((assets) => {
+    //   this.items$ = assets;
+    //   if (this.items$) {
+    //     this.items$.forEach((element) => {
+    //       this.charcolor.push(element.color);
+    //   });
+
+    //   this.getChart();
     //   }
     // });
   }
@@ -85,17 +91,33 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
     //@ts-ignore
     this.myChart = new Chart(ctx, {
         // type: 'doughnut',
-        type: 'bar',
+        // type: 'bar',
         // type: 'line',
-        // type: 'pie',
+        type: 'pie',
         data: {
             labels: this.charcountry,
             datasets: [
               {
                 label: this.charcountry[0],
                 backgroundColor: this.charcolor,
-                data: this.chardata
+                data: this.chardata,
+                borderWidth: [0, 1, 0, 0]
+                // borderColor: [
+                //       'rgba(255, 159, 64, 0.2)'
+                //     ]
               }
+              // {
+              //   label: this.charcountry[1],
+              //   backgroundColor: this.charcolor[1]
+              // },
+              // {
+              //   label: this.charcountry[2],
+              //   backgroundColor: this.charcolor[2]
+              // }
+              // {
+              //   label: this.charcountry[13],
+              //   backgroundColor: this.charcolor[13]
+              // }
               // {
               //   label: ['USA'],
               //   backgroundColor: [
@@ -114,7 +136,12 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
             options: {
               layout: {
                 padding: 20
-              }
+              },
+              elements: {
+                arc: {
+                    borderWidth: 0
+                }
+            }
             },
             legend: {
               // display: false
@@ -123,7 +150,18 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
                   fontColor: 'white',
                   fontSize: 28,
               }
-            }
+            },
+            // ticks: {
+            //   display: false,
+            //   autoSkip: false,
+            //   callback: function(label: string) {
+            //     let _label = label.replace(/[0-9]/g, ''); 
+            //     if (this.charcountry[13] != _label) {
+            //       this.charcountry[13] = _label;
+            //       return this.charcountry[13];
+            //     }
+            //   }
+            // }
         }
     });
   }
