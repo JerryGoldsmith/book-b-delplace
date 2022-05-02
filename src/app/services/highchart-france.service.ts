@@ -14,6 +14,9 @@ import { map } from "rxjs/operators";
     private customerCountryCollection: AngularFirestoreCollection < chartModal > ;
     customerCountry$: Observable < chartModal[] > ;
 
+    private colorCollection: AngularFirestoreCollection < chartModal > ;
+    color$: Observable < chartModal[] > ;
+
     constructor(
         private readonly firestoreservice: AngularFirestore
         ) {
@@ -59,10 +62,32 @@ import { map } from "rxjs/operators";
           };
         }))
       );
+
+      // -----
+
+      this.colorCollection = firestoreservice.collection < chartModal > ('seatOneOrders', ref => ref
+
+      // .where ('customerCountry', '==', 'France')
+      // .limit(32))
+
+      .where ('customerCountry', '==', 'France')
+      .limit(32))
+
+      this.color$ = this.colorCollection.snapshotChanges().pipe(
+        map(actions => actions.map(a => {
+          const data = a.payload.doc.data() as chartModal;
+          const id = a.payload.doc.id;
+          return {
+            id,
+            ...data
+          };
+        }))
+      );
     }
   }
   export interface chartModal {
       currency: string,
       customerAge: number,
-      customerCountry: number
+      customerCountry: number,
+      color: number
   }
