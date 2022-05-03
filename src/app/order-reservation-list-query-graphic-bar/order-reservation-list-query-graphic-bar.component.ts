@@ -30,6 +30,16 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
 
   ngOnInit(): void {
 
+    /* refresh page */
+
+    if(!window.location.hash) {
+      //@ts-ignore
+      window.location = window.location + '#loaded';
+      window.location.reload();
+   }
+
+   // ------
+
    this.highchartservice.customerAge$.subscribe((assets) => {
       this.items$ = assets;
       if (this.items$) {
@@ -67,7 +77,7 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
   getChart() {
     const ctx = document.getElementById('seatsChart');
     //@ts-ignore
-    this.myChart = new Chart(ctx, {
+    this.seatsChart = new Chart(ctx, {
         // type: 'doughnut',
         type: 'bar',
         // type: 'line',
@@ -75,135 +85,12 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
         data: {
             labels: this.charcountry,
             datasets: [{
-                label: ['Spectateur français'],
-                // data: [2, 89, 33, 25, 44, 3],
+                // label: ['Spectateur français'],
                 data: this.chardata,
                 backgroundColor: this.charcolor,
                 borderColor: this.charcolor,
-                // backgroundColor: [
-                //   // France
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-
-                //   // Iran
-                // // 'rgba(54, 162, 235, 0.2)',
-
-                // // 'rgba(255, 206, 86, 0.2)',
-                // // 'rgba(75, 192, 192, 0.2)',
-                // // 'rgba(153, 102, 255, 0.2)',
-                // // 'rgba(255, 159, 64, 0.2)',
-                // // 'rgba(255, 99, 132, 0.2)',
-                // // 'rgba(54, 162, 235, 0.2)',
-                // // 'rgba(255, 206, 86, 0.2)',
-                // // 'rgba(75, 192, 192, 0.2)',
-                // // 'rgba(153, 102, 255, 0.2)',
-                // // 'rgba(255, 159, 64, 0.2)',
-                // // 'rgba(255, 99, 132, 0.2)',
-                // // 'rgba(54, 162, 235, 0.2)',
-                // // 'rgba(255, 206, 86, 0.2)',
-                // // 'rgba(75, 192, 192, 0.2)',
-                // // 'rgba(153, 102, 255, 0.2)',
-                // // 'rgba(255, 159, 64, 0.2)',
-                // // 'rgba(255, 159, 64, 0.2)',
-                // ],
-                // borderColor: [
-                //   // France
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(255, 99, 132, 1)',
-
-                //   // Iran
-                // // 'rgba(54, 162, 235, 1)',
-
-                // // 'rgba(255, 206, 86, 1)',
-                // // 'rgba(75, 192, 192, 1)',
-                // // 'rgba(153, 102, 255, 1)',
-                // // 'rgba(255, 159, 64, 1)',
-                // // 'rgba(255, 99, 132, 1)',
-                // // 'rgba(54, 162, 235, 1)',
-                // // 'rgba(255, 206, 86, 1)',
-                // // 'rgba(75, 192, 192, 1)',
-                // // 'rgba(153, 102, 255, 1)',
-                // // 'rgba(255, 159, 64, 1)',
-                // // 'rgba(255, 99, 132, 1)',
-                // // 'rgba(54, 162, 235, 1)',
-                // // 'rgba(255, 206, 86, 1)',
-                // // 'rgba(75, 192, 192, 1)',
-                // // 'rgba(153, 102, 255, 1)',
-                // // 'rgba(255, 159, 64, 1)',
-                // // 'rgba(255, 159, 64, 0.2)',
-                // ],
                 borderWidth: 1
-              },
-              // {
-              //   label: ['Iran'],
-              //   backgroundColor: [
-              //     'rgba(54, 162, 235, 0.2)'
-              //     ],
-              //     borderColor: [
-              //     'rgba(54, 162, 235, 1)'
-              //     ],
-              //     borderWidth: 1
-              // }
+              }
             ]
         },
         options: {
@@ -219,16 +106,13 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
               }
             },
             legend: {
-              // display: false
-              labels: {
-                  fontFamily: "Cormorant_Garamond_Light",
-                  fontColor: 'white',
-                  fontSize: 28,
-              }
+              display: false
+              // labels: {
+              //     fontFamily: "Cormorant_Garamond_Light",
+              //     fontColor: 'white',
+              //     fontSize: 28,
+              // }
             }
-            // parsing: {
-            //   key: 'nested.value'
-            // }
         }
     });
   }

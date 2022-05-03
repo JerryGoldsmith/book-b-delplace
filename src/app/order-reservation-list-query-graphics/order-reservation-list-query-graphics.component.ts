@@ -18,6 +18,7 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
   items$: chartModal[];
   Highcharts: typeof Highcharts = Highcharts;
   chardata: any[] = [];
+  charage: any[] = [];
   charcountry: any[] = [];
   charcolor: any[] = [];
   charlegend: any[] = [];
@@ -30,6 +31,15 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+    /* refresh page */
+    if(!window.location.hash) {
+      //@ts-ignore
+      window.location = window.location + '#loaded';
+      window.location.reload();
+   }
+
+   // ------
 
     // customerAge
     this.highchartservice.customerAge$.subscribe((assets) => {
@@ -66,15 +76,15 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
     const ctx = document.getElementById('seatsChart');
     //@ts-ignore
     this.seatsChart = new Chart(ctx, {
-        // type: 'doughnut',
-        type: 'bar',
+        type: 'doughnut',
+        // type: 'bar',
         // type: 'line',
         // type: 'pie',
         data: {
             labels: this.charcountry,
             datasets: [
               {
-                // label: this.charcountry[0],
+                label: this.charcountry,
                 backgroundColor: this.charcolor,
                 borderColor: 'rgba(255, 99, 132, 0.2)',
                 data: this.chardata,
@@ -95,12 +105,12 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
               }
             },
             legend: {
-              display: false
-              // labels: {
-              //     fontFamily: "Cormorant_Garamond_Light",
-              //     fontColor: 'white',
-              //     fontSize: 28,
-              // }
+              // display: false
+              labels: {
+                  fontFamily: "Cormorant_Garamond_Light",
+                  fontColor: 'white',
+                  fontSize: 28,
+              }
             }
         }
     });
