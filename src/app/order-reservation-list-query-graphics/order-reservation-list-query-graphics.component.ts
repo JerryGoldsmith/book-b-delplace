@@ -93,7 +93,25 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
             ]
         },
         options: {
+          responsive: true,
+          tooltips: {
+            mode: 'index',
+            intersect: true,
+          },
+          // hover: {
+          //   mode: 'nearest',
+          //   intersect: true
+          // },
             scales: {
+              // xAxes: [{
+              //   stacked: false,
+              //   display: false
+              // }],
+              // yAxes: [{
+              //   stacked: false,
+              //   display: false
+              // }]
+              
               // display: false
                 y: {
                     beginAtZero: true
