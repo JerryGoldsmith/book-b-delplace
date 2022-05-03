@@ -258,7 +258,7 @@ export class OrderReservationService {
     return new Promise<any>((resolve, reject) => {
       this.afs
         .collection("seatOneOrders")
-        .doc("seatOneOrder")
+        .doc("colorUSA")
         .set({
           color: "rgba(255, 99, 132, 0.2)"
         })

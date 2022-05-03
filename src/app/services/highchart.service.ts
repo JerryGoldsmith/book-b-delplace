@@ -20,6 +20,9 @@ import { map } from "rxjs/operators";
     private legendCollection: AngularFirestoreCollection < chartModal > ;
     legend$: Observable < chartModal[] > ;
 
+    private colorUsaCollection: AngularFirestoreCollection < chartModal > ;
+    colorUsa$: Observable < chartModal[] > ;
+
     constructor(
         private readonly firestoreservice: AngularFirestore
         ) {
@@ -68,6 +71,27 @@ import { map } from "rxjs/operators";
 
       // ----
 
+      this.colorUsaCollection = firestoreservice.collection < chartModal > ('seatOneOrders', ref => ref
+
+      // .where ('customerCountry', '==', 'France')
+      // .limit(32))
+
+      .orderBy ('customerCountry', 'asc')
+      .limit(32))
+
+      this.colorUsa$ = this.colorUsaCollection.snapshotChanges().pipe(
+        map(actions => actions.map(a => {
+          const data = a.payload.doc.data() as chartModal;
+          const id = a.payload.doc.id;
+          return {
+            id,
+            ...data
+          };
+        }))
+      );
+
+      // ------
+
       this.colorCollection = firestoreservice.collection < chartModal > ('seatOneOrders', ref => ref
 
       // .where ('customerCountry', '==', 'France')
@@ -114,5 +138,6 @@ import { map } from "rxjs/operators";
       customerAge: number,
       customerCountry: number,
       color: string,
+      colorUsa: string,
       legend: string
   }

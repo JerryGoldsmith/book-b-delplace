@@ -23,12 +23,12 @@
       </div>
 
       <!-- country > form -->
-      <div class="mdc-text-field">
+      <!-- <div class="mdc-text-field">
         <input size="42" placeholder="Pays"
         formControlName="customerCountry"
         type="text" id="fields"
         class="col s12"/><br />
-      </div>
+      </div> -->
 
       <!-- age > form -->
       <div class="mdc-text-field">
@@ -37,6 +37,26 @@
         type="text" id="fields"
         class="col s12"/>
       </div>
+
+      <!-- select customerCountry -->
+      <label for="standard-select">Pays</label>
+        <select class="form-control select" id="standard-select" formControlName="customerCountry">
+          <!-- <option value disabled class="ng-binding">France *</option> -->
+          <option value="France" label="France" selected="selected">France</option>
+          <option value="USA" label="USA" >USA</option>
+          <option value="Pologne" label="Pologne" >Pologne</option>
+          <option value="UK" label="UK" >UK</option>
+        </select>
+
+      <!-- select color -->
+      <label for="standard-select">Couleur du pays (graphique)</label>
+        <select class="form-control select" id="standard-select" formControlName="color">
+          <!-- <option value disabled class="ng-binding">France *</option> -->
+          <option value="rgba(255, 99, 132, 0.2)" label="France (Rouge)" selected="selected"></option>
+          <option value="rgba(255, 159, 64, 0.2)" label="USA (Ocre)" ></option>
+          <option value="rgba(255, 206, 86, 0.2)" label="Pologne (Jaune)" ></option>
+          <option value="rgba(255, 99, 132, 0.2)" label="UK (Bleu)" ></option>
+        </select>
 
       <ul>
         <li>

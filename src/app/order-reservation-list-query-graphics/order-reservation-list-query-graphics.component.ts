@@ -12,7 +12,7 @@ import * as Highcharts from "highcharts-angular";
 })
 export class OrderReservationListQueryGraphicsComponent implements OnInit {
 
-  myChart: Chart;
+  seatsChart: Chart;
 
   title = "Firestore-Angular-Highcharts";
   items$: chartModal[];
@@ -60,70 +60,26 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
         });
       }
     });
-
-    // customerCountry
-    // this.highchartservice.customerCountry$.subscribe((assets) => {
-    //   this.items$ = assets;
-    //   if (this.items$) {
-    //     this.items$.forEach((element) => {
-    //       this.charcountry.push(element.customerCountry);
-    //     });
-
-    //     this.getChart();
-    //   }
-    // });
-
-    // color
-    // this.highchartservice.color$.subscribe((assets) => {
-    //   this.items$ = assets;
-    //   if (this.items$) {
-    //     this.items$.forEach((element) => {
-    //       this.charcolor.push(element.color);
-    //   });
-
-    //   this.getChart();
-    //   }
-    // });
   }
 
   getChart() {
-    const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('seatsChart');
     //@ts-ignore
-    this.myChart = new Chart(ctx, {
+    this.seatsChart = new Chart(ctx, {
         // type: 'doughnut',
-        // type: 'bar',
+        type: 'bar',
         // type: 'line',
-        type: 'pie',
+        // type: 'pie',
         data: {
             labels: this.charcountry,
             datasets: [
               {
-                label: this.charcountry[0],
+                // label: this.charcountry[0],
                 backgroundColor: this.charcolor,
+                borderColor: 'rgba(255, 99, 132, 0.2)',
                 data: this.chardata,
                 borderWidth: [0, 1, 0, 0]
-                // borderColor: [
-                //       'rgba(255, 159, 64, 0.2)'
-                //     ]
               }
-              // {
-              //   label: this.charcountry[1],
-              //   backgroundColor: this.charcolor[1]
-              // },
-              // {
-              //   label: this.charcountry[2],
-              //   backgroundColor: this.charcolor[2]
-              // }
-              // {
-              //   label: this.charcountry[13],
-              //   backgroundColor: this.charcolor[13]
-              // }
-              // {
-              //   label: ['USA'],
-              //   backgroundColor: [
-              //     'rgba(255, 159, 64, 0.2)'
-              //   ]
-              // }
             ]
         },
         options: {
@@ -136,32 +92,16 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
             options: {
               layout: {
                 padding: 20
-              },
-              elements: {
-                arc: {
-                    borderWidth: 0
-                }
-            }
-            },
-            legend: {
-              // display: false
-              labels: {
-                  fontFamily: "Cormorant_Garamond_Light",
-                  fontColor: 'white',
-                  fontSize: 28,
               }
             },
-            // ticks: {
-            //   display: false,
-            //   autoSkip: false,
-            //   callback: function(label: string) {
-            //     let _label = label.replace(/[0-9]/g, ''); 
-            //     if (this.charcountry[13] != _label) {
-            //       this.charcountry[13] = _label;
-            //       return this.charcountry[13];
-            //     }
-            //   }
-            // }
+            legend: {
+              display: false
+              // labels: {
+              //     fontFamily: "Cormorant_Garamond_Light",
+              //     fontColor: 'white',
+              //     fontSize: 28,
+              // }
+            }
         }
     });
   }

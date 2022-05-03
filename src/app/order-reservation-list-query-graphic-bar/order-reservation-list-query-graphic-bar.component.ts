@@ -65,7 +65,7 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
   }
 
   getChart() {
-    const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('seatsChart');
     //@ts-ignore
     this.myChart = new Chart(ctx, {
         // type: 'doughnut',

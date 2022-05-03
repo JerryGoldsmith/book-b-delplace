@@ -122,9 +122,9 @@ export class OrderReservationComponent implements OnInit, OnDestroy {
       console.log("OK");
     });
 
-    this.reservationService.createColorUSA().then(res => {
-      console.log("OK");
-    });
+    // this.reservationService.createColorUSA().then(res => {
+    //   console.log("OK");
+    // });
   }
 
   // realtime database
