@@ -76,12 +76,12 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
     const ctx = document.getElementById('seatsChart');
     //@ts-ignore
     this.seatsChart = new Chart(ctx, {
-        type: 'doughnut',
+        // type: 'doughnut',
         // type: 'polarArea',
         // type: 'radar',
         // type: 'bar',
         // type: 'line',
-        // type: 'pie',
+        type: 'pie',
         data: {
             labels: this.charcountry,
             datasets: [
@@ -95,20 +95,21 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
             ]
         },
         options: {
-          // responsive: true,
+          responsive: true,
+          // maintainAspectRatio: false,
           // tooltips: {
           //   mode: 'index',
           //   intersect: true
           // },
             scales: {
-              // xAxes: [{
-              //   stacked: false,
-              //   display: false
-              // }],
-              // yAxes: [{
-              //   stacked: false,
-              //   display: false
-              // }]
+              xAxes: [{
+                stacked: false,
+                display: false
+              }],
+              yAxes: [{
+                stacked: false,
+                display: false
+              }]
               
               // display: false
                 // y: { // bar
@@ -116,12 +117,22 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
                 // }
             },
             options: {
-              layout: {
-                padding: 20
+              // layout: {
+              //   padding: 20
+              // }
+            },
+            layout: {
+              padding: {
+                 bottom   : 20
               }
+            },
+            animation: {
+              duration : 1000
             },
             legend: {
               display: true,
+              // display: this.charcountry.length <= 32,
+              position: "top",
               labels: {
                   fontFamily: "Cormorant_Garamond_Light",
                   fontColor: 'white',
