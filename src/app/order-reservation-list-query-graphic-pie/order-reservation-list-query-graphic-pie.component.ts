@@ -127,11 +127,12 @@ export class OrderReservationListQueryGraphicPieComponent implements OnInit {
             legend: {
               display: true,
               // display: this.charcountry.length <= 32,
-              position: "top",
+              position: "bottom",
               labels: {
                   fontFamily: "Cormorant_Garamond_Light",
                   fontColor: 'white',
                   fontSize: 26,
+                  padding: 20.10
               }
             },
             elements: {

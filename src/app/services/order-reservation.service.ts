@@ -344,7 +344,7 @@ export class OrderReservationService {
     return this.afs
       .collection("seatOneOrders", ref => ref
       .orderBy ('customerCountry', 'asc')
-      .limit(100))
+      .limit(32))
       .snapshotChanges();
   }
 
@@ -353,7 +353,7 @@ export class OrderReservationService {
     return this.afs
       .collection("seatOneOrders", ref => ref
       .where ('customerCountry', '==', 'USA')
-      .limit(100))
+      .limit(32))
       .snapshotChanges();
   }
 

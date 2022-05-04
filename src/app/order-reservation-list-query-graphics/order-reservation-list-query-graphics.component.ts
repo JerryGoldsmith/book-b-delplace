@@ -77,11 +77,6 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
     //@ts-ignore
     this.seatsChart = new Chart(ctx, {
         type: 'doughnut',
-        // type: 'polarArea',
-        // type: 'radar',
-        // type: 'bar',
-        // type: 'line',
-        // type: 'pie',
         data: {
             labels: this.charcountry,
             datasets: [
@@ -123,26 +118,43 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
             },
             layout: {
               padding: {
-                 bottom   : 20
+                left: 0,
+                right: 0,
+                top: 30,
+                bottom: 0
               }
             },
             animation: {
               duration : 1000
             },
+            plugins: {
+              outlabels: {
+                text: "%l (%p)",
+                color: "black",
+                stretch: 15,
+                backgroundColor: ["#FFFFFF", "#FFFFFF"],
+                font: {
+                  resizable: true,
+                  minSize: 12,
+                  maxSize: 18
+                }
+              }
+            },
             legend: {
               display: true,
               // display: this.charcountry.length <= 32,
-              position: "top",
+              position: "bottom",
               labels: {
                   fontFamily: "Cormorant_Garamond_Light",
                   fontColor: 'white',
                   fontSize: 26,
+                  padding: 20.10
               }
             },
             elements: {
               arc: {
                   borderWidth: 0
-              },
+            },
               // line: { // radar
               //   borderWidth: 3
               // }

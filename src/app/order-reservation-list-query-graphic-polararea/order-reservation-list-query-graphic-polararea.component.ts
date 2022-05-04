@@ -102,8 +102,9 @@ export class OrderReservationListQueryGraphicPolarareaComponent implements OnIni
                 display: false
               }],
               yAxes: [{
-                stacked: false,
-                display: false
+                ticks: {
+                  display: false
+                }
               }]
               
               // display: false
@@ -127,11 +128,12 @@ export class OrderReservationListQueryGraphicPolarareaComponent implements OnIni
             legend: {
               display: true,
               // display: this.charcountry.length <= 32,
-              position: "top",
+              position: "bottom",
               labels: {
                   fontFamily: "Cormorant_Garamond_Light",
-                  fontColor: 'white',
+                  fontColor: 'black',
                   fontSize: 26,
+                  padding: 20.10
               }
             },
             elements: {
