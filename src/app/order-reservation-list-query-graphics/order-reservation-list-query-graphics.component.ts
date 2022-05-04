@@ -88,20 +88,17 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
                 backgroundColor: this.charcolor,
                 borderColor: 'rgba(255, 99, 132, 0.2)',
                 data: this.chardata,
-                borderWidth: [0, 1, 0, 0]
+                borderWidth: 0
               }
             ]
         },
         options: {
-          responsive: true,
+          // responsive: true,
           tooltips: {
             mode: 'index',
             intersect: true,
+            
           },
-          // hover: {
-          //   mode: 'nearest',
-          //   intersect: true
-          // },
             scales: {
               // xAxes: [{
               //   stacked: false,
@@ -129,7 +126,12 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
                   fontColor: 'white',
                   fontSize: 28,
               }
-            }
+            },
+            elements: {
+              arc: {
+                  borderWidth: 0
+              }
+          }
         }
     });
   }
