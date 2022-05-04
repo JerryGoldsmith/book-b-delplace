@@ -76,12 +76,12 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
     const ctx = document.getElementById('seatsChart');
     //@ts-ignore
     this.seatsChart = new Chart(ctx, {
-        // type: 'doughnut',
+        type: 'doughnut',
         // type: 'polarArea',
         // type: 'radar',
         // type: 'bar',
         // type: 'line',
-        type: 'pie',
+        // type: 'pie',
         data: {
             labels: this.charcountry,
             datasets: [

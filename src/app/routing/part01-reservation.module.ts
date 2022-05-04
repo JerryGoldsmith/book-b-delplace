@@ -41,6 +41,7 @@ import { OrderReservationListQueryDateComponent } from 'src/app/order-reservatio
 import { OrderReservationListQueryGraphicsComponent } from 'src/app/order-reservation-list-query-graphics/order-reservation-list-query-graphics.component';
 import { OrderReservationListQueryGraphicPieComponent } from 'src/app/order-reservation-list-query-graphic-pie/order-reservation-list-query-graphic-pie.component';
 import { OrderReservationListQueryGraphicBarComponent } from 'src/app/order-reservation-list-query-graphic-bar/order-reservation-list-query-graphic-bar.component';
+import { OrderReservationListQueryGraphicPolarareaComponent } from 'src/app/order-reservation-list-query-graphic-polararea/order-reservation-list-query-graphic-polararea.component';
 
 import { OrderReservationComponent } from 'src/app/order-reservation/order-reservation.component';
 import { ButtonAAComponent } from 'src/app/order-reservation/buttons-delete/button-aa/button-aa.component';
@@ -88,9 +89,12 @@ import { HighchartsChartModule } from "highcharts-angular";
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
     { path: 'admin', canActivate: [AuthGuardService], component: OrderReservationHomeAdminComponent },
+
     { path: 'graphic', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicsComponent },
     { path: 'pie', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicPieComponent },
     { path: 'bar', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicBarComponent },
+    { path: 'polar', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicPolarareaComponent },
+
     { path: 'home-result', canActivate: [AuthGuardService], component: OrderReservationHomeReserveSeatsComponent },
     { path: 'show', canActivate: [AuthGuardService], component: OrderReservationResultComponent },
     { path: 'confirmation', canActivate: [AuthGuardService], component: OrderReservationResultComponent }
@@ -154,6 +158,7 @@ const routes: Routes = [
         OrderReservationListQueryGraphicsComponent,
         OrderReservationListQueryGraphicPieComponent,
         OrderReservationListQueryGraphicBarComponent,
+        OrderReservationListQueryGraphicPolarareaComponent,
 
         SeatsComponent,
 

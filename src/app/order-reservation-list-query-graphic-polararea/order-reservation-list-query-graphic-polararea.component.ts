@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { AngularFirestore } from '@angular/fire/firestore';
 import Chart from 'chart.js';
-import { HighchartService, chartModal } from "../services/highchart.service";
+import { HighchartEtrangerService, chartModal } from "../services/highchart-etranger.service";
 import * as Highcharts from "highcharts-angular";
 
 @Component({
-  selector: 'app-order-reservation-list-query-graphic-bar',
-  templateUrl: './order-reservation-list-query-graphic-bar.component.html',
+  selector: 'app-order-reservation-list-query-graphic-polararea',
+  templateUrl: './order-reservation-list-query-graphic-polararea.component.html',
   styleUrls: ['./../order-reservation-list/order-reservation-list.component.scss']
 })
-export class OrderReservationListQueryGraphicBarComponent implements OnInit {
+export class OrderReservationListQueryGraphicPolarareaComponent implements OnInit {
 
   seatsChart: Chart;
 
@@ -27,7 +27,7 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
   constructor(
     public reservationService: OrderReservationService,
     private afs: AngularFirestore,
-    private highchartservice: HighchartService
+    private highchartservice: HighchartEtrangerService
   ) {}
 
   ngOnInit(): void {
@@ -76,12 +76,12 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
     const ctx = document.getElementById('seatsChart');
     //@ts-ignore
     this.seatsChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'polarArea',
         data: {
             labels: this.charcountry,
             datasets: [
               {
-                // label: this.charcountry,
+                label: this.charcountry,
                 backgroundColor: this.charcolor,
                 borderColor: 'rgba(255, 99, 132, 0.2)',
                 data: this.chardata,
@@ -125,14 +125,14 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
               duration : 1000
             },
             legend: {
-              display: false,
+              display: true,
               // display: this.charcountry.length <= 32,
-              // position: "top",
-              // labels: {
-              //     fontFamily: "Cormorant_Garamond_Light",
-              //     fontColor: 'white',
-              //     fontSize: 26,
-              // }
+              position: "top",
+              labels: {
+                  fontFamily: "Cormorant_Garamond_Light",
+                  fontColor: 'white',
+                  fontSize: 26,
+              }
             },
             elements: {
               arc: {
@@ -145,4 +145,5 @@ export class OrderReservationListQueryGraphicBarComponent implements OnInit {
         }
     });
   }
+
 }
