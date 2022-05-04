@@ -90,6 +90,11 @@ const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
     { path: 'admin', canActivate: [AuthGuardService], component: OrderReservationHomeAdminComponent },
 
+    { path: 'date', canActivate: [AuthGuardService], component: OrderReservationListQueryDateComponent },
+    { path: 'country', canActivate: [AuthGuardService], component: OrderReservationListQueryCountryComponent },
+    { path: 'usa', canActivate: [AuthGuardService], component: OrderReservationListQueryUsaComponent },
+    { path: 'age', canActivate: [AuthGuardService], component: OrderReservationListQueryCountryAgeComponent },
+
     { path: 'graphic', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicsComponent },
     { path: 'pie', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicPieComponent },
     { path: 'bar', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicBarComponent },

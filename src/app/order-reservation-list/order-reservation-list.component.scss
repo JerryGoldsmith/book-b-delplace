@@ -153,25 +153,17 @@ h2 {
 
 .background-white {
   width: 1400px;
-  height: 780px;
+  height: 720px;
   background-color: var(--color-white);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 30px;
 }
 
 .background-gray {
   width: 1400px;
-  height: 780px;
+  height: 720px;
   background-color: var(--color-darkbluelight);
-  border-radius: 10px;
-  padding: 30px;
-}
-
-.background-black {
-  width: 1400px;
-  height: 780px;
-  background-color: var(--color-link-hover);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 30px;
 }
 
