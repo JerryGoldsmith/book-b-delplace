@@ -77,6 +77,8 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
     //@ts-ignore
     this.seatsChart = new Chart(ctx, {
         type: 'doughnut',
+        // type: 'polarArea',
+        // type: 'radar',
         // type: 'bar',
         // type: 'line',
         // type: 'pie',
@@ -94,11 +96,10 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
         },
         options: {
           // responsive: true,
-          tooltips: {
-            mode: 'index',
-            intersect: true,
-            
-          },
+          // tooltips: {
+          //   mode: 'index',
+          //   intersect: true
+          // },
             scales: {
               // xAxes: [{
               //   stacked: false,
@@ -110,9 +111,9 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
               // }]
               
               // display: false
-                y: {
-                    beginAtZero: true
-                }
+                // y: { // bar
+                //     beginAtZero: true
+                // }
             },
             options: {
               layout: {
@@ -120,17 +121,20 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
               }
             },
             legend: {
-              // display: false
+              display: true,
               labels: {
                   fontFamily: "Cormorant_Garamond_Light",
                   fontColor: 'white',
-                  fontSize: 28,
+                  fontSize: 26,
               }
             },
             elements: {
               arc: {
                   borderWidth: 0
-              }
+              },
+              // line: { // radar
+              //   borderWidth: 3
+              // }
           }
         }
     });
