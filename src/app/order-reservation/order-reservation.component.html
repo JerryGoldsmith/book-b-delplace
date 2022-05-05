@@ -87,7 +87,7 @@
                 <h3>{{ seatOne.key | uppercase }}</h3>
 
                 <div class="buttons-position">
-                  <app-seats
+                  <app-seats-start
                   *ngFor="let seatOne of seatOnes | valueArray; let i = index"
                   [seatName]="seatOne.name" 
                   [seatKind]="seatOne.kind"
@@ -129,7 +129,7 @@
                   || seatOne.name === 'Orchestre 30'
                   || seatOne.name === 'Orchestre 31'
                   || seatOne.name === 'Orchestre 32'">
-                </app-seats>
+                </app-seats-start>
                 </div>
 
             </div>
@@ -140,7 +140,7 @@
               <h3>{{ seatOne.key | uppercase }}</h3>
 
               <div class="buttons-position">
-                <app-seats
+                <app-seats-start
                 *ngFor="let seatOne of seatOnes | valueArray; let i = index"
                 [seatName]="seatOne.name" 
                 [seatKind]="seatOne.kind"
@@ -182,7 +182,7 @@
                 || seatOne.name === 'Balcon 10'
                 || seatOne.name === 'Balcon 11'
                 || seatOne.name === 'Balcon 12'">
-              </app-seats>
+              </app-seats-start>
               </div>
 
             </div>
@@ -243,12 +243,12 @@
         id="submit-button"
         (click)="onSubmit()"
         (click) = "onSaveOnFirebase()"
-        routerLink="/home-result">Valider ces sièges</button>
+        routerLink="/hub">Valider ces sièges</button>
 
         <!-- remove in firestore -->
   
           <!-- balcon -->
-          <app-button-aa *ngIf="showDiv.current"></app-button-aa>
+          <!-- <app-button-aa *ngIf="showDiv.current"></app-button-aa>
           <app-button-ba *ngIf="showDiv.current"></app-button-ba>
           <app-button-ca *ngIf="showDiv.current"></app-button-ca>
           <app-button-da *ngIf="showDiv.current"></app-button-da>
@@ -259,9 +259,9 @@
           <app-button-ia *ngIf="showDiv.current"></app-button-ia>
           <app-button-ja *ngIf="showDiv.current"></app-button-ja>
           <app-button-ka *ngIf="showDiv.current"></app-button-ka>
-          <app-button-la *ngIf="showDiv.current"></app-button-la>
+          <app-button-la *ngIf="showDiv.current"></app-button-la> -->
           <!-- orchestre -->
-          <app-button-ma *ngIf="showDiv.current"></app-button-ma>
+          <!-- <app-button-ma *ngIf="showDiv.current"></app-button-ma>
           <app-button-na *ngIf="showDiv.current"></app-button-na>
           <app-button-oa *ngIf="showDiv.current"></app-button-oa>
           <app-button-pa *ngIf="showDiv.current"></app-button-pa>
@@ -280,7 +280,7 @@
           <app-button-cb *ngIf="showDiv.current"></app-button-cb>
           <app-button-db *ngIf="showDiv.current"></app-button-db>
           <app-button-eb *ngIf="showDiv.current"></app-button-eb>
-          <app-button-fb *ngIf="showDiv.current"></app-button-fb>
+          <app-button-fb *ngIf="showDiv.current"></app-button-fb> -->
 
         <!-- button > hide balcon/orchestre buttons -->
         <div (click)="showDiv.previous = !showDiv.previous;

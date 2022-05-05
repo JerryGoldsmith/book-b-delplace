@@ -16,29 +16,17 @@
         </span>
       </p>
       <p><span>Merci pour votre commande !</span></p>
-      <!-- <div class="layout-resa-video"> -->
-        <!-- <h2>En attendant le concert, découvrez un court extrait :</h2> -->
-
-        <!-- <article class="video"> -->
-  				<!-- <video controls src="./assets/video/waters.mov"> -->
-  					<!-- Votre navigateur ne peut pas lire cette vidéo -->
-  				<!-- </video> -->
-  			<!-- </article> -->
-      <!-- </div> -->
-
-      <!-- <p>Votre pays :
-        <span><strong>{{ order.payload.doc.data().customerCountry }} </strong></span>
-      </p> -->
+      
 
 
 
-      <!-- <span>
+      <span>
           <p>Le compteur rend :
         <strong>
         {{ order.payload.doc.data().SeatsCount }}
         </strong>
         </p>
-      </span> -->
+      </span>
     </div>
 
   </div>
@@ -47,7 +35,7 @@
   <button type="submit"
   id="submit-button"
   (click)="onSaveOnFirebase()"
-  routerLink="/admin">Voir la partie administrateur</button>
+  routerLink="/hub">Passer à la suite</button>
 
   <!-- <div>
     <a routerLink = "/part01" class="link">Retour</a>

@@ -41,29 +41,29 @@ export class OrderReservationResultComponent implements OnInit, OnDestroy {
       .getSeatCurrentUser()
       .subscribe(result => (this.seatOneOrders = result));
 
-  markCompleted = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.updateSeatCompleted(data);
+  // markCompleted = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.updateSeatCompleted(data);
 
-  deleteOrder = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.deleteSeatOneOrder(data);
+  // deleteOrder = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.deleteSeatOneOrder(data);
 
-  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
+  // addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
 
-  removeSeatOne = (seatOne: any) => {
-    let index = this.seatOneOrder.indexOf(seatOne);
-    if (index > -1) this.seatOneOrder.splice(index, 1);
-  };
+  // removeSeatOne = (seatOne: any) => {
+  //   let index = this.seatOneOrder.indexOf(seatOne);
+  //   if (index > -1) this.seatOneOrder.splice(index, 1);
+  // };
 
-  onSubmit() {
-    this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
-  }
+  // onSubmit() {
+  //   this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
+  // }
 
   // realtime
   onSaveOnFirebase() {
     this.reservationService.saveSeats();
   }
 
-  onFetchFromFirebase() {
-    this.reservationService.saveSeatsFromFirebaseinServer();
-  }
+  // onFetchFromFirebase() {
+  //   this.reservationService.saveSeatsFromFirebaseinServer();
+  // }
 
   ngOnDestroy() {
     this.seatOneSubscription.unsubscribe();

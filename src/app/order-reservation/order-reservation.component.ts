@@ -121,10 +121,6 @@ export class OrderReservationComponent implements OnInit, OnDestroy {
     this.reservationService.createSeatOneOrder(data).then(res => {
       console.log("OK");
     });
-
-    // this.reservationService.createColorUSA().then(res => {
-    //   console.log("OK");
-    // });
   }
 
   // realtime database

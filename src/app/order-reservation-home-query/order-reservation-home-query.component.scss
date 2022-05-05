@@ -1,0 +1,135 @@
+body { // no scroll horizontal
+    max-width: 100%;
+    overflow-x: hidden;
+}
+  
+  section {
+    width: 2400px;
+    margin-left: -140px;
+    // margin-right: 120px;
+  }
+
+  // ------
+
+  .background-query {
+    width: 38em;
+    height: 280px;
+    background-color: var(--color-darkbluelight);
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 90px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .background-admin {
+    width: 38em;
+    height: 280px;
+    background-color: var(--color-terre-de-sienne-brule);
+    border-radius: 20px;
+    padding-top: 90px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  
+  // ----
+  
+  .resa-left {
+    margin-left: 10px;
+  }
+  
+  .resa-right {
+    padding-left: 840px;
+    margin-bottom: 60px;
+  }
+  
+  // ------
+  
+  .background-resa-user-home {
+    background:
+    linear-gradient(127deg, rgba(253,72,60), rgba(14,31,62,0) 100%),
+    linear-gradient(336deg, rgba(22,93,125), rgba(14,31,62,1) 70%),
+    linear-gradient(336deg, rgba(14,31,62), rgba(22,93,125,1) 100%);
+  }
+  
+  .background-resa-admin-home {
+    background:
+    // linear-gradient(336deg, rgba(233,229,73), rgba(22,93,125,1) 50%),
+    linear-gradient(230deg, rgba(67,67,67), rgba(47,47,47,0) 100%),
+    linear-gradient(360deg, rgba(47,47,47), rgba(67,67,67,0) 100%);
+  }
+  
+  // ------
+
+  .links {
+    color: var(--color-white);
+    font-size: 28px;
+    font-family: NanumMyeongjo-Regular, serif;
+    font-weight: 400;
+    padding-top: 0.5px;
+    padding-bottom: 0.5px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    width: 360px;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    // margin-bottom: 20px;
+  }
+  
+  .links:hover {
+    color: var(--color-gold);
+  }
+  
+  // -----
+  
+  .layout-resa-user-home {
+    width: 34.5rem;
+    display: inline-block;
+    position: absolute;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 30px;
+  }
+
+  .layout-resa-picture-home {
+    display: inline-block;
+    position: fixed;
+    height: 137em;
+    overflow: scroll;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 40px;
+    margin-top: 30px;
+  }
+  
+  .layout-resa-admin-home {
+    // display: inline-block;
+    // position: absolute;
+    height: 137em;
+    overflow: scroll;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 40px;
+    margin-top: 30px;
+  }
+  
+  .layout-resa-result-home {
+    padding-top: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    margin-right: 40px;
+    margin-top: 30px;
+  }
+  

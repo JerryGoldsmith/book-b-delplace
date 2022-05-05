@@ -241,9 +241,9 @@ export class OrderReservationService {
 
   // ---- create -----
 
-  createSeatOneOrder(data: unknown) {
-    return new Promise<any>((resolve, reject) => {
-      this.afs
+  async createSeatOneOrder(data: unknown) {
+    return new Promise<any>(async (resolve, reject) => {
+      await this.afs
         .collection("seatOneOrders")
         .add(data)
         .then(result => {
@@ -254,64 +254,64 @@ export class OrderReservationService {
     });
   }
 
-  createColorUSA() {
-    return new Promise<any>((resolve, reject) => {
-      this.afs
-        .collection("seatOneOrders")
-        .doc("colorUSA")
-        .set({
-          color: "rgba(255, 99, 132, 0.2)"
-        })
-        .then(res => {}, err => reject(err));
-    });
-  }
+  // createColorUSA() {
+  //   return new Promise<any>((resolve, reject) => {
+  //     this.afs
+  //       .collection("seatOneOrders")
+  //       .doc("colorUSA")
+  //       .set({
+  //         color: "rgba(255, 99, 132, 0.2)"
+  //       })
+  //       .then(res => {}, err => reject(err));
+  //   });
+  // }
 
-  createOneSingle() {
-    return new Promise<any>((resolve, reject) => {
-      this.afs
-        .collection("seatOneOrders")
-        .doc("seatOne")
-        .set({
-          seat: "Siège 1"
-        })
-        .then(res => {}, err => reject(err));
-    });
-  }
+  // createOneSingle() {
+  //   return new Promise<any>((resolve, reject) => {
+  //     this.afs
+  //       .collection("seatOneOrders")
+  //       .doc("seatOne")
+  //       .set({
+  //         seat: "Siège 1"
+  //       })
+  //       .then(res => {}, err => reject(err));
+  //   });
+  // }
 
-  createTwoSingle() {
-    return new Promise<any>((resolve, reject) => {
-      this.afs
-        .collection("seatOneOrders")
-        .doc("seatTwo")
-        .set({
-          seat: "Siège 2"
-        })
-        .then(res => {}, err => reject(err));
-    });
-  }
+  // createTwoSingle() {
+  //   return new Promise<any>((resolve, reject) => {
+  //     this.afs
+  //       .collection("seatOneOrders")
+  //       .doc("seatTwo")
+  //       .set({
+  //         seat: "Siège 2"
+  //       })
+  //       .then(res => {}, err => reject(err));
+  //   });
+  // }
 
-  createSeatOneOrderFinalResult(data: Partial<unknown>) {
-    var seatsRef = this.afs
-      .collection("seatOneOrders")
-      .doc("results-id")
-    return new Promise<any>((resolve, reject) => {
-      seatsRef
-        .update(data)
-        .then(res => {}, err => reject(err));
-        console.log("Document successfully written!");
-    });
-  }
+  // createSeatOneOrderFinalResult(data: Partial<unknown>) {
+  //   var seatsRef = this.afs
+  //     .collection("seatOneOrders")
+  //     .doc("results-id")
+  //   return new Promise<any>((resolve, reject) => {
+  //     seatsRef
+  //       .update(data)
+  //       .then(res => {}, err => reject(err));
+  //       console.log("Document successfully written!");
+  //   });
+  // }
 
-  createSeatOneOrderFinalResultCount() {
-    var seatsRef = this.afs
-      .collection("seatOneOrders")
-      .doc("results-id")
-    return seatsRef
-        .update({ 
-          SeatsCount: firebase.firestore
-          .FieldValue.increment(1) 
-        })
-  }
+  // createSeatOneOrderFinalResultCount() {
+  //   var seatsRef = this.afs
+  //     .collection("seatOneOrders")
+  //     .doc("results-id")
+  //   return seatsRef
+  //       .update({ 
+  //         SeatsCount: firebase.firestore
+  //         .FieldValue.increment(1) 
+  //       })
+  // }
 
   // ---- read -----
 
@@ -384,6 +384,7 @@ export class OrderReservationService {
       .collection("seatOneOrders", ref => ref
       .where ('customerCountry', '==', 'USA')
       .where ('customerAge', '<', 50)
+      // .orderBy ('customerCountry', 'desc')
       .limit(32))
       .snapshotChanges();
   }
@@ -415,8 +416,8 @@ export class OrderReservationService {
   // ---- update -----
 
   // completed
-  updateSeatCompleted(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
-    return this.afs
+  async updateSeatCompleted(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
+    await this.afs
       .collection("seatOneOrders")
       .doc(data
         .payload
@@ -426,8 +427,8 @@ export class OrderReservationService {
   }
 
   // checked
-  updateSeatChecked(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
-    return this.afs
+  async updateSeatChecked(data: { payload: { doc: { id: string; }; }; }) { // U is for Update
+    await this.afs
       .collection("seatOneOrders")
       .doc(data
         .payload
@@ -437,14 +438,14 @@ export class OrderReservationService {
   }
 
   // submit
-  updateSeatOneOrder(data: { 
+  async updateSeatOneOrder(data: { 
     payload: { 
       doc: { 
       id: string; 
       }; 
     }; 
   }) {
-  return this.afs
+  await this.afs
     .collection("seatOneOrders")
     .doc(data
       .payload
@@ -459,14 +460,14 @@ export class OrderReservationService {
 
   // ---- delete -----
 
-  deleteSeatOneOrder(data: { 
+  async deleteSeatOneOrder(data: { 
     payload: { 
       doc: { 
         id: string; 
       }; 
     }; 
   }) {
-  return this.afs
+  await this.afs
     .collection("seatOneOrders")
     .doc(data
       .payload

@@ -17,12 +17,17 @@ import { AuthGuardService } from './../services/auth-guard.service';
 
 import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
 
+import { SeatsStartComponent } from 'src/app/modules/seats-start/seats-start.component';
 import { SeatsComponent } from 'src/app/modules/seats/seats.component';
 
 // reservation
 
 import { OrderReservationHomeComponent } from 'src/app/order-reservation-home/order-reservation-home.component';
+
+import { OrderReservationHomeHubComponent } from 'src/app/order-reservation-home-hub/order-reservation-home-hub.component';
+import { OrderReservationHomeQueryComponent } from 'src/app/order-reservation-home-query/order-reservation-home-query.component';
 import { OrderReservationHomeAdminComponent } from 'src/app/order-reservation-home-admin/order-reservation-home-admin.component';
+
 import { OrderReservationHomeReserveSeatsComponent } from 'src/app/order-reservation-home-reserve-seats/order-reservation-home-reserve-seats.component';
 
 import { OrderReservationPictureComponent } from 'src/app/order-reservation-picture/order-reservation-picture.component';
@@ -88,7 +93,10 @@ import { HighchartsChartModule } from "highcharts-angular";
 
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
+
+    { path: 'hub', canActivate: [AuthGuardService], component: OrderReservationHomeHubComponent },
     { path: 'admin', canActivate: [AuthGuardService], component: OrderReservationHomeAdminComponent },
+    { path: 'query', canActivate: [AuthGuardService], component: OrderReservationHomeQueryComponent },
 
     { path: 'date', canActivate: [AuthGuardService], component: OrderReservationListQueryDateComponent },
     { path: 'country', canActivate: [AuthGuardService], component: OrderReservationListQueryCountryComponent },
@@ -109,6 +117,9 @@ const routes: Routes = [
     declarations: [
         Part01ReservationHomeComponent,
         OrderReservationHomeComponent,
+
+        OrderReservationHomeHubComponent,
+        OrderReservationHomeQueryComponent,
         OrderReservationHomeAdminComponent,
         OrderReservationHomeReserveSeatsComponent,
 
@@ -165,6 +176,7 @@ const routes: Routes = [
         OrderReservationListQueryGraphicBarComponent,
         OrderReservationListQueryGraphicPolarareaComponent,
 
+        SeatsStartComponent,
         SeatsComponent,
 
         OrderReservationResultComponent,
