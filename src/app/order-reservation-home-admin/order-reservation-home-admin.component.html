@@ -163,7 +163,7 @@
             <div *ngIf = "!showDiv.current">
               <button
               id="close-button"
-              (click) = "onFetchFromFirebase()">Afficher les sièges disponibles</button>
+              (click) = "onFetchFromFirebase()">Afficher tous les sièges</button>
             </div>
         </div>
 
@@ -227,6 +227,10 @@
 
       </div>
 
+    </div>
+
+    <div class="resa-right">
+      <app-order-reservation-list-query-date></app-order-reservation-list-query-date>
     </div>
 
   </form>
