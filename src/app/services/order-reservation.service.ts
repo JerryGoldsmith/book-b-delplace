@@ -302,8 +302,9 @@ export class OrderReservationService {
   getSeatByCountryFirstName() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('customerCountry', '==', 'USA')
+      // .where ('customerCountry', '==', 'USA')
       .where ('customerFirstName', '==', 'Tom')
+      .orderBy ('customerCountry', 'asc')
       .limit(32))
       .snapshotChanges();
   }
@@ -314,7 +315,7 @@ export class OrderReservationService {
       .collection("seatOneOrders", ref => ref
       .where ('customerCountry', '==', 'USA')
       .where ('customerFirstName', '==', 'Tom')
-      .where ('customerAge', '<', 50)
+      // .where ('customerAge', '<', 50)
       .limit(32))
       .snapshotChanges();
   }
