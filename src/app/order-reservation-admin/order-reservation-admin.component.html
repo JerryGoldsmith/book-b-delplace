@@ -1,5 +1,7 @@
 <body>
 
+  <button type="submit" id="submit-button-graphics-back" routerLink="/hub">Retour</button>
+
   <h1 class="title verticalOptimisation">Administration</h1>
 
   <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
@@ -219,17 +221,13 @@
           class="center">
 
           <button *ngIf="showDiv.current"
-            id="close-button"
+            id="close-button-hide"
             (click) = "onFetchFromFirebase()">Cacher les sièges</button>
         </div>
 
       </div>
 
     </div>
-
-    <!-- <div class="resa-right">
-      <app-order-reservation-list-query-date></app-order-reservation-list-query-date>
-    </div> -->
 
   </form>
 </body>

@@ -23,6 +23,24 @@ h3 {
   margin-top: 20px;
 }
 
+#submit-button-graphics-back {
+  background-color: var(--main-color);
+  font-size: 24px;
+	font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-palesun);
+  border-radius: 10px;
+  padding: 18px;
+  margin-top: -40px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+#submit-button-graphics-back:hover {
+  background-color: var(--color-palesun);
+  color: black;
+}
+
 .buttons-position {
   display: flex;
   flex-direction: row;
@@ -93,8 +111,8 @@ ul
 }
 
 .verticalOptimisation {
-  margin-top: -100px;
-  margin-bottom: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 // -----
@@ -166,8 +184,8 @@ ul
   border: solid 2px var(--color-fluo);
   border-radius: 10px;
   padding: 24px;
-  margin-top: 20px;
-  margin-right: 10px;
+  // margin-top: 20px;
+  // margin-right: 20px;
   text-align: center;
 }
 
@@ -203,12 +221,29 @@ ul
   border: solid 2px var(--color-gold);
   border-radius: 10px;
   padding: 24px;
-  margin-top: 20px;
-  margin-right: 10px;
+  margin-top: -20px;
+  margin-right: 142px;
   text-align: center;
 }
 
 #close-button:hover {
+  background-color: var(--main-color);
+}
+
+#close-button-hide {
+  background-color: var(--color-gold);
+  font-size: 20px;
+	font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
+  color: white;
+  border: solid 2px var(--color-gold);
+  border-radius: 10px;
+  padding: 24px;
+  // margin-bottom: -20px;
+  margin-right: 142px;
+  text-align: center;
+}
+
+#close-button-hide:hover {
   background-color: var(--main-color);
 }
 

@@ -128,7 +128,7 @@ export class OrderReservationListQueryGraphicPolarareaComponent implements OnIni
             legend: {
               display: true,
               // display: this.charcountry.length <= 32,
-              position: "bottom",
+              position: "left",
               labels: {
                   fontFamily: "Cormorant_Garamond_Light",
                   fontColor: 'black',

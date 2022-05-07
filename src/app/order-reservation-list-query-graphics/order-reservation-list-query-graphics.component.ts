@@ -143,7 +143,7 @@ export class OrderReservationListQueryGraphicsComponent implements OnInit {
             legend: {
               display: true,
               // display: this.charcountry.length <= 32,
-              position: "bottom",
+              position: "left",
               labels: {
                   fontFamily: "Cormorant_Garamond_Light",
                   fontColor: 'white',

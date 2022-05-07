@@ -1,9 +1,16 @@
-<button type="submit" id="submit-button" routerLink="/admin">Retour</button>
+<div class="center">
+  
+  <h1>Par spectateurs français et américains, du plus vieux au plus jeune</h1>
 
-<h1>Par âges et par pays</h1>
+  <button type="submit" id="submit-button-graphics-back" routerLink="/hub">Retour</button>
+  <button type="submit" id="submit-button-graphics" routerLink="/graphic">Doughnut</button>
+  <button type="submit" id="submit-button-graphics-enable">Pie</button>
+  <button type="submit" id="submit-button-graphics" routerLink="/bar">Bar</button>
+  <button type="submit" id="submit-button-graphics" routerLink="/polar">Polar Area</button>
 
-<div class="background-gray">
-  <canvas baseChart
-  id="seatsChart">
-</canvas>
+  <div class="responsivePie background-gray" id="legend">
+    <canvas baseChart id="seatsChart">
+  </canvas>
+  </div>
+
 </div>

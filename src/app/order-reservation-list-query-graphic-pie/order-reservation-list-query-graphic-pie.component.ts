@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderReservationService } from "../services/order-reservation.service";
 import { AngularFirestore } from '@angular/fire/firestore';
 import Chart from 'chart.js';
-import { HighchartService, chartModal } from "../services/highchart.service";
+import { HighchartFranceUsaAgeService, chartModal } from "../services/highchart-france-usa-age.service";
 import * as Highcharts from "highcharts-angular";
 
 @Component({
@@ -27,7 +27,7 @@ export class OrderReservationListQueryGraphicPieComponent implements OnInit {
   constructor(
     public reservationService: OrderReservationService,
     private afs: AngularFirestore,
-    private highchartservice: HighchartService
+    private highchartservice: HighchartFranceUsaAgeService
   ) {}
 
   ngOnInit(): void {
@@ -127,7 +127,7 @@ export class OrderReservationListQueryGraphicPieComponent implements OnInit {
             legend: {
               display: true,
               // display: this.charcountry.length <= 32,
-              position: "bottom",
+              position: "right",
               labels: {
                   fontFamily: "Cormorant_Garamond_Light",
                   fontColor: 'white',

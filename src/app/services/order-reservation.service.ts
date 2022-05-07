@@ -254,65 +254,6 @@ export class OrderReservationService {
     });
   }
 
-  // createColorUSA() {
-  //   return new Promise<any>((resolve, reject) => {
-  //     this.afs
-  //       .collection("seatOneOrders")
-  //       .doc("colorUSA")
-  //       .set({
-  //         color: "rgba(255, 99, 132, 0.2)"
-  //       })
-  //       .then(res => {}, err => reject(err));
-  //   });
-  // }
-
-  // createOneSingle() {
-  //   return new Promise<any>((resolve, reject) => {
-  //     this.afs
-  //       .collection("seatOneOrders")
-  //       .doc("seatOne")
-  //       .set({
-  //         seat: "Siège 1"
-  //       })
-  //       .then(res => {}, err => reject(err));
-  //   });
-  // }
-
-  // createTwoSingle() {
-  //   return new Promise<any>((resolve, reject) => {
-  //     this.afs
-  //       .collection("seatOneOrders")
-  //       .doc("seatTwo")
-  //       .set({
-  //         seat: "Siège 2"
-  //       })
-  //       .then(res => {}, err => reject(err));
-  //   });
-  // }
-
-  // createSeatOneOrderFinalResult(data: Partial<unknown>) {
-  //   var seatsRef = this.afs
-  //     .collection("seatOneOrders")
-  //     .doc("results-id")
-  //   return new Promise<any>((resolve, reject) => {
-  //     seatsRef
-  //       .update(data)
-  //       .then(res => {}, err => reject(err));
-  //       console.log("Document successfully written!");
-  //   });
-  // }
-
-  // createSeatOneOrderFinalResultCount() {
-  //   var seatsRef = this.afs
-  //     .collection("seatOneOrders")
-  //     .doc("results-id")
-  //   return seatsRef
-  //       .update({ 
-  //         SeatsCount: firebase.firestore
-  //         .FieldValue.increment(1) 
-  //       })
-  // }
-
   // ---- read -----
 
   getSeatAdminOrders() {
@@ -389,12 +330,13 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
-  // by France && > 50 years old
+  // by France && USA && > 50 years old
   getSeatByFranceAge() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .where ('customerCountry', '==', 'France')
-      .where ('customerAge', '>', 50)
+      .where ('customerCountry', 'in', ['France', 'USA'])
+      // .where ('customerAge', '<', 50)
+      .orderBy("customerAge", "desc")
       .limit(32))
       .snapshotChanges();
   }

@@ -3,11 +3,10 @@ body { // no scroll horizontal
     overflow-x: hidden;
 }
   
-  section {
-    width: 2400px;
-    margin-left: -140px;
-    // margin-right: 120px;
-  }
+section {
+  width: 2400px;
+  margin-left: -140px;
+}
 
   // ------
 
@@ -16,7 +15,7 @@ body { // no scroll horizontal
     height: 280px;
     background-color: var(--color-darkbluelight);
     border-radius: 20px;
-    margin-top: 30px;
+    margin-top: 80px;
     margin-bottom: 30px;
     padding-top: 90px;
     padding-bottom: 60px;
