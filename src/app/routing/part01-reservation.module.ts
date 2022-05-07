@@ -26,7 +26,9 @@ import { OrderReservationHomeComponent } from 'src/app/order-reservation-home/or
 
 import { OrderReservationHomeHubComponent } from 'src/app/order-reservation-home-hub/order-reservation-home-hub.component';
 import { OrderReservationHomeQueryComponent } from 'src/app/order-reservation-home-query/order-reservation-home-query.component';
+
 import { OrderReservationHomeAdminComponent } from 'src/app/order-reservation-home-admin/order-reservation-home-admin.component';
+import { OrderReservationAdminComponent } from 'src/app/order-reservation-admin/order-reservation-admin.component';
 
 import { OrderReservationHomeReserveSeatsComponent } from 'src/app/order-reservation-home-reserve-seats/order-reservation-home-reserve-seats.component';
 
@@ -120,7 +122,10 @@ const routes: Routes = [
 
         OrderReservationHomeHubComponent,
         OrderReservationHomeQueryComponent,
+
         OrderReservationHomeAdminComponent,
+        OrderReservationAdminComponent,
+        
         OrderReservationHomeReserveSeatsComponent,
 
         OrderReservationPictureComponent,

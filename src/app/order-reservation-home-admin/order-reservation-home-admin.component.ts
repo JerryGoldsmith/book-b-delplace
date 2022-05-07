@@ -1,10 +1,10 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { OrderReservationService } from "../services/order-reservation.service";
-import { ReservationDeleteButtonsService } from "../services/reservation-delete-buttons.service";
-import { Subscription } from 'rxjs/Subscription';
-import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { DocumentChangeAction } from '@angular/fire/firestore';
+import { Component, OnInit } from '@angular/core';
+// import { OrderReservationService } from "../services/order-reservation.service";
+// import { ReservationDeleteButtonsService } from "../services/reservation-delete-buttons.service";
+// import { Subscription } from 'rxjs/Subscription';
+// import { FormGroup } from '@angular/forms';
+// import { Router } from '@angular/router';
+// import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-order-reservation-home-admin',
@@ -14,150 +14,150 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 })
 export class OrderReservationHomeAdminComponent implements OnInit {
 
-    isShow = false;
-    sortedData: any; // h3 > balcon/orchestre
+    // isShow = false;
+    // sortedData: any; // h3 > balcon/orchestre
   
-    seatsForm: FormGroup;
+    // seatsForm: FormGroup;
   
-    seatOnes: Array<any> = [];
-    seatOneSubscription: Subscription;
+    // seatOnes: Array<any> = [];
+    // seatOneSubscription: Subscription;
   
-    seatOneOrder = [];
+    // seatOneOrder = [];
   
-    @Input() seatId: number;
-    @Input() seatName: string;
-    @Input() seatStatus: string;
-    @Input() seatKind: string;
-    @Input() index: number;
+    // @Input() seatId: number;
+    // @Input() seatName: string;
+    // @Input() seatStatus: string;
+    // @Input() seatKind: string;
+    // @Input() index: number;
   
-    showDiv = {
-    previous : false,
-    current : false,
-    next : false
-    }
+    // showDiv = {
+    // previous : false,
+    // current : false,
+    // next : false
+    // }
   
     constructor(
-      public reservationService: OrderReservationService,
-      public deleteButtonsService: ReservationDeleteButtonsService,
-      private router: Router
+      // public reservationService: OrderReservationService,
+      // public deleteButtonsService: ReservationDeleteButtonsService,
+      // private router: Router
     ) { }
   
     ngOnInit(): void {
   
-      this.getSeatAdminOrders();
+      // this.getSeatAdminOrders();
   
-      this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
-        (seatOnes: any[]) => {
-          this.seatOnes = seatOnes;
-        }
-      );
-      this.reservationService.emitSeatOneSubject();
+      // this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
+      //   (seatOnes: any[]) => {
+      //     this.seatOnes = seatOnes;
+      //   }
+      // );
+      // this.reservationService.emitSeatOneSubject();
   
       // h3 > balcon/orchestre
   
-      this.sortedData = this.seatOnes.reduce((acc, curr) => {
-        if (acc.hasOwnProperty(curr.kind)) {
-          acc[curr.kind].push(curr);
-          return acc;
-        }
+      // this.sortedData = this.seatOnes.reduce((acc, curr) => {
+      //   if (acc.hasOwnProperty(curr.kind)) {
+      //     acc[curr.kind].push(curr);
+      //     return acc;
+      //   }
   
-        acc[curr.kind] = [curr];
-        return acc;
-      }, {});
+      //   acc[curr.kind] = [curr];
+      //   return acc;
+      // }, {});
     }
   
-    toggleDisplay() {
-      this.isShow = !this.isShow;
-    }
+    // toggleDisplay() {
+    //   this.isShow = !this.isShow;
+    // }
   
     // Cloud Firestore
   
-    seatOneOrders: DocumentChangeAction<unknown>[];
+    // seatOneOrders: DocumentChangeAction<unknown>[];
   
-    addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
+    // addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
   
-    getSeatAdminOrders = () =>
-      this.reservationService
-        .getSeatAdminOrders()
-        .subscribe(result => (this.seatOneOrders = result));
+    // getSeatAdminOrders = () =>
+    //   this.reservationService
+    //     .getSeatAdminOrders()
+    //     .subscribe(result => (this.seatOneOrders = result));
   
-    markCompleted = (data: 
-      { payload: 
-        { doc: 
-          { 
-            id: string; 
-          }; 
-        }; 
-      }): Promise<void> => {
-        return this.reservationService.updateSeatCompleted(data);
-    };
+    // markCompleted = (data: 
+    //   { payload: 
+    //     { doc: 
+    //       { 
+    //         id: string; 
+    //       }; 
+    //     }; 
+    //   }): Promise<void> => {
+    //     return this.reservationService.updateSeatCompleted(data);
+    // };
   
-    markChecked = (data: 
-      { payload: 
-        { doc: 
-          { 
-            id: string; 
-          }; 
-        }; 
-      }): Promise<void> => {
-        return this.reservationService.updateSeatChecked(data);
-    };
+    // markChecked = (data: 
+    //   { payload: 
+    //     { doc: 
+    //       { 
+    //         id: string; 
+    //       }; 
+    //     }; 
+    //   }): Promise<void> => {
+    //     return this.reservationService.updateSeatChecked(data);
+    // };
   
-    deleteOrder = (data: 
-      { payload: 
-        { doc: 
-          { 
-            id: string;
-          }; 
-        }; 
-      }) => this.reservationService.deleteSeatOneOrder(data);
+    // deleteOrder = (data: 
+    //   { payload: 
+    //     { doc: 
+    //       { 
+    //         id: string;
+    //       }; 
+    //     }; 
+    //   }) => this.reservationService.deleteSeatOneOrder(data);
   
-    onSubmit() {
-      this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
+    // onSubmit() {
+    //   this.reservationService.form.value.seatOneOrder = this.seatOneOrder;
   
-      let data = this.reservationService.form.value;
+    //   let data = this.reservationService.form.value;
   
-      this.reservationService.createSeatOneOrder(data).then(res => {
-        console.log("OK");
-      });
-    }
+    //   this.reservationService.createSeatOneOrder(data).then(res => {
+    //     console.log("OK");
+    //   });
+    // }
   
     // realtime database
   
-    onSaveOnFirebase() {
-      this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
-    }
+    // onSaveOnFirebase() {
+    //   this.reservationService.saveSeatsObjectToArrayToFirebaseinServer();
+    // }
   
-    onFetchFromFirebase() { 
-      this.reservationService.saveSeatsFromFirebaseinServer();
-    }
+    // onFetchFromFirebase() { 
+    //   this.reservationService.saveSeatsFromFirebaseinServer();
+    // }
   
-    removeSeatOne = (seatOne: any) => {
-      let index = this.seatOneOrder.indexOf(seatOne);
-      if (index > -1) this.seatOneOrder.splice(index, 1);
-    };
+    // removeSeatOne = (seatOne: any) => {
+    //   let index = this.seatOneOrder.indexOf(seatOne);
+    //   if (index > -1) this.seatOneOrder.splice(index, 1);
+    // };
   
-    onSwitchOff() {
-      if(this.seatStatus === "éteint") {
-        this.reservationService.switchOnOne(this.index);
-      }
-      else if(this.seatStatus === "allumé") {
-        this.reservationService.switchOffOne(this.index);
-      }
-    }
+    // onSwitchOff() {
+    //   if(this.seatStatus === "éteint") {
+    //     this.reservationService.switchOnOne(this.index);
+    //   }
+    //   else if(this.seatStatus === "allumé") {
+    //     this.reservationService.switchOffOne(this.index);
+    //   }
+    // }
   
-    ngOnDestroy() {
-      this.seatOneSubscription.unsubscribe();
-    }
+    // ngOnDestroy() {
+    //   this.seatOneSubscription.unsubscribe();
+    // }
   
     // navigation
   
-    onNewSeat() {
-      this.router.navigate(['/seats']);
-    }
+    // onNewSeat() {
+    //   this.router.navigate(['/seats']);
+    // }
   
-    onViewSeat(id: number) {
-      this.router.navigate(['/seats', 'view', id]);
-    }
+    // onViewSeat(id: number) {
+    //   this.router.navigate(['/seats', 'view', id]);
+    // }
 
 }
