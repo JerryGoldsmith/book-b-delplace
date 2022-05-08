@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
 @Injectable({
     providedIn: 'root'
 })
-  export class HighchartUsaTomService {
+  export class HighchartFranceAgeService {
     
     private customerAgeCollection: AngularFirestoreCollection < chartModal > ;
     customerAge$: Observable < chartModal[] > ;
@@ -22,7 +22,9 @@ import { map } from "rxjs/operators";
         ) {
       this.customerAgeCollection = firestoreservice.collection < chartModal > ('seatOneOrders', ref => ref
 
-      .where ('customerFirstName', '==', 'Tom')
+      .where ('customerCountry', '==', 'France')
+      // .where ('customerFirstName', '==', 'Tom')
+      .where ('customerAge', '<', 50)
       // .where ('customerFirstName', '==', 'Paul')
       .limit(32))
 
@@ -41,7 +43,9 @@ import { map } from "rxjs/operators";
 
       this.customerCountryCollection = firestoreservice.collection < chartModal > ('seatOneOrders', ref => ref
 
-      .where ('customerFirstName', '==', 'Tom')
+      .where ('customerCountry', '==', 'France')
+      // .where ('customerFirstName', '==', 'Tom')
+      .where ('customerAge', '<', 50)
       // .where ('customerFirstName', '==', 'Paul')
       .limit(32))
 
@@ -60,7 +64,9 @@ import { map } from "rxjs/operators";
 
       this.colorCollection = firestoreservice.collection < chartModal > ('seatOneOrders', ref => ref
 
-      .where ('customerFirstName', '==', 'Tom')
+      .where ('customerCountry', '==', 'France')
+      // .where ('customerFirstName', '==', 'Tom')
+      .where ('customerAge', '<', 50)
       // .where ('customerFirstName', '==', 'Paul')
       .limit(32))
 
