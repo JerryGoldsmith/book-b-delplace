@@ -235,7 +235,44 @@ section {
   }
 } 
 
-  // --------
+// text animation 4 --------
+
+.at-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // height: 100%;
+  width: 460px;
+  height: 700px;
+  color: var(--color-white);
+  font-size: 48px;
+	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+  line-height: 1.2;
+  margin-left: 130px;
+}
+.at-item {
+  animation-name: blur-out-expand;
+  animation-duration: 2.2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+  animation-fill-mode: none;
+  /* shorthand 
+  animation: blur-out-expand 2.2s ease 0s 1 reverse none;
+  */ 
+}
+@keyframes blur-out-expand {
+  0%{
+    filter: blur(.01);
+  }
+  100%{
+    letter-spacing: 1em;
+    filter: blur(12px) opacity(0%);
+  }
+}
+
+// -------
 
 .layout-resa-result-home {
   width: 460px;
@@ -274,19 +311,21 @@ section {
 
 // ----------
 
-#submit-button {
-  background-color: var(--color-fluo);
-  font-size: 20px;
+#submit-button-admin {
+  background-color: var(--main-color);
+  font-size: 30px;
 	font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
-  color: white;
-  border: solid 2px var(--color-fluo);
+  color: var(--color-white);
+  border: solid 2px var(--color-gold);
   border-radius: 10px;
   padding: 24px;
-  margin-top: 20px;
-  margin-right: 10px;
+  margin-top: 60px;
+  margin-right: 12px;
+  margin-top: 30px;
   text-align: center;
 }
 
-#submit-button:hover {
-  background-color: var(--main-color);
+#submit-button-admin:hover {
+  background-color: var(--color-gold);
+  color: var(--color-darkbluelight);
 }

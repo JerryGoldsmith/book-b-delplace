@@ -266,7 +266,7 @@ export class OrderReservationService {
   getSeatCurrentUser() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      // .orderBy ('id')
+      // .orderBy('id')
       .limit(1))
       .snapshotChanges();
   }
@@ -525,15 +525,26 @@ export class OrderReservationService {
 
   // -------
 
-  getSeatById(id: number) { // id
+  getSeatByUser(id: number) { // id
+    let userId = firebase.auth().currentUser.uid
     const seatOne = this.seatOnes
       .find(
       (seatOneObject) => {
         return seatOneObject.id === id;
       }
     );
-    return seatOne;
+    return seatOne + userId;
   }
+
+  // getSeatById(id: number) { // id
+  //   const seatOne = this.seatOnes
+  //     .find(
+  //     (seatOneObject) => {
+  //       return seatOneObject.id === id;
+  //     }
+  //   );
+  //   return seatOne;
+  // }
 
   // --------------
   //  SWITCH STATUS

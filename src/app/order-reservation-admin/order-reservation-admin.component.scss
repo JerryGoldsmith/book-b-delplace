@@ -215,14 +215,14 @@ ul
 }
 
 #close-button {
-  background-color: var(--color-supergreen);
-  font-size: 20px;
+  background-color: var(--main-color);
+  font-size: 42px;
 	font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-gold);
   border-radius: 10px;
   padding: 24px;
-  margin-top: -20px;
+  margin-top: 30px;
   margin-right: 142px;
   text-align: center;
 }
@@ -232,8 +232,8 @@ ul
 }
 
 #close-button-hide {
-  background-color: var(--color-supergreen);
-  font-size: 20px;
+  background-color: var(--main-color);
+  font-size: 42px;
 	font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
   color: white;
   border: solid 2px var(--color-gold);

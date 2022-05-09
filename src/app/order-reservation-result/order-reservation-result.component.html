@@ -4,6 +4,7 @@
 
     <div routerLinkActive="active" *ngIf="!isAuth"
     class="lightSpeedIn">
+
       <p>Cher
 
         <span>
@@ -20,17 +21,20 @@
             <strong>{{ seatOne }}</strong> vous est bien réservé !
           </span>
         </span>
+
       </p>
-      <!-- <p><span>Merci pour votre commande !</span></p> -->
+
+      <button type="submit"
+  id="submit-button-admin"
+  (click)="onSaveOnFirebase()"
+  routerLink="/hub">Voir la partie administration</button>
+  
     </div>
 
   </div>
 
   <!-- button > save choice on Firebase -->
-  <button type="submit"
-  id="submit-button"
-  (click)="onSaveOnFirebase()"
-  routerLink="/hub">Passer à l'administration</button>
+  
 
   <!-- <div>
     <a routerLink = "/part01" class="link">Retour</a>
