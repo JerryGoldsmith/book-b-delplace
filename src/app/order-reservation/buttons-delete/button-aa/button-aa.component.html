@@ -8,19 +8,19 @@
               *ngIf="order.payload.doc.data().checked === false"
               disabled="{{ buttonDisabled }}">Je supprime le balcon 1</button> -->
     
-          <button type="submit"
-              id="submit-button"
+              <button type="submit"
+              id="submit-button-def"
               *ngIf="order.payload.doc.data().checked === true"
-              [hidden]="order.isShow"
+              [hidden]="order.isShow || order.payload.doc.data().completed"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()">Je supprime le balcon 1</button>
-
+    
           <div *ngIf="order.payload.doc.data().completed">
             <button type="submit"
-            id="submit-button-def"
+            id="submit-button-confirm"
             (click)="deleteOrder(order)"
             (click) = "onSaveOnFirebase()"
-            routerLink="/home-result">Je confirme supprimer les données du balcon 1</button>
+            routerLink="/admin">Je confirme supprimer les données du balcon 1</button>
           </div>
     
         </div>

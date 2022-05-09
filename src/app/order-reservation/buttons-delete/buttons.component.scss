@@ -37,17 +37,36 @@
   #submit-button-def {
     background-color: var(--color-terre-de-sienne-brule);
     font-size: 20px;
-      font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
+    font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
     color: white;
     border: solid 2px var(--color-terre-de-sienne-brule);
     border-radius: 10px;
+    margin-left: 118px;
+    margin-bottom: 20px;
     padding: 24px;
-    margin-top: 20px;
-    margin-right: 10px;
-    text-align: center;
   }
   
   #submit-button-def:hover {
+    color: var(--color-darkbluelight);
+    background-color: var(--color-palesun);
+    border: solid 2px var(--color-palesun);
+  }
+
+  // -----
+
+  #submit-button-confirm {
+    background-color: var(--color-darkbluelight);
+    font-size: 20px;
+    font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
+    color: white;
+    border: solid 2px var(--color-darkbluelight);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 12px;
+  }
+  
+  #submit-button-confirm:hover {
     color: var(--color-darkbluelight);
     background-color: var(--color-palesun);
     border: solid 2px var(--color-palesun);
