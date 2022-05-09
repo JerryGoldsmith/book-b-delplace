@@ -25,7 +25,7 @@ export class OrderReservationResultComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.getCurrentUser();
+    this.getSeatsCurrentDate();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe( // subscrition (observables)
       (seatOnes: any[]) => {
@@ -36,9 +36,9 @@ export class OrderReservationResultComponent implements OnInit, OnDestroy {
   }
 
   // firestore
-  getCurrentUser = () =>
+  getSeatsCurrentDate = () =>
     this.reservationService
-      .getSeatCurrentUser()
+      .getSeatCurrentDate()
       .subscribe(result => (this.seatOneOrders = result));
 
   // markCompleted = (data: { payload: { doc: { id: string; }; }; }) => this.reservationService.updateSeatCompleted(data);

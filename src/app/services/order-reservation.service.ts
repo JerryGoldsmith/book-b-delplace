@@ -271,6 +271,14 @@ export class OrderReservationService {
       .snapshotChanges();
   }
 
+  getSeatCurrentDate() {
+    return this.afs
+      .collection("seatOneOrders", ref => ref
+      .orderBy ('date', 'desc')
+      .limit(1))
+      .snapshotChanges();
+  }
+
   // by dates
   getSeatByDates() {
     return this.afs
