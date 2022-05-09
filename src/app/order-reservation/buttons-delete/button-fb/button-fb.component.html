@@ -4,18 +4,18 @@
         <div *ngFor="let seat of order.payload.doc.data().seatOneOrder">
     
           <button type="submit"
-              id="submit-button"
+              id="submit-button-def"
               *ngIf="order.payload.doc.data().checked === true"
-              [hidden]="order.isShow"
+              [hidden]="order.isShow || order.payload.doc.data().completed"
               (click)="markCompleted(order)"
               (click) = "onSaveOnFirebase()">Je supprime l'orchestre 32</button>
-
+    
           <div *ngIf="order.payload.doc.data().completed">
             <button type="submit"
-            id="submit-button-def"
+            id="submit-button-confirm"
             (click)="deleteOrder(order)"
             (click) = "onSaveOnFirebase()"
-            routerLink="/home-result">Je confirme supprimer les données de l'orchestre 32</button>
+            routerLink="/admin">Je confirme supprimer les données de l'orchestre 32</button>
           </div>
     
         </div>

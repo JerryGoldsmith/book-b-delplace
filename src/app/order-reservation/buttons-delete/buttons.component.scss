@@ -39,10 +39,11 @@
     font-size: 20px;
     font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
     color: white;
-    border: solid 2px var(--color-terre-de-sienne-brule);
+    border: solid 2px var(--color-gold);
     border-radius: 10px;
     margin-left: 118px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
     padding: 24px;
   }
   
@@ -59,11 +60,12 @@
     font-size: 20px;
     font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
     color: white;
-    border: solid 2px var(--color-darkbluelight);
+    border: solid 2px var(--color-gold);
     border-radius: 10px;
     margin-left: 20px;
-    margin-bottom: 20px;
-    padding: 12px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 18px;
   }
   
   #submit-button-confirm:hover {
