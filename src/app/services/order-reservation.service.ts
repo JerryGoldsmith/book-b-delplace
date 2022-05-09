@@ -266,7 +266,7 @@ export class OrderReservationService {
   getSeatCurrentUser() {
     return this.afs
       .collection("seatOneOrders", ref => ref
-      .orderBy ('id')
+      // .orderBy ('id')
       .limit(1))
       .snapshotChanges();
   }

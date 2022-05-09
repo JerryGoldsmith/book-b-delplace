@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DocumentChangeAction } from '@angular/fire/firestore';
 import { OrderReservationService } from "../services/order-reservation.service";
 
 @Component({
@@ -9,11 +10,16 @@ import { OrderReservationService } from "../services/order-reservation.service";
 })
 export class OrderReservationHomeHubComponent implements OnInit {
 
+    seatOneOrders: DocumentChangeAction<unknown>[];
+
   constructor(
     public reservationService: OrderReservationService
   ) { }
 
   ngOnInit(): void {
+
+    this.getSeatsCurrentUser();
+
     /**
     * demo.js
     * http://www.codrops.com
@@ -256,5 +262,11 @@ export class OrderReservationHomeHubComponent implements OnInit {
         }
       }
   }
+
+  // firestore
+  getSeatsCurrentUser = () =>
+    this.reservationService
+      .getSeatCurrentUser()
+      .subscribe(result => (this.seatOneOrders = result));
 
 }

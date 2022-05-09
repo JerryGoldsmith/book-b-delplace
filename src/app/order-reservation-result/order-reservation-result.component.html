@@ -3,30 +3,25 @@
   <div *ngFor="let order of seatOneOrders" class="row">
 
     <div routerLinkActive="active" *ngIf="!isAuth"
-    class="layout-resa-result-home">
+    class="lightSpeedIn">
       <p>Cher
-        <span><strong>{{ order.payload.doc.data().customerFirstName }} </strong></span>
-        <span><strong>{{ order.payload.doc.data().customerName }}, </strong></span>
+
+        <span>
+          <strong>{{ order.payload.doc.data().customerFirstName }} </strong>
+        </span>
+
+        <span>
+          <strong>{{ order.payload.doc.data().customerName }}, </strong>
+        </span>
 
         <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">
           <!-- {{ seat.seatOneOrder }} -->
           <br /><span>le siège
-            <strong>{{ seatOne }}</strong> vous est bien réservé.
+            <strong>{{ seatOne }}</strong> vous est bien réservé !
           </span>
         </span>
       </p>
-      <p><span>Merci pour votre commande !</span></p>
-      
-
-
-
-      <span>
-          <p>Le compteur rend :
-        <strong>
-        {{ order.payload.doc.data().SeatsCount }}
-        </strong>
-        </p>
-      </span>
+      <!-- <p><span>Merci pour votre commande !</span></p> -->
     </div>
 
   </div>
@@ -35,7 +30,7 @@
   <button type="submit"
   id="submit-button"
   (click)="onSaveOnFirebase()"
-  routerLink="/hub">Passer à la suite</button>
+  routerLink="/hub">Passer à l'administration</button>
 
   <!-- <div>
     <a routerLink = "/part01" class="link">Retour</a>

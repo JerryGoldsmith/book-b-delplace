@@ -8,7 +8,20 @@
 
     <div class="resa-right">
 
-      <!-- <h1>Résultats</h1> -->
+      <!-- <div class="background-query">
+        <div *ngFor="let order of seatOneOrders" class="row">
+          <p>Cher
+            <span><strong>{{ order.payload.doc.data().customerFirstName }} </strong></span>
+            <span><strong>{{ order.payload.doc.data().customerName }}, </strong></span>
+    
+            <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">
+              <br /><span>le siège
+                <strong>{{ seatOne }}</strong> vous est bien réservé.
+              </span>
+            </span>
+          </p>
+        </div>
+      </div> -->
 
       <div class="background-query">
         <a routerLink="/graphic" class="links">Voir les réservations sous forme de graphiques</a>
