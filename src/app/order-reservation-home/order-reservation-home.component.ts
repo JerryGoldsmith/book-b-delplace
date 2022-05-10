@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-order-reservation-home',
   templateUrl: './order-reservation-home.component.html',
-  styleUrls: ['./order-reservation-home.component.scss',
+  styleUrls: ['./../styles/normalize.scss',
+  './order-reservation-home.component.scss',
   './../normalize.component.scss']
 })
 

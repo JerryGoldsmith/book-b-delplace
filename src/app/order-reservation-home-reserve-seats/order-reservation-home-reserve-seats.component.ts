@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-order-reservation-home-reserve-seats',
   templateUrl: './order-reservation-home-reserve-seats.component.html',
-  styleUrls: ['./order-reservation-home-reserve-seats.component.scss',
-  './../normalize.component.scss']
+  styleUrls: ['./../styles/normalize.scss',
+  './order-reservation-home-reserve-seats.component.scss']
 })
 export class OrderReservationHomeReserveSeatsComponent implements OnInit {
 

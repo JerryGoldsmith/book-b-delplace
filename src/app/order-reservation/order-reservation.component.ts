@@ -9,11 +9,10 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 @Component({
   selector: 'app-order-reservation',
   templateUrl: './order-reservation.component.html',
-  styleUrls: ['./../styles/part01-reservation/reservation-commmon.scss',
+  styleUrls: ['./../styles/normalize.scss',
+  './../styles/part01-reservation/reservation-commmon.scss',
   './../styles/part01-reservation/reservation-client.scss',
-  './../styles/part01-reservation/helpers/charts.scss',
-  './../order-reservation-list/order-reservation-list.component.scss',
-  './../normalize.component.scss']
+  './../styles/part01-reservation/helpers/charts.scss']
 })
 export class OrderReservationComponent implements OnInit, OnDestroy {
 

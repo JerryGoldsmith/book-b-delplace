@@ -4,8 +4,8 @@ import { OrderReservationService } from "../services/order-reservation.service";
 @Component({
   selector: 'app-order-reservation-home-query',
   templateUrl: './order-reservation-home-query.component.html',
-  styleUrls: ['./order-reservation-home-query.component.scss',
-  './../normalize.component.scss']
+  styleUrls: ['./../styles/normalize.scss',
+  './order-reservation-home-query.component.scss']
 })
 export class OrderReservationHomeQueryComponent implements OnInit {
 

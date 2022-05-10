@@ -8,7 +8,8 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 @Component({
   selector: 'app-button-fb',
   templateUrl: './button-fb.component.html',
-  styleUrls: ['./../buttons.component.scss']
+  styleUrls: ['./../../../styles/normalize.scss',
+  './../../../styles/part01-reservation/reservation-admin-buttons-delete.scss']
 })
 export class ButtonFBComponent implements OnInit, OnDestroy {
 

@@ -8,8 +8,8 @@ import * as Highcharts from "highcharts-angular";
 @Component({
   selector: 'app-order-reservation-list-query-graphic-pie',
   templateUrl: './order-reservation-list-query-graphic-pie.component.html',
-  styleUrls: ['./../styles/part01-reservation/reservation-commmon.scss',
-  './../order-reservation-list/order-reservation-list.component.scss',
+  styleUrls: ['./../styles/normalize.scss',
+  './../styles/part01-reservation/reservation-commmon.scss',
   './../styles/part01-reservation/reservation-query.scss']
 })
 export class OrderReservationListQueryGraphicPieComponent implements OnInit {
