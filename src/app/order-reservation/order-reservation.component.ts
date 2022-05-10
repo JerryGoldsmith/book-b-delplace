@@ -9,7 +9,9 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 @Component({
   selector: 'app-order-reservation',
   templateUrl: './order-reservation.component.html',
-  styleUrls: ['./order-reservation.component.scss',
+  styleUrls: ['./../styles/part01-reservation/reservation-commmon.scss',
+  './../styles/part01-reservation/reservation-client.scss',
+  './../styles/part01-reservation/helpers/charts.scss',
   './../order-reservation-list/order-reservation-list.component.scss',
   './../normalize.component.scss']
 })

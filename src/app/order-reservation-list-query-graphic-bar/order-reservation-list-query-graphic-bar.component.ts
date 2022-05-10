@@ -8,7 +8,9 @@ import * as Highcharts from "highcharts-angular";
 @Component({
   selector: 'app-order-reservation-list-query-graphic-bar',
   templateUrl: './order-reservation-list-query-graphic-bar.component.html',
-  styleUrls: ['./../order-reservation-list/order-reservation-list.component.scss']
+  styleUrls: ['./../styles/part01-reservation/reservation-commmon.scss',
+  './../order-reservation-list/order-reservation-list.component.scss',
+  './../styles/part01-reservation/reservation-query.scss']
 })
 export class OrderReservationListQueryGraphicBarComponent implements OnInit {
 

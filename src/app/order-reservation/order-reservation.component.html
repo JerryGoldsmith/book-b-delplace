@@ -22,14 +22,6 @@
         class="col s12"/>
       </div>
 
-      <!-- country > form -->
-      <!-- <div class="mdc-text-field">
-        <input size="42" placeholder="Pays"
-        formControlName="customerCountry"
-        type="text" id="fields"
-        class="col s12"/><br />
-      </div> -->
-
       <!-- age > form -->
       <div class="mdc-text-field">
         <input size="42" placeholder="Age"
@@ -41,7 +33,6 @@
       <!-- select customerCountry -->
       <label for="standard-select">Pays</label>
         <select class="form-control select" id="standard-select" formControlName="customerCountry">
-          <!-- <option value disabled class="ng-binding">France *</option> -->
           <option value="France" label="France" selected="selected">France</option>
           <option value="USA" label="USA" ></option>
           <option value="Canada" label="Canada" ></option>
@@ -59,7 +50,6 @@
       <!-- select color -->
       <label for="standard-select">Couleur du pays (graphique)</label>
         <select class="form-control select" id="standard-select" formControlName="color">
-          <!-- <option value disabled class="ng-binding">France *</option> -->
           <option value="#1F71BA" label="France (Bleu)" selected="selected"></option>
           <option value="#DD8C4B" label="USA (Ocre)" ></option>
           <option value="#398D4F" label="Canada (Vert)" ></option>
@@ -204,7 +194,7 @@
               </span>
 
               <!-- Display button 'change mind' for balcon/orchestre (only seatOne.name) -->
-              <button class="col s9 change-mind"
+              <button class="col s9"
                 type="submit"
                 class="waves-effect waves-light"
                 id="change-mind-button"
@@ -214,7 +204,7 @@
             </div>
 
             <!-- separate line between buttons (only seatOne.name) -->
-            <div *ngIf="showDiv.current" class="whiteLineHorizontal"
+            <div *ngIf="showDiv.current" class="goldLineHorizontal"
               [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'"></div>
           </div>
 
@@ -244,43 +234,6 @@
         (click)="onSubmit()"
         (click) = "onSaveOnFirebase()"
         routerLink="/home-result">Valider ces sièges</button>
-
-        <!-- remove in firestore -->
-  
-          <!-- balcon -->
-          <!-- <app-button-aa *ngIf="showDiv.current"></app-button-aa>
-          <app-button-ba *ngIf="showDiv.current"></app-button-ba>
-          <app-button-ca *ngIf="showDiv.current"></app-button-ca>
-          <app-button-da *ngIf="showDiv.current"></app-button-da>
-          <app-button-ea *ngIf="showDiv.current"></app-button-ea>
-          <app-button-fa *ngIf="showDiv.current"></app-button-fa>
-          <app-button-ga *ngIf="showDiv.current"></app-button-ga>
-          <app-button-ha *ngIf="showDiv.current"></app-button-ha>
-          <app-button-ia *ngIf="showDiv.current"></app-button-ia>
-          <app-button-ja *ngIf="showDiv.current"></app-button-ja>
-          <app-button-ka *ngIf="showDiv.current"></app-button-ka>
-          <app-button-la *ngIf="showDiv.current"></app-button-la> -->
-          <!-- orchestre -->
-          <!-- <app-button-ma *ngIf="showDiv.current"></app-button-ma>
-          <app-button-na *ngIf="showDiv.current"></app-button-na>
-          <app-button-oa *ngIf="showDiv.current"></app-button-oa>
-          <app-button-pa *ngIf="showDiv.current"></app-button-pa>
-          <app-button-qa *ngIf="showDiv.current"></app-button-qa>
-          <app-button-ra *ngIf="showDiv.current"></app-button-ra>
-          <app-button-sa *ngIf="showDiv.current"></app-button-sa>
-          <app-button-ta *ngIf="showDiv.current"></app-button-ta>
-          <app-button-ua *ngIf="showDiv.current"></app-button-ua>
-          <app-button-va *ngIf="showDiv.current"></app-button-va>
-          <app-button-wa *ngIf="showDiv.current"></app-button-wa>
-          <app-button-xa *ngIf="showDiv.current"></app-button-xa>
-          <app-button-ya *ngIf="showDiv.current"></app-button-ya>
-          <app-button-za *ngIf="showDiv.current"></app-button-za>
-          <app-button-ab *ngIf="showDiv.current"></app-button-ab>
-          <app-button-bb *ngIf="showDiv.current"></app-button-bb>
-          <app-button-cb *ngIf="showDiv.current"></app-button-cb>
-          <app-button-db *ngIf="showDiv.current"></app-button-db>
-          <app-button-eb *ngIf="showDiv.current"></app-button-eb>
-          <app-button-fb *ngIf="showDiv.current"></app-button-fb> -->
 
         <!-- button > hide balcon/orchestre buttons -->
         <div (click)="showDiv.previous = !showDiv.previous;

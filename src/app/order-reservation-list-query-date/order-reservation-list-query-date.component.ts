@@ -5,7 +5,9 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 @Component({
   selector: 'app-order-reservation-list-query-date',
   templateUrl: './order-reservation-list-query-date.component.html',
-  styleUrls: ['./../order-reservation-list/order-reservation-list.component.scss']
+  styleUrls: ['./../styles/part01-reservation/reservation-commmon.scss',
+  './../order-reservation-list/order-reservation-list.component.scss',
+  './../styles/part01-reservation/reservation-query.scss']
 })
 export class OrderReservationListQueryDateComponent implements OnInit {
 
