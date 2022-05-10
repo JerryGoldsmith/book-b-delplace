@@ -1,23 +1,126 @@
+/* 
+1 - layout
+2 - buttons
+4 - seats display
+*/
+
+/* ------------------------------------------------------- */
+/* --------------------- 1 - layout ---------------------- */
+/* ------------------------------------------------------- */
+
 h1 {
-    color: var(--color-gold);
-    font-size: 80px;
-    font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
-    letter-spacing: -0.05em;
-    text-align: center;
-}
-  
-h2 {
     color: var(--color-white);
-    width: 600px;
-    font-size: 40px;
-    font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+      font-family: Cormorant_Garamond_Bold, Helvetica, light, sans-serif;
+    font-size: 80px;
     letter-spacing: -0.05em;
-    text-transform: uppercase;
     text-align: left;
     padding-bottom: 30px;
+}
+  
+h3 {
+    color: var(--color-fluo);
+      font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
+    font-size: 52px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+}
+
+.center {
+    margin: auto;
+}
+
+// lines
+
+.whiteLineHorizontal {
+    margin: auto;
+    border: solid 0.2px var(--color-gold);
+    width: 400px;
     margin-top: 30px;
 }
 
-.cursorPoint {
-    cursor: pointer;
-}
+/* ------------------------------------------------------- */
+/* --------------------- 2 - buttons --------------------- */
+/* ------------------------------------------------------- */
+  
+  #submit-button-graphics-back {
+    background-color: var(--main-color);
+    font-size: 24px;
+    font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
+    color: white;
+    border: solid 2px var(--color-palesun);
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: -40px;
+    margin-right: 20px;
+    text-align: center;
+  }
+  
+  #submit-button-graphics-back:hover {
+    background-color: var(--color-palesun);
+    color: black;
+  }
+  
+  .buttons-position {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px 60px;
+  }
+
+  // display/hide buttons
+
+  #close-button {
+    background-color: var(--main-color);
+    font-size: 42px;
+      font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
+    color: white;
+    border: solid 2px var(--color-gold);
+    border-radius: 10px;
+    padding: 24px;
+    margin-top: 30px;
+    margin-right: 142px;
+    text-align: center;
+  }
+  
+  #close-button:hover {
+    background-color: var(--main-color);
+  }
+  
+  #close-button-hide {
+    background-color: var(--main-color);
+    font-size: 42px;
+      font-family: Cormorant_Garamond_Medium, Helvetica, light, sans-serif;
+    color: white;
+    border: solid 2px var(--color-gold);
+    border-radius: 10px;
+    padding: 24px;
+    // margin-bottom: -20px;
+    margin-top: 20px;
+    margin-right: 118px;
+    text-align: center;
+  }
+  
+  #close-button-hide:hover {
+    background-color: var(--main-color);
+  }
+
+/* ------------------------------------------------------------- */
+/* --------------------- 4 - seats display --------------------- */
+/* ------------------------------------------------------------- */
+  
+  .seat-display {
+    font-size: 38px;
+    font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+    color: var(--color-white);
+    padding-left: 100px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    word-break: keep-all;
+  }
+
+// .cursorPoint {
+//     cursor: pointer;
+// }

@@ -1,0 +1,120 @@
+/* component : reservation-home-hub */
+/* -------------------------------- */
+
+/* 
+1 - layout
+2 - background
+3 - links
+*/
+
+/* ------------------------------------------------------- */
+/* --------------------- 1 - layout ---------------------- */
+/* ------------------------------------------------------- */
+
+body { // no scroll horizontal
+    max-width: 100%;
+    overflow-x: hidden;
+}
+    
+section {
+    width: 2400px;
+    margin-left: -140px;
+}
+
+// left > picture
+
+.resa-left {
+    margin-left: 10px;
+}
+
+// right > links
+  
+.resa-right {
+    padding-left: 840px;
+    margin-bottom: 60px;
+}
+
+// layout
+
+.layout-resa-picture-home {
+    // position
+    display: inline-block;
+    position: fixed;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 40px;
+    margin-top: 30px;
+    // size
+    height: 137em;
+    // scroll
+    overflow: scroll;
+}
+  
+/* ----------------------------------------------------------- */
+/* --------------------- 2 - background ---------------------- */
+/* ----------------------------------------------------------- */
+  
+.background-query {
+    // size
+    width: 38em;
+    height: 280px;
+    // background
+    background-color: var(--color-darkbluelight);
+    // border
+    border-radius: 20px;
+    // position
+    margin-top: 80px;
+    margin-bottom: 30px;
+    padding-top: 90px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+  
+.background-admin {
+    // size
+    width: 38em;
+    height: 280px;
+    // background
+    background-color: var(--color-terre-de-sienne-brule);
+    // border
+    border-radius: 20px;
+    // position
+    padding-top: 90px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+    
+/* ----------------------------------------------------------- */
+/* ----------------------- 3 - links ------------------------- */
+/* ----------------------------------------------------------- */
+  
+.links {
+    // font
+    font-size: 28px;
+    font-family: NanumMyeongjo-Regular, serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-decoration: none;
+    // color
+    color: var(--color-white);
+    // position
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 0.5px;
+    padding-bottom: 0.5px;
+    margin-top: 20px;
+    // size
+    width: 360px;
+}
+    
+.links:hover {
+    color: var(--color-gold);
+}
+    
+    
+    

@@ -1,3 +1,14 @@
+/* component : buttons-delete/button-aa --- button fb */
+/* -------------------------------------------------- */
+
+/* 
+1 - buttons
+*/
+
+/* -------------------------------------------------------- */
+/* --------------------- 1 - buttons ---------------------- */
+/* -------------------------------------------------------- */
+
 #submit-button {
     background-color: var(--color-darkbluelight);
     font-size: 18px;
@@ -17,6 +28,8 @@
     border: solid 2px var(--color-palesun);
 }
 
+// -----
+
 #notAvailable {
     cursor: auto;
     background-color: var(--color-darkbluelight);
@@ -32,7 +45,7 @@
     text-align: center;
 }
 
-// -----
+// delete button -----
 
 #submit-button-def {
     background-color: var(--color-terre-de-sienne-brule);
@@ -53,7 +66,7 @@
     border: solid 2px var(--color-palesun);
 }
 
-// -----
+// confirm delete button -----
 
 #submit-button-confirm {
     background-color: var(--color-darkbluelight);

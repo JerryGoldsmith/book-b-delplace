@@ -1,3 +1,13 @@
+/* 
+1 - layout
+2 - buttons
+3 - cell
+*/
+
+/* --------------------------------------------------- */
+/* --------------------- 1 - layout ---------------------- */
+/* --------------------------------------------------- */
+
 h1 {
     color: var(--color-gold);
     font-size: 80px;
@@ -38,12 +48,14 @@ h2 {
     padding: 30px;
 }
 
-// -----
+/* ------------------------------------------------------- */
+/* --------------------- 2 - buttons --------------------- */
+/* ------------------------------------------------------- */
 
 #submit-button-graphics {
     background-color: var(--main-color);
     font-size: 28px;
-      font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
+    font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
     color: white;
     border: solid 1px var(--color-gold);
     border-radius: 10px;
@@ -60,7 +72,7 @@ h2 {
 #submit-button-graphics-back {
     background-color: var(--main-color);
     font-size: 24px;
-      font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
+    font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
     color: white;
     border: solid 2px var(--color-palesun);
     border-radius: 10px;
@@ -78,7 +90,7 @@ h2 {
     cursor: auto;
     background-color: var(--main-color);
     font-size: 28px;
-      font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
+    font-family: Cormorant_Garamond_medium, Helvetica, light, sans-serif;
     color: white;
     border: solid 0px var(--color-gold);
     padding: 34px;
@@ -86,7 +98,9 @@ h2 {
     text-align: center;
 }
   
-// -------
+/* ------------------------------------------------------- */
+/* ---------------------- 3 - cell ----------------------- */
+/* ------------------------------------------------------- */
 
 .cell-title-left {
     width: 300px;
@@ -94,24 +108,17 @@ h2 {
     font-size: 20px;
       font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
     color: white;
-    // border: solid 2px var(--color-gold);
-    // border-right: solid 1px var(--main-color);
-    padding: 30px;
     text-align: center;
-    // margin-top: 40px;
   }
   
   .cell-title-right {
     width: 300px;
     background-color: var(--color-gold);
     font-size: 20px;
-      font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+    font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
     color: white;
-    // border: solid 2px var(--color-gold);
-    // border-right: solid 2px var(--color-white);
     padding: 30px;
     text-align: center;
-    // margin-top: 40px;
   }
   
   .cell-left {
@@ -169,7 +176,7 @@ h2 {
     margin-top: 40px;
 }
 
-// -------
+// lines in cell -------
 
 .vertical-lign-maincolor {
     border: solid 1px var(--main-color);

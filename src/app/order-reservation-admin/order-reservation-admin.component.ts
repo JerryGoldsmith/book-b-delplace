@@ -11,7 +11,6 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
   templateUrl: './order-reservation-admin.component.html',
   styleUrls: ['./../styles/normalize.scss',
   './../styles/part01-reservation/reservation-commmon.scss',
-  './order-reservation-admin.component.scss',
   './../styles/part01-reservation/helpers/material-icons.scss',
   './../styles/part01-reservation/reservation-admin.scss']
 })

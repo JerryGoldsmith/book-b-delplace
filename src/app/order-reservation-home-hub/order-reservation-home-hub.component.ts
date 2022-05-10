@@ -7,7 +7,7 @@ import { OrderReservationService } from "../services/order-reservation.service";
   templateUrl: './order-reservation-home-hub.component.html',
   styleUrls: ['./../styles/normalize.scss',
   './../styles/part01-reservation/reservation-commmon.scss',
-  './order-reservation-home-hub.component.scss']
+  './../styles/part01-reservation/reservation-hub.scss']
 })
 export class OrderReservationHomeHubComponent implements OnInit {
 
