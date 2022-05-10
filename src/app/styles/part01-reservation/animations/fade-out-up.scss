@@ -1,0 +1,41 @@
+.fadeOutUp {
+    width: 460px;
+    height: 700px;
+    color: var(--color-white);
+    font-size: 48px;
+      font-family: Cormorant_Garamond_Light, Helvetica, light, sans-serif;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 60px;
+    margin-left: 130px;
+    margin-top: 80px;
+  
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+    
+  @-webkit-keyframes fadeOutUp {
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 30%, 0);
+    transform: translate3d(0, 30%, 0);
+    }
+  }
+  
+  @keyframes fadeOutUp {
+    0% {
+    opacity: O;
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 30%, 0);
+    transform: translate3d(0, 30%, 0);
+    }
+  }

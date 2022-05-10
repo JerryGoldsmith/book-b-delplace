@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-order-reservation-home-reserve-seats',
   templateUrl: './order-reservation-home-reserve-seats.component.html',
   styleUrls: ['./../styles/normalize.scss',
-  './order-reservation-home-reserve-seats.component.scss']
+  './../styles/part01-reservation/reservation-homes.scss']
 })
 export class OrderReservationHomeReserveSeatsComponent implements OnInit {
 

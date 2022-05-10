@@ -9,8 +9,8 @@ import * as Highcharts from "highcharts-angular";
   selector: 'app-order-reservation-list-query-graphics',
   templateUrl: './order-reservation-list-query-graphics.component.html',
   styleUrls: ['./../styles/normalize.scss',
-  './../styles/part01-reservation/reservation-commmon.scss',
-  './../styles/part01-reservation/reservation-query.scss']
+  './../styles/part01-reservation/reservation-query.scss',
+  './../styles/part01-reservation/animations/charts.scss']
 })
 export class OrderReservationListQueryGraphicsComponent implements OnInit {
 

@@ -1,0 +1,93 @@
+/* component : 
+reservation-home
+reservation-home-reserve-seats
+*/
+
+/* 
+1 - layout
+2 - background
+*/
+
+/* ------------------------------------------------------- */
+/* --------------------- 1 - layout ---------------------- */
+/* ------------------------------------------------------- */
+
+body { // no scroll horizontal
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  section {
+    width: 2400px;
+    margin-left: -140px;
+    // margin-right: 120px;
+  }
+
+// .container {
+//     display: flex;
+//     flex-direction: row;
+// }
+    
+section {
+    width: 2400px;
+    margin-left: -140px;
+}
+
+// ------
+    
+.layout-resa-user-home {
+    // size
+    width: 34.5rem;
+    // position
+    display: inline-block;
+    position: absolute;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 30px;
+}
+    
+.layout-resa-admin-home {
+    // size
+    height: 137em;
+    // position
+    display: inline-block;
+    position: fixed;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 40px;
+    margin-top: 30px;
+    // scroll
+    overflow: scroll;
+} 
+    
+// ----
+    
+.resa-left {
+    margin-left: 10px;
+}
+    
+.resa-right {
+    padding-left: 574px;
+    margin-bottom: 60px;
+}
+    
+/* ----------------------------------------------------------- */
+/* --------------------- 2 - background ---------------------- */
+/* ----------------------------------------------------------- */
+    
+.background-resa-user-home {
+    background:
+    linear-gradient(127deg, rgba(253,72,60), rgba(14,31,62,0) 100%),
+    linear-gradient(336deg, rgba(22,93,125), rgba(14,31,62,1) 70%),
+    linear-gradient(336deg, rgba(14,31,62), rgba(22,93,125,1) 100%);
+}
+    
+.background-resa-admin-home {
+    background:
+    linear-gradient(230deg, rgba(67,67,67), rgba(47,47,47,0) 100%),
+    linear-gradient(360deg, rgba(47,47,47), rgba(67,67,67,0) 100%);
+}

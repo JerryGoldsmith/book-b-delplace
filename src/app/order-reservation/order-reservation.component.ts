@@ -10,7 +10,6 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
   selector: 'app-order-reservation',
   templateUrl: './order-reservation.component.html',
   styleUrls: ['./../styles/normalize.scss',
-  './../styles/part01-reservation/reservation-commmon.scss',
   './../styles/part01-reservation/reservation-client.scss',
   './../styles/part01-reservation/helpers/charts.scss']
 })

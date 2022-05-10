@@ -23,11 +23,9 @@ import { SeatsComponent } from 'src/app/modules/seats/seats.component';
 // reservation
 
 import { OrderReservationHomeComponent } from 'src/app/order-reservation-home/order-reservation-home.component';
-
 import { OrderReservationHomeHubComponent } from 'src/app/order-reservation-home-hub/order-reservation-home-hub.component';
-import { OrderReservationHomeQueryComponent } from 'src/app/order-reservation-home-query/order-reservation-home-query.component';
-
 import { OrderReservationHomeAdminComponent } from 'src/app/order-reservation-home-admin/order-reservation-home-admin.component';
+
 import { OrderReservationAdminComponent } from 'src/app/order-reservation-admin/order-reservation-admin.component';
 
 import { OrderReservationHomeReserveSeatsComponent } from 'src/app/order-reservation-home-reserve-seats/order-reservation-home-reserve-seats.component';
@@ -36,13 +34,6 @@ import { OrderReservationPictureComponent } from 'src/app/order-reservation-pict
 import { OrderReservationPictureBisComponent } from 'src/app/order-reservation-picture-bis/order-reservation-picture-bis.component';
 import { OrderReservationPictureTerComponent } from 'src/app/order-reservation-picture-ter/order-reservation-picture-ter.component';
 
-import { OrderReservationListComponent } from 'src/app/order-reservation-list/order-reservation-list.component';
-import { OrderReservationListQueryAllComponent } from 'src/app/order-reservation-list-query-all/order-reservation-list-query-all.component';
-import { OrderReservationListQueryCountryComponent } from 'src/app/order-reservation-list-query-country/order-reservation-list-query-country.component';
-import { OrderReservationListQueryCountryAgeComponent } from 'src/app/order-reservation-list-query-country-age/order-reservation-list-query-country-age.component';
-import { OrderReservationListQueryFranceAgeComponent } from 'src/app/order-reservation-list-query-france-age/order-reservation-list-query-france-age.component';
-import { OrderReservationListQueryUsaTomAgeComponent } from 'src/app/order-reservation-list-query-usa-tom-age/order-reservation-list-query-usa-tom-age.component';
-import { OrderReservationListQueryUsaComponent } from 'src/app/order-reservation-list-query-usa/order-reservation-list-query-usa.component';
 import { OrderReservationListQueryDateComponent } from 'src/app/order-reservation-list-query-date/order-reservation-list-query-date.component';
 
 import { OrderReservationListQueryGraphicsComponent } from 'src/app/order-reservation-list-query-graphics/order-reservation-list-query-graphics.component';
@@ -98,12 +89,8 @@ const routes: Routes = [
 
     { path: 'hub', canActivate: [AuthGuardService], component: OrderReservationHomeHubComponent },
     { path: 'admin', canActivate: [AuthGuardService], component: OrderReservationHomeAdminComponent },
-    { path: 'query', canActivate: [AuthGuardService], component: OrderReservationHomeQueryComponent },
 
     { path: 'date', canActivate: [AuthGuardService], component: OrderReservationListQueryDateComponent },
-    { path: 'country', canActivate: [AuthGuardService], component: OrderReservationListQueryCountryComponent },
-    { path: 'usa', canActivate: [AuthGuardService], component: OrderReservationListQueryUsaComponent },
-    { path: 'age', canActivate: [AuthGuardService], component: OrderReservationListQueryCountryAgeComponent },
 
     { path: 'graphic', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicsComponent },
     { path: 'pie', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicPieComponent },
@@ -121,7 +108,6 @@ const routes: Routes = [
         OrderReservationHomeComponent,
 
         OrderReservationHomeHubComponent,
-        OrderReservationHomeQueryComponent,
 
         OrderReservationHomeAdminComponent,
         OrderReservationAdminComponent,
@@ -167,13 +153,6 @@ const routes: Routes = [
         ButtonEBComponent,
         ButtonFBComponent,
         
-        OrderReservationListComponent,
-        OrderReservationListQueryAllComponent,
-        OrderReservationListQueryCountryComponent,
-        OrderReservationListQueryCountryAgeComponent,
-        OrderReservationListQueryFranceAgeComponent,
-        OrderReservationListQueryUsaComponent,
-        OrderReservationListQueryUsaTomAgeComponent,
         OrderReservationListQueryDateComponent,
 
         OrderReservationListQueryGraphicsComponent,
@@ -202,7 +181,6 @@ const routes: Routes = [
     ],
     exports: [
         RouterModule,
-        OrderReservationListComponent,
         OrderReservationComponent
     ],
     providers: [

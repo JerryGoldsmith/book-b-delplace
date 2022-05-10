@@ -1,5 +1,4 @@
 <section>
-  <!-- <h1>Votre réservation</h1> -->
   <div *ngFor="let order of seatOneOrders" class="row">
 
     <div routerLinkActive="active" *ngIf="!isAuth"
@@ -16,7 +15,6 @@
         </span>
 
         <span *ngFor="let seatOne of order.payload.doc.data().seatOneOrder">
-          <!-- {{ seat.seatOneOrder }} -->
           <br /><span>le siège
             <strong>{{ seatOne }}</strong> vous est bien réservé !
           </span>
@@ -32,15 +30,4 @@
     </div>
 
   </div>
-
-  <!-- button > save choice on Firebase -->
-  
-
-  <!-- <div>
-    <a routerLink = "/part01" class="link">Retour</a>
-  </div> -->
-
-  <!-- <div class="row">
-    <app-order-reservation-show-result class="col s6"></app-order-reservation-show-result>
-  </div> -->
 </section>

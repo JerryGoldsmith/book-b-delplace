@@ -133,14 +133,6 @@
                 <strong>{{ seatOne }}</strong>
               </span>
 
-              <!-- Display button 'change mind' for balcon/orchestre (only seatOne.name) -->
-              <!-- <button class="col s9 change-mind"
-                type="submit"
-                class="waves-effect waves-light"
-                id="change-mind-button"
-                [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'"
-                (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</button> -->
-
             </div>
 
             <!-- separate line between buttons (only seatOne.name) -->
@@ -164,16 +156,6 @@
               (click) = "onFetchFromFirebase()">Afficher tous les sièges</button>
             </div>
         </div>
-
-        <!-- button > save choice on Firebase -->
-
-        <!-- add in seatOneOrders (firestore) -->
-        <!-- <button type="submit"
-        *ngIf="showDiv.current"
-        id="submit-button"
-        (click)="onSubmit()"
-        (click) = "onSaveOnFirebase()"
-        routerLink="/home-result">Supprimer ce sièges</button> -->
 
         <!-- remove in firestore -->
   

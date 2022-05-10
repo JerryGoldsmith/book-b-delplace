@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-order-reservation-home-admin',
   templateUrl: './order-reservation-home-admin.component.html',
   styleUrls: ['./../styles/normalize.scss',
-  './order-reservation-home-admin.component.scss']
+  './../styles/part01-reservation/reservation-home-admin.scss']
 })
 export class OrderReservationHomeAdminComponent {
 

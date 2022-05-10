@@ -8,7 +8,9 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 @Component({
   selector: 'app-seats-start',
   templateUrl: './seats-start.component.html',
-  styleUrls: ['./seats-start.component.scss']
+  styleUrls: ['./../../styles/normalize.scss',
+  './../../styles/part01-reservation/seats.scss',
+  './../../styles/part01-reservation/icons/material-icons.scss']
 })
 export class SeatsStartComponent implements OnInit, OnDestroy {
 
