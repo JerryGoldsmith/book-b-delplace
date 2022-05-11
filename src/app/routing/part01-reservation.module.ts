@@ -24,6 +24,8 @@ import { SeatsComponent } from 'src/app/modules/seats/seats.component';
 
 import { ReservationClientComponent } from 'src/app/part01-reservation/reservation-client/reservation-client.component';
 
+import { ReservationResultComponent } from 'src/app/part01-reservation/reservation-result/reservation-result.component';
+
 import { ReservationHomeComponent } from 'src/app/part01-reservation/reservation-home/reservation-home.component';
 import { ReservationHomeHubComponent } from 'src/app/part01-reservation/reservation-home-hub/reservation-home-hub.component';
 import { ReservationHomeAdminComponent } from 'src/app/part01-reservation/reservation-home-admin/reservation-home-admin.component';
@@ -77,8 +79,6 @@ import { ButtonDBComponent } from 'src/app/order-reservation/buttons-delete/butt
 import { ButtonEBComponent } from 'src/app/order-reservation/buttons-delete/button-eb/button-eb.component';
 import { ButtonFBComponent } from 'src/app/order-reservation/buttons-delete/button-fb/button-fb.component';
 
-import { OrderReservationResultComponent } from 'src/app/order-reservation-result/order-reservation-result.component';
-
 import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
 import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 
@@ -98,9 +98,9 @@ const routes: Routes = [
     { path: 'bar', canActivate: [AuthGuardService], component: ReservationListQueryGraphicBarComponent },
     { path: 'polar', canActivate: [AuthGuardService], component: ReservationListQueryGraphicPolarareaComponent },
 
-    { path: 'home-result', canActivate: [AuthGuardService], component: ReservationHomeReserveSeatsComponent },
-    { path: 'show', canActivate: [AuthGuardService], component: OrderReservationResultComponent },
-    { path: 'confirmation', canActivate: [AuthGuardService], component: OrderReservationResultComponent }
+    { path: 'home-result', canActivate: [AuthGuardService], component: ReservationHomeReserveSeatsComponent }
+    // { path: 'show', canActivate: [AuthGuardService], component: ReservationResultComponent },
+    // { path: 'confirmation', canActivate: [AuthGuardService], component: ReservationResultComponent }
 ];
 
 @NgModule({
@@ -165,7 +165,7 @@ const routes: Routes = [
         SeatsStartComponent,
         SeatsComponent,
 
-        OrderReservationResultComponent,
+        ReservationResultComponent,
 
         KeyValuePipe,
         ValueArrayPipe
