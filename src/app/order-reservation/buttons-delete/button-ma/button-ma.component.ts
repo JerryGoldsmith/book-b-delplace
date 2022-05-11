@@ -18,7 +18,7 @@ export class ButtonMAComponent implements OnInit, OnDestroy {
 
   seatsForm: FormGroup;
 
-  seatOnes: Array<any> = [];
+  seatOnes: Array<string> = [];
   seatOneSubscription: Subscription;
 
   seatOneOrder = [];
@@ -35,7 +35,7 @@ export class ButtonMAComponent implements OnInit, OnDestroy {
     this.getDeleteButtonMA();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
-      (seatOnes: any[]) => {
+      (seatOnes: string[]) => {
         this.seatOnes = seatOnes;
       }
     );

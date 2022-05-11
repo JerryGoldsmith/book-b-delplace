@@ -8,8 +8,8 @@ import { ImageService } from '../../../services/image.service';
 })
 export class ImageListEComponent implements OnInit {
 
-  imageListE: any[];
-  rowIndexArray: any[];
+  imageListE: string[];
+  rowIndexArray: number[];
 
   constructor(
     private imageService: ImageService

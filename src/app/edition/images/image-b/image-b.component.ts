@@ -13,9 +13,9 @@ export class ImageBComponent implements OnInit {
 
   imgSrc: string;
   selectedImage: any;
-  imageList: any[];
-  imageListAll: any[];
-  rowIndexArray: any[];
+  imageList: string[];
+  imageListAll: string[];
+  rowIndexArray: number[];
 
   formTemplate = new FormGroup(
     {

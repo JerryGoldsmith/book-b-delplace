@@ -17,7 +17,7 @@ export class ButtonDBComponent implements OnInit, OnDestroy {
 
   seatsForm: FormGroup;
 
-  seatOnes: Array<any> = [];
+  seatOnes: Array<string> = [];
   seatOneSubscription: Subscription;
 
   seatOneOrder = [];
@@ -32,7 +32,7 @@ export class ButtonDBComponent implements OnInit, OnDestroy {
     this.getDeleteButtonDB();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
-      (seatOnes: any[]) => {
+      (seatOnes: string[]) => {
         this.seatOnes = seatOnes;
       }
     );

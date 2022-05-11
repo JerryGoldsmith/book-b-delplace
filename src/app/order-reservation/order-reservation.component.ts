@@ -48,7 +48,7 @@ export class OrderReservationComponent implements OnInit, OnDestroy {
     this.getSeatAdminOrders();
 
     this.seatOneSubscription = this.reservationService.seatOneSubject.subscribe(
-      (seatOnes: any[]) => {
+      (seatOnes: string[]) => {
         this.seatOnes = seatOnes;
       }
     );
@@ -75,7 +75,7 @@ export class OrderReservationComponent implements OnInit, OnDestroy {
 
   seatOneOrders: DocumentChangeAction<unknown>[];
 
-  addSeatOne = (seatOne: any) => this.seatOneOrder.push(seatOne);
+  addSeatOne = (seatOne: string) => this.seatOneOrder.push(seatOne);
 
   getSeatAdminOrders = () =>
     this.reservationService
@@ -133,7 +133,7 @@ export class OrderReservationComponent implements OnInit, OnDestroy {
     this.reservationService.saveSeatsFromFirebaseinServer();
   }
 
-  removeSeatOne = (seatOne: any) => {
+  removeSeatOne = (seatOne: string) => {
     let index = this.seatOneOrder.indexOf(seatOne);
     if (index > -1) this.seatOneOrder.splice(index, 1);
   };

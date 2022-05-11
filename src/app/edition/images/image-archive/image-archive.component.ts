@@ -14,10 +14,10 @@ export class ImageArchiveComponent implements OnInit {
 
   imgSrc: string;
   selectedImage: any;
-  imageList: any[];
+  imageList: string[];
   imageListAll: Image[];
-  imageListEach: any[];
-  rowIndexArray: any[];
+  imageListEach: string[];
+  rowIndexArray: number[];
 
   formTemplateArchive = new FormGroup(
     {

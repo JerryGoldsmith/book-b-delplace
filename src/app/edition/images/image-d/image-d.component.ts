@@ -13,8 +13,8 @@ export class ImageDComponent implements OnInit {
 
   imgSrc: string;
   selectedImage: any;
-  imageList: any[];
-  rowIndexArray: any[];
+  imageList: string[];
+  rowIndexArray: number[];
 
   formTemplate = new FormGroup(
     {

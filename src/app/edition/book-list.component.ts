@@ -57,23 +57,23 @@ export class BookListComponent implements OnInit, OnDestroy {
   bookAlls: Book[];
   bookAllsSubscription: Subscription;
 
-  imageList: any[];
+  imageList: string[];
 
-  imageListA: any[];
-  imageListB: any[];
-  imageListC: any[];
-  imageListD: any[];
-  imageListE: any[];
-  imageListF: any[];
-  imageListG: any[];
-  imageListH: any[];
-  imageListI: any[];
-  imageListJ: any[];
-  imageListK: any[];
-  imageListL: any[];
-  imageListAll: any[];
+  imageListA: string[];
+  imageListB: string[];
+  imageListC: string[];
+  imageListD: string[];
+  imageListE: string[];
+  imageListF: string[];
+  imageListG: string[];
+  imageListH: string[];
+  imageListI: string[];
+  imageListJ: string[];
+  imageListK: string[];
+  imageListL: string[];
+  imageListAll: string[];
 
-  rowIndexArray: any[];
+  rowIndexArray: number[];
 
   buttonDisabled: boolean;
 

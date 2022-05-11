@@ -17,9 +17,9 @@ export class ArchivesComponent implements OnInit {
   bookAlls: Book[];
   bookAllsSubscription: Subscription;
 
-  imageListAll: any[];
+  imageListAll: string[];
 
-  rowIndexArray: any[];
+  rowIndexArray: number[];
 
   buttonDisabled: boolean;
 
@@ -94,7 +94,7 @@ export class ArchivesComponent implements OnInit {
     this.router.navigate(['/backoffice']);
   }
 
-  bookAllTitle(bookAll: { title: any; }) {
+  bookAllTitle(bookAll: { title: string; }) {
     return bookAll.title;
   }
 

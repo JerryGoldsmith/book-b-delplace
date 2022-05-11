@@ -13,8 +13,8 @@ export class ImageGArchiveComponent implements OnInit {
 
   imgSrc: string;
   selectedImage: any;
-  imageList: any[];
-  rowIndexArray: any[];
+  imageList: string[];
+  rowIndexArray: number[];
 
   formTemplateArchive = new FormGroup(
     {

@@ -21,7 +21,7 @@ export class SeatsComponent implements OnInit, OnDestroy {
 
   // realtime database
   seatOneSubscription: Subscription; // subscrition (observables)
-  seatOnes: any[];
+  seatOnes: string[];
   @Input() seatId: number;
   @Input() seatName: string;
   @Input() seatStatus: string;
@@ -118,7 +118,7 @@ export class SeatsComponent implements OnInit, OnDestroy {
 
     this.seatOneSubscription = this.reservationService.seatOneSubject
     .subscribe(
-      (seatOnes: any[]) => {
+      (seatOnes: string[]) => {
         if(!seatOnes){
           return;
         }
