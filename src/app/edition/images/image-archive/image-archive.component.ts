@@ -13,7 +13,7 @@ import { finalize } from 'rxjs/operators';
 export class ImageArchiveComponent implements OnInit {
 
   imgSrc: string;
-  selectedImage: any;
+  selectedImage: File;
   imageList: string[];
   imageListAll: Image[];
   imageListEach: string[];

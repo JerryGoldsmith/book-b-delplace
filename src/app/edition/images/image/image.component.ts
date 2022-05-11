@@ -13,7 +13,7 @@ import { finalize } from 'rxjs/operators';
 export class ImageComponent implements OnInit {
 
   imgSrc: string;
-  selectedImage: any;
+  selectedImage: File;
   imageList: string[];
   imageListEach: Image[];
   rowIndexArray: number[];
@@ -46,7 +46,7 @@ export class ImageComponent implements OnInit {
     );
   }
 
-  showPreview(event:any) {
+  showPreview(event: any) {
     if(event.target.files && event.target.files[0]) {
       const reader = new FileReader();
       reader.onload = (e: any) => this.imgSrc = e.target.result;

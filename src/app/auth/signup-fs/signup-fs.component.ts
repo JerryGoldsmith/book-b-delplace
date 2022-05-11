@@ -1,11 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { AuthFsService } from '../../services/auth-fs.service';
-import { AuthGuardService } from '../../services/auth-guard.service';
-import { Router } from '@angular/router';
-// import custom validator to validate that password and confirm password fields match
 import { MustMatch } from '../../helpers/must-match.validator';
-import { Subscription } from 'rxjs/Subscription';
 import { User } from '../../models/user.model';
 
 @Component({
@@ -19,36 +14,19 @@ export class SignupFsComponent implements OnInit {
   errorMessage: string;
   submitted = false;
 
-  // onActivate(event) {
-  //   // window.scroll(0,0);
-  //   document.body.scrollTop = 0;
-  //   // document.querySelector('body').scrollTo(0,0)
-  // }
-
   constructor(
-    private formBuilder: FormBuilder,
-    // private authService: AuthFsService,
-    private authGuardService: AuthGuardService,
-    private router: Router
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.initForm();
-
-    // this.userSubscription = this.authService.userSubject.subscribe( // subscrition (observables)
-    //   (users: any[]) => {
-    //     this.users = users;
-    //   }
-    // );
-    // this.authService.emitSeatOneSubject();
   }
 
   user = [];
 
-  addUser = user => this.user.push(user);
-  // addSeat = seatOne => this.seat.push(seatOne);
+  addUser = (user: string) => this.user.push(user);
 
-  removeUser = user => {
+  removeUser = (user: string) => {
     let index = this.user.indexOf(user);
     if (index > -1) this.user.splice(index, 1);
   };
@@ -59,8 +37,6 @@ export class SignupFsComponent implements OnInit {
         email: ['', [Validators.required, Validators.email]],
         password: ['',
         [Validators.required, Validators.pattern(/[0-9a-zA-g5-d7-Z]{10,}/)]
-        /* pattern > modèle (au moins 6 caractères, règles firebase :
-        plus il y en a, plus on exige un mot de passe complexe) */
         ],
         confirmPassword: ['',
         [Validators.required]
@@ -71,7 +47,6 @@ export class SignupFsComponent implements OnInit {
         genre: [''],
         country: [''],
         address: [''],
-        // addressMore: ['', [Validators.required]],
         birthDate: ['',
         [Validators.pattern(/[0-9a/zA/g5-Z]{8,}/)]
         ],
@@ -105,7 +80,6 @@ export class SignupFsComponent implements OnInit {
     const city = this.signUpForm.get('city').value;
     const phoneNumber = this.signUpForm.get('phoneNumber').value;
     const smartphoneNumber = this.signUpForm.get('smartphoneNumber').value;
-    // const acceptTerms = this.signUpForm.get('acceptTerms').value;
 
     const newUser = new User(
       email,
@@ -122,29 +96,7 @@ export class SignupFsComponent implements OnInit {
       city,
       phoneNumber,
       smartphoneNumber
-      // acceptTerms
     );
-
-    // this.authService.form.value.user = this.user;
-    // this.ordersService.form.value.seat = this.seat;
-
-    // let data = this.user.form.value;
-    //
-    // this.user.createSeatOneOrder(data).then(res => {
-    //   /*do something here....maybe clear the form or give a success message*/
-    //   console.log("OK");
-    // });
-
-    // this.authService.createNewUserPushInFirebase(newUser);
-
-    // this.authService.createNewUser(email, password).then(
-    //   () => {
-    //     this.router.navigate(['/users']);
-    //   },
-    //   (error) => {
-    //     this.errorMessage = error;
-    //   }
-    // );
   }
 
   onReset() {
