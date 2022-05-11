@@ -1,18 +1,18 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, Renderer2, OnDestroy } from '@angular/core';
-import { OrderReservationService } from "../../services/order-reservation.service";
-import { ReservationDeleteButtonsService } from "../../services/reservation-delete-buttons.service";
+import { OrderReservationService } from "src/app/services/order-reservation.service";
+import { ReservationDeleteButtonsService } from "src/app/services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-seats-start',
-  templateUrl: './seats-start.component.html',
+  selector: 'app-seats',
+  templateUrl: './seats.component.html',
   styleUrls: ['./../../styles/normalize.scss',
   './../../styles/part01-reservation/seats.scss',
   './../../styles/part01-reservation/icons/material-icons.scss']
 })
-export class SeatsStartComponent implements OnInit, OnDestroy {
+export class SeatsComponent implements OnInit, OnDestroy {
 
   buttonDisabled: boolean;
   isShow = false;
@@ -118,7 +118,7 @@ export class SeatsStartComponent implements OnInit, OnDestroy {
 
     this.seatOneSubscription = this.reservationService.seatOneSubject
     .subscribe(
-      (seatOnes: []) => {
+      (seatOnes: string[]) => {
         if(!seatOnes){
           return;
         }
@@ -127,6 +127,8 @@ export class SeatsStartComponent implements OnInit, OnDestroy {
     );
     this.reservationService.emitSeatOneSubject();
   }
+
+  
 
   isMenuOpen = false;
 

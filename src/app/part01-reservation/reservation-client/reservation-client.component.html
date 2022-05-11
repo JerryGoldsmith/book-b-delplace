@@ -1,0 +1,254 @@
+<body>
+
+  <h1 class="title verticalOptimisation">Réservation</h1>
+
+  <form #seatsForm="ngForm" [formGroup]="this.reservationService.form">
+
+    <div class="verticalOptimisation">
+
+      <!-- firstName > form -->
+      <div class="mdc-text-field">
+        <input size="42" placeholder="Prénom"
+        formControlName="customerFirstName"
+        type="text" id="fields"
+        class="col s12">
+      </div>
+
+      <!-- name > form -->
+      <div class="mdc-text-field">
+        <input size="42" placeholder="Nom"
+        formControlName="customerName"
+        type="text" id="fields"
+        class="col s12"/>
+      </div>
+
+      <!-- age > form -->
+      <div class="mdc-text-field">
+        <input size="42" placeholder="Age"
+        formControlName="customerAge"
+        type="number" id="fields"
+        class="col s12"/>
+      </div>
+
+      <!-- select customerCountry -->
+      <label for="standard-select">Pays</label>
+        <select class="form-control select" id="standard-select" formControlName="customerCountry">
+          <option value="France" label="France" selected="selected">France</option>
+          <option value="USA" label="USA" ></option>
+          <option value="Canada" label="Canada" ></option>
+          <option value="UK" label="UK" ></option>
+          <option value="Belgique" label="Belgique" ></option>
+          <option value="Pays-Bas" label="Pays-Bas" ></option>
+          <option value="Espagne" label="Espagne" ></option>
+          <option value="Italie" label="Italie" ></option>
+          <option value="Allemagne" label="Allemagne" ></option>
+          <option value="Pologne" label="Pologne" ></option>
+          <option value="Autres" label="Autres" ></option>
+          
+        </select>
+
+      <!-- select color -->
+      <label for="standard-select">Couleur du pays (graphique)</label>
+        <select class="form-control select" id="standard-select" formControlName="color">
+          <option value="#1F71BA" label="France (Bleu)" selected="selected"></option>
+          <option value="#DD8C4B" label="USA (Ocre)" ></option>
+          <option value="#398D4F" label="Canada (Vert)" ></option>
+          <option value="#FFA529" label="UK (Jaune)" ></option>
+          <option value="#FD9458" label="Belgique (Orange)" ></option>
+          <option value="#AFAFAF" label="Pays-Bas (Gris)" ></option>
+          <option value="#823C0D" label="Espagne (Marron)" ></option>
+          <option value="#94C6EE" label="Italie (Bleu clair)" ></option>
+          <option value="#FDD549" label="Allemagne (Jaune clair)" ></option>
+          <option value="#FD483C" label="Pologne (Rouge)" ></option>
+          <option value="#F477B6" label="Autres (Rose)" ></option>
+          
+        </select>
+
+      <ul>
+        <li>
+
+          <div *ngIf="showDiv.current">
+
+            <div *ngFor="let seatOne of sortedData | keyValue">
+
+              <!-- Display buttons Balcon -->
+              <div [hidden]="seatOne.key === 'Orchestre'">
+
+                <h3>{{ seatOne.key | uppercase }}</h3>
+
+                <div class="buttons-position">
+                  <app-seats-start
+                  *ngFor="let seatOne of seatOnes | valueArray; let i = index"
+                  [seatName]="seatOne.name" 
+                  [seatKind]="seatOne.kind"
+                  [seatId]="seatOne.id"
+                  [seatStatus]="seatOne.status"
+                  (click)="addSeatOne(seatOne.name)"
+                  [index]="i"
+
+                  [visible]="seatOne.name === 'Balcon 1' 
+                  || seatOne.name === 'Balcon 2' 
+                  || seatOne.name === 'Balcon 3'
+                  || seatOne.name === 'Balcon 4'
+                  || seatOne.name === 'Balcon 5'
+                  || seatOne.name === 'Balcon 6'
+                  || seatOne.name === 'Balcon 7'
+                  || seatOne.name === 'Balcon 8'
+                  || seatOne.name === 'Balcon 9'
+                  || seatOne.name === 'Balcon 10'
+                  || seatOne.name === 'Balcon 11'
+                  || seatOne.name === 'Balcon 12'" 
+
+                  [hidden]="seatOne.name === 'Orchestre 13' 
+                  || seatOne.name === 'Orchestre 14'
+                  || seatOne.name === 'Orchestre 15'
+                  || seatOne.name === 'Orchestre 16'
+                  || seatOne.name === 'Orchestre 17'
+                  || seatOne.name === 'Orchestre 18'
+                  || seatOne.name === 'Orchestre 19'
+                  || seatOne.name === 'Orchestre 20'
+                  || seatOne.name === 'Orchestre 21'
+                  || seatOne.name === 'Orchestre 22' 
+                  || seatOne.name === 'Orchestre 23'
+                  || seatOne.name === 'Orchestre 24'
+                  || seatOne.name === 'Orchestre 25'
+                  || seatOne.name === 'Orchestre 26'
+                  || seatOne.name === 'Orchestre 27'
+                  || seatOne.name === 'Orchestre 28'
+                  || seatOne.name === 'Orchestre 29'
+                  || seatOne.name === 'Orchestre 30'
+                  || seatOne.name === 'Orchestre 31'
+                  || seatOne.name === 'Orchestre 32'">
+                </app-seats-start>
+                </div>
+
+            </div>
+
+            <!-- Display buttons Orchestre -->
+            <div [hidden]="seatOne.key === 'Balcon'">
+
+              <h3>{{ seatOne.key | uppercase }}</h3>
+
+              <div class="buttons-position">
+                <app-seats-start
+                *ngFor="let seatOne of seatOnes | valueArray; let i = index"
+                [seatName]="seatOne.name" 
+                [seatKind]="seatOne.kind"
+                [seatId]="seatOne.id" 
+                [seatStatus]="seatOne.status"
+                (click)="addSeatOne(seatOne.name)"
+                [index]="i"
+
+                [visible]="seatOne.name === 'Orchestre 13' 
+                || seatOne.name === 'Orchestre 14'
+                || seatOne.name === 'Orchestre 15'
+                || seatOne.name === 'Orchestre 16'
+                || seatOne.name === 'Orchestre 17'
+                || seatOne.name === 'Orchestre 18'
+                || seatOne.name === 'Orchestre 19'
+                || seatOne.name === 'Orchestre 20'
+                || seatOne.name === 'Orchestre 21'
+                || seatOne.name === 'Orchestre 22' 
+                || seatOne.name === 'Orchestre 23'
+                || seatOne.name === 'Orchestre 24'
+                || seatOne.name === 'Orchestre 25'
+                || seatOne.name === 'Orchestre 26'
+                || seatOne.name === 'Orchestre 27'
+                || seatOne.name === 'Orchestre 28'
+                || seatOne.name === 'Orchestre 29'
+                || seatOne.name === 'Orchestre 30'
+                || seatOne.name === 'Orchestre 31'
+                || seatOne.name === 'Orchestre 32'"
+
+                [hidden]="seatOne.name === 'Balcon 1' 
+                || seatOne.name === 'Balcon 2' 
+                || seatOne.name === 'Balcon 3'
+                || seatOne.name === 'Balcon 4'
+                || seatOne.name === 'Balcon 5'
+                || seatOne.name === 'Balcon 6'
+                || seatOne.name === 'Balcon 7'
+                || seatOne.name === 'Balcon 8'
+                || seatOne.name === 'Balcon 9'
+                || seatOne.name === 'Balcon 10'
+                || seatOne.name === 'Balcon 11'
+                || seatOne.name === 'Balcon 12'">
+              </app-seats-start>
+              </div>
+
+            </div>
+            
+          </div>
+        </div>
+      </li>
+      
+      <li>
+        <div>
+
+          <div *ngFor="let seatOne of seatOneOrder; let i = index">
+            <div *ngIf="showDiv.current" class="center">
+
+              <!-- Display buttons balcon/orchestre selection (only seatOne.name) -->
+              <span class="col s9 seat-display"
+                [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'">
+                <strong>{{ seatOne }}</strong>
+              </span>
+
+              <!-- Display button 'change mind' for balcon/orchestre (only seatOne.name) -->
+              <button class="col s9"
+                type="submit"
+                class="waves-effect waves-light"
+                id="change-mind-button"
+                [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'"
+                (click)="removeSeatOne(seatOne)">J'ai changé d'avis pour ce siège</button>
+
+            </div>
+
+            <!-- separate line between buttons (only seatOne.name) -->
+            <div *ngIf="showDiv.current" class="goldLineHorizontal"
+              [hidden]="seatOne === 'Balcon' || seatOne === 'Orchestre'"></div>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+
+    <div class="center">
+
+      <!-- button > show balcon/orchestre buttons -->
+        <div (click)="showDiv.current = !showDiv.current;
+            showDiv.previous = false;
+            showDiv.next = false">
+            <div *ngIf = "!showDiv.current">
+              <button
+              id="close-button"
+              (click) = "onFetchFromFirebase()">Afficher les sièges disponibles</button>
+            </div>
+        </div>
+
+        <!-- button > save choice on Firebase -->
+
+        <!-- add in seatOneOrders (firestore) -->
+        <button type="submit"
+        *ngIf="showDiv.current"
+        id="submit-button"
+        (click)="onSubmit()"
+        (click) = "onSaveOnFirebase()"
+        routerLink="/home-result">Valider ces sièges</button>
+
+        <!-- button > hide balcon/orchestre buttons -->
+        <div (click)="showDiv.previous = !showDiv.previous;
+          showDiv.current = false;
+          showDiv.next = false"
+          class="center">
+
+          <button *ngIf="showDiv.current"
+            id="close-button"
+            (click) = "onFetchFromFirebase()">Cacher les sièges</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </form>
+</body>

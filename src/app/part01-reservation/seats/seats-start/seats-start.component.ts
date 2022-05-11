@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, Renderer2, OnDestroy } from '@angular/core';
-import { OrderReservationService } from "../../services/order-reservation.service";
-import { ReservationDeleteButtonsService } from "../../services/reservation-delete-buttons.service";
+import { OrderReservationService } from "src/app/services/order-reservation.service";
+import { ReservationDeleteButtonsService } from "src/app/services/reservation-delete-buttons.service";
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup } from '@angular/forms';
 import { DocumentChangeAction } from '@angular/fire/firestore';
