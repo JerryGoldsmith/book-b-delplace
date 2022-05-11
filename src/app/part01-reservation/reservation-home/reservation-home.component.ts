@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-reservation-home',
   templateUrl: './reservation-home.component.html',
-  styleUrls: ['./../styles/normalize.scss',
-  './../styles/part01-reservation/reservation-homes.scss']
+  styleUrls: ['./../../styles/normalize.scss',
+  './../../styles/part01-reservation/reservation-homes.scss']
 })
 
 export class ReservationHomeComponent implements OnInit {

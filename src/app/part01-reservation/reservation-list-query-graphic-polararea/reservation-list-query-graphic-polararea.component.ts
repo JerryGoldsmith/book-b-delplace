@@ -8,9 +8,9 @@ import * as Highcharts from "highcharts-angular";
 @Component({
   selector: 'app-reservation-list-query-graphic-polararea',
   templateUrl: './reservation-list-query-graphic-polararea.component.html',
-  styleUrls: ['./../styles/normalize.scss',
-  './../styles/part01-reservation/reservation-query.scss',
-  './../styles/part01-reservation/animations/charts.scss']
+  styleUrls: ['./../../styles/normalize.scss',
+  './../../styles/part01-reservation/reservation-query.scss',
+  './../../styles/part01-reservation/animations/charts.scss']
 })
 export class ReservationListQueryGraphicPolarareaComponent implements OnInit {
 

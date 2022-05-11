@@ -6,9 +6,9 @@ import { DocumentChangeAction } from "@angular/fire/firestore";
 @Component({
   selector: 'app-reservation-result',
   templateUrl: './reservation-result.component.html',
-  styleUrls: ['./../styles/normalize.scss',
-  './../styles/part01-reservation/reservation-result.scss',
-  './../styles/part01-reservation/animations/light-speed-in.scss']
+  styleUrls: ['./../../styles/normalize.scss',
+  './../../styles/part01-reservation/reservation-result.scss',
+  './../../styles/part01-reservation/animations/light-speed-in.scss']
 })
 export class ReservationResultComponent implements OnInit, OnDestroy {
 

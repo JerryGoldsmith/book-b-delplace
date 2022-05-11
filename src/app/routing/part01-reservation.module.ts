@@ -22,26 +22,27 @@ import { SeatsComponent } from 'src/app/modules/seats/seats.component';
 
 // reservation
 
-import { OrderReservationHomeComponent } from 'src/app/order-reservation-home/order-reservation-home.component';
-import { OrderReservationHomeHubComponent } from 'src/app/order-reservation-home-hub/order-reservation-home-hub.component';
-import { OrderReservationHomeAdminComponent } from 'src/app/order-reservation-home-admin/order-reservation-home-admin.component';
+import { ReservationClientComponent } from 'src/app/part01-reservation/reservation-client/reservation-client.component';
 
-import { OrderReservationAdminComponent } from 'src/app/order-reservation-admin/order-reservation-admin.component';
+import { ReservationHomeComponent } from 'src/app/part01-reservation/reservation-home/reservation-home.component';
+import { ReservationHomeHubComponent } from 'src/app/part01-reservation/reservation-home-hub/reservation-home-hub.component';
+import { ReservationHomeAdminComponent } from 'src/app/part01-reservation/reservation-home-admin/reservation-home-admin.component';
 
-import { OrderReservationHomeReserveSeatsComponent } from 'src/app/order-reservation-home-reserve-seats/order-reservation-home-reserve-seats.component';
+import { ReservationAdminComponent } from 'src/app/part01-reservation/reservation-admin/reservation-admin.component';
 
-import { OrderReservationPictureComponent } from 'src/app/order-reservation-picture/order-reservation-picture.component';
-import { OrderReservationPictureBisComponent } from 'src/app/order-reservation-picture-bis/order-reservation-picture-bis.component';
-import { OrderReservationPictureTerComponent } from 'src/app/order-reservation-picture-ter/order-reservation-picture-ter.component';
+import { ReservationHomeReserveSeatsComponent } from 'src/app/part01-reservation/reservation-home-reserve-seats/reservation-home-reserve-seats.component';
 
-import { OrderReservationListQueryDateComponent } from 'src/app/order-reservation-list-query-date/order-reservation-list-query-date.component';
+import { ReservationPictureComponent } from 'src/app/part01-reservation/reservation-picture/reservation-picture.component';
+import { ReservationPictureBisComponent } from 'src/app/part01-reservation/reservation-picture-bis/reservation-picture-bis.component';
+import { ReservationPictureTerComponent } from 'src/app/part01-reservation/reservation-picture-ter/reservation-picture-ter.component';
 
-import { OrderReservationListQueryGraphicsComponent } from 'src/app/order-reservation-list-query-graphics/order-reservation-list-query-graphics.component';
-import { OrderReservationListQueryGraphicPieComponent } from 'src/app/order-reservation-list-query-graphic-pie/order-reservation-list-query-graphic-pie.component';
-import { OrderReservationListQueryGraphicBarComponent } from 'src/app/order-reservation-list-query-graphic-bar/order-reservation-list-query-graphic-bar.component';
-import { OrderReservationListQueryGraphicPolarareaComponent } from 'src/app/order-reservation-list-query-graphic-polararea/order-reservation-list-query-graphic-polararea.component';
+import { ReservationListQueryDateComponent } from 'src/app/part01-reservation/reservation-list-query-date/reservation-list-query-date.component';
 
-import { OrderReservationComponent } from 'src/app/order-reservation/order-reservation.component';
+import { ReservationListQueryGraphicsComponent } from 'src/app/part01-reservation/reservation-list-query-graphics/reservation-list-query-graphics.component';
+import { ReservationListQueryGraphicPieComponent } from 'src/app/part01-reservation/reservation-list-query-graphic-pie/reservation-list-query-graphic-pie.component';
+import { ReservationListQueryGraphicBarComponent } from 'src/app/part01-reservation/reservation-list-query-graphic-bar/reservation-list-query-graphic-bar.component';
+import { ReservationListQueryGraphicPolarareaComponent } from 'src/app/part01-reservation/reservation-list-query-graphic-polararea/reservation-list-query-graphic-polararea.component';
+
 import { ButtonAAComponent } from 'src/app/order-reservation/buttons-delete/button-aa/button-aa.component';
 import { ButtonBAComponent } from 'src/app/order-reservation/buttons-delete/button-ba/button-ba.component';
 import { ButtonCAComponent } from 'src/app/order-reservation/buttons-delete/button-ca/button-ca.component';
@@ -87,17 +88,17 @@ import { HighchartsChartModule } from "highcharts-angular";
 const routes: Routes = [
     { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
 
-    { path: 'hub', canActivate: [AuthGuardService], component: OrderReservationHomeHubComponent },
-    { path: 'admin', canActivate: [AuthGuardService], component: OrderReservationHomeAdminComponent },
+    { path: 'hub', canActivate: [AuthGuardService], component: ReservationHomeHubComponent },
+    { path: 'admin', canActivate: [AuthGuardService], component: ReservationHomeAdminComponent },
 
-    { path: 'date', canActivate: [AuthGuardService], component: OrderReservationListQueryDateComponent },
+    { path: 'date', canActivate: [AuthGuardService], component: ReservationListQueryDateComponent },
 
-    { path: 'graphic', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicsComponent },
-    { path: 'pie', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicPieComponent },
-    { path: 'bar', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicBarComponent },
-    { path: 'polar', canActivate: [AuthGuardService], component: OrderReservationListQueryGraphicPolarareaComponent },
+    { path: 'graphic', canActivate: [AuthGuardService], component: ReservationListQueryGraphicsComponent },
+    { path: 'pie', canActivate: [AuthGuardService], component: ReservationListQueryGraphicPieComponent },
+    { path: 'bar', canActivate: [AuthGuardService], component: ReservationListQueryGraphicBarComponent },
+    { path: 'polar', canActivate: [AuthGuardService], component: ReservationListQueryGraphicPolarareaComponent },
 
-    { path: 'home-result', canActivate: [AuthGuardService], component: OrderReservationHomeReserveSeatsComponent },
+    { path: 'home-result', canActivate: [AuthGuardService], component: ReservationHomeReserveSeatsComponent },
     { path: 'show', canActivate: [AuthGuardService], component: OrderReservationResultComponent },
     { path: 'confirmation', canActivate: [AuthGuardService], component: OrderReservationResultComponent }
 ];
@@ -105,20 +106,21 @@ const routes: Routes = [
 @NgModule({
     declarations: [
         Part01ReservationHomeComponent,
-        OrderReservationHomeComponent,
 
-        OrderReservationHomeHubComponent,
+        ReservationClientComponent,
+        ReservationHomeComponent,
 
-        OrderReservationHomeAdminComponent,
-        OrderReservationAdminComponent,
+        ReservationHomeHubComponent,
+
+        ReservationHomeAdminComponent,
+        ReservationAdminComponent,
         
-        OrderReservationHomeReserveSeatsComponent,
+        ReservationHomeReserveSeatsComponent,
 
-        OrderReservationPictureComponent,
-        OrderReservationPictureBisComponent,
-        OrderReservationPictureTerComponent,
+        ReservationPictureComponent,
+        ReservationPictureBisComponent,
+        ReservationPictureTerComponent,
 
-        OrderReservationComponent,
         ButtonAAComponent,
         ButtonBAComponent,
         ButtonCAComponent,
@@ -153,12 +155,12 @@ const routes: Routes = [
         ButtonEBComponent,
         ButtonFBComponent,
         
-        OrderReservationListQueryDateComponent,
+        ReservationListQueryDateComponent,
 
-        OrderReservationListQueryGraphicsComponent,
-        OrderReservationListQueryGraphicPieComponent,
-        OrderReservationListQueryGraphicBarComponent,
-        OrderReservationListQueryGraphicPolarareaComponent,
+        ReservationListQueryGraphicsComponent,
+        ReservationListQueryGraphicPieComponent,
+        ReservationListQueryGraphicBarComponent,
+        ReservationListQueryGraphicPolarareaComponent,
 
         SeatsStartComponent,
         SeatsComponent,
@@ -180,8 +182,7 @@ const routes: Routes = [
         HighchartsChartModule
     ],
     exports: [
-        RouterModule,
-        OrderReservationComponent
+        RouterModule
     ],
     providers: [
         LazyImgDirective,
