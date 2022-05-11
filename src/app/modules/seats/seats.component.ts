@@ -128,6 +128,8 @@ export class SeatsComponent implements OnInit, OnDestroy {
     this.reservationService.emitSeatOneSubject();
   }
 
+  
+
   isMenuOpen = false;
 
   toggleMenu() {
