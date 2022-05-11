@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // lazy load images
-import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
+import { LazyImgDirective } from 'src/app/directives/lazy-img.directive';
 import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 

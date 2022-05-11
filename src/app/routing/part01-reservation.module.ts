@@ -8,7 +8,7 @@ import { CommonModule, registerLocaleData } from '@angular/common';
 import * as fr from "@angular/common/locales/fr"; // date
 
 // lazy load images
-import { LazyImgDirective } from 'src/app/helpers/lazy-img.directive';
+import { LazyImgDirective } from 'src/app/directives/lazy-img.directive';
 import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
