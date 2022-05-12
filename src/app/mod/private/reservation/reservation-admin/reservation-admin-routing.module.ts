@@ -3,10 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
+import { ReservationAdminComponent } from 'src/app/part01-reservation/reservation-admin/reservation-admin.component';
 
 const routes: Routes = [
-  { path: '', component: Part01ReservationHomeComponent }
+  { path: '', component: ReservationAdminComponent }
 ];
 
 @NgModule({
@@ -18,4 +18,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class AReservationRoutingModule { }
+export class ReservationAdminRoutingModule { }

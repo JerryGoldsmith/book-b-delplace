@@ -11,6 +11,9 @@ import { ReservationHomeComponent } from 'src/app/part01-reservation/reservation
   imports: [
     CommonModule,
     ReservationHomeRoutingModule
+  ],
+  exports: [
+    ReservationHomeComponent
   ]
 })
 export class ReservationHomeModule { }
