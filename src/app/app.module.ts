@@ -55,6 +55,9 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthentificationService } from "./services/authentification.service";
 
+import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
+import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
+
 const appRoutes: Routes = [
 
   { path: 'main', component: MainComponent },
@@ -77,7 +80,8 @@ const appRoutes: Routes = [
     SignupLightComponent,
     SigninComponent,
     SigninlistComponent,
-    FooterComponent
+    FooterComponent,
+    ValueArrayPipe
   ],
   imports: [
     BrowserModule,

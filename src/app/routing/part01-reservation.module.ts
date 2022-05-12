@@ -77,11 +77,11 @@ import { AuthGuardService } from './../services/auth-guard.service';
 // import { ButtonEBComponent } from 'src/app/part01-reservation/buttons-delete/button-eb/button-eb.component';
 // import { ButtonFBComponent } from 'src/app/part01-reservation/buttons-delete/button-fb/button-fb.component';
 
-import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
-import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
+// import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
+// import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 
-import { ChartsModule } from 'ng2-charts';
-import { HighchartsChartModule } from "highcharts-angular";
+// import { ChartsModule } from 'ng2-charts';
+// import { HighchartsChartModule } from "highcharts-angular";
 
 const routes: Routes = [
 
@@ -125,7 +125,7 @@ const routes: Routes = [
       data: { preload: true, delay:1000 }
   },
 
-//   { path: 'admin', canActivate: [AuthGuardService], component: ReservationHomeAdminComponent },
+    //   { path: 'admin', canActivate: [AuthGuardService], component: ReservationHomeAdminComponent },
 
 {
     path: 'home-hub',
@@ -133,9 +133,9 @@ const routes: Routes = [
     loadChildren: () => import('src/app/mod/private/reservation/reservation-home-hub/reservation-home-hub.module')
       .then(mod => mod.ReservationHomeHubModule),
       data: { preload: true, delay:1000 }
-  },
+},
 
-// { path: 'hub', canActivate: [AuthGuardService], component: ReservationHomeHubComponent },
+    // { path: 'hub', canActivate: [AuthGuardService], component: ReservationHomeHubComponent },
 
 {
     path: 'home-result',
@@ -145,7 +145,7 @@ const routes: Routes = [
       data: { preload: true, delay:1000 }
   },
 
-// { path: 'home-result', canActivate: [AuthGuardService], component: ReservationHomeReserveSeatsComponent }
+    // { path: 'home-result', canActivate: [AuthGuardService], component: ReservationHomeReserveSeatsComponent }
 
 {
     path: 'picture',
@@ -176,7 +176,7 @@ const routes: Routes = [
       data: { preload: true, delay:1000 }
   },
 
-// { path: 'date', canActivate: [AuthGuardService], component: ReservationQueryDateComponent },
+    // { path: 'date', canActivate: [AuthGuardService], component: ReservationQueryDateComponent },
 
 {
     path: 'graphic',
@@ -186,7 +186,7 @@ const routes: Routes = [
       data: { preload: true, delay:1000 }
 },
 
-// { path: 'graphic', canActivate: [AuthGuardService], component: ReservationQueryGraphicsComponent },
+    // { path: 'graphic', canActivate: [AuthGuardService], component: ReservationQueryGraphicsComponent },
 
 {
     path: 'pie',
@@ -196,7 +196,7 @@ const routes: Routes = [
       data: { preload: true, delay:1000 }
 },
 
-// { path: 'pie', canActivate: [AuthGuardService], component: ReservationQueryGraphicPieComponent },
+    // { path: 'pie', canActivate: [AuthGuardService], component: ReservationQueryGraphicPieComponent },
 
 {
     path: 'bar',
@@ -206,7 +206,7 @@ const routes: Routes = [
       data: { preload: true, delay:1000 }
 },
 
-// { path: 'bar', canActivate: [AuthGuardService], component: ReservationQueryGraphicBarComponent },
+    // { path: 'bar', canActivate: [AuthGuardService], component: ReservationQueryGraphicBarComponent },
 
 {
     path: 'polar',
@@ -216,7 +216,7 @@ const routes: Routes = [
       data: { preload: true, delay:1000 }
 },
 
-// { path: 'polar', canActivate: [AuthGuardService], component: ReservationQueryGraphicPolarareaComponent }
+    // { path: 'polar', canActivate: [AuthGuardService], component: ReservationQueryGraphicPolarareaComponent }
 
     {
     path: 'result',
@@ -312,8 +312,8 @@ const routes: Routes = [
 
         // ReservationResultComponent,
 
-        KeyValuePipe,
-        ValueArrayPipe
+        // KeyValuePipe,
+        // ValueArrayPipe
     ],
     imports: [
         RouterModule.forRoot(routes,
@@ -322,9 +322,9 @@ const routes: Routes = [
         CommonModule,
         FormsModule, 
         ReactiveFormsModule,
-        CommonFormReactiveModule,
-        ChartsModule,
-        HighchartsChartModule
+        CommonFormReactiveModule
+        // ChartsModule,
+        // HighchartsChartModule
     ],
     exports: [
         RouterModule

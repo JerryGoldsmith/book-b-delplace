@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
 
 import { ButtonXAComponent } from 'src/app/part01-reservation/buttons-delete/button-xa/button-xa.component';
 
@@ -11,8 +11,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes),
-    ReactiveFormsModule
+    RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule
