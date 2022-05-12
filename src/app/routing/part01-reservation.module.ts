@@ -15,15 +15,18 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 // guard
 import { AuthGuardService } from './../services/auth-guard.service';
 
+// -------------------------------
+
 // reservation
 
-import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
+// import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
 
 import { ReservationClientComponent } from 'src/app/part01-reservation/reservation-client/reservation-client.component';
 
 import { ReservationResultComponent } from 'src/app/part01-reservation/reservation-result/reservation-result.component';
 
-import { ReservationHomeComponent } from 'src/app/part01-reservation/reservation-home/reservation-home.component';
+// import { ReservationHomeComponent } from 'src/app/part01-reservation/reservation-home/reservation-home.component';
+
 import { ReservationHomeHubComponent } from 'src/app/part01-reservation/reservation-home-hub/reservation-home-hub.component';
 import { ReservationHomeAdminComponent } from 'src/app/part01-reservation/reservation-home-admin/reservation-home-admin.component';
 
@@ -86,7 +89,24 @@ import { ChartsModule } from 'ng2-charts';
 import { HighchartsChartModule } from "highcharts-angular";
 
 const routes: Routes = [
-    { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
+
+    /* home */
+  {
+    path: 'reservation',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/a-reservation/a-reservation.module')
+      .then(mod => mod.AReservationModule),
+      data: { preload: true, delay:1000 }
+  },
+  {
+    path: 'reservation-home',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-home/reservation-home.module')
+      .then(mod => mod.ReservationHomeModule),
+      data: { preload: true, delay:1000 }
+  },
+
+    // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
 
     { path: 'hub', canActivate: [AuthGuardService], component: ReservationHomeHubComponent },
     { path: 'admin', canActivate: [AuthGuardService], component: ReservationHomeAdminComponent },
@@ -103,10 +123,10 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [
-        Part01ReservationHomeComponent,
+        // Part01ReservationHomeComponent,
 
         ReservationClientComponent,
-        ReservationHomeComponent,
+        // ReservationHomeComponent,
 
         ReservationHomeHubComponent,
 

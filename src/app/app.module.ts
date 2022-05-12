@@ -45,7 +45,6 @@ import { SigninlistComponent } from './auth/signinlist/signinlist.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SignupLightComponent } from './auth/signuplight/signuplight.component';
 
-
 /* -------------------------------------------------- */
 /* --------------------- SERVICES ------------------- */
 /* -------------------------------------------------- */
