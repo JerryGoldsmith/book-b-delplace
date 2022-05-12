@@ -8,8 +8,8 @@ import { DocumentChangeAction } from '@angular/fire/firestore';
 @Component({
   selector: 'app-button-ia',
   templateUrl: './button-ia.component.html',
-  styleUrls: ['./../../styles/normalize.scss',
-  './../../styles/part01-reservation/reservation-admin-buttons-delete.scss']
+  styleUrls: ['./../../../styles/normalize.scss',
+  './../../../styles/part01-reservation/reservation-admin-buttons-delete.scss']
 })
 export class ButtonIAComponent implements OnInit, OnDestroy {
 
