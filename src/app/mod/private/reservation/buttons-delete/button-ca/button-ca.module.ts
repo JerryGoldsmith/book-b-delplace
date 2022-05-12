@@ -1,0 +1,19 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { ButtonCARoutingModule } from './button-ca-routing.module';
+import { ButtonCAComponent } from 'src/app/part01-reservation/buttons-delete/button-ca/button-ca.component';
+
+@NgModule({
+  declarations: [
+    ButtonCAComponent
+  ],
+  imports: [
+    CommonModule,
+    ButtonCARoutingModule
+  ],
+  exports: [
+    ButtonCAComponent
+  ]
+})
+export class ButtonCAModule { }

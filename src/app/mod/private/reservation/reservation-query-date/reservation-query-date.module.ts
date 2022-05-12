@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ReservationHomeQueryDateRoutingModule } from './reservation-query-date-routing.module';
+import { ReservationQueryDateRoutingModule } from './reservation-query-date-routing.module';
 import { ReservationQueryDateComponent } from 'src/app/part01-reservation/reservation-query-date/reservation-query-date.component';
 
 @NgModule({
@@ -10,10 +10,10 @@ import { ReservationQueryDateComponent } from 'src/app/part01-reservation/reserv
   ],
   imports: [
     CommonModule,
-    ReservationHomeQueryDateRoutingModule
+    ReservationQueryDateRoutingModule
   ],
   exports: [
     ReservationQueryDateComponent
   ]
 })
-export class ReservationHomeQueryDateModule { }
+export class ReservationQueryDateModule { }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ReservationHomePictureTerRoutingModule } from './reservation-picture-ter-routing.module';
+import { ReservationPictureTerRoutingModule } from './reservation-picture-ter-routing.module';
 import { ReservationPictureTerComponent } from 'src/app/part01-reservation/reservation-picture-ter/reservation-picture-ter.component';
 
 @NgModule({
@@ -10,10 +10,10 @@ import { ReservationPictureTerComponent } from 'src/app/part01-reservation/reser
   ],
   imports: [
     CommonModule,
-    ReservationHomePictureTerRoutingModule
+    ReservationPictureTerRoutingModule
   ],
   exports: [
     ReservationPictureTerComponent
   ]
 })
-export class ReservationHomePictureTerModule { }
+export class ReservationPictureTerModule { }

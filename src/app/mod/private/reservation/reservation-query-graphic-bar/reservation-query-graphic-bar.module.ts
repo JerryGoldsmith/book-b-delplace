@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ReservationHomeQueryGraphicBarRoutingModule } from './reservation-query-graphic-bar-routing.module';
+import { ReservationQueryGraphicBarRoutingModule } from './reservation-query-graphic-bar-routing.module';
 import { ReservationQueryGraphicBarComponent } from 'src/app/part01-reservation/reservation-query-graphic-bar/reservation-query-graphic-bar.component';
 
 @NgModule({
@@ -10,10 +10,10 @@ import { ReservationQueryGraphicBarComponent } from 'src/app/part01-reservation/
   ],
   imports: [
     CommonModule,
-    ReservationHomeQueryGraphicBarRoutingModule
+    ReservationQueryGraphicBarRoutingModule
   ],
   exports: [
     ReservationQueryGraphicBarComponent
   ]
 })
-export class ReservationHomeQueryGraphicBarModule { }
+export class ReservationQueryGraphicBarModule { }

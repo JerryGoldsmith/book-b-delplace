@@ -15,4 +15,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class ReservationHomeQueryDateRoutingModule { }
+export class ReservationQueryDateRoutingModule { }

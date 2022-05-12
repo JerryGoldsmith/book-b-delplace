@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ReservationHomeQueryGraphicsRoutingModule } from './reservation-query-graphics-routing.module';
+import { ReservationQueryGraphicsRoutingModule } from './reservation-query-graphics-routing.module';
 import { ReservationQueryGraphicsComponent } from 'src/app/part01-reservation/reservation-query-graphics/reservation-query-graphics.component';
 
 @NgModule({
@@ -10,10 +10,10 @@ import { ReservationQueryGraphicsComponent } from 'src/app/part01-reservation/re
   ],
   imports: [
     CommonModule,
-    ReservationHomeQueryGraphicsRoutingModule
+    ReservationQueryGraphicsRoutingModule
   ],
   exports: [
     ReservationQueryGraphicsComponent
   ]
 })
-export class ReservationHomeQueryGraphicsModule { }
+export class ReservationQueryGraphicsModule { }

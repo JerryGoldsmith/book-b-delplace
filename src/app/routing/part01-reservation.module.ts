@@ -19,34 +19,29 @@ import { AuthGuardService } from './../services/auth-guard.service';
 
 // reservation
 
-import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
+// import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
+// import { ReservationHomeComponent } from 'src/app/part01-reservation/reservation-home/reservation-home.component';
+// import { ReservationAdminComponent } from 'src/app/part01-reservation/reservation-admin/reservation-admin.component';
+// import { ReservationClientComponent } from 'src/app/part01-reservation/reservation-client/reservation-client.component';
+// import { ReservationHomeAdminComponent } from 'src/app/part01-reservation/reservation-home-admin/reservation-home-admin.component';
+// import { ReservationHomeHubComponent } from 'src/app/part01-reservation/reservation-home-hub/reservation-home-hub.component';
+// import { ReservationHomeReserveSeatsComponent } from 'src/app/part01-reservation/reservation-home-reserve-seats/reservation-home-reserve-seats.component';
 
-import { ReservationClientComponent } from 'src/app/part01-reservation/reservation-client/reservation-client.component';
+// import { ReservationPictureComponent } from 'src/app/part01-reservation/reservation-picture/reservation-picture.component';
+// import { ReservationPictureBisComponent } from 'src/app/part01-reservation/reservation-picture-bis/reservation-picture-bis.component';
+// import { ReservationPictureTerComponent } from 'src/app/part01-reservation/reservation-picture-ter/reservation-picture-ter.component';
 
-import { ReservationResultComponent } from 'src/app/part01-reservation/reservation-result/reservation-result.component';
+// import { ReservationQueryDateComponent } from 'src/app/part01-reservation/reservation-query-date/reservation-query-date.component';
 
-import { ReservationHomeComponent } from 'src/app/part01-reservation/reservation-home/reservation-home.component';
+// import { ReservationQueryGraphicsComponent } from 'src/app/part01-reservation/reservation-query-graphics/reservation-query-graphics.component';
+// import { ReservationQueryGraphicPieComponent } from 'src/app/part01-reservation/reservation-query-graphic-pie/reservation-query-graphic-pie.component';
+// import { ReservationQueryGraphicBarComponent } from 'src/app/part01-reservation/reservation-query-graphic-bar/reservation-query-graphic-bar.component';
+// import { ReservationQueryGraphicPolarareaComponent } from 'src/app/part01-reservation/reservation-query-graphic-polararea/reservation-query-graphic-polararea.component';
 
-import { ReservationHomeHubComponent } from 'src/app/part01-reservation/reservation-home-hub/reservation-home-hub.component';
-import { ReservationHomeAdminComponent } from 'src/app/part01-reservation/reservation-home-admin/reservation-home-admin.component';
+// import { ReservationResultComponent } from 'src/app/part01-reservation/reservation-result/reservation-result.component';
 
-import { ReservationAdminComponent } from 'src/app/part01-reservation/reservation-admin/reservation-admin.component';
-
-import { ReservationHomeReserveSeatsComponent } from 'src/app/part01-reservation/reservation-home-reserve-seats/reservation-home-reserve-seats.component';
-
-import { SeatsComponent } from 'src/app/part01-reservation/seats/seats/seats.component';
-import { SeatsStartComponent } from 'src/app/part01-reservation/seats/seats-start/seats-start.component';
-
-import { ReservationPictureComponent } from 'src/app/part01-reservation/reservation-picture/reservation-picture.component';
-import { ReservationPictureBisComponent } from 'src/app/part01-reservation/reservation-picture-bis/reservation-picture-bis.component';
-import { ReservationPictureTerComponent } from 'src/app/part01-reservation/reservation-picture-ter/reservation-picture-ter.component';
-
-import { ReservationQueryDateComponent } from 'src/app/part01-reservation/reservation-query-date/reservation-query-date.component';
-
-import { ReservationQueryGraphicsComponent } from 'src/app/part01-reservation/reservation-query-graphics/reservation-query-graphics.component';
-import { ReservationQueryGraphicPieComponent } from 'src/app/part01-reservation/reservation-query-graphic-pie/reservation-query-graphic-pie.component';
-import { ReservationQueryGraphicBarComponent } from 'src/app/part01-reservation/reservation-query-graphic-bar/reservation-query-graphic-bar.component';
-import { ReservationQueryGraphicPolarareaComponent } from 'src/app/part01-reservation/reservation-query-graphic-polararea/reservation-query-graphic-polararea.component';
+// import { SeatsComponent } from 'src/app/part01-reservation/seats/seats/seats.component';
+// import { SeatsStartComponent } from 'src/app/part01-reservation/seats/seats-start/seats-start.component';
 
 import { ButtonAAComponent } from 'src/app/part01-reservation/buttons-delete/button-aa/button-aa.component';
 import { ButtonBAComponent } from 'src/app/part01-reservation/buttons-delete/button-ba/button-ba.component';
@@ -91,53 +86,185 @@ import { HighchartsChartModule } from "highcharts-angular";
 const routes: Routes = [
 
     /* home */
-//   {
-//     path: 'reservation',
-//     canActivate: [ AuthGuardService ],
-//     loadChildren: () => import('src/app/mod/private/a-reservation/a-reservation.module')
-//       .then(mod => mod.AReservationModule),
-//       data: { preload: true, delay:1000 }
-//   },
-//   {
-//     path: 'reservation-home',
-//     canActivate: [ AuthGuardService ],
-//     loadChildren: () => import('src/app/mod/private/reservation/reservation-home/reservation-home.module')
-//       .then(mod => mod.ReservationHomeModule),
-//       data: { preload: true, delay:1000 }
-//   },
+  {
+    path: 'reservation',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/a-reservation/a-reservation.module')
+      .then(mod => mod.AReservationModule),
+      data: { preload: true, delay:1000 }
+  },
 
-    { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
+  // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
 
-    { path: 'hub', canActivate: [AuthGuardService], component: ReservationHomeHubComponent },
-    { path: 'admin', canActivate: [AuthGuardService], component: ReservationHomeAdminComponent },
+  {
+    path: 'reservation-home',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-home/reservation-home.module')
+      .then(mod => mod.ReservationHomeModule),
+      data: { preload: true, delay:1000 }
+  },
+  {
+    path: 'admin-home',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-admin/reservation-admin.module')
+      .then(mod => mod.ReservationAdminModule),
+      data: { preload: true, delay:1000 }
+  },
+  {
+    path: 'client',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-client/reservation-client.module')
+      .then(mod => mod.ReservationClientModule),
+      data: { preload: true, delay:1000 }
+  },
+  {
+    path: 'home-admin',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-home-admin/reservation-home-admin.module')
+      .then(mod => mod.ReservationHomeAdminModule),
+      data: { preload: true, delay:1000 }
+  },
 
-    { path: 'date', canActivate: [AuthGuardService], component: ReservationQueryDateComponent },
+//   { path: 'admin', canActivate: [AuthGuardService], component: ReservationHomeAdminComponent },
 
-    { path: 'graphic', canActivate: [AuthGuardService], component: ReservationQueryGraphicsComponent },
-    { path: 'pie', canActivate: [AuthGuardService], component: ReservationQueryGraphicPieComponent },
-    { path: 'bar', canActivate: [AuthGuardService], component: ReservationQueryGraphicBarComponent },
-    { path: 'polar', canActivate: [AuthGuardService], component: ReservationQueryGraphicPolarareaComponent },
+{
+    path: 'home-hub',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-home-hub/reservation-home-hub.module')
+      .then(mod => mod.ReservationHomeHubModule),
+      data: { preload: true, delay:1000 }
+  },
 
-    { path: 'home-result', canActivate: [AuthGuardService], component: ReservationHomeReserveSeatsComponent }
+// { path: 'hub', canActivate: [AuthGuardService], component: ReservationHomeHubComponent },
+
+{
+    path: 'home-result',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-home-reserve-seats/reservation-home-reserve-seats.module')
+      .then(mod => mod.ReservationHomeReserveSeatsModule),
+      data: { preload: true, delay:1000 }
+  },
+
+// { path: 'home-result', canActivate: [AuthGuardService], component: ReservationHomeReserveSeatsComponent }
+
+{
+    path: 'picture',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-picture/reservation-picture.module')
+      .then(mod => mod.ReservationPictureModule),
+      data: { preload: true, delay:1000 }
+  },
+  {
+    path: 'picture-bis',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-picture-bis/reservation-picture-bis.module')
+      .then(mod => mod.ReservationPictureBisModule),
+      data: { preload: true, delay:1000 }
+  },
+  {
+    path: 'picture-ter',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-picture-ter/reservation-picture-ter.module')
+      .then(mod => mod.ReservationPictureTerModule),
+      data: { preload: true, delay:1000 }
+  },
+  {
+    path: 'date',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-query-date/reservation-query-date.module')
+      .then(mod => mod.ReservationQueryDateModule),
+      data: { preload: true, delay:1000 }
+  },
+
+// { path: 'date', canActivate: [AuthGuardService], component: ReservationQueryDateComponent },
+
+{
+    path: 'graphic',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-query-graphics/reservation-query-graphics.module')
+      .then(mod => mod.ReservationQueryGraphicsModule),
+      data: { preload: true, delay:1000 }
+},
+
+// { path: 'graphic', canActivate: [AuthGuardService], component: ReservationQueryGraphicsComponent },
+
+{
+    path: 'pie',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-query-graphic-pie/reservation-query-graphic-pie.module')
+      .then(mod => mod.ReservationQueryGraphicPieModule),
+      data: { preload: true, delay:1000 }
+},
+
+// { path: 'pie', canActivate: [AuthGuardService], component: ReservationQueryGraphicPieComponent },
+
+{
+    path: 'bar',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-query-graphic-bar/reservation-query-graphic-bar.module')
+      .then(mod => mod.ReservationQueryGraphicBarModule),
+      data: { preload: true, delay:1000 }
+},
+
+// { path: 'bar', canActivate: [AuthGuardService], component: ReservationQueryGraphicBarComponent },
+
+{
+    path: 'polar',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-query-graphic-polararea/reservation-query-graphic-polararea.module')
+      .then(mod => mod.ReservationQueryGraphicPolarareaModule),
+      data: { preload: true, delay:1000 }
+},
+
+// { path: 'polar', canActivate: [AuthGuardService], component: ReservationQueryGraphicPolarareaComponent }
+
+    {
+    path: 'result',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/reservation-result/reservation-result.module')
+      .then(mod => mod.ReservationResultModule),
+      data: { preload: true, delay:1000 }
+    },
+    {
+    path: 'seats',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/seats/seats/seats.module')
+      .then(mod => mod.SeatsModule),
+      data: { preload: true, delay:1000 }
+},
+{
+    path: 'seats-start',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/seats/seats-start/seats-start.module')
+      .then(mod => mod.SeatsStartModule),
+      data: { preload: true, delay:1000 }
+},
+{
+    path: 'seats-start',
+    canActivate: [ AuthGuardService ],
+    loadChildren: () => import('src/app/mod/private/reservation/seats/seats-start/seats-start.module')
+      .then(mod => mod.SeatsStartModule),
+      data: { preload: true, delay:1000 }
+},
 ];
 
 @NgModule({
     declarations: [
-        Part01ReservationHomeComponent,
+        // Part01ReservationHomeComponent,
 
-        ReservationClientComponent,
-        ReservationHomeComponent,
+        // ReservationClientComponent,
+        // ReservationHomeComponent,
 
-        ReservationHomeHubComponent,
+        // ReservationHomeHubComponent,
 
-        ReservationHomeAdminComponent,
-        ReservationAdminComponent,
+        // ReservationHomeAdminComponent,
+        // ReservationAdminComponent,
         
-        ReservationHomeReserveSeatsComponent,
+        // ReservationHomeReserveSeatsComponent,
 
-        ReservationPictureComponent,
-        ReservationPictureBisComponent,
-        ReservationPictureTerComponent,
+        // ReservationPictureComponent,
+        // ReservationPictureBisComponent,
+        // ReservationPictureTerComponent,
 
         ButtonAAComponent,
         ButtonBAComponent,
@@ -173,17 +300,17 @@ const routes: Routes = [
         ButtonEBComponent,
         ButtonFBComponent,
         
-        ReservationQueryDateComponent,
+        // ReservationQueryDateComponent,
 
-        ReservationQueryGraphicsComponent,
-        ReservationQueryGraphicPieComponent,
-        ReservationQueryGraphicBarComponent,
-        ReservationQueryGraphicPolarareaComponent,
+        // ReservationQueryGraphicsComponent,
+        // ReservationQueryGraphicPieComponent,
+        // ReservationQueryGraphicBarComponent,
+        // ReservationQueryGraphicPolarareaComponent,
 
-        SeatsStartComponent,
-        SeatsComponent,
+        // SeatsStartComponent,
+        // SeatsComponent,
 
-        ReservationResultComponent,
+        // ReservationResultComponent,
 
         KeyValuePipe,
         ValueArrayPipe

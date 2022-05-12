@@ -15,4 +15,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class ReservationHomePictureBisRoutingModule { }
+export class ReservationPictureBisRoutingModule { }

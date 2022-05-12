@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ReservationHomeQueryGraphicPolarareaRoutingModule } from './reservation-query-graphic-polararea-routing.module';
+import { ReservationQueryGraphicPolarareaRoutingModule } from './reservation-query-graphic-polararea-routing.module';
 import { ReservationQueryGraphicPolarareaComponent } from 'src/app/part01-reservation/reservation-query-graphic-polararea/reservation-query-graphic-polararea.component';
 
 @NgModule({
@@ -10,10 +10,10 @@ import { ReservationQueryGraphicPolarareaComponent } from 'src/app/part01-reserv
   ],
   imports: [
     CommonModule,
-    ReservationHomeQueryGraphicPolarareaRoutingModule
+    ReservationQueryGraphicPolarareaRoutingModule
   ],
   exports: [
     ReservationQueryGraphicPolarareaComponent
   ]
 })
-export class ReservationHomeQueryGraphicPolarareaModule { }
+export class ReservationQueryGraphicPolarareaModule { }

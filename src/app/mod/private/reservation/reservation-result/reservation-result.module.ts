@@ -16,4 +16,4 @@ import { ReservationResultComponent } from 'src/app/part01-reservation/reservati
     ReservationResultComponent
   ]
 })
-export class ReservationModule { }
+export class ReservationResultModule { }
