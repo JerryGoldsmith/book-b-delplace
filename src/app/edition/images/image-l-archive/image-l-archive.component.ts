@@ -12,9 +12,9 @@ import { finalize } from 'rxjs/operators';
 export class ImageLArchiveComponent implements OnInit {
 
   imgSrc: string;
-  selectedImage: any;
-  imageList: any[];
-  rowIndexArray: any[];
+  selectedImage: File;
+  imageList: string[];
+  rowIndexArray: number[];
 
   formTemplateArchive = new FormGroup(
     {

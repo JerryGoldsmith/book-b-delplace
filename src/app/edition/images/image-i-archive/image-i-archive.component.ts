@@ -12,7 +12,7 @@ import { finalize } from 'rxjs/operators';
 export class ImageIArchiveComponent implements OnInit {
 
   imgSrc: string;
-  selectedImage: any;
+  selectedImage: File;
   imageList: string[];
   rowIndexArray: number[];
 

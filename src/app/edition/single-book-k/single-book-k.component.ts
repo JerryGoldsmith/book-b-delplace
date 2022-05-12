@@ -15,8 +15,8 @@ import '@angular/common/locales/global/fr';
 export class SingleBookKComponent implements OnInit {
 
   bookK: Book;
-  imageList: any[];
-  rowIndexArray: any[];
+  imageList: string[];
+  rowIndexArray: number[];
 
   constructor(
     private route: ActivatedRoute,

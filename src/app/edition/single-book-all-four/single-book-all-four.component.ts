@@ -19,8 +19,8 @@ export class SingleBookAllFourComponent implements OnInit {
   bookAllsSubscription: Subscription;
 
   bookAll: Book;
-  imageListAll: any[];
-  rowIndexArray: any[];
+  imageListAll: string[];
+  rowIndexArray: number[];
 
   constructor(
     private route: ActivatedRoute,

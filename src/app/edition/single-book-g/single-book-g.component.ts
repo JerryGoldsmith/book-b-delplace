@@ -20,8 +20,8 @@ export class SingleBookGComponent implements OnInit {
   bookGsSubscription: Subscription;
 
   bookG: BookG;
-  imageListG: any[];
-  rowIndexArray: any[];
+  imageListG: string[];
+  rowIndexArray: number[];
 
   constructor(
     private route: ActivatedRoute,

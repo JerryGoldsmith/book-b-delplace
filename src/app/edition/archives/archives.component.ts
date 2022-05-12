@@ -18,9 +18,7 @@ export class ArchivesComponent implements OnInit {
   bookAllsSubscription: Subscription;
 
   imageListAll: string[];
-
   rowIndexArray: number[];
-
   buttonDisabled: boolean;
 
   constructor(
