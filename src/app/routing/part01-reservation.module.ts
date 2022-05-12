@@ -15,12 +15,9 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 // guard
 import { AuthGuardService } from './../services/auth-guard.service';
 
-import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
-
-import { SeatsStartComponent } from 'src/app/modules/seats-start/seats-start.component';
-import { SeatsComponent } from 'src/app/modules/seats/seats.component';
-
 // reservation
+
+import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
 
 import { ReservationClientComponent } from 'src/app/part01-reservation/reservation-client/reservation-client.component';
 
@@ -33,6 +30,9 @@ import { ReservationHomeAdminComponent } from 'src/app/part01-reservation/reserv
 import { ReservationAdminComponent } from 'src/app/part01-reservation/reservation-admin/reservation-admin.component';
 
 import { ReservationHomeReserveSeatsComponent } from 'src/app/part01-reservation/reservation-home-reserve-seats/reservation-home-reserve-seats.component';
+
+import { SeatsComponent } from 'src/app/part01-reservation/seats/seats/seats.component';
+import { SeatsStartComponent } from 'src/app/part01-reservation/seats/seats-start/seats-start.component';
 
 import { ReservationPictureComponent } from 'src/app/part01-reservation/reservation-picture/reservation-picture.component';
 import { ReservationPictureBisComponent } from 'src/app/part01-reservation/reservation-picture-bis/reservation-picture-bis.component';
@@ -99,8 +99,6 @@ const routes: Routes = [
     { path: 'polar', canActivate: [AuthGuardService], component: ReservationListQueryGraphicPolarareaComponent },
 
     { path: 'home-result', canActivate: [AuthGuardService], component: ReservationHomeReserveSeatsComponent }
-    // { path: 'show', canActivate: [AuthGuardService], component: ReservationResultComponent },
-    // { path: 'confirmation', canActivate: [AuthGuardService], component: ReservationResultComponent }
 ];
 
 @NgModule({
