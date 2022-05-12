@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { OrderReservationService } from "src/app/services/order-reservation.service";
 import { AngularFirestore } from '@angular/fire/firestore';
 import Chart from 'chart.js';
-import { HighchartService, chartModal } from "src/app/services/highchart.service";
+import { HighchartFranceAgeService, chartModal } from "src/app/services/highchart-france-age.service";
 import * as Highcharts from "highcharts-angular";
 
 @Component({
-  selector: 'app-reservation-list-query-graphics',
-  templateUrl: './reservation-list-query-graphics.component.html',
+  selector: 'app-reservation-query-graphic-pie',
+  templateUrl: './reservation-query-graphic-pie.component.html',
   styleUrls: ['./../../styles/normalize.scss',
   './../../styles/part01-reservation/reservation-query.scss',
   './../../styles/part01-reservation/animations/charts.scss']
 })
-export class ReservationListQueryGraphicsComponent implements OnInit {
+export class ReservationQueryGraphicPieComponent implements OnInit {
 
   seatsChart: Chart;
 
@@ -29,7 +29,7 @@ export class ReservationListQueryGraphicsComponent implements OnInit {
   constructor(
     public reservationService: OrderReservationService,
     private afs: AngularFirestore,
-    private highchartservice: HighchartService
+    private highchartservice: HighchartFranceAgeService
   ) {}
 
   ngOnInit(): void {
@@ -78,7 +78,7 @@ export class ReservationListQueryGraphicsComponent implements OnInit {
     const ctx = document.getElementById('seatsChart');
     //@ts-ignore
     this.seatsChart = new Chart(ctx, {
-        type: 'doughnut',
+        type: 'pie',
         data: {
             labels: this.charcountry,
             datasets: [
@@ -120,32 +120,16 @@ export class ReservationListQueryGraphicsComponent implements OnInit {
             },
             layout: {
               padding: {
-                left: 0,
-                right: 0,
-                top: 30,
-                bottom: 0
+                 bottom   : 20
               }
             },
             animation: {
               duration : 1000
             },
-            plugins: {
-              outlabels: {
-                text: "%l (%p)",
-                color: "black",
-                stretch: 15,
-                backgroundColor: ["#FFFFFF", "#FFFFFF"],
-                font: {
-                  resizable: true,
-                  minSize: 12,
-                  maxSize: 18
-                }
-              }
-            },
             legend: {
               display: true,
               // display: this.charcountry.length <= 32,
-              position: "left",
+              position: "right",
               labels: {
                   fontFamily: "Cormorant_Garamond_Light",
                   fontColor: 'white',
@@ -156,7 +140,7 @@ export class ReservationListQueryGraphicsComponent implements OnInit {
             elements: {
               arc: {
                   borderWidth: 0
-            },
+              },
               // line: { // radar
               //   borderWidth: 3
               // }

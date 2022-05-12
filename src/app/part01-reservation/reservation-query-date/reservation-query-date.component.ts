@@ -3,12 +3,12 @@ import { OrderReservationService } from "src/app/services/order-reservation.serv
 import { DocumentChangeAction } from '@angular/fire/firestore';
 
 @Component({
-  selector: 'app-reservation-list-query-date',
-  templateUrl: './reservation-list-query-date.component.html',
+  selector: 'app-reservation-query-date',
+  templateUrl: './reservation-query-date.component.html',
   styleUrls: ['./../../styles/normalize.scss',
   './../../styles/part01-reservation/reservation-query.scss']
 })
-export class ReservationListQueryDateComponent implements OnInit {
+export class ReservationQueryDateComponent implements OnInit {
 
   constructor(
     public reservationService: OrderReservationService

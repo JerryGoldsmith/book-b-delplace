@@ -6,13 +6,13 @@ import { HighchartFranceUsaAgeService, chartModal } from "src/app/services/highc
 import * as Highcharts from "highcharts-angular";
 
 @Component({
-  selector: 'app-reservation-list-query-graphic-bar',
-  templateUrl: './reservation-list-query-graphic-bar.component.html',
+  selector: 'app-reservation-query-graphic-bar',
+  templateUrl: './reservation-query-graphic-bar.component.html',
   styleUrls: ['./../../styles/normalize.scss',
   './../../styles/part01-reservation/reservation-query.scss',
   './../../styles/part01-reservation/animations/charts.scss']
 })
-export class ReservationListQueryGraphicBarComponent implements OnInit {
+export class ReservationQueryGraphicBarComponent implements OnInit {
 
   seatsChart: Chart;
 
