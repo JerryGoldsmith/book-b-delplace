@@ -12,7 +12,7 @@ import { AuthPreloadStrategy } from '../pre-loading/auth-preload-strategy';
 import { AuthGuardService } from './../services/auth-guard.service';
 
 // import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
-import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
+// import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 
 const routes: Routes = [
 
@@ -244,7 +244,7 @@ const routes: Routes = [
 
 @NgModule ({
     declarations: [
-      ValueArrayPipe
+      // ValueArrayPipe
     ],
     imports: [
         RouterModule.forRoot(routes,

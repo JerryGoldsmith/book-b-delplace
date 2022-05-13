@@ -15,6 +15,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 // guard
 import { AuthGuardService } from './../services/auth-guard.service';
 
+// import { ValueArrayPipeModule } from 'src/app/routing/value-array-pipe.module';
+
 // -------------------------------
 
 // reservation
@@ -96,13 +98,13 @@ const routes: Routes = [
 
   // { path: 'reservation', canActivate: [AuthGuardService], component: Part01ReservationHomeComponent },
 
-  {
-    path: 'reservation-home',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/reservation-home/reservation-home.module')
-      .then(mod => mod.ReservationHomeModule),
-      data: { preload: true, delay:1000 }
-  },
+  // {
+  //   path: 'reservation-home',
+  //   canActivate: [ AuthGuardService ],
+  //   loadChildren: () => import('src/app/mod/private/reservation/reservation-home/reservation-home.module')
+  //     .then(mod => mod.ReservationHomeModule),
+  //     data: { preload: true, delay:1000 }
+  // },
   // {
   //   path: 'admin-home',
   //   canActivate: [ AuthGuardService ],
@@ -118,7 +120,7 @@ const routes: Routes = [
   //     data: { preload: true, delay:1000 }
   // },
   {
-    path: 'home-admin',
+    path: 'admin',
     canActivate: [ AuthGuardService ],
     loadChildren: () => import('src/app/mod/private/reservation/reservation-home-admin/reservation-home-admin.module')
       .then(mod => mod.ReservationHomeAdminModule),
@@ -128,7 +130,7 @@ const routes: Routes = [
     //   { path: 'admin', canActivate: [AuthGuardService], component: ReservationHomeAdminComponent },
 
 {
-    path: 'home-hub',
+    path: 'hub',
     canActivate: [ AuthGuardService ],
     loadChildren: () => import('src/app/mod/private/reservation/reservation-home-hub/reservation-home-hub.module')
       .then(mod => mod.ReservationHomeHubModule),

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SeatsStartComponent } from 'src/app/part01-reservation/seats/seats-start/seats-start.component';
 
+import { ValueArrayPipeModule } from 'src/app/routing/value-array-pipe.module';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
@@ -13,7 +15,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ValueArrayPipeModule
   ],
   exports: [
     RouterModule

@@ -7,6 +7,8 @@ import { ReservationHomeAdminComponent } from 'src/app/part01-reservation/reserv
 import { ReservationAdminComponent } from 'src/app/part01-reservation/reservation-admin/reservation-admin.component';
 import { ReservationQueryDateComponent } from 'src/app/part01-reservation/reservation-query-date/reservation-query-date.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     ReservationHomeAdminComponent,
@@ -15,7 +17,9 @@ import { ReservationQueryDateComponent } from 'src/app/part01-reservation/reserv
   ],
   imports: [
     CommonModule,
-    ReservationHomeAdminRoutingModule
+    ReservationHomeAdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ReservationHomeAdminComponent,

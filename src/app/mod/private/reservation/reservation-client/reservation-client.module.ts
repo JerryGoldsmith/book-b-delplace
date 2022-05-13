@@ -8,20 +8,29 @@ import { SeatsStartComponent } from 'src/app/part01-reservation/seats/seats-star
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { KeyValuePipeModule } from 'src/app/routing/key-value-pipe.module';
+import { ValueArrayPipeModule } from 'src/app/routing/value-array-pipe.module';
+
+// import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
+
 @NgModule({
   declarations: [
     ReservationClientComponent,
     SeatsStartComponent
+    // ValueArrayPipe
   ],
   imports: [
     CommonModule,
     ReservationClientRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    KeyValuePipeModule,
+    ValueArrayPipeModule
   ],
   exports: [
     ReservationClientComponent,
     SeatsStartComponent
+    // ValueArrayPipe
   ]
 })
 export class ReservationClientModule { }

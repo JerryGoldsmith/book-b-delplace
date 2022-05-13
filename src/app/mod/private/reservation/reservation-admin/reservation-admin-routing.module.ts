@@ -5,6 +5,9 @@ import { ReservationAdminComponent } from 'src/app/part01-reservation/reservatio
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { KeyValuePipeModule } from 'src/app/routing/key-value-pipe.module';
+import { ValueArrayPipeModule } from 'src/app/routing/value-array-pipe.module';
+
 const routes: Routes = [
   { path: '', component: ReservationAdminComponent }
 ];
@@ -13,7 +16,9 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    KeyValuePipeModule,
+    ValueArrayPipeModule
   ],
   exports: [
     RouterModule

@@ -41,6 +41,9 @@ import { ButtonFBComponent } from 'src/app/part01-reservation/buttons-delete/but
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { KeyValuePipeModule } from 'src/app/routing/key-value-pipe.module';
+import { ValueArrayPipeModule } from 'src/app/routing/value-array-pipe.module';
+
 @NgModule({
   declarations: [
     ReservationAdminComponent,
@@ -84,7 +87,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReservationAdminRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    KeyValuePipeModule,
+    ValueArrayPipeModule
   ],
   exports: [
     ReservationAdminComponent,

@@ -15,6 +15,7 @@ import { Part01RestoModule } from './routing/part01-resto.module'
 import { Part01EditionModule } from './routing/part01-edition.module'
 import { Part01EditionImagesModule } from './routing/part01-edition-images.module'
 import { Part01ReservationModule } from './routing/part01-reservation.module'
+// import { ValueArrayPipeModule } from './routing/value-array-pipe.module'
 // import { Part01ReservationButtonsDeleteModule } from './routing/part01-reservation-buttons-delete.module'
 import { RoutingModule } from './routing/routing-module'
 
@@ -55,8 +56,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthentificationService } from "./services/authentification.service";
 
-// import { KeyValuePipe } from 'src/app/pipes/key-value.pipe';
-import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
+// import { ValueArrayPipe } from 'src/app/pipes/value-array.pipe';
 
 const appRoutes: Routes = [
 
@@ -80,9 +80,9 @@ const appRoutes: Routes = [
     SignupLightComponent,
     SigninComponent,
     SigninlistComponent,
-    FooterComponent,
+    FooterComponent
     // KeyValuePipe,
-    ValueArrayPipe
+    // ValueArrayPipe
   ],
   imports: [
     BrowserModule,
@@ -94,6 +94,7 @@ const appRoutes: Routes = [
     Part01EditionModule,
     Part01EditionImagesModule,
     Part01ReservationModule,
+    // ValueArrayPipeModule,
     // Part01ReservationButtonsDeleteModule,
     CommonFormReactiveModule,
     RouterModule.forRoot(appRoutes,
