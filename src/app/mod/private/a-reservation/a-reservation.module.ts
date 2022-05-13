@@ -6,13 +6,16 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { AReservationRoutingModule } from './a-reservation-routing.module';
 import { Part01ReservationHomeComponent } from 'src/app/part01-reservation-home/part01-reservation-home.component';
 
+import { ReservationHomeComponent } from 'src/app/part01-reservation/reservation-home/reservation-home.component';
+
 import { ChartsModule } from 'ng2-charts';
 import { HighchartsChartModule } from "highcharts-angular";
 
 
 @NgModule({
   declarations: [
-    Part01ReservationHomeComponent
+    Part01ReservationHomeComponent,
+    ReservationHomeComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +25,8 @@ import { HighchartsChartModule } from "highcharts-angular";
     HighchartsChartModule
   ],
   exports: [
-    Part01ReservationHomeComponent
+    Part01ReservationHomeComponent,
+    ReservationHomeComponent
   ]
 })
 export class AReservationModule { }

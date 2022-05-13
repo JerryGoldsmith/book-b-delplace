@@ -103,20 +103,20 @@ const routes: Routes = [
       .then(mod => mod.ReservationHomeModule),
       data: { preload: true, delay:1000 }
   },
-  {
-    path: 'admin-home',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/reservation-admin/reservation-admin.module')
-      .then(mod => mod.ReservationAdminModule),
-      data: { preload: true, delay:1000 }
-  },
-  {
-    path: 'client',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/reservation-client/reservation-client.module')
-      .then(mod => mod.ReservationClientModule),
-      data: { preload: true, delay:1000 }
-  },
+  // {
+  //   path: 'admin-home',
+  //   canActivate: [ AuthGuardService ],
+  //   loadChildren: () => import('src/app/mod/private/reservation/reservation-admin/reservation-admin.module')
+  //     .then(mod => mod.ReservationAdminModule),
+  //     data: { preload: true, delay:1000 }
+  // },
+  // {
+  //   path: 'client',
+  //   canActivate: [ AuthGuardService ],
+  //   loadChildren: () => import('src/app/mod/private/reservation/reservation-client/reservation-client.module')
+  //     .then(mod => mod.ReservationClientModule),
+  //     data: { preload: true, delay:1000 }
+  // },
   {
     path: 'home-admin',
     canActivate: [ AuthGuardService ],
@@ -147,34 +147,34 @@ const routes: Routes = [
 
     // { path: 'home-result', canActivate: [AuthGuardService], component: ReservationHomeReserveSeatsComponent }
 
-{
-    path: 'picture',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/reservation-picture/reservation-picture.module')
-      .then(mod => mod.ReservationPictureModule),
-      data: { preload: true, delay:1000 }
-  },
-  {
-    path: 'picture-bis',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/reservation-picture-bis/reservation-picture-bis.module')
-      .then(mod => mod.ReservationPictureBisModule),
-      data: { preload: true, delay:1000 }
-  },
-  {
-    path: 'picture-ter',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/reservation-picture-ter/reservation-picture-ter.module')
-      .then(mod => mod.ReservationPictureTerModule),
-      data: { preload: true, delay:1000 }
-  },
-  {
-    path: 'date',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/reservation-query-date/reservation-query-date.module')
-      .then(mod => mod.ReservationQueryDateModule),
-      data: { preload: true, delay:1000 }
-  },
+// {
+//     path: 'picture',
+//     canActivate: [ AuthGuardService ],
+//     loadChildren: () => import('src/app/mod/private/reservation/reservation-picture/reservation-picture.module')
+//       .then(mod => mod.ReservationPictureModule),
+//       data: { preload: true, delay:1000 }
+//   },
+  // {
+  //   path: 'picture-bis',
+  //   canActivate: [ AuthGuardService ],
+  //   loadChildren: () => import('src/app/mod/private/reservation/reservation-picture-bis/reservation-picture-bis.module')
+  //     .then(mod => mod.ReservationPictureBisModule),
+  //     data: { preload: true, delay:1000 }
+  // },
+  // {
+  //   path: 'picture-ter',
+  //   canActivate: [ AuthGuardService ],
+  //   loadChildren: () => import('src/app/mod/private/reservation/reservation-picture-ter/reservation-picture-ter.module')
+  //     .then(mod => mod.ReservationPictureTerModule),
+  //     data: { preload: true, delay:1000 }
+  // },
+  // {
+  //   path: 'date',
+  //   canActivate: [ AuthGuardService ],
+  //   loadChildren: () => import('src/app/mod/private/reservation/reservation-query-date/reservation-query-date.module')
+  //     .then(mod => mod.ReservationQueryDateModule),
+  //     data: { preload: true, delay:1000 }
+  // },
 
     // { path: 'date', canActivate: [AuthGuardService], component: ReservationQueryDateComponent },
 
@@ -218,34 +218,27 @@ const routes: Routes = [
 
     // { path: 'polar', canActivate: [AuthGuardService], component: ReservationQueryGraphicPolarareaComponent }
 
-    {
-    path: 'result',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/reservation-result/reservation-result.module')
-      .then(mod => mod.ReservationResultModule),
-      data: { preload: true, delay:1000 }
-    },
-    {
-    path: 'seats',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/seats/seats/seats.module')
-      .then(mod => mod.SeatsModule),
-      data: { preload: true, delay:1000 }
-},
-{
-    path: 'seats-start',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/seats/seats-start/seats-start.module')
-      .then(mod => mod.SeatsStartModule),
-      data: { preload: true, delay:1000 }
-},
-{
-    path: 'seats-start',
-    canActivate: [ AuthGuardService ],
-    loadChildren: () => import('src/app/mod/private/reservation/seats/seats-start/seats-start.module')
-      .then(mod => mod.SeatsStartModule),
-      data: { preload: true, delay:1000 }
-}
+    // {
+    // path: 'result',
+    // canActivate: [ AuthGuardService ],
+    // loadChildren: () => import('src/app/mod/private/reservation/reservation-result/reservation-result.module')
+    //   .then(mod => mod.ReservationResultModule),
+    //   data: { preload: true, delay:1000 }
+    // },
+//     {
+//     path: 'seats',
+//     canActivate: [ AuthGuardService ],
+//     loadChildren: () => import('src/app/mod/private/reservation/seats/seats/seats.module')
+//       .then(mod => mod.SeatsModule),
+//       data: { preload: true, delay:1000 }
+// },
+// {
+//     path: 'seats-start',
+//     canActivate: [ AuthGuardService ],
+//     loadChildren: () => import('src/app/mod/private/reservation/seats/seats-start/seats-start.module')
+//       .then(mod => mod.SeatsStartModule),
+//       data: { preload: true, delay:1000 }
+// }
 ];
 
 @NgModule({
