@@ -4,13 +4,17 @@ import { CommonModule } from '@angular/common';
 import { ButtonYARoutingModule } from './button-ya-routing.module';
 import { ButtonYAComponent } from 'src/app/part01-reservation/buttons-delete/button-ya/button-ya.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     ButtonYAComponent
   ],
   imports: [
     CommonModule,
-    ButtonYARoutingModule
+    ButtonYARoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ButtonYAComponent

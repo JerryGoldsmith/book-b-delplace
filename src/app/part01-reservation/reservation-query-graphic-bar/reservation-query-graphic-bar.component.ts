@@ -20,15 +20,14 @@ export class ReservationQueryGraphicBarComponent implements OnInit {
   items$: chartModal[];
   Highcharts: typeof Highcharts = Highcharts;
   chardata: any[] = [];
-  charage: any[] = [];
-  charcountry: any[] = [];
+  charage: number[] = [];
+  charcountry: number[] = [];
   charcolor: any[] = [];
   charlegend: any[] = [];
   chartOptions: any;
 
   constructor(
     public reservationService: OrderReservationService,
-    private afs: AngularFirestore,
     private highchartservice: HighchartFranceUsaAgeService
   ) {}
 

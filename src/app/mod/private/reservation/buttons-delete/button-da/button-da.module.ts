@@ -4,13 +4,17 @@ import { CommonModule } from '@angular/common';
 import { ButtonDARoutingModule } from './button-da-routing.module';
 import { ButtonDAComponent } from 'src/app/part01-reservation/buttons-delete/button-da/button-da.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     ButtonDAComponent
   ],
   imports: [
     CommonModule,
-    ButtonDARoutingModule
+    ButtonDARoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ButtonDAComponent

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// import { ReactiveFormsModule } from '@angular/forms';
-
 import { ButtonVAComponent } from 'src/app/part01-reservation/buttons-delete/button-va/button-va.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: ButtonVAComponent }
@@ -11,7 +11,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     RouterModule

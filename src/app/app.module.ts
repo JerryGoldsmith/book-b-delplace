@@ -81,6 +81,7 @@ const appRoutes: Routes = [
     SigninComponent,
     SigninlistComponent,
     FooterComponent,
+    KeyValuePipe,
     ValueArrayPipe
   ],
   imports: [

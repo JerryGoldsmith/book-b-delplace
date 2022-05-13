@@ -317,7 +317,7 @@ const routes: Routes = [
     ],
     imports: [
         RouterModule.forRoot(routes,
-            { preloadingStrategy: AuthPreloadStrategy }),
+          { preloadingStrategy: AuthPreloadStrategy }),
         LazyLoadImageModule,
         CommonModule,
         FormsModule, 
@@ -330,8 +330,9 @@ const routes: Routes = [
         RouterModule
     ],
     providers: [
-        LazyImgDirective,
-        AuthPreloadStrategy
+      AuthGuardService,
+      AuthPreloadStrategy,
+      LazyImgDirective
     ]
 })
 
