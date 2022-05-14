@@ -15,8 +15,6 @@ import { Part01RestoModule } from './routing/part01-resto.module'
 import { Part01EditionModule } from './routing/part01-edition.module'
 import { Part01EditionImagesModule } from './routing/part01-edition-images.module'
 import { Part01ReservationModule } from './routing/part01-reservation.module'
-// import { ValueArrayPipeModule } from './routing/value-array-pipe.module'
-// import { Part01ReservationButtonsDeleteModule } from './routing/part01-reservation-buttons-delete.module'
 import { RoutingModule } from './routing/routing-module'
 
 /* -------------------------------------------------- */
@@ -81,8 +79,6 @@ const appRoutes: Routes = [
     SigninComponent,
     SigninlistComponent,
     FooterComponent
-    // KeyValuePipe,
-    // ValueArrayPipe
   ],
   imports: [
     BrowserModule,
@@ -94,8 +90,6 @@ const appRoutes: Routes = [
     Part01EditionModule,
     Part01EditionImagesModule,
     Part01ReservationModule,
-    // ValueArrayPipeModule,
-    // Part01ReservationButtonsDeleteModule,
     CommonFormReactiveModule,
     RouterModule.forRoot(appRoutes,
       { preloadingStrategy: AuthPreloadStrategy }),
